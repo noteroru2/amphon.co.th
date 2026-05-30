@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAContact from '../components/CTAContact.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { getCollection } from 'astro:content';
+import { absoluteUrl, schemaIds, createItemListSchema } from '../lib/seo';
+import { serviceThumbnails } from '../config/images';
+import { site } from '../config/site';
+
+const services = await getCollection('services', ({ data }) => !data.draft);
+
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บริการรับซื้อสินค้าไอที' },
+];
+const pageUrl = absoluteUrl('/รับซื้อสินค้าไอที');
+
+const schemaExtras = [
+  createItemListSchema({
+    pageUrl,
+    name: 'บริการรับซื้อสินค้าไอทีทั้งหมด',
+    items: services.map((s) => ({
+      name: s.data.title,
+      url: absoluteUrl(`/บริการ/${s.data.slug}`),
+      description: s.data.description,
+    })),
+  }),
+];
+---
+
+<BaseLayout
+  title="รับซื้อสินค้าไอที ทุกประเภท — บริการรับซื้อครบทุกชนิด"
+  description="รับซื้อสินค้าไอทีทุกชนิด โน๊ตบุ๊ค iPhone iPad MacBook คอมพิวเตอร์ กล้อง ราคาดี ประเมินฟรี นัดรับถึงที่"
+  canonical={pageUrl}
+  breadcrumbs={breadcrumbs}
+  pageType="CollectionPage"
+  mainEntityId={schemaIds.itemList(pageUrl)}
+  schemaExtras={schemaExtras}
+>
+  <header class="page-header">
+    <div class="container">
+      <span class="tag tag--orange" style="margin-bottom:.875rem;">บริการรับซื้อ</span>
+      <h1>รับซื้อสินค้าไอที ทุกชนิด ภาคอีสาน</h1>
+      <p class="page-header__desc">
+        รับซื้อสินค้าไอทีมือสองหลายประเภท ประเมินราคาฟรีผ่าน Line ไม่ต้องเดินทาง
+      </p>
+      <div class="page-header__cta">
+        <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+          แชท Line ประเมินราคา
+        </a>
+        <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
+          โทร {site.phone}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">สินค้าทั้งหมด</span>
+        <h2>สินค้าที่รับซื้อ</h2>
+        <p>เลือกประเภทสินค้าที่คุณต้องการขาย แล้วดูรายละเอียด</p>
+      </div>
+      <div class="grid grid--2">
+        {services.map((service) => (
+          <ServiceCard
+            title={service.data.title}
+            description={service.data.description}
+            href={`/บริการ/${service.data.slug}`}
+            keyword={service.data.mainKeyword}
+            image={serviceThumbnails[service.data.slug]}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTAContact />
+</BaseLayout>

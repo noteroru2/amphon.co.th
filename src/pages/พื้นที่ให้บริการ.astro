@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAContact from '../components/CTAContact.astro';
+import ProvinceGrid from '../components/ProvinceGrid.astro';
+import { getCollection } from 'astro:content';
+import { absoluteUrl, schemaIds, createItemListSchema } from '../lib/seo';
+
+const areas = await getCollection('areas', ({ data }) => !data.draft);
+
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'พื้นที่ให้บริการ' },
+];
+
+const pageUrl = absoluteUrl('/พื้นที่ให้บริการ');
+const areaItems = areas.map((a) => ({
+  name: a.data.title,
+  url: absoluteUrl(`/พื้นที่ให้บริการ/${a.data.slug}`),
+  description: a.data.description,
+}));
+
+const schemaExtras = [
+  createItemListSchema({
+    pageUrl,
+    name: 'พื้นที่ให้บริการภาคอีสาน',
+    items: areaItems,
+  }),
+];
+---
+
+<BaseLayout
+  title="พื้นที่ให้บริการ ภาคอีสาน"
+  description="Amphon ให้บริการรับซื้อสินค้าทุกชนิดทั่วภาคอีสาน 20 จังหวัด นัดรับถึงที่ ประเมินราคาฟรี"
+  canonical={pageUrl}
+  breadcrumbs={breadcrumbs}
+  pageType="CollectionPage"
+  mainEntityId={schemaIds.itemList(pageUrl)}
+  schemaExtras={schemaExtras}
+>
+  <header class="page-header">
+    <div class="container">
+      <span class="tag tag--orange" style="margin-bottom:.875rem;">พื้นที่ให้บริการ</span>
+      <h1>พื้นที่ให้บริการรับซื้อสินค้าไอที</h1>
+      <p class="page-header__desc">
+        ให้บริการรับซื้อสินค้าไอทีครอบคลุม 20 จังหวัดภาคอีสาน นัดรับถึงที่ได้บางพื้นที่
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">20 จังหวัด ภาคอีสาน</span>
+        <h2>เลือกจังหวัดของคุณ</h2>
+        <p>รับซื้อสินค้าไอทีทั่วภาคอีสาน ส่งรูปประเมินราคาฟรีได้ทุกจังหวัด</p>
+      </div>
+      <ProvinceGrid
+        provinces={areas.map((area) => ({
+          title: area.data.title,
+          slug: area.data.slug,
+          description: area.data.description,
+        }))}
+      />
+    </div>
+  </section>
+
+  <CTAContact title="อยู่ในภาคอีสาน? นัดรับของถึงที่ฟรี" />
+</BaseLayout>

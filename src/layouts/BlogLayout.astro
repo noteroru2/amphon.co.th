@@ -1,0 +1,127 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { getImageAlt } from '../config/images';
+import CTAContact from '../components/CTAContact.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import {
+  absoluteUrl,
+  schemaIds,
+  createArticleSchema,
+  resolveOgImage,
+} from '../lib/seo';
+import type { BreadcrumbItem } from '../config/site';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  relatedPosts?: CollectionEntry<'blog'>[];
+}
+
+const { entry, relatedPosts = [] } = Astro.props;
+const { title, description, slug, date, updated, author, ogImage, heroImage } = entry.data;
+const { Content } = await render(entry);
+
+const breadcrumbs: BreadcrumbItem[] = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บทความ', href: '/blog' },
+  { label: title },
+];
+
+const pageUrl = absoluteUrl(`/blog/${slug}`);
+const datePublished = date.toISOString();
+const dateModified = (updated ?? date).toISOString();
+const pageImage = resolveOgImage(ogImage, heroImage);
+
+const formattedDate = date.toLocaleDateString('th-TH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const schemaExtras = [
+  createArticleSchema({
+    pageUrl,
+    headline: title,
+    description,
+    datePublished,
+    dateModified,
+    author,
+    image: pageImage,
+  }),
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={pageUrl}
+  ogType="article"
+  ogImage={ogImage}
+  heroImage={heroImage}
+  breadcrumbs={breadcrumbs}
+  pageType="WebPage"
+  datePublished={datePublished}
+  dateModified={dateModified}
+  mainEntityId={schemaIds.article(pageUrl)}
+  schemaExtras={schemaExtras}
+>
+  <header class="page-header">
+    <div class="container">
+      <div class="blog-meta">
+        <time datetime={datePublished} class="meta">{formattedDate}</time>
+        <span class="meta">โดย {author}</span>
+      </div>
+      <h1>{title}</h1>
+      <p class="page-header__desc">{description}</p>
+    </div>
+  </header>
+
+  {heroImage && (
+    <div class="page-hero-image">
+      <div class="container">
+        <figure class="mb-0">
+          <OptimizedImage
+            src={heroImage}
+            alt={getImageAlt(heroImage, title)}
+            class="page-hero-image__img"
+            loading="eager"
+            width={1200}
+            height={675}
+          />
+        </figure>
+      </div>
+    </div>
+  )}
+
+  <div class="container blog-content">
+    <article class="prose">
+      <Content />
+    </article>
+  </div>
+
+  <CTAContact compact title="มีสินค้าอยากขาย? ปรึกษาทีมงาน Amphon ฟรี" />
+
+  {relatedPosts.length > 0 && (
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <span class="eyebrow">บทความที่เกี่ยวข้อง</span>
+          <h2>อ่านเพิ่มเติม</h2>
+        </div>
+        <div class="grid grid--3">
+          {relatedPosts.map((post) => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              href={`/blog/${post.data.slug}`}
+              date={post.data.date}
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

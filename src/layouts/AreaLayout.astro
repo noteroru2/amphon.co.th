@@ -1,0 +1,137 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { getImageAlt } from '../config/images';
+import CTAContact from '../components/CTAContact.astro';
+import FAQ from '../components/FAQ.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import {
+  absoluteUrl,
+  schemaIds,
+  createPlaceSchema,
+  contentDateModified,
+  faqSchemaIfVisible,
+} from '../lib/seo';
+import { site } from '../config/site';
+import type { BreadcrumbItem } from '../config/site';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'areas'>;
+  relatedServices?: CollectionEntry<'serviceAreas'>[];
+  otherAreas?: CollectionEntry<'areas'>[];
+}
+
+const { entry, relatedServices = [], otherAreas = [] } = Astro.props;
+const { title, description, slug, province, faqs, ogImage, heroImage, date, updated } = entry.data;
+const { Content } = await render(entry);
+
+const breadcrumbs: BreadcrumbItem[] = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'พื้นที่ให้บริการ', href: '/พื้นที่ให้บริการ' },
+  { label: title },
+];
+
+const pageUrl = absoluteUrl(`/พื้นที่ให้บริการ/${slug}`);
+const dateModified = contentDateModified(date, updated);
+
+const schemaExtras = [
+  createPlaceSchema({ pageUrl, name: title, description, province }),
+  ...faqSchemaIfVisible(pageUrl, faqs),
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={pageUrl}
+  ogImage={ogImage}
+  heroImage={heroImage}
+  breadcrumbs={breadcrumbs}
+  pageType="WebPage"
+  mainEntityId={schemaIds.place(pageUrl)}
+  dateModified={dateModified}
+  geoPlace={province}
+  schemaExtras={schemaExtras}
+>
+  <!-- Page hero -->
+  <header class="page-header">
+    <div class="container page-header__grid">
+      <div>
+        <span class="tag tag--orange" style="margin-bottom:.875rem;">พื้นที่ให้บริการ</span>
+        <h1>{title}</h1>
+        <p class="page-header__desc">{description}</p>
+        <div class="page-header__cta">
+          <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+            นัดรับสินค้าผ่าน Line
+          </a>
+          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
+            โทร {site.phone}
+          </a>
+        </div>
+      </div>
+      {heroImage && (
+        <figure class="page-header__figure">
+          <OptimizedImage
+            src={heroImage}
+            alt={getImageAlt(heroImage, `รับซื้อสินค้าไอที ${province} — อำพล เทรดดิ้ง`)}
+            loading="eager"
+            width={600}
+            height={338}
+          />
+        </figure>
+      )}
+    </div>
+  </header>
+
+  <!-- Content + sidebar -->
+  <div class="container content-layout">
+    <article class="prose">
+      <Content />
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidebar__box">
+        <p class="sidebar__title">นัดรับใน{province}</p>
+        <div style="display:flex;flex-direction:column;gap:.625rem;">
+          <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer">
+            แชท Line @webuy
+          </a>
+          <a href={`tel:${site.phoneTel}`} class="btn btn--phone btn--sm">
+            โทร {site.phone}
+          </a>
+        </div>
+      </div>
+
+      {relatedServices.length > 0 && (
+        <div class="sidebar__box">
+          <p class="sidebar__title">บริการใน{province}</p>
+          <ul class="sidebar__links">
+            {relatedServices.map((item) => (
+              <li>
+                <a href={`/รับซื้อ/${item.data.slug}`}>{item.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {otherAreas.length > 0 && (
+        <div class="sidebar__box">
+          <p class="sidebar__title">จังหวัดอื่นๆ</p>
+          <ul class="sidebar__links">
+            {otherAreas.slice(0, 6).map((area) => (
+              <li>
+                <a href={`/พื้นที่ให้บริการ/${area.data.slug}`}>{area.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </aside>
+  </div>
+
+  <FAQ items={faqs} />
+  <CTAContact title={`รับซื้อสินค้าใน${province} — ติดต่อประเมินราคาฟรี`} />
+</BaseLayout>

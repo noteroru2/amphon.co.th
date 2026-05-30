@@ -1,0 +1,29 @@
+{
+  "name": "amphon.co.th",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "og:generate": "node scripts/generate-og-images.mjs",
+    "og:default": "node scripts/generate-og-default.mjs",
+    "og:production": "node scripts/generate-production-og.mjs",
+    "content:seed": "node scripts/seed-production-content.mjs",
+    "images:process": "node scripts/process-production-images.mjs",
+    "validate:seo": "node scripts/validate-seo.mjs",
+    "check:seo": "npm run build && npm run validate:seo",
+    "prebuild": "node scripts/process-production-images.mjs && node scripts/generate-og-default.mjs && node scripts/generate-production-og.mjs && node scripts/generate-og-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^6.4.2"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.2"
+  }
+}

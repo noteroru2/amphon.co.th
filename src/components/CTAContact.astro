@@ -1,0 +1,44 @@
+---
+import { site } from '../config/site';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  compact?: boolean;
+}
+
+const {
+  title = 'มีสินค้าอยากขาย? ส่งรูปให้เราประเมินราคาฟรี',
+  subtitle = 'ทีมงานพร้อมให้บริการทั่วภาคอีสาน ตอบไว ให้ราคายุติธรรม',
+  compact = false,
+} = Astro.props;
+---
+
+<section class:list={['cta-band', { 'cta-band--compact': compact }]}>
+  <div class="container cta-band__inner">
+    <div class="cta-band__text">
+      <h2>{title}</h2>
+      {!compact && <p>{subtitle}</p>}
+    </div>
+    <div class="cta-band__actions">
+      <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/>
+        </svg>
+        แชท Line @webuy
+      </a>
+      <a href={`tel:${site.phoneTel}`} class="btn btn--phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 17z"/>
+        </svg>
+        โทร {site.phone}
+      </a>
+      <a href={site.facebook} class="btn btn--facebook" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+        </svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+</section>

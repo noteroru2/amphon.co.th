@@ -1,0 +1,36 @@
+---
+import { getImageAlt } from '../config/images';
+
+interface Props {
+  src: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = 'lazy',
+  class: className,
+  sizes,
+} = Astro.props;
+
+const resolvedAlt = alt ?? getImageAlt(src, '');
+---
+
+<img
+  src={src}
+  alt={resolvedAlt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+  class={className}
+  sizes={sizes}
+/>

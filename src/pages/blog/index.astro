@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import CTAContact from '../../components/CTAContact.astro';
+import { getCollection } from 'astro:content';
+import { absoluteUrl, schemaIds, createItemListSchema } from '../../lib/seo';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บทความ' },
+];
+
+const pageUrl = absoluteUrl('/blog');
+const schemaExtras = [
+  createItemListSchema({
+    pageUrl,
+    name: 'บทความและคำแนะนำ',
+    items: posts.map((post) => ({
+      name: post.data.title,
+      url: absoluteUrl(`/blog/${post.data.slug}`),
+      description: post.data.description,
+    })),
+  }),
+];
+---
+
+<BaseLayout
+  title="บทความและคำแนะนำ"
+  description="บทความคำแนะนำการขายสินค้าไอที เช็กราคา เตรียมเครื่อง และเทคนิคให้ได้ราคาดี"
+  canonical={pageUrl}
+  breadcrumbs={breadcrumbs}
+  pageType="CollectionPage"
+  mainEntityId={schemaIds.itemList(pageUrl)}
+  schemaExtras={schemaExtras}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>บทความ</h1>
+      <p class="page-header__desc">
+        คำแนะนำและเทคนิคการขายสินค้าไอทีให้ได้ราคาดี
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        {posts.map((post) => (
+          <ArticleCard
+            title={post.data.title}
+            description={post.data.description}
+            href={`/blog/${post.data.slug}`}
+            date={post.data.date}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTAContact compact title="มีสินค้าอยากขาย? ปรึกษาทีมงาน Amphon ฟรี" />
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+interface Province {
+  title: string;
+  slug: string;
+  description: string;
+}
+
+interface Props {
+  provinces: Province[];
+}
+
+const { provinces } = Astro.props;
+---
+
+<div class="province-grid grid grid--2">
+  {provinces.map((province) => (
+    <a href={`/พื้นที่ให้บริการ/${province.slug}`} class="card province-card">
+      <div class="province-card__body">
+        <h3 class="province-card__title">{province.title}</h3>
+        <p class="province-card__desc">{province.description}</p>
+      </div>
+      <div class="province-card__footer">
+        <span class="tag tag--green">นัดรับได้</span>
+        <span class="province-card__link">ดูพื้นที่ →</span>
+      </div>
+    </a>
+  ))}
+</div>

@@ -1,0 +1,194 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { getImageAlt, serviceThumbnails } from '../config/images';
+import CTAContact from '../components/CTAContact.astro';
+import FAQ from '../components/FAQ.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import {
+  absoluteUrl,
+  schemaIds,
+  createServiceSchema,
+  contentDateModified,
+  faqSchemaIfVisible,
+  resolveOgImage,
+} from '../lib/seo';
+import { site } from '../config/site';
+import type { BreadcrumbItem } from '../config/site';
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'services'>;
+  relatedAreas?: CollectionEntry<'serviceAreas'>[];
+  otherServices?: CollectionEntry<'services'>[];
+}
+
+const { entry, relatedAreas = [], otherServices = [] } = Astro.props;
+const { title, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated } =
+  entry.data;
+const { Content } = await render(entry);
+
+const breadcrumbs: BreadcrumbItem[] = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'บริการ', href: '/รับซื้อสินค้าไอที' },
+  { label: title },
+];
+
+const pageUrl = absoluteUrl(`/บริการ/${slug}`);
+const pageImage = resolveOgImage(ogImage, heroImage);
+const dateModified = contentDateModified(date, updated);
+
+const schemaExtras = [
+  createServiceSchema({
+    pageUrl,
+    name: title,
+    description,
+    serviceType: mainKeyword,
+    image: pageImage,
+  }),
+  ...faqSchemaIfVisible(pageUrl, faqs),
+];
+
+const steps = [
+  { n: 1, title: 'ส่งรูปสินค้า', desc: 'ส่งรูปและสเปกผ่าน Line @webuy' },
+  { n: 2, title: 'ประเมินราคาฟรี', desc: 'รับราคาใน 15–30 นาที' },
+  { n: 3, title: 'นัดรับ / เข้าร้าน', desc: 'นัดรับถึงที่ หรือมาที่ร้านอุบลฯ' },
+  { n: 4, title: 'ตรวจสอบและจ่ายเงิน', desc: 'จ่ายทันที เงินสด / โอน' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={pageUrl}
+  ogImage={ogImage}
+  heroImage={heroImage}
+  breadcrumbs={breadcrumbs}
+  pageType="WebPage"
+  mainEntityId={schemaIds.service(pageUrl)}
+  dateModified={dateModified}
+  schemaExtras={schemaExtras}
+>
+  <!-- Page hero -->
+  <header class="page-header">
+    <div class="container page-header__grid">
+      <div>
+        <span class="tag tag--orange" style="margin-bottom:.875rem;">{mainKeyword ?? 'บริการรับซื้อ'}</span>
+        <h1>{title}</h1>
+        <p class="page-header__desc">{description}</p>
+        <div class="page-header__cta">
+          <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+            แชท Line ประเมินราคา
+          </a>
+          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
+            โทร {site.phone}
+          </a>
+        </div>
+      </div>
+      {heroImage && (
+        <figure class="page-header__figure">
+          <OptimizedImage
+            src={heroImage}
+            alt={getImageAlt(heroImage, `${title} — อำพล เทรดดิ้ง ภาคอีสาน`)}
+            loading="eager"
+            width={600}
+            height={338}
+          />
+        </figure>
+      )}
+    </div>
+  </header>
+
+  <!-- Main content + sidebar -->
+  <div class="container content-layout">
+    <article class="prose">
+      <Content />
+    </article>
+
+    <aside class="sidebar">
+      <div class="sidebar__box">
+        <p class="sidebar__title">ติดต่อประเมินราคา</p>
+        <div style="display:flex;flex-direction:column;gap:.625rem;">
+          <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer">
+            แชท Line @webuy
+          </a>
+          <a href={`tel:${site.phoneTel}`} class="btn btn--phone btn--sm">
+            โทร {site.phone}
+          </a>
+        </div>
+      </div>
+
+      {otherServices.length > 0 && (
+        <div class="sidebar__box">
+          <p class="sidebar__title">บริการอื่นๆ</p>
+          <ul class="sidebar__links">
+            {otherServices.map((service) => (
+              <li>
+                <a href={`/บริการ/${service.data.slug}`}>{service.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {relatedAreas.length > 0 && (
+        <div class="sidebar__box">
+          <p class="sidebar__title">พื้นที่ให้บริการ</p>
+          <ul class="sidebar__links">
+            {relatedAreas.map((area) => (
+              <li>
+                <a href={`/รับซื้อ/${area.data.slug}`}>{area.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </aside>
+  </div>
+
+  <!-- Steps -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">ขั้นตอน</span>
+        <h2>ขายง่าย ใน 4 ขั้นตอน</h2>
+      </div>
+      <div class="steps">
+        {steps.map((s) => (
+          <div class="step">
+            <span class="step__number">{s.n}</span>
+            <h3 class="step__title">{s.title}</h3>
+            <p class="step__desc">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqs} />
+
+  <CTAContact title={`${title} — นัดประเมินราคาฟรีวันนี้`} />
+
+  {otherServices.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <span class="eyebrow">บริการอื่นๆ</span>
+          <h2>บริการรับซื้ออื่นที่เกี่ยวข้อง</h2>
+        </div>
+        <div class="grid grid--3">
+          {otherServices.slice(0, 3).map((service) => (
+            <ServiceCard
+              title={service.data.title}
+              description={service.data.description}
+              href={`/บริการ/${service.data.slug}`}
+              keyword={service.data.mainKeyword}
+              image={serviceThumbnails[service.data.slug]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

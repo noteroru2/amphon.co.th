@@ -1,0 +1,269 @@
+---
+import { site } from '../config/site';
+
+const pathname = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/รับซื้อสินค้าไอที', label: 'สินค้าที่รับซื้อ' },
+  { href: '/พื้นที่ให้บริการ', label: 'พื้นที่ให้บริการ' },
+  { href: '/blog', label: 'บทความ' },
+  { href: '/about', label: 'เกี่ยวกับเรา' },
+  { href: '/contact', label: 'ติดต่อ' },
+];
+---
+
+<header class="header">
+  <div class="container header__inner">
+    <!-- Logo -->
+    <a href="/" class="header__logo" aria-label={site.name + ' หน้าแรก'}>
+      <img
+        src="/images/brand/amphon-trading-logo.webp"
+        alt="โลโก้ AMPHON TRADING อำพล เทรดดิ้ง รับซื้อสินค้าไอที"
+        class="header__logo-img"
+        width="168"
+        height="48"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <!-- Hamburger (CSS-only) -->
+    <input type="checkbox" id="nav-toggle" class="header__toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="header__burger" aria-label="เปิด/ปิดเมนู">
+      <span></span><span></span><span></span>
+    </label>
+
+    <!-- Nav -->
+    <nav class="header__nav" aria-label="เมนูหลัก">
+      <ul class="header__links">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['header__link', { 'header__link--active': pathname.startsWith(link.href) }]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="header__nav-ctas">
+        <a href={`tel:${site.phoneTel}`} class="header__phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 17z"/></svg>
+          {site.phone}
+        </a>
+        <a href={site.line} class="btn btn--line header__cta" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/></svg>
+          แชท Line
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255 255 255 / 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 0 var(--color-border);
+    height: var(--header-height);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    gap: 1.25rem;
+  }
+
+  /* ---- Logo ---- */
+  .header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .header__logo:hover { text-decoration: none; opacity: 0.88; }
+
+  .header__logo-img {
+    height: 2.75rem;   /* 44px — fits header nicely */
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* ---- Hamburger ---- */
+  .header__toggle { display: none; }
+
+  .header__burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
+    order: 3;
+  }
+
+  .header__burger span {
+    display: block;
+    width: 1.5rem;
+    height: 2.5px;
+    background: var(--color-dark);
+    border-radius: 2px;
+    transition: transform 0.22s, opacity 0.22s;
+    transform-origin: center;
+  }
+
+  .header__toggle:checked ~ .header__burger span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+  .header__toggle:checked ~ .header__burger span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .header__toggle:checked ~ .header__burger span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+  }
+
+  /* ---- Nav ---- */
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__toggle:checked ~ .header__nav {
+    display: flex;
+  }
+
+  .header__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__links li {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header__links li:last-child { border-bottom: none; }
+
+  .header__link {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--color-gray-700);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .header__link:hover,
+  .header__link--active {
+    color: var(--color-primary-dark);
+  }
+
+  .header__link--active {
+    font-weight: 700;
+  }
+
+  .header__nav-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .header__phone {
+    display: none;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-decoration: none;
+    padding: 0 0.25rem;
+    transition: color var(--transition);
+  }
+  .header__phone:hover { color: var(--color-primary-dark); text-decoration: none; }
+
+  .header__cta {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  /* ---- Desktop ---- */
+  @media (min-width: 768px) {
+    .header__burger { display: none; }
+
+    .header__nav {
+      display: flex !important;
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      background: transparent;
+      gap: 0.25rem;
+    }
+
+    .header__links {
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+      margin-right: 0.5rem;
+    }
+
+    .header__links li { border-bottom: none; }
+
+    .header__link {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      position: relative;
+    }
+
+    .header__link--active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0.75rem;
+      right: 0.75rem;
+      height: 2px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+
+    .header__nav-ctas {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+      gap: 0.625rem;
+    }
+
+    .header__phone {
+      display: flex;
+    }
+  }
+</style>

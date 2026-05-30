@@ -1,0 +1,76 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  date: Date;
+  tags?: string[];
+  image?: string;
+  imageAlt?: string;
+}
+
+const { title, description, href, date, tags = [], image, imageAlt } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('th-TH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class="card article-card">
+  {image && (
+    <a href={href} class="article-card__thumb-link" tabindex="-1" aria-hidden="true">
+      <img
+        src={image}
+        alt={imageAlt ?? title}
+        width={600}
+        height={315}
+        loading="lazy"
+        decoding="async"
+        class="article-card__thumb"
+      />
+    </a>
+  )}
+  <div class="article-card__body">
+    <div class="article-card__meta">
+      <time datetime={date.toISOString()} class="meta">{formattedDate}</time>
+      {tags.slice(0, 2).map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <h3 class="card__title">
+      <a href={href}>{title}</a>
+    </h3>
+    <p class="card__desc">{description}</p>
+    <a href={href} class="article-card__read">อ่านต่อ →</a>
+  </div>
+</article>
+
+<style>
+  .article-card__thumb-link {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+    line-height: 0;
+  }
+  .article-card__thumb {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+  .article-card:hover .article-card__thumb {
+    transform: scale(1.04);
+  }
+  .article-card__body {
+    padding: 1.25rem;
+  }
+  /* when no thumbnail, keep original card padding */
+  .article-card:not(:has(.article-card__thumb)) .article-card__body {
+    padding: 0;
+  }
+  /* override card padding when we manage it in body */
+  .article-card:has(.article-card__thumb) {
+    padding: 0;
+  }
+</style>

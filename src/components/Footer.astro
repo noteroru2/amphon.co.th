@@ -1,0 +1,271 @@
+---
+import { site } from '../config/site';
+---
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <!-- 1. Brand -->
+    <div class="footer__brand-col">
+      <a href="/" class="footer__logo-link" aria-label="AMPHON TRADING หน้าแรก">
+        <img
+          src="/images/brand/amphon-trading-logo-footer.webp"
+          alt="โลโก้ AMPHON TRADING อำพล เทรดดิ้ง รับซื้อสินค้าไอที ภาคอีสาน"
+          width="176"
+          height="50"
+          loading="lazy"
+          decoding="async"
+          class="footer__logo-img"
+        />
+      </a>
+      <p class="footer__tagline">รับซื้อสินค้าไอทีมือสอง<br/>ทั่วภาคอีสาน 20 จังหวัด</p>
+      <p class="footer__address">
+        {site.address.street}<br/>
+        {site.address.locality}<br/>
+        {site.address.region} {site.address.postalCode}
+      </p>
+      <a href={site.hasMap} class="footer__map-link" target="_blank" rel="noopener noreferrer">
+        📍 ดูแผนที่ Google Maps
+      </a>
+    </div>
+
+    <!-- 2. บริการ -->
+    <div>
+      <p class="footer__heading">สินค้าที่รับซื้อ</p>
+      <ul class="footer__links">
+        <li><a href="/บริการ/รับซื้อโน๊ตบุ๊ค">รับซื้อโน๊ตบุ๊ค</a></li>
+        <li><a href="/บริการ/รับซื้อ-iphone">รับซื้อ iPhone</a></li>
+        <li><a href="/บริการ/รับซื้อ-macbook">รับซื้อ MacBook</a></li>
+        <li><a href="/บริการ/รับซื้อ-ipad">รับซื้อ iPad</a></li>
+        <li><a href="/บริการ/รับซื้อคอมบริษัท">รับซื้อคอมบริษัท</a></li>
+        <li><a href="/บริการ/รับซื้อกล้อง">รับซื้อกล้อง</a></li>
+        <li><a href="/รับซื้อสินค้าไอที">ดูทั้งหมด →</a></li>
+      </ul>
+    </div>
+
+    <!-- 3. พื้นที่ -->
+    <div>
+      <p class="footer__heading">พื้นที่ให้บริการ</p>
+      <ul class="footer__links">
+        <li><a href="/พื้นที่ให้บริการ/อุบลราชธานี">อุบลราชธานี</a></li>
+        <li><a href="/พื้นที่ให้บริการ/ขอนแก่น">ขอนแก่น</a></li>
+        <li><a href="/พื้นที่ให้บริการ/นครราชสีมา">นครราชสีมา</a></li>
+        <li><a href="/พื้นที่ให้บริการ/อุดรธานี">อุดรธานี</a></li>
+        <li><a href="/พื้นที่ให้บริการ/ศรีสะเกษ">ศรีสะเกษ</a></li>
+        <li><a href="/พื้นที่ให้บริการ/ยโสธร">ยโสธร</a></li>
+        <li><a href="/พื้นที่ให้บริการ">ดูทั้งหมด →</a></li>
+      </ul>
+    </div>
+
+    <!-- 4. ติดต่อ -->
+    <div>
+      <p class="footer__heading">ติดต่อเรา</p>
+      <ul class="footer__contact">
+        <li>
+          <a href={`tel:${site.phoneTel}`} class="footer__contact-link">
+            <span class="footer__contact-icon">📞</span>
+            <span>{site.phone}</span>
+          </a>
+        </li>
+        <li>
+          <a href={site.line} class="footer__contact-link footer__contact-link--line" target="_blank" rel="noopener noreferrer">
+            <span class="footer__contact-icon">💬</span>
+            <span>Line {site.lineId}</span>
+          </a>
+        </li>
+        <li>
+          <a href={site.facebook} class="footer__contact-link footer__contact-link--fb" target="_blank" rel="noopener noreferrer">
+            <span class="footer__contact-icon">📘</span>
+            <span>Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href={`mailto:${site.email}`} class="footer__contact-link">
+            <span class="footer__contact-icon">✉️</span>
+            <span>{site.email}</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="footer__cta-mini">
+        <p class="footer__cta-label">ประเมินราคาฟรีตอนนี้</p>
+        <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer">แชท Line</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>&copy; {new Date().getFullYear()} {site.name} · {site.url.replace('https://', '')} · รับซื้อสินค้าไอที ภาคอีสาน</p>
+      <div class="footer__bottom-links">
+        <a href="/about">เกี่ยวกับเรา</a>
+        <a href="/contact">ติดต่อ</a>
+        <a href="/blog">บทความ</a>
+        <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-dark);
+    color: var(--color-gray-300);
+    margin-top: auto;
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2.5rem;
+    padding-block: 4rem 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .footer__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .footer__grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; }
+  }
+
+  /* Brand col */
+  .footer__logo-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .footer__logo-link:hover { opacity: 0.88; }
+
+  .footer__logo-img {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius);
+  }
+
+  .footer__tagline {
+    font-size: 0.9375rem;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .footer__address {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer__map-link {
+    font-size: 0.875rem;
+    color: #f97316;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .footer__map-link:hover { color: #ea580c; text-decoration: underline; }
+
+  /* Headings */
+  .footer__heading {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #64748b;
+    margin-bottom: 1rem;
+  }
+
+  /* Links */
+  .footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer__links a {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .footer__links a:hover { color: var(--color-primary); }
+
+  /* Contact list */
+  .footer__contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer__contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .footer__contact-link:hover { color: var(--color-white); text-decoration: none; }
+  .footer__contact-link--line:hover { color: var(--color-line); }
+  .footer__contact-link--fb:hover { color: var(--color-fb); }
+
+  .footer__contact-icon {
+    font-size: 1rem;
+    width: 1.375rem;
+    flex-shrink: 0;
+  }
+
+  /* Mini CTA */
+  .footer__cta-mini {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255 255 255 / 0.08);
+  }
+
+  .footer__cta-label {
+    font-size: 0.8125rem;
+    color: #64748b;
+    margin-bottom: 0.625rem;
+    font-weight: 600;
+  }
+
+  /* Bottom bar */
+  .footer__bottom {
+    border-top: 1px solid rgba(255 255 255 / 0.07);
+    padding-block: 1.125rem;
+  }
+
+  .footer__bottom-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer__bottom-inner p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #475569;
+  }
+
+  .footer__bottom-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer__bottom-links a {
+    font-size: 0.8rem;
+    color: #475569;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .footer__bottom-links a:hover { color: #94a3b8; }
+</style>

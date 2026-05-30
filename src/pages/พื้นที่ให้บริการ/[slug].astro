@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import AreaLayout from '../../layouts/AreaLayout.astro';
+
+export async function getStaticPaths() {
+  const areas = await getCollection('areas', ({ data }) => !data.draft);
+  const serviceAreas = await getCollection('serviceAreas', ({ data }) => !data.draft);
+
+  return areas.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: {
+      entry,
+      relatedServices: serviceAreas.filter((sa) => sa.data.areaSlug === entry.data.slug),
+      otherAreas: areas.filter((a) => a.data.slug !== entry.data.slug),
+    },
+  }));
+}
+
+const { entry, relatedServices, otherAreas } = Astro.props;
+---
+
+<AreaLayout entry={entry} relatedServices={relatedServices} otherAreas={otherAreas} />

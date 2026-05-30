@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+  return posts.map((entry) => {
+    const relatedPosts = posts
+      .filter((p) => p.data.slug !== entry.data.slug)
+      .filter((p) => p.data.tags.some((tag) => entry.data.tags.includes(tag)))
+      .slice(0, 3);
+
+    const fallbackRelated =
+      relatedPosts.length > 0
+        ? relatedPosts
+        : posts.filter((p) => p.data.slug !== entry.data.slug).slice(0, 3);
+
+    return {
+      params: { slug: entry.data.slug },
+      props: { entry, relatedPosts: fallbackRelated },
+    };
+  });
+}
+
+const { entry, relatedPosts } = Astro.props;
+---
+
+<BlogLayout entry={entry} relatedPosts={relatedPosts} />

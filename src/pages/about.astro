@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAContact from '../components/CTAContact.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { imageAlt } from '../config/images';
+import { site } from '../config/site';
+import { absoluteUrl } from '../lib/seo';
+
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'เกี่ยวกับเรา' },
+];
+
+const pageUrl = absoluteUrl('/about');
+
+const gallery = [
+  {
+    src: '/images/about/amphon-trading-storefront-ubon.webp',
+    caption: 'หน้าร้านอำพล เทรดดิ้ง 740/8 ถนนชยางกูร อุบลราชธานี',
+  },
+  {
+    src: '/images/about/amphon-trading-shop-showroom.webp',
+    caption: 'บรรยากาศหน้าร้าน รับซื้อขายไอที มือถือ คอมพิวเตอร์ ทีวี',
+  },
+  {
+    src: '/images/about/amphon-trading-shop-interior-evaluation.webp',
+    caption: 'ทีมงานตรวจสอบและประเมินราคาสินค้าไอทีมือสอง',
+  },
+  {
+    src: '/images/about/amphon-trading-shop-transaction.webp',
+    caption: 'บริการรับซื้อสินค้าไอที ตรวจสอบและจ่ายเงินทันที',
+  },
+];
+---
+
+<BaseLayout
+  title="เกี่ยวกับเรา"
+  description="อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสองทั่วภาคอีสาน มีหน้าร้านจริง อุบลราชธานี ทีมงานมืออาชีพ ประเมินราคาโปร่งใส จ่ายเงินทันที"
+  canonical={pageUrl}
+  ogImage="/images/about/amphon-trading-storefront-ubon.webp"
+  breadcrumbs={breadcrumbs}
+  pageType="AboutPage"
+>
+  <header class="page-header">
+    <div class="container page-header__grid">
+      <div>
+        <span class="tag tag--orange" style="margin-bottom:.875rem;">AMPHON TRADING</span>
+        <h1>เกี่ยวกับ อำพล เทรดดิ้ง</h1>
+        <p class="page-header__desc">
+          ผู้เชี่ยวชาญด้านการรับซื้อสินค้าไอทีและอิเล็กทรอนิกส์ในภาคอีสาน มีหน้าร้านจริง อุบลราชธานี
+        </p>
+      </div>
+      <figure class="page-header__figure">
+        <OptimizedImage
+          src="/images/hero/hero-amphon-storefront-ubon-banner.webp"
+          alt={imageAlt['/images/hero/hero-amphon-storefront-ubon-banner.webp']}
+          loading="eager"
+          width={600}
+          height={338}
+        />
+      </figure>
+    </div>
+  </header>
+
+  <div class="container">
+    <article class="prose" style="padding-block: 2rem 1rem;">
+      <h2>เราเป็นใคร</h2>
+      <p>
+        <strong>อำพล เทรดดิ้ง (AMPHON TRADING)</strong> คือร้านรับซื้อสินค้าไอทีและอิเล็กทรอนิกส์มือสองในภาคอีสาน
+        ตั้งอยู่ที่ 740/8 ถนนชยางกูร อุบลราชธานี เรามีทีมงานที่มีประสบการณ์ด้านไอที
+        ประเมินราคาโปร่งใส ไม่กดราคา และจ่ายเงินทันทีเมื่อตกลงราคา
+      </p>
+
+      <h2>สิ่งที่เรารับซื้อ</h2>
+      <ul>
+        <li>โน๊ตบุ๊ค / แล็ปท็อป ทุกยี่ห้อ</li>
+        <li>iPhone, iPad, Apple Watch</li>
+        <li>MacBook ทุกรุ่น</li>
+        <li>คอมพิวเตอร์ตั้งโต๊ะ / คอมเล่นเกม / คอมบริษัท</li>
+        <li>กล้อง DSLR / Mirrorless / เลนส์</li>
+        <li>จอมอนิเตอร์ และอุปกรณ์ IT อื่นๆ</li>
+      </ul>
+
+      <h2>พื้นที่ให้บริการ</h2>
+      <p>
+        ให้บริการทั่ว 20 จังหวัดภาคอีสาน รวมอุบลราชธานี ขอนแก่น นครราชสีมา อุดรธานี
+        และจังหวัดอื่นๆ ในภาคอีสาน นัดรับของถึงที่ได้บางพื้นที่
+      </p>
+
+      <h2>ทำไมลูกค้าไว้วางใจเรา</h2>
+      <ul>
+        <li>ประเมินราคาฟรี ไม่มีค่าใช้จ่าย</li>
+        <li>ราคายุติธรรม ตามสภาพจริง</li>
+        <li>จ่ายเงินสด/โอนทันที</li>
+        <li>ทีมงานมืออาชีพ มีความรู้ด้านไอที</li>
+        <li>มีหน้าร้านจริงและช่องทางติดต่อชัดเจน</li>
+      </ul>
+    </article>
+
+    <div class="about-gallery">
+      {gallery.map((item) => (
+        <figure class="about-gallery__item">
+          <OptimizedImage src={item.src} alt={imageAlt[item.src] ?? item.caption} loading="lazy" width={600} height={375} />
+          <figcaption>{item.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+
+  <CTAContact />
+</BaseLayout>

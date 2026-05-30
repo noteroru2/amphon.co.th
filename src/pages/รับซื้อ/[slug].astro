@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import ServiceAreaLayout from '../../layouts/ServiceAreaLayout.astro';
+
+export async function getStaticPaths() {
+  const serviceAreas = await getCollection('serviceAreas', ({ data }) => !data.draft);
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  const areas = await getCollection('areas', ({ data }) => !data.draft);
+
+  return serviceAreas.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: {
+      entry,
+      service: services.find((s) => s.data.slug === entry.data.serviceSlug),
+      area: areas.find((a) => a.data.slug === entry.data.areaSlug),
+    },
+  }));
+}
+
+const { entry, service, area } = Astro.props;
+---
+
+<ServiceAreaLayout entry={entry} service={service} area={area} />

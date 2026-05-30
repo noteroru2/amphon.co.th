@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAContact from '../components/CTAContact.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProvinceGrid from '../components/ProvinceGrid.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { categoryImages, serviceThumbnails, imageAlt } from '../config/images';
+import { getCollection } from 'astro:content';
+import { site } from '../config/site';
+import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema } from '../lib/seo';
+
+const services = (await getCollection('services', ({ data }) => !data.draft)).slice(0, 8);
+const areas    = (await getCollection('areas',    ({ data }) => !data.draft)).slice(0, 8);
+const posts    = (await getCollection('blog',     ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const breadcrumbs = [{ label: 'หน้าแรก' }];
+const pageUrl = absoluteUrl('/');
+
+const serviceItems = services.map((s) => ({
+  name: s.data.title,
+  url: absoluteUrl(`/บริการ/${s.data.slug}`),
+  description: s.data.description,
+}));
+
+const schemaExtras = [
+  createOfferCatalogSchema({ pageUrl, name: 'บริการรับซื้อสินค้าไอที', items: serviceItems }),
+  createItemListSchema({
+    pageUrl,
+    name: 'พื้นที่ให้บริการภาคอีสาน',
+    items: areas.map((a) => ({
+      name: a.data.title,
+      url: absoluteUrl(`/พื้นที่ให้บริการ/${a.data.slug}`),
+      description: a.data.description,
+    })),
+  }),
+];
+
+const categories = [
+  { label: 'iPhone', href: '/บริการ/รับซื้อ-iphone' },
+  { label: 'iPad', href: '/บริการ/รับซื้อ-ipad' },
+  { label: 'MacBook', href: '/บริการ/รับซื้อ-macbook' },
+  { label: 'โน๊ตบุ๊ค', href: '/บริการ/รับซื้อโน๊ตบุ๊ค' },
+  { label: 'คอมพิวเตอร์', href: '/บริการ/รับซื้อคอมพิวเตอร์' },
+  { label: 'คอมบริษัท', href: '/บริการ/รับซื้อคอมบริษัท' },
+  { label: 'กล้อง / เลนส์', href: '/บริการ/รับซื้อกล้อง' },
+  { label: 'ไอทีอื่นๆ', href: '/รับซื้อสินค้าไอที' },
+].map((cat) => ({
+  ...cat,
+  ...(categoryImages[cat.href] ?? {
+    src: '/images/hero/hero-amphon-trading-rub-sue-it-isan.webp',
+    alt: imageAlt['/images/hero/hero-amphon-trading-rub-sue-it-isan.webp'],
+  }),
+}));
+
+const trustPhotos = [
+  {
+    src: '/images/about/amphon-trading-storefront-ubon.webp',
+    title: 'มีหน้าร้านจริง อุบลราชธานี',
+    desc: '740/8 ถนนชยางกูร ตำบลในเมือง อำเภอเมืองอุบลราชธานี',
+  },
+  {
+    src: '/images/about/amphon-trading-shop-interior-evaluation.webp',
+    title: 'ตรวจสอบและจ่ายเงินทันที',
+    desc: 'ทีมงานตรวจสภาพเครื่องจริง โอนเงิน/เงินสดทันทีหลังตกลงราคา',
+  },
+  {
+    src: '/images/about/amphon-trading-shop-showroom.webp',
+    title: 'ประเมินราคาตามสภาพจริง',
+    desc: 'ทีมงานมืออาชีพด้านไอที ตรวจสเปกและสภาพเครื่องอย่างละเอียด',
+  },
+];
+
+const trustItems = [
+  { icon: '💯', title: 'ประเมินราคาตามสภาพจริง',    desc: 'ทีมงานตรวจสเปกลึก ให้ราคาตามค่าจริงของสินค้า ไม่กดราคาตามใจชอบ'      },
+  { icon: '🏪', title: 'มีหน้าร้านและช่องทางชัดเจน', desc: '740/8 ถนนชยางกูร อุบลราชธานี หรือทัก Line @webuy ได้ตลอด 24 ชม.' },
+  { icon: '📦', title: 'รับซื้อหลายประเภทในที่เดียว', desc: 'ไม่ต้องหลายร้าน รับซื้อโน๊ตบุ๊ค มือถือ MacBook คอม กล้อง ครบ'     },
+  { icon: '📸', title: 'ส่งรูปประเมินก่อนได้',       desc: 'ส่งรูปผ่าน Line รับราคาเบื้องต้นใน 15-30 นาที ไม่เสียเวลาเดินทาง' },
+  { icon: '💸', title: 'โอนเงินรวดเร็ว',             desc: 'ตกลงราคาแล้วจ่ายเงินทันที โอน/เงินสด โดยไม่มีค่าใช้จ่ายซ่อนเร้น'  },
+  { icon: '🛡️', title: 'ให้คำแนะนำก่อนขาย',         desc: 'บอกวิธีเตรียมเครื่องให้ได้ราคาดีขึ้น ปรึกษาฟรีทุกวัน'             },
+];
+---
+
+<BaseLayout
+  title="อำพล เทรดดิ้ง รับซื้อสินค้าไอที ภาคอีสาน — ประเมินราคาฟรี"
+  description={site.description}
+  canonical={pageUrl}
+  ogImage="/images/og/og-home.webp"
+  breadcrumbs={breadcrumbs}
+  pageType="WebPage"
+  mainEntityId={schemaIds.offerCatalog(pageUrl)}
+  schemaExtras={schemaExtras}
+>
+  <!-- ====== HERO ====== -->
+  <section class="hero hero--fullbg">
+    <!-- Background image -->
+    <div class="hero__bg-img" aria-hidden="true">
+      <img
+        src="/images/hero/hero-amphon-showroom-rub-sue-it-isan.webp"
+        alt=""
+        width="1400"
+        height="788"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"
+      />
+    </div>
+    <!-- Gradient overlay for text readability -->
+    <div class="hero__bg-overlay" aria-hidden="true"></div>
+
+    <div class="container hero__inner hero__inner--overlay" role="img" aria-label="อำพล เทรดดิ้ง ร้านรับซื้อสินค้าไอที ภาคอีสาน — โน๊ตบุ๊ค MacBook iPhone iPad คอมพิวเตอร์ กล้อง">
+      <!-- Left: copy panel -->
+      <div class="hero__copy hero__copy--glass">
+        <span class="tag tag--orange" style="margin-bottom:1rem;">อำพล เทรดดิ้ง · ภาคอีสาน</span>
+        <h1>รับซื้อสินค้าไอทีทุกชนิด<br/>ในภาคอีสาน</h1>
+        <p class="hero__subtitle">
+          รับซื้อ iPhone, iPad, MacBook, โน๊ตบุ๊ค, คอมพิวเตอร์, กล้อง และอุปกรณ์ไอที<br/>
+          ประเมินราคาฟรี รับซื้อถึงที่บางพื้นที่ จ่ายเงินทันที
+        </p>
+        <div class="hero__actions">
+          <a href={site.line} class="btn btn--line btn--lg" target="_blank" rel="noopener noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/></svg>
+            แชท Line ประเมินราคา
+          </a>
+          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
+            📞 โทร {site.phone}
+          </a>
+          <a href="/พื้นที่ให้บริการ" class="btn btn--ghost">
+            ดูพื้นที่ →
+          </a>
+        </div>
+        <div class="hero__trust">
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> ประเมินราคาฟรี</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> โอนเงินไว</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> มีหน้าร้านจริง</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> รับซื้อถึงที่บางพื้นที่</span>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-value">20</span>
+            <span class="hero__stat-label">จังหวัดอีสาน</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">7+</span>
+            <span class="hero__stat-label">ประเภทสินค้า</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">ฟรี</span>
+            <span class="hero__stat-label">ประเมินจากรูป</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value">ทุกวัน</span>
+            <span class="hero__stat-label">09:00–21:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CATEGORY GRID ====== -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">สินค้าที่รับซื้อ</span>
+        <h2>รับซื้ออะไรบ้าง?</h2>
+        <p>รับซื้อสินค้าไอทีมือสองหลายประเภท ส่งรูปประเมินราคาก่อนได้ทุกชนิด</p>
+      </div>
+      <div class="cat-grid">
+        {categories.map((cat) => (
+          <a href={cat.href} class="cat-card cat-card--image">
+            <OptimizedImage src={cat.src} alt={cat.alt} class="cat-card__thumb" loading="lazy" width={300} height={188} />
+            <span class="cat-card__label">{cat.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HOW IT WORKS ====== -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">ขั้นตอน</span>
+        <h2>ขายสินค้าไอทีกับเรา ง่ายใน 4 ขั้นตอน</h2>
+        <p>ไม่ต้องเดินทาง ส่งรูปผ่าน Line รับราคา แล้วนัดรับของ</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step__number">1</span>
+          <h3 class="step__title">ส่งรูปและสเปกสินค้า</h3>
+          <p class="step__desc">ถ่ายรูปสินค้า ระบุรุ่น สภาพ และอุปกรณ์ที่มีมาด้วย ส่งผ่าน Line @webuy</p>
+        </div>
+        <div class="step">
+          <span class="step__number">2</span>
+          <h3 class="step__title">ประเมินราคาเบื้องต้นฟรี</h3>
+          <p class="step__desc">ทีมงานตรวจสเปกและแจ้งราคาภายใน 15–30 นาที ไม่มีค่าใช้จ่าย</p>
+        </div>
+        <div class="step">
+          <span class="step__number">3</span>
+          <h3 class="step__title">นัดรับ / ส่งสินค้า</h3>
+          <p class="step__desc">นัดรับถึงที่ในบางพื้นที่ หรือนำมาที่ร้านได้เลย ที่อุบลราชธานี</p>
+        </div>
+        <div class="step">
+          <span class="step__number">4</span>
+          <h3 class="step__title">ตรวจสอบและโอนเงิน</h3>
+          <p class="step__desc">ตรวจสภาพเครื่องจริง ตกลงราคาแล้วจ่ายเงินสด/โอนทันที</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">บริการรับซื้อ</span>
+        <h2>สินค้าที่รับซื้อทุกประเภท</h2>
+        <p>รับซื้อสินค้าไอทีมือสองหลายชนิด ราคายุติธรรม โปร่งใส</p>
+      </div>
+      <div class="grid grid--2">
+        {services.slice(0, 4).map((service) => (
+          <ServiceCard
+            title={service.data.title}
+            description={service.data.description}
+            href={`/บริการ/${service.data.slug}`}
+            keyword={service.data.mainKeyword}
+            image={serviceThumbnails[service.data.slug]}
+          />
+        ))}
+      </div>
+      <p class="text-center mt-6">
+        <a href="/รับซื้อสินค้าไอที" class="btn btn--primary">ดูบริการทั้งหมด →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== CTA BAND ====== -->
+  <CTAContact />
+
+  <!-- ====== TRUST ====== -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">ทำไมต้องเลือกเรา</span>
+        <h2>ทำไมต้องขายกับ AMPHON TRADING</h2>
+        <p>เราไม่ใช่แค่ร้านรับซื้อ — เราเชี่ยวชาญด้านฮาร์ดแวร์และประเมินราคาอย่างโปร่งใส</p>
+      </div>
+      <div class="grid grid--3">
+        {trustItems.map((item) => (
+          <div class="card trust-card" style="flex-direction:row;">
+            <div class="trust-card__icon" aria-hidden="true">{item.icon}</div>
+            <div class="trust-card__body">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="about-gallery" style="margin-top:2.5rem;">
+        {trustPhotos.map((photo) => (
+          <figure class="about-gallery__item">
+            <OptimizedImage src={photo.src} alt={imageAlt[photo.src] ?? photo.title} loading="lazy" width={600} height={375} />
+            <figcaption><strong>{photo.title}</strong> — {photo.desc}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== AREAS ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">พื้นที่ให้บริการ</span>
+        <h2>บริการรับซื้อทั่วภาคอีสาน</h2>
+        <p>ให้บริการครอบคลุม 20 จังหวัดอีสาน นัดรับถึงที่ได้บางพื้นที่</p>
+      </div>
+      <ProvinceGrid
+        provinces={areas.map((area) => ({
+          title: area.data.title,
+          slug: area.data.slug,
+          description: area.data.description,
+        }))}
+      />
+      <p class="text-center mt-6">
+        <a href="/พื้นที่ให้บริการ" class="btn btn--outline">ดูพื้นที่ให้บริการทั้งหมด →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== BLOG ====== -->
+  {posts.length > 0 && (
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <span class="eyebrow">บทความความรู้</span>
+          <h2>เคล็ดลับก่อนขายสินค้าไอที</h2>
+          <p>อ่านก่อนขาย เพื่อให้ได้ราคาดีที่สุด</p>
+        </div>
+        <div class="grid grid--3">
+          {posts.map((post) => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              href={`/blog/${post.data.slug}`}
+              date={post.data.date}
+              tags={post.data.tags}
+              image={post.data.heroImage}
+              imageAlt={post.data.title}
+            />
+          ))}
+        </div>
+        <p class="text-center mt-6">
+          <a href="/blog" class="btn btn--outline">อ่านบทความทั้งหมด →</a>
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- ====== FINAL CTA ====== -->
+  <CTAContact title="พร้อมขายแล้ว? ส่งรูปให้เราประเมินราคาฟรีตอนนี้" />
+</BaseLayout>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAContact from '../components/CTAContact.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { imageAlt } from '../config/images';
+import { site } from '../config/site';
+import { absoluteUrl } from '../lib/seo';
+
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'ติดต่อเรา' },
+];
+
+const pageUrl = absoluteUrl('/contact');
+---
+
+<BaseLayout
+  title="ติดต่อเรา"
+  description="ติดต่อ Amphon รับซื้อสินค้าทุกชนิด ภาคอีสาน โทร Line Facebook ประเมินราคาฟรี"
+  canonical={pageUrl}
+  breadcrumbs={breadcrumbs}
+  pageType="ContactPage"
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>ติดต่อเรา</h1>
+      <p class="page-header__desc">
+        สนใจขายสินค้า? ติดต่อประเมินราคาฟรี ทีมงานพร้อมให้บริการทั่วภาคอีสาน
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-card card">
+        <h2 class="card__title">โทรศัพท์</h2>
+        <p class="card__desc">โทรสอบถามหรือนัดหมายได้ทุกวัน 09:00–21:00</p>
+        <a href={`tel:${site.phoneTel}`} class="btn btn--phone">โทร {site.phone}</a>
+      </div>
+
+      <div class="contact-card card">
+        <h2 class="card__title">Line</h2>
+        <p class="card__desc">ส่งรูปสินค้าเพื่อประเมินราคาเบื้องต้นฟรี ตอบเร็ว</p>
+        <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+          แชท Line {site.lineId}
+        </a>
+      </div>
+
+      <div class="contact-card card">
+        <h2 class="card__title">Facebook</h2>
+        <p class="card__desc">ติดตามข่าวสารและโปรโมชั่นได้ที่ Facebook</p>
+        <a href={site.facebook} class="btn btn--facebook" target="_blank" rel="noopener noreferrer">
+          Facebook
+        </a>
+      </div>
+
+      <div class="contact-card card">
+        <h2 class="card__title">อีเมล</h2>
+        <p class="card__desc">สำหรับองค์กรและบริษัทที่ต้องการใบเสนอราคา</p>
+        <a href={`mailto:${site.email}`} class="btn btn--outline">{site.email}</a>
+      </div>
+    </div>
+
+    <div class="contact-address card" style="margin-block: 2rem 3rem;">
+      <div style="margin-bottom:1.25rem;">
+        <OptimizedImage
+          src="/images/about/amphon-trading-storefront-ubon.webp"
+          alt={imageAlt['/images/about/amphon-trading-storefront-ubon.webp']}
+          class="page-hero-image__img"
+          loading="lazy"
+          width={800}
+          height={450}
+        />
+      </div>
+      <h2 class="card__title">ที่อยู่</h2>
+      <p>
+        {site.address.street} {site.address.locality}<br />
+        {site.address.region} {site.address.postalCode}
+      </p>
+      <p class="meta">ให้บริการนัดรับถึงที่ทั่วภาคอีสาน</p>
+      <a href={site.hasMap} class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+        ดูแผนที่ Google Maps
+      </a>
+    </div>
+  </div>
+
+  <CTAContact />
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .contact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+</style>

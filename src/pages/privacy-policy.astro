@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site';
+import { absoluteUrl } from '../lib/seo';
+
+const pageUrl = absoluteUrl('/privacy-policy');
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'นโยบายความเป็นส่วนตัว' },
+];
+---
+
+<BaseLayout
+  title="นโยบายความเป็นส่วนตัว — AMPHON TRADING"
+  description="นโยบายความเป็นส่วนตัวของ AMPHON TRADING อำพล เทรดดิ้ง การเก็บและใช้ข้อมูลส่วนบุคคลตามกฎหมาย PDPA"
+  canonical={pageUrl}
+  breadcrumbs={breadcrumbs}
+  pageType="WebPage"
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>นโยบายความเป็นส่วนตัว</h1>
+      <p class="page-header__desc">
+        อำพล เทรดดิ้ง (AMPHON TRADING) ใส่ใจการคุ้มครองข้อมูลส่วนบุคคลของคุณ
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+    <article class="prose privacy-content">
+
+      <p class="meta">อัปเดตล่าสุด: 30 พฤษภาคม 2568</p>
+
+      <h2>1. ข้อมูลที่เราเก็บรวบรวม</h2>
+      <p>
+        เมื่อคุณติดต่อเราผ่านช่องทางต่างๆ เช่น Line, โทรศัพท์, Facebook หรืออีเมล
+        เราอาจเก็บข้อมูลต่อไปนี้:
+      </p>
+      <ul>
+        <li>ชื่อ-นามสกุล</li>
+        <li>เบอร์โทรศัพท์</li>
+        <li>ที่อยู่สำหรับนัดรับสินค้า</li>
+        <li>ข้อมูลสินค้าที่ต้องการขาย (รูปภาพ, สเปก, สภาพ)</li>
+        <li>ข้อมูลบัญชีธนาคารสำหรับโอนเงิน (เฉพาะเมื่อตกลงราคาแล้ว)</li>
+      </ul>
+
+      <h2>2. วัตถุประสงค์ในการใช้ข้อมูล</h2>
+      <p>เราใช้ข้อมูลเพื่อ:</p>
+      <ul>
+        <li>ประเมินราคาสินค้าและแจ้งข้อเสนอ</li>
+        <li>นัดหมายรับสินค้าและโอนเงิน</li>
+        <li>ติดต่อกลับเพื่อบริการหลังการขาย</li>
+      </ul>
+
+      <h2>3. การเปิดเผยข้อมูล</h2>
+      <p>
+        เราไม่ขาย ไม่เช่า และไม่เปิดเผยข้อมูลส่วนบุคคลของคุณแก่บุคคลที่สาม
+        ยกเว้นกรณีที่กฎหมายกำหนด
+      </p>
+
+      <h2>4. ระยะเวลาการเก็บข้อมูล</h2>
+      <p>
+        เราเก็บข้อมูลเฉพาะที่จำเป็นสำหรับการให้บริการ และจะลบข้อมูลเมื่อไม่มีความจำเป็น
+        หรือตามที่คุณร้องขอ
+      </p>
+
+      <h2>5. สิทธิ์ของเจ้าของข้อมูล</h2>
+      <p>คุณมีสิทธิ์:</p>
+      <ul>
+        <li>ขอดูข้อมูลที่เราเก็บ</li>
+        <li>ขอแก้ไขหรือลบข้อมูล</li>
+        <li>ถอนความยินยอมเมื่อใดก็ได้</li>
+      </ul>
+
+      <h2>6. ความปลอดภัยของข้อมูล</h2>
+      <p>
+        เราใช้มาตรการที่เหมาะสมเพื่อปกป้องข้อมูลส่วนบุคคลจากการเข้าถึงโดยไม่ได้รับอนุญาต
+      </p>
+
+      <h2>7. ติดต่อเรา</h2>
+      <p>
+        หากมีคำถามเกี่ยวกับนโยบายนี้ ติดต่อได้ที่:<br />
+        อีเมล: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+        โทร: <a href={`tel:${site.phoneTel}`}>{site.phone}</a><br />
+        {site.address.street} {site.address.locality} {site.address.region} {site.address.postalCode}
+      </p>
+
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .privacy-content {
+    max-width: 52rem;
+    margin-inline: auto;
+    padding-block: 2rem 4rem;
+  }
+</style>
