@@ -9,10 +9,8 @@ import sharp from 'sharp';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
-const assetsDir = path.join(
-  process.env.ASSETS_DIR ??
-    'C:/Users/User/.cursor/projects/c-Users-User-Desktop-project-amphon-co-th/assets',
-);
+const defaultAssetsDir = path.join(root, 'assets');
+const assetsDir = process.env.ASSETS_DIR ?? defaultAssetsDir;
 const publicDir = path.join(root, 'public', 'images');
 const publicRoot = path.join(root, 'public');
 
@@ -179,8 +177,10 @@ async function writePng(src, dest, size, white = true) {
 }
 
 if (!fs.existsSync(assetsDir)) {
-  console.error(`Assets directory not found: ${assetsDir}`);
-  process.exit(1);
+  console.log(`⊘ Assets directory not found: ${assetsDir}`);
+  console.log('  Skipping image processing — using committed files in public/');
+  console.log('  To regenerate locally: add PNGs to assets/ and run npm run images:process');
+  process.exit(0);
 }
 
 console.log(`Processing ${MAP.length} source images...\n`);
