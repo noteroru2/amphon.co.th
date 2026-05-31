@@ -1,0 +1,108 @@
+---
+import { site } from '../config/site';
+
+const { reviews, aggregateRating } = site;
+
+const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
+---
+
+<section class="section section--gray reviews-section" aria-label="รีวิวจากลูกค้า">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">รีวิวจากลูกค้า</span>
+      <h2>ลูกค้าพูดถึงเรา</h2>
+      <div class="reviews-summary" aria-label={`คะแนนเฉลี่ย ${aggregateRating.ratingValue} จาก 5`}>
+        <span class="reviews-summary__stars" aria-hidden="true">★★★★★</span>
+        <span class="reviews-summary__score">{aggregateRating.ratingValue}</span>
+        <span class="reviews-summary__count">({aggregateRating.reviewCount} รีวิว)</span>
+      </div>
+    </div>
+
+    <div class="grid grid--3">
+      {reviews.map((review) => (
+        <div class="review-card card">
+          <div class="review-card__stars" aria-label={`${review.rating} ดาว`}>
+            {stars(review.rating)}
+          </div>
+          <blockquote class="review-card__text">
+            <p>"{review.text}"</p>
+          </blockquote>
+          <footer class="review-card__author">
+            <strong>{review.author}</strong>
+            <span class="review-card__meta">{review.location} · {review.date}</span>
+          </footer>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .reviews-summary__stars {
+    color: #f59e0b;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .reviews-summary__score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+  }
+
+  .reviews-summary__count {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+  }
+
+  .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0 0 0 / 0.08);
+  }
+
+  .review-card__stars {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .review-card__text {
+    margin: 0;
+    flex: 1;
+  }
+
+  .review-card__text p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: #374151;
+    font-style: italic;
+  }
+
+  .review-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f3f4f6;
+    font-size: 0.875rem;
+  }
+
+  .review-card__meta {
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+  }
+</style>

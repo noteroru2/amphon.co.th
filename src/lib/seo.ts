@@ -144,6 +144,13 @@ export function createLocalBusinessSchema() {
       '@type': 'ContactPoint',
       ...cp,
     })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: site.aggregateRating.ratingValue,
+      bestRating: site.aggregateRating.bestRating,
+      worstRating: site.aggregateRating.worstRating,
+      reviewCount: site.aggregateRating.reviewCount,
+    },
     parentOrganization: { '@id': schemaIds.organization },
     sameAs: [...site.sameAs],
   };

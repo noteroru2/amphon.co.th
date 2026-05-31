@@ -36,7 +36,10 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 const pageUrl = absoluteUrl(`/รับซื้อ/${slug}`);
-const pageImage = resolveOgImage(ogImage, heroImage);
+const resolvedOgImage = (ogImage && ogImage !== '/images/og/og-service-it.webp')
+  ? ogImage
+  : (service?.data.ogImage ?? ogImage);
+const pageImage = resolveOgImage(resolvedOgImage, heroImage ?? service?.data.heroImage);
 const datePublished = date.toISOString();
 const dateModified = contentDateModified(date, updated);
 
@@ -63,8 +66,8 @@ const steps = [
   title={title}
   description={description}
   canonical={pageUrl}
-  ogImage={ogImage}
-  heroImage={heroImage}
+  ogImage={resolvedOgImage}
+  heroImage={heroImage ?? service?.data.heroImage}
   breadcrumbs={breadcrumbs}
   pageType="WebPage"
   mainEntityId={schemaIds.service(pageUrl)}

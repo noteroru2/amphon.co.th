@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
-import { getImageAlt } from '../config/images';
+import { getImageAlt, serviceThumbnails } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import FAQ from '../components/FAQ.astro';
 import ServiceCard from '../components/ServiceCard.astro';
@@ -36,6 +36,15 @@ const breadcrumbs: BreadcrumbItem[] = [
 const pageUrl = absoluteUrl(`/พื้นที่ให้บริการ/${slug}`);
 const datePublished = date.toISOString();
 const dateModified = contentDateModified(date, updated);
+
+const prioritySlugs = [
+  'รับซื้อ-iphone', 'รับซื้อ-ipad', 'รับซื้อ-macbook',
+  'รับซื้อโน๊ตบุ๊ค', 'รับซื้อคอมพิวเตอร์', 'รับซื้อคอมบริษัท', 'รับซื้อกล้อง',
+];
+const featuredServices = relatedServices
+  .filter((sa) => prioritySlugs.includes(sa.data.serviceSlug))
+  .sort((a, b) => prioritySlugs.indexOf(a.data.serviceSlug) - prioritySlugs.indexOf(b.data.serviceSlug))
+  .slice(0, 7);
 
 const schemaExtras = [
   createPlaceSchema({ pageUrl, name: title, description, province }),
@@ -135,5 +144,29 @@ const schemaExtras = [
   </div>
 
   <FAQ items={faqs} />
+
+  {featuredServices.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <span class="eyebrow">บริการรับซื้อใน{province}</span>
+          <h2>สินค้าที่รับซื้อใน{province}</h2>
+          <p>ส่งรูปประเมินราคาฟรี ไม่ต้องเดินทาง จ่ายเงินทันทีเมื่อตกลง</p>
+        </div>
+        <div class="grid grid--3">
+          {featuredServices.map((sa) => (
+            <ServiceCard
+              title={sa.data.title}
+              description={sa.data.description}
+              href={`/รับซื้อ/${sa.data.slug}`}
+              keyword={sa.data.mainKeyword}
+              image={serviceThumbnails[sa.data.serviceSlug]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <CTAContact title={`รับซื้อสินค้าใน${province} — ติดต่อประเมินราคาฟรี`} />
 </BaseLayout>

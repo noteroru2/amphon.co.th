@@ -7,8 +7,10 @@ interface Props {
   width?: number;
   height?: number;
   loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'auto' | 'low';
   class?: string;
   sizes?: string;
+  style?: string;
 }
 
 const {
@@ -17,11 +19,16 @@ const {
   width,
   height,
   loading = 'lazy',
+  fetchpriority,
   class: className,
   sizes,
+  style,
 } = Astro.props;
 
 const resolvedAlt = alt ?? getImageAlt(src, '');
+
+// Auto-generate sizes if not provided but width is known
+const resolvedSizes = sizes ?? (width ? `(max-width: 640px) 100vw, ${width}px` : undefined);
 ---
 
 <img
@@ -32,5 +39,7 @@ const resolvedAlt = alt ?? getImageAlt(src, '');
   loading={loading}
   decoding="async"
   class={className}
-  sizes={sizes}
+  sizes={resolvedSizes}
+  style={style}
+  {...(fetchpriority ? { fetchpriority } : {})}
 />

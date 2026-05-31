@@ -17,7 +17,8 @@
     "images:process": "node scripts/process-production-images.mjs",
     "validate:seo": "node scripts/validate-seo.mjs",
     "check:seo": "npm run build && npm run validate:seo",
-    "build:images": "node scripts/process-production-images.mjs && node scripts/generate-og-default.mjs && node scripts/generate-production-og.mjs && node scripts/generate-og-images.mjs"
+    "build:images": "node scripts/process-production-images.mjs && node scripts/generate-og-default.mjs && node scripts/generate-production-og.mjs && node scripts/generate-og-images.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

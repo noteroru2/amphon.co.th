@@ -5,6 +5,7 @@ import { getImageAlt, serviceThumbnails } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import FAQ from '../components/FAQ.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import Reviews from '../components/Reviews.astro';
 import {
   absoluteUrl,
   schemaIds,
@@ -167,6 +168,8 @@ const steps = [
   </section>
 
   <FAQ items={faqs} />
+
+  <Reviews />
 
   <CTAContact title={`${title} — นัดประเมินราคาฟรีวันนี้`} />
 
