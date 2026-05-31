@@ -24,30 +24,30 @@ const publicDir = join(__dirname, '..', 'public', 'images');
 const PROFILES = [
   {
     dirs: ['services'],
-    maxWidth: 800,
-    maxHeight: 450,
-    quality: 82,
+    maxWidth: 640,
+    maxHeight: 360,
+    quality: 80,
     label: 'service thumbnails',
   },
   {
     dirs: ['about'],
-    maxWidth: 1080,
-    maxHeight: 675,
-    quality: 82,
+    maxWidth: 960,
+    maxHeight: 600,
+    quality: 80,
     label: 'about images',
   },
   {
     dirs: ['hero'],
     maxWidth: 1400,
     maxHeight: 900,
-    quality: 78,
+    quality: 72,
     label: 'hero images',
   },
   {
     dirs: ['blog'],
     maxWidth: 1200,
     maxHeight: 750,
-    quality: 82,
+    quality: 80,
     label: 'blog images',
   },
 ];

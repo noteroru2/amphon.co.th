@@ -90,8 +90,8 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
     alt: 'รับซื้อกล้อง Fujifilm X-A2 Mirrorless เลนส์ 50mm 35mm มือสอง ให้ราคาสูง อำพล เทรดดิ้ง',
   },
   '/รับซื้อสินค้าไอที': {
-    src: '/images/hero/hero-amphon-trading-rub-sue-it-isan.webp',
-    alt: imageAlt['/images/hero/hero-amphon-trading-rub-sue-it-isan.webp'],
+    src: '/images/about/amphon-trading-shop-showroom.webp',
+    alt: 'อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสองครบวงจร ในภาคอีสาน 20 จังหวัด',
   },
 };
 
@@ -104,5 +104,5 @@ export const serviceThumbnails: Record<string, string> = {
   'รับซื้อคอมพิวเตอร์': '/images/services/rub-sue-komputer-gaming-pc-amphon.webp',
   'รับซื้อกล้อง':     '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อคอมบริษัท': '/images/about/amphon-trading-shop-interior-evaluation.webp',
-  'รับซื้อสินค้าไอที': '/images/hero/hero-amphon-trading-rub-sue-it-isan.webp',
+  'รับซื้อสินค้าไอที': '/images/about/amphon-trading-shop-showroom.webp',
 };
