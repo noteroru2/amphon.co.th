@@ -41,7 +41,7 @@
   --color-fb-dk:    #166fe5;
 
   /* Typography */
-  --font-sans: 'Sarabun', 'Leelawadee UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Sarabun', 'Sarabun-Fallback', 'Leelawadee UI', 'Tahoma', system-ui, -apple-system, sans-serif;
   --font-size-base: 1rem;
   --line-height-body: 1.7;
 

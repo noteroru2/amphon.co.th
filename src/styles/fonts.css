@@ -2,7 +2,24 @@
  * Sarabun font — self-hosted via @fontsource/sarabun
  * Using font-display: optional to eliminate CLS from font swap.
  * Only thai + latin subsets, weights 400/600/700/800 (no italic).
+ *
+ * Sarabun metrics (from font tables):
+ *   UPM: 1000, Ascent: 844, Descent: 457, LineGap: 0
+ *
+ * We define metric-matched fallbacks so even if a swap occurs,
+ * the text occupies exactly the same space → zero CLS.
  */
+
+/* ---- Metric-matched fallback fonts ---- */
+/* Fallback using system-ui / Roboto (Android / Lighthouse Moto G) */
+@font-face {
+  font-family: 'Sarabun-Fallback';
+  src: local('Roboto'), local('system-ui'), local('Leelawadee UI'), local('Tahoma'), local('Arial'), local('sans-serif');
+  size-adjust: 105%;
+  ascent-override: 80.4%;
+  descent-override: 43.5%;
+  line-gap-override: 0%;
+}
 
 /* ---- Weight 400 ---- */
 @font-face {
