@@ -7,7 +7,8 @@ import { absoluteUrl, schemaIds, createItemListSchema } from '../lib/seo';
 import { serviceThumbnails } from '../config/images';
 import { site } from '../config/site';
 
-const services = await getCollection('services', ({ data }) => !data.draft);
+const services = (await getCollection('services', ({ data }) => !data.draft))
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
 
 const breadcrumbs = [
   { label: 'หน้าแรก', href: '/' },

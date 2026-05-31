@@ -1,6 +1,7 @@
 ---
 title: "รับซื้อ iPad ทุกรุ่น Gen Air Mini Pro"
 slug: "รับซื้อ-ipad"
+order: 2
 description: "รับซื้อ iPad ทุกรุ่น iPad Gen Air Mini Pro ตรวจ iCloud สภาพจอ แบตเตอรี่ ประเมินฟรี จ่ายทันที"
 mainKeyword: "รับซื้อ iPad"
 relatedKeywords: ["ขาย iPad มือสอง", "รับซื้อ iPad ราคาดี", "รับซื้อ iPad อีสาน", "รับซื้อ iPad อุบลราชธานี", "ประเมินราคา iPad", "iPad มือสอง"]

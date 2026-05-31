@@ -1,6 +1,7 @@
 ---
 title: "รับซื้อ MacBook ทุกรุ่น Air Pro ราคาดี"
 slug: "รับซื้อ-macbook"
+order: 3
 description: "รับซื้อ MacBook Air และ MacBook Pro ทุกชิป Intel M1 M2 M3 M4 ตรวจ Battery Cycle ประเมินฟรี"
 mainKeyword: "รับซื้อ MacBook"
 relatedKeywords: ["ขาย MacBook มือสอง", "รับซื้อ MacBook ราคาดี", "รับซื้อ MacBook อีสาน", "รับซื้อ MacBook อุบลราชธานี", "ประเมินราคา MacBook", "MacBook มือสอง"]

@@ -23,6 +23,7 @@ const services = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/services' }),
   schema: baseSchema.extend({
     icon: z.string().optional(),
+    order: z.number().optional(),
     faqs: z.array(faqItemSchema).default([]),
   }),
 });

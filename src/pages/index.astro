@@ -10,7 +10,9 @@ import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema } from '../lib/seo';
 
-const services = (await getCollection('services', ({ data }) => !data.draft)).slice(0, 8);
+const services = (await getCollection('services', ({ data }) => !data.draft))
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
+  .slice(0, 8);
 const areas    = (await getCollection('areas',    ({ data }) => !data.draft)).slice(0, 8);
 const posts    = (await getCollection('blog',     ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())

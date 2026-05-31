@@ -1,6 +1,7 @@
 ---
 title: "รับซื้อ iPhone ทุกรุ่น ราคาสูง จ่ายสด"
 slug: "รับซื้อ-iphone"
+order: 1
 description: "รับซื้อ iPhone มือสองทุกรุ่น ตั้งแต่ iPhone 8 ถึง iPhone 16 ตรวจ Battery Health Face ID iCloud ประเมินฟรี"
 mainKeyword: "รับซื้อ iPhone"
 relatedKeywords: ["ขาย iPhone มือสอง", "รับซื้อ iPhone ราคาดี", "รับซื้อ iPhone อีสาน", "รับซื้อ iPhone อุบลราชธานี", "ประเมินราคา iPhone", "iPhone มือสอง"]
