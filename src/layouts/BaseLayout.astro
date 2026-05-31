@@ -6,6 +6,11 @@ import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { site } from '../config/site';
 import { absoluteUrl, seoTitle, buildPageGraph, resolveOgImage } from '../lib/seo';
+import '@fontsource/sarabun/400.css';
+import '@fontsource/sarabun/500.css';
+import '@fontsource/sarabun/600.css';
+import '@fontsource/sarabun/700.css';
+import '@fontsource/sarabun/800.css';
 import type { BreadcrumbItem } from '../config/site';
 
 interface Props {
@@ -70,20 +75,6 @@ const schemaGraph = buildPageGraph({
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=optional"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=optional"
-        rel="stylesheet"
-      />
-    </noscript>
 
     <title>{pageTitle}</title>
     <meta name="description" content={description} />

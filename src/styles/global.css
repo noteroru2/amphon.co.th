@@ -227,6 +227,7 @@ p  { margin-top: 0; }
   font-size: 0.9375rem;
   font-weight: 700;
   line-height: 1;
+  min-height: 44px;
   border-radius: var(--radius-full);
   border: 2px solid transparent;
   cursor: pointer;
