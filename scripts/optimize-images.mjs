@@ -31,16 +31,16 @@ const PROFILES = [
   },
   {
     dirs: ['about'],
-    maxWidth: 960,
-    maxHeight: 600,
-    quality: 80,
+    maxWidth: 800,
+    maxHeight: 500,
+    quality: 75,
     label: 'about images',
   },
   {
     dirs: ['hero'],
-    maxWidth: 1400,
-    maxHeight: 900,
-    quality: 72,
+    maxWidth: 1200,
+    maxHeight: 675,
+    quality: 65,
     label: 'hero images',
   },
   {
