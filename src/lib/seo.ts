@@ -99,6 +99,7 @@ export function createOrganizationSchema() {
     email: site.email,
     telephone: site.phoneTel,
     foundingDate: site.foundingDate,
+    knowsAbout: [...site.knowsAbout],
     contactPoint: site.contactPoint.map((cp) => ({
       '@type': 'ContactPoint',
       ...cp,

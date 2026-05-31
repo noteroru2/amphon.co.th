@@ -34,6 +34,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 const pageUrl = absoluteUrl(`/พื้นที่ให้บริการ/${slug}`);
+const datePublished = date.toISOString();
 const dateModified = contentDateModified(date, updated);
 
 const schemaExtras = [
@@ -51,6 +52,7 @@ const schemaExtras = [
   breadcrumbs={breadcrumbs}
   pageType="WebPage"
   mainEntityId={schemaIds.place(pageUrl)}
+  datePublished={datePublished}
   dateModified={dateModified}
   geoPlace={province}
   schemaExtras={schemaExtras}

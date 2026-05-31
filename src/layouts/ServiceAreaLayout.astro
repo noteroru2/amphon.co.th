@@ -37,6 +37,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 
 const pageUrl = absoluteUrl(`/รับซื้อ/${slug}`);
 const pageImage = resolveOgImage(ogImage, heroImage);
+const datePublished = date.toISOString();
 const dateModified = contentDateModified(date, updated);
 
 const schemaExtras = [
@@ -67,6 +68,7 @@ const steps = [
   breadcrumbs={breadcrumbs}
   pageType="WebPage"
   mainEntityId={schemaIds.service(pageUrl)}
+  datePublished={datePublished}
   dateModified={dateModified}
   geoPlace={area?.data.province}
   schemaExtras={schemaExtras}
