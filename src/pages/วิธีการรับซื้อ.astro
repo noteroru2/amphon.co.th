@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAContact from '../components/CTAContact.astro';
+import { site } from '../config/site';
+import { absoluteUrl, schemaIds, createFAQSchema } from '../lib/seo';
+
+const breadcrumbs = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'วิธีการรับซื้อ' },
+];
+
+const pageUrl = absoluteUrl('/วิธีการรับซื้อ');
+
+const faqs = [
+  {
+    question: 'ขั้นตอนการขายสินค้าไอทีมีอะไรบ้าง?',
+    answer:
+      'ส่งรูปผ่าน Line @webuy → รับราคาเบื้องต้นใน 15–30 นาที → นัดรับถึงที่หรือมาที่ร้าน → ตรวจสภาพจริง → ตกลงราคาและจ่ายเงินทันที',
+  },
+  {
+    question: 'ต้องใช้เอกสารอะไรบ้างในการขาย?',
+    answer:
+      'บัตรประชาชนตัวจริง 1 ใบ สำหรับการยืนยันตัวตนตามกฎหมาย หากเป็นสินค้ามูลค่าสูงอาจต้องถ่ายรูปบัตรประกอบ',
+  },
+  {
+    question: 'ประเมินราคาเบื้องต้นผ่าน Line ฟรีหรือไม่?',
+    answer:
+      'ฟรี ส่งรูปสินค้า ระบุรุ่น ความจุ และสภาพคร่าวๆ ผ่าน Line @webuy ทีมงานจะส่งราคาเบื้องต้นให้ภายใน 15–30 นาที ไม่มีค่าใช้จ่าย',
+  },
+  {
+    question: 'รับซื้อถึงที่ได้ไหม?',
+    answer:
+      'ได้ในบางพื้นที่ของภาคอีสาน โดยเฉพาะในจังหวัดใหญ่ สามารถแจ้งที่อยู่ผ่าน Line เพื่อนัดหมายล่วงหน้าได้เลย',
+  },
+  {
+    question: 'ได้รับเงินเมื่อไหร่?',
+    answer:
+      'จ่ายเงินทันทีหลังตรวจสอบและตกลงราคาแล้ว ทั้งเงินสดและโอนธนาคาร/พร้อมเพย์',
+  },
+  {
+    question: 'สินค้ามีตำหนิหรือเสียบางส่วน รับซื้อได้ไหม?',
+    answer:
+      'รับซื้อได้ แต่ราคาจะถูกประเมินตามสภาพจริง ส่งรูปมาก่อนได้เลยเพื่อรับราคาเบื้องต้น',
+  },
+];
+
+const schemaExtras = [createFAQSchema(pageUrl, faqs)].filter(Boolean);
+
+const steps = [
+  {
+    num: '01',
+    icon: '📸',
+    title: 'ส่งรูปประเมิน',
+    desc: 'ถ่ายรูปสินค้า ระบุรุ่น ความจุ สภาพ และอุปกรณ์ที่มี ส่งผ่าน Line @webuy ได้ตลอด 24 ชม.',
+    hint: 'ถ่ายรูปจอ ด้านหลัง มุมทั้ง 4 ด้าน เพื่อได้ราคาแม่นยำ',
+  },
+  {
+    num: '02',
+    icon: '💬',
+    title: 'รับราคาเบื้องต้น',
+    desc: 'ทีมงานตอบราคาเบื้องต้นภายใน 15–30 นาที ไม่ต้องเดินทาง ฟรีทุกกรณี',
+    hint: 'ราคาเบื้องต้นอาจปรับเล็กน้อยเมื่อตรวจสภาพจริง',
+  },
+  {
+    num: '03',
+    icon: '📅',
+    title: 'นัดรับหรือมาที่ร้าน',
+    desc: 'เลือกมาที่ร้าน 740/8 ถนนชยางกูร อุบลราชธานี หรือนัดรับถึงที่ในบางพื้นที่',
+    hint: 'เปิดทุกวัน 09:00–21:00 น.',
+  },
+  {
+    num: '04',
+    icon: '🔍',
+    title: 'ตรวจสภาพจริง',
+    desc: 'ทีมงานตรวจสเปก สภาพ และทดสอบการใช้งาน ใช้เวลาไม่นาน',
+    hint: 'นำอุปกรณ์ครบ (สาย กล่อง ใบเสร็จ) ช่วยให้ได้ราคาดีขึ้น',
+  },
+  {
+    num: '05',
+    icon: '💸',
+    title: 'รับเงินทันที',
+    desc: 'ตกลงราคาแล้วจ่ายเงินสดหรือโอนทันที ไม่มีค่าใช้จ่ายซ่อนเร้น',
+    hint: 'รองรับเงินสด โอนธนาคาร และพร้อมเพย์',
+  },
+];
+
+const prepItems = [
+  { icon: '🪪', text: 'บัตรประชาชน (สำหรับสินค้ามูลค่าสูง)' },
+  { icon: '🔋', text: 'ชาร์จแบตให้พอ 30% ขึ้นไป' },
+  { icon: '🔓', text: 'ออกจาก iCloud / Google Account ก่อนขาย iPhone/MacBook' },
+  { icon: '📦', text: 'เตรียมกล่อง ใบเสร็จ และอุปกรณ์ครบ (ถ้ามี)' },
+  { icon: '📷', text: 'ถ่ายรูปสภาพก่อนมาเพื่อความรวดเร็ว' },
+];
+---
+
+<BaseLayout
+  title="วิธีการรับซื้อ — ขั้นตอนขายสินค้าไอทีกับ AMPHON TRADING"
+  description="ขั้นตอนขายสินค้าไอทีกับอำพล เทรดดิ้ง ส่งรูปประเมินฟรีผ่าน Line รับราคาใน 15–30 นาที นัดรับถึงที่ จ่ายเงินทันที"
+  canonical={pageUrl}
+  ogImage="/images/og/og-home.webp"
+  breadcrumbs={breadcrumbs}
+  pageType="WebPage"
+  schemaExtras={schemaExtras}
+>
+  <!-- Hero -->
+  <header class="page-header how-hero">
+    <div class="container">
+      <span class="eyebrow">ขายง่าย ได้เงินไว</span>
+      <h1>วิธีการรับซื้อ</h1>
+      <p class="page-header__desc">
+        ขายสินค้าไอทีกับ <strong>อำพล เทรดดิ้ง</strong> ง่ายใน 5 ขั้นตอน ส่งรูปผ่าน Line ไม่ต้องเดินทาง รับเงินทันที
+      </p>
+      <div class="how-hero__cta">
+        <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/>
+          </svg>
+          ส่งรูปประเมินราคาตอนนี้
+        </a>
+        <a href={`tel:${site.phoneTel}`} class="btn btn--phone">โทร {site.phone}</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Steps -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">ขั้นตอน</span>
+        <h2>5 ขั้นตอน รับเงินทันที</h2>
+      </div>
+      <ol class="how-steps">
+        {steps.map((step) => (
+          <li class="how-step">
+            <div class="how-step__num" aria-hidden="true">{step.num}</div>
+            <div class="how-step__icon" aria-hidden="true">{step.icon}</div>
+            <div class="how-step__body">
+              <h3 class="how-step__title">{step.title}</h3>
+              <p class="how-step__desc">{step.desc}</p>
+              <p class="how-step__hint">💡 {step.hint}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Prep Checklist -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">เตรียมตัว</span>
+        <h2>เตรียมอะไรก่อนขาย?</h2>
+        <p>เตรียมครบ ได้ราคาดี ทำธุรกรรมเร็วขึ้น</p>
+      </div>
+      <ul class="prep-list">
+        {prepItems.map((item) => (
+          <li class="prep-item card">
+            <span class="prep-item__icon" aria-hidden="true">{item.icon}</span>
+            <span class="prep-item__text">{item.text}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">คำถามที่พบบ่อย</span>
+        <h2>มีคำถามเพิ่มเติม?</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map((faq, i) => (
+          <details class="faq-item card" open={i === 0}>
+            <summary class="faq-item__q">{faq.question}</summary>
+            <p class="faq-item__a">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Line QR + CTA -->
+  <section class="section section--gray how-final">
+    <div class="container how-final__inner">
+      <div class="how-final__text">
+        <h2>พร้อมขายแล้ว?</h2>
+        <p>ส่งรูปมาเลย ประเมินราคาฟรีภายใน 15–30 นาที</p>
+        <div class="how-final__cta">
+          <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">แชท Line {site.lineId}</a>
+          <a href={`tel:${site.phoneTel}`} class="btn btn--phone">โทร {site.phone}</a>
+        </div>
+        <p class="how-final__hours">เปิดหน้าร้านทุกวัน 09:00–21:00 น. · Line รับข้อความตลอด 24 ชม.</p>
+      </div>
+      <div class="how-final__qr">
+        <img
+          src="/images/brand/line-qr-webuy.png"
+          alt="QR Code Line @webuy — สแกนเพิ่มเพื่อนและส่งรูปประเมินราคาฟรี"
+          width="160"
+          height="160"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="how-final__qr-label">สแกน QR เพิ่มเพื่อน</p>
+      </div>
+    </div>
+  </section>
+
+  <CTAContact />
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .how-hero .page-header__desc strong { color: var(--color-primary); }
+
+  .how-hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Steps */
+  .how-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    counter-reset: steps;
+    position: relative;
+  }
+
+  /* vertical connector line */
+  .how-steps::before {
+    content: '';
+    position: absolute;
+    left: 2.25rem;
+    top: 3rem;
+    bottom: 3rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-line) 100%);
+    opacity: 0.3;
+  }
+
+  @media (min-width: 768px) {
+    .how-steps::before { left: 3rem; }
+  }
+
+  .how-step {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 1.25rem;
+    padding-block: 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .how-step {
+      grid-template-columns: 5.5rem 1fr;
+    }
+  }
+
+  .how-step__num {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+    align-self: end;
+  }
+
+  .how-step__icon {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: 2rem;
+    line-height: 1;
+    background: var(--color-gray-100);
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .how-step__icon {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2.25rem;
+    }
+  }
+
+  .how-step__body {
+    grid-row: 1 / 3;
+    grid-column: 2;
+    padding-top: 0.25rem;
+  }
+
+  .how-step__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.375rem;
+  }
+
+  .how-step__desc {
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .how-step__hint {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    background: var(--color-gray-100);
+    border-left: 3px solid var(--color-primary);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 0;
+  }
+
+  /* Prep list */
+  .prep-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .prep-list { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .prep-item {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .prep-item__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .prep-item__text {
+    font-weight: 500;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .faq-item__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-item__q::-webkit-details-marker { display: none; }
+
+  .faq-item__q::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  details[open] .faq-item__q::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-item__a {
+    padding: 0 1.25rem 1rem;
+    color: var(--color-muted);
+    margin: 0;
+    border-top: 1px solid var(--color-border);
+    padding-top: 0.875rem;
+  }
+
+  /* Final section */
+  .how-final__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .how-final__inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .how-final__text h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .how-final__text p {
+    color: var(--color-muted);
+  }
+
+  .how-final__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-block: 1rem;
+  }
+
+  .how-final__hours {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin: 0;
+  }
+
+  .how-final__qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .how-final__qr img {
+    border: 3px solid #00b900;
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 0.375rem;
+    display: block;
+  }
+
+  .how-final__qr-label {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin: 0;
+    text-align: center;
+  }
+</style>

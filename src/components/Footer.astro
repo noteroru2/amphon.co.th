@@ -88,7 +88,19 @@ import { site } from '../config/site';
 
       <div class="footer__cta-mini">
         <p class="footer__cta-label">ประเมินราคาฟรีตอนนี้</p>
-        <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer">แชท Line</a>
+        <div class="footer__line-qr">
+          <img
+            src="/images/brand/line-qr-webuy.png"
+            alt="QR Code Line @webuy"
+            width="88"
+            height="88"
+            loading="lazy"
+            decoding="async"
+            class="footer__qr-img"
+          />
+          <p class="footer__qr-label">สแกนเพิ่มเพื่อน</p>
+        </div>
+        <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer">แชท Line {site.lineId}</a>
       </div>
     </div>
   </div>
@@ -98,6 +110,7 @@ import { site } from '../config/site';
       <p>&copy; {new Date().getFullYear()} {site.name} · {site.url.replace('https://', '')} · รับซื้อสินค้าไอที ภาคอีสาน</p>
       <div class="footer__bottom-links">
         <a href="/about">เกี่ยวกับเรา</a>
+        <a href="/วิธีการรับซื้อ">วิธีการขาย</a>
         <a href="/contact">ติดต่อ</a>
         <a href="/blog">บทความ</a>
         <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
@@ -234,6 +247,28 @@ import { site } from '../config/site';
     color: #64748b;
     margin-bottom: 0.625rem;
     font-weight: 600;
+  }
+
+  .footer__line-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .footer__qr-img {
+    border: 2px solid #00b900;
+    border-radius: 0.375rem;
+    background: #fff;
+    padding: 0.2rem;
+    display: block;
+  }
+
+  .footer__qr-label {
+    font-size: 0.75rem;
+    color: #475569;
+    margin: 0;
   }
 
   /* Bottom bar */

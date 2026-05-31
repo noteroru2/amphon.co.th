@@ -1070,6 +1070,7 @@ p  { margin-top: 0; }
   display: flex;
   gap: 0.625rem;
   align-items: center;
+  transition: transform 0.25s ease;
 }
 
 .sticky-cta__btn {

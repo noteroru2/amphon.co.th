@@ -40,7 +40,18 @@ const pageUrl = absoluteUrl('/contact');
 
       <div class="contact-card card">
         <h2 class="card__title">Line</h2>
-        <p class="card__desc">ส่งรูปสินค้าเพื่อประเมินราคาเบื้องต้นฟรี ตอบเร็ว</p>
+        <p class="card__desc">ส่งรูปสินค้าประเมินราคาเบื้องต้นฟรี รับข้อความตลอด 24 ชม.</p>
+        <div class="contact-card__qr">
+          <img
+            src="/images/brand/line-qr-webuy.png"
+            alt="QR Code Line @webuy — สแกนเพื่อประเมินราคาฟรี"
+            width="120"
+            height="120"
+            loading="lazy"
+            decoding="async"
+          />
+          <p class="contact-card__qr-label">สแกน QR เพิ่มเพื่อน</p>
+        </div>
         <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
           แชท Line {site.lineId}
         </a>
@@ -108,5 +119,25 @@ const pageUrl = absoluteUrl('/contact');
   .contact-card .btn {
     margin-top: auto;
     align-self: flex-start;
+  }
+
+  .contact-card__qr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+    margin-block: 0.875rem;
+  }
+
+  .contact-card__qr img {
+    border: 3px solid #00b900;
+    border-radius: 0.5rem;
+    display: block;
+  }
+
+  .contact-card__qr-label {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin: 0;
   }
 </style>

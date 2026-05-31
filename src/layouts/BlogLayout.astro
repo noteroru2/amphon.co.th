@@ -34,7 +34,7 @@ const datePublished = date.toISOString();
 const dateModified = (updated ?? date).toISOString();
 const pageImage = resolveOgImage(ogImage, heroImage);
 
-const formattedDate = date.toLocaleDateString('th-TH', {
+const formattedDate = date.toLocaleDateString('th-TH-u-ca-gregory', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
