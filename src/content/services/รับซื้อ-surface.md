@@ -81,8 +81,8 @@ faqs:
 ## บริการอื่นๆ
 
 นอกเหนือจาก Surface แล้ว เรายังรับซื้อสินค้าไอทีอื่นๆ:
-- [รับซื้อ iPad ให้ราคาดี](/services/รับซื้อ-ipad)
-- [รับซื้อ MacBook](/services/รับซื้อ-macbook)
-- [รับซื้อ Mac mini](/services/รับซื้อ-mac-mini)
+- [รับซื้อ iPad ให้ราคาดี](/บริการ/รับซื้อ-ipad)
+- [รับซื้อ MacBook](/บริการ/รับซื้อ-macbook)
+- [รับซื้อ Mac mini](/บริการ/รับซื้อ-mac-mini)
 
 > **ขาย Surface สะดวก รวดเร็ว ได้เงินชัวร์ แอดไลน์ [@webuy](https://line.me/ti/p/~@webuy)**

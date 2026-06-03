@@ -81,8 +81,8 @@ faqs:
 ## บริการอื่นๆ
 
 นอกจาก iMac แล้ว เรายังรับซื้อสินค้าตระกูล Mac อื่นๆ:
-- [รับซื้อ MacBook มือสอง](/services/รับซื้อ-macbook)
-- [รับซื้อ Mac mini](/services/รับซื้อ-mac-mini)
-- [รับซื้อ iPad](/services/รับซื้อ-ipad)
+- [รับซื้อ MacBook มือสอง](/บริการ/รับซื้อ-macbook)
+- [รับซื้อ Mac mini](/บริการ/รับซื้อ-mac-mini)
+- [รับซื้อ iPad](/บริการ/รับซื้อ-ipad)
 
 > **ขาย iMac ง่ายๆ ได้ราคาดี แอดไลน์ [@webuy](https://line.me/ti/p/~@webuy)**
