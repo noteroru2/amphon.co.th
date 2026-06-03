@@ -2,7 +2,7 @@
 title: "รับซื้อกล้อง Sony มือสอง ทุกรุ่น ตีราคาไว ให้ราคาสูง"
 slug: "รับซื้อกล้อง-sony"
 order: 18
-description: "รับซื้อกล้อง Sony มือสอง ให้ราคาสูงสุดๆ ทั้ง A7 Series, ZV Series รับซื้อถึงที่ ตีราคาไว โอนเงินทันที บริการเป็นกันเอง"
+description: "รับซื้อกล้อง Sony มือสอง ให้ราคาสูงสุดๆ ทั้ง A7 Series, ZV Series รับซื้อถึงที่ ตีราคาไว โอนเงินทันที บริการเป็นกันเอง ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อกล้อง Sony"
 relatedKeywords: ["รับซื้อกล้องโซนี่", "ขายกล้อง Sony", "รับซื้อ Sony A7", "รับซื้อ Sony ZV", "รับซื้อกล้องมือสอง"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

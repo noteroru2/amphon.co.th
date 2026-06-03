@@ -2,7 +2,7 @@
 title: "รับซื้อ Mac mini ตีราคาแฟร์ จ่ายเงินไว บริการนัดรับ"
 slug: "รับซื้อ-mac-mini"
 order: 15
-description: "รับซื้อ Mac mini M1, M2, M2 Pro ทุกรุ่น สภาพสวยให้ราคางาม ประเมินราคาผ่านไลน์ง่ายๆ นัดรับทั่ว จ่ายสดทันที"
+description: "รับซื้อ Mac mini M1, M2, M2 Pro ทุกรุ่น สภาพสวยให้ราคางาม ประเมินราคาผ่านไลน์ง่ายๆ นัดรับทั่ว จ่ายสดทันที ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ Mac mini"
 relatedKeywords: ["ขาย Mac mini", "รับซื้อ Mac mini M2", "ร้านรับซื้อ Mac "]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

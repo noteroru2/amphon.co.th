@@ -2,7 +2,7 @@
 title: "รับซื้อลำโพง Marshall ทุกรุ่น ตีราคาแฟร์  | อำพล เทรดดิ้ง"
 slug: "รับซื้อ-marshall"
 order: 10
-description: "รับซื้อลำโพง Marshall มือสอง ของแท้ รุ่น Stanmore, Kilburn, Emberton, Woburn, Acton ประเมินราคาฟรี จ่ายสด มีหน้าร้านจริง ทักไลน์ @webuy"
+description: "รับซื้อลำโพง Marshall มือสอง ของแท้ รุ่น Stanmore, Kilburn, Emberton, Woburn, Acton ประเมินราคาฟรี จ่ายสด มีหน้าร้านจริง ทักไลน์ @webuy ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อลำโพง Marshall"
 relatedKeywords: ["รับซื้อ Marshall", "รับซื้อลำโพงมาร์แชล", "ขายลำโพง Marshall", "รับซื้อ Stanmore", "ร้านรับซื้อลำโพง ", "ลำโพงบลูทูธมือสอง"]
 heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"

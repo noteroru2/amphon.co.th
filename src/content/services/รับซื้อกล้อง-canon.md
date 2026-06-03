@@ -2,7 +2,7 @@
 title: "รับซื้อกล้อง Canon มือสอง ให้ราคาสูง ประเมินราคาฟรี"
 slug: "รับซื้อกล้อง-canon"
 order: 17
-description: "รับซื้อกล้อง Canon ทุกรุ่น ทั้ง DSLR และ Mirrorless มือสอง ให้ราคาสูง ตีราคาไว โอนเงินทันที บริการรับซื้อถึงที่ ทั่วประเทศ"
+description: "รับซื้อกล้อง Canon ทุกรุ่น ทั้ง DSLR และ Mirrorless มือสอง ให้ราคาสูง ตีราคาไว โอนเงินทันที บริการรับซื้อถึงที่ ทั่วประเทศ ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อกล้อง Canon"
 relatedKeywords: ["รับซื้อกล้องแคนนอน", "ขายกล้อง Canon", "รับซื้อกล้อง DSLR", "รับซื้อกล้อง Mirrorless", "รับซื้อกล้องมือสอง"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

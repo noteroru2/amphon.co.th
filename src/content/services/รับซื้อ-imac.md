@@ -2,7 +2,7 @@
 title: "รับซื้อ iMac มือสอง ราคาดีสุด ประเมินฟรี"
 slug: "รับซื้อ-imac"
 order: 14
-description: "รับซื้อ iMac M1, M3 ทุกสี ทุกสเปค ให้ราคาสูง ตีราคายุติธรรม นัดรับได้สะดวกในพื้น ไม่ต้องยกไปร้านเอง"
+description: "รับซื้อ iMac M1, M3 ทุกสี ทุกสเปค ให้ราคาสูง ตีราคายุติธรรม นัดรับได้สะดวกในพื้น ไม่ต้องยกไปร้านเอง ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ iMac"
 relatedKeywords: ["รับซื้อ iMac M1", "รับซื้อ iMac มือสอง", "ขาย iMac "]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

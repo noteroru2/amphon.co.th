@@ -2,7 +2,7 @@
 title: "รับซื้อกล้อง Fujifilm มือสอง ตีราคาไว ให้ราคาดีที่สุด"
 slug: "รับซื้อกล้อง-fujifilm"
 order: 19
-description: "รับซื้อกล้อง Fujifilm มือสอง ทุกรุ่น X-Series, GFX ให้ราคาสูง ตีราคาแฟร์ โอนไว บริการรับซื้อถึงหน้าบ้านคุณ"
+description: "รับซื้อกล้อง Fujifilm มือสอง ทุกรุ่น X-Series, GFX ให้ราคาสูง ตีราคาแฟร์ โอนไว บริการรับซื้อถึงหน้าบ้านคุณ ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อกล้อง Fujifilm"
 relatedKeywords: ["รับซื้อกล้องฟูจิ", "ขายกล้อง Fujifilm", "รับซื้อ Fuji X-T", "รับซื้อกล้องมือสอง"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

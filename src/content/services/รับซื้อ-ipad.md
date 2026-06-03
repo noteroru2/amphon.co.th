@@ -1,8 +1,8 @@
 ---
-title: "รับซื้อ iPad ทุกรุ่น ให้ราคาสูงสุด ประเมินฟรี | อำพล เทรดดิ้ง"
+title: "รับซื้อ iPad ทุกรุ่น ให้ราคาสูงสุด ประเมินฟรี ใกล้ฉัน รับซื้อถึงบ้าน | อำพล เทรดดิ้ง"
 slug: "รับซื้อ-ipad"
 order: 6
-description: "รับซื้อไอแพดมือสอง iPad Pro, Air, mini, Gen 7-10 รับซื้อ iPad จอแตก แบตเสื่อม  ประเมินราคาผ่าน Line @webuy ฟรี"
+description: "รับซื้อไอแพดมือสอง iPad Pro, Air, mini, Gen 7-10 รับซื้อ iPad จอแตก แบตเสื่อม  ประเมินราคาผ่าน Line @webuy ฟรี ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ iPad"
 relatedKeywords: ["รับซื้อไอแพด", "ขายไอแพดมือสอง", "รับซื้อ iPad Pro", "รับซื้อ iPad ", "ไอแพดมือสอง ", "รับซื้อแท็บเล็ต"]
 heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"

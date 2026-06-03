@@ -2,7 +2,7 @@
 title: "รับซื้อ SSD และ HDD"
 slug: "รับซื้อ-ssd"
 order: 16
-description: "รับซื้อ SSD และ HDD มือสอง M.2 NVMe, SATA ทุกความจุ ให้ราคาสูง ประเมินราคาฟรี จ่ายเงินไว"
+description: "รับซื้อ SSD และ HDD มือสอง M.2 NVMe, SATA ทุกความจุ ให้ราคาสูง ประเมินราคาฟรี จ่ายเงินไว ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ ssd"
 relatedKeywords: 
   - "รับซื้อ HDD"

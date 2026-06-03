@@ -2,7 +2,7 @@
 title: "รับซื้อ GoPro กล้องแอคชั่นแคม ราคาดีสุด"
 slug: "รับซื้อ-gopro"
 order: 18
-description: "รับซื้อ GoPro Hero 10, 11, 12 ทุกสภาพ มีอุปกรณ์ครบยิ่งได้ราคาดี ตีราคาไว นัดรับง่าย จ่ายเงินสดหรือโอนทันที"
+description: "รับซื้อ GoPro Hero 10, 11, 12 ทุกสภาพ มีอุปกรณ์ครบยิ่งได้ราคาดี ตีราคาไว นัดรับง่าย จ่ายเงินสดหรือโอนทันที ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ GoPro"
 relatedKeywords: ["รับซื้อกล้อง GoPro", "ขาย GoPro มือสอง", "รับซื้อ Action Camera"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

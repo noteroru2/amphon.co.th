@@ -1,8 +1,8 @@
 ---
-title: "รับซื้อ MacBook Pro, Air ทุกรุ่น ประเมินฟรี จ่ายสด | อำพล เทรดดิ้ง"
+title: "รับซื้อ MacBook Pro, Air ทุกรุ่น ประเมินฟรี จ่ายสด ใกล้ฉัน รับซื้อถึงบ้าน | อำพล เทรดดิ้ง"
 slug: "รับซื้อ-macbook"
 order: 7
-description: "รับซื้อ MacBook Pro, MacBook Air ชิป M1, M2, M3, M4 รับซื้อเครื่อง Intel เก่า ตีราคายุติธรรม จ่ายเงินสดทันที มีหน้าร้านจริง ส่งรูปประเมินผ่าน Line"
+description: "รับซื้อ MacBook Pro, MacBook Air ชิป M1, M2, M3, M4 รับซื้อเครื่อง Intel เก่า ตีราคายุติธรรม จ่ายเงินสดทันที มีหน้าร้านจริง ส่งรูปประเมินผ่าน Line ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ MacBook"
 relatedKeywords: ["รับซื้อแมคบุ๊ค", "ขาย MacBook มือสอง", "รับซื้อ MacBook Air", "รับซื้อ MacBook Pro", "ร้านรับซื้อ Apple ", "MacBook มือสอง "]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

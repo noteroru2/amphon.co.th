@@ -2,7 +2,7 @@
 title: "รับซื้อ Surface ทุกรุ่น Pro, Laptop ตีราคาดี จ่ายเงินสด"
 slug: "รับซื้อ-surface"
 order: 17
-description: "รับซื้อ Microsoft Surface Pro, Surface Laptop มือสอง ให้ราคาสูง ประเมินราคาฟรี บริการนัดรับสินค้า"
+description: "รับซื้อ Microsoft Surface Pro, Surface Laptop มือสอง ให้ราคาสูง ประเมินราคาฟรี บริการนัดรับสินค้า ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ Surface"
 relatedKeywords: ["รับซื้อ Surface Pro", "ขาย Surface มือสอง", "รับซื้อ Microsoft Surface"]
 heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"

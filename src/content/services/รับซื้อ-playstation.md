@@ -2,7 +2,7 @@
 title: "รับซื้อเครื่องเกม PS5, PS4, Nintendo Switch ประเมินฟรี | อำพล เทรดดิ้ง"
 slug: "รับซื้อ-playstation"
 order: 8
-description: "รับซื้อ PS5 (PlayStation 5), PS4, Nintendo Switch และแผ่นเกมมือสอง รับเหมาเครื่องเกม จ่ายเงินสด มีหน้าร้านจริง ตีราคาแฟร์ ทักไลน์ @webuy"
+description: "รับซื้อ PS5 (PlayStation 5), PS4, Nintendo Switch และแผ่นเกมมือสอง รับเหมาเครื่องเกม จ่ายเงินสด มีหน้าร้านจริง ตีราคาแฟร์ ทักไลน์ @webuy ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ PS5"
 relatedKeywords: ["รับซื้อเพลย์สเตชั่น", "รับซื้อเครื่องเกม", "ขาย PS5 ", "รับซื้อ Nintendo Switch", "รับซื้อ PS4", "แผ่นเกมมือสอง"]
 heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"

@@ -2,7 +2,7 @@
 title: "รับซื้อ Nintendo Switch มือสอง ให้ราคาสูง ประเมินราคาไว"
 slug: "รับซื้อ-nintendo-switch"
 order: 21
-description: "รับซื้อ Nintendo Switch ทุกรุ่น OLED, V2, Lite ให้ราคาสูง ตีราคาตามสภาพ ยุติธรรม โอนไว รับซื้อถึงที่"
+description: "รับซื้อ Nintendo Switch ทุกรุ่น OLED, V2, Lite ให้ราคาสูง ตีราคาตามสภาพ ยุติธรรม โอนไว รับซื้อถึงที่ ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ Nintendo Switch"
 relatedKeywords: ["รับซื้อเครื่องเกม Switch", "ขาย Nintendo Switch", "รับซื้อ Switch OLED", "รับซื้อ Switch มือสอง"]
 heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"

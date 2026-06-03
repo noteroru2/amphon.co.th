@@ -2,7 +2,7 @@
 title: "รับซื้อ AirPods ให้ราคาดี ตีราคาไว นัดรับ"
 slug: "รับซื้อ-airpods"
 order: 11
-description: "รับซื้อ AirPods ทุกรุ่น AirPods Pro, AirPods Max ให้ราคาดี จ่ายเงินสดทันที มีบริการนัดรับ ประเมินราคาฟรีผ่านไลน์"
+description: "รับซื้อ AirPods ทุกรุ่น AirPods Pro, AirPods Max ให้ราคาดี จ่ายเงินสดทันที มีบริการนัดรับ ประเมินราคาฟรีผ่านไลน์ ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ AirPods"
 relatedKeywords: ["รับซื้อ AirPods Pro", "รับซื้อ AirPods Max", "ขาย AirPods "]
 heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"

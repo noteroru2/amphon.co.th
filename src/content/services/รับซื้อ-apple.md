@@ -2,7 +2,7 @@
 title: "รับซื้อสินค้า Apple ทุกชนิด iPhone, iPad, Mac ให้ราคาดีสุด"
 slug: "รับซื้อ-apple"
 order: 13
-description: "ศูนย์รวมรับซื้อสินค้า Apple มือสองทุกชนิด ตีราคาเป็นธรรม จ่ายเงินทันที พร้อมบริการนัดรับถึงที่ทั่ว"
+description: "ศูนย์รวมรับซื้อสินค้า Apple มือสองทุกชนิด ตีราคาเป็นธรรม จ่ายเงินทันที พร้อมบริการนัดรับถึงที่ทั่ว ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อสินค้า Apple"
 relatedKeywords: ["รับซื้อ iPhone", "รับซื้อ iPad", "รับซื้อ Mac", "ร้านรับซื้อ Apple "]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"
