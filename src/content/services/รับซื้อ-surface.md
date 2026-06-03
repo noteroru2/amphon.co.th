@@ -5,8 +5,8 @@ order: 17
 description: "รับซื้อ Microsoft Surface Pro, Surface Laptop มือสอง ให้ราคาสูง ประเมินราคาฟรี บริการนัดรับสินค้า ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ Surface"
 relatedKeywords: ["รับซื้อ Surface Pro", "ขาย Surface มือสอง", "รับซื้อ Microsoft Surface"]
-heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"
-ogImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"
+heroImage: "/images/services/rub-sue-notebook-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-notebook-amphon-trading-banner.webp"
 date: "2026-06-03"
 draft: false
 icon: "laptop"
@@ -18,6 +18,9 @@ faqs:
 ---
 
 ## รับซื้อ Surface ให้ราคายุติธรรม ได้เงินไว
+
+![รับซื้อโน้ตบุ๊คมือสอง - Amphon Trading](/images/services/rub-sue-notebook-laptops-acer-asus.webp)
+
 
 สวัสดีครับ! ถ้าคุณกำลังมองหาที่ขาย Microsoft Surface เครื่องเก่า หรือไม่ได้ใช้งานแล้ว "เรา" ยินดีรับซื้อในราคาที่เป็นธรรม คุยง่าย รับเงินไวแน่นอนครับ
 
@@ -32,6 +35,11 @@ faqs:
 
 ## สภาพไหนที่รับซื้อ
 
+> 📲 **ติดต่อขายสินค้ากับเรา**  
+> แอดไลน์ **[@webuy](https://line.me/ti/p/~@webuy)** หรือโทร **[064-257-9353](tel:0642579353)**  
+> ประเมินราคาฟรี จ่ายเงินสด รับทั่วประเทศ
+
+
 - สภาพนางฟ้า ใช้งานน้อยดูแลดี
 - เครื่องมีรอยตามการใช้งานปกติ
 - หมดประกัน หรือแบตเตอรี่เริ่มเสื่อม (แจ้งสภาพตามจริงได้เลยครับ)
@@ -45,6 +53,9 @@ faqs:
 - กล่องและการรับประกัน
 
 ## ตารางประเมินราคา
+
+![รับซื้อโน้ตบุ๊คมือสอง - Amphon Trading - บริการรับซื้อครบวงจร](/images/services/rub-sue-notebook-laptops-acer-asus.webp)
+
 
 | รุ่น/ประเภท | จุดตรวจ | สิ่งเพิ่มราคา | อาการลดราคา |
 | :--- | :--- | :--- | :--- |

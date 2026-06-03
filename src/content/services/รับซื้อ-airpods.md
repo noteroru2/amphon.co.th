@@ -5,8 +5,8 @@ order: 11
 description: "รับซื้อ AirPods ทุกรุ่น AirPods Pro, AirPods Max ให้ราคาดี จ่ายเงินสดทันที มีบริการนัดรับ ประเมินราคาฟรีผ่านไลน์ ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ AirPods"
 relatedKeywords: ["รับซื้อ AirPods Pro", "รับซื้อ AirPods Max", "ขาย AirPods "]
-heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"
-ogImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"
+heroImage: "/images/services/cta-line-webuy-amphon.png"
+ogImage: "/images/services/cta-line-webuy-amphon.png"
 date: "2026-06-03"
 draft: false
 icon: "headphones"
@@ -18,6 +18,9 @@ faqs:
 ---
 
 ## รับซื้อ AirPods ให้ราคาดีสุดๆ
+
+![รับซื้ออุปกรณ์ไอทีมือสอง - Amphon Trading](/images/services/cta-line-webuy-amphon.png)
+
 
 สวัสดีครับ! ถ้าคุณมี AirPods ที่ไม่ได้ใช้งานแล้ว หรือเพิ่งได้รุ่นใหม่มา "เรา" ยินดีรับซื้อให้ราคาเป็นธรรม คุยง่าย ได้เงินไวครับ ไม่ต้องปล่อยทิ้งไว้ให้ฝุ่นเกาะ
 
@@ -32,6 +35,11 @@ faqs:
 
 ## สภาพไหนที่รับซื้อ
 
+> 📲 **ติดต่อขายสินค้ากับเรา**  
+> แอดไลน์ **[@webuy](https://line.me/ti/p/~@webuy)** หรือโทร **[064-257-9353](tel:0642579353)**  
+> ประเมินราคาฟรี จ่ายเงินสด รับทั่วประเทศ
+
+
 - สภาพสวยกริบ ไม่มีรอยตกหล่น
 - สภาพใช้งานปกติ มีรอยขนแมวบ้าง
 - หมดประกันแล้ว หรือแบตเตอรี่เริ่มเสื่อม (แจ้งได้ครับ)
@@ -45,6 +53,9 @@ faqs:
 - ระยะเวลาประกันที่เหลืออยู่
 
 ## ตารางประเมินราคา
+
+![รับซื้ออุปกรณ์ไอทีมือสอง - Amphon Trading - บริการรับซื้อครบวงจร](/images/services/cta-line-webuy-amphon.png)
+
 
 | รุ่น/ประเภท | จุดตรวจ | สิ่งเพิ่มราคา | อาการลดราคา |
 | :--- | :--- | :--- | :--- |

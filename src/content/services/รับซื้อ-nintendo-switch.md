@@ -5,8 +5,8 @@ order: 21
 description: "รับซื้อ Nintendo Switch ทุกรุ่น OLED, V2, Lite ให้ราคาสูง ตีราคาตามสภาพ ยุติธรรม โอนไว รับซื้อถึงที่ ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ Nintendo Switch"
 relatedKeywords: ["รับซื้อเครื่องเกม Switch", "ขาย Nintendo Switch", "รับซื้อ Switch OLED", "รับซื้อ Switch มือสอง"]
-heroImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"
-ogImage: "/images/hero/hero-amphon-trading-rub-sue-it-isan.webp"
+heroImage: "/images/services/cta-line-webuy-amphon.png"
+ogImage: "/images/services/cta-line-webuy-amphon.png"
 date: 2026-06-03
 draft: false
 icon: "gamepad"
@@ -21,6 +21,9 @@ faqs:
 
 ## รับซื้อ Nintendo Switch มือสอง ตีราคาไว ให้ราคาสูง
 
+![รับซื้ออุปกรณ์ไอทีมือสอง - Amphon Trading](/images/services/cta-line-webuy-amphon.png)
+
+
 คุณกำลังเบื่อเกมที่มีอยู่ หรืออยากเปลี่ยนเครื่องใหม่ใช่ไหม? Amphon Trading รับซื้อเครื่องเกม Nintendo Switch มือสอง ทุกรุ่น เราให้ราคาสูง ตีราคาตามสภาพจริงอย่างเป็นธรรม พร้อมบริการที่รวดเร็ว รับเงินทันที!
 
 [CTA_BUTTON]
@@ -34,6 +37,11 @@ faqs:
 - **Nintendo Switch (V1):** รุ่นแรกสุด (รับซื้อตามสภาพแบตเตอรี่)
 
 ## สภาพเครื่องที่เรารับซื้อ
+
+> 📲 **ติดต่อขายสินค้ากับเรา**  
+> แอดไลน์ **[@webuy](https://line.me/ti/p/~@webuy)** หรือโทร **[064-257-9353](tel:0642579353)**  
+> ประเมินราคาฟรี จ่ายเงินสด รับทั่วประเทศ
+
 
 เราพิจารณารับซื้อในหลากหลายสภาพ:
 - **สภาพนางฟ้า:** เครื่องสวยกริ๊บ ไม่มีรอย ติดฟิล์มกระจก อุปกรณ์แท้ครบกล่อง
@@ -50,6 +58,9 @@ faqs:
 5. **ของแถมเพิ่มเติม:** แผ่นเกม กระเป๋า เคสใส ช่วยเพิ่มมูลค่าได้ครับ
 
 ## ตารางประเมินราคา Nintendo Switch เบื้องต้น
+
+![รับซื้ออุปกรณ์ไอทีมือสอง - Amphon Trading - บริการรับซื้อครบวงจร](/images/services/cta-line-webuy-amphon.png)
+
 
 | รุ่น Nintendo Switch | สภาพ | ราคาประเมินเบื้องต้น (บาท) |
 |---|---|---|
