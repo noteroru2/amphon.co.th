@@ -4,10 +4,7 @@ slug: "รับซื้อ-ssd"
 order: 16
 description: "รับซื้อ SSD และ HDD มือสอง M.2 NVMe, SATA ทุกความจุ ให้ราคาสูง ประเมินราคาฟรี จ่ายเงินไว ใกล้ฉัน รับซื้อถึงบ้าน"
 mainKeyword: "รับซื้อ ssd"
-relatedKeywords: 
-  - "รับซื้อ HDD"
-  - "ขาย SSD มือสอง"
-  - "รับซื้อฮาร์ดดิสก์"
+relatedKeywords: ["SSD M.2", "Kingston", "Samsung", "WD", "Western", "SanDisk", "Crucial", "Seagate", "Intel", "Micron", "Toshiba", "Kioxia", "ADATA", "XPG", "Transcend", "Corsair", "Apacer", "Lexar", "NVMe", "Harddisk SAS", "Harddisk Seagate", "Harddisk WD", "Harddisk Toshib", "Harddisk Hitachi", "Harddisk HGST", "Harddisk Samsung", "Harddisk Dell", "Harddisk HP", "Harddisk Lenovo", "Harddisk กล้องวงจรปิด", "external harddisk", "Flash Drive", "รับซื้อ HDD", "ขาย SSD มือสอง", "รับซื้อฮาร์ดดิสก์"]
 heroImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"
 ogImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"
 date: "2026-06-03"
