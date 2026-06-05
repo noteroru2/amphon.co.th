@@ -231,7 +231,7 @@ const trustItems = [
             description={service.data.description}
             href={`/บริการ/${service.data.slug}`}
             keyword={service.data.mainKeyword}
-            image={serviceThumbnails[service.data.slug]}
+            image={service.data.heroImage || serviceThumbnails[service.data.slug]}
           />
         ))}
       </div>
