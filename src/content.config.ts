@@ -8,6 +8,7 @@ const faqItemSchema = z.object({
 
 const baseSchema = z.object({
   title: z.string(),
+  h1: z.string().optional(),
   slug: z.string(),
   description: z.string(),
   mainKeyword: z.string(),

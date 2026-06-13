@@ -26,7 +26,7 @@ interface Props {
 }
 
 const { entry, relatedAreas = [], otherServices = [] } = Astro.props;
-const { title, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated } =
+const { title, h1, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated } =
   entry.data;
 const { Content } = await render(entry);
 
@@ -76,7 +76,7 @@ const steps = [
     <div class="container page-header__grid">
       <div>
         <span class="tag tag--orange" style="margin-bottom:.875rem;">{mainKeyword ?? 'บริการรับซื้อ'}</span>
-        <h1>{title}</h1>
+        <h1>{h1 || title}</h1>
         <p class="page-header__desc">{description}</p>
         <div class="page-header__cta">
           <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
