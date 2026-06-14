@@ -51,7 +51,7 @@ const schemaExtras = [
   ...faqSchemaIfVisible(pageUrl, faqs),
 ];
 
-if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook' || slug === 'รับซื้อ-ipad' || slug === 'รับซื้อ-iphone') {
+if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook' || slug === 'รับซื้อ-ipad' || slug === 'รับซื้อ-iphone' || slug === 'รับซื้อกล้อง' || slug === 'รับซื้อคอมบริษัท') {
   const { createOfferCatalogSchema } = await import('../lib/seo');
   
   if (slug === 'รับซื้อคอมพิวเตอร์') {
@@ -117,6 +117,132 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'iPhone Face ID เสีย', url: '/บริการ/รับซื้อ-iphone-face-id-เสีย', description: 'รับซื้อ iPhone สแกนหน้าไม่ได้' },
           { name: 'iPhone ติด iCloud', url: '/บริการ/รับซื้อ-iphone-ติด-icloud', description: 'รับซื้อ iPhone ติดล็อค ตามเงื่อนไข' },
           { name: 'iPhone เครื่องนอก', url: '/บริการ/รับซื้อ-iphone-เครื่องนอก', description: 'รับซื้อ iPhone โมเดลนอก ติดซิมล็อค' }
+        ]
+      })
+    );
+  } else if (slug === 'รับซื้อกล้อง') {
+    schemaExtras.push({
+      '@type': 'OfferCatalog',
+      '@id': `${pageUrl}#offercatalog`,
+      name: 'รับซื้อกล้องมือสอง ทุกประเภท',
+      inLanguage: 'th-TH',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้อง Canon',
+            description: 'รับซื้อกล้อง Canon DSLR, Mirrorless EOS R Series',
+            url: '/บริการ/รับซื้อกล้อง-canon',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้อง Sony',
+            description: 'รับซื้อกล้อง Sony Alpha, A7 Series',
+            url: '/บริการ/รับซื้อกล้อง-sony',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้อง Fujifilm',
+            description: 'รับซื้อกล้อง Fujifilm X-Series, GFX',
+            url: '/บริการ/รับซื้อกล้อง-fujifilm',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้อง Nikon',
+            description: 'รับซื้อกล้อง Nikon Z Series, DSLR',
+            url: '/บริการ/รับซื้อกล้อง-nikon',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'เลนส์กล้อง',
+            description: 'รับซื้อเลนส์กล้องมือสอง ทุกแบรนด์',
+            url: '/บริการ/รับซื้อเลนส์กล้อง',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้อง Mirrorless',
+            description: 'รับซื้อกล้อง Mirrorless Full Frame, APS-C',
+            url: '/บริการ/รับซื้อกล้อง-mirrorless',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้องฟิล์ม',
+            description: 'รับซื้อกล้องฟิล์ม เลนส์มือหมุน วินเทจ',
+            url: '/บริการ/รับซื้อกล้องฟิล์ม',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'GoPro / Action Camera',
+            description: 'รับซื้อกล้อง GoPro, DJI Action, Insta360',
+            url: '/บริการ/รับซื้อ-gopro-action-camera',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'กล้องเสีย',
+            description: 'รับซื้อกล้องเปิดไม่ติด จอแตก เลนส์รา ฝ้า',
+            url: '/บริการ/รับซื้อกล้องเสีย',
+            inLanguage: 'th-TH',
+            provider: { '@id': `${Astro.site}#localbusiness` }
+          }
+        }
+      ]
+    });
+  } else if (slug === 'รับซื้อคอมบริษัท') {
+    schemaExtras.push(
+      createOfferCatalogSchema({
+        name: 'รับซื้อคอมบริษัทและอุปกรณ์สำนักงาน',
+        pageUrl,
+        items: [
+          { name: 'คอมสำนักงาน', url: '/บริการ/รับซื้อคอมสำนักงาน', description: 'รับซื้อคอมพิวเตอร์สำนักงาน พีซีออฟฟิศหลายเครื่อง' },
+          { name: 'คอมยกล็อต', url: '/บริการ/รับซื้อคอมยกล็อต', description: 'รับซื้อคอมพิวเตอร์ยกล็อต จำนวนมาก ประเมินเหมา' },
+          { name: 'โน๊ตบุ๊คบริษัท', url: '/บริการ/รับซื้อโน๊ตบุ๊คบริษัท', description: 'รับซื้อโน๊ตบุ๊คบริษัท โน๊ตบุ๊คพนักงานเก่า' },
+          { name: 'สินค้าไอทีบริษัท', url: '/บริการ/รับซื้อสินค้าไอทีบริษัท', description: 'รับซื้อสินค้าไอทีองค์กร โทรศัพท์ แท็บเล็ตบริษัท' },
+          { name: 'อุปกรณ์สำนักงานมือสอง', url: '/บริการ/รับซื้ออุปกรณ์สำนักงานมือสอง', description: 'รับซื้อจอคอม ปริ้นเตอร์ UPS เครื่องสแกนบาร์โค้ด' },
+          { name: 'Server / Network', url: '/บริการ/รับซื้อ-server-network', description: 'รับซื้อเซิร์ฟเวอร์ NAS สวิตช์และอุปกรณ์เน็ตเวิร์ก' },
+          { name: 'คอมบริษัทปิดกิจการ', url: '/บริการ/รับซื้อคอมบริษัทปิดกิจการ', description: 'รับซื้อคอมพิวเตอร์และทรัพย์สินไอทีจากบริษัทปิดกิจการ' },
+          { name: 'ประมูลคอมพิวเตอร์มือสอง', url: '/บริการ/รับประมูลคอมพิวเตอร์มือสอง', description: 'รับประมูลคอมพิวเตอร์และอุปกรณ์ไอทีสำนักงาน' },
+          { name: 'เคลียร์อุปกรณ์ไอที', url: '/บริการ/รับเคลียร์อุปกรณ์ไอทีสำนักงาน', description: 'รับเคลียร์อุปกรณ์ไอที ย้ายสำนักงาน โละเครื่องเก่า' }
         ]
       })
     );
