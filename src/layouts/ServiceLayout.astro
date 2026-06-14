@@ -51,22 +51,41 @@ const schemaExtras = [
   ...faqSchemaIfVisible(pageUrl, faqs),
 ];
 
-if (slug === 'รับซื้อคอมพิวเตอร์') {
+if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook') {
   const { createOfferCatalogSchema } = await import('../lib/seo');
-  schemaExtras.push(
-    createOfferCatalogSchema({
-      pageUrl,
-      name: 'รับซื้อคอมพิวเตอร์และอุปกรณ์ไอที',
-      items: [
-        { name: 'คอมสำนักงาน', url: '/บริการ/รับซื้อคอมสำนักงาน', description: 'รับซื้อคอมสำนักงาน เครื่องแบรนด์เนมทั่วไป' },
-        { name: 'คอมประกอบ', url: '/บริการ/รับซื้อคอมประกอบ', description: 'รับซื้อคอมประกอบ Custom PC แยกชิ้น' },
-        { name: 'Gaming PC', url: '/บริการ/รับซื้อ-gaming-pc', description: 'รับซื้อคอมเล่นเกม สเปกสูง' },
-        { name: 'คอมบริษัท/ยกล็อต', url: '/บริการ/รับซื้อคอมบริษัท', description: 'รับซื้อคอมพิวเตอร์องค์กร ประมูลยกล็อต' },
-        { name: 'คอมเสีย/ซากคอม', url: '/บริการ/รับซื้อคอมเสีย', description: 'รับซื้อซากคอม เปิดไม่ติด ตีราคาเป็นอะไหล่' },
-        { name: 'อุปกรณ์คอมแยกชิ้น', url: '/บริการ/รับซื้อการ์ดจอ', description: 'รับซื้ออะไหล่คอมพิวเตอร์ เช่น การ์ดจอ CPU RAM' }
-      ]
-    })
-  );
+  
+  if (slug === 'รับซื้อคอมพิวเตอร์') {
+    schemaExtras.push(
+      createOfferCatalogSchema({
+        pageUrl,
+        name: 'รับซื้อคอมพิวเตอร์และอุปกรณ์ไอที',
+        items: [
+          { name: 'คอมสำนักงาน', url: '/บริการ/รับซื้อคอมสำนักงาน', description: 'รับซื้อคอมสำนักงาน เครื่องแบรนด์เนมทั่วไป' },
+          { name: 'คอมประกอบ', url: '/บริการ/รับซื้อคอมประกอบ', description: 'รับซื้อคอมประกอบ Custom PC แยกชิ้น' },
+          { name: 'Gaming PC', url: '/บริการ/รับซื้อ-gaming-pc', description: 'รับซื้อคอมเล่นเกม สเปกสูง' },
+          { name: 'คอมบริษัท/ยกล็อต', url: '/บริการ/รับซื้อคอมบริษัท', description: 'รับซื้อคอมพิวเตอร์องค์กร ประมูลยกล็อต' },
+          { name: 'คอมเสีย/ซากคอม', url: '/บริการ/รับซื้อคอมเสีย', description: 'รับซื้อซากคอม เปิดไม่ติด ตีราคาเป็นอะไหล่' },
+          { name: 'อุปกรณ์คอมแยกชิ้น', url: '/บริการ/รับซื้อการ์ดจอ', description: 'รับซื้ออะไหล่คอมพิวเตอร์ เช่น การ์ดจอ CPU RAM' }
+        ]
+      })
+    );
+  } else if (slug === 'รับซื้อ-macbook') {
+    schemaExtras.push(
+      createOfferCatalogSchema({
+        pageUrl,
+        name: 'รับซื้อ MacBook มือสอง ทุกรุ่น',
+        items: [
+          { name: 'MacBook Air', url: '/บริการ/รับซื้อ-macbook-air', description: 'รับซื้อ MacBook Air ชิป M1, M2, M3, M4' },
+          { name: 'MacBook Pro', url: '/บริการ/รับซื้อ-macbook-pro', description: 'รับซื้อ MacBook Pro สายตัดต่อ สเปกสูง' },
+          { name: 'MacBook M1/M2', url: '/บริการ/รับซื้อ-macbook-m1', description: 'รับซื้อ MacBook ชิป M1 และ M2 ทุกรุ่น' },
+          { name: 'MacBook M3/M4', url: '/บริการ/รับซื้อ-macbook-m3-m4', description: 'รับซื้อ MacBook ชิปใหม่ล่าสุด M3 และ M4' },
+          { name: 'Intel MacBook', url: '/บริการ/รับซื้อ-macbook-intel', description: 'รับซื้อ MacBook Intel รุ่นเก่าปี 2018-2020' },
+          { name: 'MacBook เสีย/จอแตก', url: '/บริการ/รับซื้อ-macbook-เสีย', description: 'รับซื้อซาก MacBook เสีย เปิดไม่ติด จอแตก' },
+          { name: 'iMac/Mac mini', url: '/บริการ/รับซื้อ-imac-mac-mini', description: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ iMac และ Mac mini' }
+        ]
+      })
+    );
+  }
 }
 
 const steps = [

@@ -25,6 +25,14 @@ export const imageAlt: Record<string, string> = {
     'รับซื้อคอมพิวเตอร์ประกอบ Gaming PC Gigabyte ASUS AMD มือสอง ให้ราคาสูง อำพล เทรดดิ้ง ภาคอีสาน',
   '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp':
     'รับซื้อกล้อง Fujifilm X-A2 Mirrorless เลนส์ 50mm F1.8 35mm F1.6 มือสอง ให้ราคาสูง อำพล เทรดดิ้ง',
+  '/images/services/macbook-buyback-cover.webp':
+    'ร้านอำพล เทรดดิ้งตรวจเช็ก MacBook มือสอง',
+  '/images/trust/macbook-inspection-desk.webp':
+    'รับซื้อ MacBook มือสองในอุบลราชธานี',
+  '/images/trust/about-this-mac-check.webp':
+    'ตรวจ About This Mac ก่อนประเมินราคา MacBook',
+  '/images/trust/macbook-battery-cycle-check.webp':
+    'ตรวจ Battery Cycle ก่อนรับซื้อ MacBook',
 
   '/images/about/amphon-trading-storefront-ubon.webp':
     'หน้าร้านอำพล เทรดดิ้ง 740/8 ถนนชยางกูร อุบลราชธานี รับซื้อ ขาย ฝาก ซ่อม อุปกรณ์ไอที ครบวงจร',
