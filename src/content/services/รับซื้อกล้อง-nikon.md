@@ -6,8 +6,8 @@ order: 7
 description: "รับซื้อกล้อง Nikon มือสอง สาย DSLR (D750, D850) และ Mirrorless ตระกูล Z (Z5, Z6, Z7, Z50) พร้อมรับซื้อเลนส์ Z Mount และ F Mount ประเมินราคาฟรี"
 mainKeyword: "รับซื้อกล้อง Nikon"
 relatedKeywords: ["รับซื้อเลนส์ Nikon", "ขายกล้องนิคอน", "รับซื้อ Nikon Z", "รับซื้อ DSLR Nikon"]
-heroImage: "/images/services/camera-buyback-cover.webp"
-ogImage: "/images/services/camera-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
+ogImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
 date: "2026-06-14"
 draft: false
 icon: "camera"

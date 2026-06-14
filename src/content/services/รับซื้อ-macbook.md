@@ -6,8 +6,8 @@ order: 7
 description: "รับซื้อ MacBook มือสอง MacBook Air MacBook Pro ชิป Intel, M1, M2, M3, M4 ประเมินราคาฟรี ส่งรูปเช็กก่อนได้ มีหน้าร้านจริงอุบล รับซื้อในภาคอีสาน จ่ายเงินทันที"
 mainKeyword: "รับซื้อ MacBook"
 relatedKeywords: ["รับซื้อแมคบุ๊ค", "รับซื้อ MacBook ใกล้ฉัน", "รับซื้อ MacBook มือสอง", "รับซื้อ MacBook อุบล"]
-heroImage: "/images/services/macbook-buyback-cover.webp"
-ogImage: "/images/services/macbook-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "laptop"

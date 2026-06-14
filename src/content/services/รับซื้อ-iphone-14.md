@@ -6,8 +6,8 @@ order: 6
 description: "รับซื้อ iPhone 14 มือสอง ทุกซีรีส์ 14 Plus, 14 Pro, 14 Pro Max ประเมินราคาฟรี ตีราคาตามสภาพจริง รับซื้อทั่วภาคอีสานและนัดรับอุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 14"
 relatedKeywords: ["รับซื้อ iPhone 14 Pro Max", "รับซื้อ iPhone 14 Pro", "รับซื้อไอโฟน 14 มือสอง", "ขาย iPhone 14"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

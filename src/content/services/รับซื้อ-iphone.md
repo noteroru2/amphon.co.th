@@ -6,8 +6,8 @@ order: 1
 description: "รับซื้อ iPhone มือสอง iPhone 11-17, Pro, Pro Max ทุกรุ่น ทุกความจุ ประเมินราคาฟรี ส่งรูปเช็กก่อนได้ มีหน้าร้านจริงอุบล รับซื้อในภาคอีสาน จ่ายเงินทันที"
 mainKeyword: "รับซื้อ iPhone"
 relatedKeywords: ["รับซื้อไอโฟน", "รับซื้อ iPhone มือสอง", "รับซื้อ iPhone ใกล้ฉัน", "รับซื้อ iPhone อุบล"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

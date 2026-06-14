@@ -6,8 +6,8 @@ order: 7
 description: "รับซื้อ iPhone 13 มือสอง ทุกรุ่น 13 mini, 13 Pro, 13 Pro Max ให้ราคาดี ประเมินตามความจุและสภาพจริง จ่ายเงินทันที ร้านรับซื้ออุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 13"
 relatedKeywords: ["รับซื้อ iPhone 13 Pro Max", "รับซื้อ iPhone 13 Pro", "รับซื้อไอโฟน 13 มือสอง", "ขาย iPhone 13"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

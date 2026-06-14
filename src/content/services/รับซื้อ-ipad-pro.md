@@ -6,8 +6,8 @@ order: 1
 description: "ร้านรับซื้อ iPad Pro มือสอง ให้ราคาสูงสุด รับซื้อรุ่น 11 นิ้ว 12.9 นิ้ว 13 นิ้ว ชิป M1 M2 M4 จอ ProMotion รุ่น Wi-Fi และ Cellular ประเมินราคาฟรี"
 mainKeyword: "รับซื้อ iPad Pro"
 relatedKeywords: ["รับซื้อไอแพดโปร", "ขาย iPad Pro มือสอง", "รับซื้อ iPad Pro M4", "รับซื้อ iPad Pro M2"]
-heroImage: "/images/services/ipad-buyback-cover.webp"
-ogImage: "/images/services/ipad-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
 date: "2026-06-14"
 draft: false
 icon: "tablet"

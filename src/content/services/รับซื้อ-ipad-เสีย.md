@@ -6,8 +6,8 @@ order: 5
 description: "มี iPad เสีย เปิดไม่ติด ชาร์จไม่เข้า แบตเตอรี่เสื่อม หรือบอร์ดพัง อย่าเพิ่งทิ้ง! เรารับซื้อซาก iPad มือสองเพื่อนำไปเป็นอะไหล่ ให้ราคาดีที่สุดตามสภาพ"
 mainKeyword: "รับซื้อ iPad เสีย"
 relatedKeywords: ["รับซื้อไอแพดเสีย", "ขายซาก iPad", "รับซื้อ iPad เปิดไม่ติด", "รับซื้อ iPad บอร์ดพัง"]
-heroImage: "/images/services/ipad-buyback-cover.webp"
-ogImage: "/images/services/ipad-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
 date: "2026-06-14"
 draft: false
 icon: "tool"

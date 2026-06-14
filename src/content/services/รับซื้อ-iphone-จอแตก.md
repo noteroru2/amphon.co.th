@@ -6,8 +6,8 @@ order: 8
 description: "รับซื้อ iPhone จอแตก จอดำ จอเป็นเส้นสีเขียว ทัชสกรีนไม่ได้ มือสองทุกรุ่น ตีราคาตามสภาพและค่าซ่อม รับซื้อหน้าร้านอุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone จอแตก"
 relatedKeywords: ["รับซื้อไอโฟนจอแตก", "ขาย iPhone จอแตก", "iPhone จอเป็นเส้น", "iPhone ทัชไม่ติด"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

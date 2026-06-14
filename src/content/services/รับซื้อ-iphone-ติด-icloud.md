@@ -6,8 +6,8 @@ order: 10
 description: "รับซื้อ iPhone ติด iCloud, Apple ID, ลืมรหัสผ่าน, ติด Find My รับพิจารณาตามเงื่อนไข (รับเป็นซากอะไหล่) ให้ราคาตามจริง ป้องกันปัญหาของโจร"
 mainKeyword: "รับซื้อ iPhone ติด iCloud"
 relatedKeywords: ["รับซื้อไอโฟนติด Apple ID", "ขาย iPhone ลืมรหัส", "iPhone ติด Find My", "รับซื้อซาก iPhone"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

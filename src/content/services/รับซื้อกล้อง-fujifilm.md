@@ -6,8 +6,8 @@ order: 6
 description: "รับซื้อกล้อง Fujifilm มือสอง ซีรีส์ X-T, X-E, X-S, X100, X-Pro และเลนส์ Fuji XF, XC ทุกระยะ ให้ราคาดี ประเมินตามสภาพจริง รับซื้อทั่วประเทศ"
 mainKeyword: "รับซื้อกล้อง Fujifilm"
 relatedKeywords: ["รับซื้อกล้อง Fuji", "รับซื้อเลนส์ Fujifilm", "ขายกล้องฟูจิ", "รับซื้อ Fuji X100"]
-heroImage: "/images/services/camera-buyback-cover.webp"
-ogImage: "/images/services/camera-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
+ogImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
 date: "2026-06-14"
 draft: false
 icon: "camera"

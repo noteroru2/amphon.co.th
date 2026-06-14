@@ -6,8 +6,8 @@ order: 7
 description: "ต้องการขาย Apple Pencil? อำพล เทรดดิ้ง รับซื้อปากกาไอแพด Apple Pencil Gen 1, Gen 2, USB-C และรุ่น Pro ให้ราคาสูง จ่ายเงินไว"
 mainKeyword: "รับซื้อ Apple Pencil"
 relatedKeywords: ["รับซื้อปากกาไอแพด", "ขาย Apple Pencil มือสอง", "รับซื้อ Apple Pencil Gen 2", "รับซื้อ Apple Pencil Pro"]
-heroImage: "/images/services/ipad-buyback-cover.webp"
-ogImage: "/images/services/ipad-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
 date: "2026-06-14"
 draft: false
 icon: "pen-tool"

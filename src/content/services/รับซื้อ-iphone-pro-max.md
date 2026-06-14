@@ -6,8 +6,8 @@ order: 3
 description: "รับซื้อ iPhone Pro Max มือสอง ทุกซีรีส์ 11-17 Pro Max ให้ราคาสูงที่สุด ประเมินฟรี จ่ายเงินทันที นัดรับอุบลราชธานีและภาคอีสาน"
 mainKeyword: "รับซื้อ iPhone Pro Max"
 relatedKeywords: ["รับซื้อ iPhone 16 Pro Max", "รับซื้อ iPhone 15 Pro Max", "รับซื้อไอโฟนรุ่นท็อป", "รับซื้อ iPhone Pro Max มือสอง"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

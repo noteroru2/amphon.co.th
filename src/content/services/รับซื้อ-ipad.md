@@ -6,8 +6,8 @@ order: 3
 description: "รับซื้อ iPad มือสอง iPad Pro iPad Air iPad mini iPad Gen ทุกรุ่น ทุกความจุ ประเมินราคาฟรี ส่งรูปเช็กก่อนได้ มีหน้าร้านจริงอุบล รับซื้อในภาคอีสาน จ่ายเงินทันที"
 mainKeyword: "รับซื้อ iPad"
 relatedKeywords: ["รับซื้อไอแพด", "รับซื้อ iPad มือสอง", "รับซื้อ iPad ใกล้ฉัน", "รับซื้อ iPad อุบล"]
-heroImage: "/images/services/ipad-buyback-cover.webp"
-ogImage: "/images/services/ipad-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
 date: "2026-06-14"
 draft: false
 icon: "tablet"

@@ -6,8 +6,8 @@ order: 9
 description: "รับซื้อ iPhone Face ID เสีย สแกนหน้าไม่ได้ กล้องหน้ามีปัญหา True Tone หาย ทุกรุ่น ประเมินราคาตามสภาพและค่าซ่อม รับซื้อหน้าร้านอุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone Face ID เสีย"
 relatedKeywords: ["รับซื้อไอโฟนสแกนหน้าไม่ได้", "iPhone Face ID พัง", "iPhone True Tone หาย", "ขาย iPhone Face ID เสีย"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

@@ -6,8 +6,8 @@ order: 2
 description: "รับซื้อ iPad Air 4, Air 5 (M1), Air M2 และ Air M3 สภาพสวย ให้ราคาสูง ประเมินราคาฟรีผ่าน LINE นัดรับง่าย โอนเงินไว"
 mainKeyword: "รับซื้อ iPad Air"
 relatedKeywords: ["รับซื้อไอแพดแอร์", "ขาย iPad Air 5", "รับซื้อ iPad Air M2", "รับซื้อ iPad Air มือสอง"]
-heroImage: "/images/services/ipad-buyback-cover.webp"
-ogImage: "/images/services/ipad-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
 date: "2026-06-14"
 draft: false
 icon: "tablet"

@@ -53,7 +53,7 @@ export const imageAlt: Record<string, string> = {
     'ตรวจ Battery Health ก่อนรับซื้อ iPhone',
   '/images/trust/iphone-faceid-truetone-check.webp':
     'ตรวจ Face ID และ True Tone ก่อนประเมินราคา iPhone',
-  '/images/services/camera-buyback-cover.webp':
+  '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp':
     'รับซื้อกล้องมือสอง ทุกประเภท ประเมินราคาฟรี ร้านอำพล เทรดดิ้ง อุบลราชธานี',
   '/images/trust/camera-inspection-desk.webp':
     'ร้านอำพล เทรดดิ้งตรวจเช็กกล้องมือสอง',
@@ -135,16 +135,16 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
 export const serviceThumbnails: Record<string, string> = {
   'รับซื้อ-iphone':    '/images/services/rub-sue-iphone-amphon-trading-banner.webp',
   'รับซื้อ-macbook':   '/images/services/rub-sue-macbook-amphon-trading-banner.webp',
-  'รับซื้อกล้อง':     '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้อง-canon': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้อง-sony': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้อง-fujifilm': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้อง-nikon': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อเลนส์กล้อง':  '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้อง-mirrorless': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้องฟิล์ม': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อ-gopro-action-camera': '/images/services/camera-buyback-cover.webp',
-  'รับซื้อกล้องเสีย': '/images/services/camera-buyback-cover.webp',
+  'รับซื้อกล้อง':     '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้อง-canon': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้อง-sony': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้อง-fujifilm': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้อง-nikon': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อเลนส์กล้อง':  '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้อง-mirrorless': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้องฟิล์ม': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อ-gopro-action-camera': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
+  'รับซื้อกล้องเสีย': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อโน๊ตบุ๊ค':  '/images/services/rub-sue-notebook-laptops-acer-asus.webp',
   'รับซื้อ-ipad':      '/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp',
   'รับซื้อคอมพิวเตอร์': '/images/services/rub-sue-komputer-gaming-pc-amphon.webp',

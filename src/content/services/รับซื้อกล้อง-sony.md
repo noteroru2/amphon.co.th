@@ -6,8 +6,8 @@ order: 5
 description: "รับซื้อกล้อง Sony มือสอง ตระกูล Alpha (A7III, A7IV), A6400, A6600, ZV-E10 และรับซื้อเลนส์ FE/E Mount ประเมินราคาตามสภาพ จ่ายเงินทันที"
 mainKeyword: "รับซื้อกล้อง Sony"
 relatedKeywords: ["รับซื้อเลนส์ Sony", "ขายกล้องโซนี่", "รับซื้อ Sony A7", "รับซื้อ Sony ZV-E10"]
-heroImage: "/images/services/camera-buyback-cover.webp"
-ogImage: "/images/services/camera-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
+ogImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
 date: "2026-06-14"
 draft: false
 icon: "camera"

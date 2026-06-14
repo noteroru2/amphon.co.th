@@ -6,8 +6,8 @@ order: 4
 description: "รับซื้อ iPhone 16 มือสอง iPhone 16 Plus, 16 Pro, 16 Pro Max ทุกความจุ ประเมินราคาฟรี ให้ราคาสูง จ่ายเงินไว ร้านรับซื้อโทรศัพท์อุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 16"
 relatedKeywords: ["รับซื้อ iPhone 16 Pro Max", "รับซื้อ iPhone 16 Pro", "รับซื้อไอโฟน 16 มือสอง", "ขาย iPhone 16"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

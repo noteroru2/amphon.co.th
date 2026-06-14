@@ -6,8 +6,8 @@ order: 11
 description: "รับซื้อ iPhone เครื่องนอก โมเดลต่างประเทศ (LL, ZA, ZP, J) ประเมินราคาตามสถานะ SIM Lock และประกัน รับซื้อไอโฟนราคายุติธรรม จ่ายเงินสดทันที"
 mainKeyword: "รับซื้อ iPhone เครื่องนอก"
 relatedKeywords: ["รับซื้อไอโฟนเครื่องนอก", "iPhone เครื่อง LL", "iPhone ติดซิมล็อค", "ขาย iPhone เครื่องนอก"]
-heroImage: "/images/services/iphone-buyback-cover.webp"
-ogImage: "/images/services/iphone-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 date: "2026-06-14"
 draft: false
 icon: "smartphone"

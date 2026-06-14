@@ -6,8 +6,8 @@ order: 9
 description: "รับซื้อกล้อง Mirrorless มือสอง ทั้งเซ็นเซอร์ Full Frame, APS-C และ Micro Four Thirds ทุกค่าย ให้ราคาสูง ประเมินไวตามสภาพ EVF, IBIS ส่งรูปตีราคาฟรี"
 mainKeyword: "รับซื้อกล้อง Mirrorless"
 relatedKeywords: ["ขายกล้อง Mirrorless", "รับซื้อกล้อง Full Frame", "รับซื้อกล้อง APS-C"]
-heroImage: "/images/services/camera-buyback-cover.webp"
-ogImage: "/images/services/camera-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
+ogImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
 date: "2026-06-14"
 draft: false
 icon: "camera"

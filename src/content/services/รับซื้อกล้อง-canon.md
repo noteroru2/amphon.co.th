@@ -6,8 +6,8 @@ order: 4
 description: "รับซื้อกล้อง Canon มือสอง ซีรีส์ EOS R, R50, R6, RP, DSLR และรับซื้อเลนส์ RF/EF Mount ทุกระยะ ประเมินราคาตามชัตเตอร์และสภาพจริง จ่ายเงินสดทันที"
 mainKeyword: "รับซื้อกล้อง Canon"
 relatedKeywords: ["รับซื้อเลนส์ Canon", "ขายกล้องแคนนอน", "รับซื้อ Canon EOS R", "รับซื้อเลนส์ RF"]
-heroImage: "/images/services/camera-buyback-cover.webp"
-ogImage: "/images/services/camera-buyback-cover.webp"
+heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
+ogImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
 date: "2026-06-14"
 draft: false
 icon: "camera"
