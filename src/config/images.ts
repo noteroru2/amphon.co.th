@@ -33,6 +33,16 @@ export const imageAlt: Record<string, string> = {
     'ตรวจ About This Mac ก่อนประเมินราคา MacBook',
   '/images/trust/macbook-battery-cycle-check.webp':
     'ตรวจ Battery Cycle ก่อนรับซื้อ MacBook',
+  '/images/services/ipad-buyback-cover.webp':
+    'ร้านอำพล เทรดดิ้งตรวจเช็ก iPad มือสอง',
+  '/images/trust/ipad-inspection-desk.webp':
+    'รับซื้อ iPad มือสองในอุบลราชธานี',
+  '/images/trust/about-ipad-check.webp':
+    'ตรวจ About ก่อนประเมินราคา iPad',
+  '/images/trust/ipad-condition-check.webp':
+    'ตรวจสภาพจอ iPad ก่อนประเมินราคา',
+  '/images/trust/apple-id-check.webp':
+    'ตรวจ Apple ID ก่อนรับซื้อ iPad',
 
   '/images/about/amphon-trading-storefront-ubon.webp':
     'หน้าร้านอำพล เทรดดิ้ง 740/8 ถนนชยางกูร อุบลราชธานี รับซื้อ ขาย ฝาก ซ่อม อุปกรณ์ไอที ครบวงจร',

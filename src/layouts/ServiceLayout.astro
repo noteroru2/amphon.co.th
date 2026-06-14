@@ -51,7 +51,7 @@ const schemaExtras = [
   ...faqSchemaIfVisible(pageUrl, faqs),
 ];
 
-if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook') {
+if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook' || slug === 'รับซื้อ-ipad') {
   const { createOfferCatalogSchema } = await import('../lib/seo');
   
   if (slug === 'รับซื้อคอมพิวเตอร์') {
@@ -82,6 +82,22 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'Intel MacBook', url: '/บริการ/รับซื้อ-macbook-intel', description: 'รับซื้อ MacBook Intel รุ่นเก่าปี 2018-2020' },
           { name: 'MacBook เสีย/จอแตก', url: '/บริการ/รับซื้อ-macbook-เสีย', description: 'รับซื้อซาก MacBook เสีย เปิดไม่ติด จอแตก' },
           { name: 'iMac/Mac mini', url: '/บริการ/รับซื้อ-imac-mac-mini', description: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ iMac และ Mac mini' }
+        ]
+      })
+    );
+  } else if (slug === 'รับซื้อ-ipad') {
+    schemaExtras.push(
+      createOfferCatalogSchema({
+        pageUrl,
+        name: 'รับซื้อ iPad มือสอง ทุกรุ่น',
+        items: [
+          { name: 'iPad Pro', url: '/บริการ/รับซื้อ-ipad-pro', description: 'รับซื้อ iPad Pro M1, M2, M4 ทุกความจุ' },
+          { name: 'iPad Air', url: '/บริการ/รับซื้อ-ipad-air', description: 'รับซื้อ iPad Air 4, 5, M2, M3' },
+          { name: 'iPad mini', url: '/บริการ/รับซื้อ-ipad-mini', description: 'รับซื้อ iPad mini 6, A17 Pro' },
+          { name: 'iPad Gen', url: '/บริการ/รับซื้อ-ipad-gen', description: 'รับซื้อ iPad Gen 8, 9, 10' },
+          { name: 'iPad เสีย/จอแตก', url: '/บริการ/รับซื้อ-ipad-เสีย', description: 'รับซื้อซาก iPad เสีย เปิดไม่ติด จอแตก' },
+          { name: 'Apple Pencil', url: '/บริการ/รับซื้อ-apple-pencil', description: 'รับซื้อ Apple Pencil Gen 1, Gen 2, USB-C, Pro' },
+          { name: 'Magic Keyboard iPad', url: '/บริการ/รับซื้อ-magic-keyboard-ipad', description: 'รับซื้อ Magic Keyboard และ Smart Keyboard' }
         ]
       })
     );
