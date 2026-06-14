@@ -71,7 +71,7 @@ const schemaExtras = [
     <div class="container page-header__grid">
       <div>
         <span class="tag tag--orange" style="margin-bottom:.875rem;">พื้นที่ให้บริการ</span>
-        <h1>{title}</h1>
+        <h1>{entry.data.h1 || title}</h1>
         <p class="page-header__desc">{description}</p>
         <div class="page-header__cta">
           <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">

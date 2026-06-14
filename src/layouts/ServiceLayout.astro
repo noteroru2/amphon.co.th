@@ -51,6 +51,24 @@ const schemaExtras = [
   ...faqSchemaIfVisible(pageUrl, faqs),
 ];
 
+if (slug === 'รับซื้อคอมพิวเตอร์') {
+  const { createOfferCatalogSchema } = await import('../lib/seo');
+  schemaExtras.push(
+    createOfferCatalogSchema({
+      pageUrl,
+      name: 'รับซื้อคอมพิวเตอร์และอุปกรณ์ไอที',
+      items: [
+        { name: 'คอมสำนักงาน', url: '/บริการ/รับซื้อคอมสำนักงาน', description: 'รับซื้อคอมสำนักงาน เครื่องแบรนด์เนมทั่วไป' },
+        { name: 'คอมประกอบ', url: '/บริการ/รับซื้อคอมประกอบ', description: 'รับซื้อคอมประกอบ Custom PC แยกชิ้น' },
+        { name: 'Gaming PC', url: '/บริการ/รับซื้อ-gaming-pc', description: 'รับซื้อคอมเล่นเกม สเปกสูง' },
+        { name: 'คอมบริษัท/ยกล็อต', url: '/บริการ/รับซื้อคอมบริษัท', description: 'รับซื้อคอมพิวเตอร์องค์กร ประมูลยกล็อต' },
+        { name: 'คอมเสีย/ซากคอม', url: '/บริการ/รับซื้อคอมเสีย', description: 'รับซื้อซากคอม เปิดไม่ติด ตีราคาเป็นอะไหล่' },
+        { name: 'อุปกรณ์คอมแยกชิ้น', url: '/บริการ/รับซื้อการ์ดจอ', description: 'รับซื้ออะไหล่คอมพิวเตอร์ เช่น การ์ดจอ CPU RAM' }
+      ]
+    })
+  );
+}
+
 const steps = [
   { n: 1, title: 'ส่งรูปสินค้า', desc: 'ส่งรูปและสเปกผ่าน Line @webuy' },
   { n: 2, title: 'ประเมินราคาฟรี', desc: 'รับราคาใน 15–30 นาที' },
