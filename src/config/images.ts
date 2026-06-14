@@ -43,6 +43,16 @@ export const imageAlt: Record<string, string> = {
     'ตรวจสภาพจอ iPad ก่อนประเมินราคา',
   '/images/trust/apple-id-check.webp':
     'ตรวจ Apple ID ก่อนรับซื้อ iPad',
+  '/images/services/iphone-buyback-cover.webp':
+    'ร้านอำพล เทรดดิ้งตรวจเช็ก iPhone มือสอง',
+  '/images/trust/iphone-inspection-desk.webp':
+    'รับซื้อ iPhone มือสองในอุบลราชธานี',
+  '/images/trust/about-iphone-check.webp':
+    'ตรวจ About iPhone เพื่อดูรุ่นและความจุก่อนประเมินราคา',
+  '/images/trust/iphone-battery-health.webp':
+    'ตรวจ Battery Health ก่อนรับซื้อ iPhone',
+  '/images/trust/iphone-faceid-truetone-check.webp':
+    'ตรวจ Face ID และ True Tone ก่อนประเมินราคา iPhone',
 
   '/images/about/amphon-trading-storefront-ubon.webp':
     'หน้าร้านอำพล เทรดดิ้ง 740/8 ถนนชยางกูร อุบลราชธานี รับซื้อ ขาย ฝาก ซ่อม อุปกรณ์ไอที ครบวงจร',

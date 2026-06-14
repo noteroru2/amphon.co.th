@@ -51,7 +51,7 @@ const schemaExtras = [
   ...faqSchemaIfVisible(pageUrl, faqs),
 ];
 
-if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook' || slug === 'รับซื้อ-ipad') {
+if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook' || slug === 'รับซื้อ-ipad' || slug === 'รับซื้อ-iphone') {
   const { createOfferCatalogSchema } = await import('../lib/seo');
   
   if (slug === 'รับซื้อคอมพิวเตอร์') {
@@ -98,6 +98,25 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'iPad เสีย/จอแตก', url: '/บริการ/รับซื้อ-ipad-เสีย', description: 'รับซื้อซาก iPad เสีย เปิดไม่ติด จอแตก' },
           { name: 'Apple Pencil', url: '/บริการ/รับซื้อ-apple-pencil', description: 'รับซื้อ Apple Pencil Gen 1, Gen 2, USB-C, Pro' },
           { name: 'Magic Keyboard iPad', url: '/บริการ/รับซื้อ-magic-keyboard-ipad', description: 'รับซื้อ Magic Keyboard และ Smart Keyboard' }
+        ]
+      })
+    );
+  } else if (slug === 'รับซื้อ-iphone') {
+    schemaExtras.push(
+      createOfferCatalogSchema({
+        pageUrl,
+        name: 'รับซื้อ iPhone มือสอง ทุกรุ่น',
+        items: [
+          { name: 'iPhone 17', url: '/บริการ/รับซื้อ-iphone-17', description: 'รับซื้อ iPhone 17 ทุกรุ่น ทุกความจุ' },
+          { name: 'iPhone Pro Max', url: '/บริการ/รับซื้อ-iphone-pro-max', description: 'รับซื้อ iPhone Pro Max ทุกซีรีส์ ราคาสูง' },
+          { name: 'iPhone 16', url: '/บริการ/รับซื้อ-iphone-16', description: 'รับซื้อ iPhone 16, 16 Pro, 16 Pro Max' },
+          { name: 'iPhone 15', url: '/บริการ/รับซื้อ-iphone-15', description: 'รับซื้อ iPhone 15, 15 Pro, 15 Pro Max' },
+          { name: 'iPhone 14', url: '/บริการ/รับซื้อ-iphone-14', description: 'รับซื้อ iPhone 14, 14 Pro, 14 Pro Max' },
+          { name: 'iPhone 13', url: '/บริการ/รับซื้อ-iphone-13', description: 'รับซื้อ iPhone 13, 13 Pro, 13 Pro Max' },
+          { name: 'iPhone จอแตก', url: '/บริการ/รับซื้อ-iphone-จอแตก', description: 'รับซื้อ iPhone จอแตก จอเป็นเส้น ทัชไม่ติด' },
+          { name: 'iPhone Face ID เสีย', url: '/บริการ/รับซื้อ-iphone-face-id-เสีย', description: 'รับซื้อ iPhone สแกนหน้าไม่ได้' },
+          { name: 'iPhone ติด iCloud', url: '/บริการ/รับซื้อ-iphone-ติด-icloud', description: 'รับซื้อ iPhone ติดล็อค ตามเงื่อนไข' },
+          { name: 'iPhone เครื่องนอก', url: '/บริการ/รับซื้อ-iphone-เครื่องนอก', description: 'รับซื้อ iPhone โมเดลนอก ติดซิมล็อค' }
         ]
       })
     );
