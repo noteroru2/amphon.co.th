@@ -109,35 +109,7 @@ export const site = {
     'https://line.me/ti/p/~@webuy',
     'https://amphontd.com',
   ],
-  aggregateRating: {
-    ratingValue: '4.9',
-    bestRating: '5',
-    worstRating: '1',
-    reviewCount: '124',
-  },
-  reviews: [
-    {
-      author: 'คุณสมศักดิ์',
-      rating: 5,
-      text: 'ขาย MacBook Pro M2 ได้ราคาดีกว่าที่คิด ประเมินเร็วมาก ทีมงานอธิบายชัดเจนว่าราคาขึ้นอยู่กับอะไรบ้าง โอนเงินทันทีที่ตกลงกัน',
-      location: 'อุบลราชธานี',
-      date: '2026-04',
-    },
-    {
-      author: 'คุณนภาพร',
-      rating: 5,
-      text: 'ส่งรูป iPhone 15 Pro ไปตอนเย็น ได้ราคาคืนนั้นเลย นัดรับวันรุ่งขึ้น สะดวกมาก ไม่ต้องลงประกาศเองให้เสียเวลา',
-      location: 'ขอนแก่น',
-      date: '2026-03',
-    },
-    {
-      author: 'คุณวิทยา',
-      rating: 5,
-      text: 'เอาคอมบริษัทเก่าไปขาย 8 เครื่อง ทีมงานมานัดรับถึงที่ ราคายุติธรรม จ่ายครบทุกเครื่อง ไม่มีปัญหาอะไร',
-      location: 'นครราชสีมา',
-      date: '2026-02',
-    },
-  ],
+  reviews: [] as const,
 } as const;
 
 export type BreadcrumbItem = {

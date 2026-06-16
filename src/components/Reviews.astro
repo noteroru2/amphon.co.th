@@ -1,21 +1,17 @@
 ---
 import { site } from '../config/site';
 
-const { reviews, aggregateRating } = site;
+const { reviews } = site;
 
 const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
 ---
 
+{reviews.length > 0 && (
 <section class="section section--gray reviews-section" aria-label="รีวิวจากลูกค้า">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">รีวิวจากลูกค้า</span>
       <h2>ลูกค้าพูดถึงเรา</h2>
-      <div class="reviews-summary" aria-label={`คะแนนเฉลี่ย ${aggregateRating.ratingValue} จาก 5`}>
-        <span class="reviews-summary__stars" aria-hidden="true">★★★★★</span>
-        <span class="reviews-summary__score">{aggregateRating.ratingValue}</span>
-        <span class="reviews-summary__count">({aggregateRating.reviewCount} รีวิว)</span>
-      </div>
     </div>
 
     <div class="grid grid--3">
@@ -36,6 +32,7 @@ const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
     </div>
   </div>
 </section>
+)}
 
 <style>
   .reviews-summary {
