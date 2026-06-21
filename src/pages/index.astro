@@ -57,6 +57,8 @@ const categories = [
   }),
 }));
 
+const fullAddress = [site.address.street, site.address.locality, site.address.region, site.address['postalCode']].join(' ');
+
 const trustPhotos = [
   {
     src: '/images/about/amphon-trading-storefront-ubon.webp',
@@ -120,7 +122,7 @@ const trustItems = [
         <h1>รับซื้อสินค้าไอทีทุกชนิด<br/>ในภาคอีสาน</h1>
         <p class="hero__subtitle">
           รับซื้อ iPhone, iPad, MacBook, โน๊ตบุ๊ค, คอมพิวเตอร์, กล้อง และอุปกรณ์ไอที<br/>
-          ประเมินราคาฟรี รับซื้อถึงที่บางพื้นที่ จ่ายเงินทันที
+          ประเมินราคาตามสภาพจริง · มีหน้าร้านจริงในอุบลราชธานี · จ่ายเงินทันที
         </p>
         <div class="hero__actions">
           <a href={site.line} class="btn btn--line btn--lg" target="_blank" rel="noopener noreferrer">
@@ -249,10 +251,11 @@ const trustItems = [
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">ทำไมต้องเลือกเรา</span>
-        <h2>ทำไมต้องขายกับ AMPHON TRADING ร้านรับซื้อไอทีอันดับ 1 ในอีสาน</h2>
+        <h2>ทำไมต้องขายกับ AMPHON TRADING ร้านรับซื้อสินค้าไอทีที่มีหน้าร้านจริงในอุบลราชธานี</h2>
         <p>
-          เราไม่ใช่แค่ร้านรับซื้อทั่วไป แต่เราคือผู้เชี่ยวชาญด้านฮาร์ดแวร์และอุปกรณ์ไอที ที่พร้อมให้ราคาประเมินอย่างยุติธรรมที่สุดในภาคอีสาน 
-          ไม่ว่าคุณจะอยู่จังหวัดไหน เรามีทีมงานประเมินราคาตามสภาพจริง ไม่กดราคาหน้างาน ปลอดภัย มั่นใจได้ด้วยประสบการณ์รับซื้อยาวนาน
+          เราไม่ใช่แค่ร้านรับซื้อทั่วไป แต่เป็นผู้เชี่ยวชาญด้านฮาร์ดแวร์และอุปกรณ์ไอที
+          ที่ตรวจสอบรุ่น สภาพ อุปกรณ์ และราคาตลาดมือสองก่อนเสนอราคา
+          ไม่ว่าคุณจะอยู่จังหวัดไหนในภาคอีสาน เราประเมินราคาตามสภาพจริง โปร่งใส ไม่กดราคาหน้างาน
         </p>
       </div>
       <div class="grid grid--3">
@@ -265,6 +268,47 @@ const trustItems = [
             </div>
           </div>
         ))}
+      </div>
+
+      <div class="company-trust card">
+        <div class="company-trust__content">
+          <span class="eyebrow">ข้อมูลร้าน</span>
+          <h3 class="company-trust__name">บริษัท อำพล เทรดดิ้ง จำกัด</h3>
+          <p class="company-trust__tagline">ร้านรับซื้อสินค้าไอทีที่มีหน้าร้านจริงในอุบลราชธานี</p>
+          <ul class="company-trust__list">
+            <li><strong>ที่อยู่:</strong> {fullAddress}</li>
+            <li><strong>โทร:</strong> <a href={`tel:${site.phoneTel}`}>{site.phone}</a></li>
+            <li><strong>LINE:</strong> <a href={site.line} target="_blank" rel="noopener noreferrer">{site.lineId}</a></li>
+            <li><strong>เวลาเปิด:</strong> 09:00–21:00 น. ทุกวัน</li>
+          </ul>
+          <div class="company-trust__actions">
+            <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">แชท Line ประเมินราคา</a>
+            <a href={`tel:${site.phoneTel}`} class="btn btn--outline">โทร {site.phone}</a>
+            <a href={site.hasMap} class="btn btn--ghost" target="_blank" rel="noopener noreferrer">ดูแผนที่ร้าน</a>
+          </div>
+        </div>
+        <div class="company-trust__photos">
+          <figure class="company-trust__photo">
+            <OptimizedImage
+              src="/images/about/amphon-trading-storefront-ubon.webp"
+              alt={imageAlt['/images/about/amphon-trading-storefront-ubon.webp'] ?? 'หน้าร้านอำพล เทรดดิ้ง อุบลราชธานี' }
+              loading="lazy"
+              width={480}
+              height={300}
+            />
+            <figcaption>หน้าร้าน 740/8 ถนนชยางกูร อุบลราชธานี</figcaption>
+          </figure>
+          <figure class="company-trust__photo">
+            <OptimizedImage
+              src="/images/about/amphon-trading-shop-interior-evaluation.webp"
+              alt={imageAlt['/images/about/amphon-trading-shop-interior-evaluation.webp'] ?? 'โต๊ะตรวจเช็กและประเมินราคาสินค้าไอที' }
+              loading="lazy"
+              width={480}
+              height={300}
+            />
+            <figcaption>โต๊ะตรวจเช็กและประเมินราคาตามสภาพจริง</figcaption>
+          </figure>
+        </div>
       </div>
 
       <div class="about-gallery" style="margin-top:2.5rem;">
@@ -306,7 +350,7 @@ const trustItems = [
         <div class="section-header section-header--left">
           <span class="eyebrow">บทความความรู้</span>
           <h2>เคล็ดลับก่อนขายสินค้าไอที</h2>
-          <p>อ่านก่อนขาย เพื่อให้ได้ราคาดีที่สุด</p>
+          <p>อ่านก่อนขาย เพื่อเตรียมข้อมูลให้ครบและได้ราคาที่เหมาะสม</p>
         </div>
         <div class="grid grid--3">
           {posts.map((post) => (
@@ -338,7 +382,7 @@ const trustItems = [
       <div class="grid grid--2" style="gap:2rem;">
         <div class="card">
           <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: ประเมินราคาฟรีจริงไหม ใช้เวลานานแค่ไหน?</h3>
-          <p class="text-sm">A: ประเมินฟรี 100% ครับ เพียงแอดไลน์และส่งรูปสินค้าพร้อมสเปกให้เรา ทีมงานจะแจ้งราคาประเมินเบื้องต้นภายใน 15-30 นาทีในช่วงเวลาทำการ</p>
+          <p class="text-sm">A: ประเมินฟรี ไม่มีค่าใช้จ่ายครับ เพียงแอดไลน์และส่งรูปสินค้าพร้อมสเปกให้เรา ทีมงานจะแจ้งราคาประเมินเบื้องต้นภายใน 15-30 นาทีในช่วงเวลาทำการ</p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: อยู่ภาคอีสานตอนบน มีบริการไปรับเครื่องไหม?</h3>
@@ -346,7 +390,7 @@ const trustItems = [
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: ข้อมูลในเครื่องจะหลุดไหม?</h3>
-          <p class="text-sm">A: ปลอดภัยแน่นอนครับ ทางร้านมีนโยบายล้างข้อมูล (Format/Wipe Data) ทันทีที่รับซื้อเครื่องเข้ามา เพื่อปกป้องความเป็นส่วนตัวของลูกค้าขั้นสูงสุด</p>
+          <p class="text-sm">A: ทางร้านมีนโยบายล้างข้อมูล (Format/Wipe Data) ทันทีที่รับซื้อเครื่องเข้ามา เพื่อปกป้องความเป็นส่วนตัวของลูกค้า</p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: รับซื้อเครื่องเสีย หรือเครื่องติดล็อคไหม?</h3>
@@ -359,3 +403,92 @@ const trustItems = [
   <!-- ====== FINAL CTA ====== -->
   <CTAContact title="พร้อมขายแล้ว? ส่งรูปให้เราประเมินราคาฟรีตอนนี้" />
 </BaseLayout>
+
+<style>
+  .company-trust {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  @media (min-width: 900px) {
+    .company-trust {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 2rem;
+    }
+  }
+
+  .company-trust__name {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.375rem;
+  }
+
+  .company-trust__tagline {
+    margin: 0 0 1rem;
+    color: var(--color-muted);
+  }
+
+  .company-trust__list {
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    row-gap: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .company-trust__list a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .company-trust__list a:hover {
+    text-decoration: underline;
+  }
+
+  .company-trust__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.75rem;
+  }
+
+  .company-trust__photos {
+    display: grid;
+    row-gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .company-trust__photos {
+      margin-top: 0;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .company-trust__photo {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .company-trust__photo img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+  }
+
+  .company-trust__photo figcaption {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    background: var(--color-card);
+  }
+</style>
