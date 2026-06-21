@@ -8,10 +8,11 @@ interface Props {
   href: string;
   keyword?: string;
   image?: string;
+  imageAlt?: string;
 }
 
-const { title, description, href, keyword, image } = Astro.props;
-const alt = image ? getImageAlt(image, `${title} — อำพล เทรดดิ้ง`) : '';
+const { title, description, href, keyword, image, imageAlt } = Astro.props;
+const alt = imageAlt ?? (image ? getImageAlt(image, `${title} — อำพล เทรดดิ้ง`) : '');
 ---
 
 <article class="card service-card">

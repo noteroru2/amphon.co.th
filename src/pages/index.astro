@@ -13,6 +13,31 @@ import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema 
 const services = (await getCollection('services', ({ data }) => !data.draft))
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
   .slice(0, 8);
+
+const homepageServiceCardCopy: Record<string, { title: string; description: string; imageAlt?: string }> = {
+  'รับซื้อ-ipad-pro': {
+    title: 'รับซื้อ iPad Pro มือสอง ทุกรุ่น M1 M2 M4',
+    description:
+      'รับซื้อ iPad Pro มือสอง ทุกขนาด ชิป M1 M2 M4 จอ ProMotion รุ่น Wi-Fi และ Cellular ประเมินตามรุ่น สภาพ และอุปกรณ์',
+  },
+  'รับซื้อคอมสำนักงาน': {
+    title: 'รับซื้อคอมสำนักงาน คอมพิวเตอร์ออฟฟิศหลายเครื่อง',
+    description:
+      'รับซื้อคอมสำนักงาน PC ออฟฟิศแบรนด์เนม Dell, HP, Lenovo รวมถึงจอคอม Printer และ UPS ประเมินราคาเบื้องต้นจากรูปได้',
+  },
+  'รับซื้อโน๊ตบุ๊ค': {
+    title: 'รับซื้อโน๊ตบุ๊คมือสอง เครื่องดี-เสีย ประเมินฟรี',
+    description:
+      'รับซื้อโน๊ตบุ๊คมือสองหลายแบรนด์ ทั้งเครื่องใช้งานได้ เครื่องมีตำหนิ เกมมิ่ง และโน๊ตบุ๊คบริษัท ประเมินตามสเปกและสภาพจริง',
+    imageAlt: 'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามสเปกและสภาพจริง อำพล เทรดดิ้ง',
+  },
+  'รับซื้อ-ipad-air': {
+    title: 'รับซื้อ iPad Air มือสอง M1 M2 M3 ทุกความจุ',
+    description:
+      'รับซื้อ iPad Air 4, Air 5 (M1), Air M2 และ Air M3 ส่งรูปและสภาพเครื่อง ประเมินราคาเบื้องต้นจากรูปได้',
+    imageAlt: 'รับซื้อ iPad Air มือสอง ประเมินตามรุ่น สภาพ และอุปกรณ์ อำพล เทรดดิ้ง',
+  },
+};
 const areas    = (await getCollection('areas',    ({ data }) => !data.draft)).slice(0, 8);
 const posts    = (await getCollection('blog',     ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -227,15 +252,19 @@ const trustItems = [
         <p>รับซื้อสินค้าไอทีมือสองหลายชนิด ราคายุติธรรม โปร่งใส</p>
       </div>
       <div class="grid grid--2">
-        {services.slice(0, 4).map((service) => (
+        {services.slice(0, 4).map((service) => {
+          const cardCopy = homepageServiceCardCopy[service.data.slug];
+          return (
           <ServiceCard
-            title={service.data.title}
-            description={service.data.description}
+            title={cardCopy?.title ?? service.data.title}
+            description={cardCopy?.description ?? service.data.description}
             href={`/บริการ/${service.data.slug}`}
             keyword={service.data.mainKeyword}
             image={service.data.heroImage || serviceThumbnails[service.data.slug]}
+            imageAlt={cardCopy?.imageAlt}
           />
-        ))}
+          );
+        })}
       </div>
       <p class="text-center mt-6">
         <a href="/รับซื้อสินค้าไอที" class="btn btn--primary">ดูบริการทั้งหมด →</a>
