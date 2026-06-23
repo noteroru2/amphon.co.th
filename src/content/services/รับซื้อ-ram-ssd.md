@@ -3,7 +3,7 @@ title: "รับซื้อ RAM และ SSD มือสอง DDR4 DDR5 NVM
 h1: "รับซื้อ RAM SSD มือสอง DDR4 DDR5 NVMe SATA ประเมินฟรี"
 slug: "รับซื้อ-ram-ssd"
 order: 13
-description: "รับซื้อ RAM และ SSD มือสอง ให้ราคาสูง รับซื้อแรม DDR4 DDR5 บัสสูง รับซื้อ M.2 NVMe SSD ตีราคาตามความจุและสเปก อัปเกรดคอมนำของเก่ามาขายให้เรา"
+description: "รับซื้อ RAM และ SSD มือสอง ประเมินฟรี รับซื้อแรม DDR4 DDR5 บัสสูง รับซื้อ M.2 NVMe SSD ตีราคาตามความจุและสเปก อัปเกรดคอมนำของเก่ามาขายให้เรา"
 mainKeyword: "รับซื้อ RAM SSD"
 relatedKeywords: ["รับซื้อแรม", "รับซื้อ SSD", "รับซื้อหน่วยความจำ", "รับซื้อคอมพิวเตอร์มือสอง"]
 heroImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"

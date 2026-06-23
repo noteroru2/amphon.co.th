@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ iPhone 16 รับซื้อไอโฟน 16 Pro Max มือสอง ราคาสูง | อำพล เทรดดิ้ง"
+title: "รับซื้อ iPhone 16 รับซื้อไอโฟน 16 Pro Max มือสอง ประเมินตามสภาพจริง | อำพล เทรดดิ้ง"
 h1: "รับซื้อ iPhone 16 มือสอง 16 Pro 16 Pro Max ประเมินฟรี"
 slug: "รับซื้อ-iphone-16"
 order: 4
-description: "รับซื้อ iPhone 16 มือสอง iPhone 16 Plus, 16 Pro, 16 Pro Max ทุกความจุ ประเมินราคาฟรี ให้ราคาสูง จ่ายเงินไว ร้านรับซื้อโทรศัพท์อุบลราชธานี"
+description: "รับซื้อ iPhone 16 มือสอง iPhone 16 Plus, 16 Pro, 16 Pro Max ทุกความจุ ประเมินราคาฟรี ประเมินฟรี จ่ายเงินไว ร้านรับซื้อโทรศัพท์อุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 16"
 relatedKeywords: ["รับซื้อ iPhone 16 Pro Max", "รับซื้อ iPhone 16 Pro", "รับซื้อไอโฟน 16 มือสอง", "ขาย iPhone 16"]
 heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"

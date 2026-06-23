@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ iPhone 17 รับซื้อ iPhone 17 Pro Max ราคาสูงสุด | อำพล เทรดดิ้ง"
+title: "รับซื้อ iPhone 17 รับซื้อ iPhone 17 Pro Max ส่งรูปเช็กราคาได้ | อำพล เทรดดิ้ง"
 h1: "รับซื้อ iPhone 17 มือสอง 17 Air 17 Pro 17 Pro Max ประเมินฟรี"
 slug: "รับซื้อ-iphone-17"
 order: 2
-description: "รับซื้อ iPhone 17 มือสอง iPhone 17 Air, 17 Pro, 17 Pro Max ทุกความจุ ให้ราคาสูงที่สุดในตลาด ตีราคาตามสภาพจริง จ่ายเงินทันที นัดรับอุบลราชธานี"
+description: "รับซื้อ iPhone 17 มือสอง iPhone 17 Air, 17 Pro, 17 Pro Max ทุกความจุ ประเมินตามสภาพจริง ตีราคาตามสภาพจริง จ่ายเงินทันที นัดรับอุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 17"
 relatedKeywords: ["รับซื้อ iPhone 17 Pro Max", "รับซื้อไอโฟน 17", "รับซื้อ iPhone 17 มือสอง", "รับซื้อ iPhone 17 Air"]
 heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"

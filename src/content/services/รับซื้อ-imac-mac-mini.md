@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ iMac และ Mac mini มือสอง ทุกชิป ให้ราคาสูง | อำพล เทรดดิ้ง"
+title: "รับซื้อ iMac และ Mac mini มือสอง ทุกชิป ประเมินฟรี | อำพล เทรดดิ้ง"
 h1: "รับซื้อ iMac Mac mini มือสอง เครื่องตั้งโต๊ะ Apple ประเมินฟรี"
 slug: "รับซื้อ-imac-mac-mini"
 order: 8
-description: "รับซื้อ iMac 24 นิ้ว ชิป M1, M3, M4 และ Mac mini มือสอง ทุกรุ่น ตีราคาสูง รับซื้อถึงที่ ไม่ต้องยกเครื่องมาเอง มีหน้าร้านอุบลราชธานี จ่ายเงินทันที"
+description: "รับซื้อ iMac 24 นิ้ว ชิป M1, M3, M4 และ Mac mini มือสอง ทุกรุ่น ตีราคาตามสภาพจริง รับซื้อถึงที่ ไม่ต้องยกเครื่องมาเอง มีหน้าร้านอุบลราชธานี จ่ายเงินทันที"
 mainKeyword: "รับซื้อ iMac"
 relatedKeywords: ["รับซื้อ Mac mini", "รับซื้อ iMac 24 นิ้ว", "รับซื้อ Mac Studio", "ขาย iMac มือสอง"]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

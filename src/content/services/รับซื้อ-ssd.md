@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ SSD และ HDD มือสอง เช็ค S.M.A.R.T. โปร่งใส ให้ราคาสูง"
+title: "รับซื้อ SSD และ HDD มือสอง เช็ค S.M.A.R.T. โปร่งใส ประเมินฟรี"
 slug: "รับซื้อ-ssd"
 order: 16
 description: "รับซื้อ SSD มือสอง M.2 NVMe Gen3/4, SATA SSD, Enterprise SSD และ HDD SATA/SAS ทุกยี่ห้อ เช็ค S.M.A.R.T. health ก่อนรับซื้อ โปร่งใส 100% จ่ายเงินสดทันที"

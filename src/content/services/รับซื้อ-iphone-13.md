@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ iPhone 13 รับซื้อไอโฟน 13 Pro Max มือสอง ราคาสูง | อำพล เทรดดิ้ง"
+title: "รับซื้อ iPhone 13 รับซื้อไอโฟน 13 Pro Max มือสอง ประเมินตามสภาพจริง | อำพล เทรดดิ้ง"
 h1: "รับซื้อ iPhone 13 มือสอง 13 Pro 13 Pro Max ประเมินตามสภาพ"
 slug: "รับซื้อ-iphone-13"
 order: 7
-description: "รับซื้อ iPhone 13 มือสอง ทุกรุ่น 13 mini, 13 Pro, 13 Pro Max ให้ราคาดี ประเมินตามความจุและสภาพจริง จ่ายเงินทันที ร้านรับซื้ออุบลราชธานี"
+description: "รับซื้อ iPhone 13 มือสอง ทุกรุ่น 13 mini, 13 Pro, 13 Pro Max ประเมินตามสภาพจริง ประเมินตามความจุและสภาพจริง จ่ายเงินทันที ร้านรับซื้ออุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 13"
 relatedKeywords: ["รับซื้อ iPhone 13 Pro Max", "รับซื้อ iPhone 13 Pro", "รับซื้อไอโฟน 13 มือสอง", "ขาย iPhone 13"]
 heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"

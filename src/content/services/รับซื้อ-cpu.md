@@ -3,7 +3,7 @@ title: "รับซื้อ CPU (ซีพียู) มือสอง Intel 
 h1: "รับซื้อ CPU Intel AMD มือสอง ประเมินตามรุ่น Gen Socket และสภาพ"
 slug: "รับซื้อ-cpu"
 order: 12
-description: "รับซื้อ CPU ซีพียูคอมพิวเตอร์มือสอง ให้ราคาดี รับซื้อ Intel Gen 12, 13, 14, AMD Ryzen ทุกซ็อกเก็ต ประเมินราคาจาก Gen และสภาพขา CPU จ่ายเงินทันที"
+description: "รับซื้อ CPU ซีพียูคอมพิวเตอร์มือสอง ประเมินตามสภาพจริง รับซื้อ Intel Gen 12, 13, 14, AMD Ryzen ทุกซ็อกเก็ต ประเมินราคาจาก Gen และสภาพขา CPU จ่ายเงินทันที"
 mainKeyword: "รับซื้อ CPU"
 relatedKeywords: ["รับซื้อซีพียู", "รับซื้อชิ้นส่วนคอม", "รับซื้อ Intel", "รับซื้อ AMD", "รับซื้อคอมประกอบ"]
 heroImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"

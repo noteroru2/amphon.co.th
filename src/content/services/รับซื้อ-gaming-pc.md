@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ Gaming PC คอมพิวเตอร์เล่นเกม ให้ราคาสูงสุด | อำพล เทรดดิ้ง"
-h1: "รับซื้อ Gaming PC คอมเล่นเกม RTX GTX RX ราคาสูง"
+title: "รับซื้อ Gaming PC คอมพิวเตอร์เล่นเกม ประเมินตามสภาพจริง | อำพล เทรดดิ้ง"
+h1: "รับซื้อ Gaming PC คอมเล่นเกม RTX GTX RX ประเมินตามสภาพจริง"
 slug: "รับซื้อ-gaming-pc"
 order: 6
-description: "รับซื้อ Gaming PC คอมพิวเตอร์เล่นเกมมือสอง ให้ราคาสูง ประเมินราคาจาก GPU, CPU, ระบบระบายความร้อน รับซื้อ RTX, GTX, RX จ่ายเงินสดทันที ประเมินฟรี 24 ชม."
+description: "รับซื้อ Gaming PC คอมพิวเตอร์เล่นเกมมือสอง ประเมินราคาจาก GPU, CPU, ระบบระบายความร้อน รับซื้อ RTX, GTX, RX จ่ายเงินสดทันที ประเมินฟรี 24 ชม."
 mainKeyword: "รับซื้อ Gaming PC"
 relatedKeywords: ["รับซื้อคอม", "รับซื้อคอมพิวเตอร์มือสอง", "รับซื้อคอมเล่นเกม", "ขายคอมเกมมิ่ง"]
 heroImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"

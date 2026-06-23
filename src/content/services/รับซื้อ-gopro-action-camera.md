@@ -3,7 +3,7 @@ title: "รับซื้อ GoPro Action Camera DJI Osmo มือสอง | 
 h1: "รับซื้อ GoPro Action Camera DJI Osmo มือสอง ประเมินฟรี"
 slug: "รับซื้อ-gopro-action-camera"
 order: 11
-description: "รับซื้อกล้อง GoPro มือสอง, DJI Osmo Action, Insta360 และ Action Camera ทุกแบรนด์ ให้ราคาสูง ประเมินราคาฟรี จ่ายเงินทันที รับซื้ออุบลราชธานี"
+description: "รับซื้อกล้อง GoPro มือสอง, DJI Osmo Action, Insta360 และ Action Camera ทุกแบรนด์ ประเมินราคาฟรี จ่ายเงินทันที รับซื้ออุบลราชธานี"
 mainKeyword: "รับซื้อ GoPro"
 relatedKeywords: ["รับซื้อ Action Camera", "ขาย GoPro", "รับซื้อ Insta360", "รับซื้อ DJI Osmo"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

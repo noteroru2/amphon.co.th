@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ Notebook Asus มือสอง ทุกซีรีส์ ให้ราคาดี"
+title: "รับซื้อ Notebook Asus มือสอง ทุกซีรีส์ ประเมินตามสภาพจริง"
 h1: "รับซื้อ Notebook Asus มือสอง VivoBook ZenBook ROG TUF ประเมินฟรี จ่ายทันที"
 slug: "รับซื้อ-notebook-asus"
 order: 35

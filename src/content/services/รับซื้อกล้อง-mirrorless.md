@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อกล้อง Mirrorless มือสอง ทุกค่ายให้ราคาสูง | อำพล เทรดดิ้ง"
-h1: "รับซื้อกล้อง Mirrorless มือสอง Full Frame APS-C ราคาสูง"
+title: "รับซื้อกล้อง Mirrorless มือสอง ทุกค่ายประเมินฟรี | อำพล เทรดดิ้ง"
+h1: "รับซื้อกล้อง Mirrorless มือสอง Full Frame APS-C ประเมินตามสภาพจริง"
 slug: "รับซื้อกล้อง-mirrorless"
 order: 9
-description: "รับซื้อกล้อง Mirrorless มือสอง ทั้งเซ็นเซอร์ Full Frame, APS-C และ Micro Four Thirds ทุกค่าย ให้ราคาสูง ประเมินไวตามสภาพ EVF, IBIS ส่งรูปตีราคาฟรี"
+description: "รับซื้อกล้อง Mirrorless มือสอง ทั้งเซ็นเซอร์ Full Frame, APS-C และ Micro Four Thirds ทุกค่าย ประเมินไวตามสภาพ EVF, IBIS ส่งรูปตีราคาฟรี"
 mainKeyword: "รับซื้อกล้อง Mirrorless"
 relatedKeywords: ["ขายกล้อง Mirrorless", "รับซื้อกล้อง Full Frame", "รับซื้อกล้อง APS-C"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

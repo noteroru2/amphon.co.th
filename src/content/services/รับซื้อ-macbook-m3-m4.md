@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ MacBook M3 / M4 รุ่นใหม่ล่าสุด ให้ราคาสูงสุด | อำพล เทรดดิ้ง"
-h1: "รับซื้อ MacBook M3 M4 มือสอง รุ่นใหม่ ราคาสูง จ่ายเงินทันที"
+title: "รับซื้อ MacBook M3 / M4 รุ่นใหม่ล่าสุด ประเมินตามสภาพจริง | อำพล เทรดดิ้ง"
+h1: "รับซื้อ MacBook M3 M4 มือสอง รุ่นใหม่ ประเมินตามสภาพจริง จ่ายเงินทันที"
 slug: "รับซื้อ-macbook-m3-m4"
 order: 8
-description: "รับซื้อ MacBook M3 และ M4 มือสอง รุ่นใหม่ล่าสุด ทั้ง MacBook Air และ Pro ให้ราคาสูงที่สุด ประเมินจากสภาพ กล่อง อุปกรณ์ และประกันศูนย์ Apple Care+"
+description: "รับซื้อ MacBook M3 และ M4 มือสอง รุ่นใหม่ล่าสุด ทั้ง MacBook Air และ Pro ประเมินตามสภาพจริง ประเมินจากสภาพ กล่อง อุปกรณ์ และประกันศูนย์ Apple Care+"
 mainKeyword: "รับซื้อ MacBook M3"
 relatedKeywords: ["รับซื้อแมคบุ๊ค M3", "ขาย MacBook M4", "รับซื้อ MacBook Pro M3", "รับซื้อ MacBook รุ่นใหม่"]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

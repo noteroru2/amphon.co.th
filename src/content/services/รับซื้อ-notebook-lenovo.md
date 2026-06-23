@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ Notebook Lenovo มือสอง ทุกซีรีส์ ให้ราคาดี"
+title: "รับซื้อ Notebook Lenovo มือสอง ทุกซีรีส์ ประเมินตามสภาพจริง"
 h1: "รับซื้อ Notebook Lenovo มือสอง IdeaPad ThinkPad Legion ประเมินฟรี จ่ายทันที"
 slug: "รับซื้อ-notebook-lenovo"
 order: 37

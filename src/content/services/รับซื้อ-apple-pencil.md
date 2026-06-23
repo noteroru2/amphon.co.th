@@ -3,7 +3,7 @@ title: "รับซื้อ Apple Pencil มือสอง Gen 1, Gen 2, USB-
 h1: "รับซื้อ Apple Pencil มือสอง Gen 1 Gen 2 USB-C และ Pro"
 slug: "รับซื้อ-apple-pencil"
 order: 7
-description: "ต้องการขาย Apple Pencil? อำพล เทรดดิ้ง รับซื้อปากกาไอแพด Apple Pencil Gen 1, Gen 2, USB-C และรุ่น Pro ให้ราคาสูง จ่ายเงินไว"
+description: "ต้องการขาย Apple Pencil? อำพล เทรดดิ้ง รับซื้อปากกาไอแพด Apple Pencil Gen 1, Gen 2, USB-C และรุ่น Pro ประเมินฟรี จ่ายเงินไว"
 mainKeyword: "รับซื้อ Apple Pencil"
 relatedKeywords: ["รับซื้อปากกาไอแพด", "ขาย Apple Pencil มือสอง", "รับซื้อ Apple Pencil Gen 2", "รับซื้อ Apple Pencil Pro"]
 heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
@@ -20,7 +20,7 @@ faqs:
     answer: "ใช่ครับ! หากคุณขายเครื่อง iPad พร้อมกับอุปกรณ์เสริมอย่าง Apple Pencil แบบครบชุด ทางร้านยินดีบวกราคาประเมินรวมให้สูงขึ้นครับ"
 ---
 
-มีปากกาไอแพดแต่แทบไม่ได้ใช้งานใช่ไหม? นำมาเปลี่ยนเป็นเงินสดได้เลยที่ อำพล เทรดดิ้ง! เรามีบริการ **รับซื้อ Apple Pencil มือสอง** ให้ราคาดี ทุกเจเนอเรชัน
+มีปากกาไอแพดแต่แทบไม่ได้ใช้งานใช่ไหม? นำมาเปลี่ยนเป็นเงินสดได้เลยที่ อำพล เทรดดิ้ง! เรามีบริการ **รับซื้อ Apple Pencil มือสอง** ประเมินตามสภาพจริง ทุกเจเนอเรชัน
 
 > 💻 **[รับซื้อ iPad มือสอง](/บริการ/รับซื้อ-ipad) แอดไลน์ [@webuy](https://line.me/ti/p/~@webuy) หรือโทร 064-257-9353**
 

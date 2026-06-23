@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ MacBook M1 มือสอง Air และ Pro 13 นิ้ว ให้ราคาดี | อำพล เทรดดิ้ง"
-h1: "รับซื้อ MacBook M1 มือสอง MacBook Air และ MacBook Pro ราคาดี"
+title: "รับซื้อ MacBook M1 มือสอง Air และ Pro 13 นิ้ว ประเมินตามสภาพจริง | อำพล เทรดดิ้ง"
+h1: "รับซื้อ MacBook M1 มือสอง MacBook Air และ MacBook Pro ประเมินตามสภาพจริง"
 slug: "รับซื้อ-macbook-m1"
 order: 8
-description: "รับซื้อ MacBook M1 รุ่นปี 2020 ทั้ง MacBook Air M1 และ MacBook Pro 13 M1 ให้ราคาดีที่สุด ประเมินราคาจาก RAM/SSD และ Battery Cycle รับซื้อถึงที่ โอนเงินไว"
+description: "รับซื้อ MacBook M1 รุ่นปี 2020 ทั้ง MacBook Air M1 และ MacBook Pro 13 M1 ประเมินตามสภาพจริง ประเมินราคาจาก RAM/SSD และ Battery Cycle รับซื้อถึงที่ โอนเงินไว"
 mainKeyword: "รับซื้อ MacBook M1"
 relatedKeywords: ["รับซื้อแมคบุ๊ค M1", "ขาย MacBook Air M1", "รับซื้อ MacBook Pro M1", "ราคา MacBook M1 มือสอง"]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

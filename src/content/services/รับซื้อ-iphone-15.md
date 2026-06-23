@@ -3,7 +3,7 @@ title: "รับซื้อ iPhone 15 รับซื้อไอโฟน 15 
 h1: "รับซื้อ iPhone 15 มือสอง 15 Pro 15 Pro Max จ่ายเงินทันที"
 slug: "รับซื้อ-iphone-15"
 order: 5
-description: "รับซื้อ iPhone 15 มือสอง ทุกรุ่น 15 Plus, 15 Pro, 15 Pro Max ประเมินราคาฟรี ให้ราคาสูงที่สุด ตีราคาตามสภาพจริง รับซื้อทั่วประเทศและหน้าร้านอุบลราชธานี"
+description: "รับซื้อ iPhone 15 มือสอง ทุกรุ่น 15 Plus, 15 Pro, 15 Pro Max ประเมินราคาฟรี ประเมินตามสภาพจริง ตีราคาตามสภาพจริง รับซื้อทั่วประเทศและหน้าร้านอุบลราชธานี"
 mainKeyword: "รับซื้อ iPhone 15"
 relatedKeywords: ["รับซื้อ iPhone 15 Pro Max", "รับซื้อ iPhone 15 Pro", "รับซื้อไอโฟน 15 มือสอง", "ขาย iPhone 15"]
 heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"

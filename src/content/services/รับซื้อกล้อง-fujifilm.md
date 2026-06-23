@@ -1,9 +1,9 @@
 ---
 title: "รับซื้อกล้อง Fujifilm มือสอง รับซื้อเลนส์ Fuji X-Series | อำพล เทรดดิ้ง"
-h1: "รับซื้อกล้อง Fujifilm มือสอง Fuji X-Series ราคาสูง ประเมินฟรี"
+h1: "รับซื้อกล้อง Fujifilm มือสอง Fuji X-Series ประเมินฟรี"
 slug: "รับซื้อกล้อง-fujifilm"
 order: 6
-description: "รับซื้อกล้อง Fujifilm มือสอง ซีรีส์ X-T, X-E, X-S, X100, X-Pro และเลนส์ Fuji XF, XC ทุกระยะ ให้ราคาดี ประเมินตามสภาพจริง รับซื้อทั่วประเทศ"
+description: "รับซื้อกล้อง Fujifilm มือสอง ซีรีส์ X-T, X-E, X-S, X100, X-Pro และเลนส์ Fuji XF, XC ทุกระยะ ประเมินตามสภาพจริง ประเมินตามสภาพจริง รับซื้อทั่วประเทศ"
 mainKeyword: "รับซื้อกล้อง Fujifilm"
 relatedKeywords: ["รับซื้อกล้อง Fuji", "รับซื้อเลนส์ Fujifilm", "ขายกล้องฟูจิ", "รับซื้อ Fuji X100"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"

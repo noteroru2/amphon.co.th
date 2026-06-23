@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ MacBook M2 มือสอง รุ่นมีรอยบาก ให้ราคาสูง | อำพล เทรดดิ้ง"
+title: "รับซื้อ MacBook M2 มือสอง รุ่นมีรอยบาก ประเมินฟรี | อำพล เทรดดิ้ง"
 h1: "รับซื้อ MacBook M2 มือสอง ประเมินตามสภาพและ Battery Cycle"
 slug: "รับซื้อ-macbook-m2"
 order: 8
-description: "รับซื้อ MacBook M2 มือสอง ทั้ง MacBook Air M2 13/15 นิ้ว และ MacBook Pro 13 M2 ประเมินราคาฟรี ให้ราคาสูง รุ่นดีไซน์ใหม่ รอยบาก MagSafe จ่ายเงินสดทันที"
+description: "รับซื้อ MacBook M2 มือสอง ทั้ง MacBook Air M2 13/15 นิ้ว และ MacBook Pro 13 M2 ประเมินราคาฟรี ประเมินฟรี รุ่นดีไซน์ใหม่ รอยบาก MagSafe จ่ายเงินสดทันที"
 mainKeyword: "รับซื้อ MacBook M2"
 relatedKeywords: ["รับซื้อแมคบุ๊ค M2", "ขาย MacBook Air M2", "รับซื้อ MacBook Pro M2", "รับซื้อ MacBook M2 15 นิ้ว"]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"

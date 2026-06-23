@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { getRelatedServicesForEntry } from '../../config/service-clusters';
 
 export async function getStaticPaths() {
   const services = await getCollection('services', ({ data }) => !data.draft);
@@ -11,7 +12,7 @@ export async function getStaticPaths() {
     props: {
       entry,
       relatedAreas: serviceAreas.filter((sa) => sa.data.serviceSlug === entry.data.slug),
-      otherServices: services.filter((s) => s.data.slug !== entry.data.slug),
+      otherServices: getRelatedServicesForEntry(entry, services, 12),
     },
   }));
 }

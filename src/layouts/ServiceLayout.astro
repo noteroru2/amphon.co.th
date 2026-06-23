@@ -15,6 +15,7 @@ import {
   resolveOgImage,
 } from '../lib/seo';
 import { site } from '../config/site';
+import { sanitizeServiceDisplayText } from '../config/service-clusters';
 import type { BreadcrumbItem } from '../config/site';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -320,14 +321,19 @@ const steps = [
 
       {otherServices.length > 0 && (
         <div class="sidebar__box">
-          <p class="sidebar__title">บริการอื่นๆ</p>
+          <p class="sidebar__title">บริการที่เกี่ยวข้อง</p>
           <ul class="sidebar__links">
             {otherServices.map((service) => (
               <li>
-                <a href={`/บริการ/${service.data.slug}`}>{service.data.title}</a>
+                <a href={`/บริการ/${service.data.slug}`}>
+                  {sanitizeServiceDisplayText(service.data.title)}
+                </a>
               </li>
             ))}
           </ul>
+          <p style="margin-top:.875rem;margin-bottom:0;">
+            <a href="/รับซื้อสินค้าไอที" class="sidebar__view-all">ดูบริการทั้งหมด →</a>
+          </p>
         </div>
       )}
 
@@ -375,14 +381,14 @@ const steps = [
     <section class="section">
       <div class="container">
         <div class="section-header section-header--left">
-          <span class="eyebrow">บริการอื่นๆ</span>
+          <span class="eyebrow">บริการที่เกี่ยวข้อง</span>
           <h2>บริการรับซื้ออื่นที่เกี่ยวข้อง</h2>
         </div>
         <div class="grid grid--3">
           {otherServices.slice(0, 3).map((service) => (
             <ServiceCard
-              title={service.data.title}
-              description={service.data.description}
+              title={sanitizeServiceDisplayText(service.data.title)}
+              description={sanitizeServiceDisplayText(service.data.description)}
               href={`/บริการ/${service.data.slug}`}
               keyword={service.data.mainKeyword}
               image={serviceThumbnails[service.data.slug]}

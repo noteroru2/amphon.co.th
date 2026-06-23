@@ -3,7 +3,7 @@ title: "รับซื้อ Magic Keyboard iPad มือสอง Smart Keybo
 h1: "รับซื้อ Magic Keyboard iPad มือสอง ประเมินตามรุ่นและสภาพ"
 slug: "รับซื้อ-magic-keyboard-ipad"
 order: 8
-description: "อำพล เทรดดิ้ง รับซื้อคีย์บอร์ดไอแพด Magic Keyboard, Smart Keyboard Folio มือสอง สำหรับ iPad Pro, iPad Air ให้ราคาสูง ประเมินฟรี"
+description: "อำพล เทรดดิ้ง รับซื้อคีย์บอร์ดไอแพด Magic Keyboard, Smart Keyboard Folio มือสอง สำหรับ iPad Pro, iPad Air ประเมินฟรี"
 mainKeyword: "รับซื้อ Magic Keyboard iPad"
 relatedKeywords: ["รับซื้อคีย์บอร์ดไอแพด", "ขาย Magic Keyboard", "รับซื้อ Smart Keyboard Folio", "รับซื้อ Magic Keyboard iPad Pro"]
 heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
