@@ -257,6 +257,16 @@ Money pages use **national intent** — write for customers nationwide, not only
 4. **Pickup / delivery / on-site inspection** — depends on product type, quantity, and location; state conditions, do not promise all areas unconditionally.
 5. **Area/local pages** (e.g. `รับซื้อ-iphone-อุบลราชธานี`) use a separate local SEO template — not the default money page framing.
 
+## Homepage Rules
+
+The homepage (`src/pages/index.astro`) and site-wide components (footer, CTA) use **national intent**:
+
+1. **Primary messaging** — รับซื้อสินค้าไอทีมือสองทั่วประเทศ; customers nationwide can send photos or item lists for appraisal.
+2. **Ubon Ratchathani** — mention only as trust proof (real storefront at 740/8 ถนนชยางกูร), not as a service limit.
+3. **Area pages section** — may list provinces for local convenience; do not frame the homepage hero or main sections as Isan-only or Ubon-only.
+4. **Pickup / delivery** — state that methods depend on product type, quantity, and location.
+5. **Money pages** — follow the same national intent rules; area-specific copy belongs on area pages only.
+
 ## Before Editing
 
 Before creating or editing any money page:

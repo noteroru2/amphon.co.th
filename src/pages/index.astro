@@ -16,23 +16,23 @@ const services = (await getCollection('services', ({ data }) => !data.draft))
 
 const homepageServiceCardCopy: Record<string, { title: string; description: string; imageAlt?: string }> = {
   'รับซื้อ-ipad-pro': {
-    title: 'รับซื้อ iPad Pro มือสอง ทุกรุ่น M1 M2 M4',
+    title: 'รับซื้อ iPad Pro มือสอง หลายรุ่น M1 M2 M4',
     description:
-      'รับซื้อ iPad Pro มือสอง ทุกขนาด ชิป M1 M2 M4 จอ ProMotion รุ่น Wi-Fi และ Cellular ประเมินตามรุ่น สภาพ และอุปกรณ์',
+      'รับซื้อ iPad Pro มือสอง หลายขนาด ชิป M1 M2 M4 รุ่น Wi-Fi และ Cellular ส่งรูปเช็กราคาได้ ประเมินตามรุ่น สภาพ และอุปกรณ์',
   },
   'รับซื้อคอมสำนักงาน': {
     title: 'รับซื้อคอมสำนักงาน คอมพิวเตอร์ออฟฟิศหลายเครื่อง',
     description:
-      'รับซื้อคอมสำนักงาน PC ออฟฟิศแบรนด์เนม Dell, HP, Lenovo รวมถึงจอคอม Printer และ UPS ประเมินราคาเบื้องต้นจากรูปได้',
+      'รับซื้อคอมสำนักงาน PC ออฟฟิศแบรนด์เนม Dell, HP, Lenovo รวมจอคอม Printer และ UPS ส่งรูปหรือ Inventory List ประเมินเบื้องต้นได้',
   },
   'รับซื้อโน๊ตบุ๊ค': {
-    title: 'รับซื้อโน๊ตบุ๊คมือสอง เครื่องดี-เสีย ประเมินฟรี',
+    title: 'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามสภาพจริง',
     description:
-      'รับซื้อโน๊ตบุ๊คมือสองหลายแบรนด์ ทั้งเครื่องใช้งานได้ เครื่องมีตำหนิ เกมมิ่ง และโน๊ตบุ๊คบริษัท ประเมินตามสเปกและสภาพจริง',
+      'รับซื้อโน๊ตบุ๊คมือสองหลายแบรนด์ ทั้งเครื่องใช้งานได้ เครื่องมีตำหนิ เกมมิ่ง และโน๊ตบุ๊คบริษัท ส่งรูปเช็กราคาได้',
     imageAlt: 'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามสเปกและสภาพจริง อำพล เทรดดิ้ง',
   },
   'รับซื้อ-ipad-air': {
-    title: 'รับซื้อ iPad Air มือสอง M1 M2 M3 ทุกความจุ',
+    title: 'รับซื้อ iPad Air มือสอง M1 M2 M3 หลายความจุ',
     description:
       'รับซื้อ iPad Air 4, Air 5 (M1), Air M2 และ Air M3 ส่งรูปและสภาพเครื่อง ประเมินราคาเบื้องต้นจากรูปได้',
     imageAlt: 'รับซื้อ iPad Air มือสอง ประเมินตามรุ่น สภาพ และอุปกรณ์ อำพล เทรดดิ้ง',
@@ -56,7 +56,7 @@ const schemaExtras = [
   createOfferCatalogSchema({ pageUrl, name: 'บริการรับซื้อสินค้าไอที', items: serviceItems }),
   createItemListSchema({
     pageUrl,
-    name: 'พื้นที่ให้บริการภาคอีสาน',
+    name: 'พื้นที่ที่สะดวกสำหรับนัดรับและเข้าร้าน',
     items: areas.map((a) => ({
       name: a.data.title,
       url: absoluteUrl(`/พื้นที่ให้บริการ/${a.data.slug}`),
@@ -66,14 +66,12 @@ const schemaExtras = [
 ];
 
 const categories = [
-  { label: 'iPhone', href: '/บริการ/รับซื้อ-iphone' },
-  { label: 'iPad', href: '/บริการ/รับซื้อ-ipad' },
-  { label: 'MacBook', href: '/บริการ/รับซื้อ-macbook' },
-  { label: 'โน๊ตบุ๊ค', href: '/บริการ/รับซื้อโน๊ตบุ๊ค' },
-  { label: 'คอมพิวเตอร์', href: '/บริการ/รับซื้อคอมพิวเตอร์' },
-  { label: 'คอมบริษัท', href: '/บริการ/รับซื้อคอมบริษัท' },
+  { label: 'คอม / โน๊ตบุ๊ค', href: '/บริการ/รับซื้อโน๊ตบุ๊ค' },
+  { label: 'iPhone / iPad / MacBook', href: '/บริการ/รับซื้อ-iphone' },
   { label: 'กล้อง / เลนส์', href: '/บริการ/รับซื้อกล้อง' },
-  { label: 'ไอทีอื่นๆ', href: '/รับซื้อสินค้าไอที' },
+  { label: 'คอมบริษัท / ยกล็อต', href: '/บริการ/รับซื้อคอมบริษัท' },
+  { label: 'Server / Network / UPS', href: '/บริการ/รับซื้อ-server-network' },
+  { label: 'เครื่องมีตำหนิ / เสีย', href: '/บริการ/รับซื้อโน๊ตบุ๊ค' },
 ].map((cat) => ({
   ...cat,
   ...(categoryImages[cat.href] ?? {
@@ -82,39 +80,77 @@ const categories = [
   }),
 }));
 
+const b2bServices = [
+  {
+    title: 'รับซื้อคอมสำนักงาน',
+    href: '/บริการ/รับซื้อคอมสำนักงาน',
+    desc: 'คอมออฟฟิศหลายเครื่อง ส่งรายการหรือรูปประเมินเบื้องต้นได้',
+  },
+  {
+    title: 'รับซื้อคอมบริษัท',
+    href: '/บริการ/รับซื้อคอมบริษัท',
+    desc: 'อุปกรณ์ไอทีองค์กร รับพิจารณาทั่วประเทศ',
+  },
+  {
+    title: 'รับซื้อคอมยกล็อต',
+    href: '/บริการ/รับซื้อคอมยกล็อต',
+    desc: 'งานยกล็อตหลายเครื่อง ส่ง Inventory List ประเมินได้',
+  },
+  {
+    title: 'รับซื้อคอมบริษัทปิดกิจการ',
+    href: '/บริการ/รับซื้อคอมบริษัทปิดกิจการ',
+    desc: 'เคลียร์อุปกรณ์ไอทีเมื่อปิดกิจการหรือย้ายสำนักงาน',
+  },
+  {
+    title: 'รับเคลียร์อุปกรณ์ไอทีสำนักงาน',
+    href: '/บริการ/รับเคลียร์อุปกรณ์ไอทีสำนักงาน',
+    desc: 'รับพิจารณาอุปกรณ์สำนักงานคงเหลือทั่วประเทศ',
+  },
+  {
+    title: 'รับซื้ออุปกรณ์ไอทีบริษัท',
+    href: '/บริการ/รับซื้ออุปกรณ์ไอทีบริษัท',
+    desc: 'Server, Network, UPS และอุปกรณ์ไอทีองค์กร',
+  },
+  {
+    title: 'รับประมูลคอมพิวเตอร์มือสอง',
+    href: '/บริการ/รับประมูลคอมพิวเตอร์มือสอง',
+    desc: 'งานประมูลและล็อตคอมมือสอง ติดต่อสอบถามรายละเอียด',
+  },
+];
+
 const fullAddress = [site.address.street, site.address.locality, site.address.region, site.address['postalCode']].join(' ');
 
 const trustPhotos = [
   {
     src: '/images/about/amphon-trading-storefront-ubon.webp',
-    title: 'มีหน้าร้านจริง อุบลราชธานี',
+    title: 'มีหน้าร้านจริง ตรวจสอบได้',
     desc: '740/8 ถนนชยางกูร ตำบลในเมือง อำเภอเมืองอุบลราชธานี',
   },
   {
     src: '/images/about/amphon-trading-shop-interior-evaluation.webp',
-    title: 'ตรวจสอบและจ่ายเงินทันที',
-    desc: 'ทีมงานตรวจสภาพเครื่องจริง โอนเงิน/เงินสดทันทีหลังตกลงราคา',
+    title: 'ตรวจสอบและจ่ายเงินเมื่อตกลงราคา',
+    desc: 'ทีมงานตรวจสภาพเครื่องจริง โอนเงินหรือเงินสดหลังตกลงราคา',
   },
   {
     src: '/images/about/amphon-trading-shop-showroom.webp',
     title: 'ประเมินราคาตามสภาพจริง',
-    desc: 'ทีมงานมืออาชีพด้านไอที ตรวจสเปกและสภาพเครื่องอย่างละเอียด',
+    desc: 'ทีมงานด้านไอที ตรวจสเปกและสภาพเครื่องอย่างละเอียด',
   },
 ];
 
 const trustItems = [
-  { icon: '💯', title: 'ประเมินราคาตามสภาพจริง',    desc: 'ทีมงานตรวจสเปกลึก ให้ราคาตามค่าจริงของสินค้า ไม่กดราคาตามใจชอบ'      },
-  { icon: '🏪', title: 'มีหน้าร้านและช่องทางชัดเจน', desc: 'เปิดหน้าร้าน 09:00–21:00 น. ทุกวัน · ส่งรูปประเมินผ่าน Line ได้ตลอด 24 ชม.' },
-  { icon: '📦', title: 'รับซื้อหลายประเภทในที่เดียว', desc: 'ไม่ต้องหลายร้าน รับซื้อโน๊ตบุ๊ค มือถือ MacBook คอม กล้อง ครบ'     },
-  { icon: '📸', title: 'ส่งรูปประเมินก่อนได้',       desc: 'ส่งรูปผ่าน Line รับราคาเบื้องต้นใน 15-30 นาที ไม่เสียเวลาเดินทาง' },
-  { icon: '💸', title: 'โอนเงินรวดเร็ว',             desc: 'ตกลงราคาแล้วจ่ายเงินทันที โอน/เงินสด โดยไม่มีค่าใช้จ่ายซ่อนเร้น'  },
-  { icon: '🛡️', title: 'ให้คำแนะนำก่อนขาย',         desc: 'บอกวิธีเตรียมเครื่องให้ได้ราคาดีขึ้น ปรึกษาฟรีทุกวัน'             },
+  { icon: '🏪', title: 'มีหน้าร้านจริงที่อุบลราชธานี',    desc: '740/8 ถนนชยางกูร ตรวจสอบได้ ลูกค้าใกล้เคียงนำสินค้าเข้าร้านได้' },
+  { icon: '📸', title: 'ส่งรูปประเมินก่อน ไม่บังคับขาย',   desc: 'ลูกค้าทั่วประเทศส่งรูปหรือรายการสินค้าทาง LINE ได้ก่อนตัดสินใจ' },
+  { icon: '🏢', title: 'รับทั้งลูกค้าทั่วไปและบริษัท',     desc: 'รองรับงานยกล็อต Inventory List และอุปกรณ์ไอทีองค์กรทั่วประเทศ' },
+  { icon: '📦', title: 'รับซื้อหลายหมวดสินค้าไอที',       desc: 'โน๊ตบุ๊ค มือถือ MacBook คอม กล้อง Server และอุปกรณ์สำนักงาน' },
+  { icon: '💯', title: 'ประเมินตามสภาพจริง',              desc: 'ตรวจสเปกและสภาพเครื่องก่อนเสนอราคา โปร่งใส ไม่กดราคาหน้างาน' },
+  { icon: '💬', title: 'ติดต่อได้ทาง LINE และโทร',        desc: 'แชท LINE @webuy หรือโทร 064-257-9353 สอบถามและส่งรูปได้สะดวก' },
 ];
 ---
 
 <BaseLayout
-  title="อำพล เทรดดิ้ง รับซื้อสินค้าไอที ภาคอีสาน — ประเมินราคาฟรี"
-  description={site.description}
+  title="รับซื้อสินค้าไอทีมือสองทั่วประเทศ ส่งรูปประเมินฟรี | AMPHON TRADING"
+  description="อำพล เทรดดิ้ง รับซื้อโน๊ตบุ๊ค คอม iPhone iPad MacBook กล้อง และอุปกรณ์ไอทีทั่วประเทศ ส่งรูปเช็กราคาเบื้องต้นได้ มีหน้าร้านจริงที่อุบลราชธานี"
   canonical={pageUrl}
   ogImage="/images/og/og-home.webp"
   breadcrumbs={breadcrumbs}
@@ -140,43 +176,43 @@ const trustItems = [
     <!-- Gradient overlay for text readability -->
     <div class="hero__bg-overlay" aria-hidden="true"></div>
 
-    <div class="container hero__inner hero__inner--overlay" role="img" aria-label="อำพล เทรดดิ้ง ร้านรับซื้อสินค้าไอที ภาคอีสาน — โน๊ตบุ๊ค MacBook iPhone iPad คอมพิวเตอร์ กล้อง">
+    <div class="container hero__inner hero__inner--overlay" role="img" aria-label="อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสองทั่วประเทศ — โน๊ตบุ๊ค MacBook iPhone iPad คอมพิวเตอร์ กล้อง">
       <!-- Left: copy panel -->
       <div class="hero__copy hero__copy--glass">
-        <span class="tag tag--orange" style="margin-bottom:1rem;">อำพล เทรดดิ้ง · ภาคอีสาน</span>
-        <h1>รับซื้อสินค้าไอทีทุกชนิด<br/>ในภาคอีสาน</h1>
+        <span class="tag tag--orange" style="margin-bottom:1rem;">อำพล เทรดดิ้ง · รับซื้อทั่วประเทศ</span>
+        <h1>รับซื้อสินค้าไอทีมือสองทั่วประเทศ<br/>ส่งรูปประเมินฟรี</h1>
         <p class="hero__subtitle">
-          รับซื้อ iPhone, iPad, MacBook, โน๊ตบุ๊ค, คอมพิวเตอร์, กล้อง และอุปกรณ์ไอที<br/>
-          ประเมินราคาตามสภาพจริง · มีหน้าร้านจริงในอุบลราชธานี · จ่ายเงินทันที
+          อำพล เทรดดิ้ง รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ iPhone iPad MacBook กล้อง และอุปกรณ์ไอทีจากลูกค้าทั่วประเทศ<br/>
+          ส่งรูปหรือรายการสินค้าเพื่อประเมินราคาเบื้องต้นได้ · มีหน้าร้านจริงที่อุบลราชธานี ตรวจสอบได้
         </p>
         <div class="hero__actions">
           <a href={site.line} class="btn btn--line btn--lg" target="_blank" rel="noopener noreferrer">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/></svg>
-            แชท Line ประเมินราคา
+            ส่งรูปประเมินทาง LINE @webuy
           </a>
           <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
             📞 โทร {site.phone}
           </a>
-          <a href="/พื้นที่ให้บริการ" class="btn btn--ghost">
-            ดูพื้นที่ →
+          <a href="/รับซื้อสินค้าไอที" class="btn btn--ghost">
+            ดูสินค้าที่รับซื้อ →
           </a>
         </div>
         <div class="hero__trust">
-          <span class="trust-badge"><span class="trust-badge__icon">✓</span> ประเมินราคาฟรี</span>
-          <span class="trust-badge"><span class="trust-badge__icon">✓</span> โอนเงินไว</span>
-          <span class="trust-badge"><span class="trust-badge__icon">✓</span> มีหน้าร้านจริง</span>
-          <span class="trust-badge"><span class="trust-badge__icon">✓</span> รับซื้อถึงที่บางพื้นที่</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> มีหน้าร้านจริง ตรวจสอบได้</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> รับซื้อหลายหมวดสินค้าไอที</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> รองรับลูกค้าทั่วประเทศ</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> ส่งรูปประเมินเบื้องต้นได้</span>
         </div>
 
         <!-- Stats bar -->
         <div class="hero__stats">
           <div class="hero__stat">
-            <span class="hero__stat-value">20</span>
-            <span class="hero__stat-label">จังหวัดอีสาน</span>
+            <span class="hero__stat-value">ทั่วประเทศ</span>
+            <span class="hero__stat-label">รับซื้อออนไลน์</span>
           </div>
           <div class="hero__stat">
-            <span class="hero__stat-value">7+</span>
-            <span class="hero__stat-label">ประเภทสินค้า</span>
+            <span class="hero__stat-value">6+</span>
+            <span class="hero__stat-label">หมวดสินค้าไอที</span>
           </div>
           <div class="hero__stat">
             <span class="hero__stat-value">ฟรี</span>
@@ -184,7 +220,7 @@ const trustItems = [
           </div>
           <div class="hero__stat">
             <span class="hero__stat-value">24 ชม.</span>
-            <span class="hero__stat-label">Line @webuy</span>
+            <span class="hero__stat-label">LINE @webuy</span>
           </div>
         </div>
       </div>
@@ -197,7 +233,7 @@ const trustItems = [
       <div class="section-header">
         <span class="eyebrow">สินค้าที่รับซื้อ</span>
         <h2>รับซื้ออะไรบ้าง?</h2>
-        <p>รับซื้อสินค้าไอทีมือสองหลายประเภท ส่งรูปประเมินราคาก่อนได้ทุกชนิด</p>
+        <p>รับซื้อสินค้าไอทีมือสองหลายหมวดจากลูกค้าทั่วประเทศ ส่งรูปเช็กราคาได้ ประเมินตามสภาพจริง เหมาะกับทั้งลูกค้าทั่วไปและองค์กร</p>
       </div>
       <div class="cat-grid">
         {categories.map((cat) => (
@@ -216,28 +252,28 @@ const trustItems = [
       <div class="section-header">
         <span class="eyebrow">ขั้นตอน</span>
         <h2>ขายสินค้าไอทีกับเรา ง่ายใน 4 ขั้นตอน</h2>
-        <p>ไม่ต้องเดินทาง ส่งรูปผ่าน Line รับราคา แล้วนัดรับของ</p>
+        <p>ลูกค้าใกล้อุบลราชธานีสามารถนำสินค้ามาที่หน้าร้านได้ ส่วนลูกค้าต่างจังหวัดส่งรูปหรือรายการสินค้าเพื่อประเมินเบื้องต้นก่อน แล้วค่อยคุยวิธีจัดส่งหรือนัดหมายตามความเหมาะสม</p>
       </div>
       <div class="steps">
         <div class="step">
           <span class="step__number">1</span>
-          <h3 class="step__title">ส่งรูปและสเปกสินค้า</h3>
-          <p class="step__desc">ถ่ายรูปสินค้า ระบุรุ่น สภาพ และอุปกรณ์ที่มีมาด้วย ส่งผ่าน Line @webuy</p>
+          <h3 class="step__title">ส่งรูปหรือรายการสินค้า</h3>
+          <p class="step__desc">ถ่ายรูปสินค้า ระบุรุ่น สภาพ และอุปกรณ์ที่มีมาด้วย หรือส่ง Inventory List ผ่าน LINE @webuy</p>
         </div>
         <div class="step">
           <span class="step__number">2</span>
-          <h3 class="step__title">ประเมินราคาเบื้องต้นฟรี</h3>
-          <p class="step__desc">ทีมงานตรวจสเปกและแจ้งราคาภายใน 15–30 นาที ไม่มีค่าใช้จ่าย</p>
+          <h3 class="step__title">ประเมินราคาเบื้องต้น</h3>
+          <p class="step__desc">ทีมงานตรวจสเปกและแจ้งราคาเบื้องต้นภายใน 15–30 นาทีในช่วงเวลาทำการ ไม่มีค่าใช้จ่าย</p>
         </div>
         <div class="step">
           <span class="step__number">3</span>
-          <h3 class="step__title">นัดรับ / ส่งสินค้า</h3>
-          <p class="step__desc">นัดรับถึงที่ในบางพื้นที่ หรือนำมาที่ร้านได้เลย ที่อุบลราชธานี</p>
+          <h3 class="step__title">นัดตรวจเช็ก / จัดส่ง / เข้าร้าน</h3>
+          <p class="step__desc">เลือกวิธีที่เหมาะสมตามประเภทสินค้า จำนวน และพื้นที่ — เข้าร้านที่อุบลราชธานี นัดรับ หรือจัดส่งตามที่ตกลง</p>
         </div>
         <div class="step">
           <span class="step__number">4</span>
-          <h3 class="step__title">ตรวจสอบและโอนเงิน</h3>
-          <p class="step__desc">ตรวจสภาพเครื่องจริง ตกลงราคาแล้วจ่ายเงินสด/โอนทันที</p>
+          <h3 class="step__title">ตรวจสอบและจ่ายเงิน</h3>
+          <p class="step__desc">ตรวจสภาพเครื่องจริง ตกลงราคาแล้วจ่ายเงินสดหรือโอนทันที</p>
         </div>
       </div>
     </div>
@@ -248,8 +284,8 @@ const trustItems = [
     <div class="container">
       <div class="section-header section-header--left">
         <span class="eyebrow">บริการรับซื้อ</span>
-        <h2>สินค้าที่รับซื้อทุกประเภท</h2>
-        <p>รับซื้อสินค้าไอทีมือสองหลายชนิด ราคายุติธรรม โปร่งใส</p>
+        <h2>บริการรับซื้อยอดนิยม</h2>
+        <p>รับซื้อสินค้าไอทีมือสองหลายชนิดจากลูกค้าทั่วประเทศ ส่งรูปเช็กราคาได้ ประเมินตามสภาพจริง</p>
       </div>
       <div class="grid grid--2">
         {services.slice(0, 4).map((service) => {
@@ -272,6 +308,26 @@ const trustItems = [
     </div>
   </section>
 
+  <!-- ====== B2B SERVICES ====== -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">บริการสำหรับบริษัท</span>
+        <h2>รับซื้ออุปกรณ์ไอทีองค์กรทั่วประเทศ</h2>
+        <p>รองรับงานคอมสำนักงาน ยกล็อต และเคลียร์อุปกรณ์ไอทีเมื่อปิดกิจการหรือย้ายสำนักงาน ส่งรายการหรือรูปประเมินเบื้องต้นได้</p>
+      </div>
+      <div class="grid grid--3">
+        {b2bServices.map((item) => (
+          <a href={item.href} class="card b2b-card">
+            <h3 class="b2b-card__title">{item.title}</h3>
+            <p class="b2b-card__desc">{item.desc}</p>
+            <span class="b2b-card__link">ดูรายละเอียด →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ====== CTA BAND ====== -->
   <CTAContact />
 
@@ -280,11 +336,11 @@ const trustItems = [
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">ทำไมต้องเลือกเรา</span>
-        <h2>ทำไมต้องขายกับ AMPHON TRADING ร้านรับซื้อสินค้าไอทีที่มีหน้าร้านจริงในอุบลราชธานี</h2>
+        <h2>ทำไมลูกค้าทั่วประเทศเลือกส่งรูปประเมินกับ AMPHON TRADING</h2>
         <p>
           เราไม่ใช่แค่ร้านรับซื้อทั่วไป แต่เป็นผู้เชี่ยวชาญด้านฮาร์ดแวร์และอุปกรณ์ไอที
           ที่ตรวจสอบรุ่น สภาพ อุปกรณ์ และราคาตลาดมือสองก่อนเสนอราคา
-          ไม่ว่าคุณจะอยู่จังหวัดไหนในภาคอีสาน เราประเมินราคาตามสภาพจริง โปร่งใส ไม่กดราคาหน้างาน
+          ลูกค้าทั่วประเทศส่งรูปหรือรายการสินค้าประเมินเบื้องต้นได้ มีหน้าร้านจริงที่อุบลราชธานีเป็นหลักฐานความน่าเชื่อถือ
         </p>
       </div>
       <div class="grid grid--3">
@@ -303,7 +359,7 @@ const trustItems = [
         <div class="company-trust__content">
           <span class="eyebrow">ข้อมูลร้าน</span>
           <h3 class="company-trust__name">บริษัท อำพล เทรดดิ้ง จำกัด</h3>
-          <p class="company-trust__tagline">ร้านรับซื้อสินค้าไอทีที่มีหน้าร้านจริงในอุบลราชธานี</p>
+          <p class="company-trust__tagline">รับซื้อสินค้าไอทีมือสองทั่วประเทศ · มีหน้าร้านจริงที่อุบลราชธานี</p>
           <ul class="company-trust__list">
             <li><strong>ที่อยู่:</strong> {fullAddress}</li>
             <li><strong>โทร:</strong> <a href={`tel:${site.phoneTel}`}>{site.phone}</a></li>
@@ -356,8 +412,8 @@ const trustItems = [
     <div class="container">
       <div class="section-header section-header--left">
         <span class="eyebrow">พื้นที่ให้บริการ</span>
-        <h2>บริการรับซื้อทั่วภาคอีสาน</h2>
-        <p>ให้บริการครอบคลุม 20 จังหวัดอีสาน นัดรับถึงที่ได้บางพื้นที่</p>
+        <h2>พื้นที่ที่สะดวกสำหรับนัดรับและเข้าร้าน</h2>
+        <p>มีหน้าร้านที่อุบลราชธานี ลูกค้าใกล้เคียงนำสินค้าเข้าร้านได้ การนัดรับถึงที่ขึ้นอยู่กับประเภทสินค้า จำนวน และพื้นที่</p>
       </div>
       <ProvinceGrid
         provinces={areas.map((area) => ({
@@ -414,8 +470,8 @@ const trustItems = [
           <p class="text-sm">A: ประเมินฟรี ไม่มีค่าใช้จ่ายครับ เพียงแอดไลน์และส่งรูปสินค้าพร้อมสเปกให้เรา ทีมงานจะแจ้งราคาประเมินเบื้องต้นภายใน 15-30 นาทีในช่วงเวลาทำการ</p>
         </div>
         <div class="card">
-          <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: อยู่ภาคอีสานตอนบน มีบริการไปรับเครื่องไหม?</h3>
-          <p class="text-sm">A: เรารับซื้อครอบคลุม 20 จังหวัดในภาคอีสาน โดยการนัดรับถึงที่จะขึ้นอยู่กับมูลค่าสินค้าและระยะทางครับ สามารถทักมาสอบถามพื้นที่นัดรับก่อนได้เลย</p>
+          <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: อยู่ต่างจังหวัด ส่งรูปประเมินได้ไหม?</h3>
+          <p class="text-sm">A: ได้ครับ ลูกค้าทั่วประเทศส่งรูปหรือรายการสินค้าทาง LINE @webuy เพื่อประเมินราคาเบื้องต้นได้ก่อน จากนั้นค่อยคุยวิธีจัดส่งหรือนัดหมายตามประเภทสินค้าและพื้นที่</p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.5rem;font-size:1.1rem;">Q: ข้อมูลในเครื่องจะหลุดไหม?</h3>
@@ -430,7 +486,7 @@ const trustItems = [
   </section>
 
   <!-- ====== FINAL CTA ====== -->
-  <CTAContact title="พร้อมขายแล้ว? ส่งรูปให้เราประเมินราคาฟรีตอนนี้" />
+  <CTAContact />
 </BaseLayout>
 
 <style>
@@ -519,5 +575,39 @@ const trustItems = [
     font-size: 0.8125rem;
     color: var(--color-muted);
     background: var(--color-card);
+  }
+
+  .b2b-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .b2b-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .b2b-card__title {
+    margin: 0;
+    font-size: 1.0625rem;
+    color: var(--color-text);
+  }
+
+  .b2b-card__desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    flex: 1;
+  }
+
+  .b2b-card__link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
   }
 </style>

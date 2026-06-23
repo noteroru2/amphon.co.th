@@ -33,7 +33,7 @@ export function toAbsoluteMediaUrl(pathOrUrl: string): string {
 }
 
 export function seoTitle(pageTitle?: string): string {
-  if (!pageTitle) return `${site.title} | รับซื้อสินค้าทุกชนิด ภาคอีสาน`;
+  if (!pageTitle) return `${site.title} | รับซื้อสินค้าไอทีมือสองทั่วประเทศ`;
   return `${pageTitle} | ${site.title}`;
 }
 
@@ -64,10 +64,9 @@ function parseOpeningHours(hours: string) {
 }
 
 function areaServedNodes() {
-  return site.isanProvinces.map((province) => ({
-    '@type': 'AdministrativeArea' as const,
-    name: province,
-  }));
+  return [
+    { '@type': 'Country' as const, name: 'Thailand', alternateName: 'ประเทศไทย' },
+  ];
 }
 
 function postalAddressNode() {
