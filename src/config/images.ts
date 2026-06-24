@@ -53,8 +53,6 @@ export const imageAlt: Record<string, string> = {
     'ตรวจ Battery Health ก่อนรับซื้อ iPhone',
   '/images/trust/iphone-faceid-truetone-check.webp':
     'ตรวจ Face ID และ True Tone ก่อนประเมินราคา iPhone',
-  '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp':
-    'รับซื้อกล้องมือสอง ทุกประเภท ประเมินราคาฟรี ร้านอำพล เทรดดิ้ง อุบลราชธานี',
   '/images/trust/camera-inspection-desk.webp':
     'ร้านอำพล เทรดดิ้งตรวจเช็กกล้องมือสอง',
   '/images/trust/camera-lens-check.webp':
