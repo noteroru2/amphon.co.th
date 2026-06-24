@@ -10,13 +10,13 @@ const SERVICES = path.join(__dirname, '..', 'src', 'content', 'services');
 /** @param {string} slug */
 const u = (slug) => `/บริการ/${slug}`;
 
-/** Broken slug alias: no file uses รับซื้อ-rog-gaming-notebook — route is รับซื้อ-rog-strix */
-const ROG_HUB = 'รับซื้อ-rog-strix';
+/** ROG brand hub slug */
+const ROG_HUB = 'รับซื้อ-rog-gaming-notebook';
 
 const LINK_BLOCKS = {
   'รับซื้อโน๊ตบุ๊คเกมมิ่ง': [
     ['ดูหน้ารับซื้อ MSI Notebook', u('รับซื้อ-msi-notebook')],
-    ['รับซื้อ ROG Strix และซีรีส์ ROG', u(ROG_HUB)],
+    ['รับซื้อ ROG Gaming Notebook', u(ROG_HUB)],
     ['รับซื้อ Lenovo Legion', u('รับซื้อ-lenovo-legion')],
     ['รับซื้อ ASUS TUF Gaming', u('รับซื้อ-asus-tuf-gaming')],
     ['รับซื้อ Acer Nitro', u('รับซื้อ-acer-nitro')],
@@ -137,6 +137,7 @@ const LINK_BLOCKS = {
     ['จอแตก — รับซื้อโน๊ตบุ๊คจอแตก', u('รับซื้อโน๊ตบุ๊คจอแตก')],
   ],
   'รับซื้อ-rog-strix': [
+    ['กลับไปหน้ารับซื้อ ROG Gaming Notebook', u(ROG_HUB)],
     ['ดูหน้ารับซื้อ ROG Zephyrus', u('รับซื้อ-rog-zephyrus')],
     ['รับซื้อ ASUS TUF Gaming', u('รับซื้อ-asus-tuf-gaming')],
     ['กลับไปดูหน้ารับซื้อโน๊ตบุ๊คเกมมิ่ง', u('รับซื้อโน๊ตบุ๊คเกมมิ่ง')],
@@ -145,7 +146,8 @@ const LINK_BLOCKS = {
     ['จอแตก — รับซื้อโน๊ตบุ๊คจอแตก', u('รับซื้อโน๊ตบุ๊คจอแตก')],
   ],
   'รับซื้อ-rog-zephyrus': [
-    ['ดูหน้ารับซื้อ ROG Strix', u(ROG_HUB)],
+    ['กลับไปหน้ารับซื้อ ROG Gaming Notebook', u(ROG_HUB)],
+    ['ดูหน้ารับซื้อ ROG Strix', u('รับซื้อ-rog-strix')],
     ['รับซื้อ ASUS TUF Gaming', u('รับซื้อ-asus-tuf-gaming')],
     ['กลับไปดูหน้ารับซื้อโน๊ตบุ๊คเกมมิ่ง', u('รับซื้อโน๊ตบุ๊คเกมมิ่ง')],
     ['เครื่องเสีย — รับซื้อโน๊ตบุ๊คเสีย', u('รับซื้อโน๊ตบุ๊คเสีย')],
@@ -153,7 +155,8 @@ const LINK_BLOCKS = {
     ['จอแตก — รับซื้อโน๊ตบุ๊คจอแตก', u('รับซื้อโน๊ตบุ๊คจอแตก')],
   ],
   'รับซื้อ-asus-tuf-gaming': [
-    ['ดูหน้ารับซื้อ ROG Strix', u(ROG_HUB)],
+    ['ดูหน้ารับซื้อ ROG Gaming Notebook', u(ROG_HUB)],
+    ['ดูหน้ารับซื้อ ROG Strix', u('รับซื้อ-rog-strix')],
     ['รับซื้อ ROG Zephyrus', u('รับซื้อ-rog-zephyrus')],
     ['กลับไปดูหน้ารับซื้อโน๊ตบุ๊คเกมมิ่ง', u('รับซื้อโน๊ตบุ๊คเกมมิ่ง')],
     ['เครื่องเสีย — รับซื้อโน๊ตบุ๊คเสีย', u('รับซื้อโน๊ตบุ๊คเสีย')],
