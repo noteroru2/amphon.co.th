@@ -26,6 +26,7 @@ const services = defineCollection({
     icon: z.string().optional(),
     order: z.number().optional(),
     faqs: z.array(faqItemSchema).default([]),
+    quickSummary: z.array(z.string()).optional(),
   }),
 });
 

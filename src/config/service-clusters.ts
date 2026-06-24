@@ -103,22 +103,25 @@ const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
     'รับซื้อโน๊ตบุ๊ค',
     'รับซื้อโน๊ตบุ๊คเกมมิ่ง',
     'รับซื้อโน๊ตบุ๊คเสีย',
-    'รับซื้อโน๊ตบุ๊คจอแตก',
     'รับซื้อโน๊ตบุ๊คเปิดไม่ติด',
+    'รับซื้อโน๊ตบุ๊คจอแตก',
+    'รับซื้อโน๊ตบุ๊คบริษัท',
+    'รับซื้อ-dell-latitude',
+    'รับซื้อ-hp-elitebook',
+    'รับซื้อ-asus-vivobook',
+    'รับซื้อ-acer-aspire',
+    'รับซื้อ-lenovo-thinkpad',
+    'รับซื้อ-msi-notebook',
+    'รับซื้อ-macbook',
     'รับซื้อ-notebook-asus',
     'รับซื้อ-notebook-acer',
     'รับซื้อ-notebook-hp',
     'รับซื้อ-notebook-dell',
     'รับซื้อ-notebook-lenovo',
-    'รับซื้อ-dell-latitude',
-    'รับซื้อ-hp-elitebook',
-    'รับซื้อ-lenovo-thinkpad',
     'รับซื้อ-asus-expertbook',
     'รับซื้อ-dell-inspiron',
     'รับซื้อ-hp-pavilion',
     'รับซื้อ-lenovo-ideapad',
-    'รับซื้อ-asus-vivobook',
-    'รับซื้อ-acer-aspire',
     'รับซื้อ-surface',
     'รับซื้อแท็บเล็ต',
   ],
@@ -297,6 +300,197 @@ const CLUSTER_FILL_HUB_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
   [SERVICE_CLUSTERS.WORKSTATION]: ['รับซื้อ-workstation', 'รับซื้อคอมสเปกสูง', 'รับซื้อคอมบริษัท'],
 };
 
+const COM_OFFICE_HUB_PRIORITY_SLUGS = [
+  'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+  'รับซื้อ-gaming-pc',
+  'รับซื้อคอมเกมมิ่ง',
+  'รับซื้อคอมบริษัท',
+  'รับซื้อคอมยกล็อต',
+  'รับซื้อ-workstation',
+  'รับซื้อคอมเสีย',
+  'รับซื้อคอมสำนักงาน',
+];
+
+const NOTEBOOK_HUB_PRIORITY_SLUGS = [
+  'รับซื้อโน๊ตบุ๊คเกมมิ่ง',
+  'รับซื้อโน๊ตบุ๊คเสีย',
+  'รับซื้อโน๊ตบุ๊คเปิดไม่ติด',
+  'รับซื้อโน๊ตบุ๊คจอแตก',
+  'รับซื้อโน๊ตบุ๊คบริษัท',
+  'รับซื้อ-macbook',
+];
+
+const NOTEBOOK_HUB_SIDEBAR_SLUGS = [
+  ...NOTEBOOK_HUB_PRIORITY_SLUGS,
+  'รับซื้อ-dell-latitude',
+  'รับซื้อ-hp-elitebook',
+  'รับซื้อ-asus-vivobook',
+  'รับซื้อ-acer-aspire',
+  'รับซื้อ-lenovo-thinkpad',
+  'รับซื้อ-msi-notebook',
+];
+
+/** Hub-level intent chip overrides (mobile). */
+const INTENT_CHIP_OVERRIDES: Record<string, string[]> = {
+  'รับซื้อโน๊ตบุ๊ค': NOTEBOOK_HUB_PRIORITY_SLUGS,
+  'รับซื้อคอมพิวเตอร์': [
+    'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+    'รับซื้อคอมเกมมิ่ง',
+    'รับซื้อคอมบริษัท',
+    'รับซื้อคอมยกล็อต',
+    'รับซื้อ-workstation',
+    'รับซื้อคอมเสีย',
+  ],
+  'รับซื้อ-iphone': [
+    'รับซื้อ-iphone-17',
+    'รับซื้อ-iphone-16',
+    'รับซื้อ-iphone-15',
+    'รับซื้อ-iphone-pro-max',
+    'รับซื้อ-iphone-จอแตก',
+    'รับซื้อ-iphone-ติด-icloud',
+  ],
+  'รับซื้อ-ipad': [
+    'รับซื้อ-ipad-pro',
+    'รับซื้อ-ipad-air',
+    'รับซื้อ-ipad-mini',
+    'รับซื้อ-ipad-gen',
+    'รับซื้อ-ipad-เสีย',
+    'รับซื้อ-apple-pencil',
+  ],
+  'รับซื้อ-macbook': [
+    'รับซื้อ-macbook-air',
+    'รับซื้อ-macbook-pro',
+    'รับซื้อ-macbook-m1',
+    'รับซื้อ-macbook-m3-m4',
+    'รับซื้อ-macbook-เสีย',
+    'รับซื้อ-imac-mac-mini',
+  ],
+  'รับซื้อกล้อง': [
+    'รับซื้อกล้อง-canon',
+    'รับซื้อกล้อง-sony',
+    'รับซื้อกล้อง-nikon',
+    'รับซื้อกล้อง-fujifilm',
+    'รับซื้อเลนส์กล้อง',
+    'รับซื้อกล้องเสีย',
+  ],
+};
+
+const CLUSTER_INTENT_CHIP_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
+  [SERVICE_CLUSTERS.NOTEBOOK]: NOTEBOOK_HUB_PRIORITY_SLUGS,
+  [SERVICE_CLUSTERS.COM_OFFICE]: COM_OFFICE_HUB_PRIORITY_SLUGS.slice(0, 6),
+  [SERVICE_CLUSTERS.APPLE]: [
+    'รับซื้อ-macbook',
+    'รับซื้อ-macbook-air',
+    'รับซื้อ-macbook-pro',
+    'รับซื้อ-iphone',
+    'รับซื้อ-ipad',
+    'รับซื้อ-macbook-เสีย',
+  ],
+  [SERVICE_CLUSTERS.CAMERA]: [
+    'รับซื้อกล้อง-canon',
+    'รับซื้อกล้อง-sony',
+    'รับซื้อกล้อง-nikon',
+    'รับซื้อกล้อง-fujifilm',
+    'รับซื้อเลนส์กล้อง',
+    'รับซื้อกล้องเสีย',
+  ],
+  [SERVICE_CLUSTERS.GAMING]: [
+    'รับซื้อโน๊ตบุ๊คเกมมิ่ง',
+    'รับซื้อ-gaming-pc',
+    'รับซื้อคอมเกมมิ่ง',
+    'รับซื้อ-msi-notebook',
+    'รับซื้อ-rog-gaming-notebook',
+    'รับซื้อ-lenovo-legion',
+  ],
+  [SERVICE_CLUSTERS.DESKTOP]: COM_OFFICE_HUB_PRIORITY_SLUGS.slice(0, 6),
+  [SERVICE_CLUSTERS.WORKSTATION]: [
+    'รับซื้อ-workstation',
+    'รับซื้อคอมทำงานกราฟิก',
+    'รับซื้อคอมตัดต่อวิดีโอ',
+    'รับซื้อคอม-3d-render',
+    'รับซื้อคอมบริษัท',
+    'รับซื้อคอมสเปกสูง',
+  ],
+};
+
+const GAMING_NOTEBOOK_PRIORITY_SLUGS = [
+  'รับซื้อโน๊ตบุ๊คเกมมิ่ง',
+  'รับซื้อ-msi-notebook',
+  'รับซื้อ-rog-gaming-notebook',
+  'รับซื้อ-lenovo-legion',
+  'รับซื้อ-gigabyte-gaming-notebook',
+  'รับซื้อ-rog-strix',
+  'รับซื้อ-rog-zephyrus',
+  'รับซื้อ-asus-tuf-gaming',
+  'รับซื้อ-lenovo-loq',
+  'รับซื้อ-gigabyte-aorus',
+  'รับซื้อ-acer-nitro',
+  'รับซื้อ-hp-victus',
+  'รับซื้อ-dell-alienware',
+  'รับซื้อ-gaming-pc',
+  'รับซื้อคอมเกมมิ่ง',
+];
+
+const GAMING_NOTEBOOK_FAMILY_SLUGS = [
+  'รับซื้อโน๊ตบุ๊คเกมมิ่ง',
+  'รับซื้อ-msi-notebook',
+  'รับซื้อ-rog-gaming-notebook',
+  'รับซื้อ-lenovo-legion',
+  'รับซื้อ-gigabyte-gaming-notebook',
+  'รับซื้อ-rog-strix',
+  'รับซื้อ-rog-zephyrus',
+  'รับซื้อ-asus-tuf-gaming',
+  'รับซื้อ-lenovo-loq',
+  'รับซื้อ-gigabyte-aorus',
+  'รับซื้อ-gigabyte-g5-g6-g7',
+  'รับซื้อ-acer-nitro',
+  'รับซื้อ-acer-predator',
+  'รับซื้อ-hp-victus',
+  'รับซื้อ-hp-omen',
+  'รับซื้อ-dell-alienware',
+  'รับซื้อ-dell-g-series',
+  'รับซื้อ-msi-katana',
+  'รับซื้อ-msi-cyborg',
+  'รับซื้อ-msi-thin',
+  'รับซื้อ-msi-raider',
+  'รับซื้อ-msi-vector',
+  'รับซื้อ-msi-stealth',
+  'รับซื้อ-msi-pulse-crosshair',
+  'รับซื้อ-msi-titan',
+  'รับซื้อ-msi-sword',
+];
+
+const DESKTOP_GAMING_PRIORITY_SLUGS = [
+  'รับซื้อ-gaming-pc',
+  'รับซื้อคอมเกมมิ่ง',
+  'รับซื้อคอมร้านเกม',
+  'รับซื้อคอมสตรีมเกม',
+  'รับซื้อคอมเล่นเกมสเปกแรง',
+  'รับซื้อคอมสเปกสูง',
+  'รับซื้อคอมประกอบ',
+  'รับซื้อ-workstation',
+  'รับซื้อการ์ดจอ',
+  'รับซื้อ-cpu',
+  'รับซื้อซีพียู',
+  'รับซื้อแรม',
+];
+
+const DESKTOP_GAMING_FAMILY_SLUGS = [
+  'รับซื้อ-gaming-pc',
+  'รับซื้อคอมเกมมิ่ง',
+  'รับซื้อคอมร้านเกม',
+  'รับซื้อคอมสตรีมเกม',
+  'รับซื้อคอมเล่นเกมสเปกแรง',
+  'รับซื้อการ์ดจอ',
+  'รับซื้อ-cpu',
+  'รับซื้อซีพียู',
+  'รับซื้อแรม',
+  'รับซื้อ-ssd',
+  'รับซื้อ-ram-ssd',
+  'รับซื้อเมนบอร์ด',
+  'รับซื้อจอเกมมิ่ง',
+];
+
 const COM_OFFICE_SIDEBAR_BLOCKED = [
   'เฟอร์นิเจอร์',
   'ลำโพง',
@@ -352,6 +546,14 @@ function isRelevantForSidebar(cluster: ServiceCluster, entry: ServiceEntry): boo
     if (matchesApple(text, slug) || matchesCamera(text, slug) || matchesServerNetwork(text, slug)) return false;
     if (matchesNotebook(text, slug)) return false;
     if (slug === 'รับซื้อมือถือ') return false;
+  }
+
+  if (cluster === SERVICE_CLUSTERS.NOTEBOOK) {
+    if (COM_OFFICE_SIDEBAR_BLOCKED.some((term) => slug.includes(term.toLowerCase()))) return false;
+    if (matchesCamera(text, slug)) return false;
+    if (matchesApple(text, slug) && !slug.includes('macbook')) return false;
+    if (matchesServerNetwork(text, slug)) return false;
+    if (matchesGaming(text, slug) && !slug.includes('โน๊ตบุ๊ค') && !slug.includes('msi-notebook')) return false;
   }
 
   return true;
@@ -527,6 +729,14 @@ function matchesNotebook(text: string, slug: string): boolean {
   return includesAny(text, ['โน๊ตบุ๊ค', 'notebook', 'surface', 'laptop']);
 }
 
+function isGamingNotebookSlug(slug: string): boolean {
+  return GAMING_NOTEBOOK_FAMILY_SLUGS.includes(slug);
+}
+
+function isDesktopGamingSlug(slug: string): boolean {
+  return DESKTOP_GAMING_FAMILY_SLUGS.includes(slug);
+}
+
 export function getServiceCluster(entry: ServiceEntry): ServiceCluster {
   const slug = entry.data.slug;
   if (SLUG_CLUSTER_OVERRIDES[slug]) return SLUG_CLUSTER_OVERRIDES[slug];
@@ -569,9 +779,93 @@ export function sanitizeServiceDisplayText(text: string): string {
     .replace(/ดีที่สุด/gi, 'เหมาะ')
     .replace(/อันดับ\s*1/gi, '')
     .replace(/รับทุกรุ่นทุกสภาพ/gi, 'รับพิจารณาหลายรุ่น')
+    .replace(/รับทุกรุ่น/gi, 'รับพิจารณาหลายรุ่น')
+    .replace(/รับทุกแบรนด์/gi, 'รับพิจารณาหลายแบรนด์')
     .replace(/รับซื้อทุกชนิด/gi, 'รับซื้อหลายประเภท')
     .replace(/\s{2,}/g, ' ')
     .trim();
+}
+
+export function getIntentChipServices(
+  currentEntry: ServiceEntry,
+  allServices: ServiceEntry[],
+  limit = 6,
+): ServiceEntry[] {
+  const currentSlug = currentEntry.data.slug;
+  const picked: ServiceEntry[] = [];
+  const seen = new Set<string>();
+
+  const addBySlug = (slug: string) => {
+    if (picked.length >= limit || slug === currentSlug || seen.has(slug)) return;
+    const entry = allServices.find((service) => service.data.slug === slug);
+    if (!entry) return;
+    seen.add(slug);
+    picked.push(entry);
+  };
+
+  const override = INTENT_CHIP_OVERRIDES[currentSlug];
+  if (override) {
+    for (const slug of override) addBySlug(slug);
+    return picked;
+  }
+
+  const cluster = getServiceCluster(currentEntry);
+  const clusterSlugs = CLUSTER_INTENT_CHIP_SLUGS[cluster] ?? [];
+  for (const slug of clusterSlugs) addBySlug(slug);
+  if (picked.length > 0) return picked;
+
+  return getRelatedServicesForEntry(currentEntry, allServices, limit);
+}
+
+const RELATED_CARD_OVERRIDES: Record<string, string[]> = {
+  'รับซื้อโน๊ตบุ๊ค': ['รับซื้อโน๊ตบุ๊คเกมมิ่ง', 'รับซื้อโน๊ตบุ๊คเสีย', 'รับซื้อ-macbook'],
+  'รับซื้อคอมพิวเตอร์': ['รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมเกมมิ่ง', 'รับซื้อคอมบริษัท'],
+};
+
+export function getIntentChipHeading(slug: string, mainKeyword?: string): string {
+  const headings: Record<string, string> = {
+    'รับซื้อโน๊ตบุ๊ค': 'ขายโน๊ตบุ๊คแบบไหน?',
+    'รับซื้อคอมพิวเตอร์': 'ขายคอมแบบไหน?',
+    'รับซื้อ-iphone': 'ขาย iPhone แบบไหน?',
+    'รับซื้อ-ipad': 'ขาย iPad แบบไหน?',
+    'รับซื้อ-macbook': 'ขาย MacBook แบบไหน?',
+    'รับซื้อกล้อง': 'ขายกล้องแบบไหน?',
+  };
+  if (headings[slug]) return headings[slug];
+  const kw = mainKeyword ?? '';
+  if (kw.includes('โน๊ตบุ๊ค')) return 'ขายโน๊ตบุ๊คแบบไหน?';
+  if (kw.includes('คอม') || kw.includes('PC') || kw.includes('Gaming')) return 'ขายคอมแบบไหน?';
+  if (kw.includes('iPhone')) return 'ขาย iPhone แบบไหน?';
+  if (kw.includes('iPad')) return 'ขาย iPad แบบไหน?';
+  if (kw.includes('MacBook')) return 'ขาย MacBook แบบไหน?';
+  if (kw.includes('กล้อง')) return 'ขายกล้องแบบไหน?';
+  return 'ขายแบบไหน?';
+}
+
+export function getRelatedCardServices(
+  currentEntry: ServiceEntry,
+  allServices: ServiceEntry[],
+  limit = 3,
+): ServiceEntry[] {
+  const currentSlug = currentEntry.data.slug;
+  const picked: ServiceEntry[] = [];
+  const seen = new Set<string>();
+
+  const addBySlug = (slug: string) => {
+    if (picked.length >= limit || slug === currentSlug || seen.has(slug)) return;
+    const entry = allServices.find((service) => service.data.slug === slug);
+    if (!entry) return;
+    seen.add(slug);
+    picked.push(entry);
+  };
+
+  const override = RELATED_CARD_OVERRIDES[currentSlug];
+  if (override) {
+    for (const slug of override) addBySlug(slug);
+    return picked;
+  }
+
+  return getRelatedServicesForEntry(currentEntry, allServices, limit).slice(0, limit);
 }
 
 export function getRelatedServicesForEntry(
@@ -593,6 +887,34 @@ export function getRelatedServicesForEntry(
     seen.add(entry.data.slug);
     picked.push(entry);
   };
+
+  if (cluster === SERVICE_CLUSTERS.GAMING) {
+    const focusedPriority =
+      isGamingNotebookSlug(currentSlug)
+        ? GAMING_NOTEBOOK_PRIORITY_SLUGS
+        : isDesktopGamingSlug(currentSlug)
+          ? DESKTOP_GAMING_PRIORITY_SLUGS
+          : [];
+
+    for (const slug of focusedPriority) {
+      const entry = available.find((service) => service.data.slug === slug);
+      if (entry) addEntry(entry);
+    }
+  }
+
+  if (cluster === SERVICE_CLUSTERS.NOTEBOOK && currentSlug === 'รับซื้อโน๊ตบุ๊ค') {
+    for (const slug of NOTEBOOK_HUB_SIDEBAR_SLUGS) {
+      const entry = available.find((service) => service.data.slug === slug);
+      if (entry) addEntry(entry);
+    }
+  }
+
+  if (cluster === SERVICE_CLUSTERS.COM_OFFICE && currentSlug === 'รับซื้อคอมพิวเตอร์') {
+    for (const slug of COM_OFFICE_HUB_PRIORITY_SLUGS) {
+      const entry = available.find((service) => service.data.slug === slug);
+      if (entry) addEntry(entry);
+    }
+  }
 
   const sameCluster = sortByClusterPriority(
     available.filter((s) => getServiceCluster(s) === cluster),

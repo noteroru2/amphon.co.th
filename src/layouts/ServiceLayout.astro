@@ -5,6 +5,9 @@ import { getImageAlt, serviceThumbnails } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import FAQ from '../components/FAQ.astro';
 import ServiceCard from '../components/ServiceCard.astro';
+import ServiceQuickSummary from '../components/ServiceQuickSummary.astro';
+import RelatedIntentChips from '../components/RelatedIntentChips.astro';
+import InlineServiceCTA from '../components/InlineServiceCTA.astro';
 import Reviews from '../components/Reviews.astro';
 import {
   absoluteUrl,
@@ -15,7 +18,7 @@ import {
   resolveOgImage,
 } from '../lib/seo';
 import { site } from '../config/site';
-import { sanitizeServiceDisplayText } from '../config/service-clusters';
+import { sanitizeServiceDisplayText, getIntentChipHeading } from '../config/service-clusters';
 import type { BreadcrumbItem } from '../config/site';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -24,10 +27,12 @@ interface Props {
   entry: CollectionEntry<'services'>;
   relatedAreas?: CollectionEntry<'serviceAreas'>[];
   otherServices?: CollectionEntry<'services'>[];
+  intentChips?: CollectionEntry<'services'>[];
+  relatedCards?: CollectionEntry<'services'>[];
 }
 
-const { entry, relatedAreas = [], otherServices = [] } = Astro.props;
-const { title, h1, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated } =
+const { entry, relatedAreas = [], otherServices = [], intentChips = [], relatedCards = [] } = Astro.props;
+const { title, h1, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated, quickSummary } =
   entry.data;
 const { Content } = await render(entry);
 
@@ -38,6 +43,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 const pageUrl = absoluteUrl(`/บริการ/${slug}`);
+const intentChipHeading = getIntentChipHeading(slug, mainKeyword);
 const pageImage = resolveOgImage(ogImage, heroImage);
 const dateModified = contentDateModified(date, updated);
 
@@ -74,11 +80,11 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
     schemaExtras.push(
       createOfferCatalogSchema({
         pageUrl,
-        name: 'รับซื้อ MacBook มือสอง ทุกรุ่น',
+        name: 'รับซื้อ MacBook มือสอง หลายรุ่น',
         items: [
           { name: 'MacBook Air', url: '/บริการ/รับซื้อ-macbook-air', description: 'รับซื้อ MacBook Air ชิป M1, M2, M3, M4' },
           { name: 'MacBook Pro', url: '/บริการ/รับซื้อ-macbook-pro', description: 'รับซื้อ MacBook Pro สายตัดต่อ สเปกสูง' },
-          { name: 'MacBook M1/M2', url: '/บริการ/รับซื้อ-macbook-m1', description: 'รับซื้อ MacBook ชิป M1 และ M2 ทุกรุ่น' },
+          { name: 'MacBook M1/M2', url: '/บริการ/รับซื้อ-macbook-m1', description: 'รับซื้อ MacBook ชิป M1 และ M2 หลายรุ่น' },
           { name: 'MacBook M3/M4', url: '/บริการ/รับซื้อ-macbook-m3-m4', description: 'รับซื้อ MacBook ชิปใหม่ล่าสุด M3 และ M4' },
           { name: 'Intel MacBook', url: '/บริการ/รับซื้อ-macbook-intel', description: 'รับซื้อ MacBook Intel รุ่นเก่าปี 2018-2020' },
           { name: 'MacBook เสีย/จอแตก', url: '/บริการ/รับซื้อ-macbook-เสีย', description: 'รับซื้อซาก MacBook เสีย เปิดไม่ติด จอแตก' },
@@ -90,7 +96,7 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
     schemaExtras.push(
       createOfferCatalogSchema({
         pageUrl,
-        name: 'รับซื้อ iPad มือสอง ทุกรุ่น',
+        name: 'รับซื้อ iPad มือสอง หลายรุ่น',
         items: [
           { name: 'iPad Pro', url: '/บริการ/รับซื้อ-ipad-pro', description: 'รับซื้อ iPad Pro M1, M2, M4 ทุกความจุ' },
           { name: 'iPad Air', url: '/บริการ/รับซื้อ-ipad-air', description: 'รับซื้อ iPad Air 4, 5, M2, M3' },
@@ -106,10 +112,10 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
     schemaExtras.push(
       createOfferCatalogSchema({
         pageUrl,
-        name: 'รับซื้อ iPhone มือสอง ทุกรุ่น',
+        name: 'รับซื้อ iPhone มือสอง หลายรุ่น',
         items: [
-          { name: 'iPhone 17', url: '/บริการ/รับซื้อ-iphone-17', description: 'รับซื้อ iPhone 17 ทุกรุ่น ทุกความจุ' },
-          { name: 'iPhone Pro Max', url: '/บริการ/รับซื้อ-iphone-pro-max', description: 'รับซื้อ iPhone Pro Max ทุกซีรีส์ ราคาสูง' },
+          { name: 'iPhone 17', url: '/บริการ/รับซื้อ-iphone-17', description: 'รับซื้อ iPhone 17 หลายรุ่น หลายความจุ' },
+          { name: 'iPhone Pro Max', url: '/บริการ/รับซื้อ-iphone-pro-max', description: 'รับซื้อ iPhone Pro Max หลายซีรีส์ ประเมินตามสภาพ' },
           { name: 'iPhone 16', url: '/บริการ/รับซื้อ-iphone-16', description: 'รับซื้อ iPhone 16, 16 Pro, 16 Pro Max' },
           { name: 'iPhone 15', url: '/บริการ/รับซื้อ-iphone-15', description: 'รับซื้อ iPhone 15, 15 Pro, 15 Pro Max' },
           { name: 'iPhone 14', url: '/บริการ/รับซื้อ-iphone-14', description: 'รับซื้อ iPhone 14, 14 Pro, 14 Pro Max' },
@@ -254,7 +260,7 @@ const steps = [
   { n: 1, title: 'ส่งรูปสินค้า', desc: 'ส่งรูปและสเปกผ่าน Line @webuy' },
   { n: 2, title: 'ประเมินราคาฟรี', desc: 'รับราคาใน 15–30 นาที' },
   { n: 3, title: 'นัดรับ / เข้าร้าน', desc: 'นัดรับถึงที่ หรือมาที่ร้านอุบลฯ' },
-  { n: 4, title: 'ตรวจสอบและจ่ายเงิน', desc: 'จ่ายทันที เงินสด / โอน' },
+  { n: 4, title: 'ตรวจสอบและจ่ายเงิน', desc: 'หลังตรวจสินค้าและตกลงราคาแล้ว โอนเงินทันที' },
 ];
 ---
 
@@ -271,42 +277,58 @@ const steps = [
   schemaExtras={schemaExtras}
 >
   <!-- Page hero -->
-  <header class="page-header">
+  <header class="page-header page-header--service">
     <div class="container page-header__grid">
-      <div>
-        <span class="tag tag--orange" style="margin-bottom:.875rem;">{mainKeyword ?? 'บริการรับซื้อ'}</span>
-        <h1>{h1 || title}</h1>
-        <p class="page-header__desc">{description}</p>
-        <div class="page-header__cta">
-          <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
-            แชท Line ประเมินราคา
+      <div class="page-header__content">
+        <span class="tag tag--orange page-header__tag">{mainKeyword ?? 'บริการรับซื้อ'}</span>
+        <h1 class="page-header__title">{h1 || title}</h1>
+        <p class="page-header__desc page-header__desc--clamp">{description}</p>
+        <div class="page-header__cta page-header__cta--service">
+          <a href={site.line} class="btn btn--line btn--lg page-header__cta-line" target="_blank" rel="noopener noreferrer">
+            ส่งรูปประเมิน LINE
           </a>
-          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
+          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost btn--lg page-header__cta-phone">
             โทร {site.phone}
           </a>
         </div>
+        <ul class="page-header__trust" aria-label="จุดเด่นของร้าน">
+          <li>มีหน้าร้านจริงที่อุบลราชธานี</li>
+          <li>ประเมินฟรี ไม่ผูกมัด</li>
+          <li>ส่งรูปเช็กราคาเบื้องต้นได้ทั่วประเทศ</li>
+        </ul>
       </div>
       {heroImage && (
         <figure class="page-header__figure">
           <OptimizedImage
             src={heroImage}
-            alt={getImageAlt(heroImage, `${title} — อำพล เทรดดิ้ง ภาคอีสาน`)}
+            alt={getImageAlt(heroImage, `${title} — อำพล เทรดดิ้ง`)}
             loading="eager"
             width={600}
             height={338}
+            fetchpriority="high"
           />
         </figure>
       )}
     </div>
   </header>
 
+  <div class="container service-mobile-tools">
+    <ServiceQuickSummary items={quickSummary} />
+    {intentChips.length > 0 && (
+      <RelatedIntentChips services={intentChips} heading={intentChipHeading} />
+    )}
+  </div>
+
   <!-- Main content + sidebar -->
-  <div class="container content-layout">
-    <article class="prose">
+  <div class="container content-layout content-layout--service">
+    <article class="prose prose--service">
       <Content />
+      <div id="inline-service-cta-anchor" class="inline-service-cta-anchor" hidden>
+        <InlineServiceCTA />
+      </div>
     </article>
 
-    <aside class="sidebar">
+    <aside class="sidebar sidebar--service">
       <div class="sidebar__box">
         <p class="sidebar__title">ติดต่อประเมินราคา</p>
         <div style="display:flex;flex-direction:column;gap:.625rem;">
@@ -377,25 +399,76 @@ const steps = [
 
   <CTAContact title={`${title} — นัดประเมินราคาฟรีวันนี้`} />
 
-  {otherServices.length > 0 && (
-    <section class="section">
+  {relatedCards.length > 0 && (
+    <section class="section section--related-services">
       <div class="container">
         <div class="section-header section-header--left">
           <span class="eyebrow">บริการที่เกี่ยวข้อง</span>
           <h2>บริการรับซื้ออื่นที่เกี่ยวข้อง</h2>
         </div>
-        <div class="grid grid--3">
-          {otherServices.slice(0, 3).map((service) => (
-            <ServiceCard
-              title={sanitizeServiceDisplayText(service.data.title)}
-              description={sanitizeServiceDisplayText(service.data.description)}
-              href={`/บริการ/${service.data.slug}`}
-              keyword={service.data.mainKeyword}
-              image={serviceThumbnails[service.data.slug]}
-            />
+        <div class="grid grid--3 related-services__grid">
+          {relatedCards.map((service) => (
+            <div class="related-services__item">
+              <ServiceCard
+                title={sanitizeServiceDisplayText(service.data.title)}
+                description={sanitizeServiceDisplayText(service.data.description)}
+                href={`/บริการ/${service.data.slug}`}
+                keyword={service.data.mainKeyword}
+                image={serviceThumbnails[service.data.slug]}
+                compact
+              />
+            </div>
           ))}
         </div>
+        <p class="related-services__more">
+          <a href="/รับซื้อสินค้าไอที" class="btn btn--outline btn--sm">ดูบริการทั้งหมด →</a>
+        </p>
       </div>
     </section>
   )}
 </BaseLayout>
+
+<script>
+  function placeInlineCta() {
+    const prose = document.querySelector('article.prose--service');
+    const anchor = document.getElementById('inline-service-cta-anchor');
+    if (!prose || !anchor) return;
+
+    const h2s = prose.querySelectorAll(':scope > h2');
+    let insertBefore: Element | null = null;
+
+    if (h2s.length >= 2) {
+      insertBefore = h2s[1];
+    } else {
+      const children = [...prose.children].filter((el) => el !== anchor);
+      const insertAt = Math.max(1, Math.floor(children.length * 0.4));
+      insertBefore = children[insertAt] ?? null;
+    }
+
+    anchor.hidden = false;
+    if (insertBefore) {
+      insertBefore.before(anchor);
+    }
+  }
+
+  function wrapProseTables() {
+    const prose = document.querySelector('article.prose--service');
+    if (!prose) return;
+    prose.querySelectorAll('table').forEach((table) => {
+      if (table.parentElement?.classList.contains('table-scroll')) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'table-scroll';
+      wrap.setAttribute('role', 'region');
+      wrap.setAttribute('aria-label', 'ตารางข้อมูล เลื่อนซ้ายขวาได้');
+      table.parentNode?.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  }
+
+  placeInlineCta();
+  wrapProseTables();
+
+  document.querySelectorAll('.prose--service img:not([loading])').forEach((img) => {
+    (img as HTMLImageElement).loading = 'lazy';
+  });
+</script>

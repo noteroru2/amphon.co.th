@@ -19,14 +19,39 @@ const { items, title = 'คำถามที่พบบ่อย' } = Astro.pr
         <span class="eyebrow">FAQ</span>
         <h2 class="section__title">{title}</h2>
       </div>
-      <dl class="faq__list">
+      <div class="faq__list faq__list--accordion">
         {items.map((item) => (
-          <>
-            <dt class="faq__question">{item.question}</dt>
-            <dd class="faq__answer">{item.answer}</dd>
-          </>
+          <details class="faq__item">
+            <summary class="faq__question">{item.question}</summary>
+            <div class="faq__answer">{item.answer}</div>
+          </details>
         ))}
-      </dl>
+      </div>
     </div>
   </section>
 )}
+
+<script>
+  function syncFaqAccordion() {
+    const mq = window.matchMedia('(min-width: 768px)');
+    document.querySelectorAll('.faq__item').forEach((el) => {
+      if (mq.matches) {
+        el.setAttribute('open', '');
+      } else if (!el.hasAttribute('data-user-toggled')) {
+        el.removeAttribute('open');
+      }
+    });
+  }
+
+  document.querySelectorAll('.faq__item summary').forEach((summary) => {
+    summary.addEventListener('click', () => {
+      const parent = summary.closest('.faq__item');
+      if (parent && !window.matchMedia('(min-width: 768px)').matches) {
+        parent.setAttribute('data-user-toggled', '');
+      }
+    });
+  });
+
+  syncFaqAccordion();
+  window.matchMedia('(min-width: 768px)').addEventListener('change', syncFaqAccordion);
+</script>

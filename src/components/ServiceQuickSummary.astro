@@ -1,0 +1,24 @@
+---
+interface Props {
+  items?: string[];
+  title?: string;
+}
+
+const DEFAULT_ITEMS = [
+  'ส่งรูป รุ่น สเปก และอาการทาง LINE @webuy เพื่อประเมินเบื้องต้นได้',
+  'ประเมินฟรี ไม่ผูกมัดว่าต้องขาย',
+  'ราคาขึ้นกับรุ่น สเปก สภาพ อุปกรณ์ และจำนวนเครื่อง',
+  'หลังตรวจสินค้าและตกลงราคาแล้ว โอนเงินทันที',
+];
+
+const { items = DEFAULT_ITEMS, title = 'สรุปสั้น ๆ' } = Astro.props;
+---
+
+<aside class="quick-summary" aria-label="สรุปบริการ">
+  <p class="quick-summary__title">{title}</p>
+  <ul class="quick-summary__list">
+    {items.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+</aside>

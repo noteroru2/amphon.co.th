@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { sanitizeServiceDisplayText } from '../config/service-clusters';
+
+interface Props {
+  services: CollectionEntry<'services'>[];
+  heading?: string;
+  limit?: number;
+}
+
+const { services, heading = 'ขายแบบไหน?', limit = 6 } = Astro.props;
+const chips = services.slice(0, limit);
+
+function chipLabel(service: CollectionEntry<'services'>): string {
+  const kw = service.data.mainKeyword;
+  if (kw) return sanitizeServiceDisplayText(kw);
+  return sanitizeServiceDisplayText(service.data.title);
+}
+---
+
+{chips.length > 0 && (
+  <nav class="intent-chips" aria-label="บริการที่เกี่ยวข้อง">
+    <p class="intent-chips__label">{heading}</p>
+    <div class="intent-chips__grid">
+      {chips.map((service) => (
+        <a href={`/บริการ/${service.data.slug}`} class="intent-chips__chip">
+          {chipLabel(service)}
+        </a>
+      ))}
+    </div>
+  </nav>
+)}

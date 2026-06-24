@@ -29,8 +29,8 @@ import { site } from '../config/site';
     </div>
 
     <!-- 2. บริการ -->
-    <div>
-      <p class="footer__heading">สินค้าที่รับซื้อ</p>
+    <details class="footer__collapse">
+      <summary class="footer__heading">สินค้าที่รับซื้อ</summary>
       <ul class="footer__links">
         <li><a href="/บริการ/รับซื้อโน๊ตบุ๊ค">รับซื้อโน๊ตบุ๊ค</a></li>
         <li><a href="/บริการ/รับซื้อคอมพิวเตอร์ตั้งโต๊ะ">รับซื้อคอมพิวเตอร์ตั้งโต๊ะ</a></li>
@@ -40,11 +40,11 @@ import { site } from '../config/site';
         <li><a href="/บริการ/รับซื้อ-iphone">รับซื้อ iPhone</a></li>
         <li><a href="/รับซื้อสินค้าไอที">ดูทั้งหมด →</a></li>
       </ul>
-    </div>
+    </details>
 
     <!-- 3. พื้นที่ -->
-    <div>
-      <p class="footer__heading">พื้นที่ให้บริการ</p>
+    <details class="footer__collapse">
+      <summary class="footer__heading">พื้นที่ให้บริการ</summary>
       <ul class="footer__links">
         <li><a href="/พื้นที่ให้บริการ/อุบลราชธานี">อุบลราชธานี</a></li>
         <li><a href="/พื้นที่ให้บริการ/ขอนแก่น">ขอนแก่น</a></li>
@@ -54,10 +54,10 @@ import { site } from '../config/site';
         <li><a href="/พื้นที่ให้บริการ/ยโสธร">ยโสธร</a></li>
         <li><a href="/พื้นที่ให้บริการ">ดูทั้งหมด →</a></li>
       </ul>
-    </div>
+    </details>
 
     <!-- 4. ติดต่อ -->
-    <div>
+    <div class="footer__contact-col">
       <p class="footer__heading">ติดต่อเรา</p>
       <ul class="footer__contact">
         <li>
@@ -108,16 +108,33 @@ import { site } from '../config/site';
   <div class="footer__bottom">
     <div class="container footer__bottom-inner">
       <p>&copy; {new Date().getFullYear()} {site.name} · {site.url.replace('https://', '')} · รับซื้อสินค้าไอทีมือสองทั่วประเทศ</p>
-      <div class="footer__bottom-links">
-        <a href="/about">เกี่ยวกับเรา</a>
-        <a href="/วิธีการรับซื้อ">วิธีการขาย</a>
-        <a href="/contact">ติดต่อ</a>
-        <a href="/blog">บทความ</a>
-        <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
-      </div>
+      <details class="footer__collapse footer__collapse--bottom">
+        <summary class="footer__bottom-toggle">ลิงก์อื่น ๆ</summary>
+        <div class="footer__bottom-links">
+          <a href="/about">เกี่ยวกับเรา</a>
+          <a href="/วิธีการรับซื้อ">วิธีการขาย</a>
+          <a href="/contact">ติดต่อ</a>
+          <a href="/blog">บทความ</a>
+          <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
+        </div>
+      </details>
     </div>
   </div>
 </footer>
+
+<script>
+  function syncFooterCollapse() {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    document.querySelectorAll('.footer__collapse').forEach((el) => {
+      if (mq.matches) {
+        el.setAttribute('open', '');
+      }
+    });
+  }
+
+  syncFooterCollapse();
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', syncFooterCollapse);
+</script>
 
 <style>
   .footer {
@@ -128,15 +145,73 @@ import { site } from '../config/site';
 
   .footer__grid {
     display: grid;
-    gap: 2.5rem;
-    padding-block: 4rem 3rem;
+    gap: 1.25rem;
+    padding-block: 2.5rem 2rem;
   }
 
   @media (min-width: 640px) {
-    .footer__grid { grid-template-columns: repeat(2, 1fr); }
+    .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding-block: 3rem 2.5rem; }
   }
   @media (min-width: 1024px) {
-    .footer__grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; }
+    .footer__grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 2.5rem; padding-block: 4rem 3rem; }
+  }
+
+  .footer__collapse {
+    border-bottom: 1px solid rgba(255 255 255 / 0.08);
+    padding-bottom: 0.75rem;
+  }
+
+  .footer__collapse summary.footer__heading {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    margin-bottom: 0;
+    padding-block: 0.25rem;
+  }
+
+  .footer__collapse summary.footer__heading::-webkit-details-marker { display: none; }
+
+  .footer__collapse summary.footer__heading::after {
+    content: '+';
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #94a3b8;
+    line-height: 1;
+  }
+
+  .footer__collapse[open] summary.footer__heading::after { content: '−'; }
+
+  .footer__collapse[open] summary.footer__heading,
+  .footer__collapse .footer__links {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer__collapse .footer__links {
+    padding-top: 0.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .footer__collapse {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .footer__collapse summary.footer__heading {
+      pointer-events: none;
+      cursor: default;
+      min-height: auto;
+      margin-bottom: 1rem;
+      padding-block: 0;
+    }
+
+    .footer__collapse summary.footer__heading::after { display: none; }
+  }
+
+  .footer__contact-col .footer__heading {
+    margin-bottom: 1rem;
   }
 
   /* Brand col */
@@ -281,8 +356,47 @@ import { site } from '../config/site';
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+  }
+
+  .footer__bottom-toggle {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    cursor: pointer;
+    list-style: none;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__bottom-toggle::-webkit-details-marker { display: none; }
+
+  .footer__collapse--bottom {
+    width: 100%;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .footer__collapse--bottom .footer__bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    padding-top: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer__collapse--bottom {
+      width: auto;
+    }
+
+    .footer__collapse--bottom summary.footer__bottom-toggle {
+      display: none;
+    }
+
+    .footer__collapse--bottom .footer__bottom-links {
+      padding-top: 0;
+    }
   }
 
   .footer__bottom-inner p {

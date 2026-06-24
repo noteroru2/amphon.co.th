@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Predator Triton"
   - "รับซื้อโน๊ตบุ๊ค Predator"
   - "ขาย Acer Predator"
-heroImage: "/images/gaming-notebook/buy-acer-predetor.webp"
-ogImage: "/images/gaming-notebook/buy-acer-predetor.webp"
+heroImage: "/images/gaming-notebook/buy-acer-predator.webp"
+ogImage: "/images/gaming-notebook/buy-acer-predator.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"
