@@ -7,6 +7,8 @@ export const SERVICE_CLUSTERS = {
   SERVER_NETWORK: 'SERVER_NETWORK',
   CAMERA: 'CAMERA',
   GAMING: 'GAMING',
+  DESKTOP: 'DESKTOP',
+  WORKSTATION: 'WORKSTATION',
   GENERAL_IT: 'GENERAL_IT',
 } as const;
 
@@ -28,6 +30,22 @@ const SLUG_CLUSTER_OVERRIDES: Record<string, ServiceCluster> = {
   'รับซื้อ-asus-vivobook': SERVICE_CLUSTERS.NOTEBOOK,
   'รับซื้อ-acer-aspire': SERVICE_CLUSTERS.NOTEBOOK,
   'รับซื้อโน๊ตบุ๊คเกมมิ่ง': SERVICE_CLUSTERS.GAMING,
+  'รับซื้อ-gaming-pc': SERVICE_CLUSTERS.GAMING,
+  'รับซื้อคอมเกมมิ่ง': SERVICE_CLUSTERS.GAMING,
+  'รับซื้อคอมร้านเกม': SERVICE_CLUSTERS.GAMING,
+  'รับซื้อคอมสตรีมเกม': SERVICE_CLUSTERS.GAMING,
+  'รับซื้อคอมเล่นเกมสเปกแรง': SERVICE_CLUSTERS.GAMING,
+  'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ': SERVICE_CLUSTERS.DESKTOP,
+  'รับซื้อ-desktop-pc': SERVICE_CLUSTERS.DESKTOP,
+  'รับซื้อ-pc-มือสอง': SERVICE_CLUSTERS.DESKTOP,
+  'รับซื้อคอมประกอบ': SERVICE_CLUSTERS.DESKTOP,
+  'รับซื้อคอมสเปคสูง': SERVICE_CLUSTERS.DESKTOP,
+  'รับซื้อ-workstation': SERVICE_CLUSTERS.WORKSTATION,
+  'รับซื้อคอมทำงานกราฟิก': SERVICE_CLUSTERS.WORKSTATION,
+  'รับซื้อคอมตัดต่อวิดีโอ': SERVICE_CLUSTERS.WORKSTATION,
+  'รับซื้อคอม-3d-render': SERVICE_CLUSTERS.WORKSTATION,
+  'รับซื้อคอม-cad-engineer': SERVICE_CLUSTERS.WORKSTATION,
+  'รับซื้อคอม-ai-deep-learning': SERVICE_CLUSTERS.WORKSTATION,
   'รับซื้อ-msi-notebook': SERVICE_CLUSTERS.GAMING,
   'รับซื้อ-msi-katana': SERVICE_CLUSTERS.GAMING,
   'รับซื้อ-msi-cyborg': SERVICE_CLUSTERS.GAMING,
@@ -92,6 +110,10 @@ const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
     'รับซื้อ-notebook-hp',
     'รับซื้อ-notebook-dell',
     'รับซื้อ-notebook-lenovo',
+    'รับซื้อ-dell-latitude',
+    'รับซื้อ-hp-elitebook',
+    'รับซื้อ-lenovo-thinkpad',
+    'รับซื้อ-asus-expertbook',
     'รับซื้อ-dell-inspiron',
     'รับซื้อ-hp-pavilion',
     'รับซื้อ-lenovo-ideapad',
@@ -162,6 +184,19 @@ const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
     'รับซื้อ-gaming-pc',
     'รับซื้อคอมเกมมิ่ง',
     'รับซื้อคอมร้านเกม',
+    'รับซื้อคอมสตรีมเกม',
+    'รับซื้อคอมเล่นเกมสเปกแรง',
+    'รับซื้อคอมสเปคสูง',
+    'รับซื้อคอมประกอบ',
+    'รับซื้อ-workstation',
+    'รับซื้อการ์ดจอ',
+    'รับซื้อ-cpu',
+    'รับซื้อซีพียู',
+    'รับซื้อแรม',
+    'รับซื้อ-ssd',
+    'รับซื้อ-ram-ssd',
+    'รับซื้อเมนบอร์ด',
+    'รับซื้อจอเกมมิ่ง',
     'รับซื้อโน๊ตบุ๊คเกมมิ่ง',
     'รับซื้อ-msi-notebook',
     'รับซื้อ-rog-gaming-notebook',
@@ -188,17 +223,40 @@ const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
     'รับซื้อ-msi-pulse-crosshair',
     'รับซื้อ-msi-titan',
     'รับซื้อ-msi-sword',
-    'รับซื้อการ์ดจอ',
-    'รับซื้อ-cpu',
-    'รับซื้อซีพียู',
-    'รับซื้อแรม',
-    'รับซื้อ-ssd',
-    'รับซื้อ-ram-ssd',
-    'รับซื้อเมนบอร์ด',
-    'รับซื้อจอเกมมิ่ง',
     'รับซื้อ-playstation',
     'รับซื้อ-nintendo-switch',
     'รับซื้อเครื่องเกม',
+  ],
+  [SERVICE_CLUSTERS.DESKTOP]: [
+    'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+    'รับซื้อ-desktop-pc',
+    'รับซื้อ-pc-มือสอง',
+    'รับซื้อคอมประกอบ',
+    'รับซื้อคอมสเปคสูง',
+    'รับซื้อ-gaming-pc',
+    'รับซื้อคอมเกมมิ่ง',
+    'รับซื้อ-workstation',
+    'รับซื้อคอมบริษัท',
+    'รับซื้อคอมสำนักงาน',
+    'รับซื้อคอมยกล็อต',
+    'รับซื้อสินค้าไอทีบริษัท',
+    'รับซื้ออุปกรณ์คอมพิวเตอร์',
+    'รับซื้อจอคอม',
+  ],
+  [SERVICE_CLUSTERS.WORKSTATION]: [
+    'รับซื้อ-workstation',
+    'รับซื้อคอมทำงานกราฟิก',
+    'รับซื้อคอมตัดต่อวิดีโอ',
+    'รับซื้อคอม-3d-render',
+    'รับซื้อคอม-cad-engineer',
+    'รับซื้อคอม-ai-deep-learning',
+    'รับซื้อคอมสเปคสูง',
+    'รับซื้อคอมประกอบ',
+    'รับซื้อ-gaming-pc',
+    'รับซื้อคอมเกมมิ่ง',
+    'รับซื้อคอมบริษัท',
+    'รับซื้อคอมยกล็อต',
+    'รับซื้อสินค้าไอทีบริษัท',
   ],
   [SERVICE_CLUSTERS.GENERAL_IT]: [
     'รับซื้อสินค้าไอที',
@@ -234,7 +292,9 @@ const CLUSTER_FILL_HUB_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
   [SERVICE_CLUSTERS.APPLE]: ['รับซื้อ-iphone', 'รับซื้อ-macbook', 'รับซื้อ-ipad'],
   [SERVICE_CLUSTERS.SERVER_NETWORK]: ['รับซื้อ-server', 'รับซื้อสินค้าไอที'],
   [SERVICE_CLUSTERS.CAMERA]: ['รับซื้อกล้อง', 'รับซื้อสินค้าไอที'],
-  [SERVICE_CLUSTERS.GAMING]: ['รับซื้อ-gaming-pc', 'รับซื้อคอมเกมมิ่ง', 'รับซื้อสินค้าไอที'],
+  [SERVICE_CLUSTERS.GAMING]: ['รับซื้อ-gaming-pc', 'รับซื้อคอมเกมมิ่ง', 'รับซื้อคอมสเปคสูง', 'รับซื้อคอมประกอบ'],
+  [SERVICE_CLUSTERS.DESKTOP]: ['รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมพิวเตอร์', 'รับซื้อคอมบริษัท'],
+  [SERVICE_CLUSTERS.WORKSTATION]: ['รับซื้อ-workstation', 'รับซื้อคอมสเปคสูง', 'รับซื้อคอมบริษัท'],
 };
 
 const COM_OFFICE_SIDEBAR_BLOCKED = [
@@ -278,6 +338,20 @@ function isRelevantForSidebar(cluster: ServiceCluster, entry: ServiceEntry): boo
     if (matchesApple(text, slug) || matchesCamera(text, slug)) return false;
     if (COM_OFFICE_SIDEBAR_BLOCKED.some((term) => slug.includes(term.toLowerCase()))) return false;
     if (slug === 'รับซื้อ-server' || slug.includes('server')) return false;
+  }
+
+  if (cluster === SERVICE_CLUSTERS.DESKTOP) {
+    if (COM_OFFICE_SIDEBAR_BLOCKED.some((term) => slug.includes(term.toLowerCase()))) return false;
+    if (matchesApple(text, slug) || matchesCamera(text, slug) || matchesServerNetwork(text, slug)) return false;
+    if (matchesNotebook(text, slug)) return false;
+    if (slug === 'รับซื้อมือถือ') return false;
+  }
+
+  if (cluster === SERVICE_CLUSTERS.WORKSTATION) {
+    if (COM_OFFICE_SIDEBAR_BLOCKED.some((term) => slug.includes(term.toLowerCase()))) return false;
+    if (matchesApple(text, slug) || matchesCamera(text, slug) || matchesServerNetwork(text, slug)) return false;
+    if (matchesNotebook(text, slug)) return false;
+    if (slug === 'รับซื้อมือถือ') return false;
   }
 
   return true;

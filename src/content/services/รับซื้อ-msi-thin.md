@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ MSI GF65 Thin"
   - "รับซื้อโน๊ตบุ๊ค MSI Thin"
   - "ขาย MSI Thin"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-gaming-notebook.webp"
+ogImage: "/images/gaming-notebook/buy-gaming-notebook.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ ASUS TUF Gaming มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ ASUS TUF Gaming มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ ASUS TUF Gaming มือสอง ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-asus-tuf-gaming"
 order: 14
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ TUF A15"
   - "รับซื้อ TUF F15"
   - "รับซื้อโน๊ตบุ๊คเกมมิ่ง ASUS"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-asus-tuf.webp"
+ogImage: "/images/gaming-notebook/buy-asus-tuf.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

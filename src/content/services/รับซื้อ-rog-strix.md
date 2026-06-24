@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ ROG Strix มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ ROG Strix มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ ROG Strix มือสอง SCAR Hero Advantage ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-rog-strix"
 order: 15
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ ROG Strix G"
   - "รับซื้อ ASUS ROG Strix"
   - "รับซื้อโน๊ตบุ๊ค ROG"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-asus-rog.webp"
+ogImage: "/images/gaming-notebook/buy-asus-rog.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

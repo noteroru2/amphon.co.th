@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ MSI Katana มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ MSI Katana มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ MSI Katana มือสอง Katana 15 17 ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-msi-katana"
 order: 24
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Katana GF76"
   - "รับซื้อโน๊ตบุ๊ค MSI Katana"
   - "ขาย MSI Katana"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-gaming-notebook.webp"
+ogImage: "/images/gaming-notebook/buy-gaming-notebook.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

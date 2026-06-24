@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ Lenovo LOQ มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ Lenovo LOQ มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ Lenovo LOQ มือสอง Gaming Notebook ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-lenovo-loq"
 order: 23
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Lenovo LOQ 16"
   - "รับซื้อโน๊ตบุ๊คเกมมิ่ง Lenovo"
   - "ขาย Lenovo LOQ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-lenovo-gaming.webp"
+ogImage: "/images/gaming-notebook/buy-lenovo-gaming.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

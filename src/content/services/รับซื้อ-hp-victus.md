@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ HP Victus มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ HP Victus มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ HP Victus มือสอง Gaming Notebook ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-hp-victus"
 order: 19
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ HP Victus 16"
   - "รับซื้อโน๊ตบุ๊คเกมมิ่ง HP"
   - "ขาย HP Victus"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-hp-gaming.webp"
+ogImage: "/images/gaming-notebook/buy-hp-gaming.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ HP OMEN มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ HP OMEN มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ HP OMEN มือสอง 15 16 17 ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-hp-omen"
 order: 20
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ OMEN มือสอง"
   - "รับซื้อโน๊ตบุ๊ค HP OMEN"
   - "ขาย HP OMEN"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-hp-gaming.webp"
+ogImage: "/images/gaming-notebook/buy-hp-gaming.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

@@ -1,129 +1,153 @@
 /**
- * Image optimization script — resizes & re-encodes public images with Sharp.
- * Run once:  node scripts/optimize-images.mjs
+ * Convert source images to optimized WebP files.
  *
- * Strategy
- * ─────────
- * • Service thumbnails (ServiceCard, cat-card): displayed at ~400x225 max
- *   → resize to 800x450 (2× for HiDPI), quality 82
- * • About / interior images: displayed up to 720x450
- *   → resize to 1080x675 if larger, quality 82
- * • Hero background images (full-width): keep width 1400 max, quality 78
- * • Blog content images: keep width 1200 max, quality 82
- * • OG images: keep as-is (1200x630 is the standard)
+ * Source:  public/images-source/  (.png, .jpg, .jpeg)
+ * Output:  public/images/       (.webp, same folder structure)
+ *
+ * Run: npm run images:optimize
+ * Requires: npm install sharp
  */
 
-import sharp from 'sharp';
-import { readdir, stat, writeFile, readFile } from 'fs/promises';
-import { join, extname } from 'path';
-import { fileURLToPath } from 'url';
+import { mkdir, readdir, stat, writeFile } from 'node:fs/promises';
+import { dirname, extname, join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const publicDir = join(__dirname, '..', 'public', 'images');
+const root = join(__dirname, '..');
+const sourceDir = join(root, 'public', 'images-source');
+const outputDir = join(root, 'public', 'images');
 
-const PROFILES = [
-  {
-    dirs: ['services'],
-    maxWidth: 640,
-    maxHeight: 360,
-    quality: 80,
-    label: 'service thumbnails',
-  },
-  {
-    dirs: ['about'],
-    maxWidth: 800,
-    maxHeight: 500,
-    quality: 75,
-    label: 'about images',
-  },
-  {
-    dirs: ['hero'],
-    maxWidth: 1200,
-    maxHeight: 675,
-    quality: 65,
-    label: 'hero images',
-  },
-  {
-    dirs: ['blog'],
-    maxWidth: 1200,
-    maxHeight: 750,
-    quality: 80,
-    label: 'blog images',
-  },
-];
+const MAX_WIDTH = 1600;
+const WEBP_QUALITY = 80;
+const INPUT_EXTS = new Set(['.png', '.jpg', '.jpeg']);
 
-let totalSavedBytes = 0;
-let processedCount = 0;
+let sharp;
 
-async function processDir(dirPath, maxWidth, maxHeight, quality) {
-  let files;
+try {
+  sharp = (await import('sharp')).default;
+} catch {
+  console.error('Error: sharp is not installed.');
+  console.error('Run: npm install sharp');
+  process.exit(1);
+}
+
+function formatSize(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  return `${(bytes / 1024).toFixed(1)} KB`;
+}
+
+/**
+ * @param {string} dir
+ * @param {(filePath: string) => Promise<void>} onFile
+ */
+async function walk(dir, onFile) {
+  let entries;
   try {
-    files = await readdir(dirPath);
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch (err) {
+    if (err && typeof err === 'object' && 'code' in err && err.code === 'ENOENT') {
+      return;
+    }
+    throw err;
+  }
+
+  for (const entry of entries) {
+    const fullPath = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await walk(fullPath, onFile);
+      continue;
+    }
+    if (!INPUT_EXTS.has(extname(entry.name).toLowerCase())) continue;
+    await onFile(fullPath);
+  }
+}
+
+/**
+ * @param {string} inputPath
+ */
+async function optimizeImage(inputPath) {
+  const relativePath = relative(sourceDir, inputPath);
+  const outputRelative = relativePath.replace(/\.(png|jpe?g)$/i, '.webp');
+  const outputPath = join(outputDir, outputRelative);
+
+  const inputStat = await stat(inputPath);
+  const inputSize = inputStat.size;
+
+  const image = sharp(inputPath);
+  const metadata = await image.metadata();
+
+  let pipeline = image;
+  if ((metadata.width ?? 0) > MAX_WIDTH) {
+    pipeline = pipeline.resize({
+      width: MAX_WIDTH,
+      withoutEnlargement: true,
+    });
+  }
+
+  const outputBuffer = await pipeline
+    .webp({ quality: WEBP_QUALITY })
+    .toBuffer();
+
+  await mkdir(dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, outputBuffer);
+
+  const outputSize = outputBuffer.length;
+  const saved = inputSize - outputSize;
+  const savedLabel =
+    saved >= 0
+      ? `saved ${formatSize(saved)}`
+      : `+${formatSize(-saved)} (larger after encode)`;
+
+  const resizeNote =
+    (metadata.width ?? 0) > MAX_WIDTH ? `, resized from ${metadata.width}px wide` : '';
+
+  console.log(
+    `✓ ${relativePath} → ${outputRelative}\n` +
+      `  ${formatSize(inputSize)} → ${formatSize(outputSize)} (${savedLabel}${resizeNote})`
+  );
+
+  return { inputSize, outputSize };
+}
+
+async function main() {
+  console.log('Image optimizer (images-source → images)\n');
+  console.log(`Source: ${sourceDir}`);
+  console.log(`Output: ${outputDir}`);
+  console.log(`Max width: ${MAX_WIDTH}px | WebP quality: ${WEBP_QUALITY}\n`);
+
+  try {
+    await stat(sourceDir);
   } catch {
+    console.error(`Source directory not found: public/images-source/`);
+    console.error('Create the folder and add .png / .jpg / .jpeg files, then run again.');
+    process.exit(1);
+  }
+
+  let count = 0;
+  let totalInput = 0;
+  let totalOutput = 0;
+
+  await walk(sourceDir, async (filePath) => {
+    const result = await optimizeImage(filePath);
+    count++;
+    totalInput += result.inputSize;
+    totalOutput += result.outputSize;
+  });
+
+  if (count === 0) {
+    console.log('No .png / .jpg / .jpeg files found in public/images-source/');
     return;
   }
 
-  for (const file of files) {
-    if (!['.webp', '.jpg', '.jpeg', '.png'].includes(extname(file).toLowerCase())) continue;
-    const filePath = join(dirPath, file);
-    const info = await stat(filePath);
-    const originalSize = info.size;
-
-    try {
-      // Read entire file into memory first — releases file lock before we write back
-      const inputBuffer = await readFile(filePath);
-      const img = sharp(inputBuffer);
-      const meta = await img.metadata();
-
-      const needsResize = (meta.width ?? 0) > maxWidth || (meta.height ?? 0) > maxHeight;
-      const pipeline = needsResize
-        ? img.resize(maxWidth, maxHeight, { fit: 'inside', withoutEnlargement: true })
-        : img;
-
-      const ext = extname(file).toLowerCase();
-      let outputBuffer;
-      if (ext === '.webp') {
-        outputBuffer = await pipeline.webp({ quality }).toBuffer();
-      } else if (ext === '.png') {
-        outputBuffer = await pipeline.png({ compressionLevel: 9 }).toBuffer();
-      } else {
-        outputBuffer = await pipeline.jpeg({ quality, mozjpeg: true }).toBuffer();
-      }
-
-      // Only write if the new file is smaller
-      if (outputBuffer.length < originalSize) {
-        // Write directly with 'w' flag (truncate + overwrite) — works on Windows without unlink
-        await writeFile(filePath, outputBuffer, { flag: 'w' });
-        const saved = originalSize - outputBuffer.length;
-        totalSavedBytes += saved;
-        processedCount++;
-        console.log(
-          `✓ ${file}  ${Math.round(originalSize / 1024)}KB → ${Math.round(outputBuffer.length / 1024)}KB  (-${Math.round(saved / 1024)}KB)${needsResize ? `  resized to ≤${maxWidth}×${maxHeight}` : ''}`
-        );
-      } else {
-        console.log(`  ${file}  already optimal (${Math.round(originalSize / 1024)}KB)`);
-      }
-    } catch (err) {
-      console.error(`✗ ${file}  ${err.message}`);
-    }
-  }
+  const totalSaved = totalInput - totalOutput;
+  console.log(
+    `\nDone — ${count} file(s) converted, ` +
+      `${formatSize(totalInput)} → ${formatSize(totalOutput)} ` +
+      `(net ${totalSaved >= 0 ? 'saved' : 'added'} ${formatSize(Math.abs(totalSaved))})`
+  );
 }
 
-console.log('Amphon Image Optimizer\n');
-
-for (const profile of PROFILES) {
-  console.log(`── ${profile.label} ──`);
-  for (const dir of profile.dirs) {
-    await processDir(
-      join(publicDir, dir),
-      profile.maxWidth,
-      profile.maxHeight,
-      profile.quality
-    );
-  }
-  console.log('');
-}
-
-console.log(
-  `\nDone — ${processedCount} files optimized, saved ${Math.round(totalSavedBytes / 1024)} KB total`
-);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

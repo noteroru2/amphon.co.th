@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ Acer Nitro มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ Acer Nitro มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ Acer Nitro มือสอง Nitro 5 Nitro 16 ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-acer-nitro"
 order: 17
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Acer Nitro 16"
   - "รับซื้อโน๊ตบุ๊คเกมมิ่ง Acer"
   - "ขาย Acer Nitro"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-acer-nitro.webp"
+ogImage: "/images/gaming-notebook/buy-acer-nitro.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

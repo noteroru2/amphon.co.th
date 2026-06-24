@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ Dell Alienware มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ Dell Alienware มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ Dell Alienware มือสอง m15 m16 x15 Area-51m ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-dell-alienware"
 order: 21
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Alienware x15"
   - "รับซื้อ Alienware มือสอง"
   - "ขาย Dell Alienware"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-dell-gaming.webp"
+ogImage: "/images/gaming-notebook/buy-dell-gaming.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

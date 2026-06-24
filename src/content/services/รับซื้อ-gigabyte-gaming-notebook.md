@@ -12,8 +12,8 @@ relatedKeywords:
 - "รับซื้อ Gigabyte G5"
 - "รับซื้อ Gigabyte AORUS"
 - "รับซื้อ Gigabyte Gaming Notebook ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-gigabyte-aorus-gaming-notebook.webp"
+ogImage: "/images/gaming-notebook/buy-gigabyte-aorus-gaming-notebook.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

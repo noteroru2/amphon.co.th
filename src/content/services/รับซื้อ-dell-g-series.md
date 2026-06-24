@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Dell G Series มือสอง"
   - "รับซื้อโน๊ตบุ๊คเกมมิ่ง Dell"
   - "ขาย Dell G15"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-dell-gaming.webp"
+ogImage: "/images/gaming-notebook/buy-dell-gaming.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

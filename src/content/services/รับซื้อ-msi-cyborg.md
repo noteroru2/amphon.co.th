@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ MSI Cyborg มือสอง ทุกรุ่น ทุกสภาพ"
+title: "รับซื้อ MSI Cyborg มือสอง หลายรุ่น ประเมินตามสภาพจริง"
 h1: "รับซื้อ MSI Cyborg มือสอง Cyborg 14 15 ประเมินฟรีทั่วประเทศ"
 slug: "รับซื้อ-msi-cyborg"
 order: 25
@@ -11,8 +11,8 @@ relatedKeywords:
   - "รับซื้อ Cyborg มือสอง"
   - "รับซื้อโน๊ตบุ๊ค MSI Cyborg"
   - "ขาย MSI Cyborg"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-gaming-notebook.webp"
+ogImage: "/images/gaming-notebook/buy-gaming-notebook.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"

@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ ROG Zephyrus"
   - "รับซื้อโน๊ตบุ๊คเกมมิ่ง ASUS"
   - "รับซื้อ ROG ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/gaming-notebook/buy-asus-rog.webp"
+ogImage: "/images/gaming-notebook/buy-asus-rog.webp"
 date: "2026-06-23"
 draft: false
 icon: "laptop"
@@ -164,12 +164,6 @@ ROG Gaming Notebook ที่มีตำหนิยังส่งประเ
 ## ความต่างระหว่างหน้านี้กับหน้าใกล้เคียง
 
 หน้านี้เป็น **ROG Brand Hub** รวมทุกซีรีส์ ASUS ROG — หากรู้ซีรีส์แน่ชัดให้เลือกจากหมวดด้านบนหรือตารางเปรียบเทียบ Strix / Zephyrus หากต้องการดูทุกแบรนด์เกมมิ่ง ให้เริ่มจากหน้า [รับซื้อโน๊ตบุ๊คเกมมิ่ง](/บริการ/รับซื้อโน๊ตบุ๊คเกมมิ่ง) แทน
-
----
-
-## FAQ รับซื้อ ROG Gaming Notebook
-
-ข้อมูลคำถามพบบ่อยอยู่ใน frontmatter ของหน้านี้แล้ว สามารถนำไปใช้กับ FAQ schema ได้
 
 ---
 
