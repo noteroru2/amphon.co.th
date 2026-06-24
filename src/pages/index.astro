@@ -120,6 +120,34 @@ const b2bServices = [
 
 const fullAddress = [site.address.street, site.address.locality, site.address.region, site.address['postalCode']].join(' ');
 
+const computerHubLinks = [
+  {
+    title: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+    href: '/บริการ/รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+    desc: 'สำหรับคอมตั้งโต๊ะทั่วไป Desktop PC และเครื่องมือสองที่ต้องการแยกบริบทให้ชัด',
+  },
+  {
+    title: 'รับซื้อ Gaming PC',
+    href: '/บริการ/รับซื้อ-gaming-pc',
+    desc: 'เป็นทางเข้าหลักสำหรับคอมเล่นเกม คอมร้านเกม และคอมสตรีมเกม',
+  },
+  {
+    title: 'รับซื้อ Workstation',
+    href: '/บริการ/รับซื้อ-workstation',
+    desc: 'เหมาะกับเครื่องทำงานกราฟิก ตัดต่อ งาน 3D งาน CAD และคอม AI / Deep Learning',
+  },
+  {
+    title: 'รับซื้อคอมบริษัท',
+    href: '/บริการ/รับซื้อคอมบริษัท',
+    desc: 'สำหรับงานรับซื้อคอมหลายเครื่อง งานยกล็อต และอุปกรณ์ไอทีขององค์กร',
+  },
+  {
+    title: 'รับซื้อโน๊ตบุ๊ค',
+    href: '/บริการ/รับซื้อโน๊ตบุ๊ค',
+    desc: 'เป็น Hub สำหรับโน๊ตบุ๊คทั่วไป สายทำงาน สายเกม และโน๊ตบุ๊คบริษัท',
+  },
+];
+
 const trustPhotos = [
   {
     src: '/images/about/amphon-trading-storefront-ubon.webp',
@@ -240,6 +268,25 @@ const trustItems = [
           <a href={cat.href} class="cat-card cat-card--image">
             <OptimizedImage src={cat.src} alt={cat.alt} class="cat-card__thumb" loading="lazy" width={300} height={188} />
             <span class="cat-card__label">{cat.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="eyebrow">ทางลัดหมวดคอมพิวเตอร์</span>
+        <h2>Desktop / Gaming PC / Workstation</h2>
+        <p>หากต้องการไปหมวดคอมพิวเตอร์แบบเจาะจง ใช้ Hub หลักด้านล่างเพื่อไปต่อยังหน้าย่อยที่เกี่ยวข้อง</p>
+      </div>
+      <div class="grid grid--3">
+        {computerHubLinks.map((item) => (
+          <a href={item.href} class="card b2b-card">
+            <h3 class="b2b-card__title">{item.title}</h3>
+            <p class="b2b-card__desc">{item.desc}</p>
+            <span class="b2b-card__link">ดูรายละเอียด →</span>
           </a>
         ))}
       </div>

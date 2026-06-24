@@ -27,6 +27,40 @@ const schemaExtras = [
     })),
   }),
 ];
+
+const serviceHubGroups = [
+  {
+    title: 'คอมพิวเตอร์ตั้งโต๊ะ / Desktop PC',
+    description: 'เหมาะสำหรับคอมพิวเตอร์ตั้งโต๊ะทั่วไป Desktop PC มือสอง คอมประกอบ และคอมสเปกสูง',
+    links: [
+      { label: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', href: '/บริการ/รับซื้อคอมพิวเตอร์ตั้งโต๊ะ' },
+      { label: 'รับซื้อ Desktop PC', href: '/บริการ/รับซื้อ-desktop-pc' },
+      { label: 'รับซื้อ PC มือสอง', href: '/บริการ/รับซื้อ-pc-มือสอง' },
+      { label: 'รับซื้อคอมประกอบ', href: '/บริการ/รับซื้อคอมประกอบ' },
+      { label: 'รับซื้อคอมสเปกสูง', href: '/บริการ/รับซื้อคอมสเปกสูง' },
+    ],
+  },
+  {
+    title: 'Gaming PC / คอมเกมมิ่ง',
+    description: 'ใช้เป็นทางเข้าหลักสำหรับ Gaming PC คอมเกมมิ่ง คอมร้านเกม และคอมสตรีมเกม',
+    links: [
+      { label: 'รับซื้อ Gaming PC', href: '/บริการ/รับซื้อ-gaming-pc' },
+      { label: 'รับซื้อคอมเกมมิ่ง', href: '/บริการ/รับซื้อคอมเกมมิ่ง' },
+      { label: 'รับซื้อคอมร้านเกม', href: '/บริการ/รับซื้อคอมร้านเกม' },
+      { label: 'รับซื้อคอมสตรีมเกม', href: '/บริการ/รับซื้อคอมสตรีมเกม' },
+    ],
+  },
+  {
+    title: 'Workstation / Professional',
+    description: 'สำหรับคอมทำงานกราฟิก ตัดต่อ งาน 3D งาน CAD และคอม AI / Deep Learning',
+    links: [
+      { label: 'รับซื้อ Workstation', href: '/บริการ/รับซื้อ-workstation' },
+      { label: 'รับซื้อคอมทำงานกราฟิก', href: '/บริการ/รับซื้อคอมทำงานกราฟิก' },
+      { label: 'รับซื้อคอมตัดต่อวิดีโอ', href: '/บริการ/รับซื้อคอมตัดต่อวิดีโอ' },
+      { label: 'รับซื้อคอม AI / Deep Learning', href: '/บริการ/รับซื้อคอม-ai-deep-learning' },
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -73,6 +107,21 @@ const schemaExtras = [
           <li><strong>กลุ่มกล้องและสมาร์ทโฟนอื่นๆ:</strong> รับซื้อกล้อง DSLR Mirrorless เลนส์กล้อง จากค่าย Sony, Canon, Nikon และสมาร์ทโฟน Android รุ่นเรือธง (Samsung Galaxy S/Z Series)</li>
         </ul>
         <p>เลือกประเภทสินค้าด้านล่างเพื่อดูรายละเอียด หรือหากสินค้าไม่อยู่ในหมวดหมู่เหล่านี้ ส่งรูปมาสอบถามทาง LINE @webuy ได้ครับ ประเมินตามสภาพจริง เปรียบเทียบราคาก่อนได้</p>
+      </div>
+      <div class="grid grid--3" style="margin-bottom: 2.5rem;">
+        {serviceHubGroups.map((group) => (
+          <div class="card">
+            <h3 style="margin-bottom:0.75rem;">{group.title}</h3>
+            <p style="margin-bottom:1rem;">{group.description}</p>
+            <ul style="margin:0; padding-left:1.1rem; display:grid; gap:0.5rem;">
+              {group.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div class="grid grid--2">
         {services.map((service) => (
