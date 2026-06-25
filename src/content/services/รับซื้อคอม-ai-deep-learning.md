@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อคอม GPU"
   - "รับซื้อเครื่อง Local AI"
   - "รับซื้อคอม AI ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/pc/buy-workstation.webp"
+ogImage: "/images/pc/buy-workstation.webp"
 date: "2026-06-24"
 draft: false
 icon: "desktop"

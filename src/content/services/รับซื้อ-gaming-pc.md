@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ PC Gaming"
   - "รับซื้อคอมประกอบเล่นเกม"
   - "รับซื้อ Gaming PC ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/pc/buy-pc-gaming.webp"
+ogImage: "/images/pc/buy-pc-gaming.webp"
 date: "2026-06-24"
 draft: false
 icon: "desktop"

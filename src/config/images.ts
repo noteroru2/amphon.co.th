@@ -1,30 +1,30 @@
 /** SEO alt text and metadata for production images. */
 export const imageAlt: Record<string, string> = {
   '/images/hero/hero-amphon-showroom-rub-sue-it-isan.webp':
-    'อำพล เทรดดิ้ง รับซื้อสินค้าไอทีทุกชนิดในภาคอีสาน โน๊ตบุ๊ค MacBook iPhone iPad คอมพิวเตอร์ กล้อง ติดต่อ Line @webuy',
+    'โชว์รูมอำพล เทรดดิ้ง สำหรับรับซื้อสินค้าไอทีมือสอง เช่น โน๊ตบุ๊ค MacBook iPhone iPad คอมพิวเตอร์ และกล้อง',
   '/images/hero/hero-amphon-trading-rub-sue-it-isan.webp':
-    'อำพล เทรดดิ้ง รับซื้อสินค้าไอที iPhone iPad MacBook โน๊ตบุ๊ค คอมพิวเตอร์ กล้อง ในภาคอีสาน 20 จังหวัด ประเมินราคาฟรี',
+    'อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสอง เช่น iPhone iPad MacBook โน๊ตบุ๊ค คอมพิวเตอร์ และกล้อง',
   '/images/hero/hero-amphon-storefront-ubon-banner.webp':
-    'AMPHON TRADING รับซื้อสินค้าไอทีในภาคอีสาน หน้าร้านอำพล เทรดดิ้ง อุบลราชธานี ประเมินราคาฟรี',
+    'หน้าร้าน AMPHON TRADING สำหรับรับซื้อและประเมินสินค้าไอทีมือสอง',
   '/images/hero/hero-amphon-trading-map-isan.webp':
-    'แผนที่พื้นที่ให้บริการรับซื้อสินค้าไอที อำพล เทรดดิ้ง ครอบคลุม 20 จังหวัดภาคอีสาน',
+    'แผนภาพการรับซื้อสินค้าไอทีจากลูกค้าทั่วประเทศ',
 
   '/images/services/rub-sue-iphone-amphon-trading-banner.webp':
     'รับซื้อ iPhone ทุกรุ่น ประเมินราคาฟรี อำพล เทรดดิ้ง ภาคอีสาน ติดต่อ Line @webuy',
   '/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp':
-    'รับซื้อ iPhone มือสองทุกรุ่น iPhone 14 15 Pro Max สภาพดี ให้ราคาสูง อำพล เทรดดิ้ง ภาคอีสาน',
+    'อุปกรณ์ iPad มือสองสำหรับใช้ประกอบหน้าบริการรับซื้อแท็บเล็ตและ iPad',
   '/images/services/rub-sue-macbook-amphon-trading-banner.webp':
     'รับซื้อ MacBook Air Pro ทุกรุ่น ประเมินราคาฟรี จ่ายเงินทันที อำพล เทรดดิ้ง',
   '/images/services/rub-sue-notebook-amphon-trading-banner.webp':
-    'รับซื้อโน๊ตบุ๊ค มือสอง ให้ราคาสูง ประเมินราคาฟรี ติดต่อ Line @webuy อำพล เทรดดิ้ง',
+    'รับซื้อโน๊ตบุ๊คมือสอง ส่งรูปและสเปกเพื่อประเมินเบื้องต้นกับอำพล เทรดดิ้ง',
   '/images/services/rub-sue-notebook-laptops-acer-asus.webp':
     'รับซื้อโน๊ตบุ๊ค Acer Nitro ASUS ROG Vivobook มือสอง สภาพดี ตรวจสอบมาตรฐาน อำพล เทรดดิ้ง',
   '/images/services/rub-sue-ipad-amphon-trading.webp':
-    'รับซื้อ iPad มือสอง สภาพดี อุปกรณ์ครบกล่อง ให้ราคาสูง อำพล เทรดดิ้ง ภาคอีสาน',
+    'iPad มือสองสำหรับหน้าบริการรับซื้อ iPad และแท็บเล็ต',
   '/images/services/rub-sue-komputer-gaming-pc-amphon.webp':
-    'รับซื้อคอมพิวเตอร์ประกอบ Gaming PC Gigabyte ASUS AMD มือสอง ให้ราคาสูง อำพล เทรดดิ้ง ภาคอีสาน',
+    'คอมพิวเตอร์ประกอบและ Gaming PC มือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์',
   '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp':
-    'รับซื้อกล้อง Fujifilm X-A2 Mirrorless เลนส์ 50mm F1.8 35mm F1.6 มือสอง ให้ราคาสูง อำพล เทรดดิ้ง',
+    'กล้องและเลนส์มือสองสำหรับหน้าบริการรับซื้อกล้อง',
   '/images/services/macbook-buyback-cover.webp':
     'ร้านอำพล เทรดดิ้งตรวจเช็ก MacBook มือสอง',
   '/images/trust/macbook-inspection-desk.webp':
@@ -61,16 +61,36 @@ export const imageAlt: Record<string, string> = {
     'ตรวจจำนวนชัตเตอร์กล้องก่อนรับซื้อ',
 
   '/images/about/amphon-trading-storefront-ubon.webp':
-    'หน้าร้านอำพล เทรดดิ้ง 740/8 ถนนชยางกูร อุบลราชธานี รับซื้อ ขาย ฝาก ซ่อม อุปกรณ์ไอที ครบวงจร',
+    'หน้าร้านอำพล เทรดดิ้ง สำหรับรับซื้อและประเมินสินค้าไอทีมือสอง',
   '/images/about/amphon-trading-shop-showroom.webp':
-    'บรรยากาศหน้าร้านอำพล เทรดดิ้ง รับซื้อขายไอที มือถือ คอมพิวเตอร์ ทีวี และอุปกรณ์อิเล็กทรอนิกส์',
+    'บรรยากาศภายในร้านอำพล เทรดดิ้ง สำหรับรับซื้อและตรวจเช็กสินค้าไอทีมือสอง',
   '/images/about/amphon-trading-shop-interior-evaluation.webp':
-    'ร้านอำพล เทรดดิ้ง รับซื้อขายโน๊ตบุ๊ค มือถือ คอมพิวเตอร์ มือสอง ตรวจสอบมาตรฐาน อุบลราชธานี',
+    'โต๊ะตรวจเช็กและประเมินสินค้าไอทีมือสองภายในร้านอำพล เทรดดิ้ง',
   '/images/about/amphon-trading-shop-transaction.webp':
-    'บริการรับซื้อสินค้าไอที อำพล เทรดดิ้ง ทีมงานตรวจสอบและจ่ายเงินทันที โอนเงินสำเร็จ',
+    'ทีมงานอำพล เทรดดิ้งระหว่างตรวจเช็กและสรุปการรับซื้อสินค้าไอที',
+  '/images/pc/buy-com.webp':
+    'คอมพิวเตอร์ตั้งโต๊ะมือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์และคอมประกอบ',
+  '/images/pc/buy-pc.webp':
+    'คอมพิวเตอร์ตั้งโต๊ะมือสองสำหรับหน้าบริการรับซื้อ PC มือสอง',
+  '/images/pc/buy-pc-2.webp':
+    'คอมพิวเตอร์ตั้งโต๊ะมือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+  '/images/pc/buy-dekstop-pc.webp':
+    'คอมพิวเตอร์ตั้งโต๊ะหลายเครื่องสำหรับหน้าบริการรับซื้อคอมยกล็อต',
+  '/images/pc/buy-com-hiend.webp':
+    'คอมพิวเตอร์สเปกสูงมือสองสำหรับหน้าบริการรับซื้อคอมสเปกสูง',
+  '/images/pc/buy-pc-gaming.webp':
+    'Gaming PC มือสองสำหรับหน้าบริการรับซื้อคอมเกมมิ่งและคอมเล่นเกม',
+  '/images/pc/buy-workstation.webp':
+    'Workstation มือสองสำหรับหน้าบริการรับซื้อคอมทำงานกราฟิกและงานเฉพาะทาง',
+  '/images/notebook/buy-notebook.webp':
+    'โน๊ตบุ๊คมือสองสำหรับหน้าบริการรับซื้อโน๊ตบุ๊ค',
+  '/images/gaming-notebook/buy-gaming-notebook.webp':
+    'Gaming Notebook มือสองสำหรับหน้าบริการรับซื้อโน๊ตบุ๊คเกมมิ่ง',
+  '/images/gaming-notebook/buy-asus-rog.webp':
+    'ASUS ROG Gaming Notebook มือสองสำหรับหน้าบริการรับซื้อ ROG',
 
   '/images/blog/khai-macbook-musong-rap-raka-dee-amphon.webp':
-    'ขาย MacBook มือสองอย่างไรให้ได้ราคาดี เช็คลิสต์ตรวจสภาพเครื่อง อำพล เทรดดิ้ง Line @webuy',
+    'เช็กลิสต์เตรียม MacBook มือสองก่อนตัดสินใจขาย',
   '/images/blog/khai-iphone-musong-teiyam-ari-bang-amphon.webp':
     'ขาย iPhone มือสองต้องเตรียมอะไรบ้าง ตรวจสภาพ สำรองข้อมูล อุปกรณ์ครบ อำพล เทรดดิ้ง',
 
@@ -100,8 +120,8 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
     alt: 'รับซื้อ iPhone ทุกรุ่น ประเมินราคาฟรี อำพล เทรดดิ้ง ภาคอีสาน',
   },
   '/บริการ/รับซื้อ-ipad': {
-    src: '/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp',
-    alt: 'รับซื้อ iPad มือสอง สภาพดี ให้ราคาสูง อำพล เทรดดิ้ง ภาคอีสาน',
+    src: '/images/services/rub-sue-ipad-amphon-trading.webp',
+    alt: imageAlt['/images/services/rub-sue-ipad-amphon-trading.webp'],
   },
   '/บริการ/รับซื้อ-macbook': {
     src: '/images/services/rub-sue-macbook-amphon-trading-banner.webp',
@@ -112,8 +132,8 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
     alt: imageAlt['/images/services/rub-sue-notebook-laptops-acer-asus.webp'],
   },
   '/บริการ/รับซื้อคอมพิวเตอร์': {
-    src: '/images/services/rub-sue-komputer-gaming-pc-amphon.webp',
-    alt: 'รับซื้อคอมพิวเตอร์ประกอบ Gaming PC Gigabyte ASUS มือสอง ให้ราคาสูง อำพล เทรดดิ้ง ภาคอีสาน',
+    src: '/images/pc/buy-com.webp',
+    alt: imageAlt['/images/pc/buy-com.webp'],
   },
   '/บริการ/รับซื้อคอมบริษัท': {
     src: '/images/about/amphon-trading-shop-interior-evaluation.webp',
@@ -121,11 +141,11 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
   },
   '/บริการ/รับซื้อกล้อง': {
     src: '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
-    alt: 'รับซื้อกล้อง Fujifilm X-A2 Mirrorless เลนส์ 50mm 35mm มือสอง ให้ราคาสูง อำพล เทรดดิ้ง',
+    alt: imageAlt['/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp'],
   },
   '/รับซื้อสินค้าไอที': {
     src: '/images/about/amphon-trading-shop-showroom.webp',
-    alt: 'อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสองครบวงจร ในภาคอีสาน 20 จังหวัด',
+    alt: imageAlt['/images/about/amphon-trading-shop-showroom.webp'],
   },
 };
 
@@ -144,8 +164,8 @@ export const serviceThumbnails: Record<string, string> = {
   'รับซื้อ-gopro-action-camera': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อกล้องเสีย': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อโน๊ตบุ๊ค':  '/images/services/rub-sue-notebook-laptops-acer-asus.webp',
-  'รับซื้อ-ipad':      '/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp',
-  'รับซื้อคอมพิวเตอร์': '/images/services/rub-sue-komputer-gaming-pc-amphon.webp',
+  'รับซื้อ-ipad':      '/images/services/rub-sue-ipad-amphon-trading.webp',
+  'รับซื้อคอมพิวเตอร์': '/images/pc/buy-com.webp',
   'รับซื้อคอมบริษัท': '/images/about/amphon-trading-shop-interior-evaluation.webp',
   'รับซื้อสินค้าไอที': '/images/about/amphon-trading-shop-showroom.webp',
 };

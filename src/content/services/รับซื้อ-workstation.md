@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อคอมทำงานสเปกสูง"
   - "รับซื้อคอมกราฟิก"
   - "รับซื้อ Workstation ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/pc/buy-workstation.webp"
+ogImage: "/images/pc/buy-workstation.webp"
 date: "2026-06-24"
 draft: false
 icon: "desktop"
