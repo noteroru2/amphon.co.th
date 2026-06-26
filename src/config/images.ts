@@ -14,27 +14,27 @@ export const imageAlt: Record<string, string> = {
   '/images/og/og-service-iphone.webp':
     'iPhone มือสองสำหรับหน้าบริการรับซื้อ iPhone',
   '/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp':
-    'อุปกรณ์ iPad มือสองสำหรับใช้ประกอบหน้าบริการรับซื้อแท็บเล็ตและ iPad',
+    'iPad มือสองสำหรับหน้าบริการรับซื้อ iPad',
   '/images/services/rub-sue-macbook-amphon-trading-banner.webp':
-    'รับซื้อ MacBook Air Pro ทุกรุ่น ประเมินราคาฟรี จ่ายเงินทันที อำพล เทรดดิ้ง',
+    'MacBook มือสองสำหรับหน้าบริการรับซื้อ MacBook',
   '/images/services/rub-sue-notebook-amphon-trading-banner.webp':
     'รับซื้อโน๊ตบุ๊คมือสอง ส่งรูปและสเปกเพื่อประเมินเบื้องต้นกับอำพล เทรดดิ้ง',
   '/images/services/rub-sue-notebook-laptops-acer-asus.webp':
     'รับซื้อโน๊ตบุ๊ค Acer Nitro ASUS ROG Vivobook มือสอง สภาพดี ตรวจสอบมาตรฐาน อำพล เทรดดิ้ง',
-  '/images/services/rub-sue-ipad-amphon-trading.webp':
-    'iPad มือสองสำหรับหน้าบริการรับซื้อ iPad และแท็บเล็ต',
   '/images/services/rub-sue-komputer-gaming-pc-amphon.webp':
     'คอมพิวเตอร์ประกอบและ Gaming PC มือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์',
   '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp':
     'กล้องและเลนส์มือสองสำหรับหน้าบริการรับซื้อกล้อง',
   '/images/services/macbook-buyback-cover.webp':
     'ร้านอำพล เทรดดิ้งตรวจเช็ก MacBook มือสอง',
+  '/images/og/og-service-macbook.webp':
+    'MacBook มือสองสำหรับหน้าบริการรับซื้อ MacBook',
   '/images/trust/macbook-inspection-desk.webp':
-    'รับซื้อ MacBook มือสองในอุบลราชธานี',
+    'MacBook มือสองสำหรับการตรวจสภาพก่อนประเมิน',
   '/images/trust/about-this-mac-check.webp':
-    'ตรวจ About This Mac ก่อนประเมินราคา MacBook',
+    'หน้าข้อมูล About This Mac สำหรับตรวจสเปกก่อนประเมิน MacBook',
   '/images/trust/macbook-battery-cycle-check.webp':
-    'ตรวจ Battery Cycle ก่อนรับซื้อ MacBook',
+    'การตรวจ Battery Cycle ก่อนประเมิน MacBook',
   '/images/services/ipad-buyback-cover.webp':
     'ร้านอำพล เทรดดิ้งตรวจเช็ก iPad มือสอง',
   '/images/trust/ipad-inspection-desk.webp':
@@ -68,6 +68,8 @@ export const imageAlt: Record<string, string> = {
     'บรรยากาศภายในร้านอำพล เทรดดิ้ง สำหรับรับซื้อและตรวจเช็กสินค้าไอทีมือสอง',
   '/images/about/amphon-trading-shop-interior-evaluation.webp':
     'โต๊ะตรวจเช็กและประเมินสินค้าไอทีมือสองภายในร้านอำพล เทรดดิ้ง',
+  '/images/apple/buy-ipad.webp':
+    'iPad มือสองสำหรับหน้าบริการรับซื้อ iPad',
   '/images/apple/buy-apple-products.webp':
     'สินค้า Apple มือสองหลายประเภทสำหรับหน้าบริการรับซื้อ Apple',
   '/images/apple/buy-imac.webp':
@@ -158,8 +160,8 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
     alt: imageAlt['/images/services/rub-sue-iphone-amphon-trading-banner.webp'],
   },
   '/บริการ/รับซื้อ-ipad': {
-    src: '/images/services/rub-sue-ipad-amphon-trading.webp',
-    alt: imageAlt['/images/services/rub-sue-ipad-amphon-trading.webp'],
+    src: '/images/apple/buy-ipad.webp',
+    alt: imageAlt['/images/apple/buy-ipad.webp'],
   },
   '/บริการ/รับซื้อ-macbook': {
     src: '/images/services/rub-sue-macbook-amphon-trading-banner.webp',
@@ -202,7 +204,7 @@ export const serviceThumbnails: Record<string, string> = {
   'รับซื้อ-gopro-action-camera': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อกล้องเสีย': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อโน๊ตบุ๊ค':  '/images/services/rub-sue-notebook-laptops-acer-asus.webp',
-  'รับซื้อ-ipad':      '/images/services/rub-sue-ipad-amphon-trading.webp',
+  'รับซื้อ-ipad':      '/images/apple/buy-ipad.webp',
   'รับซื้อคอมพิวเตอร์': '/images/pc/buy-com.webp',
   'รับซื้อคอมบริษัท': '/images/about/amphon-trading-shop-interior-evaluation.webp',
   'รับซื้อสินค้าไอที': '/images/about/amphon-trading-shop-showroom.webp',

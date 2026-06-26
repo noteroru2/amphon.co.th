@@ -6,8 +6,8 @@ order: 4
 description: "รับซื้อ iPad Gen 8, Gen 9, Gen 10 (รุ่นธรรมดา) ทุกความจุ 64GB 256GB ประเมินราคาไว จ่ายเงินสดโอนไว เหมาะสำหรับนักเรียน นักศึกษา"
 mainKeyword: "รับซื้อ iPad Gen"
 relatedKeywords: ["รับซื้อไอแพดเจน", "ขาย iPad Gen 9", "รับซื้อ iPad Gen 10", "รับซื้อ iPad มือสอง นักเรียน"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
-ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
+ogImage: "/images/apple/buy-ipad.webp"
 date: "2026-06-14"
 draft: false
 icon: "tablet"
