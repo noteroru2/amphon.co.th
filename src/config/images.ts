@@ -68,6 +68,10 @@ export const imageAlt: Record<string, string> = {
     'บรรยากาศภายในร้านอำพล เทรดดิ้ง สำหรับรับซื้อและตรวจเช็กสินค้าไอทีมือสอง',
   '/images/about/amphon-trading-shop-interior-evaluation.webp':
     'โต๊ะตรวจเช็กและประเมินสินค้าไอทีมือสองภายในร้านอำพล เทรดดิ้ง',
+  '/images/mobile/buy-mobile-phones.webp':
+    'มือถือมือสองหลายแบรนด์สำหรับหน้าบริการรับซื้อมือถือ',
+  '/images/mobile/buy-headphones.webp':
+    'หูฟังมือสองหลายประเภทสำหรับหน้าบริการรับซื้อหูฟัง',
   '/images/apple/buy-ipad.webp':
     'iPad มือสองสำหรับหน้าบริการรับซื้อ iPad',
   '/images/apple/buy-apple-products.webp':
