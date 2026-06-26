@@ -7,8 +7,8 @@ relatedKeywords:
   - Activation Lock
   - ออกจาก iCloud
   - ขาย iPad
-heroImage: /images/services/rub-sue-ipad-amphon-trading.webp
-ogImage: /images/services/rub-sue-ipad-amphon-trading.webp
+heroImage: /images/apple/buy-ipad.webp
+ogImage: /images/apple/buy-ipad.webp
 faqs:
   - question: iPad ติด iCloud ร้านรับซื้อรับไหม?
     answer: ร้านที่ถูกกฎหมายรับเฉพาะเครื่องที่ออกจาก iCloud ได้แล้วเท่านั้น

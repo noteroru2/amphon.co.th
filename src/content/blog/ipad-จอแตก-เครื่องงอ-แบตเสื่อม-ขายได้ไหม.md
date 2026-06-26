@@ -4,7 +4,7 @@ slug: "ipad-จอแตก-เครื่องงอ-แบตเสื่อ
 description: "iPad จอแตก เครื่องงอ แบตเสื่อม ยังขายได้ไหม อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "iPad จอแตกขายได้ไหม"
 relatedKeywords: ["iPad จอแตกขายได้ไหม", "ขายiPad มีตำหนิมือสอง", "iPad มีตำหนิเสียขายได้ไหม", "ประเมินราคาiPad มีตำหนิ", "รับซื้อiPad มีตำหนิ"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
 ogImage: "/images/og/og-service-it.webp"
 faqs:
   - question: "iPad มีตำหนิมีตำหนิยังขายได้ไหม"

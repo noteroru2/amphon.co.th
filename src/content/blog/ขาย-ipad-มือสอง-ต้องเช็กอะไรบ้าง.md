@@ -4,7 +4,7 @@ slug: "ขาย-ipad-มือสอง-ต้องเช็กอะไรบ
 description: "ขาย iPad มือสอง ต้องเช็กอะไรบ้างให้ประเมินราคาได้เร็ว อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "ขาย iPad มือสอง"
 relatedKeywords: ["ขาย iPad มือสอง", "ขายiPadมือสอง", "iPadเสียขายได้ไหม", "ประเมินราคาiPad", "รับซื้อiPad"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
 ogImage: "/images/og/og-service-it.webp"
 faqs:
   - question: "iPadมีตำหนิยังขายได้ไหม"
