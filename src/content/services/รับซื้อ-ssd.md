@@ -175,6 +175,6 @@ A: รับซื้อครับ HDD SAS Enterprise ได้ราคาด
 ## บริการที่เกี่ยวข้อง
 
 - [รับซื้อ Server มือสอง](/บริการ/รับซื้อ-server) — รับซื้อ Dell, HP, IBM, Cisco UCS ทุกรุ่น
-- [รับซื้อ Storage และ NAS](/บริการ/รับซื้อ-storage-nas) — Synology, QNAP, NetApp รับเหมาทั้งล็อต
+- [รับซื้อ Storage และ NAS](/บริการ/รับซื้อ-nas) — Synology, QNAP, NetApp รับเหมาทั้งล็อต
 - [รับซื้อ UPS เครื่องสำรองไฟ](/บริการ/รับซื้อ-ups) — APC, Eaton, Schneider รับซื้อแม้แบตเสื่อม
 - [รับซื้อแรม](/บริการ/รับซื้อแรม) — รับซื้อ RAM DDR3/DDR4/DDR5 และ ECC RAM สำหรับ Server
