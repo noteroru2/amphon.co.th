@@ -6,8 +6,8 @@ order: 8
 description: "อำพล เทรดดิ้ง รับซื้อคีย์บอร์ดไอแพด Magic Keyboard, Smart Keyboard Folio มือสอง สำหรับ iPad Pro, iPad Air ประเมินฟรี"
 mainKeyword: "รับซื้อ Magic Keyboard iPad"
 relatedKeywords: ["รับซื้อคีย์บอร์ดไอแพด", "ขาย Magic Keyboard", "รับซื้อ Smart Keyboard Folio", "รับซื้อ Magic Keyboard iPad Pro"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
-ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
+ogImage: "/images/apple/buy-ipad.webp"
 date: "2026-06-14"
 draft: false
 icon: "keyboard"

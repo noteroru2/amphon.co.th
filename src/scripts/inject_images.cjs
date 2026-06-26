@@ -82,8 +82,8 @@ const imageMap = [
   },
   {
     pattern: ['รับซื้อ-ipad', 'รับซื้อแท็บเล็ต'],
-    heroImage: '/images/services/rub-sue-ipad-amphon-trading.webp',
-    sectionImage: '/images/services/rub-sue-ipad-amphon-trading.webp',
+    heroImage: '/images/apple/buy-ipad.webp',
+    sectionImage: '/images/apple/buy-ipad.webp',
     altText: 'รับซื้อ iPad และแท็บเล็ตมือสอง - Amphon Trading',
   },
   {

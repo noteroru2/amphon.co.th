@@ -6,8 +6,8 @@ order: 3
 description: "ร้านรับซื้อ iPad mini มือสอง ประเมินตามสภาพจริง รับซื้อ iPad mini 6, mini A17 Pro (Gen 7) ขนาดหน้าจอ 8.3 นิ้ว ประเมินราคาผ่านแชทฟรี โอนเงินทันที"
 mainKeyword: "รับซื้อ iPad mini"
 relatedKeywords: ["รับซื้อไอแพดมินิ", "ขาย iPad mini 6", "รับซื้อ iPad mini มือสอง", "รับซื้อ iPad mini A17 Pro"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
-ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
+ogImage: "/images/apple/buy-ipad.webp"
 date: "2026-06-14"
 draft: false
 icon: "tablet"

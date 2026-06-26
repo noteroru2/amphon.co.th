@@ -7,8 +7,8 @@ province: "อุบลราชธานี"
 description: "หาร้านรับซื้อ iPad อุบลราชธานี อำพล เทรดดิ้ง มีหน้าร้านจริง รับซื้อไอแพด Pro Air mini ทุกรุ่น ประเมินฟรี ตีราคาให้สูงตามสเปก นัดรับในเมืองได้ โอนเงินทันที"
 mainKeyword: "รับซื้อ iPad อุบลราชธานี"
 relatedKeywords: ["รับซื้อไอแพด อุบล", "ร้านรับซื้อ iPad อุบล", "ขาย iPad อุบล", "รับซื้อ iPad มือสอง อุบลราชธานี"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
-ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
+ogImage: "/images/apple/buy-ipad.webp"
 date: "2026-06-14"
 draft: false
 icon: "map-pin"

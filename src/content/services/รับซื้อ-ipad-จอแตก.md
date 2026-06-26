@@ -6,8 +6,8 @@ order: 6
 description: "รับซื้อ iPad จอแตก กระจกร้าว จอเป็นเส้น จอดำ ทัชสกรีนไม่ได้ ประเมินราคาตามค่าใช้จ่ายเปลี่ยนหน้าจอ รับซื้อทุกรุ่น Pro Air mini Gen"
 mainKeyword: "รับซื้อ iPad จอแตก"
 relatedKeywords: ["รับซื้อไอแพดจอแตก", "ขาย iPad จอร้าว", "รับซื้อ iPad ทัชไม่ติด", "iPad จอเป็นเส้น ขายได้ไหม"]
-heroImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
-ogImage: "/images/services/rub-sue-ipad-amphon-trading.webp"
+heroImage: "/images/apple/buy-ipad.webp"
+ogImage: "/images/apple/buy-ipad.webp"
 date: "2026-06-14"
 draft: false
 icon: "tool"
