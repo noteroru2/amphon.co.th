@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อเครื่องแมคตั้งโต๊ะ"
   - "รับซื้อ iMac จอมีปัญหา"
   - "ประเมิน iMac มือสอง"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/apple/buy-imac.webp"
+ogImage: "/images/apple/buy-imac.webp"
 date: "2026-06-24"
 draft: false
 icon: "desktop"

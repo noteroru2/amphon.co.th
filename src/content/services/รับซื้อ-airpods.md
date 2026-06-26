@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อหูฟัง Apple"
   - "รับซื้อ AirPods เคสชาร์จ"
   - "ประเมิน AirPods มือสอง"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/apple/buy-airpods.webp"
+ogImage: "/images/apple/buy-airpods.webp"
 date: "2026-06-24"
 draft: false
 icon: "smartphone"

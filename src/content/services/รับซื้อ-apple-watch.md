@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ Apple Watch Series"
   - "ประเมิน Apple Watch มือสอง"
   - "รับซื้อ Apple Watch ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/apple/buy-apple-watch.webp"
+ogImage: "/images/apple/buy-apple-watch.webp"
 date: "2026-06-24"
 draft: false
 icon: "smartphone"

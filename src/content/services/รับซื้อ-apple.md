@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้ออุปกรณ์ Apple"
   - "ประเมินสินค้า Apple มือสอง"
   - "รับซื้อ Apple ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/apple/buy-apple-products.webp"
+ogImage: "/images/apple/buy-apple-products.webp"
 date: "2026-06-24"
 draft: false
 icon: "smartphone"

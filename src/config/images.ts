@@ -10,7 +10,9 @@ export const imageAlt: Record<string, string> = {
     'แผนภาพการรับซื้อสินค้าไอทีจากลูกค้าทั่วประเทศ',
 
   '/images/services/rub-sue-iphone-amphon-trading-banner.webp':
-    'รับซื้อ iPhone ทุกรุ่น ประเมินราคาฟรี อำพล เทรดดิ้ง ภาคอีสาน ติดต่อ Line @webuy',
+    'iPhone มือสองสำหรับหน้าบริการรับซื้อ iPhone',
+  '/images/og/og-service-iphone.webp':
+    'iPhone มือสองสำหรับหน้าบริการรับซื้อ iPhone',
   '/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp':
     'อุปกรณ์ iPad มือสองสำหรับใช้ประกอบหน้าบริการรับซื้อแท็บเล็ตและ iPad',
   '/images/services/rub-sue-macbook-amphon-trading-banner.webp':
@@ -66,6 +68,16 @@ export const imageAlt: Record<string, string> = {
     'บรรยากาศภายในร้านอำพล เทรดดิ้ง สำหรับรับซื้อและตรวจเช็กสินค้าไอทีมือสอง',
   '/images/about/amphon-trading-shop-interior-evaluation.webp':
     'โต๊ะตรวจเช็กและประเมินสินค้าไอทีมือสองภายในร้านอำพล เทรดดิ้ง',
+  '/images/apple/buy-apple-products.webp':
+    'สินค้า Apple มือสองหลายประเภทสำหรับหน้าบริการรับซื้อ Apple',
+  '/images/apple/buy-imac.webp':
+    'iMac มือสองสำหรับหน้าบริการรับซื้อ iMac',
+  '/images/apple/buy-apple-watch.webp':
+    'Apple Watch มือสองสำหรับหน้าบริการรับซื้อ Apple Watch',
+  '/images/apple/buy-airpods.webp':
+    'AirPods มือสองสำหรับหน้าบริการรับซื้อ AirPods',
+  '/images/mobile/buy-tablets.webp':
+    'แท็บเล็ตมือสองหลายแบรนด์สำหรับหน้าบริการรับซื้อแท็บเล็ต',
   '/images/about/amphon-trading-shop-transaction.webp':
     'ทีมงานอำพล เทรดดิ้งระหว่างตรวจเช็กและสรุปการรับซื้อสินค้าไอที',
   '/images/pc/buy-com.webp':
@@ -143,7 +155,7 @@ export function getImageAlt(src: string, fallback = ''): string {
 export const categoryImages: Record<string, { src: string; alt: string }> = {
   '/บริการ/รับซื้อ-iphone': {
     src: '/images/services/rub-sue-iphone-amphon-trading-banner.webp',
-    alt: 'รับซื้อ iPhone ทุกรุ่น ประเมินราคาฟรี อำพล เทรดดิ้ง ภาคอีสาน',
+    alt: imageAlt['/images/services/rub-sue-iphone-amphon-trading-banner.webp'],
   },
   '/บริการ/รับซื้อ-ipad': {
     src: '/images/services/rub-sue-ipad-amphon-trading.webp',
