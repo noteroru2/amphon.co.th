@@ -82,6 +82,32 @@ export const imageAlt: Record<string, string> = {
     'Gaming PC มือสองสำหรับหน้าบริการรับซื้อคอมเกมมิ่งและคอมเล่นเกม',
   '/images/pc/buy-workstation.webp':
     'Workstation มือสองสำหรับหน้าบริการรับซื้อคอมทำงานกราฟิกและงานเฉพาะทาง',
+  '/images/b2b/buy-company-computers.webp':
+    'คอมพิวเตอร์บริษัทมือสองหลายเครื่องสำหรับหน้าบริการรับซื้อคอมบริษัท',
+  '/images/b2b/buy-company-it-assets.webp':
+    'อุปกรณ์ไอทีบริษัทหลายประเภทสำหรับหน้าบริการรับซื้อสินค้าไอทีบริษัท',
+  '/images/b2b/buy-company-it-equipment.webp':
+    'อุปกรณ์ไอทีบริษัทหลายรายการสำหรับหน้าบริการรับซื้ออุปกรณ์ไอทีบริษัท',
+  '/images/b2b/buy-office-pc-lot.webp':
+    'คอมสำนักงานมือสองหลายเครื่องสำหรับหน้าบริการรับซื้อคอมสำนักงานและคอมยกล็อต',
+  '/images/b2b/it-asset-clearance.webp':
+    'อุปกรณ์ไอทีสำนักงานที่จัดแยกสำหรับหน้าบริการรับเคลียร์อุปกรณ์ไอทีสำนักงาน',
+  '/images/b2b/buy-internet-cafe-pc-lot.webp':
+    'คอมร้านเกมหลายชุดสำหรับหน้าบริการรับซื้อคอมร้านเกม',
+  '/images/b2b/it-auction-lot.webp':
+    'คอมพิวเตอร์และอุปกรณ์ไอทียกล็อตสำหรับหน้าบริการรับประมูลคอมพิวเตอร์มือสอง',
+  '/images/b2b/buy-office-monitors.webp':
+    'จอคอมสำนักงานมือสองสำหรับหน้าบริการรับซื้อจอคอมสำนักงาน',
+  '/images/b2b/buy-office-printers.webp':
+    'เครื่องพิมพ์สำนักงานมือสองสำหรับหน้าบริการรับซื้อ Printer สำนักงาน',
+  '/images/b2b/buy-ups-systems.webp':
+    'เครื่องสำรองไฟ UPS มือสองสำหรับหน้าบริการรับซื้อ UPS',
+  '/images/b2b/buy-servers.webp':
+    'Server มือสองสำหรับหน้าบริการรับซื้อ Server',
+  '/images/b2b/buy-nas-storage.webp':
+    'อุปกรณ์ NAS และ Storage มือสองสำหรับหน้าบริการรับซื้อ NAS และ Storage',
+  '/images/b2b/buy-network-equipment.webp':
+    'อุปกรณ์ Network มือสองสำหรับหน้าบริการรับซื้ออุปกรณ์ Network',
   '/images/notebook/buy-notebook.webp':
     'โน๊ตบุ๊คมือสองสำหรับหน้าบริการรับซื้อโน๊ตบุ๊ค',
   '/images/gaming-notebook/buy-gaming-notebook.webp':

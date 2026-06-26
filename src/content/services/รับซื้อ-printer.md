@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ Printer บริษัท"
   - "รับซื้อ Printer ยกล็อต"
   - "รับซื้อ Printer ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/b2b/buy-office-printers.webp"
+ogImage: "/images/b2b/buy-office-printers.webp"
 date: "2026-06-23"
 draft: false
 icon: "printer"
