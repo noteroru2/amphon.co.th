@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ Storage บริษัท"
   - "รับซื้ออุปกรณ์จัดเก็บข้อมูล"
   - "รับซื้อ NAS ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/b2b/buy-nas-storage.webp"
+ogImage: "/images/b2b/buy-nas-storage.webp"
 date: "2026-06-23"
 draft: false
 icon: "server"

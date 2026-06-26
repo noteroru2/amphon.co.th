@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ firewall มือสอง"
   - "รับซื้ออุปกรณ์เน็ตเวิร์ค"
   - "รับซื้ออุปกรณ์ Network ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/b2b/buy-network-equipment.webp"
+ogImage: "/images/b2b/buy-network-equipment.webp"
 date: "2026-06-23"
 draft: false
 icon: "server"

@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ UPS สำนักงาน"
   - "รับซื้อ UPS Server"
   - "รับซื้อ UPS ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/b2b/buy-ups-systems.webp"
+ogImage: "/images/b2b/buy-ups-systems.webp"
 date: "2026-06-23"
 draft: false
 icon: "server"

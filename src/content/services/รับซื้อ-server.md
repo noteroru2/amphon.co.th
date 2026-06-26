@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ HP Server"
   - "รับซื้อ Server ปลดระวาง"
   - "รับซื้อ Server ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/b2b/buy-servers.webp"
+ogImage: "/images/b2b/buy-servers.webp"
 date: "2026-06-23"
 draft: false
 icon: "server"
