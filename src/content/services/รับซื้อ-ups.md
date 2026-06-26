@@ -78,7 +78,7 @@ UPS ที่ Beep เตือนแบตเสื่อมหรือ Batter
 
 ### APC by Schneider Electric
 
-APC เป็นแบรนด์ที่มีตลาดมือสองชัดเจนที่สุดในบรรดา UPS ทั้งหมด Back-UPS สำหรับบ้านและสำนักงานเล็ก Smart-UPS สำหรับ SME และ Symmetra สำหรับ Enterprise รับพิจารณาทุกซีรีส์ตามสภาพ
+APC เป็นแบรนด์ที่มีตลาดมือสองชัดเจนในบรรดา UPS Back-UPS สำหรับบ้านและสำนักงานเล็ก Smart-UPS สำหรับ SME และ Symmetra สำหรับ Enterprise รับพิจารณาตามรุ่นและสภาพ
 
 ### Eaton
 
