@@ -3,7 +3,7 @@ title: "รับซื้อ Apple Pencil มือสอง Gen 1, Gen 2, USB-
 h1: "รับซื้อ Apple Pencil มือสอง Gen 1 Gen 2 USB-C และ Pro"
 slug: "รับซื้อ-apple-pencil"
 order: 7
-description: "ต้องการขาย Apple Pencil? อำพล เทรดดิ้ง รับซื้อปากกาไอแพด Apple Pencil Gen 1, Gen 2, USB-C และรุ่น Pro ประเมินฟรี จ่ายเงินไว"
+description: "ต้องการขาย Apple Pencil? อำพล เทรดดิ้ง รับซื้อปากกาไอแพด Apple Pencil Gen 1, Gen 2, USB-C และรุ่น Pro ส่งรูป รุ่น สภาพ และอุปกรณ์ เพื่อประเมินราคาเบื้องต้นได้"
 mainKeyword: "รับซื้อ Apple Pencil"
 relatedKeywords: ["รับซื้อปากกาไอแพด", "ขาย Apple Pencil มือสอง", "รับซื้อ Apple Pencil Gen 2", "รับซื้อ Apple Pencil Pro"]
 heroImage: "/images/apple/buy-ipad.webp"
