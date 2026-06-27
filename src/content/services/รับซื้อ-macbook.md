@@ -12,8 +12,8 @@ relatedKeywords:
   - "รับซื้อ MacBook Pro"
   - "รับซื้อ MacBook M1"
   - "รับซื้อ MacBook ทั่วประเทศ"
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"
+ogImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"
 date: "2026-06-24"
 draft: false
 icon: "laptop"

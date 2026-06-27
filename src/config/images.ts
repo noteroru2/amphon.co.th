@@ -139,6 +139,12 @@ export const imageAlt: Record<string, string> = {
     'ขาย iPhone มือสองต้องเตรียมอะไรบ้าง ตรวจสภาพ สำรองข้อมูล อุปกรณ์ครบ อำพล เทรดดิ้ง',
 
   '/images/brand/amphon-trading-logo.webp': 'โลโก้ AMPHON TRADING อำพล เทรดดิ้ง รับซื้อสินค้าไอที ภาคอีสาน',
+  '/images/services/rub-sue-camera-lens-amphon.png':
+    'เลนส์กล้องมือสองสำหรับหน้าบริการรับซื้อเลนส์กล้อง',
+  '/images/camera/buy-gopro-action-camera.webp':
+    'GoPro และกล้อง Action Camera มือสองสำหรับหน้าบริการรับซื้อ GoPro',
+  '/images/b2b/buy-server-network.webp':
+    'Server และอุปกรณ์ Network มือสองสำหรับหน้าบริการรับซื้อ Server และ Network',
 };
 
 export function getImageAlt(src: string, fallback = ''): string {

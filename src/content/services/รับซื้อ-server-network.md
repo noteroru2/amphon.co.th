@@ -6,8 +6,8 @@ order: 6
 description: "รับซื้อ Server ออฟฟิศ NAS สตอเรจ และอุปกรณ์ Network เช่น Switch Router Access Point จากบริษัท ประเมินตามสภาพจริง"
 mainKeyword: "รับซื้อ Server และ Network"
 relatedKeywords: ["รับซื้อ NAS", "รับซื้อ Network Switch", "รับซื้อ Router", "รับซื้อเซิร์ฟเวอร์บริษัท"]
-heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
-ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
+heroImage: "/images/b2b/buy-server-network.webp"
+ogImage: "/images/b2b/buy-server-network.webp"
 date: "2026-06-14"
 draft: false
 icon: "server"
