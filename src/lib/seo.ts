@@ -222,6 +222,7 @@ export function createServiceSchema(params: {
   description: string;
   serviceType?: string;
   image?: string;
+  offerCatalogId?: string;
 }) {
   const normalizedUrl = normalizePageUrl(params.pageUrl);
   return {
@@ -234,6 +235,13 @@ export function createServiceSchema(params: {
     serviceType: params.serviceType ?? 'รับซื้อสินค้ามือสอง',
     provider: { '@id': schemaIds.localBusiness },
     areaServed: areaServedNodes(),
+    ...(params.offerCatalogId
+      ? {
+          hasOfferCatalog: {
+            '@id': params.offerCatalogId,
+          },
+        }
+      : {}),
     ...(params.image ? { image: toAbsoluteMediaUrl(params.image) } : {}),
     offers: {
       '@type': 'Offer',
@@ -313,7 +321,7 @@ export function createOfferCatalogSchema(params: {
         '@type': 'Service',
         name: item.name,
         description: item.description,
-        url: normalizePageUrl(item.url),
+        url: absoluteUrl(item.url),
         inLanguage: IN_LANGUAGE,
         provider: { '@id': schemaIds.localBusiness },
       },
