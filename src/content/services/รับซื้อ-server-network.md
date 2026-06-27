@@ -1,10 +1,10 @@
 ---
-title: "รับซื้อ Server มือสอง รับซื้อ NAS และอุปกรณ์ Network สำนักงาน"
-h1: "รับซื้อ Server NAS Network Switch Router มือสองจากบริษัท"
+title: "รับซื้อ Server และอุปกรณ์ Network มือสอง รับซื้อ NAS สำหรับบริษัท"
+h1: "รับซื้อ Server และอุปกรณ์ Network มือสองจากบริษัท"
 slug: "รับซื้อ-server-network"
 order: 6
-description: "รับซื้อ Server ออฟฟิศ รับซื้อ NAS สตอเรจ อุปกรณ์ Network Switch Router Access Point จากบริษัท ตีราคาตามสภาพจริง ประเมินไว บริการล้างข้อมูลเบื้องต้น"
-mainKeyword: "รับซื้อ Server"
+description: "รับซื้อ Server ออฟฟิศ NAS สตอเรจ และอุปกรณ์ Network เช่น Switch Router Access Point จากบริษัท ประเมินตามสภาพจริง"
+mainKeyword: "รับซื้อ Server และ Network"
 relatedKeywords: ["รับซื้อ NAS", "รับซื้อ Network Switch", "รับซื้อ Router", "รับซื้อเซิร์ฟเวอร์บริษัท"]
 heroImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"
 ogImage: "/images/about/amphon-trading-shop-interior-evaluation.webp"

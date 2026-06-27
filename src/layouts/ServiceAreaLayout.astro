@@ -26,11 +26,14 @@ interface Props {
 const { entry, service, area } = Astro.props;
 const { title, description, slug, faqs, mainKeyword, ogImage, heroImage, date, updated } = entry.data;
 const { Content } = await render(entry);
+const serviceHref = service
+  ? (service.data.slug === 'รับซื้อสินค้าไอที' ? '/รับซื้อสินค้าไอที' : `/บริการ/${service.data.slug}`)
+  : undefined;
 
 const breadcrumbs: BreadcrumbItem[] = [
   { label: 'หน้าแรก', href: '/' },
   { label: 'รับซื้อสินค้า', href: '/รับซื้อสินค้าไอที' },
-  ...(service ? [{ label: service.data.title, href: `/บริการ/${service.data.slug}` }] : []),
+  ...(service && serviceHref ? [{ label: service.data.title, href: serviceHref }] : []),
   ...(area ? [{ label: area.data.province, href: `/พื้นที่ให้บริการ/${area.data.slug}` }] : []),
   { label: title },
 ];
@@ -132,7 +135,7 @@ const steps = [
           <p class="sidebar__title">บริการที่เกี่ยวข้อง</p>
           <ul class="sidebar__links">
             <li>
-              <a href={`/บริการ/${service.data.slug}`}>{service.data.title}</a>
+              <a href={serviceHref}>{service.data.title}</a>
             </li>
           </ul>
         </div>

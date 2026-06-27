@@ -4,7 +4,7 @@ import ServiceAreaLayout from '../../layouts/ServiceAreaLayout.astro';
 
 export async function getStaticPaths() {
   const serviceAreas = await getCollection('serviceAreas', ({ data }) => !data.draft);
-  const services = await getCollection('services', ({ data }) => !data.draft);
+  const services = await getCollection('services');
   const areas = await getCollection('areas', ({ data }) => !data.draft);
 
   return serviceAreas.map((entry) => ({

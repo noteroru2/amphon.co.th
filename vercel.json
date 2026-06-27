@@ -4,6 +4,11 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/บริการ/รับซื้อสินค้าไอที",
+      "destination": "/รับซื้อสินค้าไอที",
+      "permanent": true
+    },
+    {
       "source": "/:path+/",
       "destination": "/:path+",
       "permanent": true
