@@ -3,7 +3,7 @@ title: "รับซื้อกล้อง Sony รับซื้อเลน
 h1: "รับซื้อกล้อง Sony มือสอง Alpha Full Frame APS-C และเลนส์ Sony"
 slug: "รับซื้อกล้อง-sony"
 order: 5
-description: "รับซื้อกล้อง Sony มือสอง ตระกูล Alpha (A7III, A7IV), A6400, A6600, ZV-E10 และรับซื้อเลนส์ FE/E Mount ประเมินราคาตามสภาพ จ่ายเงินทันที"
+description: "รับซื้อกล้อง Sony มือสอง ตระกูล Alpha (A7III, A7IV), A6400, A6600, ZV-E10 และรับซื้อเลนส์ FE/E Mount ประเมินราคาตามสภาพ ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว"
 mainKeyword: "รับซื้อกล้อง Sony"
 relatedKeywords: ["รับซื้อเลนส์ Sony", "ขายกล้องโซนี่", "รับซื้อ Sony A7", "รับซื้อ Sony ZV-E10"]
 heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
@@ -13,9 +13,9 @@ draft: false
 icon: "camera"
 faqs:
   - question: "รับซื้อกล้อง Sony Alpha ซีรีส์ไหนบ้าง?"
-    answer: "รับซื้อทุกซีรีส์ครับ ทั้ง Full Frame ยอดฮิตอย่าง A7III, A7IV, A7C, A7R, A7S และรุ่น APS-C อย่าง A6400, A6600, A6700 ครับ"
+    answer: "รับซื้อหลายรุ่นครับ ทั้ง Full Frame ยอดฮิตอย่าง A7III, A7IV, A7C, A7R, A7S และรุ่น APS-C อย่าง A6400, A6600, A6700 ครับ"
   - question: "กล้องสาย Vlog ตระกูล ZV รับซื้อไหม?"
-    answer: "รับซื้อให้ราคาสูงครับ โดยเฉพาะ ZV-E10, ZV-1, ZV-1F, และ ZV-E1 ซึ่งกำลังเป็นที่ต้องการในตลาด Vlogger มากครับ"
+    answer: "รับซื้อประเมินราคาตามรุ่น สเปก สภาพ อุปกรณ์ และความต้องการตลาดครับ โดยเฉพาะ ZV-E10, ZV-1, ZV-1F, และ ZV-E1 ซึ่งกำลังเป็นที่ต้องการในตลาด Vlogger มากครับ"
   - question: "เลนส์อิสระเมาท์ Sony E-Mount รับซื้อไหม?"
     answer: "รับซื้อครับ นอกจากเลนส์ค่าย (Sony G, G Master) แล้ว เรายังรับซื้อเลนส์อิสระเมาท์ E-Mount อย่าง Sigma, Tamron, Viltrox, Samyang ด้วยครับ"
   - question: "กล้อง Sony ระบบกันสั่น (IBIS) มีปัญหา ขายได้ไหม?"
@@ -28,7 +28,7 @@ faqs:
 
 ## กล้องและเลนส์ Sony ที่รับซื้อ
 
-ตลาดมือสองของ Sony เป็นที่คึกคักมาก เรารับเหมาทุกรุ่น:
+ตลาดมือสองของ Sony เป็นที่คึกคักมาก เรารับเหมาหลายรุ่น:
 
 *   **Sony Full Frame (FE Mount):** [รับซื้อกล้อง Mirrorless](/บริการ/รับซื้อกล้อง-mirrorless) ซีรีส์ A7 เช่น A7III, A7IV, A7C, A7R IV, A7S III
 *   **Sony APS-C (E Mount):** กล้องยอดฮิตอย่าง A6000, A6400, A6600, A6700

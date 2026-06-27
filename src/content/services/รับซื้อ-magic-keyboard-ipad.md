@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ Magic Keyboard iPad มือสอง Smart Keyboard ทุกรุ่น"
+title: "รับซื้อ Magic Keyboard iPad มือสอง Smart Keyboard หลายรุ่น"
 h1: "รับซื้อ Magic Keyboard iPad มือสอง ประเมินตามรุ่นและสภาพ"
 slug: "รับซื้อ-magic-keyboard-ipad"
 order: 8

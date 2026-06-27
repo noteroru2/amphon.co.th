@@ -3,7 +3,7 @@ title: "รับซื้อ MacBook Air มือสอง ทุกชิป 
 h1: "รับซื้อ MacBook Air มือสอง M1 M2 M3 M4 ประเมินฟรี"
 slug: "รับซื้อ-macbook-air"
 order: 8
-description: "รับซื้อ MacBook Air มือสอง รุ่น 13 นิ้ว และ 15 นิ้ว ชิป M1, M2, M3, M4 เน้นเครื่องสภาพสวย แบตเตอรี่ดี ประเมินไว จ่ายเงินสดทันที"
+description: "รับซื้อ MacBook Air มือสอง รุ่น 13 นิ้ว และ 15 นิ้ว ชิป M1, M2, M3, M4 เน้นเครื่องสภาพสวย แบตเตอรี่ดี ประเมินไว ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว"
 mainKeyword: "รับซื้อ MacBook Air"
 relatedKeywords: ["รับซื้อแมคบุ๊คแอร์", "ขาย MacBook Air", "รับซื้อ MacBook Air M1", "รับซื้อ MacBook Air M2", "MacBook Air 15 นิ้ว"]
 heroImage: "/images/services/rub-sue-macbook-amphon-trading-banner.webp"
