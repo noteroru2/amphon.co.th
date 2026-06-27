@@ -28,72 +28,67 @@ const schemaExtras = [
   }),
 ];
 
-const serviceHubGroups = [
-  {
-    title: 'Apple / Mobile',
-    description: 'ใช้เป็น gateway สำหรับหน้า Apple Hub และหน้าเฉพาะอย่าง iPhone, iPad, MacBook, iMac, Apple Watch และ AirPods โดยไม่ปนกับหน้ามือถือหรือแท็บเล็ตแบบรวม',
-    links: [
-      { label: 'รับซื้อ Apple', href: '/บริการ/รับซื้อ-apple' },
-      { label: 'รับซื้อ iPhone', href: '/บริการ/รับซื้อ-iphone' },
-      { label: 'รับซื้อ iPad', href: '/บริการ/รับซื้อ-ipad' },
-      { label: 'รับซื้อ MacBook', href: '/บริการ/รับซื้อ-macbook' },
-      { label: 'รับซื้อ iMac', href: '/บริการ/รับซื้อ-imac' },
-      { label: 'รับซื้อ Apple Watch', href: '/บริการ/รับซื้อ-apple-watch' },
-      { label: 'รับซื้อ AirPods', href: '/บริการ/รับซื้อ-airpods' },
-    ],
-  },
-  {
-    title: 'Notebook / Gaming Notebook',
-    description: 'ใช้เป็นทางเข้าหลักสำหรับโน๊ตบุ๊คทั่วไป โน๊ตบุ๊คเกมมิ่ง และหน้า hub แบรนด์เกมมิ่งที่เกี่ยวข้อง',
-    links: [
-      { label: 'รับซื้อโน๊ตบุ๊ค', href: '/บริการ/รับซื้อโน๊ตบุ๊ค' },
-      { label: 'รับซื้อโน๊ตบุ๊คเกมมิ่ง', href: '/บริการ/รับซื้อโน๊ตบุ๊คเกมมิ่ง' },
-      { label: 'รับซื้อ MSI Notebook', href: '/บริการ/รับซื้อ-msi-notebook' },
-      { label: 'รับซื้อ ROG Gaming Notebook', href: '/บริการ/รับซื้อ-rog-gaming-notebook' },
-    ],
-  },
-  {
-    title: 'คอมพิวเตอร์ตั้งโต๊ะ / Desktop PC',
-    description: 'เหมาะสำหรับคอมพิวเตอร์ตั้งโต๊ะทั่วไป Desktop PC มือสอง คอมประกอบ และคอมสเปกสูง',
-    links: [
-      { label: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', href: '/บริการ/รับซื้อคอมพิวเตอร์ตั้งโต๊ะ' },
-      { label: 'รับซื้อ Desktop PC', href: '/บริการ/รับซื้อ-desktop-pc' },
-      { label: 'รับซื้อ PC มือสอง', href: '/บริการ/รับซื้อ-pc-มือสอง' },
-      { label: 'รับซื้อคอมประกอบ', href: '/บริการ/รับซื้อคอมประกอบ' },
-      { label: 'รับซื้อคอมสเปกสูง', href: '/บริการ/รับซื้อคอมสเปกสูง' },
-    ],
-  },
-  {
-    title: 'Gaming PC / คอมเกมมิ่ง',
-    description: 'ใช้เป็นทางเข้าหลักสำหรับ Gaming PC คอมเกมมิ่ง คอมร้านเกม และคอมสตรีมเกม',
-    links: [
-      { label: 'รับซื้อ Gaming PC', href: '/บริการ/รับซื้อ-gaming-pc' },
-      { label: 'รับซื้อคอมเกมมิ่ง', href: '/บริการ/รับซื้อคอมเกมมิ่ง' },
-      { label: 'รับซื้อคอมร้านเกม', href: '/บริการ/รับซื้อคอมร้านเกม' },
-      { label: 'รับซื้อคอมสตรีมเกม', href: '/บริการ/รับซื้อคอมสตรีมเกม' },
-    ],
-  },
-  {
-    title: 'Workstation / Professional',
-    description: 'สำหรับคอมทำงานกราฟิก ตัดต่อ งาน 3D งาน CAD และคอม AI / Deep Learning',
-    links: [
-      { label: 'รับซื้อ Workstation', href: '/บริการ/รับซื้อ-workstation' },
-      { label: 'รับซื้อคอมทำงานกราฟิก', href: '/บริการ/รับซื้อคอมทำงานกราฟิก' },
-      { label: 'รับซื้อคอมตัดต่อวิดีโอ', href: '/บริการ/รับซื้อคอมตัดต่อวิดีโอ' },
-      { label: 'รับซื้อคอม AI / Deep Learning', href: '/บริการ/รับซื้อคอม-ai-deep-learning' },
-    ],
-  },
-  {
-    title: 'B2B / Company IT',
-    description: 'เหมาะกับงานคอมบริษัท คอมสำนักงาน คอมยกล็อต และอุปกรณ์ไอทีขององค์กรที่ต้องการแยกบริบทจากงานผู้ใช้ทั่วไป',
-    links: [
-      { label: 'รับซื้อคอมบริษัท', href: '/บริการ/รับซื้อคอมบริษัท' },
-      { label: 'รับซื้อคอมสำนักงาน', href: '/บริการ/รับซื้อคอมสำนักงาน' },
-      { label: 'รับซื้อคอมยกล็อต', href: '/บริการ/รับซื้อคอมยกล็อต' },
-      { label: 'รับซื้ออุปกรณ์ไอทีบริษัท', href: '/บริการ/รับซื้ออุปกรณ์ไอทีบริษัท' },
-    ],
-  },
+const mainMoneySlugs = [
+  'รับซื้อโน๊ตบุ๊ค',
+  'รับซื้อ-iphone',
+  'รับซื้อ-ipad',
+  'รับซื้อ-macbook',
+  'รับซื้อคอมพิวเตอร์',
+  'รับซื้อ-gaming-pc',
+  'รับซื้อกล้อง',
+  'รับซื้อคอมบริษัท',
+  'รับซื้อสินค้าไอทีบริษัท',
+  'รับซื้อ-server-network'
 ];
+
+const featuredServices = services.filter(s => mainMoneySlugs.includes(s.data.slug));
+
+const clusters = [
+  {
+    id: 'notebook',
+    name: 'โน๊ตบุ๊ค (Notebook)',
+    slugs: ['รับซื้อโน๊ตบุ๊ค', 'รับซื้อโน๊ตบุ๊คเกมมิ่ง', 'รับซื้อ-notebook-acer', 'รับซื้อ-notebook-asus', 'รับซื้อ-notebook-dell', 'รับซื้อ-notebook-hp', 'รับซื้อ-notebook-lenovo', 'รับซื้อ-rog-gaming-notebook', 'รับซื้อ-rog-strix', 'รับซื้อ-rog-zephyrus', 'รับซื้อ-hp-omen', 'รับซื้อ-hp-victus', 'รับซื้อ-lenovo-loq', 'รับซื้อ-msi-cyborg', 'รับซื้อ-msi-katana', 'รับซื้อ-msi-pulse-crosshair', 'รับซื้อ-msi-raider', 'รับซื้อ-msi-stealth', 'รับซื้อ-msi-thin', 'รับซื้อ-msi-vector', 'รับซื้อ-acer-nitro', 'รับซื้อ-acer-predator', 'รับซื้อ-dell-alienware', 'รับซื้อ-dell-g-series']
+  },
+  {
+    id: 'iphone',
+    name: 'iPhone (ไอโฟน)',
+    slugs: ['รับซื้อ-iphone', 'รับซื้อ-iphone-pro-max', 'รับซื้อ-iphone-17', 'รับซื้อ-iphone-16', 'รับซื้อ-iphone-15', 'รับซื้อ-iphone-14', 'รับซื้อ-iphone-13', 'รับซื้อ-iphone-จอแตก', 'รับซื้อ-iphone-face-id-เสีย', 'รับซื้อ-iphone-ติด-icloud', 'รับซื้อ-iphone-เครื่องนอก']
+  },
+  {
+    id: 'ipad',
+    name: 'iPad (ไอแพด)',
+    slugs: ['รับซื้อ-ipad', 'รับซื้อ-ipad-pro', 'รับซื้อ-ipad-air', 'รับซื้อ-ipad-mini', 'รับซื้อ-ipad-จอแตก', 'รับซื้อ-ipad-เสีย', 'รับซื้อ-magic-keyboard-ipad', 'รับซื้อ-apple-pencil']
+  },
+  {
+    id: 'macbook',
+    name: 'MacBook / Mac / Apple Watch',
+    slugs: ['รับซื้อ-macbook', 'รับซื้อ-macbook-air', 'รับซื้อ-macbook-pro', 'รับซื้อ-macbook-m3-m4', 'รับซื้อ-macbook-m2', 'รับซื้อ-macbook-intel', 'รับซื้อ-macbook-จอแตก', 'รับซื้อ-mac-mini', 'รับซื้อ-imac-mac-mini', 'รับซื้อ-apple-watch', 'รับซื้อ-airpods', 'รับซื้อ-apple']
+  },
+  {
+    id: 'pc',
+    name: 'คอมพิวเตอร์ / PC / อุปกรณ์คอม',
+    slugs: ['รับซื้อคอมพิวเตอร์', 'รับซื้อคอมประกอบ', 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมสเปคสูง', 'รับซื้อ-desktop-pc', 'รับซื้อ-pc-มือสอง', 'รับซื้อการ์ดจอ', 'รับซื้อซีพียู', 'รับซื้อ-cpu', 'รับซื้อแรม', 'รับซื้อเมนบอร์ด', 'รับซื้อ-ssd', 'รับซื้อจอคอม', 'รับซื้อจอเกมมิ่ง', 'รับซื้ออุปกรณ์คอมพิวเตอร์']
+  },
+  {
+    id: 'b2b',
+    name: 'คอมบริษัท / ประมูล / B2B',
+    slugs: ['รับซื้อคอมบริษัท', 'รับซื้อสินค้าไอทีบริษัท', 'รับซื้ออุปกรณ์ไอทีบริษัท', 'รับซื้อคอมสำนักงาน', 'รับซื้อคอมยกล็อต', 'รับซื้อคอมบริษัทปิดกิจการ', 'รับประมูลคอมพิวเตอร์มือสอง', 'รับเหมาประมูลอุปกรณ์ไอที', 'รับเคลียร์อุปกรณ์ไอทีสำนักงาน']
+  },
+  {
+    id: 'camera',
+    name: 'กล้อง / ลำโพง / หูฟัง / Gadgets',
+    slugs: ['รับซื้อกล้อง', 'รับซื้อกล้อง-canon', 'รับซื้อกล้อง-sony', 'รับซื้อกล้อง-fujifilm', 'รับซื้อกล้อง-mirrorless', 'รับซื้อกล้องฟิล์ม', 'รับซื้อเลนส์กล้อง', 'รับซื้อ-gopro-action-camera', 'รับซื้อโดรน', 'รับซื้อหูฟัง', 'รับซื้อลำโพงบลูทูธ', 'รับซื้อ-marshall', 'รับซื้อ-jbl', 'รับซื้อเครื่องใช้ไฟฟ้า', 'รับซื้อเครื่องเกม', 'รับซื้อ-playstation', 'รับซื้อ-nintendo-switch', 'รับซื้อทีวี', 'รับซื้อเฟอร์นิเจอร์', 'รับซื้อของสะสม']
+  },
+  {
+    id: 'server',
+    name: 'Server / Network / UPS / Printer',
+    slugs: ['รับซื้อ-server-network', 'รับซื้อ-server', 'รับซื้อ-nas', 'รับซื้ออุปกรณ์-network', 'รับซื้อ-ups', 'รับซื้อ-printer']
+  }
+];
+
+// Fallback category for any unclassified services
+const classifiedSlugs = new Set(clusters.flatMap(c => c.slugs));
+const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.slug));
 ---
 
 <BaseLayout
@@ -122,43 +117,36 @@ const serviceHubGroups = [
           โทร {site.phone}
         </a>
       </div>
+      
+      <!-- Quick Category Navigation badging row -->
+      <div class="category-nav">
+        <a href="#notebook" class="category-chip">Notebook</a>
+        <a href="#iphone" class="category-chip">iPhone</a>
+        <a href="#ipad" class="category-chip">iPad</a>
+        <a href="#macbook" class="category-chip">MacBook / Apple Watch</a>
+        <a href="#pc" class="category-chip">PC / อุปกรณ์คอม</a>
+        <a href="#b2b" class="category-chip">B2B / บริษัท</a>
+        <a href="#camera" class="category-chip">กล้อง / Gadgets</a>
+        <a href="#server" class="category-chip">Server / Network / UPS</a>
+      </div>
     </div>
   </header>
 
   <section class="section">
     <div class="container">
       <div class="prose" style="max-width:800px; margin-bottom: 2.5rem; text-align: left;">
-        <span class="eyebrow">หมวดหมู่สินค้า</span>
-        <h2>สินค้าไอทีที่รับซื้อ</h2>
+        <span class="eyebrow">หมวดหมู่บริการหลัก</span>
+        <h2>บริการรับซื้อยอดนิยม</h2>
         <p>
-          AMPHON TRADING รับซื้อสินค้าไอทีมือสองหลายประเภทจากลูกค้าทั่วประเทศ ครอบคลุมแบรนด์ชั้นนำอย่าง Apple, Samsung, ASUS, Acer, Dell และอื่นๆ
+          AMPHON TRADING รับพิจารณาสินค้าไอทีหลายประเภทจากลูกค้าทั่วประเทศ ครอบคลุมแบรนด์ชั้นนำอย่าง Apple, Samsung, ASUS, Acer, Dell และอื่น ๆ
           ลูกค้าต่างจังหวัดส่งรูปหรือ Inventory List เพื่อประเมินราคาเบื้องต้นได้ก่อนตัดสินใจ
-          ลูกค้าใกล้อุบลราชธานีสามารถนำสินค้ามาที่หน้าร้านได้ การนัดรับหรือจัดส่งขึ้นอยู่กับประเภทสินค้า จำนวน และพื้นที่
+          นัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวนที่ตกลงกัน
         </p>
-        <ul>
-          <li><strong>กลุ่ม Apple (iOS/macOS):</strong> รับพิจารณา iPhone หลายรุ่น (ตั้งแต่ iPhone 11 ขึ้นไป), iPad (Gen, Air, Pro), MacBook (Air/Pro ชิป M1, M2, M3), iMac และ Apple Watch</li>
-          <li><strong>กลุ่มโน๊ตบุ๊คและคอมพิวเตอร์:</strong> รับซื้อ Notebook ทั้งสายทำงานและสายเกมมิ่ง คอมพิวเตอร์ตั้งโต๊ะ (PC) All-in-One PC จอมอนิเตอร์ และคอมพิวเตอร์สำนักงานแบบหลายเครื่อง</li>
-          <li><strong>กลุ่มกล้องและสมาร์ทโฟนอื่นๆ:</strong> รับซื้อกล้อง DSLR Mirrorless เลนส์กล้อง จากค่าย Sony, Canon, Nikon และสมาร์ทโฟน Android รุ่นเรือธง (Samsung Galaxy S/Z Series)</li>
-        </ul>
-        <p>เลือกประเภทสินค้าด้านล่างเพื่อดูรายละเอียด หรือหากสินค้าไม่อยู่ในหมวดหมู่เหล่านี้ ส่งรูปมาสอบถามทาง LINE @webuy ได้ครับ ประเมินตามสภาพจริง เปรียบเทียบราคาก่อนได้</p>
       </div>
-      <div class="grid grid--3" style="margin-bottom: 2.5rem;">
-        {serviceHubGroups.map((group) => (
-          <div class="card">
-            <h3 style="margin-bottom:0.75rem;">{group.title}</h3>
-            <p style="margin-bottom:1rem;">{group.description}</p>
-            <ul style="margin:0; padding-left:1.1rem; display:grid; gap:0.5rem;">
-              {group.links.map((link) => (
-                <li>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div class="grid grid--2">
-        {services.map((service) => (
+
+      <!-- Main Featured Services grid (10 pages) -->
+      <div class="grid grid--2" style="margin-bottom: 4rem;">
+        {featuredServices.map((service) => (
           <ServiceCard
             title={service.data.title}
             description={service.data.description}
@@ -171,5 +159,175 @@ const serviceHubGroups = [
     </div>
   </section>
 
-  <CTAContact />
+  <!-- Accordion details section for long-tail services -->
+  <section class="section section--gray" style="padding-top: 3rem; padding-bottom: 3.5rem;">
+    <div class="container">
+      <div class="prose" style="max-width:800px; margin-bottom: 2rem; text-align: left;">
+        <span class="eyebrow">บริการเพิ่มเติม</span>
+        <h2>บริการรับซื้อเพิ่มเติมแยกตามหมวดหมู่</h2>
+        <p>
+          สำหรับรุ่นย่อย แบรนด์เฉพาะ หรือความต้องการพิเศษอื่น ๆ สามารถคลิกดูรายการรับซื้อในแต่ละหมวดหมู่เพิ่มเติมได้ด้านล่างนี้
+        </p>
+      </div>
+
+      <div class="accordion-group">
+        {clusters.map((c) => {
+          // Filter other services (excluding featured ones)
+          const clusterServices = services.filter(s => c.slugs.includes(s.data.slug) && !mainMoneySlugs.includes(s.data.slug));
+          if (clusterServices.length === 0) return null;
+          return (
+            <details class="category-details" id={c.id}>
+              <summary class="category-summary">
+                <span class="category-title">{c.name}</span>
+                <span class="category-count">({clusterServices.length} บริการ)</span>
+              </summary>
+              <div class="category-content">
+                <div class="links-grid">
+                  {clusterServices.map((s) => (
+                    <a href={`/บริการ/${s.data.slug}`} class="service-link-item">
+                      <strong>{s.data.title}</strong>
+                      <p class="service-link-desc">{s.data.description.slice(0, 95)}...</p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </details>
+          );
+        })}
+
+        {unclassifiedServices.length > 0 && (
+          <details class="category-details" id="others">
+            <summary class="category-summary">
+              <span class="category-title">บริการรับซื้ออื่น ๆ</span>
+              <span class="category-count">({unclassifiedServices.length} บริการ)</span>
+            </summary>
+            <div class="category-content">
+              <div class="links-grid">
+                {unclassifiedServices.map((s) => (
+                  <a href={`/บริการ/${s.data.slug}`} class="service-link-item">
+                    <strong>{s.data.title}</strong>
+                    <p class="service-link-desc">{s.data.description.slice(0, 95)}...</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </details>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <CTAContact title="พร้อมประเมินราคาขาย? แชทติดต่อเราได้เลย" />
 </BaseLayout>
+
+<style>
+  .category-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 640px) {
+    .category-nav {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .category-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 0.875rem;
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #18181b;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  .category-chip:hover {
+    background: #fff7ed;
+    border-color: #fb923c;
+    color: #ea580c;
+    transform: translateY(-1px);
+  }
+  
+  .accordion-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .category-details {
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .category-details[open] {
+    border-color: #fb923c;
+  }
+  .category-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.125rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+  }
+  .category-summary::-webkit-details-marker {
+    display: none;
+  }
+  .category-summary:hover {
+    background: #fafafa;
+  }
+  .category-title {
+    color: #18181b;
+    font-size: 1.05rem;
+  }
+  .category-count {
+    color: #71717a;
+    font-size: 0.875rem;
+    font-weight: normal;
+  }
+  .category-content {
+    border-top: 1px solid #e4e4e7;
+    padding: 1.5rem;
+    background: #fafafa;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.875rem;
+  }
+  .service-link-item {
+    display: block;
+    padding: 0.875rem;
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .service-link-item:hover {
+    border-color: #fb923c;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+  }
+  .service-link-item strong {
+    display: block;
+    color: #ea580c;
+    font-size: 0.925rem;
+    margin-bottom: 0.25rem;
+  }
+  .service-link-desc {
+    color: #4b5563;
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 1.4;
+  }
+</style>
