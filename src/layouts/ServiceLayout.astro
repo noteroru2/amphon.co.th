@@ -13,6 +13,7 @@ import {
   absoluteUrl,
   schemaIds,
   createServiceSchema,
+  createOfferCatalogSchema,
   contentDateModified,
   faqSchemaIfVisible,
   resolveOgImage,
@@ -47,23 +48,12 @@ const intentChipHeading = getIntentChipHeading(slug, mainKeyword);
 const pageImage = resolveOgImage(ogImage, heroImage);
 const dateModified = contentDateModified(date, updated);
 
-const schemaExtras = [
-  createServiceSchema({
-    pageUrl,
-    name: title,
-    description,
-    serviceType: mainKeyword,
-    image: pageImage,
-  }),
-  ...faqSchemaIfVisible(pageUrl, faqs),
-];
+let offerCatalogSchema: Record<string, unknown> | null = null;
 
 if (slug === 'รับซื้อคอมพิวเตอร์' || slug === 'รับซื้อ-macbook' || slug === 'รับซื้อ-ipad' || slug === 'รับซื้อ-iphone' || slug === 'รับซื้อกล้อง' || slug === 'รับซื้อคอมบริษัท') {
-  const { createOfferCatalogSchema } = await import('../lib/seo');
   
   if (slug === 'รับซื้อคอมพิวเตอร์') {
-    schemaExtras.push(
-      createOfferCatalogSchema({
+    offerCatalogSchema = createOfferCatalogSchema({
         pageUrl,
         name: 'รับซื้อคอมพิวเตอร์และอุปกรณ์ไอที',
         items: [
@@ -74,11 +64,9 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'คอมเสีย/ซากคอม', url: '/บริการ/รับซื้อคอมเสีย', description: 'รับซื้อซากคอม เปิดไม่ติด ตีราคาเป็นอะไหล่' },
           { name: 'อุปกรณ์คอมแยกชิ้น', url: '/บริการ/รับซื้อการ์ดจอ', description: 'รับซื้ออะไหล่คอมพิวเตอร์ เช่น การ์ดจอ CPU RAM' }
         ]
-      })
-    );
+      });
   } else if (slug === 'รับซื้อ-macbook') {
-    schemaExtras.push(
-      createOfferCatalogSchema({
+    offerCatalogSchema = createOfferCatalogSchema({
         pageUrl,
         name: 'รับซื้อ MacBook มือสอง หลายรุ่น',
         items: [
@@ -90,11 +78,9 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'MacBook เสีย/จอแตก', url: '/บริการ/รับซื้อ-macbook-เสีย', description: 'รับซื้อซาก MacBook เสีย เปิดไม่ติด จอแตก' },
           { name: 'iMac/Mac mini', url: '/บริการ/รับซื้อ-imac-mac-mini', description: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ iMac และ Mac mini' }
         ]
-      })
-    );
+      });
   } else if (slug === 'รับซื้อ-ipad') {
-    schemaExtras.push(
-      createOfferCatalogSchema({
+    offerCatalogSchema = createOfferCatalogSchema({
         pageUrl,
         name: 'รับซื้อ iPad มือสอง หลายรุ่น',
         items: [
@@ -106,11 +92,9 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'Apple Pencil', url: '/บริการ/รับซื้อ-apple-pencil', description: 'รับซื้อ Apple Pencil Gen 1, Gen 2, USB-C, Pro' },
           { name: 'Magic Keyboard iPad', url: '/บริการ/รับซื้อ-magic-keyboard-ipad', description: 'รับซื้อ Magic Keyboard และ Smart Keyboard' }
         ]
-      })
-    );
+      });
   } else if (slug === 'รับซื้อ-iphone') {
-    schemaExtras.push(
-      createOfferCatalogSchema({
+    offerCatalogSchema = createOfferCatalogSchema({
         pageUrl,
         name: 'รับซื้อ iPhone มือสอง หลายรุ่น',
         items: [
@@ -125,119 +109,25 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'iPhone ติด iCloud', url: '/บริการ/รับซื้อ-iphone-ติด-icloud', description: 'รับซื้อ iPhone ติดล็อค ตามเงื่อนไข' },
           { name: 'iPhone เครื่องนอก', url: '/บริการ/รับซื้อ-iphone-เครื่องนอก', description: 'รับซื้อ iPhone โมเดลนอก ติดซิมล็อค' }
         ]
-      })
-    );
+      });
   } else if (slug === 'รับซื้อกล้อง') {
-    schemaExtras.push({
-      '@type': 'OfferCatalog',
-      '@id': `${pageUrl}#offercatalog`,
-      name: 'รับซื้อกล้องมือสอง ทุกประเภท',
-      inLanguage: 'th-TH',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้อง Canon',
-            description: 'รับซื้อกล้อง Canon DSLR, Mirrorless EOS R Series',
-            url: '/บริการ/รับซื้อกล้อง-canon',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้อง Sony',
-            description: 'รับซื้อกล้อง Sony Alpha, A7 Series',
-            url: '/บริการ/รับซื้อกล้อง-sony',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้อง Fujifilm',
-            description: 'รับซื้อกล้อง Fujifilm X-Series, GFX',
-            url: '/บริการ/รับซื้อกล้อง-fujifilm',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้อง Nikon',
-            description: 'รับซื้อกล้อง Nikon Z Series, DSLR',
-            url: '/บริการ/รับซื้อกล้อง-nikon',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'เลนส์กล้อง',
-            description: 'รับซื้อเลนส์กล้องมือสอง ทุกแบรนด์',
-            url: '/บริการ/รับซื้อเลนส์กล้อง',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้อง Mirrorless',
-            description: 'รับซื้อกล้อง Mirrorless Full Frame, APS-C',
-            url: '/บริการ/รับซื้อกล้อง-mirrorless',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้องฟิล์ม',
-            description: 'รับซื้อกล้องฟิล์ม เลนส์มือหมุน วินเทจ',
-            url: '/บริการ/รับซื้อกล้องฟิล์ม',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'GoPro / Action Camera',
-            description: 'รับซื้อกล้อง GoPro, DJI Action, Insta360',
-            url: '/บริการ/รับซื้อ-gopro-action-camera',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'กล้องเสีย',
-            description: 'รับซื้อกล้องเปิดไม่ติด จอแตก เลนส์รา ฝ้า',
-            url: '/บริการ/รับซื้อกล้องเสีย',
-            inLanguage: 'th-TH',
-            provider: { '@id': `${Astro.site}#localbusiness` }
-          }
-        }
+    offerCatalogSchema = createOfferCatalogSchema({
+      pageUrl,
+      name: 'Camera buyback services',
+      items: [
+        { name: 'Canon Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87-canon', description: 'Buyback service for Canon DSLR and mirrorless cameras' },
+        { name: 'Sony Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87-sony', description: 'Buyback service for Sony Alpha and related camera models' },
+        { name: 'Fujifilm Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87-fujifilm', description: 'Buyback service for Fujifilm X-Series and GFX cameras' },
+        { name: 'Nikon Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87-nikon', description: 'Buyback service for Nikon Z Series and DSLR cameras' },
+        { name: 'Camera Lens', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87', description: 'Buyback service for used camera lenses' },
+        { name: 'Mirrorless Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87-mirrorless', description: 'Buyback service for mirrorless camera models' },
+        { name: 'Film Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%9F%E0%B8%B4%E0%B8%A5%E0%B9%8C%E0%B8%A1', description: 'Buyback service for film cameras and vintage gear' },
+        { name: 'GoPro / Action Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-action-camera', description: 'Buyback service for GoPro and action cameras' },
+        { name: 'Broken Camera', url: 'https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2', description: 'Buyback service for damaged or non-working cameras' }
       ]
     });
   } else if (slug === 'รับซื้อคอมบริษัท') {
-    schemaExtras.push(
-      createOfferCatalogSchema({
+    offerCatalogSchema = createOfferCatalogSchema({
         name: 'รับซื้อคอมบริษัทและอุปกรณ์สำนักงาน',
         pageUrl,
         items: [
@@ -251,10 +141,22 @@ if (slug === 'รับซื้อคอมพิวเตอร์' || slug ==
           { name: 'ประมูลคอมพิวเตอร์มือสอง', url: '/บริการ/รับประมูลคอมพิวเตอร์มือสอง', description: 'รับประมูลคอมพิวเตอร์และอุปกรณ์ไอทีสำนักงาน' },
           { name: 'เคลียร์อุปกรณ์ไอที', url: '/บริการ/รับเคลียร์อุปกรณ์ไอทีสำนักงาน', description: 'รับเคลียร์อุปกรณ์ไอที ย้ายสำนักงาน โละเครื่องเก่า' }
         ]
-      })
-    );
+      });
   }
 }
+
+const schemaExtras = [
+  createServiceSchema({
+    pageUrl,
+    name: title,
+    description,
+    serviceType: mainKeyword,
+    image: pageImage,
+    offerCatalogId: offerCatalogSchema ? schemaIds.offerCatalog(pageUrl) : undefined,
+  }),
+  ...(offerCatalogSchema ? [offerCatalogSchema] : []),
+  ...faqSchemaIfVisible(pageUrl, faqs),
+];
 
 const steps = [
   { n: 1, title: 'ส่งรูปสินค้า', desc: 'ส่งรูปและสเปกผ่าน Line @webuy' },
