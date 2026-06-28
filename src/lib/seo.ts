@@ -207,12 +207,15 @@ export function createBreadcrumbSchema(pageUrl: string, items: BreadcrumbItem[])
   return {
     '@type': 'BreadcrumbList',
     '@id': schemaIds.breadcrumb(normalizedUrl),
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.label,
-      ...(item.href ? { item: absoluteUrl(item.href) } : {}),
-    })),
+    itemListElement: items.map((item, index) => {
+      const hrefVal = item.href || (index === items.length - 1 ? pageUrl : undefined);
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.label,
+        ...(hrefVal ? { item: absoluteUrl(hrefVal) } : {}),
+      };
+    }),
   };
 }
 
