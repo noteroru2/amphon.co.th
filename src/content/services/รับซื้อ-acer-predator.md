@@ -49,7 +49,7 @@ Acer Predator คือ Gaming Notebook ระดับ High-End ของ Acer 
 
 ### Predator Helios 300 (PH315)
 
-รุ่นที่ได้รับความนิยมมากที่สุดในซีรีส์ Predator มี GPU ตั้งแต่ RTX 3060 ถึง 4060 ขึ้นไป Refresh Rate 144–360Hz จอ QHD
+รุ่นที่ได้รับความนิยมในซีรีส์ Predator มี GPU ตั้งแต่ RTX 3060 ถึง 4060 ขึ้นไป Refresh Rate 144–360Hz จอ QHD
 
 ### Predator Helios 16 และ 18
 
