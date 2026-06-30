@@ -143,7 +143,15 @@ const schemaGraph = buildPageGraph({
     });
   }
 
-  wrapProseTables();
+  function initProseTables() {
+    wrapProseTables();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProseTables);
+  } else {
+    initProseTables();
+  }
 </script>
 
 <style is:global>
