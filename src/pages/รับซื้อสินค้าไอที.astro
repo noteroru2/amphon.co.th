@@ -232,6 +232,11 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
       grid-template-columns: repeat(2, 1fr);
     }
   }
+  @media (max-width: 400px) {
+    .category-nav {
+      grid-template-columns: 1fr;
+    }
+  }
   .category-chip {
     display: flex;
     align-items: center;
@@ -246,6 +251,8 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
     transition: all 0.2s ease-in-out;
     text-align: center;
     font-size: 0.875rem;
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
   .category-chip:hover {
     background: #fff7ed;
@@ -271,8 +278,10 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
   }
   .category-summary {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 0.25rem 0.75rem;
     padding: 1.125rem 1.5rem;
     font-weight: 600;
     cursor: pointer;

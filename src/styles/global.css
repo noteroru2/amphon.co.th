@@ -74,7 +74,11 @@
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
@@ -607,6 +611,14 @@ p  { margin-top: 0; }
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--color-gray-700);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose pre,
+.prose code {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .prose h2 {
@@ -650,6 +662,20 @@ p  { margin-top: 0; }
 }
 .prose blockquote p:last-child { margin-bottom: 0; }
 
+.prose-cta-box {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.25rem;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.prose-cta-box .btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
 .prose img {
   width: 100%;
   border-radius: var(--radius-lg);
@@ -662,6 +688,13 @@ p  { margin-top: 0; }
   border-collapse: collapse;
   font-size: 0.9375rem;
   margin-bottom: 0;
+}
+
+/* Fallback scroll when JS wrapper has not run yet */
+.prose > table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table-scroll {
@@ -1178,11 +1211,14 @@ p  { margin-top: 0; }
   gap: 0.375rem;
   padding: 0.75rem 0.625rem;
   min-height: 52px;
+  min-width: 0;
   border-radius: var(--radius);
   font-size: 0.9375rem;
   font-weight: 700;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
   transition: opacity var(--transition);
 }
 .sticky-cta__btn:hover { opacity: 0.9; text-decoration: none; }
@@ -1635,7 +1671,7 @@ p  { margin-top: 0; }
   padding-inline: 0.75rem;
 }
 
-@media (max-width: 479px) {
+@media (max-width: 767px) {
   .page-header__cta--service {
     flex-direction: column;
   }
@@ -1644,6 +1680,8 @@ p  { margin-top: 0; }
   .page-header__cta--service .page-header__cta-phone {
     flex: 1 1 100%;
     width: 100%;
+    white-space: normal;
+    text-align: center;
   }
 }
 
@@ -1772,6 +1810,8 @@ p  { margin-top: 0; }
   align-items: center;
   justify-content: center;
   min-height: 44px;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 0.5rem 0.625rem;
   border-radius: var(--radius);
   background: var(--color-gray-50);

@@ -353,22 +353,7 @@ const steps = [
     }
   }
 
-  function wrapProseTables() {
-    const prose = document.querySelector('article.prose--service');
-    if (!prose) return;
-    prose.querySelectorAll('table').forEach((table) => {
-      if (table.parentElement?.classList.contains('table-scroll')) return;
-      const wrap = document.createElement('div');
-      wrap.className = 'table-scroll';
-      wrap.setAttribute('role', 'region');
-      wrap.setAttribute('aria-label', 'ตารางข้อมูล เลื่อนซ้ายขวาได้');
-      table.parentNode?.insertBefore(wrap, table);
-      wrap.appendChild(table);
-    });
-  }
-
   placeInlineCta();
-  wrapProseTables();
 
   document.querySelectorAll('.prose--service img:not([loading])').forEach((img) => {
     (img as HTMLImageElement).loading = 'lazy';

@@ -130,6 +130,22 @@ const schemaGraph = buildPageGraph({
   </body>
 </html>
 
+<script>
+  function wrapProseTables() {
+    document.querySelectorAll('.prose table').forEach((table) => {
+      if (table.parentElement?.classList.contains('table-scroll')) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'table-scroll';
+      wrap.setAttribute('role', 'region');
+      wrap.setAttribute('aria-label', 'ตารางข้อมูล เลื่อนซ้ายขวาได้');
+      table.parentNode?.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  }
+
+  wrapProseTables();
+</script>
+
 <style is:global>
   .breadcrumbs-wrap {
     background: var(--color-dark);
