@@ -177,10 +177,13 @@ const steps = [
   mainEntityId={schemaIds.service(pageUrl)}
   dateModified={dateModified}
   schemaExtras={schemaExtras}
+  containedBreadcrumbs
 >
   <!-- Page hero -->
   <header class="page-header page-header--service">
-    <div class="container page-header__grid">
+    <div class="container">
+      <div class="page-header__shell">
+        <div class="page-header__grid">
       <div class="page-header__content">
         <span class="tag tag--orange page-header__tag">{mainKeyword ?? 'บริการรับซื้อ'}</span>
         <h1 class="page-header__title">{h1 || title}</h1>
@@ -211,6 +214,8 @@ const steps = [
           />
         </figure>
       )}
+        </div>
+      </div>
     </div>
   </header>
 
@@ -359,3 +364,38 @@ const steps = [
     (img as HTMLImageElement).loading = 'lazy';
   });
 </script>
+
+<style>
+  .page-header--service {
+    background: transparent;
+    padding-block: 0 1.25rem;
+  }
+
+  .page-header__shell {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header__shell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(249 115 22 / 0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .page-header__shell > .page-header__grid {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    .page-header__shell {
+      padding: 1.25rem;
+    }
+  }
+</style>

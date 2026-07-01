@@ -23,6 +23,7 @@ interface Props {
   schemaExtras?: Record<string, unknown>[];
   noindex?: boolean;
   geoPlace?: string;
+  containedBreadcrumbs?: boolean;
 }
 
 const {
@@ -40,6 +41,7 @@ const {
   schemaExtras = [],
   noindex = false,
   geoPlace,
+  containedBreadcrumbs = false,
 } = Astro.props;
 
 const pageTitle = seoTitle(title);
@@ -114,7 +116,7 @@ const schemaGraph = buildPageGraph({
     <Header />
 
     {breadcrumbs.length > 1 && (
-      <div class="breadcrumbs-wrap">
+      <div class:list={['breadcrumbs-wrap', containedBreadcrumbs && 'breadcrumbs-wrap--contained']}>
         <div class="container">
           <Breadcrumbs items={breadcrumbs} />
         </div>
@@ -158,5 +160,19 @@ const schemaGraph = buildPageGraph({
   .breadcrumbs-wrap {
     background: var(--color-dark);
     border-bottom: 1px solid rgba(255 255 255 / 0.08);
+  }
+
+  .breadcrumbs-wrap--contained {
+    background: transparent;
+    border-bottom: 0;
+    padding-top: 1rem;
+  }
+
+  .breadcrumbs-wrap--contained .container {
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    box-shadow: var(--shadow);
   }
 </style>
