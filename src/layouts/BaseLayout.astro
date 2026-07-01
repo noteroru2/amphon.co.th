@@ -160,19 +160,53 @@ const schemaGraph = buildPageGraph({
   .breadcrumbs-wrap {
     background: var(--color-dark);
     border-bottom: 1px solid rgba(255 255 255 / 0.08);
+    padding-block: 0.75rem;
+    --breadcrumbs-color: rgba(255 255 255 / 0.7);
+    --breadcrumbs-separator: rgba(255 255 255 / 0.35);
+    --breadcrumbs-current: #ffffff;
+    --breadcrumbs-hover: var(--color-primary);
+  }
+
+  .breadcrumbs-wrap .breadcrumbs {
+    margin-bottom: 0;
   }
 
   .breadcrumbs-wrap--contained {
     background: transparent;
     border-bottom: 0;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
+    --breadcrumbs-color: rgba(15 23 42 / 0.62);
+    --breadcrumbs-separator: rgba(15 23 42 / 0.28);
+    --breadcrumbs-current: var(--color-dark);
+    --breadcrumbs-hover: var(--color-primary);
+    --breadcrumbs-margin-bottom: 0;
   }
 
   .breadcrumbs-wrap--contained .container {
-    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
-    box-shadow: var(--shadow);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0 1.5rem 0.625rem;
+    box-shadow: none;
+  }
+
+  .breadcrumbs-wrap--contained .breadcrumbs {
+    display: inline-flex;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(15 23 42 / 0.04), rgba(15 23 42 / 0.07));
+    border: 1px solid rgba(15 23 42 / 0.08);
+  }
+
+  @media (max-width: 767px) {
+    .breadcrumbs-wrap--contained {
+      padding-top: 0.5rem;
+    }
+    .breadcrumbs-wrap--contained .container {
+      padding: 0 1.25rem 0.5rem;
+    }
+    .breadcrumbs-wrap--contained .breadcrumbs {
+      padding: 0.45rem 0.8rem;
+    }
   }
 </style>
