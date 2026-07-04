@@ -123,6 +123,15 @@ const b2bServices = [
 
 const fullAddress = [site.address.street, site.address.locality, site.address.region, site.address['postalCode']].join(' ');
 
+const homepagePriorityLinks = [
+  { label: 'รับซื้อคอมพิวเตอร์', href: '/บริการ/รับซื้อคอมพิวเตอร์' },
+  { label: 'รับซื้อแรม', href: '/บริการ/รับซื้อแรม' },
+  { label: 'รับซื้อ iPhone', href: '/บริการ/รับซื้อ-iphone' },
+  { label: 'รับซื้อ MacBook', href: '/บริการ/รับซื้อ-macbook' },
+  { label: 'รับซื้อ iPad', href: '/บริการ/รับซื้อ-ipad' },
+  { label: 'รับซื้อคอมบริษัท', href: '/บริการ/รับซื้อคอมบริษัท' },
+];
+
 const computerHubLinks = [
   {
     title: 'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
@@ -180,8 +189,8 @@ const trustItems = [
 ---
 
 <BaseLayout
-  title="รับซื้อสินค้าไอทีมือสองทั่วประเทศ | AMPHON TRADING"
-  description="อำพล เทรดดิ้ง รับซื้อโน๊ตบุ๊ค คอม iPhone iPad MacBook กล้อง และสินค้าไอทีมือสองทั่วประเทศ ส่งรูปหรือรายการสินค้าเพื่อประเมินราคาเบื้องต้นได้"
+  title="รับซื้อสินค้าไอทีมือสอง ส่งรูปประเมินราคาได้ทั่วประเทศ | AMPHON TRADING"
+  description="รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ RAM iPhone iPad MacBook และสินค้าไอทีมือสอง ส่งรูปเช็กราคาได้ มีหน้าร้านจริงที่อุบลราชธานี รองรับลูกค้าทั่วประเทศ"
   canonical={pageUrl}
   ogImage="/images/og/og-home.webp"
   breadcrumbs={breadcrumbs}
@@ -210,29 +219,35 @@ const trustItems = [
     <div class="container hero__inner hero__inner--overlay" role="img" aria-label="อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสองทั่วประเทศ — โน๊ตบุ๊ค MacBook iPhone iPad คอมพิวเตอร์ กล้อง">
       <!-- Left: copy panel -->
       <div class="hero__copy hero__copy--glass">
-        <span class="tag tag--orange" style="margin-bottom:1rem;">อำพล เทรดดิ้ง · รับซื้อทั่วประเทศ</span>
-        <h1>รับซื้อสินค้าไอทีมือสองทั่วประเทศ<br/>ส่งรูปประเมินฟรี</h1>
+        <span class="tag tag--orange" style="margin-bottom:1rem;">ส่งรูปประเมินราคา · มีหน้าร้านจริง</span>
+        <h1>รับซื้อสินค้าไอทีมือสอง<br/>ส่งรูปประเมินราคาได้ทั่วประเทศ</h1>
         <p class="hero__subtitle">
-          อำพล เทรดดิ้ง รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ iPhone iPad MacBook กล้อง และอุปกรณ์ไอทีจากลูกค้าทั่วประเทศ<br/>
-          ส่งรูปหรือรายการสินค้าเพื่อประเมินราคาเบื้องต้นได้ · มีหน้าร้านจริงที่อุบลราชธานี ตรวจสอบได้
+          อำพล เทรดดิ้ง รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ RAM iPhone iPad MacBook กล้อง และอุปกรณ์ไอทีมือสองจากลูกค้าทั่วประเทศ<br/>
+          ส่งรูป รุ่น และอาการเพื่อเช็กราคาเบื้องต้นได้ก่อน · มีหน้าร้านจริงที่อุบลราชธานี ตรวจสอบได้
         </p>
         <div class="hero__actions">
           <a href={site.line} class="btn btn--line btn--lg" target="_blank" rel="noopener noreferrer">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/></svg>
-            ส่งรูปประเมินทาง LINE @webuy
+            ส่งรูปประเมินราคา LINE @webuy
           </a>
           <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
             📞 โทร {site.phone}
           </a>
           <a href="/รับซื้อสินค้าไอที" class="btn btn--ghost">
-            ดูสินค้าที่รับซื้อ →
+            ดูหน้ารับซื้อหลัก →
           </a>
         </div>
+        <p class="hero__cta-helper">เริ่มจากส่งรูปสินค้า รุ่น และอาการทาง LINE แล้วค่อยเทียบราคาก่อนตัดสินใจได้</p>
         <div class="hero__trust">
           <span class="trust-badge"><span class="trust-badge__icon">✓</span> มีหน้าร้านจริง ตรวจสอบได้</span>
-          <span class="trust-badge"><span class="trust-badge__icon">✓</span> รับซื้อหลายหมวดสินค้าไอที</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> รับซื้อสินค้าไอทีมือสองหลายหมวด</span>
           <span class="trust-badge"><span class="trust-badge__icon">✓</span> รองรับลูกค้าทั่วประเทศ</span>
           <span class="trust-badge"><span class="trust-badge__icon">✓</span> ส่งรูปประเมินเบื้องต้นได้</span>
+        </div>
+        <div class="hero__money-links" aria-label="หน้ารับซื้อหลัก">
+          {homepagePriorityLinks.map((item) => (
+            <a href={item.href} class="hero__money-link">{item.label}</a>
+          ))}
         </div>
 
         <!-- Stats bar -->

@@ -30,18 +30,18 @@ const schemaExtras = [
 
 const mainMoneySlugs = [
   'รับซื้อโน๊ตบุ๊ค',
+  'รับซื้อคอมพิวเตอร์',
+  'รับซื้อแรม',
   'รับซื้อ-iphone',
   'รับซื้อ-ipad',
   'รับซื้อ-macbook',
-  'รับซื้อคอมพิวเตอร์',
-  'รับซื้อ-gaming-pc',
-  'รับซื้อกล้อง',
   'รับซื้อคอมบริษัท',
-  'รับซื้อสินค้าไอทีบริษัท',
-  'รับซื้อ-server-network'
+  'รับซื้อ-server-network',
 ];
 
-const featuredServices = services.filter(s => mainMoneySlugs.includes(s.data.slug));
+const featuredServices = services
+  .filter((s) => mainMoneySlugs.includes(s.data.slug))
+  .sort((a, b) => mainMoneySlugs.indexOf(a.data.slug) - mainMoneySlugs.indexOf(b.data.slug));
 
 const clusters = [
   {
@@ -92,8 +92,8 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
 ---
 
 <BaseLayout
-  title="บริการรับซื้อสินค้าไอที แยกตามหมวดสินค้า"
-  description="รวมบริการรับซื้อสินค้าไอทีมือสอง แยกหมวดโน๊ตบุ๊ค iPhone iPad MacBook คอมพิวเตอร์ กล้อง Server และสินค้าไอทีบริษัท เพื่อเลือกหน้าที่ตรงกับสินค้าที่ต้องการขาย"
+  title="รับซื้อสินค้าไอที เลือกหน้ารับซื้อให้ตรงกับสินค้า | AMPHON TRADING"
+  description="รวมหน้ารับซื้อสินค้าไอทีหลัก เช่น โน๊ตบุ๊ค คอมพิวเตอร์ RAM iPhone iPad MacBook และงานบริษัท เพื่อไปหน้าที่ตรงกับสินค้าที่ต้องการขายได้เร็วขึ้น"
   ogImage="/images/about/amphon-trading-shop-showroom.webp"
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
@@ -102,12 +102,12 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
   schemaExtras={schemaExtras}
 >
   <header class="page-header">
-    <div class="container">
-      <span class="tag tag--orange" style="margin-bottom:.875rem;">รับซื้อทั่วประเทศ</span>
-      <h1>บริการรับซื้อสินค้าไอที แยกตามหมวดสินค้า</h1>
+    <div class="container hub-shell">
+      <span class="tag tag--orange" style="margin-bottom:.875rem;">รวมหน้ารับซื้อหลัก</span>
+      <h1>เลือกหน้ารับซื้อสินค้าไอทีให้ตรงกับสินค้าที่ต้องการขาย</h1>
       <p class="page-header__desc">
-        อำพล เทรดดิ้ง รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ iPhone iPad MacBook กล้อง และอุปกรณ์ไอทีจากลูกค้าทั่วประเทศ
-        ส่งรูปหรือรายการสินค้าเพื่อประเมินราคาเบื้องต้นได้ · มีหน้าร้านจริงที่อุบลราชธานี ตรวจสอบได้
+        เริ่มจากหน้าหลักที่ตรงกับสินค้าของคุณก่อน เช่น โน๊ตบุ๊ค คอมพิวเตอร์ RAM iPhone iPad หรือ MacBook
+        เพื่อดูเงื่อนไขและส่งรูปประเมินได้เร็วขึ้น · มีหน้าร้านจริงที่อุบลราชธานี และรองรับลูกค้าทั่วประเทศ
       </p>
       <div class="page-header__cta">
         <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
@@ -118,33 +118,32 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
         </a>
       </div>
       
-      <!-- Quick Category Navigation badging row -->
+      <!-- Quick links to money pages -->
       <div class="category-nav">
-        <a href="#notebook" class="category-chip">Notebook</a>
-        <a href="#iphone" class="category-chip">iPhone</a>
-        <a href="#ipad" class="category-chip">iPad</a>
-        <a href="#macbook" class="category-chip">MacBook / Apple Watch</a>
-        <a href="#pc" class="category-chip">PC / อุปกรณ์คอม</a>
-        <a href="#b2b" class="category-chip">B2B / บริษัท</a>
-        <a href="#camera" class="category-chip">กล้อง / Gadgets</a>
-        <a href="#server" class="category-chip">Server / Network / UPS</a>
+        <a href="/บริการ/รับซื้อโน๊ตบุ๊ค" class="category-chip">รับซื้อโน๊ตบุ๊ค</a>
+        <a href="/บริการ/รับซื้อคอมพิวเตอร์" class="category-chip">รับซื้อคอมพิวเตอร์</a>
+        <a href="/บริการ/รับซื้อแรม" class="category-chip">รับซื้อแรม</a>
+        <a href="/บริการ/รับซื้อ-iphone" class="category-chip">รับซื้อ iPhone</a>
+        <a href="/บริการ/รับซื้อ-ipad" class="category-chip">รับซื้อ iPad</a>
+        <a href="/บริการ/รับซื้อ-macbook" class="category-chip">รับซื้อ MacBook</a>
+        <a href="/บริการ/รับซื้อคอมบริษัท" class="category-chip">รับซื้อคอมบริษัท</a>
+        <a href="/บริการ/รับซื้อ-server-network" class="category-chip">Server / Network</a>
       </div>
     </div>
   </header>
 
   <section class="section">
-    <div class="container">
-      <div class="prose" style="max-width:800px; margin-bottom: 2.5rem; text-align: left;">
+    <div class="container hub-shell">
+      <div class="prose hub-lead">
         <span class="eyebrow">หมวดหมู่บริการหลัก</span>
-        <h2>บริการรับซื้อยอดนิยม</h2>
+        <h2>หน้ารับซื้อหลักที่ควรเริ่มก่อน</h2>
         <p>
-          AMPHON TRADING รับพิจารณาสินค้าไอทีหลายประเภทจากลูกค้าทั่วประเทศ ครอบคลุมแบรนด์ชั้นนำอย่าง Apple, Samsung, ASUS, Acer, Dell และอื่น ๆ
-          ลูกค้าต่างจังหวัดส่งรูปหรือ Inventory List เพื่อประเมินราคาเบื้องต้นได้ก่อนตัดสินใจ
-          นัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวนที่ตกลงกัน
+          หน้ากลุ่มนี้คือหน้าหลักที่มีโอกาสตรงกับ intent ของคนต้องการขายมากที่สุด
+          หากของที่ต้องการขายเป็นรุ่นย่อย อาการเฉพาะ หรือเครื่องหลายเครื่อง ค่อยเลื่อนลงไปดูหน้ารุ่นและหมวดเพิ่มเติมด้านล่าง
         </p>
       </div>
 
-      <!-- Main Featured Services grid (10 pages) -->
+      <!-- Main Featured Services grid -->
       <div class="grid grid--2" style="margin-bottom: 4rem;">
         {featuredServices.map((service) => (
           <ServiceCard
@@ -161,12 +160,13 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
 
   <!-- Accordion details section for long-tail services -->
   <section class="section section--gray" style="padding-top: 3rem; padding-bottom: 3.5rem;">
-    <div class="container">
-      <div class="prose" style="max-width:800px; margin-bottom: 2rem; text-align: left;">
+    <div class="container hub-shell">
+      <div class="prose hub-lead" style="margin-bottom: 2rem;">
         <span class="eyebrow">บริการเพิ่มเติม</span>
-        <h2>บริการรับซื้อเพิ่มเติมแยกตามหมวดหมู่</h2>
+        <h2>หน้ารุ่นย่อยและอาการเฉพาะ</h2>
         <p>
-          สำหรับรุ่นย่อย แบรนด์เฉพาะ หรือความต้องการพิเศษอื่น ๆ สามารถคลิกดูรายการรับซื้อในแต่ละหมวดหมู่เพิ่มเติมได้ด้านล่างนี้
+          สำหรับรุ่นย่อย แบรนด์เฉพาะ หรืออาการอย่างจอแตก ติด iCloud เครื่องบริษัท และกลุ่มสินค้าที่แยกย่อย
+          สามารถเลือกดูหมวดที่ตรงกว่าได้จากรายการด้านล่างนี้
         </p>
       </div>
 
@@ -221,6 +221,16 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
 </BaseLayout>
 
 <style>
+  .hub-shell {
+    max-width: 1080px;
+  }
+
+  .hub-lead {
+    max-width: 760px;
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+
   .category-nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
