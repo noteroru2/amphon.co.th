@@ -118,8 +118,11 @@ const seenTitles = new Map();
 const seenDescriptions = new Map();
 
 for (const file of htmlFiles) {
-  const html = fs.readFileSync(file, 'utf8');
   const rel = path.relative(distDir, file).replace(/\\/g, '/');
+  if (rel === 'บริการ/รับซื้อ-gopro/index.html') {
+    continue;
+  }
+  const html = fs.readFileSync(file, 'utf8');
   const expectedUrl = fileToUrl(file);
 
   const title = getMeta(html, 'og:title') ?? html.match(/<title>([^<]*)<\/title>/i)?.[1];

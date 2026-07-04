@@ -22,11 +22,14 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const decoded = decodeURIComponent(page);
+        let pathname = decoded.replace(/^https?:\/\/[^\/]+/, '');
+        pathname = pathname.replace(/\/$/, '');
 
         return (
-          !decoded.includes('/404') &&
-          !decoded.includes('/บริการ/รับซื้อสินค้าไอที') &&
-          !sitemapBlockedPrefixes.some((prefix) => decoded.includes(prefix))
+          !pathname.includes('/404') &&
+          !pathname.includes('/บริการ/รับซื้อสินค้าไอที') &&
+          pathname !== '/บริการ/รับซื้อ-gopro' &&
+          !sitemapBlockedPrefixes.some((prefix) => pathname.includes(prefix))
         );
       },
       i18n: {
