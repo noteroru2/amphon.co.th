@@ -13,6 +13,7 @@ import {
   resolveOgImage,
 } from '../lib/seo';
 import { site } from '../config/site';
+import { getCanonicalServiceHref } from '../config/seo-policy';
 import type { BreadcrumbItem } from '../config/site';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -26,9 +27,7 @@ interface Props {
 const { entry, service, area } = Astro.props;
 const { title, description, slug, faqs, mainKeyword, ogImage, heroImage, date, updated } = entry.data;
 const { Content } = await render(entry);
-const serviceHref = service
-  ? (service.data.slug === 'รับซื้อสินค้าไอที' ? '/รับซื้อสินค้าไอที' : `/บริการ/${service.data.slug}`)
-  : undefined;
+const serviceHref = getCanonicalServiceHref(service?.data.slug ?? entry.data.serviceSlug);
 
 const breadcrumbs: BreadcrumbItem[] = [
   { label: 'หน้าแรก', href: '/' },

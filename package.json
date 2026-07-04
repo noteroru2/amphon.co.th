@@ -16,6 +16,12 @@
     "content:seed": "node scripts/seed-production-content.mjs",
     "images:process": "node scripts/process-production-images.mjs",
     "validate:seo": "node scripts/validate-seo.mjs",
+    "qa:internal-404": "node scripts/check-internal-404.mjs",
+    "qa:redirect-chain": "node scripts/check-redirect-chains.mjs",
+    "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
+    "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
+    "qa:claim-risk": "node scripts/check-claim-risk.mjs",
+    "qa:coverage": "npm run qa:internal-404 && npm run qa:redirect-chain && npm run qa:sitemap && npm run qa:duplicate-headings && npm run qa:claim-risk",
     "check:seo": "npm run build && npm run validate:seo",
     "build:images": "node scripts/process-production-images.mjs && node scripts/generate-og-default.mjs && node scripts/generate-production-og.mjs && node scripts/generate-og-images.mjs",
     "images:optimize": "node scripts/optimize-images.mjs"

@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAContact from '../components/CTAContact.astro';
+import FAQ from '../components/FAQ.astro';
 import { site } from '../config/site';
-import { absoluteUrl, schemaIds, createFAQSchema } from '../lib/seo';
+import { absoluteUrl, createFAQSchema } from '../lib/seo';
 
 const breadcrumbs = [
   { label: 'หน้าแรก', href: '/' },
@@ -43,8 +44,6 @@ const faqs = [
       'รับซื้อได้ แต่ราคาจะถูกประเมินตามสภาพจริง ส่งรูปมาก่อนได้เลยเพื่อรับราคาเบื้องต้น',
   },
 ];
-
-const schemaExtras = [createFAQSchema(pageUrl, faqs)].filter(Boolean);
 
 const steps = [
   {
@@ -91,6 +90,8 @@ const prepItems = [
   { icon: '📦', text: 'เตรียมกล่อง ใบเสร็จ และอุปกรณ์ครบ (ถ้ามี)' },
   { icon: '📷', text: 'ถ่ายรูปสภาพก่อนมาเพื่อความรวดเร็ว' },
 ];
+
+const schemaExtras = [createFAQSchema(pageUrl, faqs)].filter(Boolean);
 ---
 
 <BaseLayout
@@ -164,23 +165,7 @@ const prepItems = [
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header section-header--left">
-        <span class="eyebrow">คำถามที่พบบ่อย</span>
-        <h2>มีคำถามเพิ่มเติม?</h2>
-      </div>
-      <div class="faq-list">
-        {faqs.map((faq, i) => (
-          <details class="faq-item card" open={i === 0}>
-            <summary class="faq-item__q">{faq.question}</summary>
-            <p class="faq-item__a">{faq.answer}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
+  <FAQ items={faqs} />
 
   <!-- Line QR + CTA -->
   <section class="section section--gray how-final">

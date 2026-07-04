@@ -5,14 +5,17 @@ import ServiceCard from '../components/ServiceCard.astro';
 import ProvinceGrid from '../components/ProvinceGrid.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
+import RescueLinkGroups from '../components/RescueLinkGroups.astro';
 import { categoryImages, serviceThumbnails, imageAlt } from '../config/images';
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema } from '../lib/seo';
+import { buildSeoRescueGroups } from '../config/seo-rescue';
 
-const services = (await getCollection('services', ({ data }) => !data.draft))
-  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
-  .slice(0, 8);
+const allServices = (await getCollection('services', ({ data }) => !data.draft))
+  .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+const services = allServices.slice(0, 8);
+const rescueGroups = buildSeoRescueGroups(allServices);
 
 const homepageServiceCardCopy: Record<string, { title: string; description: string; imageAlt?: string }> = {
   'รับซื้อ-ipad-pro': {
@@ -503,6 +506,13 @@ const trustItems = [
       </div>
     </section>
   )}
+
+  <RescueLinkGroups
+    eyebrow="ลิงก์ช่วยจัดอันดับ"
+    title="รวมลิงก์ไปหน้าบริการที่ควรให้ Google เจอชัดขึ้น"
+    description="ใช้ส่วนนี้เป็น internal-link hub จากหน้าแรกไปยังหน้าบริการหลักและหน้ารุ่นย่อยที่ยังควรเก็บ index เพื่อช่วยกระจายน้ำหนักลิงก์และลดสถานะ discovered หรือ crawled but not indexed."
+    groups={rescueGroups}
+  />
 
   <!-- ====== FAQ ====== -->
   <section class="section">

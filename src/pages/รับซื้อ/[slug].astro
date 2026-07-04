@@ -1,10 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
 import ServiceAreaLayout from '../../layouts/ServiceAreaLayout.astro';
+import { filterIndexableServiceAreas } from '../../config/seo-policy';
 
 export async function getStaticPaths() {
-  const serviceAreas = await getCollection('serviceAreas', ({ data }) => !data.draft);
-  const services = await getCollection('services');
+  const serviceAreas = filterIndexableServiceAreas(
+    await getCollection('serviceAreas', ({ data }) => !data.draft),
+  );
+  const services = await getCollection(
+    'services',
+    ({ data }) => !data.draft || data.slug === 'รับซื้อสินค้าไอที',
+  );
   const areas = await getCollection('areas', ({ data }) => !data.draft);
 
   return serviceAreas.map((entry) => ({

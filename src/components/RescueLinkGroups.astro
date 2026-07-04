@@ -1,0 +1,105 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Group {
+  title: string;
+  description: string;
+  links: CollectionEntry<'services'>[];
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  groups: Group[];
+}
+
+const { eyebrow, title, description, groups } = Astro.props;
+---
+
+<section class="section section--gray rescue-links">
+  <div class="container">
+    <div class="section-header section-header--left">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </div>
+
+    <div class="rescue-links__grid">
+      {groups.map((group) => (
+        <details class="rescue-links__group" open>
+          <summary class="rescue-links__summary">
+            <span>{group.title}</span>
+            <span class="rescue-links__count">{group.links.length} หน้า</span>
+          </summary>
+          <p class="rescue-links__desc">{group.description}</p>
+          <ul class="rescue-links__list">
+            {group.links.map((service) => (
+              <li>
+                <a href={`/บริการ/${service.data.slug}`}>{service.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .rescue-links__grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .rescue-links__group {
+    background: #fff;
+    border: 1px solid #e4e4e7;
+    border-radius: 1rem;
+    padding: 1rem 1rem 1.125rem;
+  }
+
+  .rescue-links__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .rescue-links__count {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .rescue-links__desc {
+    margin: 0.75rem 0 0.875rem;
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+  }
+
+  .rescue-links__list {
+    margin: 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.5rem 1.25rem;
+  }
+
+  @media (min-width: 900px) {
+    .rescue-links__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .rescue-links__list a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .rescue-links__list a:hover {
+    text-decoration: underline;
+  }
+</style>

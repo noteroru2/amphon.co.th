@@ -4,8 +4,53 @@
   "framework": "astro",
   "redirects": [
     {
-      "source": "/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AD%E0%B8%97%E0%B8%B5",
-      "destination": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AD%E0%B8%97%E0%B8%B5",
+      "source": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด/",
+      "destination": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด",
+      "permanent": true
+    },
+    {
+      "source": "/บริการ/รับซื้อ-gopro",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/บริการ/รับซื้อเลนส์",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/บริการ/รับซื้อ-hdd",
+      "destination": "/บริการ/รับซื้อ-ssd",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-:province",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-:province",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-:province",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-:province",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-:province",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี",
+      "destination": "/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี",
+      "permanent": true
+    },
+    {
+      "source": "/บริการ/รับซื้อสินค้าไอที",
+      "destination": "/รับซื้อสินค้าไอที",
       "permanent": true
     },
     {

@@ -1,10 +1,10 @@
 ---
-title: "รับซื้อ SSD และ HDD มือสอง เช็ค S.M.A.R.T. โปร่งใส ประเมินฟรี"
+title: "รับซื้อ SSD, HDD และ External Drive มือสอง เช็ค S.M.A.R.T. โปร่งใส ประเมินฟรี"
 slug: "รับซื้อ-ssd"
 order: 16
-description: "รับซื้อ SSD มือสอง M.2 NVMe Gen3/4, SATA SSD, Enterprise SSD และ HDD SATA/SAS ทุกยี่ห้อ เช็ค S.M.A.R.T. health ก่อนรับซื้อ โปร่งใส ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว"
+description: "รับซื้อ SSD มือสอง M.2 NVMe Gen3/4, SATA SSD, Enterprise SSD, HDD SATA/SAS และ External SSD/HDD ทุกยี่ห้อ เช็ค S.M.A.R.T. health ก่อนรับซื้อ โปร่งใส ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว"
 mainKeyword: "รับซื้อ SSD"
-relatedKeywords: ["รับซื้อ SSD มือสอง", "รับซื้อ HDD มือสอง", "SSD M.2 NVMe", "Samsung 980 Pro", "WD Black SN850", "Kingston NV2", "ขาย SSD มือสอง", "รับซื้อฮาร์ดดิสก์", "HDD SATA", "HDD SAS Enterprise", "Enterprise SSD", "รับซื้อ SSD อุบลราชธานี", "เช็ค SMART SSD"]
+relatedKeywords: ["รับซื้อ SSD มือสอง", "รับซื้อ HDD มือสอง", "รับซื้อ External SSD", "รับซื้อ External HDD", "SSD M.2 NVMe", "Samsung 980 Pro", "WD Black SN850", "Kingston NV2", "ขาย SSD มือสอง", "รับซื้อฮาร์ดดิสก์", "HDD SATA", "HDD SAS Enterprise", "Enterprise SSD", "รับซื้อ SSD อุบลราชธานี", "เช็ค SMART SSD"]
 heroImage: "/images/services/rub-sue-ssd-hdd-amphon.png"
 ogImage: "/images/services/rub-sue-ssd-hdd-amphon.png"
 date: "2026-06-03"
@@ -21,16 +21,18 @@ faqs:
     answer: "ปลอดภัยแน่นอนครับ เราทำการ Secure Erase ล้างข้อมูลให้สนิทก่อนนำไปใช้งานหรือจำหน่ายต่อ ข้อมูลส่วนตัวจะไม่รั่วไหลแน่นอน"
   - question: "HDD Enterprise SAS รับซื้อไหม?"
     answer: "รับซื้อครับ HDD SAS Enterprise สำหรับ Server หรือ NAS ราคาดีกว่า HDD ทั่วไปมาก โดยเฉพาะรุ่น 1.8TB, 2.4TB, 4TB ที่ยังใช้งานได้ปกติ"
+  - question: "External HDD หรือ External SSD รับซื้อไหม?"
+    answer: "รับซื้อครับ ทั้งแบบพกพาและแบบตั้งโต๊ะ ขอให้ตัวดิสก์ยังตรวจเช็คได้ตามปกติ มีพอร์ตหรือกล่องแปลงที่ใช้งานได้ และส่งรูปตัวเครื่องพร้อมผล S.M.A.R.T. มาให้ประเมินก่อนได้เลย"
 ---
 
 
-มี SSD หรือ HDD เหลือใช้จากการอัปเกรดคอม หรือมีดิสก์เก่าที่ไม่ใช้แล้วกองอยู่ในลิ้นชัก? **อำพล เทรดดิ้ง** รับซื้อ SSD และ HDD มือสองทุกประเภท ทั้ง M.2 NVMe Gen3/Gen4, SATA SSD, Enterprise SSD และ HDD SATA/SAS ให้ราคายุติธรรม เช็ค S.M.A.R.T. health อย่างโปร่งใสก่อนประเมินราคาทุกครั้ง ลูกค้าสบายใจได้ 100%
+มี SSD หรือ HDD เหลือใช้จากการอัปเกรดคอม หรือมีดิสก์เก่าที่ไม่ใช้แล้วกองอยู่ในลิ้นชัก? **อำพล เทรดดิ้ง** รับซื้อ SSD และ HDD มือสองทุกประเภท ทั้ง M.2 NVMe Gen3/Gen4, SATA SSD, Enterprise SSD, HDD SATA/SAS รวมถึง External SSD และ External HDD ที่ยังตรวจเช็กสภาพได้ตามปกติ เราเช็ค S.M.A.R.T. health อย่างโปร่งใสก่อนประเมินราคาทุกครั้ง เพื่อให้ราคาตามรุ่นและสภาพจริง
 
 > 📲 **ขาย SSD/HDD ได้เลยวันนี้**
 > แอดไลน์ **[@webuy](https://line.me/ti/p/~@webuy)** หรือโทร **[064-257-9353](tel:0642579353)**
 > ส่งรูป + ผล SMART ได้ราคาภายใน 30 นาที
 
-## SSD และ HDD ที่รับซื้อ
+## SSD, HDD และ External Drive ที่รับซื้อ
 
 ![รับซื้อ SSD M.2 NVMe และ HDD มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-ssd-hdd-amphon.png)
 
@@ -71,12 +73,21 @@ faqs:
 - HGST SAS Enterprise
 - Toshiba SAS MG Series
 
+**External SSD / External HDD / Portable Drive**
+- Samsung T7, T9, Portable SSD
+- SanDisk Extreme Portable SSD
+- WD My Passport, My Book
+- Seagate Expansion, Backup Plus
+- LaCie Rugged และกลุ่มพกพาผ่าน USB-C / Thunderbolt
+
 ## สภาพที่รับซื้อ
 
 > 📲 **ไม่แน่ใจว่าดิสก์คุณผ่านเงื่อนไขไหม? ส่งรูปและผล SMART มาถามได้เลยฟรีครับ**
 > แอดไลน์ **[@webuy](https://line.me/ti/p/~@webuy)** หรือโทร **[064-257-9353](tel:0642579353)**
 
 เราเช็ค S.M.A.R.T. health ทุกตัวก่อนรับซื้อ เพื่อให้ราคาที่ยุติธรรมและโปร่งใสสำหรับทั้งสองฝ่าย สภาพที่รับซื้อมีดังนี้:
+
+สำหรับ External Drive เราจะดูเพิ่มเรื่องสภาพกล่องแปลง พอร์ตเชื่อมต่อ สายที่ใช้งานอยู่ และความเสถียรเวลาเชื่อมต่อกับเครื่องทดสอบ เพื่อให้ประเมินได้ตรงกับสภาพใช้งานจริง
 
 - **Health 95-100%** — สภาพดีมาก ได้ราคาเต็ม เหมาะสำหรับดิสก์ที่เพิ่งอัปเกรดหรือใช้งานน้อย
 - **Health 80-94%** — สภาพดี ยังได้ราคาดีพอสมควร แต่จะปรับลงเล็กน้อยตามเปอร์เซ็นต์
@@ -118,8 +129,9 @@ faqs:
 1. **แคปภาพหน้าจอผล S.M.A.R.T.** จากโปรแกรม CrystalDiskInfo หรือ HD Sentinel ให้เห็น Health %, Power On Hours และ Reallocated Sectors ชัดๆ
 2. **ถ่ายรูปตัวดิสก์** ให้เห็นสติ๊กเกอร์ด้านบนที่บอก Model Number, Serial Number และความจุ
 3. **ระบุจำนวน** ที่ต้องการขาย ถ้าขายหลายลูกบอกรุ่นและความจุมาด้วยจะได้ประเมินล็อตให้
-4. **แจ้งว่ามีประกันเหลือไหม** เพราะมีผลต่อราคาชัดเจน
-5. **ไม่มีโปรแกรมตรวจสอบ?** ส่งรูปตัวดิสก์มาได้เลย เราจะแนะนำขั้นตอนให้ครับ
+4. **ถ้าเป็น External Drive** ให้ถ่ายรูปตัวเคส พอร์ต สาย และแจ้งว่าเป็นกล่องเดิมจากโรงงานหรือเป็นดิสก์ที่ใส่กล่องแปลงภายหลัง
+5. **แจ้งว่ามีประกันเหลือไหม** เพราะมีผลต่อราคาชัดเจน
+6. **ไม่มีโปรแกรมตรวจสอบ?** ส่งรูปตัวดิสก์มาได้เลย เราจะแนะนำขั้นตอนให้ครับ
 
 ## วิธีส่งรูปประเมินราคา
 
