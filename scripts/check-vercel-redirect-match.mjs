@@ -70,7 +70,6 @@ const cases = [
   {
     label: 'legacy-gopro',
     source: '/บริการ/รับซื้อ-gopro',
-    encodedSource: '/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro',
     destination: '/บริการ/รับซื้อ-gopro-action-camera',
   },
   {
@@ -97,10 +96,12 @@ const cases = [
 const issues = [];
 
 for (const testCase of cases) {
-  for (const candidate of [
-    { kind: 'unicode', path: testCase.source },
-    { kind: 'encoded', path: testCase.encodedSource },
-  ]) {
+  const candidates = [{ kind: 'unicode', path: testCase.source }];
+  if (testCase.encodedSource) {
+    candidates.push({ kind: 'encoded', path: testCase.encodedSource });
+  }
+
+  for (const candidate of candidates) {
     const matched = compiled.find((rule) => rule.regex.test(candidate.path));
 
     if (!matched) {
@@ -134,6 +135,39 @@ for (const testCase of cases) {
   }
 }
 
+const goproExactIndex = redirects.findIndex(
+  (rule) =>
+    rule.source === '/บริการ/รับซื้อ-gopro' &&
+    rule.destination === '/บริการ/รับซื้อ-gopro-action-camera' &&
+    rule.permanent === true,
+);
+
+if (goproExactIndex === -1) {
+  issues.push('legacy-gopro: exact unicode redirect rule is missing');
+} else if (goproExactIndex !== 0) {
+  issues.push('legacy-gopro: exact unicode redirect rule is not the first redirect rule');
+}
+
+if (
+  redirects.some(
+    (rule) =>
+      rule.source.includes('gopro') &&
+      rule.source.startsWith('/%E0%B8'),
+  )
+) {
+  issues.push('legacy-gopro: encoded fallback rule still exists in vercel.json');
+}
+
+if (
+  redirects.some(
+    (rule) =>
+      (rule.source.includes('gopro') || rule.destination.includes('gopro')) &&
+      (rule.source.includes('à¸') || rule.destination.includes('à¸')),
+  )
+) {
+  issues.push('legacy-gopro: mojibake text found in gopro redirect rule');
+}
+
 if (issues.length > 0) {
   console.error(`FAIL vercel-redirect-match: ${issues.length} issue(s) found`);
   for (const issue of issues) {
@@ -143,5 +177,5 @@ if (issues.length > 0) {
 }
 
 console.log(
-  `PASS vercel-redirect-match: checked ${cases.length * 2} source variants, top-level redirects and rule order are correct`,
+  `PASS vercel-redirect-match: checked ${cases.reduce((sum, testCase) => sum + (testCase.encodedSource ? 2 : 1), 0)} source variants, top-level redirects and rule order are correct`,
 );

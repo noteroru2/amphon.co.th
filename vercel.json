@@ -4,18 +4,13 @@
   "framework": "astro",
   "redirects": [
     {
-      "source": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด/",
-      "destination": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด",
-      "permanent": true
-    },
-    {
       "source": "/บริการ/รับซื้อ-gopro",
       "destination": "/บริการ/รับซื้อ-gopro-action-camera",
       "permanent": true
     },
     {
-      "source": "/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro",
-      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "source": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด/",
+      "destination": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด",
       "permanent": true
     },
     {

@@ -11,10 +11,6 @@ const samplePaths = [
     expectedFinal: '/บริการ/รับซื้อ-gopro-action-camera',
   },
   {
-    source: '/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro',
-    expectedFinal: '/บริการ/รับซื้อ-gopro-action-camera',
-  },
-  {
     source: '/บริการ/รับซื้อเลนส์',
     expectedFinal: '/บริการ/รับซื้อเลนส์กล้อง',
   },
