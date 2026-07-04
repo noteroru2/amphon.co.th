@@ -432,10 +432,51 @@ p  { margin-top: 0; }
   margin-bottom: 2rem;
 }
 
+.hero__actions .btn--line {
+  min-height: 54px;
+  box-shadow: 0 14px 30px rgba(6, 182, 212, 0.18);
+}
+
+.hero__cta-helper {
+  margin: -1rem 0 1.25rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
 .hero__trust {
   display: flex;
   flex-wrap: wrap;
   gap: 0.625rem;
+}
+
+.hero__money-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: 1.125rem;
+}
+
+.hero__money-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255 255 255 / 0.14);
+  background: rgba(255 255 255 / 0.08);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.hero__money-link:hover {
+  background: rgba(255 255 255 / 0.14);
+  border-color: rgba(255 255 255 / 0.3);
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .trust-badge {
@@ -1494,6 +1535,20 @@ p  { margin-top: 0; }
     width: min(100% - 1.5rem, var(--max-width));
   }
 
+  h1,
+  h2,
+  h3,
+  .hero h1,
+  .page-header h1,
+  .page-header__title,
+  .prose h2,
+  .prose h3 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.18;
+  }
+
   body {
     font-size: 1rem;
     line-height: 1.8;
@@ -1517,6 +1572,8 @@ p  { margin-top: 0; }
   }
 
   .hero__actions {
+    width: 100%;
+    max-width: 100%;
     flex-direction: column;
     align-items: stretch;
     gap: 0.625rem;
@@ -1524,6 +1581,27 @@ p  { margin-top: 0; }
 
   .hero__actions .btn {
     width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: anywhere;
+    justify-content: center;
+  }
+
+  .hero__cta-helper {
+    margin: -0.25rem 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .hero__money-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero__money-link {
+    width: 100%;
+    text-align: center;
   }
 
   .cta-band__actions {
@@ -1622,6 +1700,26 @@ p  { margin-top: 0; }
   .service-card .btn {
     white-space: normal;
     text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .breadcrumbs {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .breadcrumbs__list {
+    min-width: max-content;
+    flex-wrap: nowrap;
+    padding-bottom: 0.125rem;
+  }
+
+  .breadcrumbs__item,
+  .breadcrumbs__item a,
+  .breadcrumbs__item span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .inline-service-cta {
