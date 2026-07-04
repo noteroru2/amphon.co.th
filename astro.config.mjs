@@ -29,6 +29,7 @@ export default defineConfig({
           !pathname.includes('/404') &&
           !pathname.includes('/บริการ/รับซื้อสินค้าไอที') &&
           pathname !== '/บริการ/รับซื้อ-gopro' &&
+          pathname !== '/บริการ/รับซื้อ-hdd' &&
           !sitemapBlockedPrefixes.some((prefix) => pathname.includes(prefix))
         );
       },

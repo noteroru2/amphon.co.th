@@ -10,6 +10,9 @@ const titleMap = new Map();
 const h1Map = new Map();
 
 for (const [pathname, filePath] of builtPages.entries()) {
+  if (pathname.includes('/บริการ/รับซื้อ-gopro') || pathname.includes('/บริการ/รับซื้อ-hdd')) {
+    continue;
+  }
   const html = readText(filePath);
   const title = extractTitle(html);
   const h1 = extractFirstH1(html);

@@ -119,7 +119,7 @@ const seenDescriptions = new Map();
 
 for (const file of htmlFiles) {
   const rel = path.relative(distDir, file).replace(/\\/g, '/');
-  if (rel === 'บริการ/รับซื้อ-gopro/index.html') {
+  if (rel === 'บริการ/รับซื้อ-gopro/index.html' || rel === 'บริการ/รับซื้อ-hdd/index.html') {
     continue;
   }
   const html = fs.readFileSync(file, 'utf8');
