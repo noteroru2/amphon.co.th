@@ -30,6 +30,8 @@ export default defineConfig({
           !pathname.includes('/บริการ/รับซื้อสินค้าไอที') &&
           pathname !== '/บริการ/รับซื้อ-gopro' &&
           pathname !== '/บริการ/รับซื้อ-hdd' &&
+          pathname !== '/บริการ/รับซื้อเลนส์' &&
+          pathname !== '/บริการ/รับซื้อ-storage-nas' &&
           !sitemapBlockedPrefixes.some((prefix) => pathname.includes(prefix))
         );
       },

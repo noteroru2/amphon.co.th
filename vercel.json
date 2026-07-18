@@ -44,6 +44,66 @@
       "permanent": true
     },
     {
+      "source": "/บริการ/รับซื้อ-storage-nas",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd",
+      "destination": "/บริการ/รับซื้อ-ssd",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+      "destination": "/บริการ/รับซื้อ-ssd",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ",
+      "destination": "/รับซื้อสินค้าไอที",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "destination": "/รับซื้อสินค้าไอที",
+      "permanent": true
+    },
+    {
       "source": "/รับซื้อ/รับซื้อ-hdd-:province",
       "destination": "/รับซื้อ/รับซื้อ-ssd-:province",
       "permanent": true
