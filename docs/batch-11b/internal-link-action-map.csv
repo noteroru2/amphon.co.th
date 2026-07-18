@@ -1,0 +1,8 @@
+"Source","Destination","Anchor/context","Action","Reason","Status"
+"/","/บริการ/รับซื้อคอมพิวเตอร์","รับซื้อคอมพิวเตอร์","Retain existing priority link","Direct national money page","Existing"
+"/","/บริการ/รับซื้อแรม","รับซื้อแรม","Retain existing priority link","Direct national money page","Existing"
+"/บริการ/รับซื้อแรม","/บริการ/รับซื้อคอมพิวเตอร์","Desktop PC / whole-system context","Retain contextual link","Separates whole machine from RAM-only intent","Existing"
+"/บริการ/รับซื้อคอมพิวเตอร์","/บริการ/รับซื้อแรม","RAM sold separately","Retain contextual link","Supports component intent without exact-anchor cloud","Existing"
+"/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน","/บริการ/รับซื้อ-ipad","ส่งรูปหน้า About และสภาพเครื่อง","Strengthen early contextual CTA","Converts informational traffic to correct money page","Updated context"
+"Province hubs","Relevant service URLs","Product-specific anchors in body","Retain limited curated links","Keeps broad local page separate from product intent","Existing"
+
