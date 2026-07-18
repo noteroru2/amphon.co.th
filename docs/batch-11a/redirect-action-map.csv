@@ -1,0 +1,11 @@
+Source URL,Target URL,Status,Type,Action,Reason
+"/บริการ/รับซื้อ-gopro","/บริการ/รับซื้อ-gopro-action-camera","301 (Permanent)","Legacy Redirect","Keep & Add Noindex to Fallback Page","Resolve redirect error and exclude from indexation"
+"/บริการ/รับซื้อ-hdd","/บริการ/รับซื้อ-ssd","301 (Permanent)","Legacy Redirect","Keep Redirect & Fallback Page","Target SSD page contains HDD search intent fallback"
+"/บริการ/รับซื้อเลนส์","/บริการ/รับซื้อเลนส์กล้อง","301 (Permanent)","Legacy Redirect","Create fallback page with noindex","Resolve potential 404s and align with Vercel redirect rules"
+"/บริการ/รับซื้อ-storage-nas","/บริการ/รับซื้อ-nas","301 (Permanent)","Legacy Redirect","Add to Vercel redirects & Create fallback page","Resolve GSC 404 error from legacy NAS url"
+"/รับซื้อ/รับซื้อ-hdd","/บริการ/รับซื้อ-ssd","301 (Permanent)","Legacy base path redirect","Add to Vercel redirects","Redirect old base paths crawled by Google bot to prevent 404s"
+"/รับซื้อ/รับซื้อ-gopro","/บริการ/รับซื้อ-gopro-action-camera","301 (Permanent)","Legacy base path redirect","Add to Vercel redirects","Redirect old base paths crawled by Google bot to prevent 404s"
+"/รับซื้อ/รับซื้อเลนส์","/บริการ/รับซื้อเลนส์กล้อง","301 (Permanent)","Legacy base path redirect","Add to Vercel redirects","Redirect old base paths crawled by Google bot to prevent 404s"
+"/รับซื้อ/รับซื้อ-storage-nas","/บริการ/รับซื้อ-nas","301 (Permanent)","Legacy base path redirect","Add to Vercel redirects","Redirect old base paths crawled by Google bot to prevent 404s"
+"/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี","/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี","301 (Permanent)","Legacy Redirect","Keep Redirect","Ensure smooth migration of top regional traffic page"
+"/บริการ/รับซื้อสินค้าไอที","/รับซื้อสินค้าไอที","301 (Permanent)","Internal Redirect","Keep Redirect","Correct old internal structure path to canonical hub page"

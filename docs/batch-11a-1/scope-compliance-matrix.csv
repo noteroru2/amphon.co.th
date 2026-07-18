@@ -1,0 +1,9 @@
+File,Change Type,Classification,Justification
+"vercel.json","MODIFY","REQUIRED","Resolves legacy 404 crawl errors on server side"
+"astro.config.mjs","MODIFY","REQUIRED","Prevents indexation leak by filtering fallbacks out of sitemap"
+"src/pages/บริการ/รับซื้อ-gopro.astro","MODIFY","REQUIRED","Enforces search engine exclusion via robots noindex tag"
+"src/pages/บริการ/รับซื้อเลนส์.astro","NEW","REQUIRED","Fallback page to prevent 404s for legacy lens URL"
+"src/pages/บริการ/รับซื้อ-storage-nas.astro","NEW","REQUIRED","Fallback page to prevent 404s for legacy NAS URL"
+"scripts/validate-seo.mjs","MODIFY","JUSTIFIED BUT OPTIONAL","Updates test harness rules to bypass fallback redirect pages"
+"scripts/check-duplicate-headings.mjs","MODIFY","JUSTIFIED BUT OPTIONAL","Updates test harness rules to bypass fallback redirect pages"
+"docs/batch-11a/**","NEW","DOCUMENTATION ONLY","Batch 11A deliverables and quality logs"
