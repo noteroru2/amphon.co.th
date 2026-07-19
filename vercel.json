@@ -4,6 +4,16 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/blog/how-to-reset-playstation",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/check-nintendo-joycon",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
       "source": "/บริการ/รับซื้อ-gopro",
       "destination": "/บริการ/รับซื้อ-gopro-action-camera",
       "permanent": true
