@@ -75,21 +75,22 @@ const cases = [
   {
     label: 'legacy-lens',
     source: '/บริการ/รับซื้อเลนส์',
-    encodedSource: '/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C',
     destination: '/บริการ/รับซื้อเลนส์กล้อง',
   },
   {
     label: 'legacy-hdd',
     source: '/บริการ/รับซื้อ-hdd',
-    encodedSource: '/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd',
     destination: '/บริการ/รับซื้อ-ssd',
   },
   {
     label: 'legacy-computer-ubon',
     source: '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-    encodedSource:
-      '/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5',
     destination: '/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
+  },
+  {
+    label: 'legacy-storage-nas',
+    source: '/บริการ/รับซื้อ-storage-nas',
+    destination: '/บริการ/รับซื้อ-nas',
   },
 ];
 
@@ -148,24 +149,17 @@ if (goproExactIndex === -1) {
   issues.push('legacy-gopro: exact unicode redirect rule is not the first redirect rule');
 }
 
-if (
-  redirects.some(
-    (rule) =>
-      rule.source.includes('gopro') &&
-      rule.source.startsWith('/%E0%B8'),
-  )
-) {
-  issues.push('legacy-gopro: encoded fallback rule still exists in vercel.json');
+if (redirects.some((rule) => rule.source.startsWith('/%E0%B8'))) {
+  issues.push('percent-encoded Thai fallback rule still exists in vercel.json');
 }
 
 if (
   redirects.some(
     (rule) =>
-      (rule.source.includes('gopro') || rule.destination.includes('gopro')) &&
       (rule.source.includes('à¸') || rule.destination.includes('à¸')),
   )
 ) {
-  issues.push('legacy-gopro: mojibake text found in gopro redirect rule');
+  issues.push('mojibake text found in redirect rule');
 }
 
 if (issues.length > 0) {
