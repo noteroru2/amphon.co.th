@@ -1,13 +1,5 @@
 export const FULL_REVIEW_PATHS = new Set([
   '/',
-  '/about',
-  '/contact',
-  '/บริการ/รับซื้อโน๊ตบุ๊ค',
-  '/บริการ/รับซื้อคอมพิวเตอร์',
-  '/บริการ/รับซื้อ-macbook',
-  '/บริการ/รับซื้อ-iphone',
-  '/บริการ/รับซื้อกล้อง',
-  '/บริการ/รับซื้ออุปกรณ์ไอที',
 ]);
 
 export function reviewTrustForPath(pathname: string): 'full' | 'compact' {

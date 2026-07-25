@@ -14,14 +14,21 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
     <div class="section-header section-header--left">
       <span class="eyebrow">เสียงจากผู้ใช้บริการ</span>
       <h2 id="google-reviews-heading">{heading}</h2>
-      <p>คะแนนและรีวิวต่อไปนี้ดึงจาก Google Maps เมื่อส่วนนี้ใกล้หน้าจอ</p>
+      <p>ข้อมูลมาจาก Google Maps และจะโหลดเมื่อคุณเลือกแสดงรีวิวเท่านั้น</p>
     </div>
 
-    <div class="google-reviews__status" data-reviews-status role="status" aria-live="polite">
-      <div class="google-reviews__skeleton" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </div>
-      <p>กำลังเตรียมข้อมูลรีวิว…</p>
+    <div class="google-reviews__ready" data-reviews-ready>
+      <button class="btn btn--primary" type="button" data-reviews-load>แสดงรีวิวล่าสุด</button>
+      {configuredMapsUrl && <a class="btn btn--outline" href={configuredMapsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>}
+      <p class="google-reviews__attribution">
+        ข้อมูลจาก
+        <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" width="92" height="30" alt="Google" loading="lazy" />
+        Maps
+      </p>
+    </div>
+
+    <div class="google-reviews__status" data-reviews-status role="status" aria-live="polite" hidden>
+      <p>กำลังโหลดรีวิวล่าสุดจาก Google Maps…</p>
     </div>
 
     <div class="google-reviews__content" data-reviews-content hidden>
@@ -174,10 +181,15 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
     const load = async () => {
       if (requested) return;
       requested = true;
+      const ready = section.querySelector<HTMLElement>('[data-reviews-ready]');
+      const button = section.querySelector<HTMLButtonElement>('[data-reviews-load]');
       const status = section.querySelector<HTMLElement>('[data-reviews-status]');
       const content = section.querySelector<HTMLElement>('[data-reviews-content]');
       const fallback = section.querySelector<HTMLElement>('[data-reviews-fallback]');
       requestController = new AbortController();
+      if (button) button.disabled = true;
+      if (ready) ready.hidden = true;
+      if (status) status.hidden = false;
       const abortOnPageHide = () => requestController?.abort();
       window.addEventListener('pagehide', abortOnPageHide, { once: true });
       try {
@@ -223,27 +235,19 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
       }
     };
 
-    if (!('IntersectionObserver' in window)) {
-      void load();
-      return;
-    }
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        observer.disconnect();
-        void load();
-      }
-    }, { rootMargin: '400px 0px' });
-    observer.observe(section);
+    section.querySelector<HTMLButtonElement>('[data-reviews-load]')
+      ?.addEventListener('click', () => void load(), { once: true });
   };
 
   document.querySelectorAll<HTMLElement>('[data-google-reviews]').forEach(initGoogleReviews);
 </script>
 
 <style>
-  .google-reviews { min-height: 34rem; }
-  .google-reviews__status { min-height: 16rem; }
-  .google-reviews__skeleton { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .google-reviews__skeleton span { min-height: 13rem; border-radius: .75rem; background: linear-gradient(90deg,#e5e7eb 25%,#f8fafc 50%,#e5e7eb 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; }
+  .google-reviews { min-height: 20rem; }
+  .google-reviews__ready { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; min-height: 7rem; }
+  .google-reviews__ready[hidden] { display: none; }
+  .google-reviews__ready .google-reviews__attribution { flex-basis: 100%; margin: .5rem 0 0; }
+  .google-reviews__status { min-height: 7rem; }
   .google-reviews__summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .google-reviews__summary > div { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
   .google-reviews__score { font-size: 2rem; }
@@ -260,16 +264,12 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
   .google-reviews__attribution img { width: 73px; height: auto; }
   .google-reviews__fallback { padding: 1.5rem; border: 1px solid #d1d5db; border-radius: .75rem; background: #fff; }
   .google-reviews a:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
-  @keyframes shimmer { to { background-position: -200% 0; } }
   @media (max-width: 900px) {
-    .google-reviews__grid, .google-reviews__skeleton { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .google-reviews__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   }
   @media (max-width: 600px) {
-    .google-reviews { min-height: 30rem; }
-    .google-reviews__grid, .google-reviews__skeleton { grid-template-columns: 1fr; }
-    .google-reviews__skeleton span:not(:first-child) { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .google-reviews__skeleton span { animation: none; }
+    .google-reviews { min-height: 18rem; }
+    .google-reviews__grid { grid-template-columns: 1fr; }
+    .google-reviews__ready .btn { width: 100%; text-align: center; }
   }
 </style>
