@@ -10,7 +10,12 @@ const titleMap = new Map();
 const h1Map = new Map();
 
 for (const [pathname, filePath] of builtPages.entries()) {
-  if (pathname.includes('/บริการ/รับซื้อ-gopro') || pathname.includes('/บริการ/รับซื้อ-hdd')) {
+  if (
+    pathname.includes('/บริการ/รับซื้อ-gopro') ||
+    pathname.includes('/บริการ/รับซื้อ-hdd') ||
+    pathname.includes('/บริการ/รับซื้อเลนส์') ||
+    pathname.includes('/บริการ/รับซื้อ-storage-nas')
+  ) {
     continue;
   }
   const html = readText(filePath);
