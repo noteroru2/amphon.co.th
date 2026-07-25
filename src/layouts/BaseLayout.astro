@@ -4,6 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
+import GoogleReviewsLink from '../components/GoogleReviewsLink.astro';
+import { reviewTrustForPath } from '../lib/review-trust';
 import { site } from '../config/site';
 import { absoluteUrl, seoTitle, buildPageGraph, resolveOgImage } from '../lib/seo';
 import type { BreadcrumbItem } from '../config/site';
@@ -43,6 +46,7 @@ const {
   geoPlace,
   containedBreadcrumbs = false,
 } = Astro.props;
+const reviewTrust = reviewTrustForPath(Astro.url.pathname);
 
 const pageTitle = seoTitle(title);
 const canonicalUrl = canonical ?? absoluteUrl(Astro.url.pathname);
@@ -125,6 +129,12 @@ const schemaGraph = buildPageGraph({
 
     <main id="main">
       <slot />
+      {reviewTrust === 'full' && <GoogleReviews />}
+      {reviewTrust === 'compact' && (
+        <div class="container">
+          <GoogleReviewsLink />
+        </div>
+      )}
     </main>
 
     <Footer />

@@ -1,0 +1,275 @@
+---
+import { configuredGoogleMapsUrl } from '../lib/google-maps';
+
+interface Props {
+  heading?: string;
+}
+
+const { heading = 'รีวิวบริษัท อำพล เทรดดิ้ง บน Google Maps' } = Astro.props;
+const configuredMapsUrl = configuredGoogleMapsUrl();
+---
+
+<section class="section section--gray google-reviews" data-google-reviews aria-labelledby="google-reviews-heading">
+  <div class="container">
+    <div class="section-header section-header--left">
+      <span class="eyebrow">เสียงจากผู้ใช้บริการ</span>
+      <h2 id="google-reviews-heading">{heading}</h2>
+      <p>คะแนนและรีวิวต่อไปนี้ดึงจาก Google Maps เมื่อส่วนนี้ใกล้หน้าจอ</p>
+    </div>
+
+    <div class="google-reviews__status" data-reviews-status role="status" aria-live="polite">
+      <div class="google-reviews__skeleton" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <p>กำลังเตรียมข้อมูลรีวิว…</p>
+    </div>
+
+    <div class="google-reviews__content" data-reviews-content hidden>
+      <header class="google-reviews__summary">
+        <div>
+          <strong class="google-reviews__score" data-rating></strong>
+          <span class="google-reviews__stars" data-summary-stars></span>
+          <span data-review-count></span>
+        </div>
+        <a data-all-reviews target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>
+      </header>
+      <div class="google-reviews__grid" data-reviews-grid></div>
+      <footer class="google-reviews__footer">
+        <p>แสดงเฉพาะรีวิวที่มีข้อความ จากชุดรีวิวที่ Google Maps ส่งมาตามลำดับความเกี่ยวข้อง</p>
+        <p class="google-reviews__attribution">
+          ข้อมูลจาก
+          <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" width="92" height="30" alt="Google" loading="lazy" />
+          Maps
+        </p>
+      </footer>
+    </div>
+
+    <div class="google-reviews__fallback" data-reviews-fallback hidden>
+      <p>ขณะนี้ยังโหลดรีวิวไม่ได้ กรุณาดูข้อมูลล่าสุดบน Google Maps</p>
+      {configuredMapsUrl && <a href={configuredMapsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps →</a>}
+    </div>
+
+    {configuredMapsUrl && <noscript>
+      <p class="google-reviews__fallback">
+        เปิดดูรีวิวล่าสุดได้ที่
+        <a href={configuredMapsUrl} target="_blank" rel="noopener noreferrer">Google Maps</a>
+      </p>
+    </noscript>}
+  </div>
+</section>
+
+<script>
+  type Review = {
+    authorName: string;
+    authorProfileUrl: string;
+    authorPhotoUrl: string;
+    rating: number | null;
+    text: string;
+    originalText: string;
+    relativeTime: string;
+    publishTime: string;
+    googleMapsUrl: string;
+    reportUrl: string;
+  };
+
+  type ReviewsPayload = {
+    rating: number | null;
+    reviewCount: number | null;
+    googleMapsUrl: string;
+    reviews: Review[];
+  };
+
+  const safeUrl = (value: unknown) => {
+    if (typeof value !== 'string') return '';
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' ? url.href : '';
+    } catch {
+      return '';
+    }
+  };
+
+  const externalLink = (label: string, href: unknown) => {
+    const url = safeUrl(href);
+    if (!url) return null;
+    const link = document.createElement('a');
+    link.textContent = label;
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    return link;
+  };
+
+  const stars = (rating: number | null) => {
+    const value = typeof rating === 'number' ? Math.max(0, Math.min(5, rating)) : 0;
+    const span = document.createElement('span');
+    span.className = 'review-card__stars';
+    span.setAttribute('aria-label', `${value} จาก 5 ดาว`);
+    span.textContent = '★'.repeat(Math.round(value)) + '☆'.repeat(5 - Math.round(value));
+    return span;
+  };
+
+  const renderReview = (review: Review) => {
+    const article = document.createElement('article');
+    article.className = 'review-card card';
+
+    const header = document.createElement('header');
+    header.className = 'review-card__header';
+    const photo = safeUrl(review.authorPhotoUrl);
+    if (photo) {
+      const image = document.createElement('img');
+      image.src = photo;
+      image.alt = '';
+      image.width = 48;
+      image.height = 48;
+      image.loading = 'lazy';
+      image.referrerPolicy = 'no-referrer';
+      header.append(image);
+    } else {
+      const avatar = document.createElement('span');
+      avatar.className = 'review-card__avatar';
+      avatar.setAttribute('aria-hidden', 'true');
+      avatar.textContent = (review.authorName || '?').trim().charAt(0) || '?';
+      header.append(avatar);
+    }
+    const author = document.createElement('strong');
+    const profile = externalLink(review.authorName || 'ผู้ใช้ Google Maps', review.authorProfileUrl);
+    author.append(profile ?? document.createTextNode(review.authorName || 'ผู้ใช้ Google Maps'));
+    header.append(author);
+    article.append(header, stars(review.rating));
+
+    if (review.text) {
+      const body = document.createElement('p');
+      body.className = 'review-card__text';
+      body.textContent = review.text;
+      article.append(body);
+    }
+
+    const footer = document.createElement('footer');
+    footer.className = 'review-card__footer';
+    if (review.publishTime) {
+      const time = document.createElement('time');
+      time.dateTime = review.publishTime;
+      time.textContent = review.relativeTime || new Date(review.publishTime).toLocaleDateString('th-TH', { year: 'numeric', month: 'long' });
+      footer.append(time);
+    } else if (review.relativeTime) {
+      const time = document.createElement('span');
+      time.textContent = review.relativeTime;
+      footer.append(time);
+    }
+    const original = externalLink('ดูรีวิวต้นฉบับ', review.googleMapsUrl);
+    const report = externalLink('รายงานเนื้อหา', review.reportUrl);
+    if (original) footer.append(original);
+    if (report) footer.append(report);
+    article.append(footer);
+    return article;
+  };
+
+  const initGoogleReviews = (section: HTMLElement) => {
+    if (section.dataset.initialized === 'true') return;
+    section.dataset.initialized = 'true';
+    let requested = false;
+    let requestController: AbortController | null = null;
+
+    const load = async () => {
+      if (requested) return;
+      requested = true;
+      const status = section.querySelector<HTMLElement>('[data-reviews-status]');
+      const content = section.querySelector<HTMLElement>('[data-reviews-content]');
+      const fallback = section.querySelector<HTMLElement>('[data-reviews-fallback]');
+      requestController = new AbortController();
+      const abortOnPageHide = () => requestController?.abort();
+      window.addEventListener('pagehide', abortOnPageHide, { once: true });
+      try {
+        const response = await fetch('/api/google-reviews', {
+          headers: { Accept: 'application/json' },
+          signal: requestController.signal,
+        });
+        if (!response.ok) throw new Error('Reviews unavailable');
+        const data = await response.json() as ReviewsPayload;
+        if (!data || !Array.isArray(data.reviews)) throw new Error('Invalid reviews');
+
+        const rating = section.querySelector<HTMLElement>('[data-rating]');
+        const summaryStars = section.querySelector<HTMLElement>('[data-summary-stars]');
+        const count = section.querySelector<HTMLElement>('[data-review-count]');
+        const allReviews = section.querySelector<HTMLAnchorElement>('[data-all-reviews]');
+        const grid = section.querySelector<HTMLElement>('[data-reviews-grid]');
+        if (rating) rating.textContent = data.rating === null ? 'ยังไม่มีคะแนน' : data.rating.toFixed(1);
+        if (summaryStars) summaryStars.replaceChildren(stars(data.rating));
+        if (count) count.textContent = data.reviewCount === null ? '' : `จาก ${data.reviewCount.toLocaleString('th-TH')} รีวิว`;
+        const mapsUrl = safeUrl(data.googleMapsUrl);
+        if (allReviews && mapsUrl) allReviews.href = mapsUrl;
+        else allReviews?.remove();
+        if (grid) {
+          grid.replaceChildren();
+          const textReviews = data.reviews.filter(
+            (review) => typeof review.text === 'string' && review.text.trim().length > 0,
+          );
+          textReviews.forEach((review) => grid.append(renderReview(review)));
+          if (textReviews.length === 0) {
+            const empty = document.createElement('p');
+            empty.textContent = 'Google Maps ยังไม่ได้ส่งรายการรีวิวมาในขณะนี้';
+            grid.append(empty);
+          }
+        }
+        if (status) status.hidden = true;
+        if (content) content.hidden = false;
+      } catch {
+        if (status) status.hidden = true;
+        if (fallback) fallback.hidden = false;
+      } finally {
+        window.removeEventListener('pagehide', abortOnPageHide);
+        requestController = null;
+      }
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      void load();
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        void load();
+      }
+    }, { rootMargin: '400px 0px' });
+    observer.observe(section);
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-google-reviews]').forEach(initGoogleReviews);
+</script>
+
+<style>
+  .google-reviews { min-height: 34rem; }
+  .google-reviews__status { min-height: 16rem; }
+  .google-reviews__skeleton { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .google-reviews__skeleton span { min-height: 13rem; border-radius: .75rem; background: linear-gradient(90deg,#e5e7eb 25%,#f8fafc 50%,#e5e7eb 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; }
+  .google-reviews__summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .google-reviews__summary > div { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+  .google-reviews__score { font-size: 2rem; }
+  .google-reviews__stars, .review-card__stars { color: #a54800; letter-spacing: .08em; }
+  .google-reviews__grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; }
+  .review-card { min-width: 0; }
+  .review-card__header { display: flex; align-items: center; gap: .75rem; }
+  .review-card__header img, .review-card__avatar { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 50%; }
+  .review-card__avatar { display: grid; place-items: center; color: #fff; background: var(--color-primary); font-weight: 700; }
+  .review-card__text { overflow-wrap: anywhere; white-space: pre-wrap; }
+  .review-card__footer { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: auto; font-size: .875rem; }
+  .google-reviews__footer { margin-top: 1.5rem; font-size: .875rem; color: var(--color-muted); }
+  .google-reviews__attribution { display: flex; align-items: center; gap: .35rem; }
+  .google-reviews__attribution img { width: 73px; height: auto; }
+  .google-reviews__fallback { padding: 1.5rem; border: 1px solid #d1d5db; border-radius: .75rem; background: #fff; }
+  .google-reviews a:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+  @keyframes shimmer { to { background-position: -200% 0; } }
+  @media (max-width: 900px) {
+    .google-reviews__grid, .google-reviews__skeleton { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 600px) {
+    .google-reviews { min-height: 30rem; }
+    .google-reviews__grid, .google-reviews__skeleton { grid-template-columns: 1fr; }
+    .google-reviews__skeleton span:not(:first-child) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .google-reviews__skeleton span { animation: none; }
+  }
+</style>

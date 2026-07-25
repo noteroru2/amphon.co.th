@@ -24,10 +24,13 @@
     "qa:coverage": "npm run qa:internal-404 && npm run qa:redirect-chain && npm run qa:sitemap && npm run qa:duplicate-headings && npm run qa:claim-risk",
     "check:seo": "npm run build && npm run validate:seo",
     "build:images": "node scripts/process-production-images.mjs && node scripts/generate-og-default.mjs && node scripts/generate-production-og.mjs && node scripts/generate-og-images.mjs",
-    "images:optimize": "node scripts/optimize-images.mjs"
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "find:google-place": "node scripts/find-google-place-id.mjs",
+    "test:google-reviews": "node --test src/lib/*.test.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/vercel": "^10.0.8",
     "@fontsource/sarabun": "^5.2.8",
     "astro": "^6.4.2"
   },
