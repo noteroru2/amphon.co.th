@@ -23,5 +23,5 @@ export function validateGoogleMapsUrl(value: unknown): string {
 }
 
 export function configuredGoogleMapsUrl(): string {
-  return validateGoogleMapsUrl(import.meta.env.PUBLIC_GOOGLE_MAPS_URL);
+  return validateGoogleMapsUrl(import.meta.env?.PUBLIC_GOOGLE_MAPS_URL);
 }
