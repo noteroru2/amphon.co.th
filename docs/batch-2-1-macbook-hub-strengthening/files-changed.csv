@@ -1,0 +1,19 @@
+File,Type,Change summary,In scope
+src/content/services/รับซื้อ-macbook.md,Content,Strengthened transactional metadata above-fold answer model/spec guidance model table Intel-vs-Apple-Silicon section and six-step process,Yes
+src/content/services/รับซื้อ-macbook-intel.md,Content,Added modifier-specific links to M1 and M2,Yes
+src/content/services/รับซื้อ-macbook-m1.md,Content,Added modifier-specific links to Air Pro and M2,Yes
+src/content/services/รับซื้อ-macbook-m2.md,Content,Added modifier-specific links to Air Pro M1 and M3/M4,Yes
+src/content/services/รับซื้อ-macbook-m3-m4.md,Content,Added modifier-specific links to Air Pro and M2,Yes
+src/content/services/รับซื้อ-macbook-เสีย.md,Content,Added condition-specific link to screen-damage page,Yes
+src/content/services/รับซื้อ-macbook-จอแตก.md,Content,Added condition-specific link to broken-unit page,Yes
+src/content/blog/ขาย-macbook-มือสอง-อย่างไรให้ได้ราคาดี.md,Content,Repositioned as informational seller-preparation guide with one Hub CTA,Yes
+src/content/blog/ราคา-macbook-มือสอง-2026.md,Content,Varied Hub anchor for price-research context,Yes
+src/content/blog/macbook-battery-cycle-มีผลต่อราคาขายแค่ไหน.md,Content,Varied Hub anchors for battery valuation context,Yes
+src/content/blog/macbook-ติด-apple-id-find-my-ก่อนขาย.md,Content,Varied Hub anchors for Find My and handoff context,Yes
+src/content/blog/วิธีล้างเครื่อง-macbook-ก่อนขาย.md,Content,Varied Hub anchors for preparation context,Yes
+docs/batch-2-1-macbook-hub-strengthening/batch-2-1-baseline.md,Report,Recorded source audit baseline scope GSC limitation and utility status,Yes
+docs/batch-2-1-macbook-hub-strengthening/page-query-map-after.csv,Report,Recorded post-change intent ownership map,Yes
+docs/batch-2-1-macbook-hub-strengthening/internal-links-before-after.csv,Report,Recorded Hub and child-link before/after mapping,Yes
+docs/batch-2-1-macbook-hub-strengthening/files-changed.csv,Report,Recorded Batch 2.1 file manifest,Yes
+docs/batch-2-1-macbook-hub-strengthening/qa-report.md,Report,Recorded automated and browser QA evidence,Yes
+docs/batch-2-1-macbook-hub-strengthening/final-report.md,Report,Recorded implementation summary risks and follow-up plan,Yes

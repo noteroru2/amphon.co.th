@@ -1,0 +1,15 @@
+Source page,Source type,Hub links before,Hub links after,Hub anchors before,Hub anchors after,Child-link occurrences before,Child-link occurrences after,Change
+/บริการ/รับซื้อ-macbook,Hub,0,0,,,11,11,Kept 8 unique MacBook child destinations and clarified model navigation
+/บริการ/รับซื้อ-macbook-air,Series,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,5,5,Already compliant; no source edit
+/บริการ/รับซื้อ-macbook-pro,Series,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,5,5,Already compliant; no source edit
+/บริการ/รับซื้อ-macbook-intel,Chip,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,0,2,Added M1 and M2 modifier links
+/บริการ/รับซื้อ-macbook-m1,Chip,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,0,3,Added Air Pro and M2 modifier links
+/บริการ/รับซื้อ-macbook-m2,Chip,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,0,4,Added Air Pro M1 and M3/M4 modifier links
+/บริการ/รับซื้อ-macbook-m3-m4,Chip,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,0,3,Added Air Pro and M2 modifier links
+/บริการ/รับซื้อ-macbook-เสีย,Condition,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,0,1,Added screen-damage modifier link
+/บริการ/รับซื้อ-macbook-จอแตก,Condition,1,1,รับซื้อ MacBook มือสอง,รับซื้อ MacBook มือสอง,0,1,Added broken-unit modifier link
+/blog/ขาย-macbook-มือสอง-อย่างไรให้ได้ราคาดี,Blog,1,1,รับซื้อ MacBook,ส่งรูปเช็กราคา MacBook มือสอง,0,0,Removed local-service link and kept one clear Hub CTA
+/blog/ราคา-macbook-มือสอง-2026,Blog,1,1,บริการรับซื้อ MacBook,เกณฑ์ส่งรูปเช็กราคา MacBook มือสอง,0,0,Varied anchor for price intent
+/blog/macbook-battery-cycle-มีผลต่อราคาขายแค่ไหน,Blog,2,2,รับซื้อ MacBook | รับซื้อ MacBook,ปัจจัยประเมิน MacBook มือสอง | หน้ารับประเมิน MacBook ตามรุ่นและสภาพ,0,0,Varied anchors for battery valuation intent
+/blog/macbook-ติด-apple-id-find-my-ก่อนขาย,Blog,2,2,รับซื้อ MacBook | รับซื้อ MacBook,เงื่อนไขก่อนส่งมอบ MacBook | หน้าหลักสำหรับขาย MacBook มือสอง,0,0,Varied anchors for lock and handoff intent
+/blog/วิธีล้างเครื่อง-macbook-ก่อนขาย,Blog,2,2,รับซื้อ MacBook | รับซื้อ MacBook,ขั้นตอนส่งรูป MacBook ประเมินเบื้องต้น | หน้ารับประเมิน MacBook Air และ Pro,0,0,Varied anchors for preparation intent
