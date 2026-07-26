@@ -4,7 +4,10 @@ import path from 'node:path';
 const SITE_ORIGIN = 'https://amphon.co.th';
 
 export const repoRoot = process.cwd();
-export const distDir = path.join(repoRoot, 'dist');
+export const buildDir = path.join(repoRoot, 'dist');
+export const distDir = fs.existsSync(path.join(buildDir, 'client'))
+  ? path.join(buildDir, 'client')
+  : buildDir;
 
 export function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));

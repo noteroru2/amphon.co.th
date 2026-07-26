@@ -91,7 +91,8 @@ const prepItems = [
   { icon: '📷', text: 'ถ่ายรูปสภาพก่อนมาเพื่อความรวดเร็ว' },
 ];
 
-const schemaExtras = [createFAQSchema(pageUrl, faqs)].filter(Boolean);
+const faqSchema = createFAQSchema(pageUrl, faqs);
+const schemaExtras = faqSchema ? [faqSchema] : [];
 ---
 
 <BaseLayout

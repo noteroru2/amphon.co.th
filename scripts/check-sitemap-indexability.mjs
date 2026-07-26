@@ -15,6 +15,10 @@ const sitemapFiles = walkFiles(distDir).filter((filePath) => path.basename(fileP
 
 const issues = [];
 
+if (sitemapFiles.length === 0) {
+  issues.push(`no sitemap XML files found under ${distDir}`);
+}
+
 for (const sitemapFile of sitemapFiles) {
   const xml = readText(sitemapFile);
   const locs = extractXmlLocs(xml).filter((loc) => !loc.endsWith('.xml'));

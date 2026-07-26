@@ -30,6 +30,7 @@ export default defineConfig({
         return (
           !pathname.includes('/404') &&
           !pathname.includes('/บริการ/รับซื้อสินค้าไอที') &&
+          pathname !== '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี' &&
           pathname !== '/บริการ/รับซื้อ-gopro' &&
           pathname !== '/บริการ/รับซื้อ-hdd' &&
           pathname !== '/บริการ/รับซื้อเลนส์' &&

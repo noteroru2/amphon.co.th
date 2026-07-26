@@ -1,0 +1,20 @@
+File,Category,Reason
+src/pages/วิธีการรับซื้อ.astro,Source fix,Narrow nullable FAQ schema before constructing schemaExtras
+astro.config.mjs,Sitemap config,Exclude one existing redirect source from generated sitemap
+scripts/lib/site-audit.mjs,QA script,Resolve Astro Vercel public output at dist/client
+scripts/check-sitemap-indexability.mjs,QA script,Fail when no sitemap XML files exist
+scripts/validate-seo.mjs,QA script,Use resolved public output root
+scripts/validate-batch-2-1-1.mjs,QA script,Validate 14 Batch 2.1 routes and SEO regression
+docs/batch-2-1-macbook-hub-strengthening/batch-2-1-page-query-map-after.csv,Contract report,Standard-name alias of original report
+docs/batch-2-1-macbook-hub-strengthening/batch-2-1-internal-links-before-after.csv,Contract report,Standard-name alias of original report
+docs/batch-2-1-macbook-hub-strengthening/batch-2-1-files-changed.csv,Contract report,Standard-name Batch 2.1 manifest
+docs/batch-2-1-macbook-hub-strengthening/batch-2-1-qa-report.md,Contract report,Post-recovery QA summary
+docs/batch-2-1-macbook-hub-strengthening/batch-2-1-final-report.md,Contract report,Post-recovery final summary
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-baseline.md,Recovery report,Repository and blocker baseline
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-astro-error-analysis.md,Recovery report,TS2322 root-cause evidence
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-build-crash-analysis.md,Recovery report,Native crash isolation evidence
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-sitemap-validation.csv,Recovery report,MacBook URL sitemap validation
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-commands-and-exit-codes.csv,Recovery report,Command-level QA evidence
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-files-changed.csv,Recovery report,Recovery change manifest
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-qa-report.md,Recovery report,Full QA results
+docs/batch-2-1-1-validation-recovery/batch-2-1-1-final-report.md,Recovery report,Final recovery verdict and readiness

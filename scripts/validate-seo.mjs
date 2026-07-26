@@ -4,10 +4,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distDir = path.join(__dirname, '..', 'dist');
+import { distDir } from './lib/site-audit.mjs';
 const siteUrl = 'https://amphon.co.th';
 const IN_LANGUAGE = 'th-TH';
 

@@ -1,0 +1,17 @@
+Check,Command,Environment,Exit code,Errors,Warnings,Verdict
+Repository baseline,git status --short and branch/SHA/log,Primary worktree,0,0,4 preserved untracked groups,PASS
+Astro check before,npx astro check,Primary worktree,1,1,46 hints,FAIL
+Astro sync after,npx astro sync,Primary worktree outside sandbox,0,0,0,PASS
+Astro check after,npx astro check,Primary worktree outside sandbox,0,0,46 hints,PASS
+Native build reproduction,node node_modules/astro/bin/astro.mjs build,Primary worktree Node 22.20.0,-1073740791,Native process termination,0,FAIL
+Alternate runtime reproduction,node node_modules/astro/bin/astro.mjs build,Primary worktree Node 24.14.0,-1073740791,Native process termination,0,FAIL
+Production build,npm run build,ASCII diagnostic worktree,0,0,0,PASS
+Sitemap files,PowerShell enumerate dist/client sitemap XML,ASCII diagnostic worktree,0,0,0,PASS
+Sitemap parse,PowerShell XML parse sitemap-index.xml and sitemap-0.xml,ASCII diagnostic worktree,0,0,0,PASS
+Sitemap validation,npm run qa:sitemap,ASCII diagnostic worktree,0,0,0,PASS
+MacBook regression,node scripts/validate-batch-2-1-1.mjs,ASCII diagnostic worktree,0,0,0,PASS
+Redirect validation,npm run qa:redirect-chain,ASCII diagnostic worktree,0,0,0,PASS
+Duplicate headings,npm run qa:duplicate-headings,ASCII diagnostic worktree,0,0,0,PASS
+Full-site internal links,npm run qa:internal-404,ASCII diagnostic worktree,1,17 pre-existing outside target routes,0,WARNING
+Full-site metadata and schema,npm run validate:seo,ASCII diagnostic worktree,1,1 pre-existing iPad H1 issue,0,WARNING
+Claim risk,npm run qa:claim-risk,ASCII diagnostic worktree,1,1 pre-existing out-of-scope match,0,WARNING
