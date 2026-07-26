@@ -46,4 +46,14 @@ test('full reviews are click-to-load and have no viewport-triggered request', ()
   assert.match(source, /addEventListener\('click'/);
   assert.doesNotMatch(source, /IntersectionObserver|rootMargin/);
   assert.equal((source.match(/fetch\('\/api\/google-reviews'/g) ?? []).length, 1);
+  assert.match(source, /if \(requested\) return;\s*requested = true;/);
+  assert.match(source, /\{ once: true \}/);
+  assert.doesNotMatch(source, /localStorage|sessionStorage|caches\.|indexedDB/);
+});
+
+test('review feature does not add rating or review schema', () => {
+  const layout = readFileSync(new URL('../layouts/BaseLayout.astro', import.meta.url), 'utf8');
+  const fullReviews = readFileSync(new URL('../components/GoogleReviews.astro', import.meta.url), 'utf8');
+  const compactReviews = readFileSync(new URL('../components/GoogleReviewsLink.astro', import.meta.url), 'utf8');
+  assert.doesNotMatch(`${layout}\n${fullReviews}\n${compactReviews}`, /aggregateRating|"@type"\s*:\s*"Review"/i);
 });
