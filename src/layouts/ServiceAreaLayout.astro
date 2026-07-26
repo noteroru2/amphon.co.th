@@ -4,6 +4,8 @@ import OptimizedImage from '../components/OptimizedImage.astro';
 import { getImageAlt } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import FAQ from '../components/FAQ.astro';
+import MacbookServiceAreaContent from '../components/MacbookServiceAreaContent.astro';
+import { getMacbookServiceAreaProfile } from '../config/macbook-service-areas';
 import {
   absoluteUrl,
   schemaIds,
@@ -25,7 +27,14 @@ interface Props {
 }
 
 const { entry, service, area } = Astro.props;
-const { title, description, slug, faqs, mainKeyword, ogImage, heroImage, date, updated } = entry.data;
+const { slug, mainKeyword, ogImage, heroImage, date, updated } = entry.data;
+const macbookProfile = entry.data.serviceSlug === 'รับซื้อ-macbook'
+  ? getMacbookServiceAreaProfile(slug)
+  : undefined;
+const title = macbookProfile?.title ?? entry.data.title;
+const h1 = macbookProfile?.h1 ?? entry.data.h1 ?? title;
+const description = macbookProfile?.description ?? entry.data.description;
+const faqs = macbookProfile?.faqs ?? entry.data.faqs;
 const { Content } = await render(entry);
 const serviceHref = getCanonicalServiceHref(service?.data.slug ?? entry.data.serviceSlug);
 
@@ -85,7 +94,7 @@ const steps = [
         <span class="tag tag--orange" style="margin-bottom:.875rem;">
           {area ? area.data.province : 'ภาคอีสาน'}
         </span>
-        <h1>{title}</h1>
+        <h1>{h1}</h1>
         <p class="page-header__desc">{description}</p>
         <div class="page-header__cta">
           <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
@@ -113,7 +122,7 @@ const steps = [
   <!-- Content + sidebar -->
   <div class="container content-layout">
     <article class="prose">
-      <Content />
+      {macbookProfile ? <MacbookServiceAreaContent profile={macbookProfile} /> : <Content />}
     </article>
 
     <aside class="sidebar">
