@@ -1,101 +1,89 @@
 # Google Places Reviews
 
-## 1. Architecture ใหม่
+## สถาปัตยกรรม
 
-หน้าแรกแสดงส่วน Live Reviews แบบ click-to-load เท่านั้น เมื่อผู้ใช้กด “แสดงรีวิวล่าสุด” browser จึงเรียก `/api/google-reviews` หนึ่งครั้ง endpoint ต้องผ่านตัวนับรายวันแบบ atomic ก่อนจึงจะเรียก Places API (New)
+หน้าแรก (`/`) แสดง Full Live Reviews แบบ click-to-load เท่านั้น เมื่อผู้ใช้กดปุ่ม “แสดงรีวิวล่าสุด” browser จึงเรียก `/api/google-reviews` หนึ่งครั้งต่อ page load และ endpoint เรียก Google Places API (New) โดยตรง
 
-หน้าอื่นทั้งหมดใช้ `GoogleReviewsLink` ซึ่งไม่เรียก API และไม่แสดงคะแนนหรือจำนวนรีวิวแบบ hard-coded
+หน้าอื่นทั้งหมด เช่น `/about`, `/contact`, หน้าบริการ, หน้าพื้นที่, บทความ และ programmatic SEO แสดงเฉพาะ Compact Trust Card (`GoogleReviewsLink`) ซึ่งไม่มี code เรียก reviews API
 
-## 2. Full Live Reviews เฉพาะหน้าแรก
+ระบบไม่มี application-level Redis/KV counter และไม่ต้องใช้ counter storage การควบคุมจำนวน request และค่าใช้จ่ายใช้ hard quota ของ Google Cloud
 
-`GoogleReviews` render เฉพาะ `/` ส่วน `/about`, `/contact`, หน้าบริการ, หน้าพื้นที่, บทความ และ programmatic SEO ใช้ Compact Trust Card พร้อมระบุว่าหน้าร้านหลักอยู่จังหวัดอุบลราชธานี
+## Click-to-load และ duplicate protection
 
-## 3. Click-to-load
+- การเปิดหน้า การเลื่อนหน้า และ viewport observer ไม่เรียก API
+- API เริ่มทำงานหลังผู้ใช้กดปุ่มเท่านั้น
+- flag ภายในหน้าและ click listener แบบ `once` ป้องกันการกดซ้ำหรือ request ซ้ำใน page load เดียวกัน
+- ไม่มี prefetch, build-time fetch หรือ background refresh
 
-- การเปิดหน้าและการเลื่อนหน้าไม่เรียก API
-- ผู้ใช้ต้องกดปุ่ม “แสดงรีวิวล่าสุด”
-- ปุ่มถูกปิดระหว่างโหลด และหนึ่ง page load เรียกได้สูงสุดหนึ่งครั้ง
-- response และข้อมูลรีวิวไม่ถูกบันทึกใน browser storage
+## Environment variables
 
-## 4. Application daily limit
-
-ระบบอนุญาต Google Places API สูงสุด 10 requests ต่อวัน ช่วงวันคือ 00:00–23:59 ตาม `Asia/Bangkok` request ลำดับ 1–10 ได้รับอนุญาต ส่วน request ถัดไปถูก block ก่อนออกไป Google
-
-## 5. Storage สำหรับ daily counter
-
-ใช้ Vercel KV หรือ Upstash Redis REST API ผ่าน Redis `EVAL` เพื่อทำ check-and-increment พร้อม expiry ใน operation เดียว จึง atomic ระหว่าง Vercel Function instances
-
-Storage เก็บเฉพาะ key วันที่แบบ `google-reviews:YYYY-MM-DD`, count และ TTL ไม่มีเนื้อหารีวิว คะแนน ชื่อผู้เขียน หรือ response จาก Google
-
-ถ้า storage ไม่ได้ตั้งค่าหรือใช้งานไม่ได้ ระบบ fail-closed และไม่เรียก Google
-
-## 6. Environment variables
-
-ตั้งใน Vercel สำหรับ Production/Preview ตามต้องการ แล้ว redeploy:
+ตั้งค่าใน Vercel สำหรับ environment ที่ใช้งาน:
 
 ```dotenv
 GOOGLE_PLACES_API_KEY=
 GOOGLE_PLACE_ID=
 PUBLIC_GOOGLE_MAPS_URL=
-KV_REST_API_URL=
-KV_REST_API_TOKEN=
 ```
 
-รองรับชื่อ `UPSTASH_REDIS_REST_URL` และ `UPSTASH_REDIS_REST_TOKEN` เป็น fallback ด้วย ห้ามเติมค่าจริงลง source และห้ามเปลี่ยน API key เป็นตัวแปร `PUBLIC_`
+`GOOGLE_PLACES_API_KEY` เป็น server-only secret ห้ามใช้ชื่อขึ้นต้นด้วย `PUBLIC_` ห้ามใส่ค่าจริงลง source, log หรือ response
 
-`PUBLIC_GOOGLE_MAPS_URL` ต้องเป็น HTTPS ของ Google Maps ที่ผ่าน allowlist
+`PUBLIC_GOOGLE_MAPS_URL` ต้องเป็น HTTPS Google Maps URL ที่ผ่าน allowlist เพื่อใช้เป็น fallback และลิงก์ไปยังรีวิวต้นฉบับ
 
-## 7. Google Cloud quota
+ระบบ Google Reviews ไม่ใช้ `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `UPSTASH_REDIS_REST_URL` หรือ `UPSTASH_REDIS_REST_TOKEN`
 
-ตั้ง quota เฉพาะ Places API (New) → GetPlaceRequest:
+## Google Cloud hard quota
 
-- Requests per day: **15**
-- Requests per minute: **2**
+ไปที่ Google Cloud Console แล้วตั้ง quota สำหรับ Places API (New) → `GetPlaceRequest`:
 
-Application limit คือ 10 ครั้ง/วัน ส่วนต่าง 5 ครั้งเป็น safety margin สำหรับ manual test หรือความผิดพลาด Google Cloud quota เป็นด่านสุดท้ายและต้องตั้งด้วยตนเอง
+- GetPlaceRequest per day = **15**
+- GetPlaceRequest per minute = **2**
 
-## 8. Budget Alert
+ที่ 15 requests ต่อวัน จำนวนสูงสุดเชิงทฤษฎีสำหรับเดือน 31 วันคือประมาณ **465 GetPlace requests ต่อเดือน** ซึ่งยังต่ำกว่า free usage cap **1,000 requests ต่อเดือน**
 
-ไปที่ Google Cloud Billing → Budgets & alerts สร้างงบและแจ้งเตือนหลายระดับ เช่น 50%, 80%, 100% โปรดทราบว่า Budget Alert แจ้งเตือนเท่านั้น ไม่หยุดค่าใช้จ่าย
+ตัวเลขนี้ใช้ได้เมื่อ API key/project นี้ไม่ได้มี traffic อื่น หาก API Key หรือ Google Cloud project ถูกใช้กับระบบอื่น ต้องนำ usage ทั้งหมดมาคำนวณรวม เพราะ quota และ billing อาจนับร่วมกัน
 
-## 9. Cache policy
+Google Cloud quota เป็นตัวจำกัดการใช้งานจริง ส่วน Budget Alert เป็นเพียงระบบแจ้งเตือนและไม่หยุดค่าใช้จ่าย ควรตั้ง alert หลายระดับ เช่น 50%, 80% และ 100%
 
-ทุก response ของ `/api/google-reviews` ใช้:
+## Endpoint และ error handling
+
+`/api/google-reviews`:
+
+- เรียก Google Places API ได้โดยไม่ขึ้นกับ Redis/KV หรือ storage อื่น
+- คง timeout และแปลง network/upstream errors เป็น response ที่ปลอดภัย
+- กรณี quota exceeded แสดงข้อความสุภาพและไม่ส่ง upstream error body เต็มไป browser
+- กรณี Google error, quota exceeded, timeout หรือ missing configuration ส่ง Google Maps fallback URL เมื่อมีการตั้งค่า
+- ไม่พิมพ์ API key ลง log และไม่ส่ง API key ไป browser
+
+ทุก response ใช้:
 
 ```http
 Cache-Control: no-store, max-age=0
 ```
 
-ไม่มี `s-maxage`, `stale-while-revalidate`, CDN cache, server review cache, browser cache, static snapshot หรือ build-time fetch
+## นโยบายไม่ cache รีวิว
 
-## 10. ทำไมไม่ cache รีวิว
+ระบบไม่ cache หรือบันทึก review content ใน CDN, server storage, Redis/KV, browser cache, Local Storage, Session Storage, IndexedDB, static file หรือ build artifact การควบคุมค่าใช้จ่ายอาศัย click-to-load และ Google Cloud hard quota ไม่ใช่การเก็บสำเนารีวิว
 
-Places API จำกัดการ pre-fetch, cache และจัดเก็บ Places content นอกข้อยกเว้นที่ Google ระบุ ระบบนี้จึงควบคุมต้นทุนด้วย click-to-load และตัวนับ metadata แทนการเก็บรีวิว
+## SEO และ schema
 
-## 11. Fallback เมื่อครบ daily limit
+ข้อมูลรีวิวเป็น client-loaded content เท่านั้น ไม่มีการเพิ่ม `aggregateRating`, `Review` schema หรือ JSON-LD จากข้อมูลรีวิว การแก้ระบบนี้ต้องไม่เปลี่ยน metadata, canonical, sitemap หรือ structured data เดิม
 
-endpoint ตอบ `429`, `Retry-After`, `Cache-Control: no-store` และ Google Maps URL ที่ตรวจสอบแล้ว หน้าเว็บแสดงข้อความสุภาพพร้อมลิงก์ไปดูรีวิวบน Google Maps โดยไม่แสดงคะแนนปลอมและไม่เปิดเผยจำนวน request ที่ใช้ไป
-
-## 12. ทดสอบโดยไม่ใช้ API จริง
+## การทดสอบ
 
 ```bash
 npm run test:google-reviews
+npx astro check
+npm run build
+npm run validate:seo
 ```
 
-Automated tests ใช้ mock Google fetch และ mock counter storage ห้ามใช้ credential จริง
+Automated tests ใช้ mock เท่านั้น ไม่เรียก Google API จริง และตรวจว่า:
 
-## 13. ตรวจว่า key ไม่รั่ว
-
-ค้นหา source และ `dist/client` หลัง build โดยตรวจว่าไม่มีค่าจริงของ API key ห้ามพิมพ์ key ใน log, report หรือ browser response
-
-## 14. Reset counter กรณีฉุกเฉิน
-
-ลบเฉพาะ Redis key ของวันปัจจุบัน เช่น `google-reviews:2026-07-25` ผ่าน console ของ storage ห้ามลบ key อื่น และควรทำเฉพาะเมื่อเข้าใจว่าจะเปิดโควตา application ใหม่ในวันนั้น
-
-## 15. Timezone
-
-การสร้าง date key, expiry และ `Retry-After` อ้างอิง `Asia/Bangkok` โดยวันใหม่เริ่มเวลาเที่ยงคืนประเทศไทย
-
-## 16. หน้าอื่นไม่ทำให้เกิด Places API request
-
-หน้าอื่น render เฉพาะ `GoogleReviewsLink` ไม่มี client script ที่ fetch `/api/google-reviews` ดังนั้นการเข้าชมหน้าเหล่านั้นไม่ใช้โควตา Places API
+- endpoint ไม่ต้องมี counter storage หรือ Redis/KV env
+- หน้าแรกไม่ request ก่อนคลิก และ request ได้ครั้งเดียวหลังคลิก
+- การกดซ้ำไม่เพิ่ม request
+- quota/error/timeout มี Google Maps fallback
+- response ทุกกรณีเป็น no-store
+- ไม่มี review caching
+- หน้าอื่นไม่เรียก API
+- ไม่มี rating/review schema เพิ่มขึ้น
