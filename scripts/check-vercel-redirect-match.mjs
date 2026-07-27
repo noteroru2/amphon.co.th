@@ -70,6 +70,8 @@ const cases = [
   {
     label: 'legacy-gopro',
     source: '/บริการ/รับซื้อ-gopro',
+    encodedSource:
+      '/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro',
     destination: '/บริการ/รับซื้อ-gopro-action-camera',
   },
   {
@@ -80,6 +82,8 @@ const cases = [
   {
     label: 'legacy-hdd',
     source: '/บริการ/รับซื้อ-hdd',
+    encodedSource:
+      '/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd',
     destination: '/บริการ/รับซื้อ-ssd',
   },
   {
@@ -142,10 +146,6 @@ if (goproExactIndex === -1) {
   issues.push('legacy-gopro: exact unicode redirect rule is missing');
 } else if (goproExactIndex !== 0) {
   issues.push('legacy-gopro: exact unicode redirect rule is not the first redirect rule');
-}
-
-if (redirects.some((rule) => rule.source.startsWith('/%E0%B8'))) {
-  issues.push('percent-encoded Thai fallback rule still exists in vercel.json');
 }
 
 if (
