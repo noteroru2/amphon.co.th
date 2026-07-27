@@ -1,4 +1,6 @@
 import { loadRedirects, resolveRedirectChain } from './lib/site-audit.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const redirects = loadRedirects();
 const samplePaths = [
@@ -41,6 +43,30 @@ const samplePaths = [
 ];
 
 const issues = [];
+
+const buildOutput = path.join(process.cwd(), 'dist', 'client');
+const legacyStaticRoutes = [
+  {
+    source: '/บริการ/รับซื้อ-gopro',
+    staticFile: path.join(buildOutput, 'บริการ', 'รับซื้อ-gopro', 'index.html'),
+    finalFile: path.join(buildOutput, 'บริการ', 'รับซื้อ-gopro-action-camera', 'index.html'),
+  },
+  {
+    source: '/บริการ/รับซื้อ-hdd',
+    staticFile: path.join(buildOutput, 'บริการ', 'รับซื้อ-hdd', 'index.html'),
+    finalFile: path.join(buildOutput, 'บริการ', 'รับซื้อ-ssd', 'index.html'),
+  },
+];
+
+for (const route of legacyStaticRoutes) {
+  if (fs.existsSync(route.staticFile)) {
+    issues.push(`legacy redirect source is still emitted as static HTML: ${route.source}`);
+  }
+
+  if (!fs.existsSync(route.finalFile)) {
+    issues.push(`final redirect destination is missing from build output: ${route.finalFile}`);
+  }
+}
 
 for (const sample of samplePaths) {
   const result = resolveRedirectChain(sample.source, redirects);
