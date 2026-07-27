@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-07-27T08:07:27.304Z",
+  "sitemapIndexStatus": 200,
+  "sitemapFiles": 1,
+  "sitemapUrlCount": 1183,
+  "uniqueSitemapUrlCount": 1183,
+  "duplicateCount": 0,
+  "sitemapFailures": 0,
+  "requiredHubsPresent": true,
+  "legacyUrlsExcluded": true,
+  "internalLinkTargetCount": 1185,
+  "internalLinkFailures": 0,
+  "sampledRouteCount": 27,
+  "sampledRouteFailures": 2,
+  "samplePaths": 23,
+  "legacyRedirects": [
+    {
+      "path": "/บริการ/รับซื้อ-gopro",
+      "status": 200,
+      "hops": 0,
+      "finalUrl": "https://amphon.co.th/บริการ/รับซื้อ-gopro",
+      "expectedUrl": "https://amphon.co.th/บริการ/รับซื้อ-gopro-action-camera",
+      "pass": false
+    },
+    {
+      "path": "/บริการ/รับซื้อเลนส์",
+      "status": 200,
+      "hops": 1,
+      "finalUrl": "https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%AD%E0%B8%87",
+      "expectedUrl": "https://amphon.co.th/บริการ/รับซื้อเลนส์กล้อง",
+      "pass": true
+    },
+    {
+      "path": "/บริการ/รับซื้อ-hdd",
+      "status": 200,
+      "hops": 0,
+      "finalUrl": "https://amphon.co.th/บริการ/รับซื้อ-hdd",
+      "expectedUrl": "https://amphon.co.th/บริการ/รับซื้อ-ssd",
+      "pass": false
+    },
+    {
+      "path": "/บริการ/รับซื้อ-storage-nas",
+      "status": 200,
+      "hops": 1,
+      "finalUrl": "https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-nas",
+      "expectedUrl": "https://amphon.co.th/บริการ/รับซื้อ-nas",
+      "pass": true
+    }
+  ],
+  "forbiddenOldCameraLinks": 0,
+  "forbiddenOldComputerLinks": 0
+}

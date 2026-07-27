@@ -1,0 +1,7 @@
+file,change,reason
+src/pages/บริการ/รับซื้อ-gopro.astro,deleted,"stop generating legacy static 200 page"
+src/pages/บริการ/รับซื้อ-hdd.astro,deleted,"stop generating legacy static 200 page"
+vercel.json,modified,"add encoded exact-source fallbacks for Vercel Thai path matching"
+scripts/check-legacy-redirect-runtime.mjs,added,"verify production HTTP behavior canonical and sitemap"
+scripts/check-redirect-chains.mjs,modified,"reject legacy static build output and require final pages"
+scripts/check-vercel-redirect-match.mjs,modified,"require Unicode and encoded source variants and rule order"

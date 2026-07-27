@@ -1,0 +1,5 @@
+url,status,location,cache_control,redirect_count,final_status,final_url,canonical,sitemap,result
+/บริการ/รับซื้อ-gopro,308,/บริการ/รับซื้อ-gopro-action-camera,"public, max-age=0, must-revalidate",1,200,/บริการ/รับซื้อ-gopro-action-camera,/บริการ/รับซื้อ-gopro-action-camera,"legacy absent; final present",PASS
+/บริการ/รับซื้อ-gopro/,308,/บริการ/รับซื้อ-gopro,2,200,/บริการ/รับซื้อ-gopro-action-camera,/บริการ/รับซื้อ-gopro-action-camera,"legacy absent; final present",PASS
+/บริการ/รับซื้อ-hdd,308,/บริการ/รับซื้อ-ssd,"public, max-age=0, must-revalidate",1,200,/บริการ/รับซื้อ-ssd,/บริการ/รับซื้อ-ssd,"legacy absent; final present",PASS
+/บริการ/รับซื้อ-hdd/,308,/บริการ/รับซื้อ-hdd,2,200,/บริการ/รับซื้อ-ssd,/บริการ/รับซื้อ-ssd,"legacy absent; final present",PASS

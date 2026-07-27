@@ -1,0 +1,5 @@
+url,expected_status,actual_status,location,redirect_count,final_status,result,method
+/บริการ/รับซื้อ-gopro,308,308,/บริการ/รับซื้อ-gopro-action-camera,1,200,PASS,"local deployment-layer simulator plus vercel.json matcher"
+/บริการ/รับซื้อ-gopro/,308,308,/บริการ/รับซื้อ-gopro-action-camera,2,200,PASS,"global trailing-slash normalization then legacy redirect"
+/บริการ/รับซื้อ-hdd,308,308,/บริการ/รับซื้อ-ssd,1,200,PASS,"local deployment-layer simulator plus vercel.json matcher"
+/บริการ/รับซื้อ-hdd/,308,308,/บริการ/รับซื้อ-ssd,2,200,PASS,"global trailing-slash normalization then legacy redirect"
