@@ -5,43 +5,98 @@ import ServiceCard from '../components/ServiceCard.astro';
 import ProvinceGrid from '../components/ProvinceGrid.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
-import RescueLinkGroups from '../components/RescueLinkGroups.astro';
 import { categoryImages, serviceThumbnails, imageAlt } from '../config/images';
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema } from '../lib/seo';
-import { buildSeoRescueGroups } from '../config/seo-rescue';
 
 const allServices = (await getCollection('services', ({ data }) => !data.draft))
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
-const services = allServices.slice(0, 8);
-const rescueGroups = buildSeoRescueGroups(allServices);
+const popularServiceConfig = [
+  {
+    slug: 'รับซื้อแรม',
+    title: 'รับซื้อ RAM',
+    description:
+      'RAM สำหรับ Desktop, Notebook และ Server ทั้ง DDR3, DDR4 และ DDR5 ส่งรูปสติกเกอร์สเปก ความจุ และจำนวนแผงเพื่อประเมินราคาเบื้องต้นได้',
+  },
+  {
+    slug: 'รับซื้อโน๊ตบุ๊ค',
+    title: 'รับซื้อโน๊ตบุ๊ค',
+    description:
+      'โน๊ตบุ๊คสำหรับเรียน ทำงาน Gaming และเครื่องบริษัท ส่งรูป รุ่น สเปก แบตเตอรี่ อุปกรณ์ และตำหนิให้ทีมงานตรวจข้อมูลก่อนตัดสินใจขายได้',
+  },
+  {
+    slug: 'รับซื้อโทรศัพท์มือสอง',
+    title: 'รับซื้อโทรศัพท์',
+    description:
+      'โทรศัพท์ iPhone และ Android หลายยี่ห้อ ประเมินจากรุ่น ความจุ สภาพหน้าจอ ตัวเครื่อง อุปกรณ์ และการออกจากบัญชีผู้ใช้เรียบร้อยแล้ว',
+  },
+  {
+    slug: 'รับซื้อ-ipad',
+    title: 'รับซื้อ iPad',
+    description:
+      'iPad, iPad Air, iPad mini และ iPad Pro หลายรุ่น ส่งรูปหน้าเครื่อง รุ่น ความจุ สภาพ และอุปกรณ์เสริมเพื่อประเมินเบื้องต้นได้',
+  },
+  {
+    slug: 'รับซื้อ-macbook',
+    title: 'รับซื้อ MacBook',
+    description:
+      'MacBook Air และ MacBook Pro ทั้ง Intel และ Apple silicon ส่งรูป About This Mac, Battery Cycle และสภาพเครื่องเพื่อประกอบการประเมิน',
+  },
+  {
+    slug: 'รับซื้อกล้อง',
+    title: 'รับซื้อกล้อง',
+    description:
+      'กล้อง Mirrorless, DSLR และอุปกรณ์ถ่ายภาพ ส่งรุ่น รูปตัวกล้อง สภาพเซนเซอร์ จำนวนชัตเตอร์ เลนส์ และอุปกรณ์ที่มีเพื่อประเมินเบื้องต้น',
+  },
+] as const;
 
-const homepageServiceCardCopy: Record<string, { title: string; description: string; imageAlt?: string }> = {
-  'รับซื้อ-ipad-pro': {
-    title: 'รับซื้อ iPad Pro มือสอง หลายรุ่น M1 M2 M4',
-    description:
-      'รับซื้อ iPad Pro มือสอง หลายขนาด ชิป M1 M2 M4 รุ่น Wi-Fi และ Cellular ส่งรูปเช็กราคาได้ ประเมินตามรุ่น สภาพ และอุปกรณ์',
+const popularServices = popularServiceConfig.map((item) => {
+  const service = allServices.find((entry) => entry.data.slug === item.slug);
+  if (!service) throw new Error(`Missing homepage service route: ${item.slug}`);
+  return { ...item, service };
+});
+
+const allAreas = await getCollection('areas', ({ data }) => !data.draft);
+const priorityAreaConfig = [
+  {
+    slug: 'อุบลราชธานี',
+    title: 'รับซื้อสินค้าไอที อุบลราชธานี',
+    description: 'ที่ตั้งหน้าร้านหลัก ลูกค้าใกล้เคียงนำสินค้าเข้าร้านได้ และควรส่งรูปนัดหมายก่อนเข้ารับบริการ',
   },
-  'รับซื้อคอมสำนักงาน': {
-    title: 'รับซื้อคอมสำนักงาน คอมพิวเตอร์ออฟฟิศหลายเครื่อง',
-    description:
-      'รับซื้อคอมสำนักงาน PC ออฟฟิศแบรนด์เนม Dell, HP, Lenovo รวมจอคอม Printer และ UPS ส่งรูปหรือ Inventory List ประเมินเบื้องต้นได้',
+  {
+    slug: 'บุรีรัมย์',
+    title: 'รับซื้อสินค้าไอที บุรีรัมย์',
+    description: 'ส่งรูป รุ่น สเปก สภาพ และพื้นที่เพื่อประเมินเบื้องต้น ก่อนยืนยันวัน เวลา และจุดนัดรับ',
   },
-  'รับซื้อโน๊ตบุ๊ค': {
-    title: 'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามสภาพจริง',
-    description:
-      'รับซื้อโน๊ตบุ๊คมือสองหลายแบรนด์ ทั้งเครื่องใช้งานได้ เครื่องมีตำหนิ เกมมิ่ง และโน๊ตบุ๊คบริษัท ส่งรูปเช็กราคาได้',
-    imageAlt: 'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามสเปกและสภาพจริง อำพล เทรดดิ้ง',
+  {
+    slug: 'กาฬสินธุ์',
+    title: 'รับซื้อสินค้าไอที กาฬสินธุ์',
+    description: 'มีบริการนัดรับตามตารางงาน หลังประเมินข้อมูลสินค้าและตกลงรายละเอียดกับทีมงานล่วงหน้า',
   },
-  'รับซื้อ-ipad-air': {
-    title: 'รับซื้อ iPad Air มือสอง M1 M2 M3 หลายความจุ',
-    description:
-      'รับซื้อ iPad Air 4, Air 5 (M1), Air M2 และ Air M3 ส่งรูปและสภาพเครื่อง ประเมินราคาเบื้องต้นจากรูปได้',
-    imageAlt: 'รับซื้อ iPad Air มือสอง ประเมินตามรุ่น สภาพ และอุปกรณ์ อำพล เทรดดิ้ง',
+  {
+    slug: 'อุดรธานี',
+    title: 'รับซื้อสินค้าไอที อุดรธานี',
+    description: 'รองรับการส่งรูปประเมินก่อน แล้วเลือกนัดตรวจสินค้าหรือจัดส่งตามเงื่อนไขที่ยืนยันร่วมกัน',
   },
-};
-const areas    = (await getCollection('areas',    ({ data }) => !data.draft)).slice(0, 8);
+  {
+    slug: 'ขอนแก่น',
+    title: 'รับซื้อคอม ขอนแก่น',
+    description: 'ส่งสเปก จำนวน รูปสินค้า และตำหนิเพื่อประเมินราคาเบื้องต้น ก่อนนัดตรวจและยืนยันราคาจริง',
+  },
+  {
+    slug: 'นครราชสีมา',
+    title: 'รับซื้อสินค้าไอที นครราชสีมา',
+    description: 'สอบถามรอบนัดรับได้ตามประเภทสินค้า จำนวน และพื้นที่ โดยทีมงานจะยืนยันรายละเอียดก่อนนัดหมาย',
+  },
+] as const;
+
+const priorityAreas = priorityAreaConfig.map((item) => {
+  const area = allAreas.find((entry) => entry.data.slug === item.slug);
+  if (!area) throw new Error(`Missing homepage province route: ${item.slug}`);
+  return { ...item, area };
+});
+
 const posts    = (await getCollection('blog',     ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
@@ -49,10 +104,10 @@ const posts    = (await getCollection('blog',     ({ data }) => !data.draft))
 const breadcrumbs = [{ label: 'หน้าแรก' }];
 const pageUrl = absoluteUrl('/');
 
-const serviceItems = services.map((s) => ({
-  name: s.data.title,
-  url: absoluteUrl(`/บริการ/${s.data.slug}`),
-  description: s.data.description,
+const serviceItems = popularServices.map(({ service, title, description }) => ({
+  name: title,
+  url: absoluteUrl(`/บริการ/${service.data.slug}`),
+  description,
 }));
 
 const schemaExtras = [
@@ -60,10 +115,10 @@ const schemaExtras = [
   createItemListSchema({
     pageUrl,
     name: 'พื้นที่ที่สะดวกสำหรับนัดรับและเข้าร้าน',
-    items: areas.map((a) => ({
-      name: a.data.title,
-      url: absoluteUrl(`/พื้นที่ให้บริการ/${a.data.slug}`),
-      description: a.data.description,
+    items: priorityAreas.map(({ area, title, description }) => ({
+      name: title,
+      url: absoluteUrl(`/พื้นที่ให้บริการ/${area.data.slug}`),
+      description,
     })),
   }),
 ];
@@ -190,7 +245,7 @@ const trustItems = [
 
 <BaseLayout
   title="รับซื้อสินค้าไอทีมือสองทั่วประเทศ | AMPHON TRADING"
-  description="รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ RAM iPhone iPad MacBook และสินค้าไอทีมือสอง ส่งรูปเช็กราคาได้ มีหน้าร้านจริงที่อุบลราชธานี รองรับลูกค้าทั่วประเทศ"
+  description="อำพล เทรดดิ้ง รับซื้อสินค้าไอทีมือสอง ทั้งโน๊ตบุ๊ค โทรศัพท์ iPad MacBook RAM คอมพิวเตอร์และกล้อง ส่งรูปประเมินฟรี หน้าร้านอยู่อุบลราชธานี พร้อมนัดรับหรือจัดส่งตามพื้นที่"
   canonical={pageUrl}
   ogImage="/images/og/og-home.webp"
   breadcrumbs={breadcrumbs}
@@ -322,23 +377,23 @@ const trustItems = [
       <div class="steps">
         <div class="step">
           <span class="step__number">1</span>
-          <h3 class="step__title">ส่งรูปหรือรายการสินค้า</h3>
-          <p class="step__desc">ถ่ายรูปสินค้า ระบุรุ่น สภาพ และอุปกรณ์ที่มีมาด้วย หรือส่ง Inventory List ผ่าน LINE @webuy</p>
+          <h3 class="step__title">ส่งรูป รุ่น และสเปก</h3>
+          <p class="step__desc">แจ้งประเภทสินค้า รุ่น สเปก สภาพ ตำหนิ อุปกรณ์ จำนวน และพื้นที่ พร้อมส่งรูปหรือ Inventory List ทาง LINE @webuy</p>
         </div>
         <div class="step">
           <span class="step__number">2</span>
-          <h3 class="step__title">ประเมินราคาเบื้องต้น</h3>
-          <p class="step__desc">ทีมงานตรวจสเปกและแจ้งราคาเบื้องต้นหลังได้รับข้อมูลครบในช่วงเวลาทำการ ไม่มีค่าใช้จ่าย</p>
+          <h3 class="step__title">รับราคาเบื้องต้น</h3>
+          <p class="step__desc">ทีมงานประเมินช่วงราคาจากข้อมูลที่ได้รับ ราคาจากรูปเป็นราคาเบื้องต้น และไม่มีข้อผูกมัดว่าต้องขาย</p>
         </div>
         <div class="step">
           <span class="step__number">3</span>
-          <h3 class="step__title">นัดตรวจเช็ก / จัดส่ง / เข้าร้าน</h3>
-          <p class="step__desc">เลือกวิธีที่เหมาะสมตามประเภทสินค้า จำนวน และพื้นที่ — เข้าร้านที่อุบลราชธานี นัดรับ หรือจัดส่งตามที่ตกลง</p>
+          <h3 class="step__title">เลือกนัดรับหรือจัดส่ง</h3>
+          <p class="step__desc">เข้าร้านหลักที่อุบลราชธานี นัดทีมงานในพื้นที่บริการตามตาราง หรือจัดส่งตามเงื่อนไขที่ยืนยันก่อนส่งสินค้า</p>
         </div>
         <div class="step">
           <span class="step__number">4</span>
-          <h3 class="step__title">ตรวจสอบและจ่ายเงิน</h3>
-          <p class="step__desc">ตรวจสภาพเครื่องจริง และชำระเงินหลังตรวจสอบสินค้าและตกลงราคา</p>
+          <h3 class="step__title">ตรวจสินค้า ยืนยันราคา และรับเงิน</h3>
+          <p class="step__desc">ราคาสุดท้ายยืนยันหลังตรวจสินค้าจริง หากผู้ขายตกลงจึงชำระเงินตามวิธีที่ตกลงร่วมกัน</p>
         </div>
       </div>
     </div>
@@ -349,23 +404,20 @@ const trustItems = [
     <div class="container">
       <div class="section-header section-header--left">
         <span class="eyebrow">บริการรับซื้อ</span>
-        <h2>บริการรับซื้อยอดนิยม</h2>
-        <p>รับซื้อสินค้าไอทีมือสองหลายชนิดจากลูกค้าทั่วประเทศ ส่งรูปเช็กราคาได้ ประเมินตามสภาพจริง</p>
+        <h2>บริการรับซื้อสินค้าไอทีที่มีคนค้นหามาก</h2>
+        <p>เลือกหน้าบริการหลักให้ตรงกับสินค้าที่ต้องการขาย เพื่อดูข้อมูลที่ต้องส่งและปัจจัยประเมินของสินค้าแต่ละประเภท</p>
       </div>
       <div class="grid grid--2">
-        {services.slice(0, 4).map((service) => {
-          const cardCopy = homepageServiceCardCopy[service.data.slug];
-          return (
+        {popularServices.map(({ service, title, description }) => (
           <ServiceCard
-            title={cardCopy?.title ?? service.data.title}
-            description={cardCopy?.description ?? service.data.description}
+            title={title}
+            description={description}
             href={`/บริการ/${service.data.slug}`}
             keyword={service.data.mainKeyword}
             image={service.data.heroImage || serviceThumbnails[service.data.slug]}
-            imageAlt={cardCopy?.imageAlt}
+            imageAlt={`${title} ส่งรูปประเมินเบื้องต้นกับอำพล เทรดดิ้ง`}
           />
-          );
-        })}
+        ))}
       </div>
       <p class="text-center mt-6">
         <a href="/รับซื้อสินค้าไอที" class="btn btn--primary">ดูบริการทั้งหมด →</a>
@@ -477,14 +529,14 @@ const trustItems = [
     <div class="container">
       <div class="section-header section-header--left">
         <span class="eyebrow">พื้นที่ให้บริการ</span>
-        <h2>พื้นที่ที่สะดวกสำหรับนัดรับและเข้าร้าน</h2>
-        <p>มีหน้าร้านที่อุบลราชธานี ลูกค้าใกล้เคียงนำสินค้าเข้าร้านได้ การนัดรับหรือประสานขนส่งขึ้นอยู่กับประเภทสินค้า จำนวน และพื้นที่</p>
+        <h2>หน้าร้านหลักและจังหวัดที่มีบริการนัดรับ</h2>
+        <p>อำพล เทรดดิ้งมีหน้าร้านหลักแห่งเดียวที่จังหวัดอุบลราชธานี ลูกค้าต่างจังหวัดส่งรูปประเมินก่อน แล้วนัดทีมงานเข้าตรวจและจ่ายเงินหน้างานตามวัน เวลา และพื้นที่ที่ตกลง หรือเลือกจัดส่งตามเงื่อนไขที่ยืนยันก่อนส่งสินค้า</p>
       </div>
       <ProvinceGrid
-        provinces={areas.map((area) => ({
-          title: area.data.title,
+        provinces={priorityAreas.map(({ area, title, description }) => ({
+          title,
           slug: area.data.slug,
-          description: area.data.description,
+          description,
         }))}
       />
       <p class="text-center mt-6">
@@ -521,13 +573,6 @@ const trustItems = [
       </div>
     </section>
   )}
-
-  <RescueLinkGroups
-    eyebrow="ลิงก์ช่วยจัดอันดับ"
-    title="รวมลิงก์ไปหน้าบริการที่ควรให้ Google เจอชัดขึ้น"
-    description="ใช้ส่วนนี้เป็น internal-link hub จากหน้าแรกไปยังหน้าบริการหลักและหน้ารุ่นย่อยที่ยังควรเก็บ index เพื่อช่วยกระจายน้ำหนักลิงก์และลดสถานะ discovered หรือ crawled but not indexed."
-    groups={rescueGroups}
-  />
 
   <!-- ====== FAQ ====== -->
   <section class="section">

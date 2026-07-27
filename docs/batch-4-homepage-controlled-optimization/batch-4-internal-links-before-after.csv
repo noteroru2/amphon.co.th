@@ -1,0 +1,10 @@
+Link group,Before,After,Change,Interpretation
+Controlled service cards,4,6,2,"Replaced collection-order selection with six evidence-based service hubs"
+Controlled province cards,8,6,-2,"Replaced collection-order selection with six GSC/business-priority provinces"
+All service-link instances,178,50,-128,"Removed homepage rescue link dump; existing navigation/B2B/category links remain"
+Unique service destinations,135,20,-115,"Homepage no longer acts as an HTML sitemap for model pages"
+All province-link instances,14,12,-2,"Six controlled cards plus unchanged footer/navigation duplicates"
+Unique province destinations,13,8,-5,"Controlled block has six; unchanged footer adds two other existing destinations"
+Footer-link instances,28,28,0,"Footer was audited and not changed"
+All internal-link instances,220,90,-130,"Major reduction without changing URL, canonical, header, footer, or core CTA"
+Unique internal destinations,159,39,-120,"Equity is concentrated on hubs and priority pages"

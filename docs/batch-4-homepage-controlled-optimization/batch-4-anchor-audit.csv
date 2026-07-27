@@ -1,0 +1,32 @@
+Anchor,Destination,Intent,Before/After,Status
+"รับซื้อ RAM",/บริการ/รับซื้อแรม,Service hub,After,PASS
+"รับซื้อโน๊ตบุ๊ค",/บริการ/รับซื้อโน๊ตบุ๊ค,Service hub,Before and after,PASS
+"รับซื้อโทรศัพท์",/บริการ/รับซื้อโทรศัพท์มือสอง,Service hub,After,PASS
+"รับซื้อ iPad",/บริการ/รับซื้อ-ipad,Service hub,Before and after,PASS
+"รับซื้อ MacBook",/บริการ/รับซื้อ-macbook,Service hub,Before and after,PASS
+"รับซื้อกล้อง",/บริการ/รับซื้อกล้อง,Service hub,After,PASS
+"รับซื้อสินค้าไอที อุบลราชธานี",/พื้นที่ให้บริการ/อุบลราชธานี,Province hub,After,PASS
+"รับซื้อสินค้าไอที บุรีรัมย์",/พื้นที่ให้บริการ/บุรีรัมย์,Province hub,After,PASS
+"รับซื้อสินค้าไอที กาฬสินธุ์",/พื้นที่ให้บริการ/กาฬสินธุ์,Province hub,After,PASS
+"รับซื้อสินค้าไอที อุดรธานี",/พื้นที่ให้บริการ/อุดรธานี,Province hub,After,PASS
+"รับซื้อคอม ขอนแก่น",/พื้นที่ให้บริการ/ขอนแก่น,Province hub,After,PASS
+"รับซื้อสินค้าไอที นครราชสีมา",/พื้นที่ให้บริการ/นครราชสีมา,Province hub,After,PASS
+"คอม / โน๊ตบุ๊ค",/บริการ/รับซื้อโน๊ตบุ๊ค,Category,Unchanged,PASS
+"iPhone / iPad / MacBook",/บริการ/รับซื้อ-iphone,Category,Unchanged,PASS WITH WARNING: broad category routes to iPhone hub
+"กล้อง / เลนส์",/บริการ/รับซื้อกล้อง,Category,Unchanged,PASS
+"คอมบริษัท / ยกล็อต",/บริการ/รับซื้อคอมบริษัท,B2B hub,Unchanged,PASS
+"Server / Network / UPS",/บริการ/รับซื้อ-server-network,B2B hub,Unchanged,PASS
+"เครื่องมีตำหนิ / เสีย",/บริการ/รับซื้อโน๊ตบุ๊ค,Category,Unchanged,PASS WITH WARNING: broad category routes to notebook hub
+"รับซื้อคอมพิวเตอร์",/บริการ/รับซื้อคอมพิวเตอร์,Service hub,Unchanged,PASS
+"รับซื้อแรม",/บริการ/รับซื้อแรม,Service hub,Unchanged,PASS
+"รับซื้อ iPhone",/บริการ/รับซื้อ-iphone,Service hub,Unchanged,PASS
+"รับซื้อคอมบริษัท",/บริการ/รับซื้อคอมบริษัท,B2B hub,Unchanged,PASS
+"ดูบริการทั้งหมด",/รับซื้อสินค้าไอที,Service index,Unchanged,PASS
+"ดูพื้นที่ให้บริการทั้งหมด",/พื้นที่ให้บริการ,Area index,Unchanged,PASS
+"อ่านบทความทั้งหมด",/blog,Information hub,Unchanged,PASS
+"วิธีการขาย",/วิธีการรับซื้อ,Supporting,Unchanged,PASS
+"เกี่ยวกับเรา",/about,Supporting,Unchanged,PASS
+"ติดต่อ",/contact,Supporting,Unchanged,PASS
+"ดูรายละเอียด",Card destination,Contextual CTA,Before and after,PASS WITH WARNING: repeated text is scoped within distinct cards
+"Image-only card link",Same card destination,Contextual CTA,Before and after,PASS: accessible name is supplied by image alt text
+"Homepage rescue-link anchors",135 service destinations,HTML sitemap pattern,Before,REMOVED FROM HOMEPAGE

@@ -1,0 +1,18 @@
+Query group,Owner URL,Homepage role,Homepage anchor,Evidence,Conflict level
+Brand and company name,/,Primary owner,"อำพล เทรดดิ้ง","Brand variants position 1.30–7.94",None
+Broad IT buyback,/,Primary owner,"รับซื้อสินค้าไอทีมือสอง","Homepage average position 4.86",None
+RAM,/บริการ/รับซื้อแรม,Route authority,"รับซื้อ RAM","Query 134 impressions at position 2.83; service page 773 impressions",Probable overlap only
+Notebook,/บริการ/รับซื้อโน๊ตบุ๊ค,Route authority,"รับซื้อโน๊ตบุ๊ค","Near-me query 59 impressions at position 2.83",Probable overlap only
+Telephone,/บริการ/รับซื้อโทรศัพท์มือสอง,Route authority,"รับซื้อโทรศัพท์","Phone near-me demand appears in query export",Possible mismatch
+iPhone,/บริการ/รับซื้อ-iphone,Route authority,"รับซื้อ iPhone","Service page 253 impressions; generic queries rank poorly",Possible mismatch
+iPad,/บริการ/รับซื้อ-ipad,Route authority,"รับซื้อ iPad","Service page 161 impressions; generic query 42 impressions",Possible mismatch
+MacBook,/บริการ/รับซื้อ-macbook,Route authority,"รับซื้อ MacBook","Service page 224 impressions; generic query 42 impressions",Possible mismatch
+Camera,/บริการ/รับซื้อกล้อง,Route authority,"รับซื้อกล้อง","Camera hub and Sony service have page/query signals",Possible mismatch
+Computer,/บริการ/รับซื้อคอมพิวเตอร์,Route authority,"รับซื้อคอมพิวเตอร์","Service page 181 impressions",Probable overlap only
+Ubon Ratchathani,/พื้นที่ให้บริการ/อุบลราชธานี,Location authority,"รับซื้อสินค้าไอที อุบลราชธานี","Main storefront and 55 page impressions",Possible mismatch
+Buriram,/พื้นที่ให้บริการ/บุรีรัมย์,Location authority,"รับซื้อสินค้าไอที บุรีรัมย์","9 clicks / 233 impressions / position 7.51",Possible mismatch
+Kalasin,/พื้นที่ให้บริการ/กาฬสินธุ์,Location authority,"รับซื้อสินค้าไอที กาฬสินธุ์","7 clicks / 162 impressions / position 8.01",Possible mismatch
+Udon Thani,/พื้นที่ให้บริการ/อุดรธานี,Location authority,"รับซื้อสินค้าไอที อุดรธานี","11 clicks / 284 impressions / position 8.37",Possible mismatch
+Khon Kaen,/พื้นที่ให้บริการ/ขอนแก่น,Location authority,"รับซื้อคอม ขอนแก่น","11 clicks / 261 impressions / position 8.69",Possible mismatch
+Nakhon Ratchasima,/พื้นที่ให้บริการ/นครราชสีมา,Location authority,"รับซื้อสินค้าไอที นครราชสีมา","4 clicks / 182 impressions / position 8.54",Possible mismatch
+Informational questions,/blog,Do not target as primary keyword,"เคล็ดลับก่อนขายสินค้าไอที","Informational iPad/model queries appear in export",None
