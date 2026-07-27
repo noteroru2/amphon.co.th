@@ -7,8 +7,30 @@ import { getCollection } from 'astro:content';
 import { absoluteUrl, schemaIds, createItemListSchema } from '../../lib/seo';
 import { buildSeoRescueGroups } from '../../config/seo-rescue';
 
+const sameDayPriority = new Map([
+  ['ขายโทรศัพท์มือสองใกล้ฉัน', 0],
+  ['ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง', 1],
+  ['mac-mini-m4-มือสอง', 2],
+  ['แรมมือสองขายได้เท่าไหร่', 3],
+]);
+
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  (a, b) => {
+    const aTime = Number.isFinite(a.data.date.valueOf())
+      ? a.data.date.valueOf()
+      : Number.NEGATIVE_INFINITY;
+    const bTime = Number.isFinite(b.data.date.valueOf())
+      ? b.data.date.valueOf()
+      : Number.NEGATIVE_INFINITY;
+
+    if (aTime !== bTime) return bTime - aTime;
+
+    const priorityDifference =
+      (sameDayPriority.get(a.data.slug) ?? Number.MAX_SAFE_INTEGER) -
+      (sameDayPriority.get(b.data.slug) ?? Number.MAX_SAFE_INTEGER);
+
+    return priorityDifference || a.data.slug.localeCompare(b.data.slug, 'th');
+  },
 );
 const services = (await getCollection('services', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 999) - (b.data.order ?? 999),
@@ -43,21 +65,17 @@ const schemaExtras = [
   mainEntityId={schemaIds.itemList(pageUrl)}
   schemaExtras={schemaExtras}
 >
-  <header class="page-header">
+  <header class="page-header blog-hero">
     <div class="container">
       <span class="tag tag--orange" style="margin-bottom:.875rem;">สาระความรู้</span>
       <h1>บทความและคำแนะนำ</h1>
       <p class="page-header__desc">
         แหล่งรวมคำแนะนำ วิธีเช็กสภาพเครื่อง และข้อมูลที่ควรรู้ก่อนขายสินค้าไอที
       </p>
-      <div class="prose" style="max-width:800px; margin: 2rem auto 0; text-align: left;">
-        <p style="font-size: 1.1rem; color: var(--color-gray-600);">
-          บทความชุดนี้รวบคำแนะนำก่อนขาย <strong>โน๊ตบุ๊ค, iPhone, iPad, MacBook, คอมพิวเตอร์ และอุปกรณ์ไอทีมือสอง</strong>
-          เพื่อช่วยเตรียมข้อมูลให้ครบ เช็กสภาพเครื่องอย่างเป็นระบบ และตัดสินใจขายได้ง่ายขึ้น
-          เรารวมทั้งวิธีล้างข้อมูล วิธีเช็กแบตเตอรี่ วิธีประเมินสภาพเครื่อง และข้อควรระวังก่อนส่งมอบสินค้า
-          เพื่อให้คุณคุยรายละเอียดกับร้านรับซื้อได้ตรงขึ้นและวางแผนก่อนขายได้สะดวกกว่าเดิม
-        </p>
-      </div>
+      <p class="blog-hero__description">
+        รวมคู่มือก่อนขายโน๊ตบุ๊ค โทรศัพท์ iPhone iPad MacBook คอมพิวเตอร์ กล้อง และอุปกรณ์ไอทีมือสอง
+        ตั้งแต่วิธีเช็กสเปก ตรวจสภาพ สำรองและลบข้อมูล ไปจนถึงการเตรียมรูปเพื่อขอราคาประเมินเบื้องต้น
+      </p>
     </div>
   </header>
 
@@ -86,3 +104,32 @@ const schemaExtras = [
 
   <CTAContact compact title="มีสินค้าอยากขาย? ปรึกษาทีมงาน Amphon ฟรี" />
 </BaseLayout>
+
+<style>
+  .page-header.blog-hero {
+    padding-block: 4rem;
+  }
+
+  .blog-hero .page-header__desc {
+    color: #cbd5e1;
+  }
+
+  .blog-hero__description {
+    max-width: 760px;
+    color: #dbe4f0;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.8;
+    margin: 1.25rem 0 0;
+  }
+
+  @media (max-width: 767px) {
+    .page-header.blog-hero {
+      padding-block: 2.5rem;
+    }
+
+    .blog-hero__description {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+  }
+</style>

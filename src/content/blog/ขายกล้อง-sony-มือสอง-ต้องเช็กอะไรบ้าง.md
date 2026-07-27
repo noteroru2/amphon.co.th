@@ -4,7 +4,7 @@ slug: "ขายกล้อง-sony-มือสอง-ต้องเช็ก
 description: "ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง รวม Shutter Count, Sensor, Hot Pixel, EVF, จอ, Autofocus, IBIS, เมาท์ แบตเตอรี่ เลนส์ และรูปที่ควรส่งประเมิน"
 mainKeyword: "ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง"
 relatedKeywords: ["ขายกล้อง Sony มือสอง", "เช็กกล้อง Sony ก่อนขาย", "กล้อง Sony มือสองราคา", "Shutter Count Sony", "ตรวจ Sensor กล้อง Sony", "กล้อง Sony มีฝุ่น", "เลนส์ Sony มีรา"]
-date: "2026-06-01"
+date: "2026-07-27"
 updated: "2026-07-27"
 draft: false
 heroImage: "/images/og/og-blog-default.webp"

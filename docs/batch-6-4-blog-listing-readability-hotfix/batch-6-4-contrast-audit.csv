@@ -1,0 +1,4 @@
+viewport,element,before_color,after_color,darkest_or_lightest_background,before_contrast,after_contrast,before_size,after_size,before_line_height,after_line_height,before_padding,after_padding,before_hero_height,after_hero_height,result
+1440x900,Hero description,#334155,#dbe4f0,#1e293b,1.41:1,11.40:1,17.6px,17.28px,31.68px,31.104px,"40px 32px","64px 64px",384.02px,345.48px,PASS
+390x844,Hero description,#334155,#dbe4f0,#1e293b,1.41:1,11.40:1,17.6px,16px,31.68px,28px,"24px 20px","40px 40px",483.34px,347.84px,PASS
+1440x900,Hero subtitle,#94a3b8,#cbd5e1,#1e293b,5.71:1,9.85:1,17px,17px,28.9px,28.9px,n/a,n/a,n/a,n/a,PASS
