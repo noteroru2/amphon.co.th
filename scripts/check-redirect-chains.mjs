@@ -19,10 +19,6 @@ const samplePaths = [
     expectedFinal: '/บริการ/รับซื้อ-ssd',
   },
   {
-    source: '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-    expectedFinal: '/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-  },
-  {
     source: '/บริการ/รับซื้อ-storage-nas',
     expectedFinal: '/บริการ/รับซื้อ-nas',
   },

@@ -145,10 +145,6 @@ async function checkRedirects() {
       from: '/บริการ/รับซื้อ-hdd',
       expectFinal: '/บริการ/รับซื้อ-ssd',
     },
-    {
-      from: '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-      expectFinal: '/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-    },
   ];
 
   // NOTE: astro preview does NOT handle vercel.json redirects
@@ -231,7 +227,7 @@ async function checkCanonicalPages() {
     { url: '/บริการ/รับซื้อ-gopro-action-camera', notes: [] },
     { url: '/บริการ/รับซื้อเลนส์กล้อง', notes: [] },
     { url: '/บริการ/รับซื้อ-ssd', notes: ['ต้องมีเนื้อหา HDD/SSD/External'] },
-    { url: '/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี', notes: [] },
+    { url: '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี', notes: [] },
   ];
 
   for (const page of pages) {

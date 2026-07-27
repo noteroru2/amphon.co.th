@@ -45,10 +45,6 @@ export const EXACT_REDIRECTS = [
     source: '/บริการ/รับซื้อ-hdd',
     destination: '/บริการ/รับซื้อ-ssd',
   },
-  {
-    source: '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-    destination: '/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-  },
 ] as const;
 
 type ServiceAreaEntry = CollectionEntry<'serviceAreas'>;
