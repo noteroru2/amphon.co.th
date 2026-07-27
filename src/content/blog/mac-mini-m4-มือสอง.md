@@ -4,7 +4,7 @@ slug: "mac-mini-m4-มือสอง"
 description: "Mac mini M4 มือสอง ราคาขึ้นกับชิป M4 หรือ M4 Pro, Unified Memory, SSD, ประกันและสภาพ พร้อมเช็กลิสต์พอร์ต Apple Diagnostics, Activation Lock และ MDM ก่อนซื้อหรือขาย"
 mainKeyword: "Mac mini M4 มือสอง"
 relatedKeywords: ["Mac mini M4 มือสองราคา", "Mac mini M4 ขายต่อ", "Mac mini M4 ต้องเช็กอะไร", "Mac mini M4 สเปก", "ซื้อ Mac mini M4 มือสอง", "ขาย Mac mini M4"]
-date: "2026-06-01"
+date: "2026-07-27"
 updated: "2026-07-27"
 draft: false
 heroImage: "/images/og/og-service-macbook.webp"

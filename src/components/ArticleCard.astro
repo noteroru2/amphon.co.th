@@ -41,7 +41,7 @@ const formattedDate = date.toLocaleDateString('th-TH-u-ca-gregory', {
       <a href={href}>{title}</a>
     </h3>
     <p class="card__desc">{description}</p>
-    <a href={href} class="article-card__read">อ่านต่อ →</a>
+    <a href={href} class="article-card__read" aria-label={`อ่านต่อ: ${title}`}>อ่านต่อ →</a>
   </div>
 </article>
 
