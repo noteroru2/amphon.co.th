@@ -1,0 +1,5 @@
+Article,Candidate slug,Existing conflict,Final slug,Reason
+แรมมือสองขายได้เท่าไหร่,แรมมือสองขายได้เท่าไหร่,None,แรมมือสองขายได้เท่าไหร่,Matches Thai exact target keyword slug convention
+Mac mini M4 มือสอง,mac-mini-m4-มือสอง,None,mac-mini-m4-มือสอง,Matches product model hyphenated Thai/English convention
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง,None,ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง,Matches hyphenated keyword slug convention
+ขายโทรศัพท์มือสองใกล้ฉัน,ขายโทรศัพท์มือสองใกล้ฉัน,None,ขายโทรศัพท์มือสองใกล้ฉัน,Matches Thai exact target keyword slug convention
