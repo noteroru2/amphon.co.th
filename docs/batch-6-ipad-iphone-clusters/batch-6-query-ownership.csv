@@ -1,0 +1,19 @@
+Cluster,Query group,Owner URL,Page role,Evidence,Status
+Tablet,รับซื้อแท็บเล็ต / รับซื้อแท็บเล็ตมือสอง,/บริการ/รับซื้อแท็บเล็ต,Transactional Hub,Existing dedicated Android/Windows page; query impressions present,Keep
+iPad,รับซื้อ iPad / รับซื้อไอแพด / ประเมินราคา iPad,/บริการ/รับซื้อ-ipad,Transactional Hub,42 + 34 broad-query impressions; hub page 161 impressions,Strengthen ownership
+iPad,รับซื้อ iPad Pro,/บริการ/รับซื้อ-ipad-pro,Model Family,71 page impressions and 3 clicks,Keep
+iPad,รับซื้อ iPad Air,/บริการ/รับซื้อ-ipad-air,Model Family,Existing page; limited demand,Keep; P2 monitor
+iPad,รับซื้อ iPad mini,/บริการ/รับซื้อ-ipad-mini,Model Family,Existing page; limited demand,Keep; P2 monitor
+iPad,รับซื้อ iPad Gen,/บริการ/รับซื้อ-ipad-gen,Model Family,28 impressions; position 9.61,Keep
+iPad,รับซื้อ iPad จอแตก,/บริการ/รับซื้อ-ipad-จอแตก,Condition,104 impressions; 7 clicks; position 6.09,Preserve
+iPad,iPad ติด iCloud ขายได้ไหม,/blog/ipad-ติด-icloud-ขายได้ไหม,Informational Guide,27 page impressions; position 11,Improve safely
+iPad,วิธีดูรุ่น iPad / iPad Gen ไหน / Axxxx,/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน,Informational Guide,498 impressions; position 9.55,Preserve title; fix H1 regression
+Phone,รับซื้อโทรศัพท์ / รับซื้อโทรศัพท์มือสอง / รับซื้อมือถือ,/บริการ/รับซื้อโทรศัพท์มือสอง,Transactional Hub,Broad phone queries have impressions; page is richest multi-brand source,Primary owner
+Phone,รับซื้อมือถือ,/บริการ/รับซื้อมือถือ,Supporting Transactional Service,Existing broad page overlaps Phone Hub; no Query × Page,Probable overlap; no merge
+Phone,รับซื้อโทรศัพท์เสีย,/บริการ/รับซื้อโทรศัพท์เสีย,Condition,Existing condition page and GSC signal,Keep
+iPhone,รับซื้อ iPhone / รับซื้อไอโฟน,/บริการ/รับซื้อ-iphone,Transactional Hub,55 + 44 query impressions; hub page 253 impressions,Strengthen ownership
+iPhone,รับซื้อ iPhone 13–17,/บริการ/รับซื้อ-iphone-{series},Model Family,Only some series have page/query signal,Keep existing; create no variants
+iPhone,iPhone Face ID เสีย,/บริการ/รับซื้อ-iphone-face-id-เสีย,Condition,17 impressions; position 4,Preserve
+iPhone,iPhone ติด iCloud / ลืม Apple Account,/blog/iphone-ติด-icloud-ลืม-apple-id-ก่อนขาย,Informational Guide,23 impressions; position 8.09,Primary informational owner
+iPhone,ประเมินหลังปลด iCloud,/บริการ/รับซื้อ-iphone-ติด-icloud,Condition/Service,Service page has only 3 impressions; separate from informational owner,Reposition safely
+iPhone,Battery Health ก่อนขาย,/blog/วิธีเช็ก-battery-health-iphone-ก่อนขาย,Informational Guide,26 impressions; position 17.23,Keep and route to hub
