@@ -83,11 +83,6 @@ const cases = [
     destination: '/บริการ/รับซื้อ-ssd',
   },
   {
-    label: 'legacy-computer-ubon',
-    source: '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-    destination: '/พื้นที่ให้บริการ/รับซื้อคอมพิวเตอร์-อุบลราชธานี',
-  },
-  {
     label: 'legacy-storage-nas',
     source: '/บริการ/รับซื้อ-storage-nas',
     destination: '/บริการ/รับซื้อ-nas',

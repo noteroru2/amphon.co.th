@@ -1,0 +1,23 @@
+Cluster,Tier,Page role,Primary query,URL,Parent,Children,Status,Action
+Tablet,1,Transactional Hub,รับซื้อแท็บเล็ต,/บริการ/รับซื้อแท็บเล็ต,/รับซื้อสินค้าไอที,/บริการ/รับซื้อ-ipad,Existing,Separate Android/Windows intent from iPad
+iPad,1,Transactional Hub,รับซื้อ iPad,/บริการ/รับซื้อ-ipad,/รับซื้อสินค้าไอที,"Family, condition, accessory and guide pages",Existing,Primary national iPad owner
+iPad,2,Model Family,รับซื้อ iPad Pro,/บริการ/รับซื้อ-ipad-pro,/บริการ/รับซื้อ-ipad,Accessories and conditions,Existing,Preserve GSC signal
+iPad,2,Model Family,รับซื้อ iPad Air,/บริการ/รับซื้อ-ipad-air,/บริการ/รับซื้อ-ipad,Relevant conditions,Existing,Keep; no variants
+iPad,2,Model Family,รับซื้อ iPad mini,/บริการ/รับซื้อ-ipad-mini,/บริการ/รับซื้อ-ipad,Relevant conditions,Existing,Keep; no variants
+iPad,2,Model Family,รับซื้อ iPad Gen,/บริการ/รับซื้อ-ipad-gen,/บริการ/รับซื้อ-ipad,Model-identification guide,Existing,Preserve
+iPad,2,Condition,รับซื้อ iPad จอแตก,/บริการ/รับซื้อ-ipad-จอแตก,/บริการ/รับซื้อ-ipad,Condition guide,Existing,Preserve strong signal
+iPad,2,Condition,รับซื้อ iPad เสีย,/บริการ/รับซื้อ-ipad-เสีย,/บริการ/รับซื้อ-ipad,Condition guide,Existing,Keep
+iPad,2,Accessory Service,รับซื้อ Apple Pencil / Magic Keyboard,/บริการ/รับซื้อ-apple-pencil,/บริการ/รับซื้อ-ipad,,Existing,Keep separate demand
+iPad,3,Informational Guide,วิธีดูรุ่น iPad,/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน,/บริการ/รับซื้อ-ipad,Family pages,Existing,Fix duplicate H1 only
+iPad,3,Informational Guide,iPad ติด iCloud ขายได้ไหม,/blog/ipad-ติด-icloud-ขายได้ไหม,/บริการ/รับซื้อ-ipad,,Existing,Expand ownership/safety guidance
+Phone,1,Transactional Hub,รับซื้อโทรศัพท์มือสอง,/บริการ/รับซื้อโทรศัพท์มือสอง,/รับซื้อสินค้าไอที,iPhone Hub and damaged-phone page,Existing,Primary multi-brand owner
+Phone,2,Supporting Service,รับซื้อมือถือ,/บริการ/รับซื้อมือถือ,/บริการ/รับซื้อโทรศัพท์มือสอง,,Existing,Probable overlap; report only
+Phone,2,Condition,รับซื้อโทรศัพท์เสีย,/บริการ/รับซื้อโทรศัพท์เสีย,/บริการ/รับซื้อโทรศัพท์มือสอง,,Existing,Keep
+iPhone,1,Transactional Hub,รับซื้อ iPhone,/บริการ/รับซื้อ-iphone,/บริการ/รับซื้อโทรศัพท์มือสอง,"Series, condition and guide pages",Existing,Primary iPhone owner
+iPhone,2,Model Family,รับซื้อ iPhone 13–17,/บริการ/รับซื้อ-iphone-{series},/บริการ/รับซื้อ-iphone,Condition and guide pages,Existing,Keep existing only
+iPhone,2,Condition,รับซื้อ iPhone จอแตก,/บริการ/รับซื้อ-iphone-จอแตก,/บริการ/รับซื้อ-iphone,Condition guide,Existing,Keep
+iPhone,2,Condition,รับซื้อ iPhone Face ID เสีย,/บริการ/รับซื้อ-iphone-face-id-เสีย,/บริการ/รับซื้อ-iphone,Condition guide,Existing,Preserve strong signal
+iPhone,2,Condition/Service,ประเมิน iPhone หลังปลด iCloud,/บริการ/รับซื้อ-iphone-ติด-icloud,/บริการ/รับซื้อ-iphone,iCloud guide,Existing,Reposition after unlock
+iPhone,3,Informational Guide,iPhone ติด iCloud ขายได้ไหม,/blog/iphone-ติด-icloud-ลืม-apple-id-ก่อนขาย,/บริการ/รับซื้อ-iphone,,Existing,Primary informational owner
+iPhone,3,Informational Guide,Battery Health ก่อนขาย,/blog/วิธีเช็ก-battery-health-iphone-ก่อนขาย,/บริการ/รับซื้อ-iphone,,Existing,Keep
+iPad/iPhone,4,Location,Product + province,/รับซื้อ/{product}-{province},/พื้นที่ให้บริการ/{province},National product hub,Existing,Audit samples only; no rewrite

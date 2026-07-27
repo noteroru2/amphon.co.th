@@ -1,0 +1,9 @@
+URL,Field,Before,After,Reason
+/blog/ipad-ติด-icloud-ขายได้ไหม,Title,"iPad ติด iCloud ขายได้ไหม","iPad ติด iCloud ขายได้ไหม ต้องปลดอะไรให้เรียบร้อย","Make informational ownership and safe requirement explicit"
+/blog/ipad-ติด-icloud-ขายได้ไหม,Description,"Short generic description","iPad ที่ยังผูกบัญชี Apple หรือมี Activation Lock ต้องให้เจ้าของเดิมปิด Find My และนำเครื่องออกจากบัญชีก่อนขาย พร้อมขั้นตอนสำรองและลบข้อมูลอย่างถูกต้อง","Direct answer and correct Apple terminology"
+/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน,Rendered H1 count,2,1,"Remove markdown H1 because BlogLayout already renders frontmatter title as H1"
+/blog/iphone-ติด-icloud-ลืม-apple-id-ก่อนขาย,Title,"iPhone ติด iCloud หรือลืม Apple ID ควรทำอย่างไรก่อนขาย","iPhone ติด iCloud หรือลืม Apple Account (Apple ID) ก่อนขาย","Use current Apple Account name while preserving legacy query wording"
+/บริการ/รับซื้อ-iphone-ติด-icloud,Title,"รับซื้อ iPhone ติด iCloud ...","ประเมิน iPhone หลังปลด iCloud และ Activation Lock แล้ว","Separate service intent from informational query and disallow locked-device purchase"
+/บริการ/รับซื้อ-iphone-ติด-icloud,H1,"รับซื้อ iPhone ติด iCloud ...","ประเมิน iPhone หลังเจ้าของเดิมปลดบัญชี Apple เรียบร้อย","Make lawful ownership prerequisite visible"
+/บริการ/รับซื้อ-iphone-ติด-icloud,Main keyword,"รับซื้อ iPhone ติด iCloud","ประเมิน iPhone หลังปลด iCloud","Assign distinct transactional intent"
+/บริการ/รับซื้อ-iphone-17,Title,"รับซื้อ iPhone 17 มือสอง ประเมินตามสภาพจริง | Amphon.co.th","รับซื้อ iPhone 17 มือสอง ประเมินตามสภาพจริง","Prevent duplicated site-name suffix in rendered title"

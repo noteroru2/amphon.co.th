@@ -3,6 +3,10 @@ import type { CollectionEntry } from 'astro:content';
 export const SERVICE_CLUSTERS = {
   COM_OFFICE: 'COM_OFFICE',
   NOTEBOOK: 'NOTEBOOK',
+  TABLET: 'TABLET',
+  IPAD: 'IPAD',
+  PHONE: 'PHONE',
+  IPHONE: 'IPHONE',
   APPLE: 'APPLE',
   SERVER_NETWORK: 'SERVER_NETWORK',
   CAMERA: 'CAMERA',
@@ -19,8 +23,12 @@ type ServiceEntry = CollectionEntry<'services'>;
 const SLUG_CLUSTER_OVERRIDES: Record<string, ServiceCluster> = {
   'รับซื้อคอมพิวเตอร์': SERVICE_CLUSTERS.COM_OFFICE,
   'รับซื้อคอมบริษัท': SERVICE_CLUSTERS.COM_OFFICE,
-  'รับซื้อ-iphone': SERVICE_CLUSTERS.APPLE,
-  'รับซื้อ-ipad': SERVICE_CLUSTERS.APPLE,
+  'รับซื้อแท็บเล็ต': SERVICE_CLUSTERS.TABLET,
+  'รับซื้อ-ipad': SERVICE_CLUSTERS.IPAD,
+  'รับซื้อโทรศัพท์มือสอง': SERVICE_CLUSTERS.PHONE,
+  'รับซื้อมือถือ': SERVICE_CLUSTERS.PHONE,
+  'รับซื้อโทรศัพท์เสีย': SERVICE_CLUSTERS.PHONE,
+  'รับซื้อ-iphone': SERVICE_CLUSTERS.IPHONE,
   'รับซื้อ-macbook': SERVICE_CLUSTERS.APPLE,
   'รับซื้อกล้อง': SERVICE_CLUSTERS.CAMERA,
   'รับซื้อโน๊ตบุ๊ค': SERVICE_CLUSTERS.NOTEBOOK,
@@ -125,9 +133,39 @@ const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
     'รับซื้อ-surface',
     'รับซื้อแท็บเล็ต',
   ],
-  [SERVICE_CLUSTERS.APPLE]: [
-    'รับซื้อ-iphone',
+  [SERVICE_CLUSTERS.TABLET]: [
+    'รับซื้อแท็บเล็ต',
+  ],
+  [SERVICE_CLUSTERS.IPAD]: [
     'รับซื้อ-ipad',
+    'รับซื้อ-ipad-pro',
+    'รับซื้อ-ipad-air',
+    'รับซื้อ-ipad-mini',
+    'รับซื้อ-ipad-gen',
+    'รับซื้อ-ipad-จอแตก',
+    'รับซื้อ-ipad-เสีย',
+    'รับซื้อ-apple-pencil',
+    'รับซื้อ-magic-keyboard-ipad',
+  ],
+  [SERVICE_CLUSTERS.PHONE]: [
+    'รับซื้อโทรศัพท์มือสอง',
+    'รับซื้อมือถือ',
+    'รับซื้อโทรศัพท์เสีย',
+  ],
+  [SERVICE_CLUSTERS.IPHONE]: [
+    'รับซื้อ-iphone',
+    'รับซื้อ-iphone-pro-max',
+    'รับซื้อ-iphone-17',
+    'รับซื้อ-iphone-16',
+    'รับซื้อ-iphone-15',
+    'รับซื้อ-iphone-14',
+    'รับซื้อ-iphone-13',
+    'รับซื้อ-iphone-จอแตก',
+    'รับซื้อ-iphone-face-id-เสีย',
+    'รับซื้อ-iphone-ติด-icloud',
+    'รับซื้อ-iphone-เครื่องนอก',
+  ],
+  [SERVICE_CLUSTERS.APPLE]: [
     'รับซื้อ-macbook',
     'รับซื้อ-imac',
     'รับซื้อ-mac-mini',
@@ -141,26 +179,8 @@ const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
     'รับซื้อ-macbook-intel',
     'รับซื้อ-macbook-เสีย',
     'รับซื้อ-macbook-จอแตก',
-    'รับซื้อ-ipad-pro',
-    'รับซื้อ-ipad-air',
-    'รับซื้อ-ipad-mini',
-    'รับซื้อ-ipad-gen',
-    'รับซื้อ-ipad-เสีย',
-    'รับซื้อ-ipad-จอแตก',
-    'รับซื้อ-iphone-pro-max',
-    'รับซื้อ-iphone-17',
-    'รับซื้อ-iphone-16',
-    'รับซื้อ-iphone-15',
-    'รับซื้อ-iphone-14',
-    'รับซื้อ-iphone-13',
-    'รับซื้อ-iphone-จอแตก',
-    'รับซื้อ-iphone-face-id-เสีย',
-    'รับซื้อ-iphone-ติด-icloud',
-    'รับซื้อ-iphone-เครื่องนอก',
     'รับซื้อ-airpods',
     'รับซื้อ-apple-watch',
-    'รับซื้อ-apple-pencil',
-    'รับซื้อ-magic-keyboard-ipad',
   ],
   [SERVICE_CLUSTERS.SERVER_NETWORK]: [
     'รับซื้อ-server',
@@ -292,6 +312,10 @@ const CLUSTER_FILL_HUB_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
     'รับซื้ออุปกรณ์ไอที',
   ],
   [SERVICE_CLUSTERS.NOTEBOOK]: ['รับซื้อโน๊ตบุ๊ค', 'รับซื้อสินค้าไอที'],
+  [SERVICE_CLUSTERS.TABLET]: ['รับซื้อแท็บเล็ต', 'รับซื้อ-ipad'],
+  [SERVICE_CLUSTERS.IPAD]: ['รับซื้อ-ipad', 'รับซื้อแท็บเล็ต'],
+  [SERVICE_CLUSTERS.PHONE]: ['รับซื้อโทรศัพท์มือสอง', 'รับซื้อ-iphone', 'รับซื้อมือถือ'],
+  [SERVICE_CLUSTERS.IPHONE]: ['รับซื้อ-iphone', 'รับซื้อโทรศัพท์มือสอง'],
   [SERVICE_CLUSTERS.APPLE]: ['รับซื้อ-iphone', 'รับซื้อ-macbook', 'รับซื้อ-ipad'],
   [SERVICE_CLUSTERS.SERVER_NETWORK]: ['รับซื้อ-server', 'รับซื้อสินค้าไอที'],
   [SERVICE_CLUSTERS.CAMERA]: ['รับซื้อกล้อง', 'รับซื้อสินค้าไอที'],
@@ -378,6 +402,30 @@ const INTENT_CHIP_OVERRIDES: Record<string, string[]> = {
 const CLUSTER_INTENT_CHIP_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
   [SERVICE_CLUSTERS.NOTEBOOK]: NOTEBOOK_HUB_PRIORITY_SLUGS,
   [SERVICE_CLUSTERS.COM_OFFICE]: COM_OFFICE_HUB_PRIORITY_SLUGS.slice(0, 6),
+  [SERVICE_CLUSTERS.TABLET]: [
+    'รับซื้อ-ipad',
+  ],
+  [SERVICE_CLUSTERS.IPAD]: [
+    'รับซื้อ-ipad-pro',
+    'รับซื้อ-ipad-air',
+    'รับซื้อ-ipad-mini',
+    'รับซื้อ-ipad-gen',
+    'รับซื้อ-ipad-จอแตก',
+    'รับซื้อ-ipad-เสีย',
+  ],
+  [SERVICE_CLUSTERS.PHONE]: [
+    'รับซื้อมือถือ',
+    'รับซื้อโทรศัพท์เสีย',
+    'รับซื้อ-iphone',
+  ],
+  [SERVICE_CLUSTERS.IPHONE]: [
+    'รับซื้อ-iphone-pro-max',
+    'รับซื้อ-iphone-16',
+    'รับซื้อ-iphone-15',
+    'รับซื้อ-iphone-face-id-เสีย',
+    'รับซื้อ-iphone-ติด-icloud',
+    'รับซื้อ-iphone-จอแตก',
+  ],
   [SERVICE_CLUSTERS.APPLE]: [
     'รับซื้อ-macbook',
     'รับซื้อ-macbook-air',
@@ -745,6 +793,22 @@ export function getServiceCluster(entry: ServiceEntry): ServiceCluster {
   const slugLower = slug.toLowerCase();
 
   if (isNonItGeneralCategory(text, slugLower)) return SERVICE_CLUSTERS.GENERAL_IT;
+  if (
+    slugLower.startsWith('รับซื้อ-ipad') ||
+    slugLower === 'รับซื้อ-apple-pencil' ||
+    slugLower === 'รับซื้อ-magic-keyboard-ipad'
+  ) {
+    return SERVICE_CLUSTERS.IPAD;
+  }
+  if (slugLower === 'รับซื้อแท็บเล็ต') return SERVICE_CLUSTERS.TABLET;
+  if (slugLower.startsWith('รับซื้อ-iphone')) return SERVICE_CLUSTERS.IPHONE;
+  if (
+    slugLower === 'รับซื้อโทรศัพท์มือสอง' ||
+    slugLower === 'รับซื้อมือถือ' ||
+    slugLower === 'รับซื้อโทรศัพท์เสีย'
+  ) {
+    return SERVICE_CLUSTERS.PHONE;
+  }
   if (matchesApple(text, slugLower)) return SERVICE_CLUSTERS.APPLE;
   if (matchesCamera(text, slugLower)) return SERVICE_CLUSTERS.CAMERA;
   if (matchesGaming(text, slugLower)) return SERVICE_CLUSTERS.GAMING;
@@ -826,6 +890,9 @@ export function getIntentChipHeading(slug: string, mainKeyword?: string): string
   const headings: Record<string, string> = {
     'รับซื้อโน๊ตบุ๊ค': 'ขายโน๊ตบุ๊คแบบไหน?',
     'รับซื้อคอมพิวเตอร์': 'ขายคอมแบบไหน?',
+    'รับซื้อแท็บเล็ต': 'ขายแท็บเล็ตแบบไหน?',
+    'รับซื้อโทรศัพท์มือสอง': 'ขายโทรศัพท์แบบไหน?',
+    'รับซื้อมือถือ': 'ขายมือถือแบบไหน?',
     'รับซื้อ-iphone': 'ขาย iPhone แบบไหน?',
     'รับซื้อ-ipad': 'ขาย iPad แบบไหน?',
     'รับซื้อ-macbook': 'ขาย MacBook แบบไหน?',

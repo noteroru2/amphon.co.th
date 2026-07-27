@@ -1,0 +1,21 @@
+Source URL,Anchor,Destination,Before/After,Reason,Verified
+/บริการ/รับซื้อ-ipad,"แท็บเล็ต",/บริการ/รับซื้อแท็บเล็ต,After,"Clarify Tablet Hub versus iPad Hub ownership",Yes
+/บริการ/รับซื้อ-ipad,"รับซื้อ iPad Pro",/บริการ/รับซื้อ-ipad-pro,After,"Hub to high-value family page",Yes
+/บริการ/รับซื้อ-ipad,"รับซื้อ iPad Air",/บริการ/รับซื้อ-ipad-air,After,"Hub to family page",Yes
+/บริการ/รับซื้อ-ipad,"iPad ติด iCloud ขายได้ไหม",/blog/ipad-ติด-icloud-ขายได้ไหม,After,"Hub to informational safety owner",Yes
+/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน,"รับซื้อ iPad มือสอง",/บริการ/รับซื้อ-ipad,After,"Guide to transactional owner",Yes
+/บริการ/รับซื้อ-iphone,"รับซื้อโทรศัพท์มือสอง",/บริการ/รับซื้อโทรศัพท์มือสอง,After,"Clarify multi-brand Phone Hub versus iPhone Hub",Yes
+/บริการ/รับซื้อ-iphone,"รับซื้อ iPhone 13",/บริการ/รับซื้อ-iphone-13,After,"Hub to existing model family",Yes
+/บริการ/รับซื้อ-iphone,"รับซื้อ iPhone 17",/บริการ/รับซื้อ-iphone-17,After,"Hub to GSC-supported model family",Yes
+/บริการ/รับซื้อ-iphone,"iPhone ติด iCloud ลืม Apple Account ก่อนขายต้องทำอย่างไร",/blog/iphone-ติด-icloud-ลืม-apple-id-ก่อนขาย,After,"Hub to informational safety owner",Yes
+/บริการ/รับซื้อ-iphone-13,"ร้านรับซื้อ iPhone อุบลราชธานี",/พื้นที่ให้บริการ/รับซื้อ-iphone-อุบลราชธานี,Before,"Legacy route did not exist",No
+/บริการ/รับซื้อ-iphone-13,"ร้านรับซื้อ iPhone อุบลราชธานี",/รับซื้อ/รับซื้อ-iphone-อุบลราชธานี,After,"Correct generated location route",Yes
+/บริการ/รับซื้อ-iphone-14,"มีหน้าร้านจริงที่อุบลราชธานี",/รับซื้อ/รับซื้อ-iphone-อุบลราชธานี,After,"Correct generated location route",Yes
+/บริการ/รับซื้อ-iphone-face-id-เสีย,"ร้านรับซื้อ iPhone อุบลราชธานี",/รับซื้อ/รับซื้อ-iphone-อุบลราชธานี,After,"Correct generated location route",Yes
+/บริการ/รับซื้อ-iphone-เครื่องนอก,"หน้าร้านรับซื้อ iPhone อุบลราชธานี",/รับซื้อ/รับซื้อ-iphone-อุบลราชธานี,After,"Correct generated location route",Yes
+/บริการ/รับซื้อ-iphone-จอแตก,"ร้านรับซื้อ iPhone อุบลราชธานี",/รับซื้อ/รับซื้อ-iphone-อุบลราชธานี,After,"Correct generated location route and safety copy",Yes
+/บริการ/รับซื้อ-iphone-15,"รับซื้อ iPhone ติด iCloud",/บริการ/รับซื้อ-iphone-ติด-icloud,Before,"Anchor implied purchase while locked",Yes
+/บริการ/รับซื้อ-iphone-15,"เงื่อนไขประเมิน iPhone หลังปลด iCloud",/บริการ/รับซื้อ-iphone-ติด-icloud,After,"Align anchor with lawful post-unlock service intent",Yes
+/บริการ/รับซื้อ-iphone-16,"เงื่อนไขประเมิน iPhone หลังปลด iCloud",/บริการ/รับซื้อ-iphone-ติด-icloud,After,"Align anchor with lawful post-unlock service intent",Yes
+/บริการ/รับซื้อ-iphone-17,"ประเมิน iPhone หลังปลด iCloud และ Activation Lock",/บริการ/รับซื้อ-iphone-ติด-icloud,After,"Align model page with post-unlock service intent",Yes
+/บริการ/รับซื้อ-iphone-pro-max,"เงื่อนไขประเมิน iPhone หลังปลด iCloud",/บริการ/รับซื้อ-iphone-ติด-icloud,After,"Align anchor with lawful post-unlock service intent",Yes
