@@ -1,0 +1,23 @@
+File,Type,Purpose
+docs/batch-6-5-blog-production-release/batch-6-5-pre-merge-diff.csv,Report,Pre-merge scope audit
+docs/batch-6-5-blog-production-release/batch-6-5-merge-report.md,Report,Merge evidence
+docs/batch-6-5-blog-production-release/batch-6-5-local-qa-report.md,Report,Main QA evidence
+docs/batch-6-5-blog-production-release/batch-6-5-deployment-report.md,Report,Production deployment evidence
+docs/batch-6-5-blog-production-release/batch-6-5-production-blog-audit.csv,Report,Production blog audit
+docs/batch-6-5-blog-production-release/batch-6-5-production-articles.csv,Report,Four production article audits
+docs/batch-6-5-blog-production-release/batch-6-5-production-sitemap-audit.csv,Report,Production sitemap crawl
+docs/batch-6-5-blog-production-release/batch-6-5-production-regression-audit.csv,Report,Redirect and browser regression audit
+docs/batch-6-5-blog-production-release/batch-6-5-files-changed.csv,Report,Report-only file manifest
+docs/batch-6-5-blog-production-release/batch-6-5-final-report.md,Report,Final release report
+docs/batch-6-5-blog-production-release/screenshots/blog-production-desktop-1920x1080.png,Screenshot,Blog desktop QA
+docs/batch-6-5-blog-production-release/screenshots/blog-production-desktop-1440x900.png,Screenshot,Blog desktop QA
+docs/batch-6-5-blog-production-release/screenshots/blog-production-mobile-390x844.png,Screenshot,Blog mobile QA
+docs/batch-6-5-blog-production-release/screenshots/blog-production-mobile-360x800.png,Screenshot,Blog mobile QA
+docs/batch-6-5-blog-production-release/screenshots/article-phone-desktop-1440x900.png,Screenshot,Phone article desktop QA
+docs/batch-6-5-blog-production-release/screenshots/article-phone-mobile-390x844.png,Screenshot,Phone article mobile QA
+docs/batch-6-5-blog-production-release/screenshots/article-sony-camera-desktop-1440x900.png,Screenshot,Sony article desktop QA
+docs/batch-6-5-blog-production-release/screenshots/article-sony-camera-mobile-390x844.png,Screenshot,Sony article mobile QA
+docs/batch-6-5-blog-production-release/screenshots/article-mac-mini-m4-desktop-1440x900.png,Screenshot,Mac mini article desktop QA
+docs/batch-6-5-blog-production-release/screenshots/article-mac-mini-m4-mobile-390x844.png,Screenshot,Mac mini article mobile QA
+docs/batch-6-5-blog-production-release/screenshots/article-ram-desktop-1440x900.png,Screenshot,RAM article desktop QA
+docs/batch-6-5-blog-production-release/screenshots/article-ram-mobile-390x844.png,Screenshot,RAM article mobile QA

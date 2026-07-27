@@ -1,0 +1,21 @@
+Check,Observed,Result
+GoPro source status,308,PASS
+GoPro Location,/บริการ/รับซื้อ-gopro-action-camera,PASS
+GoPro redirect count,1,PASS
+GoPro final status,200,PASS
+HDD source status,308,PASS
+HDD Location,/บริการ/รับซื้อ-ssd,PASS
+HDD redirect count,1,PASS
+HDD final status,200,PASS
+Batch 6.3 runtime script exit code,0,PASS
+Article internal links tested,39,PASS
+Production broken internal links,0,PASS
+Article links hitting redirects,0,PASS
+Browser viewports tested,12,PASS
+Console errors,0,PASS
+Broken images,0,PASS
+Horizontal overflow,0,PASS
+Markdown rendering errors,0,PASS
+Dependency changes,0,PASS
+Lockfile changes,0,PASS
+Temporary QA files committed,0,PASS

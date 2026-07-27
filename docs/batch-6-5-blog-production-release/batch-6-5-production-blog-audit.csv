@@ -1,0 +1,30 @@
+Check,Value,Result
+HTTP status,200,PASS
+Final URL,https://amphon.co.th/blog,PASS
+Canonical,https://amphon.co.th/blog,PASS
+Title,บทความและคำแนะนำ | Amphon.co.th,PASS
+Description,บทความคำแนะนำการขายสินค้าไอที เช็กราคา เตรียมเครื่อง และวางแผนก่อนส่งขาย,PASS
+H1,บทความและคำแนะนำ,PASS
+Robots,"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+CollectionPage schema,Present,PASS
+BreadcrumbList schema,Present,PASS
+ItemList schema,Present,PASS
+Blog cards,50,PASS
+Expected new posts displayed,4 of 4,PASS
+Expected new posts in first four,4 of 4,PASS
+Duplicate card URLs,0,PASS
+Displayed date,27 กรกฎาคม 2026,PASS
+Read more navigation,Works,PASS
+Hero description color,#dbe4f0,PASS
+Minimum Hero contrast,11.40:1,PASS
+Hero desktop padding,64px,PASS
+Hero mobile padding,40px,PASS
+Hero height 1920x1080,348.06px,PASS
+Hero height 1440x900,345.48px,PASS
+Hero height 390x844,347.84px,PASS
+Hero height 360x800,373.31px,PASS
+Risky claim ราคาที่สูงที่สุด,Absent,PASS
+Tag gap,24px grid gap and visible tag spacing,PASS
+Console errors,0,PASS
+Broken images,0,PASS
+Horizontal overflow,0,PASS

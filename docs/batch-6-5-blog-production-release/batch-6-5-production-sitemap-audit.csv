@@ -1,0 +1,19 @@
+Check,Value,Result
+Sitemap index HTTP status,200,PASS
+Child sitemap files,1,PASS
+URLs parsed,1183,PASS
+Unique URLs,1183,PASS
+Duplicate URLs,0,PASS
+All sitemap URLs crawled,1183,PASS
+Sitemap crawl failures,0,PASS
+Canonical mismatches,0,PASS
+Noindex URLs,0,PASS
+New phone article,Present,PASS
+New Sony article,Present,PASS
+New Mac mini article,Present,PASS
+New RAM article,Present,PASS
+Legacy GoPro URL,Absent,PASS
+Legacy HDD URL,Absent,PASS
+Final GoPro URL,Present,PASS
+Final SSD URL,Present,PASS
+lastmod,Absent,WARNING

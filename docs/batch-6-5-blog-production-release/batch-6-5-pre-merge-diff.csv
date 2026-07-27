@@ -1,0 +1,21 @@
+File,Change type,Expected,Decision
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-baseline.md,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-blog-order-before-after.csv,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-contrast-audit.csv,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-files-changed.csv,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-final-report.md,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-metadata-date-audit.csv,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/batch-6-4-qa-report.md,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/screenshots/blog-after-desktop-1440x900.png,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/screenshots/blog-after-desktop-1920x1080.png,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/screenshots/blog-after-mobile-360x800.png,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/screenshots/blog-after-mobile-390x844.png,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/screenshots/blog-before-desktop-1440x900.png,Added,Yes,Include
+docs/batch-6-4-blog-listing-readability-hotfix/screenshots/blog-before-mobile-390x844.png,Added,Yes,Include
+scripts/check-blog-listing.mjs,Added,Yes,Include
+src/components/ArticleCard.astro,Modified,Yes,Include
+src/content/blog/mac-mini-m4-มือสอง.md,Modified,Yes,Include
+src/content/blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง.md,Modified,Yes,Include
+src/content/blog/ขายโทรศัพท์มือสองใกล้ฉัน.md,Modified,Yes,Include
+src/content/blog/แรมมือสองขายได้เท่าไหร่.md,Modified,Yes,Include
+src/pages/blog/index.astro,Modified,Yes,Include
