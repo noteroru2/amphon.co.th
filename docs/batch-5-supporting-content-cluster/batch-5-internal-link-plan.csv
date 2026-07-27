@@ -1,0 +1,20 @@
+Article,Source section,Anchor,Destination URL,Destination type,Reason,Verified
+แรมมือสองขายได้เท่าไหร่,ปัจจัยที่มีผลต่อราคา,รับซื้อแรม,/บริการ/รับซื้อแรม,Primary Service CTA,Contextual link to main RAM transactional page,Yes
+แรมมือสองขายได้เท่าไหร่,Server RAM และ ECC,รับซื้ออุปกรณ์คอมพิวเตอร์,/บริการ/รับซื้ออุปกรณ์คอมพิวเตอร์,Supporting Service,Link to B2B component hub,Yes
+แรมมือสองขายได้เท่าไหร่,Server RAM และ ECC,รับซื้อ RAM และ SSD,/บริการ/รับซื้อ-ram-ssd,Supporting Service,Link to RAM & SSD service,Yes
+แรมมือสองขายได้เท่าไหร่,สิ่งที่ต้องทดสอบ,วิธีเช็กสเปกคอมก่อนขาย,/blog/วิธีเช็กสเปกคอมก่อนขาย,Supporting Article,Link to computer spec check article,Yes
+แรมมือสองขายได้เท่าไหร่,ไม่มีกล่องหรือหมดประกัน,SSD สุขภาพเหลือน้อย เขียนข้อมูลเยอะ ขายได้ไหม,/blog/ssd-สุขภาพเหลือน้อย-เขียนข้อมูลเยอะ-ขายได้ไหม,Supporting Article,Link to SSD condition article,Yes
+Mac mini M4 มือสอง,ราคามือสองขึ้นกับอะไร,รับซื้อ Mac mini,/บริการ/รับซื้อ-mac-mini,Primary Service CTA,Contextual link to Mac mini service page,Yes
+Mac mini M4 มือสอง,ราคามือสองขึ้นกับอะไร,รับซื้อ iMac และ Mac mini,/บริการ/รับซื้อ-imac-mac-mini,Supporting Service,Link to desktop Mac hub,Yes
+Mac mini M4 มือสอง,ข้อควรระวังเรื่อง Activation Lock,วิธีล้างเครื่อง MacBook ก่อนขาย,/blog/วิธีล้างเครื่อง-macbook-ก่อนขาย,Supporting Article,Link to macOS data wipe article,Yes
+Mac mini M4 มือสอง,ความแตกต่างระหว่างมุมมอง,iMac และ Mac mini มือสอง ขายอย่างไรให้ประเมินง่าย,/blog/imac-mac-mini-มือสอง-ขายอย่างไรให้ประเมินง่าย,Supporting Article,Link to general Mac prep article,Yes
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,เช็กลิสต์ 9 จุดสำคัญ,กล้อง Shutter Count สูง ขายได้ไหม,/blog/กล้อง-shutter-count-สูง-ขายได้ไหม,Supporting Article,Link to shutter count article,Yes
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,เช็กลิสต์ 9 จุดสำคัญ,รับซื้อกล้อง Sony,/บริการ/รับซื้อกล้อง-sony,Primary Service CTA,Contextual link to Sony camera page,Yes
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,เช็กลิสต์ 9 จุดสำคัญ,รับซื้อกล้อง Mirrorless,/บริการ/รับซื้อกล้อง-mirrorless,Supporting Service,Link to Mirrorless hub,Yes
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,กรณีขายรวมกับเลนส์,เลนส์มีฝ้า รา ฝุ่น โฟกัสเสีย ขายได้ไหม,/blog/เลนส์มีฝ้า-รา-ฝุ่น-โฟกัสเสีย-ขายได้ไหม,Supporting Article,Link to lens condition article,Yes
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,กรณีขายรวมกับเลนส์,รับซื้อเลนส์กล้อง,/บริการ/รับซื้อเลนส์กล้อง,Supporting Service,Link to camera lens service,Yes
+ขายโทรศัพท์มือสองใกล้ฉัน,5 วิธีเลือกร้าน,รับซื้อโทรศัพท์มือสอง,/บริการ/รับซื้อโทรศัพท์มือสอง,Primary Service CTA,Contextual link to phone service page,Yes
+ขายโทรศัพท์มือสองใกล้ฉัน,5 วิธีเลือกร้าน,รับซื้อมือถือ,/บริการ/รับซื้อมือถือ,Supporting Service,Link to mobile service hub,Yes
+ขายโทรศัพท์มือสองใกล้ฉัน,ขั้นตอนการเตรียมโทรศัพท์,จำนำโทรศัพท์กับขายขาดต่างกันอย่างไร,/blog/จำนำโทรศัพท์กับขายขาดต่างกันอย่างไร,Supporting Article,Link to pawn vs sale article,Yes
+ขายโทรศัพท์มือสองใกล้ฉัน,การตรวจสอบรหัส IMEI,ขายสินค้าไอทีอย่างไรให้ปลอดภัย ไม่โดนโกง,/blog/ขายสินค้าไอทีอย่างไรให้ปลอดภัย-ไม่โดนโกง,Supporting Article,Link to anti-fraud article,Yes
+ขายโทรศัพท์มือสองใกล้ฉัน,การตรวจสอบรหัส IMEI,ลบข้อมูลก่อนขาย ทำยังไงให้กู้ไม่ได้,/blog/ลบข้อมูลก่อนขาย-ทำยังไงให้กู้ไม่ได้,Supporting Article,Link to data wipe article,Yes

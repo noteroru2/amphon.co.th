@@ -1,0 +1,5 @@
+Article,Source file,Route,Word count,Frontmatter,CTA pattern,Internal-link pattern
+แรมมือสองขายได้เท่าไหร่,src/content/blog/แรมมือสองขายได้เท่าไหร่.md,/blog/แรมมือสองขายได้เท่าไหร่,1650,Valid baseSchema (author/tags),Single primary LINE/tel CTA + Contextual link,Contextual internal links to /บริการ/รับซื้อแรม + supporting posts
+Mac mini M4 มือสอง,src/content/blog/mac-mini-m4-มือสอง.md,/blog/mac-mini-m4-มือสอง,1680,Valid baseSchema (author/tags),Single primary LINE/tel CTA + Contextual link,Contextual internal links to /บริการ/รับซื้อ-mac-mini + supporting posts
+ขายกล้อง Sony มือสองต้องเช็กอะไรบ้าง,src/content/blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง.md,/blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง,1720,Valid baseSchema (author/tags),Single primary LINE/tel CTA + Contextual link,Contextual internal links to /บริการ/รับซื้อกล้อง-sony + supporting posts
+ขายโทรศัพท์มือสองใกล้ฉัน,src/content/blog/ขายโทรศัพท์มือสองใกล้ฉัน.md,/blog/ขายโทรศัพท์มือสองใกล้ฉัน,1750,Valid baseSchema (author/tags),Single primary LINE/tel CTA + Contextual link,Contextual internal links to /บริการ/รับซื้อโทรศัพท์มือสอง + supporting posts

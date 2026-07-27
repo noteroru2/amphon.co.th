@@ -1,0 +1,20 @@
+File path,Action,Type,Description
+src/content/blog/แรมมือสองขายได้เท่าไหร่.md,NEW,Content Collection,New informational article for RAM valuation guide
+src/content/blog/mac-mini-m4-มือสอง.md,NEW,Content Collection,New informational article for Mac mini M4 specs & inspection
+src/content/blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง.md,NEW,Content Collection,New seller checklist article for Sony camera inspection
+src/content/blog/ขายโทรศัพท์มือสองใกล้ฉัน.md,NEW,Content Collection,New informational safety & buyer choice guide for used phones
+src/content/services/รับซื้อแรม.md,MODIFY,Content Collection,Added inbound link to /blog/แรมมือสองขายได้เท่าไหร่
+src/content/services/รับซื้อ-mac-mini.md,MODIFY,Content Collection,Added inbound link to /blog/mac-mini-m4-มือสอง
+src/content/services/รับซื้อกล้อง-sony.md,MODIFY,Content Collection,Added inbound link to /blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง
+src/content/services/รับซื้อโทรศัพท์มือสอง.md,MODIFY,Content Collection,Added inbound link to /blog/ขายโทรศัพท์มือสองใกล้ฉัน
+docs/batch-5-supporting-content-cluster/batch-5-content-inventory.csv,NEW,Documentation,Inventory of created content
+docs/batch-5-supporting-content-cluster/batch-5-existing-route-audit.csv,NEW,Documentation,Existing route audit report
+docs/batch-5-supporting-content-cluster/batch-5-page-query-map.csv,NEW,Documentation,Page-query ownership map
+docs/batch-5-supporting-content-cluster/batch-5-slug-decisions.csv,NEW,Documentation,Slug decisions report
+docs/batch-5-supporting-content-cluster/batch-5-internal-link-plan.csv,NEW,Documentation,Internal link mapping plan
+docs/batch-5-supporting-content-cluster/batch-5-inbound-links.csv,NEW,Documentation,Inbound links report
+docs/batch-5-supporting-content-cluster/batch-5-cannibalization-audit.csv,NEW,Documentation,Cannibalization audit report
+docs/batch-5-supporting-content-cluster/batch-5-metadata-before-after.csv,NEW,Documentation,Metadata audit report
+docs/batch-5-supporting-content-cluster/batch-5-files-changed.csv,NEW,Documentation,Summary of files changed in Batch 5
+docs/batch-5-supporting-content-cluster/batch-5-qa-report.md,NEW,Documentation,Technical & Browser QA report
+docs/batch-5-supporting-content-cluster/batch-5-final-report.md,NEW,Documentation,Final Batch 5 completion report

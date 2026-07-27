@@ -1,0 +1,6 @@
+New article,Potential competing URL,Intent difference,Risk before,Risk after,Verdict
+/blog/แรมมือสองขายได้เท่าไหร่,/บริการ/รับซื้อแรม,Blog covers valuation factors DDR/ECC/Bus; Service page handles LINE evaluation submission & sales process,Low,None,PASS - No intent overlap
+/blog/mac-mini-m4-มือสอง,/บริการ/รับซื้อ-mac-mini,Blog covers M4/M4 Pro specs & inspection checklist; Service handles evaluation & purchase,Low,None,PASS - Distinct intent
+/blog/mac-mini-m4-มือสอง,/blog/imac-mac-mini-มือสอง-ขายอย่างไรให้ประเมินง่าย,Blog 1 is specific to M4 Apple Silicon specs & checks; Blog 2 is general desktop Mac prep,Low,None,PASS - Clear generation differentiation
+/blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง,/บริการ/รับซื้อกล้อง-sony,Blog provides 9-point seller checklist; Service page handles purchase terms,Low,None,PASS - Complementary relationship
+/blog/ขายโทรศัพท์มือสองใกล้ฉัน,/บริการ/รับซื้อโทรศัพท์มือสอง,Blog provides buyer selection & data privacy safety guide; Service handles transactional evaluation,Low,None,PASS - Zero service duplication
