@@ -2,6 +2,13 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+import {
+  buildTrustworthyLastmodMap,
+  dateOnlySitemapIntegration,
+  serializeTrustworthyLastmod,
+} from './scripts/lib/trustworthy-sitemap-lastmod.mjs';
+
+const { lastmodByPath } = buildTrustworthyLastmodMap();
 
 const sitemapBlockedPrefixes = [
   '/รับซื้อ/รับซื้อ-gopro-',
@@ -44,6 +51,8 @@ export default defineConfig({
           th: 'th-TH',
         },
       },
+      serialize: (item) => serializeTrustworthyLastmod(item, lastmodByPath),
     }),
+    dateOnlySitemapIntegration(),
   ],
 });
