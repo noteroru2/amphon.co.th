@@ -1,0 +1,15 @@
+Commit scope,File,Change,Purpose
+Implementation,astro.config.mjs,Modified,Attach trustworthy serializer and date-only postprocessor
+Implementation,scripts/check-sitemap-indexability.mjs,Modified,Validate lastmod coverage format future dates and article schema
+Implementation,scripts/lib/trustworthy-sitemap-lastmod.mjs,Added,Build validated frontmatter-derived URL-to-lastmod map
+Implementation,scripts/trustworthy-sitemap-lastmod.test.mjs,Added,Test policy mapping rejection omission and determinism
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-pre-merge-diff.csv,Added,Record reviewed scope
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-merge-report.md,Added,Record commit and merge evidence
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-local-qa-report.md,Added,Record pre-commit and main QA
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-deployment-report.md,Added,Record Vercel production evidence
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-production-sitemap-audit.csv,Added,Record all 1183 production sitemap URL checks
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-production-sample-audit.csv,Added,Record 30 required sample URL checks
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-production-regression-audit.csv,Added,Record production route and redirect checks
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-deterministic-audit.md,Added,Record local and production hashes
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-files-changed.csv,Added,Record implementation and reporting scope
+Report-only,docs/batch-6-7-sitemap-production-release/batch-6-7-final-report.md,Added,Record release verdict and GSC readiness

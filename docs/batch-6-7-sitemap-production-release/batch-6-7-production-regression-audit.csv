@@ -1,0 +1,14 @@
+Check,Expected,Actual,Result
+Redirect /บริการ/รับซื้อ-gopro,308 -> /บริการ/รับซื้อ-gopro-action-camera -> 200,308 -> /บริการ/รับซื้อ-gopro-action-camera -> 200,PASS
+Redirect /บริการ/รับซื้อ-hdd,308 -> /บริการ/รับซื้อ-ssd -> 200,308 -> /บริการ/รับซื้อ-ssd -> 200,PASS
+Production route /blog,HTTP 200; canonical; indexable,"HTTP 200; canonical /blog; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /blog/ขายโทรศัพท์มือสองใกล้ฉัน,HTTP 200; canonical; indexable,"HTTP 200; canonical /blog/ขายโทรศัพท์มือสองใกล้ฉัน; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง,HTTP 200; canonical; indexable,"HTTP 200; canonical /blog/ขายกล้อง-sony-มือสอง-ต้องเช็กอะไรบ้าง; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /blog/mac-mini-m4-มือสอง,HTTP 200; canonical; indexable,"HTTP 200; canonical /blog/mac-mini-m4-มือสอง; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /blog/แรมมือสองขายได้เท่าไหร่,HTTP 200; canonical; indexable,"HTTP 200; canonical /blog/แรมมือสองขายได้เท่าไหร่; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /บริการ/รับซื้อ-ipad,HTTP 200; canonical; indexable,"HTTP 200; canonical /บริการ/รับซื้อ-ipad; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /บริการ/รับซื้อแท็บเล็ต,HTTP 200; canonical; indexable,"HTTP 200; canonical /บริการ/รับซื้อแท็บเล็ต; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /บริการ/รับซื้อ-iphone,HTTP 200; canonical; indexable,"HTTP 200; canonical /บริการ/รับซื้อ-iphone; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /บริการ/รับซื้อโทรศัพท์มือสอง,HTTP 200; canonical; indexable,"HTTP 200; canonical /บริการ/รับซื้อโทรศัพท์มือสอง; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /บริการ/รับซื้อ-gopro-action-camera,HTTP 200; canonical; indexable,"HTTP 200; canonical /บริการ/รับซื้อ-gopro-action-camera; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS
+Production route /บริการ/รับซื้อ-ssd,HTTP 200; canonical; indexable,"HTTP 200; canonical /บริการ/รับซื้อ-ssd; robots index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",PASS

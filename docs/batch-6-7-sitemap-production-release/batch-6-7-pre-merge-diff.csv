@@ -1,0 +1,9 @@
+File,Status,Scope,Result
+astro.config.mjs,Modified,Sitemap integration,PASS
+scripts/check-sitemap-indexability.mjs,Modified,Sitemap QA,PASS
+scripts/lib/trustworthy-sitemap-lastmod.mjs,Added,Trustworthy lastmod implementation,PASS
+scripts/trustworthy-sitemap-lastmod.test.mjs,Added,Unit tests,PASS
+package.json,Unchanged,Dependencies,PASS
+package-lock.json,Unchanged,Lockfile,PASS
+src/content/,Unchanged,Content and frontmatter,PASS
+Git tree temp path scan,No matches,AppData or Local/Temp or amphon-batch6-6-qa,PASS
