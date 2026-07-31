@@ -1,10 +1,11 @@
 check,status,notes
-homepage_200,PENDING,
-sitemap_index_200,PENDING,
-sitemap_count,PENDING,Expect 1185
-target_urls_200,PENDING,
-target_claims_cleared,PENDING,
-canonical_unchanged,PENDING,
-f01_redirect,PENDING,
-f02_f03_in_sitemap,PENDING,
-batch3_build_wrapper_present,PENDING,
+homepage_200,PASS,https://amphon.co.th/ → 200
+sitemap_index_200,PASS,→ 200
+sitemap_count,PASS,1185
+target_urls_200,PASS,8/8
+target_claims_cleared,PASS,expect phrases present; forbidden old claims absent
+canonical_unchanged,PASS,local rendered validation + production pages live at same paths
+f01_redirect,PASS,legacy service hub → 308
+f02_f03_in_sitemap,PASS,count remains 1185 post Batch 2
+batch3_build_wrapper_present,PASS,package.json build still uses windows-safe wrapper
+production_sha,NOT_VERIFIED,no Vercel/gh API token used

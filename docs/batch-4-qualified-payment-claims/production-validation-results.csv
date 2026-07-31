@@ -1,0 +1,9 @@
+url,http_status,expect_found,forbid_absent,h1,status
+/บริการ/รับซื้อ-notebook-acer,200,true,true,รับซื้อ Notebook Acer มือสอง Aspire Swift Nitro Predator ประเมินราคาเบื้องต้นฟรี,PASS
+/บริการ/รับซื้อ-notebook-asus,200,true,true,รับซื้อ Notebook Asus มือสอง VivoBook ZenBook ROG TUF ประเมินราคาเบื้องต้นฟรี,PASS
+/บริการ/รับซื้อ-notebook-dell,200,true,true,รับซื้อ Notebook Dell มือสอง Inspiron XPS Latitude Alienware ประเมินราคาเบื้องต้นฟรี,PASS
+/บริการ/รับซื้อ-notebook-hp,200,true,true,รับซื้อ Notebook HP มือสอง Pavilion Envy Omen Victus ProBook ประเมินราคาเบื้องต้นฟรี,PASS
+/บริการ/รับซื้อ-notebook-lenovo,200,true,true,รับซื้อ Notebook Lenovo มือสอง IdeaPad ThinkPad Legion ประเมินราคาเบื้องต้นฟรี,PASS
+/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม,200,true,true,รับซื้อสินค้าไอทีถึงที่ ปลอดภัยไหม,PASS
+/blog/ราคา-ipad-มือสอง-2026,200,true,true,ราคา iPad มือสอง 2026 ทุกรุ่น iPad Air Pro Mini ราคาเท่าไหร่,PASS
+/blog/ราคา-macbook-มือสอง-2026,200,true,true,ราคา MacBook มือสอง 2026 MacBook Air M2 M3 และ Pro ราคาเท่าไหร่,PASS
