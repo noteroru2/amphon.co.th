@@ -11,7 +11,7 @@ Warning: local sitemap XML ไม่ถูกสร้างเพราะ F-08
 |---|---|
 | Branch | `fix/batch-2-sitemap-inclusion-conflicts` |
 | Base SHA | `00a117edd66c515e713d07599e352b3fe2ca4024` |
-| Implementation SHA | *(หลัง commit)* |
+| Implementation SHA | `7fc8ecb135e638abf8536ff960af157256a29c8e` |
 
 ## Files changed
 

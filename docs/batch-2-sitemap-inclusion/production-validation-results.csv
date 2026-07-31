@@ -1,0 +1,20 @@
+﻿check,detail,result
+sitemap-index,"{""check"":""sitemap-index"",""status"":200,""result"":""PASS""}",PASS
+sitemap-0,"{""check"":""sitemap-0"",""status"":200,""count"":1185,""result"":""PASS""}",PASS
+include:/บริการ/รับซื้อสินค้าไอทีบริษัท,"{""check"":""include:/บริการ/รับซื้อสินค้าไอทีบริษัท"",""in_sitemap"":true,""http"":200,""canonical"":""/บริการ/รับซื้อสินค้าไอทีบริษัท"",""robots"":""index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"",""title"":""รับซื้อสินค้าไอทีบริษัททั่วประเทศ ส่งรายการประเมินราคาเบื้องต้น | Amphon.co.th"",""result"":""PASS""}",PASS
+include:/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี,"{""check"":""include:/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี"",""in_sitemap"":true,""http"":200,""canonical"":""/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี"",""robots"":""index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"",""title"":""รับซื้อคอมพิวเตอร์ มือสอง อุบลราชธานี ประเมินราคาเบื้องต้น | Amphon.co.th"",""result"":""PASS""}",PASS
+exclude:/บริการ/รับซื้อสินค้าไอที,"{""check"":""exclude:/บริการ/รับซื้อสินค้าไอที"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/บริการ/รับซื้อ-gopro,"{""check"":""exclude:/บริการ/รับซื้อ-gopro"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/บริการ/รับซื้อ-hdd,"{""check"":""exclude:/บริการ/รับซื้อ-hdd"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/บริการ/รับซื้อเลนส์,"{""check"":""exclude:/บริการ/รับซื้อเลนส์"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/บริการ/รับซื้อ-storage-nas,"{""check"":""exclude:/บริการ/รับซื้อ-storage-nas"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/404,"{""check"":""exclude:/404"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/รับซื้อ/รับซื้อ-hdd-ขอนแก่น,"{""check"":""exclude:/รับซื้อ/รับซื้อ-hdd-ขอนแก่น"",""in_sitemap"":false,""result"":""PASS""}",PASS
+exclude:/รับซื้อ,"{""check"":""exclude:/รับซื้อ"",""in_sitemap"":false,""result"":""PASS""}",PASS
+batch1:/รับซื้อ,"{""check"":""batch1:/รับซื้อ"",""status"":308,""location"":""/รับซื้อสินค้าไอที"",""result"":""PASS""}",PASS
+batch1:/บริการ/รับซื้อสินค้าไอที,"{""check"":""batch1:/บริการ/รับซื้อสินค้าไอที"",""status"":308,""location"":""/รับซื้อสินค้าไอที"",""result"":""PASS""}",PASS
+batch1:/รับซื้อ/รับซื้อ-hdd-ขอนแก่น,"{""check"":""batch1:/รับซื้อ/รับซื้อ-hdd-ขอนแก่น"",""status"":308,""location"":""/รับซื้อ/รับซื้อ-ssd-ขอนแก่น"",""result"":""PASS""}",PASS
+current:/,"{""check"":""current:/"",""status"":200,""result"":""PASS""}",PASS
+current:/contact,"{""check"":""current:/contact"",""status"":200,""result"":""PASS""}",PASS
+current:/รับซื้อสินค้าไอที,"{""check"":""current:/รับซื้อสินค้าไอที"",""status"":200,""result"":""PASS""}",PASS
+current:/บริการ/รับซื้อ-macbook,"{""check"":""current:/บริการ/รับซื้อ-macbook"",""status"":200,""result"":""PASS""}",PASS

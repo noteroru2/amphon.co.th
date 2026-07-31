@@ -1,12 +1,7 @@
-check,expected,production_status_before,production_status_after,result
-sitemap-index.xml,200,200,PENDING DEPLOYMENT,PENDING
-sitemap-0.xml count,1185 (baseline 1183 + F-02 + F-03),1183,PENDING DEPLOYMENT,PENDING
-/บริการ/รับซื้อสินค้าไอทีบริษัท in sitemap,yes,no,PENDING DEPLOYMENT,PENDING
-/บริการ/รับซื้อสินค้าไอทีบริษัท HTTP,200 + self-canonical + indexable,200,PENDING DEPLOYMENT,PENDING
-/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี in sitemap,yes,no,PENDING DEPLOYMENT,PENDING
-/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี HTTP,200 + self-canonical + indexable,200,PENDING DEPLOYMENT,PENDING
-/บริการ/รับซื้อสินค้าไอที in sitemap,no,no,PENDING DEPLOYMENT,PENDING
-Batch1 legacy sources in sitemap,0,0,PENDING DEPLOYMENT,PENDING
-noindex in sitemap,0,0,PENDING DEPLOYMENT,PENDING
-redirect sources in sitemap,0,0,PENDING DEPLOYMENT,PENDING
-duplicates,0,0,PENDING DEPLOYMENT,PENDING
+﻿check,expected,production_status_before,production_status_after,result
+sitemap-index.xml,200,200,200,PASS
+sitemap-0.xml count,1185,1183,1185,PASS
+F-02 in sitemap,yes,no,yes,PASS
+F-03 in sitemap,yes,no,yes,PASS
+legacy exclusions,not in sitemap,ok,ok,PASS
+batch1 redirects,still 308,ok,ok,PASS
