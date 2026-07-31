@@ -63,7 +63,17 @@
       "permanent": true
     },
     {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+      "destination": "/บริการ/รับซื้อ-ssd",
+      "permanent": true
+    },
+    {
       "source": "/รับซื้อ/รับซื้อ-gopro",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro",
       "destination": "/บริการ/รับซื้อ-gopro-action-camera",
       "permanent": true
     },
@@ -73,7 +83,17 @@
       "permanent": true
     },
     {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
       "source": "/รับซื้อ/รับซื้อ-storage-nas",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas",
       "destination": "/บริการ/รับซื้อ-nas",
       "permanent": true
     },
@@ -83,28 +103,818 @@
       "permanent": true
     },
     {
-      "source": "/รับซื้อ/รับซื้อ-hdd-:province",
-      "destination": "/รับซื้อ/รับซื้อ-ssd-:province",
-      "permanent": true
-    },
-    {
-      "source": "/รับซื้อ/รับซื้อ-gopro-:province",
-      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
-      "permanent": true
-    },
-    {
-      "source": "/รับซื้อ/รับซื้อเลนส์-:province",
-      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
-      "permanent": true
-    },
-    {
-      "source": "/รับซื้อ/รับซื้อ-storage-nas-:province",
-      "destination": "/บริการ/รับซื้อ-nas",
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "destination": "/รับซื้อสินค้าไอที",
       "permanent": true
     },
     {
       "source": "/บริการ/รับซื้อสินค้าไอที",
       "destination": "/รับซื้อสินค้าไอที",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AD%E0%B8%97%E0%B8%B5",
+      "destination": "/รับซื้อสินค้าไอที",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-กาฬสินธุ์",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-กาฬสินธุ์",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-กาฬสินธุ์",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-กาฬสินธุ์",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-กาฬสินธุ์",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-กาฬสินธุ์",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-ขอนแก่น",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ขอนแก่น",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ขอนแก่น",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-ขอนแก่น",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-ขอนแก่น",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-ขอนแก่น",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-ชัยภูมิ",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ชัยภูมิ",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ชัยภูมิ",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-ชัยภูมิ",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-ชัยภูมิ",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-ชัยภูมิ",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-นครพนม",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-นครพนม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-นครพนม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-นครพนม",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-นครพนม",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-นครพนม",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-นครราชสีมา",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-นครราชสีมา",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-นครราชสีมา",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-นครราชสีมา",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-นครราชสีมา",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-นครราชสีมา",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-บึงกาฬ",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-บึงกาฬ",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-บึงกาฬ",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-บึงกาฬ",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-บึงกาฬ",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-บึงกาฬ",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-บุรีรัมย์",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-บุรีรัมย์",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-บุรีรัมย์",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-บุรีรัมย์",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-บุรีรัมย์",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-บุรีรัมย์",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-มหาสารคาม",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-มหาสารคาม",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-มหาสารคาม",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-มหาสารคาม",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-มุกดาหาร",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-มุกดาหาร",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-มุกดาหาร",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-มุกดาหาร",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-มุกดาหาร",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-มุกดาหาร",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-ยโสธร",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-ยโสธร",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-ยโสธร",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-ยโสธร",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-ร้อยเอ็ด",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-ร้อยเอ็ด",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-ร้อยเอ็ด",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-ร้อยเอ็ด",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-เลย",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-เลย",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-เลย",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-เลย",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-เลย",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-เลย",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-ศรีสะเกษ",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-ศรีสะเกษ",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-ศรีสะเกษ",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-ศรีสะเกษ",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-สกลนคร",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-สกลนคร",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-สกลนคร",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-สกลนคร",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-สุรินทร์",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-สุรินทร์",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-สุรินทร์",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-สุรินทร์",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-หนองคาย",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-หนองคาย",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-หนองคาย",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-หนองคาย",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-หนองคาย",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-หนองคาย",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-หนองบัวลำภู",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-หนองบัวลำภู",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-หนองบัวลำภู",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-หนองบัวลำภู",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-หนองบัวลำภู",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-หนองบัวลำภู",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-อำนาจเจริญ",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-อำนาจเจริญ",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-อำนาจเจริญ",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-อำนาจเจริญ",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-อำนาจเจริญ",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-อำนาจเจริญ",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-อุดรธานี",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-อุดรธานี",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-อุดรธานี",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-อุดรธานี",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-hdd-อุบลราชธานี",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-อุบลราชธานี",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/รับซื้อ/รับซื้อ-ssd-อุบลราชธานี",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-gopro-อุบลราชธานี",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อ-gopro-action-camera",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อเลนส์-อุบลราชธานี",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อเลนส์กล้อง",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อ-storage-nas-อุบลราชธานี",
+      "destination": "/บริการ/รับซื้อ-nas",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อ-nas",
       "permanent": true
     },
     {
@@ -117,51 +927,81 @@
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/favicon(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/apple-touch-icon.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/icon-(.*).png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/site.webmanifest",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/(.*).js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*).css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]

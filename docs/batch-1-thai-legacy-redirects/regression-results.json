@@ -1,0 +1,1752 @@
+{
+  "generatedAt": "2026-07-31T17:27:07.976Z",
+  "provinces": 20,
+  "caseCount": 174,
+  "passCount": 174,
+  "failCount": 0,
+  "issueCount": 0,
+  "hasBuild": true,
+  "issues": [],
+  "results": [
+    {
+      "request": "/รับซื้อ",
+      "form": "unicode",
+      "group": "hub",
+      "expected": "/รับซื้อสินค้าไอที",
+      "actual": "/รับซื้อสินค้าไอที",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "form": "percent-encoded",
+      "group": "hub",
+      "expected": "/รับซื้อสินค้าไอที",
+      "actual": "/รับซื้อสินค้าไอที",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/บริการ/รับซื้อสินค้าไอที",
+      "form": "unicode",
+      "group": "hub",
+      "expected": "/รับซื้อสินค้าไอที",
+      "actual": "/รับซื้อสินค้าไอที",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B9%84%E0%B8%AD%E0%B8%97%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "hub",
+      "expected": "/รับซื้อสินค้าไอที",
+      "actual": "/รับซื้อสินค้าไอที",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd",
+      "form": "unicode",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อ-ssd",
+      "actual": "/บริการ/รับซื้อ-ssd",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+      "form": "percent-encoded",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อ-ssd",
+      "actual": "/บริการ/รับซื้อ-ssd",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro",
+      "form": "unicode",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro",
+      "form": "percent-encoded",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์",
+      "form": "unicode",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas",
+      "form": "unicode",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas",
+      "form": "percent-encoded",
+      "group": "service-exact",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ?source=test",
+      "form": "unicode+query",
+      "group": "query",
+      "expected": "/รับซื้อสินค้าไอที",
+      "actual": "/รับซื้อสินค้าไอที",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD?source=test",
+      "form": "percent-encoded+query",
+      "group": "query",
+      "expected": "/รับซื้อสินค้าไอที",
+      "actual": "/รับซื้อสินค้าไอที",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-กาฬสินธุ์",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-กาฬสินธุ์",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-กาฬสินธุ์",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-กาฬสินธุ์",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-กาฬสินธุ์",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-กาฬสินธุ์",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-กาฬสินธุ์",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-กาฬสินธุ์",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%81%E0%B8%B2%E0%B8%AC%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-ขอนแก่น",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ขอนแก่น",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ขอนแก่น",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ขอนแก่น",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ขอนแก่น",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-ขอนแก่น",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-ขอนแก่น",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-ขอนแก่น",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-ชัยภูมิ",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ชัยภูมิ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ชัยภูมิ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ชัยภูมิ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ชัยภูมิ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-ชัยภูมิ",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-ชัยภูมิ",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-ชัยภูมิ",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-นครพนม",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-นครพนม",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-นครพนม",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-นครพนม",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-นครพนม",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-นครพนม",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-นครพนม",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-นครพนม",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%9E%E0%B8%99%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-นครราชสีมา",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-นครราชสีมา",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-นครราชสีมา",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-นครราชสีมา",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-นครราชสีมา",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-นครราชสีมา",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-นครราชสีมา",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-นครราชสีมา",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-บึงกาฬ",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-บึงกาฬ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-บึงกาฬ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-บึงกาฬ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-บึงกาฬ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-บึงกาฬ",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-บึงกาฬ",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-บึงกาฬ",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%9A%E0%B8%B6%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%AC",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-บุรีรัมย์",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-บุรีรัมย์",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-บุรีรัมย์",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-บุรีรัมย์",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-บุรีรัมย์",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-บุรีรัมย์",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-บุรีรัมย์",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-บุรีรัมย์",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-มหาสารคาม",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-มหาสารคาม",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-มหาสารคาม",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-มหาสารคาม",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%B2%E0%B8%A1",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-มุกดาหาร",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-มุกดาหาร",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-มุกดาหาร",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-มุกดาหาร",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-มุกดาหาร",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-มุกดาหาร",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-มุกดาหาร",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-มุกดาหาร",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A1%E0%B8%B8%E0%B8%81%E0%B8%94%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-ยโสธร",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-ยโสธร",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-ยโสธร",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-ยโสธร",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A2%E0%B9%82%E0%B8%AA%E0%B8%98%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-ร้อยเอ็ด",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-ร้อยเอ็ด",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-ร้อยเอ็ด",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-ร้อยเอ็ด",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-เลย",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-เลย",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-เลย",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-เลย",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-เลย",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-เลย",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-เลย",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-เลย",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-ศรีสะเกษ",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-ศรีสะเกษ",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-ศรีสะเกษ",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-ศรีสะเกษ",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-สกลนคร",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-สกลนคร",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-สกลนคร",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-สกลนคร",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-สุรินทร์",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-สุรินทร์",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-สุรินทร์",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-สุรินทร์",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-หนองคาย",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-หนองคาย",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-หนองคาย",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-หนองคาย",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-หนองคาย",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-หนองคาย",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-หนองคาย",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-หนองคาย",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-หนองบัวลำภู",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-หนองบัวลำภู",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-หนองบัวลำภู",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-หนองบัวลำภู",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-หนองบัวลำภู",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-หนองบัวลำภู",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-หนองบัวลำภู",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-หนองบัวลำภู",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-อำนาจเจริญ",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-อำนาจเจริญ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-อำนาจเจริญ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-อำนาจเจริญ",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-อำนาจเจริญ",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-อำนาจเจริญ",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-อำนาจเจริญ",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-อำนาจเจริญ",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-อุดรธานี",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-อุดรธานี",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-อุดรธานี",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-อุดรธานี",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-hdd-อุบลราชธานี",
+      "form": "unicode",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-อุบลราชธานี",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-อุบลราชธานี",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-hdd",
+      "expected": "/รับซื้อ/รับซื้อ-ssd-อุบลราชธานี",
+      "actual": "/รับซื้อ/รับซื้อ-ssd-อุบลราชธานี",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-gopro-อุบลราชธานี",
+      "form": "unicode",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-gopro",
+      "expected": "/บริการ/รับซื้อ-gopro-action-camera",
+      "actual": "/บริการ/รับซื้อ-gopro-action-camera",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อเลนส์-อุบลราชธานี",
+      "form": "unicode",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%99%E0%B8%AA%E0%B9%8C-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-lens",
+      "expected": "/บริการ/รับซื้อเลนส์กล้อง",
+      "actual": "/บริการ/รับซื้อเลนส์กล้อง",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/รับซื้อ/รับซื้อ-storage-nas-อุบลราชธานี",
+      "form": "unicode",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    },
+    {
+      "request": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-storage-nas-%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "form": "percent-encoded",
+      "group": "service-x-province-nas",
+      "expected": "/บริการ/รับซื้อ-nas",
+      "actual": "/บริการ/รับซื้อ-nas",
+      "hops": 1,
+      "queryPreservedConfig": true,
+      "status": "PASS"
+    }
+  ]
+}
