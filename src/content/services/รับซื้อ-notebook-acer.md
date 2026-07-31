@@ -1,6 +1,6 @@
 ---
 title: "รับซื้อ Notebook Acer มือสอง หลายรุ่น ประเมินตามสภาพจริง"
-h1: "รับซื้อ Notebook Acer มือสอง Aspire Swift Nitro Predator ประเมินฟรี จ่ายทันที"
+h1: "รับซื้อ Notebook Acer มือสอง Aspire Swift Nitro Predator ประเมินราคาเบื้องต้นฟรี"
 slug: "รับซื้อ-notebook-acer"
 order: 36
 description: "รับซื้อโน๊ตบุ๊ค Acer มือสองหลายรุ่น Aspire, Swift, Nitro 5, Predator Helios ประเมินราคาฟรี ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว มีหน้าร้าน Line @webuy โทร 064-257-9353"

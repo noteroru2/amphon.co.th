@@ -1,6 +1,6 @@
 ---
 title: "รับซื้อ Notebook Dell มือสอง หลายรุ่น ประเมินตามสภาพจริง"
-h1: "รับซื้อ Notebook Dell มือสอง Inspiron XPS Latitude Alienware ประเมินฟรี จ่ายทันที"
+h1: "รับซื้อ Notebook Dell มือสอง Inspiron XPS Latitude Alienware ประเมินราคาเบื้องต้นฟรี"
 slug: "รับซื้อ-notebook-dell"
 order: 38
 description: "รับซื้อโน๊ตบุ๊ค Dell มือสองหลายรุ่น Inspiron, XPS, Latitude, Vostro, Alienware ประเมินราคาฟรี ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว Line @webuy โทร 064-257-9353"

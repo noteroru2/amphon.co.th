@@ -1,6 +1,6 @@
 ---
 title: "รับซื้อ Notebook Asus มือสอง หลายรุ่น ประเมินตามสภาพจริง"
-h1: "รับซื้อ Notebook Asus มือสอง VivoBook ZenBook ROG TUF ประเมินฟรี จ่ายทันที"
+h1: "รับซื้อ Notebook Asus มือสอง VivoBook ZenBook ROG TUF ประเมินราคาเบื้องต้นฟรี"
 slug: "รับซื้อ-notebook-asus"
 order: 35
 description: "รับซื้อโน๊ตบุ๊ค Asus มือสองหลายรุ่น VivoBook, ZenBook, TUF Gaming, ROG Strix, ROG Zephyrus ประเมินราคาฟรี ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว มีหน้าร้าน Line @webuy โทร 064-257-9353"

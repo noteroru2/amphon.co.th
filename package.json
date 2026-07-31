@@ -22,6 +22,7 @@
     "qa:batch-1-redirects": "node scripts/check-batch-1-thai-legacy-redirects.mjs",
     "qa:batch-2-sitemap": "node scripts/check-batch-2-sitemap.mjs",
     "qa:batch-3-build": "node scripts/check-batch-3-windows-build.mjs",
+    "qa:batch-4-claims": "node scripts/check-batch-4-qualified-payment-claims.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
     "qa:claim-risk": "node scripts/check-claim-risk.mjs",
