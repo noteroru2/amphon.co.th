@@ -1,0 +1,14 @@
+check,status,notes
+homepage_200,PENDING,Fill after production deploy
+sitemap_index_200,PENDING,Fill after production deploy
+sitemap_count,PENDING,Expect 1185
+f02_in_sitemap,PENDING,
+f03_in_sitemap,PENDING,
+legacy_redirect_f01,PENDING,
+noindex_absent_from_sitemap,PENDING,
+redirect_urls_absent_from_sitemap,PENDING,
+sitemap_4xx_5xx,PENDING,Expect 0
+canonical_conflict,PENDING,Expect 0
+sample_service_200,PENDING,
+sample_location_200,PENDING,
+assets_200,PENDING,

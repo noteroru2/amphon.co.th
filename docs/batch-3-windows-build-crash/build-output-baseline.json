@@ -1,0 +1,10 @@
+{
+  "capturedAt": "2026-07-31T18:26:49.434Z",
+  "html_count": 1188,
+  "sitemap_count": 1185,
+  "sitemap_url_list_sha256": "9e090587dcc1eb41a1c918a8ef51b66000fd3579bb729ef4dce3c13056d237c7",
+  "has_vercel_output": true,
+  "f02_in_sitemap": true,
+  "f03_in_sitemap": true,
+  "note": "Captured after Windows-safe build fix on Thai-path repo"
+}

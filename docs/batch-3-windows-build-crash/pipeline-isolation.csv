@@ -1,0 +1,17 @@
+step,command,start_time,end_time,exit_code,last_stdout_line,last_stderr_line,artifacts_created,result
+env_baseline,node/npm version probes,2026-07-31T18:00:00Z,2026-07-31T18:00:30Z,0,v22.20.0,,n/a,PASS
+astro_check_pre,npx astro check (after removing scratch configs),2026-07-31T18:26:00Z,2026-07-31T18:26:20Z,0,0 errors / 0 warnings,,n/a,PASS
+qa_batch_1,npm run qa:batch-1-redirects,2026-07-31T18:22:00Z,2026-07-31T18:22:10Z,0,PASS batch-1 redirects,,,PASS
+qa_batch_2,npm run qa:batch-2-sitemap,2026-07-31T18:22:10Z,2026-07-31T18:22:20Z,0,PASS batch-2 sitemap,,,PASS
+repro_thai_npm,npm run build (pre-fix Thai path),2026-07-31T18:09:31Z,2026-07-31T18:09:45Z,-1073740791,[build] ✓ Completed in 8.87s.,npm exit -1073740791,HTML=1188 sitemap=0,FAIL_CRASH
+repro_thai_astro,npx astro build (pre-fix),2026-07-31T18:05:00Z,2026-07-31T18:05:20Z,-1073740791,[build] ✓ Completed in ~8.8s.,,HTML=1188 sitemap=0,FAIL_CRASH
+isolate_nft,node @vercel/nft on Thai dist/server/entry.mjs,2026-07-31T18:15:00Z,2026-07-31T18:15:05Z,0,NFT_OK files=274,,n/a,PASS
+isolate_copy,copyFilesToFolder after NFT on Thai path,2026-07-31T18:15:10Z,2026-07-31T18:15:16Z,0,COPY_OK,,274 files under .vercel,PASS
+isolate_ascii_copy,npm run build in C:\src\amphon-build-test,2026-07-31T18:08:00Z,2026-07-31T18:08:45Z,0,[build] Complete!,,HTML=1188 sitemap=1185,PASS
+isolate_spaces_copy,npm run build in C:\src\project with spaces\amphon,2026-07-31T18:18:00Z,2026-07-31T18:19:04Z,0,[build] Complete!,,HTML=1188 sitemap=1185,PASS
+isolate_junction,npm run build via ASCII junction to Thai,2026-07-31T18:10:00Z,2026-07-31T18:10:20Z,1,EPERM symlink in copyDependenciesToFunction,,HTML=1188 sitemap=0,FAIL_EPERM
+symlink_probe,fs.symlink on Thai path,2026-07-31T18:14:00Z,2026-07-31T18:14:01Z,0,SYMLINK_*_FAIL EPERM,,n/a,INFO
+fix_wrapper_1,npm run build (windows-safe wrapper),2026-08-01T01:23:34+07:00,2026-08-01T01:23:58+07:00,0,artifacts copied back; build complete,,HTML=1188 sitemap=1185,PASS
+fix_wrapper_2,npm run build (windows-safe wrapper),2026-08-01T01:23:59+07:00,2026-08-01T01:24:23+07:00,0,artifacts copied back; build complete,,HTML=1188 sitemap=1185,PASS
+fix_wrapper_3,npm run build (windows-safe wrapper),2026-08-01T01:24:24+07:00,2026-08-01T01:24:48+07:00,0,artifacts copied back; build complete,,HTML=1188 sitemap=1185,PASS
+qa_batch_3,npm run qa:batch-3-build,2026-07-31T18:25:00Z,2026-07-31T18:25:05Z,0,PASS,,,PASS

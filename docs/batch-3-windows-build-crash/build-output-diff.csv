@@ -1,0 +1,10 @@
+metric,before_fix_or_crashed_build,after_fix,delta,notes
+html_count,1188,1188,0,HTML completed even on crashed builds
+sitemap_count,0 (crash before emit),1185,1185,Sitemap missing pre-fix on Thai path
+routes_added,0,0,0,No intentional route changes
+routes_removed,0,0,0,No intentional route changes
+canonical_changed,0,0,0,Out of scope / unchanged
+noindex_changed,0,0,0,Out of scope / unchanged
+redirect_changed,0,0,0,Out of scope / unchanged
+metadata_changed,0,0,0,Out of scope / unchanged
+content_output_changed,0,0,0,Wrapper copies artifacts; no content edits
