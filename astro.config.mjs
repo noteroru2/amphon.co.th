@@ -7,15 +7,9 @@ import {
   dateOnlySitemapIntegration,
   serializeTrustworthyLastmod,
 } from './scripts/lib/trustworthy-sitemap-lastmod.mjs';
+import { shouldIncludeInSitemap } from './scripts/lib/sitemap-inclusion.mjs';
 
 const { lastmodByPath } = buildTrustworthyLastmodMap();
-
-const sitemapBlockedPrefixes = [
-  '/รับซื้อ/รับซื้อ-gopro-',
-  '/รับซื้อ/รับซื้อเลนส์-',
-  '/รับซื้อ/รับซื้อ-hdd-',
-  '/รับซื้อ/รับซื้อ-storage-nas-',
-];
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,22 +23,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => {
-        const decoded = decodeURIComponent(page);
-        let pathname = decoded.replace(/^https?:\/\/[^\/]+/, '');
-        pathname = pathname.replace(/\/$/, '');
-
-        return (
-          !pathname.includes('/404') &&
-          !pathname.includes('/บริการ/รับซื้อสินค้าไอที') &&
-          pathname !== '/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี' &&
-          pathname !== '/บริการ/รับซื้อ-gopro' &&
-          pathname !== '/บริการ/รับซื้อ-hdd' &&
-          pathname !== '/บริการ/รับซื้อเลนส์' &&
-          pathname !== '/บริการ/รับซื้อ-storage-nas' &&
-          !sitemapBlockedPrefixes.some((prefix) => pathname.includes(prefix))
-        );
-      },
+      filter: (page) => shouldIncludeInSitemap(page),
       i18n: {
         defaultLocale: 'th',
         locales: {

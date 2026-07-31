@@ -19,6 +19,7 @@
     "qa:internal-404": "node scripts/check-internal-404.mjs",
     "qa:redirect-chain": "node scripts/check-redirect-chains.mjs",
     "qa:batch-1-redirects": "node scripts/check-batch-1-thai-legacy-redirects.mjs",
+    "qa:batch-2-sitemap": "node scripts/check-batch-2-sitemap.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
     "qa:claim-risk": "node scripts/check-claim-risk.mjs",
