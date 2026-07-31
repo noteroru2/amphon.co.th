@@ -1,6 +1,6 @@
 ---
 title: "รับซื้อ Notebook Lenovo มือสอง หลายรุ่น ประเมินตามสภาพจริง"
-h1: "รับซื้อ Notebook Lenovo มือสอง IdeaPad ThinkPad Legion ประเมินฟรี จ่ายทันที"
+h1: "รับซื้อ Notebook Lenovo มือสอง IdeaPad ThinkPad Legion ประเมินราคาเบื้องต้นฟรี"
 slug: "รับซื้อ-notebook-lenovo"
 order: 37
 description: "รับซื้อโน๊ตบุ๊ค Lenovo มือสองหลายรุ่น IdeaPad, ThinkPad, Yoga, Legion, LOQ ประเมินราคาฟรี ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว มีหน้าร้าน Line @webuy โทร 064-257-9353"

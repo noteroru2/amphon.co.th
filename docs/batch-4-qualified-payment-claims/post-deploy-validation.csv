@@ -1,0 +1,10 @@
+check,status,notes
+homepage_200,PENDING,
+sitemap_index_200,PENDING,
+sitemap_count,PENDING,Expect 1185
+target_urls_200,PENDING,
+target_claims_cleared,PENDING,
+canonical_unchanged,PENDING,
+f01_redirect,PENDING,
+f02_f03_in_sitemap,PENDING,
+batch3_build_wrapper_present,PENDING,
