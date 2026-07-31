@@ -1,5 +1,7 @@
 # build output
 dist/
+.vercel/
+.amphon-build-complete
 # generated types
 .astro/
 
