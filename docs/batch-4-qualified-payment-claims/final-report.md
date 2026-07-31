@@ -1,4 +1,4 @@
-﻿# Final report â€” Batch 4
+﻿# Final report — Batch 4
 
 ## Verdict
 
@@ -21,7 +21,7 @@ Warning: Production SHA `NOT VERIFIED`. All target claim checks and technical re
 | Implementation SHA | `822171f01a8cef87d8ccae04c665740777220a7a` |
 | Merge SHA | `7cd56e4ed186413a476a4b5a83b0c47f1cc2b3da` |
 | Production SHA | `NOT VERIFIED` |
-| Report-only SHA | _3493e59e2525b9f075c9d3fcd33549221c7e0d44_ |
+| Report-only SHA | `3493e59e2525b9f075c9d3fcd33549221c7e0d44` (tip `65a17f4`) |
 | Deployment URL | https://amphon.co.th |
 
 ## Change summary
@@ -36,7 +36,7 @@ Warning: Production SHA `NOT VERIFIED`. All target claim checks and technical re
 | CTA/body changed | 3 |
 | FAQ changed | 0 |
 | JSON-LD direct edits | 0 |
-| Additional instances found | deferred (à¸«à¸¹à¸Ÿà¸±à¸‡ / à¸­à¸¸à¸›à¸à¸£à¸“à¹Œà¸„à¸­à¸¡ / Nikon + seed/OG scripts) |
+| Additional instances found | deferred (other service pages + seed/OG scripts) |
 | Unqualified claims remaining on targets | 0 |
 
 ## Intent / keywords
@@ -45,7 +45,7 @@ Preserved. No route/sitemap/canonical/redirect edits.
 
 ## QA / build
 
-Astro check 0/0 Â· Batch 1â€“4 PASS Â· Build exit 0 Â· HTML 1188 Â· Sitemap 1185
+Astro check 0/0 · Batch 1–4 PASS · Build exit 0 · HTML 1188 · Sitemap 1185
 
 ## Files changed (implementation)
 
@@ -54,4 +54,3 @@ Astro check 0/0 Â· Batch 1â€“4 PASS Â· Build exit 0 Â· HTML 1188 Â·
 - `scripts/check-batch-4-qualified-payment-claims.mjs`
 - `package.json` qa script
 - `docs/batch-4-qualified-payment-claims/*`
-
