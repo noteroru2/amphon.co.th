@@ -1,0 +1,10 @@
+URL,status_before,status_after,reason_before,reason_after,expected,result
+/บริการ/รับซื้อสินค้าไอทีบริษัท,excluded,included,substring includes('/บริการ/รับซื้อสินค้าไอที'),exact exclusion set does not include sibling,include,PASS
+/รับซื้อ/รับซื้อคอมพิวเตอร์-อุบลราชธานี,excluded,included,explicit exclusion while indexable,exclusion removed — align with indexability,include,PASS
+/บริการ/รับซื้อสินค้าไอที,excluded,excluded,legacy redirect hub,exact exclusion set,exclude,PASS
+/บริการ/รับซื้อ-gopro,excluded,excluded,redirect/noindex fallback,exact exclusion set,exclude,PASS
+/บริการ/รับซื้อ-hdd,excluded,excluded,redirect/noindex fallback,exact exclusion set,exclude,PASS
+/บริการ/รับซื้อเลนส์,excluded,excluded,redirect/noindex fallback,exact exclusion set,exclude,PASS
+/บริการ/รับซื้อ-storage-nas,excluded,excluded,redirect/noindex fallback,exact exclusion set,exclude,PASS
+/รับซื้อ/รับซื้อ-hdd-ขอนแก่น,excluded,excluded,Batch 1 legacy province redirect,blocked prefix startsWith,exclude,PASS
+/404,excluded,excluded,error page,404 rule,exclude,PASS
