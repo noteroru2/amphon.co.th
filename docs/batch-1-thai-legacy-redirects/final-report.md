@@ -11,7 +11,7 @@ Warning: ยังไม่ได้ยืนยันบน Vercel Edge / Produ
 |---|---|
 | Source branch | `fix/batch-1-thai-legacy-redirects` |
 | Base SHA (main) | `a0fb3703d493b85a9bcefbad16ef62945a2ec220` |
-| Final SHA | `409f773aabf2c468453a063c5d63ecafc101e376` |
+| Final SHA | `fe6b2d61e10390d7ffe228d5b52843419cfbf010` |
 | Production system of record | **Vercel redirects ใน `vercel.json`** (ไม่มี `public/_redirects`, ไม่มี middleware, ไม่มี Cloudflare redirect rules ใน repo) |
 
 ## Files changed (scope)
