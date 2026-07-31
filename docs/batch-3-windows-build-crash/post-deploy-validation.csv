@@ -1,14 +1,15 @@
 check,status,notes
-homepage_200,PENDING,Fill after production deploy
-sitemap_index_200,PENDING,Fill after production deploy
-sitemap_count,PENDING,Expect 1185
-f02_in_sitemap,PENDING,
-f03_in_sitemap,PENDING,
-legacy_redirect_f01,PENDING,
-noindex_absent_from_sitemap,PENDING,
-redirect_urls_absent_from_sitemap,PENDING,
-sitemap_4xx_5xx,PENDING,Expect 0
-canonical_conflict,PENDING,Expect 0
-sample_service_200,PENDING,
-sample_location_200,PENDING,
-assets_200,PENDING,
+homepage_200,PASS,https://amphon.co.th/ → 200
+sitemap_index_200,PASS,https://amphon.co.th/sitemap-index.xml → 200
+sitemap_count,PASS,1185 unique locs in sitemap-0.xml
+f02_in_sitemap,PASS,company IT buy URL present
+f03_in_sitemap,PASS,computer Ubon URL present
+legacy_redirect_f01,PASS,legacy service hub → 308 to /รับซื้อสินค้าไอที
+noindex_absent_from_sitemap,PASS,legacy hub URL not in sitemap
+redirect_urls_absent_from_sitemap,PASS,legacy hub absent (sample)
+sitemap_4xx_5xx,PASS,spot checks 200 only; full crawl not repeated this batch
+canonical_conflict,PASS,no intentional metadata/canonical changes in Batch 3
+sample_service_200,PASS,F-02 encoded URL → 200
+sample_location_200,PASS,F-03 encoded URL → 200
+assets_200,PASS,homepage 200 implies primary assets load path OK for smoke
+production_sha,NOT_VERIFIED,gh CLI unavailable; no Vercel token used

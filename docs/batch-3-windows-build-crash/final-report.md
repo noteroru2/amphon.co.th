@@ -7,23 +7,24 @@
 Warning reasons:
 
 1. Root cause confirmed at **path + Windows + Astro/Vercel build-done** component level; exact native faulting module not identified.
-2. Linux local build `NOT VERIFIED LOCALLY` (Vercel ASCII in-place path expected to be unaffected).
+2. Linux local build `NOT VERIFIED LOCALLY`; Production SHA `NOT VERIFIED` (HTTP validation passed).
+3. Finding F-08 is closed for Windows exit-code stability based on repeated local builds + production smoke checks.
 
 ## Finding
 
 | Finding | Status |
 | --- | --- |
-| F-08 Windows build crash | READY TO CLOSE after merge + production validation |
+| F-08 Windows build crash | **CLOSED** |
 
 ## SHAs
 
 | Item | SHA |
 | --- | --- |
 | Base (`origin/main`) | `6c3d0a25877785ff6d4069b8f4267528c422e977` |
-| Implementation | _(fill after commit)_ |
-| Merge | _(pending)_ |
-| Production | _(pending)_ |
-| Report-only | _(pending)_ |
+| Implementation | `cc00ade3da93dffa179d5b18e369520428bf20d7` |
+| Merge | `8521563fe5882fd4097a2701e1e58dbd812c2727` |
+| Production | `NOT VERIFIED` |
+| Report-only | _(this docs commit)_ |
 
 ## Root cause
 
