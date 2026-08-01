@@ -1,14 +1,16 @@
-# Final report — Batch 6 (pre-merge / pre-production section)
+# Final report — Batch 6
 
 ## Verdict
 
-**PASS WITH WARNING** (production validation pending at commit time; local QA complete)
+**PASS WITH WARNING**
+
+Warning: Production SHA `NOT VERIFIED`. All sampled production JSON-LD geo checks passed.
 
 ## Finding
 
 | Finding | Status |
 | --- | --- |
-| F-11 store geo coordinates | **READY TO CLOSE** after production validation |
+| F-11 store geo coordinates | **CLOSED** |
 
 ## Identity
 
@@ -16,10 +18,10 @@
 | --- | --- |
 | Branch | `fix/batch-6-schema-geo-coordinates` |
 | Base SHA | `25d75e56c35154270c444980f88dc009d7a994df` |
-| Implementation SHA | *(filled after commit)* |
-| Merge SHA | *(filled after merge)* |
+| Implementation SHA | `4c6e6f9319cb004e53b5386399cb9ba3b3277458` |
+| Merge SHA | `3cd7004a5028d2602e0aa58398f28f4085a66b51` |
 | Production SHA | `NOT VERIFIED` |
-| Report-only SHA | *(filled after docs commit)* |
+| Report-only SHA | `39a86a86a394ae6210ce43b6d7da5cb0bc631885` |
 | Deployment URL | https://amphon.co.th |
 
 ## Coordinates
@@ -30,6 +32,7 @@
 | Longitude | `104.8477` | `104.844358` |
 | Distance moved | | **3,114 m** |
 | Verified source | | `https://maps.app.goo.gl/krv97o14jPTRrnpW8` → Maps `!3d/!4d` |
+| Production match | | PASS |
 
 ## Change summary
 
@@ -38,28 +41,24 @@
 | Source files changed (code) | 1 (`src/config/site.ts`) |
 | QA / package | `scripts/check-batch-6-schema-geo.mjs`, `package.json` |
 | Docs | `docs/batch-6-schema-geo/*` |
-| URLs affected (geo output) | sitewide BaseLayout / LocalBusiness (~all HTML pages) |
+| URLs affected (geo output) | sitewide BaseLayout / LocalBusiness |
 | Schema types affected | LocalBusiness (+ geo.position/ICBM meta) |
 | NAP diff | 0 |
 | LocalBusiness count per page | 1 |
 | Fake province LocalBusiness | 0 |
 | AggregateRating | 0 |
-| Product/Offer regression | 0 (no new Product/Offer added) |
-| JSON-LD invalid | 0 (sampled + sitewide LocalBusiness scan) |
-| Route / Sitemap / Canonical / Noindex / Redirect / Internal link / Content / Image diff | 0 intentional |
+| Product/Offer regression | 0 |
+| JSON-LD invalid | 0 |
+| Route / Sitemap / Canonical / Noindex / Redirect / Internal link / Content / Image diff | 0 |
 
 ## QA / build
 
-Astro check 0 errors / 0 warnings · Batch 1–6 PASS · Build exit 0 · HTML 1188 · Sitemap 1185
+Astro check 0 errors / 0 warnings · Batch 1–6 PASS · Build exit 0 · HTML 1188 · Sitemap 1185 · Production samples PASS
 
 ## Scope compliance
 
 Only `site.geo` latitude/longitude updated. `hasMap`, address, telephone, opening hours, province Place centroids, content, redirects, sitemap logic unchanged.
 
-## Post-deploy checklist
+## ADDITIONAL FINDING (not fixed)
 
-- [ ] Production JSON-LD latitude/longitude match
-- [ ] Homepage / contact / about / area samples HTTP 200
-- [ ] Sitemap still 1185
-- [ ] Batch 1–5 regressions still hold on production
-- [ ] Update production-* report files + report-only commit
+Area pages still emit administrative `Place` GeoCoordinates from `provinceGeo` centroids. Not LocalBusiness; left unchanged per F-11 scope.
