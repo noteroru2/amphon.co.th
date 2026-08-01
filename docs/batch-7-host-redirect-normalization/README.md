@@ -1,34 +1,27 @@
-# Batch 7 — Host Redirect Normalization (F-12)
+# README — Batch 7 Host Redirect Normalization
 
-Collapse `http://www` / `https://www` / `http` apex host-protocol chains toward canonical `https://amphon.co.th` while preserving path and query.
+## Verdict
 
-## Identity
+**BLOCKED: PENDING DOMAIN CONFIGURATION** — F-12 remains **OPEN**.
 
-| Item | Value |
-| --- | --- |
-| Finding | F-12 |
-| Branch | `fix/batch-7-host-redirect-normalization` |
-| Base SHA | `d23f34db41b0c442a98dd267e428239e5c78638e` |
-| Canonical host | `https://amphon.co.th` |
+## What we learned
 
-## Fix
+Production hop owners are Vercel platform + Domain redirect. A repo `vercel.json` www host rule does not run early enough to collapse `http://www`.
 
-Prepend one `vercel.json` host-conditioned permanent redirect:
+## Current production (acceptable vs not)
 
-```json
-{
-  "source": "/:path*",
-  "has": [{ "type": "host", "value": "www.amphon.co.th" }],
-  "destination": "https://amphon.co.th/:path*",
-  "permanent": true
-}
-```
+| Case | Hops | Close criteria |
+| --- | --- | --- |
+| Current `http://www` | 2 | OK with platform evidence |
+| Legacy `http://www` | 3 | Not OK (need ≤2) |
 
-Goal: when Edge evaluates this on the initial `www` request (including HTTP), Location jumps straight to HTTPS apex, reducing hops.
+## Files
+
+See `final-report.md`, `production-validation-summary.md`, `host-variant-baseline.csv`, `redirect-hop-attribution.csv`.
 
 ## QA
 
 ```bash
 npm run qa:batch-7-host-redirects
-BATCH7_RUNTIME=1 npm run qa:batch-7-host-redirects
+BATCH7_RUNTIME=1 BATCH7_ALLOW_BLOCKED=1 npm run qa:batch-7-host-redirects
 ```

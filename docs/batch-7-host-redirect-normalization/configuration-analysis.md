@@ -1,40 +1,30 @@
-# Configuration analysis — Batch 7
+# Configuration analysis — Batch 7 (updated after production proof)
 
 ```text
-Current primary domain: amphon.co.th (HTTPS Non-WWW) — confirmed by astro site URL, sitemap, canonical HTML, production 200
-Current WWW configuration: www.amphon.co.th CNAME → Vercel DNS; HTTPS www returns 301 to apex (Vercel Domain redirect)
-HTTP controller: Vercel platform 308 HTTP→HTTPS (preserves Host)
-HTTPS controller: Vercel edge / deployment
-WWW controller: Vercel Domain redirect 301 www → apex (path+query preserved)
-Path redirect controller: vercel.json redirects (184 rules, permanent → 308)
-Legacy redirect controller: same vercel.json path rules (Batch 1)
+Current primary domain: amphon.co.th (HTTPS Non-WWW)
+Current WWW configuration: Domain redirect 301 → apex (path/query preserved)
+HTTP controller: Vercel platform 308 HTTP→HTTPS (Host preserved)
+HTTPS controller: Vercel edge
+WWW controller: Vercel Domain redirect (Dashboard) — NOT vercel.json
+Path redirect controller: vercel.json (184 permanent rules → 308)
+Legacy redirect controller: vercel.json (Batch 1 destinations unchanged)
 Root cause of extra hops:
-  1) HTTP www is upgraded to HTTPS www first (platform)
-  2) HTTPS www is then redirected to HTTPS apex (domain redirect)
-  3) Legacy paths add a third hop via vercel.json on apex
-Selected fix layer: Repository vercel.json host-conditioned redirect (first rule) to https://amphon.co.th/:path*
-Alternative considered:
-  - Dashboard-only domain tweak (no CLI/project auth available) → blocked without credentials
-  - Middleware merging host+legacy map → only works if www requests reach the app (domain redirect currently intercepts)
-  - Duplicating all legacy rules with www host + absolute canonical destination → high risk / large scope
-Reason selected: Single rule, preserves path/query, can collapse HTTP www → HTTPS apex if Edge evaluates config redirects before or instead of same-host HTTPS upgrade; does not alter F-01 destinations
-Expected hop reduction:
-  - Current HTTP www: 2 → 1 (if host rule applies on first request)
-  - Legacy HTTP www: 3 → 2 (host collapse + path) or better
-  - If platform HTTPS-upgrade still wins first: hops unchanged → document platform limit / Dashboard next step
-Risks:
-  - Host rule ignored if Domain redirect / HTTPS upgrade always precede config redirects
-  - Double-encoding if capture mishandled (mitigate with :path* and production checks)
-  - Interaction with 184 path rules (host rule first; path rules remain for apex)
-Rollback:
-  - Revert merge commit removing the host rule; push main
-  - Do not change DNS
+  http://www → https://www (platform) → https://apex (domain) → [legacy path 308]
+Selected fix layer attempted: vercel.json host rule www → https://amphon.co.th/:path*
+Alternative considered: middleware/edge path-aware merge; Dashboard alias change
+Reason selected initially: single repo rule, no destination changes
+Production result: NO HOP REDUCTION — host rule never became first Location
+Expected hop reduction: not achieved
+Risks of forcing alias without path-aware www handler: www may serve 200 duplicates
+Rollback: remove ineffective host rule (done); Domains unchanged
 ```
 
-## Dashboard steps if config rule ineffective (user action)
+## Dashboard steps required (user)
 
-1. Vercel Project → Settings → Domains
-2. Confirm `amphon.co.th` is Production / Primary
-3. Confirm `www.amphon.co.th` redirects to `amphon.co.th` (or, if needing middleware merge, temporarily serve www as alias then rely on vercel.json host rule — only with explicit approval)
-4. Do not remove www domain
-5. Do not create new tokens in-repo
+1. Open Vercel Project Settings → Domains  
+2. Confirm primary `amphon.co.th`  
+3. Keep `www.amphon.co.th` (do not delete)  
+4. Plan path-aware www→apex+canonical routing (Edge middleware or absolute host-conditioned legacy rules)  
+5. Only then change www off redirect-only so deployment routing can run  
+6. Re-measure Legacy `http://www` must be ≤2 hops  
+7. Agent has no Vercel token/project link — cannot perform step 5
