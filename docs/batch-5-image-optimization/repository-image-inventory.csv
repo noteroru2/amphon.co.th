@@ -1,0 +1,8 @@
+file,line,matched_text,context,classification,action,reason
+docs/seo-audit-2026-07-31/image-asset-audit.csv,36+,large PNG list,audit evidence,F-07 confirmed inventory,reviewed,Source list for Batch 5
+public/images/services/*.png,n/a,44 oversized png,filesystem,F-07 asset pool,retained,Do not delete; external/OG safety
+public/images/services/* matched webp siblings,n/a,almost none,filesystem,Audit assumption false,generated,Created real WebP via sharp q80
+src/content/services/*.md,frontmatter/body,21 referenced oversized png,content refs,F-07 confirmed,fixed,Swapped refs to generated webp
+src/config/images.ts,142,camera-lens png alt key,alt map,F-07 related,fixed,Updated key to .webp
+src/components/OptimizedImage.astro,n/a,passthrough img,component,Legitimate architecture,no_change,No mass component rewrite
+F-13 missing width/height rows,image-asset-audit,P3 dimensions,out of scope,OUT OF SCOPE,deferred,Batch 5 does not implement F-13

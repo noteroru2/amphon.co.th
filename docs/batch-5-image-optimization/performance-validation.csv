@@ -1,0 +1,5 @@
+metric,before,after,notes
+referenced_asset_bytes,15007296,1825972,Sum of 21 swapped assets
+page_weight_sample,NOT_VERIFIED,NOT_VERIFIED,No Lighthouse run this batch
+lcp_loading_mode,eager+high,eager+high,ServiceLayout unchanged
+broken_images_expected,0,0,Validated after build

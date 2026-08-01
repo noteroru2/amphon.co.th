@@ -5,8 +5,8 @@ order: 9
 description: "รับซื้อลำโพง JBL มือสอง ลำโพงบลูทูธพกพา PartyBox, Charge, Flip, Boombox ประเมินตามสภาพจริง ตีราคาแฟร์ ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว มีหน้าร้านจริง รับซื้อทั่ว ใกล้ฉัน นัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวนที่ตกลง"
 mainKeyword: "รับซื้อลำโพง JBL"
 relatedKeywords: ["รับซื้อ JBL", "ขายลำโพงบลูทูธ", "รับซื้อ PartyBox", "ลำโพง JBL มือสอง", "ร้านรับซื้อลำโพง ", "รับซื้อ Boombox"]
-heroImage: "/images/services/rub-sue-bluetooth-speaker-amphon.png"
-ogImage: "/images/services/rub-sue-bluetooth-speaker-amphon.png"
+heroImage: "/images/services/rub-sue-bluetooth-speaker-amphon.webp"
+ogImage: "/images/services/rub-sue-bluetooth-speaker-amphon.webp"
 date: "2026-06-03"
 draft: false
 icon: "speaker"
@@ -27,7 +27,7 @@ faqs:
 
 ## รับซื้อลำโพง JBL มือสอง ของแท้ ประเมินตามสภาพจริง ตีราคาแฟร์
 
-![รับซื้อลำโพง JBL มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-bluetooth-speaker-amphon.png)
+![รับซื้อลำโพง JBL มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-bluetooth-speaker-amphon.webp)
 
 
 ลำโพงบลูทูธตัวเก่งที่เคยใช้ปาร์ตี้ ตอนนี้ฝุ่นเกาะแล้วหรือเปล่า? หรือคุณอาจจะอยากขยับไซส์ไปเล่นตัวใหญ่ขึ้น อำพล เทรดดิ้ง ให้บริการ **รับซื้อลำโพง JBL มือสอง (ของแท้)** ประเมินราคาตามรุ่น สเปก สภาพ อุปกรณ์ และความต้องการตลาด เราประเมินราคาตามสเปกและรุ่นอย่างยุติธรรม ไม่ต้องเสียเวลาโพสต์ขายเองแล้วโดนต่อราคาหนักๆ มีหน้าร้านจริงกับเรา มั่นใจได้ ไม่โดนกดราคาชัวร์
@@ -83,7 +83,7 @@ faqs:
 
 ## ตารางประเมินราคาลำโพง JBL มือสอง
 
-![รับซื้อลำโพง JBL มือสอง - อำพล เทรดดิ้ง - บริการรับซื้อครบวงจร](/images/services/rub-sue-bluetooth-speaker-amphon.png)
+![รับซื้อลำโพง JBL มือสอง - อำพล เทรดดิ้ง - บริการรับซื้อครบวงจร](/images/services/rub-sue-bluetooth-speaker-amphon.webp)
 
 
 | รุ่นลำโพง (ตัวอย่าง) | จุดที่ร้านตรวจเช็คอย่างละเอียด | สิ่งที่ประเมินราคาตามสภาพจริงคุณ | อาการที่ทำให้ร้านต้องลดราคา |

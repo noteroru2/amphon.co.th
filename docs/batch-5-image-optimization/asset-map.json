@@ -1,0 +1,235 @@
+[
+  {
+    "before_asset": "/images/services/rub-sue-ssd-hdd-amphon.png",
+    "after_asset": "/images/services/rub-sue-ssd-hdd-amphon.webp",
+    "before_bytes": 919304,
+    "after_bytes": 153826,
+    "urls": [
+      "/บริการ/รับซื้อ-ssd"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-e-waste-broken-it-amphon.png",
+    "after_asset": "/images/services/rub-sue-e-waste-broken-it-amphon.webp",
+    "before_bytes": 910304,
+    "after_bytes": 165152,
+    "urls": [
+      "/บริการ/รับซื้อของไอทีเสีย"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-it-auction-bidding-amphon.png",
+    "after_asset": "/images/services/rub-sue-it-auction-bidding-amphon.webp",
+    "before_bytes": 903025,
+    "after_bytes": 164054,
+    "urls": [
+      "/บริการ/รับเหมาประมูลอุปกรณ์ไอที"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-mainboard-motherboard-amphon.png",
+    "after_asset": "/images/services/rub-sue-mainboard-motherboard-amphon.webp",
+    "before_bytes": 826429,
+    "after_bytes": 128070,
+    "urls": [
+      "/บริการ/รับซื้อเมนบอร์ด"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-it-gadget-accessories-amphon.png",
+    "after_asset": "/images/services/rub-sue-it-gadget-accessories-amphon.webp",
+    "before_bytes": 795276,
+    "after_bytes": 123506,
+    "urls": [
+      "/บริการ/รับซื้ออุปกรณ์ไอที"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-furniture-amphon.png",
+    "after_asset": "/images/services/rub-sue-furniture-amphon.webp",
+    "before_bytes": 795014,
+    "after_bytes": 96612,
+    "urls": [
+      "/บริการ/รับซื้อเฟอร์นิเจอร์"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-collectibles-amphon.png",
+    "after_asset": "/images/services/rub-sue-collectibles-amphon.webp",
+    "before_bytes": 785881,
+    "after_bytes": 103418,
+    "urls": [
+      "/บริการ/รับซื้อของสะสม"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-tivi-amphon.png",
+    "after_asset": "/images/services/rub-sue-tivi-amphon.webp",
+    "before_bytes": 777454,
+    "after_bytes": 106474,
+    "urls": [
+      "/บริการ/รับซื้อทีวี"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-bluetooth-speaker-amphon.png",
+    "after_asset": "/images/services/rub-sue-bluetooth-speaker-amphon.webp",
+    "before_bytes": 697984,
+    "after_bytes": 96998,
+    "urls": [
+      "/บริการ/รับซื้อ-jbl",
+      "/บริการ/รับซื้อ-marshall",
+      "/บริการ/รับซื้อลำโพงบลูทูธ"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-cpu-intel-amd-amphon.png",
+    "after_asset": "/images/services/rub-sue-cpu-intel-amd-amphon.webp",
+    "before_bytes": 690521,
+    "after_bytes": 81808,
+    "urls": [
+      "/บริการ/รับซื้อซีพียู"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-ram-ddr4-ddr5-amphon.png",
+    "after_asset": "/images/services/rub-sue-ram-ddr4-ddr5-amphon.webp",
+    "before_bytes": 684586,
+    "after_bytes": 65130,
+    "urls": [
+      "/บริการ/รับซื้อแรม"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-gaming-notebook-amphon.png",
+    "after_asset": "/images/services/rub-sue-gaming-notebook-amphon.webp",
+    "before_bytes": 684208,
+    "after_bytes": 76952,
+    "urls": [
+      "/บริการ/รับซื้อโน๊ตบุ๊คเกมมิ่ง"
+    ],
+    "image_role": "content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-gaming-monitor-amphon.png",
+    "after_asset": "/images/services/rub-sue-gaming-monitor-amphon.webp",
+    "before_bytes": 657567,
+    "after_bytes": 57980,
+    "urls": [
+      "/บริการ/รับซื้อจอเกมมิ่ง"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-drone-dji-amphon.png",
+    "after_asset": "/images/services/rub-sue-drone-dji-amphon.webp",
+    "before_bytes": 655930,
+    "after_bytes": 72532,
+    "urls": [
+      "/บริการ/รับซื้อโดรน"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-appliance-amphon.png",
+    "after_asset": "/images/services/rub-sue-appliance-amphon.webp",
+    "before_bytes": 655369,
+    "after_bytes": 72184,
+    "urls": [
+      "/บริการ/รับซื้อเครื่องใช้ไฟฟ้า"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-headphone-earbud-amphon.png",
+    "after_asset": "/images/services/rub-sue-headphone-earbud-amphon.webp",
+    "before_bytes": 628378,
+    "after_bytes": 60994,
+    "urls": [
+      "/บริการ/รับซื้อหูฟัง"
+    ],
+    "image_role": "content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-camera-lens-amphon.png",
+    "after_asset": "/images/services/rub-sue-camera-lens-amphon.webp",
+    "before_bytes": 625811,
+    "after_bytes": 54674,
+    "urls": [
+      "/บริการ/รับซื้อเลนส์กล้อง"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-playstation-ps5-amphon.png",
+    "after_asset": "/images/services/rub-sue-playstation-ps5-amphon.webp",
+    "before_bytes": 610717,
+    "after_bytes": 48138,
+    "urls": [
+      "/บริการ/รับซื้อ-playstation"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-nintendo-switch-amphon.png",
+    "after_asset": "/images/services/rub-sue-nintendo-switch-amphon.webp",
+    "before_bytes": 578864,
+    "after_bytes": 35658,
+    "urls": [
+      "/บริการ/รับซื้อ-nintendo-switch"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-game-console-amphon.png",
+    "after_asset": "/images/services/rub-sue-game-console-amphon.webp",
+    "before_bytes": 577844,
+    "after_bytes": 31798,
+    "urls": [
+      "/บริการ/รับซื้อเครื่องเกม"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  },
+  {
+    "before_asset": "/images/services/rub-sue-mac-mini-amphon.png",
+    "after_asset": "/images/services/rub-sue-mac-mini-amphon.webp",
+    "before_bytes": 546830,
+    "after_bytes": 30014,
+    "urls": [
+      "/บริการ/รับซื้อ-mac-mini"
+    ],
+    "image_role": "hero+content",
+    "require_in_html": true
+  }
+]
