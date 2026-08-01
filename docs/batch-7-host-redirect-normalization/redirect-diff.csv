@@ -1,9 +1,9 @@
 request_url,category,before_initial_status,before_redirect_count,before_final_url,after_initial_status,after_redirect_count,after_final_url,path_preserved,query_preserved,expected,result
-http://www.amphon.co.th/,current-home,308,2,https://amphon.co.th/,PENDING,PENDING,PENDING,yes,yes,<=2 prefer 1,PENDING_DEPLOY
-https://www.amphon.co.th/,current-home,301,1,https://amphon.co.th/,PENDING,PENDING,PENDING,yes,yes,1,PENDING_DEPLOY
-http://amphon.co.th/,current-home,308,1,https://amphon.co.th/,PENDING,PENDING,PENDING,yes,yes,1,PENDING_DEPLOY
-http://www.amphon.co.th/contact,current-path,308,2,https://amphon.co.th/contact,PENDING,PENDING,PENDING,yes,yes,<=2 prefer 1,PENDING_DEPLOY
-http://www.amphon.co.th/contact?utm_source=host-validation&utm_medium=redirect,current-query,308,2,https://amphon.co.th/contact?utm_source=host-validation&utm_medium=redirect,PENDING,PENDING,PENDING,yes,yes,query kept,PENDING_DEPLOY
-http://www.amphon.co.th/random-url-that-does-not-exist-batch7,current-404,308,2,https://amphon.co.th/random-url-that-does-not-exist-batch7 (404),PENDING,PENDING,PENDING,yes,yes,final 404 not homepage,PENDING_DEPLOY
-http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD,legacy-hub,308,3,https://amphon.co.th/.../รับซื้อสินค้าไอที,PENDING,PENDING,PENDING,dest-ok,yes,<=2,PENDING_DEPLOY
-https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD,legacy-hub,308,1,https://amphon.co.th/.../รับซื้อสินค้าไอที,PENDING,PENDING,PENDING,dest-ok,yes,1,PENDING_DEPLOY
+http://www.amphon.co.th/,current-home,308,2,https://amphon.co.th/,UNCHANGED,UNCHANGED,UNCHANGED,yes,yes,<=2 prefer 1,UNCHANGED_DEPLOY
+https://www.amphon.co.th/,current-home,301,1,https://amphon.co.th/,UNCHANGED,UNCHANGED,UNCHANGED,yes,yes,1,UNCHANGED_DEPLOY
+http://amphon.co.th/,current-home,308,1,https://amphon.co.th/,UNCHANGED,UNCHANGED,UNCHANGED,yes,yes,1,UNCHANGED_DEPLOY
+http://www.amphon.co.th/contact,current-path,308,2,https://amphon.co.th/contact,UNCHANGED,UNCHANGED,UNCHANGED,yes,yes,<=2 prefer 1,UNCHANGED_DEPLOY
+http://www.amphon.co.th/contact?utm_source=host-validation&utm_medium=redirect,current-query,308,2,https://amphon.co.th/contact?utm_source=host-validation&utm_medium=redirect,UNCHANGED,UNCHANGED,UNCHANGED,yes,yes,query kept,UNCHANGED_DEPLOY
+http://www.amphon.co.th/random-url-that-does-not-exist-batch7,current-404,308,2,https://amphon.co.th/random-url-that-does-not-exist-batch7 (404),UNCHANGED,UNCHANGED,UNCHANGED,yes,yes,final 404 not homepage,UNCHANGED_DEPLOY
+http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD,legacy-hub,308,3,https://amphon.co.th/.../รับซื้อสินค้าไอที,UNCHANGED,UNCHANGED,UNCHANGED,dest-ok,yes,<=2,UNCHANGED_DEPLOY
+https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD,legacy-hub,308,1,https://amphon.co.th/.../รับซื้อสินค้าไอที,UNCHANGED,UNCHANGED,UNCHANGED,dest-ok,yes,1,UNCHANGED_DEPLOY

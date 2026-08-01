@@ -1,0 +1,292 @@
+{
+  "summary": {
+    "httpWwwCurrent": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "httpsWwwCurrent": [
+      1,
+      1,
+      1
+    ],
+    "legacyHttpWww": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "firstLocations": [
+      {
+        "url": "http://www.amphon.co.th/",
+        "status": 308,
+        "location": "https://www.amphon.co.th/",
+        "hops": 2
+      },
+      {
+        "url": "https://www.amphon.co.th/",
+        "status": 301,
+        "location": "https://amphon.co.th/",
+        "hops": 1
+      },
+      {
+        "url": "http://amphon.co.th/",
+        "status": 308,
+        "location": "https://amphon.co.th/",
+        "hops": 1
+      },
+      {
+        "url": "https://amphon.co.th/",
+        "status": 200,
+        "location": "",
+        "hops": 0
+      },
+      {
+        "url": "http://www.amphon.co.th/contact",
+        "status": 308,
+        "location": "https://www.amphon.co.th/contact",
+        "hops": 2
+      },
+      {
+        "url": "https://www.amphon.co.th/contact",
+        "status": 301,
+        "location": "https://amphon.co.th/contact",
+        "hops": 1
+      },
+      {
+        "url": "http://www.amphon.co.th/about",
+        "status": 308,
+        "location": "https://www.amphon.co.th/about",
+        "hops": 2
+      },
+      {
+        "url": "https://www.amphon.co.th/blog",
+        "status": 301,
+        "location": "https://amphon.co.th/blog",
+        "hops": 1
+      },
+      {
+        "url": "http://www.amphon.co.th/contact?source=batch-7-test",
+        "status": 308,
+        "location": "https://www.amphon.co.th/contact?source=batch-7-test",
+        "hops": 2
+      },
+      {
+        "url": "http://www.amphon.co.th/?utm_source=host-validation&utm_medium=redirect",
+        "status": 308,
+        "location": "https://www.amphon.co.th/?utm_source=host-validation&utm_medium=redirect",
+        "hops": 2
+      },
+      {
+        "url": "http://www.amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A",
+        "status": 308,
+        "location": "https://www.amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A",
+        "hops": 2
+      },
+      {
+        "url": "http://www.amphon.co.th/random-url-that-does-not-exist-batch7",
+        "status": 308,
+        "location": "https://www.amphon.co.th/random-url-that-does-not-exist-batch7",
+        "hops": 2
+      },
+      {
+        "url": "http://www.amphon.co.th/พื้นที่ให้บริการ/อุบลราชธานี",
+        "status": 308,
+        "location": "https://www.amphon.co.th/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+        "hops": 2
+      },
+      {
+        "url": "https://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%82%E0%B8%99%E0%B9%8A%E0%B8%95%E0%B8%9A%E0%B8%B8%E0%B9%8A%E0%B8%84",
+        "status": 301,
+        "location": "https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%82%E0%B8%99%E0%B9%8A%E0%B8%95%E0%B8%9A%E0%B8%B8%E0%B9%8A%E0%B8%84",
+        "hops": 1
+      },
+      {
+        "url": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "status": 308,
+        "location": "/รับซื้อสินค้าไอที",
+        "hops": 1
+      },
+      {
+        "url": "http://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "status": 308,
+        "location": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "hops": 2
+      },
+      {
+        "url": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "status": 301,
+        "location": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "hops": 2
+      },
+      {
+        "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "status": 308,
+        "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+        "hops": 3
+      },
+      {
+        "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD?source=batch-7-test",
+        "status": 308,
+        "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD?source=batch-7-test",
+        "hops": 3
+      },
+      {
+        "url": "http://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+        "status": 308,
+        "location": "https://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+        "hops": 3
+      },
+      {
+        "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+        "status": 308,
+        "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+        "hops": 3
+      },
+      {
+        "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+        "status": 308,
+        "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+        "hops": 3
+      }
+    ]
+  },
+  "firstLocations": [
+    {
+      "url": "http://www.amphon.co.th/",
+      "status": 308,
+      "location": "https://www.amphon.co.th/",
+      "hops": 2
+    },
+    {
+      "url": "https://www.amphon.co.th/",
+      "status": 301,
+      "location": "https://amphon.co.th/",
+      "hops": 1
+    },
+    {
+      "url": "http://amphon.co.th/",
+      "status": 308,
+      "location": "https://amphon.co.th/",
+      "hops": 1
+    },
+    {
+      "url": "https://amphon.co.th/",
+      "status": 200,
+      "location": "",
+      "hops": 0
+    },
+    {
+      "url": "http://www.amphon.co.th/contact",
+      "status": 308,
+      "location": "https://www.amphon.co.th/contact",
+      "hops": 2
+    },
+    {
+      "url": "https://www.amphon.co.th/contact",
+      "status": 301,
+      "location": "https://amphon.co.th/contact",
+      "hops": 1
+    },
+    {
+      "url": "http://www.amphon.co.th/about",
+      "status": 308,
+      "location": "https://www.amphon.co.th/about",
+      "hops": 2
+    },
+    {
+      "url": "https://www.amphon.co.th/blog",
+      "status": 301,
+      "location": "https://amphon.co.th/blog",
+      "hops": 1
+    },
+    {
+      "url": "http://www.amphon.co.th/contact?source=batch-7-test",
+      "status": 308,
+      "location": "https://www.amphon.co.th/contact?source=batch-7-test",
+      "hops": 2
+    },
+    {
+      "url": "http://www.amphon.co.th/?utm_source=host-validation&utm_medium=redirect",
+      "status": 308,
+      "location": "https://www.amphon.co.th/?utm_source=host-validation&utm_medium=redirect",
+      "hops": 2
+    },
+    {
+      "url": "http://www.amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A",
+      "status": 308,
+      "location": "https://www.amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A",
+      "hops": 2
+    },
+    {
+      "url": "http://www.amphon.co.th/random-url-that-does-not-exist-batch7",
+      "status": 308,
+      "location": "https://www.amphon.co.th/random-url-that-does-not-exist-batch7",
+      "hops": 2
+    },
+    {
+      "url": "http://www.amphon.co.th/พื้นที่ให้บริการ/อุบลราชธานี",
+      "status": 308,
+      "location": "https://www.amphon.co.th/%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "hops": 2
+    },
+    {
+      "url": "https://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%82%E0%B8%99%E0%B9%8A%E0%B8%95%E0%B8%9A%E0%B8%B8%E0%B9%8A%E0%B8%84",
+      "status": 301,
+      "location": "https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B9%82%E0%B8%99%E0%B9%8A%E0%B8%95%E0%B8%9A%E0%B8%B8%E0%B9%8A%E0%B8%84",
+      "hops": 1
+    },
+    {
+      "url": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "status": 308,
+      "location": "/รับซื้อสินค้าไอที",
+      "hops": 1
+    },
+    {
+      "url": "http://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "status": 308,
+      "location": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "hops": 2
+    },
+    {
+      "url": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "status": 301,
+      "location": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "hops": 2
+    },
+    {
+      "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "status": 308,
+      "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD",
+      "hops": 3
+    },
+    {
+      "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD?source=batch-7-test",
+      "status": 308,
+      "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD?source=batch-7-test",
+      "hops": 3
+    },
+    {
+      "url": "http://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+      "status": 308,
+      "location": "https://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",
+      "hops": 3
+    },
+    {
+      "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "status": 308,
+      "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "hops": 3
+    },
+    {
+      "url": "http://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "status": 308,
+      "location": "https://www.amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99",
+      "hops": 3
+    }
+  ]
+}
