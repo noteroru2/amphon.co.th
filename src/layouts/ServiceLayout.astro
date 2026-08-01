@@ -19,6 +19,7 @@ import {
 } from '../lib/seo';
 import { site } from '../config/site';
 import { sanitizeServiceDisplayText, getIntentChipHeading } from '../config/service-clusters';
+import type { SupportingArticleLink } from '../config/internal-link-map';
 import type { BreadcrumbItem } from '../config/site';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -29,9 +30,17 @@ interface Props {
   otherServices?: CollectionEntry<'services'>[];
   intentChips?: CollectionEntry<'services'>[];
   relatedCards?: CollectionEntry<'services'>[];
+  supportingArticles?: SupportingArticleLink[];
 }
 
-const { entry, relatedAreas = [], otherServices = [], intentChips = [], relatedCards = [] } = Astro.props;
+const {
+  entry,
+  relatedAreas = [],
+  otherServices = [],
+  intentChips = [],
+  relatedCards = [],
+  supportingArticles = [],
+} = Astro.props;
 const { title, h1, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated, quickSummary } =
   entry.data;
 const { Content } = await render(entry);
@@ -272,6 +281,19 @@ const steps = [
             {relatedAreas.map((area) => (
               <li>
                 <a href={`/รับซื้อ/${area.data.slug}`}>{area.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {supportingArticles.length > 0 && (
+        <div class="sidebar__box">
+          <p class="sidebar__title">อ่านก่อนตัดสินใจขาย</p>
+          <ul class="sidebar__links">
+            {supportingArticles.map((article) => (
+              <li>
+                <a href={article.path}>{article.anchor}</a>
               </li>
             ))}
           </ul>

@@ -29,6 +29,7 @@
     "qa:batch-8-image-dimensions": "node scripts/check-batch-8-image-dimensions.mjs",
     "qa:batch-9-f10": "node scripts/check-batch-9-f10.mjs",
     "qa:batch-10-metadata": "node scripts/check-batch-10-metadata.mjs",
+    "qa:batch-11-internal-links": "node scripts/check-batch-11-internal-links.mjs",
     "images:dimension-cache": "node scripts/build-image-dimension-cache.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",

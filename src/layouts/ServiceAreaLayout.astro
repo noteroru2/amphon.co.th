@@ -16,6 +16,7 @@ import {
 } from '../lib/seo';
 import { site } from '../config/site';
 import { getCanonicalServiceHref } from '../config/seo-policy';
+import { serviceAreaSidebarLabel } from '../config/internal-link-map';
 import type { BreadcrumbItem } from '../config/site';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -24,9 +25,10 @@ interface Props {
   entry: CollectionEntry<'serviceAreas'>;
   service?: CollectionEntry<'services'>;
   area?: CollectionEntry<'areas'>;
+  relatedInProvince?: CollectionEntry<'serviceAreas'>[];
 }
 
-const { entry, service, area } = Astro.props;
+const { entry, service, area, relatedInProvince = [] } = Astro.props;
 const { slug, mainKeyword, ogImage, heroImage, date, updated } = entry.data;
 const macbookProfile = entry.data.serviceSlug === 'รับซื้อ-macbook'
   ? getMacbookServiceAreaProfile(slug)
@@ -157,6 +159,26 @@ const steps = [
               <a href={`/พื้นที่ให้บริการ/${area.data.slug}`}>{area.data.title}</a>
             </li>
           </ul>
+        </div>
+      )}
+
+      {relatedInProvince.length > 0 && area && (
+        <div class="sidebar__box">
+          <p class="sidebar__title">บริการอื่นใน{area.data.province}</p>
+          <ul class="sidebar__links">
+            {relatedInProvince.map((related) => (
+              <li>
+                <a href={`/รับซื้อ/${related.data.slug}`}>
+                  {serviceAreaSidebarLabel(related)}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p style="margin-top:.875rem;margin-bottom:0;">
+            <a href={`/พื้นที่ให้บริการ/${area.data.slug}`} class="sidebar__view-all">
+              ดูภาพรวมพื้นที่{area.data.province} →
+            </a>
+          </p>
         </div>
       )}
     </aside>

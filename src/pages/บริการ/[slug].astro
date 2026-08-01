@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { getRelatedServicesForEntry, getIntentChipServices, getRelatedCardServices } from '../../config/service-clusters';
+import { getSupportingArticlesForService } from '../../config/internal-link-map';
 
 export async function getStaticPaths() {
   const services = await getCollection('services', ({ data }) => !data.draft);
@@ -15,11 +16,12 @@ export async function getStaticPaths() {
       otherServices: getRelatedServicesForEntry(entry, services, 12),
       intentChips: getIntentChipServices(entry, services, 6),
       relatedCards: getRelatedCardServices(entry, services, 3),
+      supportingArticles: getSupportingArticlesForService(entry.data.slug),
     },
   }));
 }
 
-const { entry, relatedAreas, otherServices, intentChips, relatedCards } = Astro.props;
+const { entry, relatedAreas, otherServices, intentChips, relatedCards, supportingArticles } = Astro.props;
 ---
 
 <ServiceLayout
@@ -28,4 +30,5 @@ const { entry, relatedAreas, otherServices, intentChips, relatedCards } = Astro.
   otherServices={otherServices}
   intentChips={intentChips}
   relatedCards={relatedCards}
+  supportingArticles={supportingArticles}
 />
