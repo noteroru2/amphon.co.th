@@ -20,7 +20,8 @@ OWNER RESPONSES PENDING
 | Branch | `audit/batch-12f-business-decision-matrix` |
 | Base SHA | `b533120af3a18f89e24917e0f5b2eb3d7a21a3af` |
 | Audit SHA | `54968f5057fbb67a645ea5f365802b94c11ea360` |
-| PR URL | PENDING |
+| Branch tip | `4934568bb6f9dbb8cd3ae7a4e9e7eebdda4f2061` |
+| PR URL | https://github.com/noteroru2/amphon.co.th/compare/main...audit/batch-12f-business-decision-matrix?expand=1 (gh CLI unavailable; open compare to create PR — **do not merge until owner responses**) |
 | Production code changes | **0** |
 | Production changes | **0** |
 | Merge | **NOT MERGED** |
