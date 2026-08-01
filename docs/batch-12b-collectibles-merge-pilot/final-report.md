@@ -3,15 +3,15 @@
 ## Verdict
 
 ```text
-PASS WITH WARNING
+PASS
 ```
 
-Local implementation and QA passed. Production validation pending after merge/deploy.
+Local + production validation passed for Pilot A (10/10).
 
 ## Status
 
 ```text
-Collectibles Pilot A: CLOSED — 10/10 RESOLVED (local)
+Collectibles Pilot A: CLOSED — 10/10 RESOLVED
 F-04: OPEN — PILOT A COMPLETE / REMAINING IMPLEMENTATION PENDING
 ```
 
@@ -23,8 +23,9 @@ F-04: OPEN — PILOT A COMPLETE / REMAINING IMPLEMENTATION PENDING
 | Main Base SHA | `90ed322226063d23780a1c8dfb0a7f4ceb5687c0` |
 | Audit Merge SHA | `6566f53efa85ff19dfe5dd3fa7aeb25e4900b345` |
 | Implementation SHA | `1f5b88ec4f3c9ddf0ec22f4c7037d8051b3b46bd` |
-| Merge SHA | pending |
+| Merge SHA | `608046c23737c5c5be9f4ff9d04daa9d69ea5d7e` |
 | Production SHA | NOT VERIFIED |
+| Report-only SHA | *(after docs commit)* |
 
 ## Counts
 
