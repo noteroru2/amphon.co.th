@@ -1,0 +1,4 @@
+url_a,url_b,relationship,similarity_before,similarity_after,shared_template_ratio,unique_sections_before,unique_sections_after,intent_overlap,result
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,/รับซื้อ/รับซื้อ-ups-อุบลราชธานี,b2b-sa-siblings,high_boilerplate,shared_store_facts_only,reduced,0,2,local-commercial,IMPROVED
+/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง,/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,12e-blog-vs-12d-sa,n/a,different_family_no_copy,low,0,2,low,PASS
+/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม,/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง,notebook-blog-siblings,related_topic,distinct_angles_fault_vs_pricing,low,1,2,informational-notebook,IMPROVED

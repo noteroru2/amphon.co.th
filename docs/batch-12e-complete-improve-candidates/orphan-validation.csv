@@ -1,0 +1,7 @@
+metric,before,after,expected,result
+all_routes_orphan,2,2,2,PASS
+sitemap_orphan,0,0,0,PASS
+indexable_orphan,0,0,0,PASS
+new_orphan,0,0,0,PASS
+utility_exception_storage_nas,1,1,1,PASS
+utility_exception_lens,1,1,1,PASS
