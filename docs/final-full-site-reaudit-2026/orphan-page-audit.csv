@@ -1,0 +1,4 @@
+url,route_exists,indexable,sitemap,inbound_sources,page_type,intentional,reason,finding,status
+/404,yes,no,no,0,other,yes,utility_noindex_or_404,KNOWN_EXCEPTION,PASS
+/บริการ/รับซื้อ-storage-nas,yes,no,no,0,service-hub,yes,utility_noindex_or_404,KNOWN_EXCEPTION,PASS
+/บริการ/รับซื้อเลนส์,yes,no,no,0,service-hub,yes,utility_noindex_or_404,KNOWN_EXCEPTION,PASS

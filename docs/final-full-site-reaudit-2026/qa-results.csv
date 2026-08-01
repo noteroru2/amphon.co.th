@@ -1,0 +1,18 @@
+qa_command,finding_or_batch,exit_code,pass,warnings,errors,notes
+qa:batch-1-redirects,F-01,0,PASS,0,0,174 cases
+qa:batch-2-sitemap,F-02/F-03,0,PASS,0,0,sitemap 1166
+qa:batch-3-build,F-08,0,PASS,0,0,windows wrapper
+qa:batch-4-claims,F-05,0,PASS,0,0,
+qa:batch-5-images,F-07,0,PASS,0,0,
+qa:batch-6-schema-geo,F-11,0,PASS,0,0,geo OK
+qa:batch-7-host-redirects,F-12,0,PASS WITH WARNING,1,0,http www hops
+qa:batch-8-image-dimensions,F-13,0,PASS,0,0,
+qa:batch-9-f10,F-10,0,PASS,0,0,E.164
+qa:batch-10-metadata,F-09,0,PASS,457,0,length signals
+qa:batch-11-internal-links,F-06,0,PASS,0,0,broken 0
+qa:batch-12b-collectibles,F-04,0,PASS,0,0,
+qa:batch-12c-collectibles,F-04,0,PASS,0,0,
+qa:batch-12d-thin-content,F-04,0,PASS,0,0,
+qa:batch-12e-improve,F-04,0,PASS,0,0,
+qa:batch-12f-owner-decisions,F-04,0,PASS,0,0,
+qa:batch-12g-1-appliances,F-04/BD-01,0,PASS,0,0,19/19

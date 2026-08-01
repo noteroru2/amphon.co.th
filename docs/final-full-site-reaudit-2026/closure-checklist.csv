@@ -1,0 +1,18 @@
+area,requirement,expected,actual,status,blocks_closure,evidence
+Build,exit 0,exit 0,exit 0,PASS,no,npm run build
+Astro check,0/0,0 errors,0/0,PASS,no,astro check
+Production,available,200,200,PASS,no,curl
+Sitemap,clean,1166,local=1166 prod=1166 broken_in_sm=0 redirect_in_sm=0,PASS,yes,prod crawl
+Broken links,0,0,0,PASS,yes,local graph
+Redirecting links,0,0,0,PASS,yes,local graph
+Indexable orphans,0,0,0,PASS,yes,orphan audit
+Metadata duplicates,0 groups,0,title_groups=0 desc_groups=0,PASS,no,metadata audit
+Trust,policy-safe,0 unqualified,0,PASS,no,trust-claim-audit
+NAP,consistent,0 conflicts,0,PASS,yes,nap-contact-audit
+Schema,valid,0 invalid,invalid=0 agg=0 fake=0,PASS,yes,schema-audit
+Geo,15.2664215,no old coords,old=0,PASS,yes,geo-audit
+F-04,tracked,partial open OK,improved=19 pending=115 merge=19,PASS WITH WARNING,no,f04-current-inventory
+F-12,documented,platform blocked,OPEN/BLOCKED,BLOCKED,no,redirect-audit
+Performance,measured,scores,NOT VERIFIED,NOT VERIFIED,no,no lighthouse
+Accessibility,baseline,no critical,missing_h1=0,PASS WITH WARNING,no,a11y automated partial
+New findings P0/P1,0,0,0,PASS,yes,new-findings

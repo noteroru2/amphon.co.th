@@ -1,0 +1,8 @@
+case,url,hops,final_status,location,result
+https-apex-home,https://amphon.co.th/,0,200,,PASS
+https-www-home,https://www.amphon.co.th/,0,301,https://amphon.co.th/,PASS
+http-apex-home,http://amphon.co.th/,0,308,https://amphon.co.th/,PASS
+http-www-home,http://www.amphon.co.th/,0,308,https://www.amphon.co.th/,PASS
+https-apex-legacy-hdd,https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd,0,308,/บริการ/รับซื้อ-ssd,PASS
+http-www-legacy-hdd,http://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd,0,308,https://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd,PASS
+collectibles-sample,https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94,0,308,/บริการ/รับซื้อของสะสม,PASS

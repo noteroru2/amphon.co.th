@@ -1,0 +1,2 @@
+expected_lat,expected_lng,pages_with_expected,old_coordinate_hits,fake_branch_schema,result
+15.2664215,104.844358,1167,0,0,PASS

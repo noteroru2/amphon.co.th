@@ -1,0 +1,7 @@
+file,type,routes_affected,purpose,last_relevant_batch,risk,current_status
+vercel.json,redirects,sitewide,legacy+host redirects,"1,7,12B/C",low,OK
+astro.config.mjs,sitemap,sitemap,sitemap filter + lastmod,"2,3",low,OK
+scripts/windows-safe-astro-build.mjs,build,local-build,Windows build wrapper,3,low,OK
+src/config/internal-link-map.ts,internal-links,indexable,approved internal links,11,low,OK
+src/content/serviceAreas/,content,service-x-location,SA landing pages,12D/E/G-1,med,F-04 partial open
+docs/batch-12f-business-decision-matrix/,owner-decisions,134+19,F-04 owner lock,12F,low,LOCKED

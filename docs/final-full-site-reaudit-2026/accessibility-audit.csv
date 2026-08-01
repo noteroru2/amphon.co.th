@@ -1,0 +1,4 @@
+check,count,result
+missing_h1,0,PASS
+multi_h1,0,PASS
+automated_contrast,0,NOT VERIFIED

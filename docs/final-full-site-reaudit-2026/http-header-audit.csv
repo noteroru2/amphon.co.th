@@ -1,0 +1,5 @@
+url,status,cache_control,hsts,xcto,referrer_policy,csp,result
+/,200,"public, max-age=0, must-revalidate",yes,yes,strict-origin-when-cross-origin,no,PASS
+/contact,200,"public, max-age=0, must-revalidate",yes,yes,strict-origin-when-cross-origin,no,PASS
+/sitemap-0.xml,200,"public, max-age=0, must-revalidate",yes,yes,strict-origin-when-cross-origin,no,PASS
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-กาฬสินธุ์,200,"public, max-age=0, must-revalidate",yes,yes,strict-origin-when-cross-origin,no,PASS

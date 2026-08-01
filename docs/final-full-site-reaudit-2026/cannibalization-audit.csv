@@ -1,0 +1,6 @@
+cluster,urls,status,notes
+Appliances hub vs province,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า + 19 non-Ubon + Ubon,STRUCTURAL RISK,BD-01 improved; hub/spoke intent split documented
+Collectibles,retired 19 redirects → hub,NO STRUCTURAL RISK,Batch 12B/12C closed
+Furniture non-Ubon,19 MERGE pending,STRUCTURAL RISK,Owner merge review pending
+MacBook / Notebook,service hubs + SA pages,REQUIRES GSC,No ranking data in this audit
+TV / Server / UPS / Drone / Network outside Ubon,BD-02..BD-06 pending improve,STRUCTURAL RISK,Owner KEEP_AND_IMPROVE pending implementation

@@ -1,0 +1,19 @@
+finding_id,original_status,last_reported_status,current_status,original_count,current_count,regression,production_verified,evidence,recommendation
+F-01,OPEN P1,CLOSED,CLOSED — VERIFIED,86,0,no,yes,qa:batch-1-redirects PASS; host/legacy samples,keep closed
+F-02,OPEN P2,CLOSED,CLOSED — VERIFIED,1,0,no,yes,sitemap inclusions QA,keep closed
+F-03,OPEN P2,CLOSED,CLOSED — VERIFIED,1,0,no,yes,sitemap exclusion/indexability aligned,keep closed
+F-04,OPEN P2 (188),OPEN — BD-01 COMPLETE / remaining pending,OPEN — PARTIALLY RESOLVED,188,134,no,yes,improved≈19; owner-pending≈115; merge≈19; collectibles+IMPROVE+BD-01 done,continue 12G series; separate furniture MERGE review
+F-05,OPEN P2,CLOSED,CLOSED — VERIFIED,8,0,no,partial-local+qa,qa:batch-4-claims PASS; trust scan flags reviewed,keep closed; monitor trust scan
+F-06,OPEN P2,CLOSED,CLOSED — VERIFIED,964,0,no,yes-via-qa11,broken=0 redirecting=0 orphan indexable=0,keep closed
+F-07,OPEN P2,CLOSED,CLOSED — VERIFIED,45,1171,no,partial,qa:batch-5-images PASS; residual PNG signals tracked,keep closed
+F-08,OPEN P2,CLOSED,CLOSED — VERIFIED,1,0,no,n/a-local,build exit 0 + sitemap in dist,keep closed
+F-09,OPEN P2,CLOSED,CLOSED — VERIFIED,314,0,no,partial,dup titles/desc=0; length signals remain (not failure),optional length polish
+F-10,OPEN P3,CLOSED,CLOSED — VERIFIED,803,0,no,yes-via-qa9,forbidden tel=0,keep closed
+F-11,OPEN P3,CLOSED,CLOSED — VERIFIED,sitewide,0,no,yes-via-qa6,geo ok samples; old hits=0,keep closed
+F-12,OPEN P3,OPEN / BLOCKED,BLOCKED — PLATFORM,1,1,no,yes,http://www legacy hops >2; Vercel domain order,platform domain config; do not treat as repo regression
+F-13,OPEN P3,CLOSED,CLOSED — VERIFIED,34,0,no,partial,qa:batch-8 PASS targets,keep closed
+F-14,OPEN P3,OPEN/deferred,OPEN — KNOWN,8,18,no,partial,trustworthy lastmod conservative; not a mass bump,optional lastmod polish; not blocking
+F-15,OPEN P3,OPEN/deferred,OPEN — KNOWN,5,5,no,not re-spot-checked-all,original 5 area disclaimer consistency; low severity,optional content polish
+F-16,OPEN P3,OPEN/deferred,OPEN — KNOWN,1,1,no,no,draft housekeeping,optional cleanup
+F-17,OPEN P3,OPEN/deferred,OPEN — KNOWN,4,4,no,no,heading skip — a11y polish,optional
+F-18,OPEN P3,OPEN/deferred,OPEN — KNOWN,80,80,no,n/a,legacy unused md files in repo; not built,optional repo cleanup

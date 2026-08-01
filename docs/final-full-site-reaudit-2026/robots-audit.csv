@@ -1,0 +1,6 @@
+check,actual,result,notes
+robots.txt_exists,yes,PASS,
+sitemap_declaration,yes,PASS,
+noindex_count_local,3,PASS,includes utility legacy
+legacy_utility_noindex,"/บริการ/รับซื้อ-storage-nas robots=noindex,follow",PASS,known exception must remain noindex or be reconsidered
+legacy_utility_noindex,"/บริการ/รับซื้อเลนส์ robots=noindex,follow",PASS,known exception must remain noindex or be reconsidered

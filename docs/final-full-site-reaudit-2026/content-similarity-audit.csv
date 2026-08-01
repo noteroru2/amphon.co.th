@@ -1,0 +1,12 @@
+url_a,url_b,relationship,similarity,intent_overlap,result
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-กาฬสินธุ์,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke-hub,0.020,STRUCTURAL RISK — shared category; differentiated province intent expected,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-กาฬสินธุ์,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,sibling-province,0.145,STRUCTURAL RISK if near-duplicate,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke-hub,0.020,STRUCTURAL RISK — shared category; differentiated province intent expected,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ,sibling-province,0.145,STRUCTURAL RISK if near-duplicate,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke-hub,0.020,STRUCTURAL RISK — shared category; differentiated province intent expected,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครพนม,sibling-province,0.135,STRUCTURAL RISK if near-duplicate,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครพนม,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke-hub,0.020,STRUCTURAL RISK — shared category; differentiated province intent expected,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครพนม,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา,sibling-province,0.129,STRUCTURAL RISK if near-duplicate,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke-hub,0.020,STRUCTURAL RISK — shared category; differentiated province intent expected,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บึงกาฬ,sibling-province,0.154,STRUCTURAL RISK if near-duplicate,OK
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บึงกาฬ,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke-hub,0.020,STRUCTURAL RISK — shared category; differentiated province intent expected,OK

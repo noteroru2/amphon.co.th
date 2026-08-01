@@ -1,0 +1,5 @@
+url,checks,conflicts,result
+/,"{""name"":true,""address"":true,""tel_display"":true,""tel_href"":true,""line"":true,""geo"":true}",0,PASS
+/contact,"{""name"":true,""address"":true,""tel_display"":true,""tel_href"":true,""line"":true,""geo"":true}",0,PASS
+/about,"{""name"":true,""address"":true,""tel_display"":true,""tel_href"":true,""line"":true,""geo"":true}",0,PASS
+/บริการ/รับซื้อโน๊ตบุ๊ค,"{""name"":true,""address"":true,""tel_display"":true,""tel_href"":true,""line"":true,""geo"":true}",0,PASS

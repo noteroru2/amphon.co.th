@@ -1,0 +1,5 @@
+check,value,result,notes
+unique_lastmod_values,18,PASS,mass identical lastmod would be concerning
+future_dates,0,PASS,
+sitemap_urls_with_lastmod,1158,PASS,
+batch_12g1_sample_lastmod,2026-08-01,PASS,content updated 2026-08-01
