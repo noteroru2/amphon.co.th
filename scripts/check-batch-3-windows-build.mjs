@@ -15,7 +15,7 @@ import { SITEMAP_REQUIRED_INCLUSIONS } from './lib/sitemap-inclusion.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MARKER = path.join(ROOT, '.amphon-build-complete');
 const SITE = 'https://amphon.co.th';
-const EXPECTED_SITEMAP_URLS = 1175;
+const EXPECTED_SITEMAP_URLS = 1166;
 const issues = [];
 const notes = [];
 

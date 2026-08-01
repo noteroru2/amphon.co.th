@@ -1018,6 +1018,96 @@
       "permanent": true
     },
     {
+      "source": "/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%94",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-เลย",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B9%80%E0%B8%A5%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-ศรีสะเกษ",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A9",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-สกลนคร",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-สุรินทร์",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-หนองคาย",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B2%E0%B8%A2",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-หนองบัวลำภู",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%A0%E0%B8%B9",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-อำนาจเจริญ",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%AD%E0%B8%B3%E0%B8%99%E0%B8%B2%E0%B8%88%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/รับซื้อ/รับซื้อของสะสม-อุดรธานี",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
+      "source": "/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%AD%E0%B8%B8%E0%B8%94%E0%B8%A3%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5",
+      "destination": "/บริการ/รับซื้อของสะสม",
+      "permanent": true
+    },
+    {
       "source": "/:path+/",
       "destination": "/:path+",
       "permanent": true

@@ -1,9 +1,11 @@
 /**
- * Batch 12B — Collectibles merge pilot regression checks.
+ * Batch 12C — Collectibles family completion regression checks.
+ * Validates remaining 9 sources + full family 19 + target + sitemap -9.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import crypto from 'node:crypto';
 import {
   collectBuiltPages,
   extractHrefs,
@@ -16,11 +18,11 @@ import {
 } from './lib/site-audit.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const PILOT_MAP = path.join(ROOT, 'docs/batch-12b-collectibles-merge-pilot/pilot-url-map.csv');
+const FAMILY_MAP = path.join(ROOT, 'docs/batch-12c-collectibles-family-completion/family-url-map.csv');
 const EXPECTED_SITEMAP = 1166;
 const TARGET = '/บริการ/รับซื้อของสะสม';
 
-const APPROVED_PILOT = [
+const PILOT_A = [
   '/รับซื้อ/รับซื้อของสะสม-กาฬสินธุ์',
   '/รับซื้อ/รับซื้อของสะสม-ขอนแก่น',
   '/รับซื้อ/รับซื้อของสะสม-ชัยภูมิ',
@@ -33,7 +35,7 @@ const APPROVED_PILOT = [
   '/รับซื้อ/รับซื้อของสะสม-ยโสธร',
 ];
 
-const PROTECTED_FAMILY = [
+const BATCH_12C = [
   '/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด',
   '/รับซื้อ/รับซื้อของสะสม-เลย',
   '/รับซื้อ/รับซื้อของสะสม-ศรีสะเกษ',
@@ -44,6 +46,9 @@ const PROTECTED_FAMILY = [
   '/รับซื้อ/รับซื้อของสะสม-อำนาจเจริญ',
   '/รับซื้อ/รับซื้อของสะสม-อุดรธานี',
 ];
+
+const FAMILY = [...PILOT_A, ...BATCH_12C];
+const FAMILY_SET = new Set(FAMILY);
 
 const issues = [];
 const notes = [];
@@ -88,23 +93,29 @@ function parseCSV(text) {
   return rows.filter((r) => r.length && !(r.length === 1 && r[0] === ''));
 }
 
-if (!fs.existsSync(PILOT_MAP)) issues.push('missing pilot-url-map.csv');
-const mapRows = fs.existsSync(PILOT_MAP) ? parseCSV(readText(PILOT_MAP)) : [];
+if (BATCH_12C.length !== 9) issues.push(`remaining set != 9 (got ${BATCH_12C.length})`);
+if (FAMILY.length !== 19) issues.push(`family total != 19 (got ${FAMILY.length})`);
+
+const sourceSetHash = crypto.createHash('sha256').update(BATCH_12C.join('\n')).digest('hex').slice(0, 16);
+notes.push(`source_set_hash=${sourceSetHash}`);
+
+if (!fs.existsSync(FAMILY_MAP)) issues.push('missing family-url-map.csv');
+const mapRows = fs.existsSync(FAMILY_MAP) ? parseCSV(readText(FAMILY_MAP)) : [];
 const mh = mapRows[0] ? Object.fromEntries(mapRows[0].map((h, i) => [h, i])) : {};
-const pilotFromCsv = mapRows.slice(1).map((r) => r[mh.source_url]).filter(Boolean);
+const fromCsv = mapRows.slice(1).map((r) => r[mh.source_url]).filter(Boolean);
 
-if (pilotFromCsv.length !== 10) issues.push(`pilot-url-map must have exactly 10 sources, got ${pilotFromCsv.length}`);
-if (APPROVED_PILOT.length !== 10) issues.push('approved pilot paths != 10');
-
-const expectedSet = new Set(APPROVED_PILOT);
-for (const u of pilotFromCsv) {
-  if (!expectedSet.has(u)) issues.push(`pilot map URL not in approved set: ${u}`);
+if (fromCsv.length !== 9) issues.push(`family-url-map must have exactly 9 sources, got ${fromCsv.length}`);
+const approved12c = new Set(BATCH_12C);
+for (const u of fromCsv) {
+  if (!approved12c.has(u)) issues.push(`family map URL not in approved 12C set: ${u}`);
   const row = mapRows.find((r) => r[mh.source_url] === u);
   if (row && row[mh.target_url] !== TARGET) issues.push(`${u} target != ${TARGET}`);
-  if (row && row[mh.classification] !== 'MERGE') issues.push(`${u} classification != MERGE`);
+  if (row && String(row[mh.approved_for_batch12c]).toLowerCase() !== 'yes') {
+    issues.push(`${u} not approved_for_batch12c`);
+  }
 }
-for (const u of APPROVED_PILOT) {
-  if (!pilotFromCsv.includes(u)) issues.push(`approved pilot URL missing from CSV: ${u}`);
+for (const u of BATCH_12C) {
+  if (!fromCsv.includes(u)) issues.push(`approved 12C URL missing from CSV: ${u}`);
 }
 
 const built = collectBuiltPages();
@@ -129,7 +140,7 @@ else {
   if (/name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html)) issues.push('target is noindex');
 }
 
-for (const source of APPROVED_PILOT) {
+function assertRetired(source) {
   if (built.has(source)) issues.push(`retired source still built as HTML: ${source}`);
   for (const variant of [source, encodePath(source)]) {
     const chain = resolveRedirectChain(variant, redirects);
@@ -143,13 +154,15 @@ for (const source of APPROVED_PILOT) {
   }
 }
 
-// After Batch 12C, former protected family URLs are also retired (validated by qa:batch-12c-collectibles).
-for (const u of PROTECTED_FAMILY) {
-  if (built.has(u)) issues.push(`former protected family still built as HTML: ${u}`);
-  const chain = resolveRedirectChain(u, redirects);
-  if (chain.chain.length !== 1 || chain.finalPath !== TARGET) {
-    issues.push(`former protected family redirect incomplete: ${u} hops=${chain.chain.length} final=${chain.finalPath}`);
-  }
+for (const source of BATCH_12C) assertRetired(source);
+for (const source of PILOT_A) assertRetired(source);
+
+// Out-of-family: Ubon ของสะสม must remain live
+const UBON = '/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี';
+if (!built.has(UBON)) issues.push(`out-of-scope Ubon missing from build: ${UBON}`);
+{
+  const chain = resolveRedirectChain(UBON, redirects);
+  if (chain.chain.length > 0) issues.push(`out-of-scope Ubon unexpectedly redirects: ${UBON}`);
 }
 
 let sitemapUrls = 0;
@@ -168,13 +181,11 @@ for (const f of walkFiles(distDir).filter((x) => /sitemap.*\.xml$/i.test(x))) {
   }
 }
 notes.push(`sitemap_url_count=${sitemapUrls}`);
-if (sitemapUrls !== EXPECTED_SITEMAP) issues.push(`sitemap ${sitemapUrls} != ${EXPECTED_SITEMAP}`);
+if (sitemapUrls !== EXPECTED_SITEMAP) issues.push(`sitemap ${sitemapUrls} != ${EXPECTED_SITEMAP} (expected diff -9 from 1175)`);
 if (!sitemapSet.has(TARGET)) issues.push('target missing from sitemap');
-for (const source of APPROVED_PILOT) {
-  if (sitemapSet.has(source)) issues.push(`retired source still in sitemap: ${source}`);
-}
-for (const u of PROTECTED_FAMILY) {
-  if (sitemapSet.has(u)) issues.push(`former protected family still in sitemap: ${u}`);
+if (!sitemapSet.has(UBON)) issues.push('out-of-scope Ubon missing from sitemap');
+for (const source of FAMILY) {
+  if (sitemapSet.has(source)) issues.push(`family source still in sitemap: ${source}`);
 }
 
 let linksToRetired = 0;
@@ -184,9 +195,9 @@ for (const [pathname, filePath] of built) {
   for (const href of extractHrefs(html)) {
     const dest = normalizePathname(href);
     if (!dest) continue;
-    if (expectedSet.has(dest)) {
+    if (FAMILY_SET.has(dest)) {
       linksToRetired += 1;
-      if (linksToRetired <= 8) issues.push(`internal link to retired source ${pathname} -> ${dest}`);
+      if (linksToRetired <= 12) issues.push(`internal link to retired source ${pathname} -> ${dest}`);
     }
   }
 }
@@ -194,13 +205,14 @@ notes.push(`links_to_retired=${linksToRetired}`);
 if (linksToRetired > 0) issues.push(`internal links to retired sources: ${linksToRetired}`);
 
 const pkg = JSON.parse(readText(path.join(ROOT, 'package.json')));
+if (!pkg.scripts?.['qa:batch-12c-collectibles']) issues.push('missing qa:batch-12c-collectibles script');
 if (!pkg.scripts?.['qa:batch-12b-collectibles']) issues.push('missing qa:batch-12b-collectibles script');
 
-console.log('Batch 12B collectibles pilot QA');
+console.log('Batch 12C collectibles family completion QA');
 for (const n of notes) console.log(`  note: ${n}`);
 if (issues.length) {
   console.error(`FAIL (${issues.length})`);
-  for (const i of issues.slice(0, 50)) console.error(`  - ${i}`);
+  for (const i of issues.slice(0, 60)) console.error(`  - ${i}`);
   process.exit(1);
 }
 console.log('PASS');

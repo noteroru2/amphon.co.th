@@ -19,7 +19,7 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXPECTED_TEL = 'tel:+66642579353';
 const FORBIDDEN_TEL = 'tel:0642579353';
-const EXPECTED_SITEMAP = 1175;
+const EXPECTED_SITEMAP = 1166;
 
 const issues = [];
 const notes = [];
@@ -143,7 +143,7 @@ for (const f of sitemapFiles) {
 notes.push(`sitemap_url_count=${sitemapUrls}`);
 if (sitemapUrls !== EXPECTED_SITEMAP && sitemapUrls > 0) {
   // Allow documented drift but flag
-  notes.push(`sitemap_count_diff_from_1175=${sitemapUrls - EXPECTED_SITEMAP}`);
+  notes.push(`sitemap_count_diff_from_expected=${sitemapUrls - EXPECTED_SITEMAP}`);
   if (Math.abs(sitemapUrls - EXPECTED_SITEMAP) > 0) {
     // Not an automatic fail if equal to built pages and intentional; still note
     if (sitemapUrls !== built.size) {

@@ -1,0 +1,3 @@
+location,old_href,new_href,action,result
+src/config/seo-policy.ts isIndexableServiceArea,relatedAreas auto-links to 9 sources,/บริการ/รับซื้อของสะสม (filtered out via retired slug set),policy_filter_extended_to_19,PASS
+markdown hard links,none found to 9 sources outside own files,n/a,none_required,PASS
