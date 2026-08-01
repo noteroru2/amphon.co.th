@@ -2,11 +2,11 @@
 
 ## Verdict
 
-PASS WITH WARNING — local implementation + QA green; production validation pending after merge/deploy.
+PASS
 
 ## Status
 
-- Thin Content Improve Pilot: CLOSED — 6/6 IMPROVED (pending production confirm)
+- Thin Content Improve Pilot: CLOSED — 6/6 IMPROVED
 - F-04: OPEN — IMPROVE PILOT COMPLETE / REMAINING CANDIDATES PENDING
 
 ## SHAs
@@ -14,7 +14,8 @@ PASS WITH WARNING — local implementation + QA green; production validation pen
 - Branch: `fix/batch-12d-thin-content-improve-pilot`
 - Base SHA: `91868e177fb35e25b83cfcb80fd63156c0522fcd`
 - Implementation SHA: `ebbb231eb23ef1f08e7253f4a48642a17d63f7ff`
-- Merge SHA: PENDING
+- Branch tip (docs fill): `bb85655`
+- Merge SHA: `a2118c13196eee29ed6b93d74deb9e4595df19b5`
 - Production SHA: NOT VERIFIED
 - Report-only SHA: PENDING
 - Deployment URL: https://amphon.co.th
@@ -35,20 +36,26 @@ PASS WITH WARNING — local implementation + QA green; production validation pen
 - Sections added: 2 unique body sections + 3 FAQs per page
 - Sections rewritten: intro (removed province-swap boilerplate)
 - Boilerplate removed: yes
-- Verified facts added: store address; qualified payment wording; product prep from hubs; no daily-pickup guarantee
+- Verified facts added: store address; qualified payment; product prep from hubs; no daily-pickup guarantee
 - Unsupported facts: 0
 - Unique value result: product-prep + local store/appointment process + page-specific FAQ
 - Similarity: sibling boilerplate reduced; hub overlap limited to shared verified process facts
-- Search Intent regression: none (local-commercial preserved)
+- Search Intent regression: none
 - Metadata/H1 diff: 0
-- Internal links added: natural hub/area links only (no F-06 architecture change)
-- Schema diff: FAQPage emitted via existing layout when FAQs visible (no architecture change)
+- Internal links added: natural hub/area only (no F-06 architecture change)
+- Schema diff: FAQPage via existing layout when FAQs visible
 - Image diff: 0
 - Route/Sitemap/Canonical/Noindex/Redirect diff: 0
-- Sitemap count: 1,166
-- Orphan reconciliation: all-routes 2 (noindex utility); sitemap 0; indexable 0; not regression
-- Broken / redirecting: 0 / 0
-- Batch 1–12D QA: PASS (F-12 warning unchanged)
-- Remaining IMPROVE candidates: 8 (server-ubon, ups-ubon, 6 blogs)
-- Remaining F-04 active candidates: **161** (= 167 after 12C − 6 improved)
+- Sitemap count: 1,166 (diff 0)
+- Orphan reconciliation: all-routes 2 noindex utility baseline; sitemap 0; indexable 0; not 12B/12C regression
+- Orphan before/after: 2 / 2
+- Broken / redirecting (prod sitemap HEAD crawl): 0 / 0
+- Collectibles family still redirecting: PASS
+- Astro check: 0/0; Build exit 0; Batch 1–12D QA PASS (F-12 warning unchanged)
+- Remaining IMPROVE candidates: 8
+- Remaining F-04 active candidates: **161** (167 after 12C − 6 improved)
 - Remaining Findings: F-04, F-12; F-14–F-18 out of scope
+
+## Report files
+
+`docs/batch-12d-thin-content-improve-pilot/` — README, baseline, orphan-reconciliation, improve-candidate-inventory, pilot-selection, pilot-url-map, production-baseline, content-gap-map, content-plan, content-diff, content-similarity-diff, internal-link-diff, rendered-validation, visual-validation, test-results, post-deploy-validation, production-crawl-summary.json, final-report, pilot-set-hash

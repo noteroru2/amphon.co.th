@@ -1,1 +1,9 @@
 url,check,expected,actual,result,notes
+/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,pilot_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี marker=true store=true tel=true faq=3,PASS,สิ่งที่ควรถ่ายรูปก่อนประเมินของสะสม
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี,pilot_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี marker=true store=true tel=true faq=3,PASS,เตรียมอะไรก่อนนัดขายเครื่องใช้ไฟฟ้า
+/รับซื้อ/รับซื้อโดรน-อุบลราชธานี,pilot_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อโดรน-อุบลราชธานี marker=true store=true tel=true faq=3,PASS,จุดตรวจเฉพาะโดรน
+/รับซื้อ/รับซื้อทีวี-อุบลราชธานี,pilot_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อทีวี-อุบลราชธานี marker=true store=true tel=true faq=3,PASS,ข้อมูลและรูปที่ควรส่งตอนประเมินทีวี
+/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อุบลราชธานี,pilot_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อุบลราชธานี marker=true store=true tel=true faq=3,PASS,สิ่งที่ช่วยให้ประเมินเฟอร์นิเจอร์
+/รับซื้อ/รับซื้ออุปกรณ์-network-อุบลราชธานี,pilot_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้ออุปกรณ์-network-อุบลราชธานี marker=true store=true tel=true faq=3,PASS,ข้อมูลที่ควรเตรียมก่อนประเมินอุปกรณ์ Network
+_SITEMAP_,count,1166,1166,PASS,missing_pilots=
+/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด,collectibles_still_redirect,308,308,PASS,
