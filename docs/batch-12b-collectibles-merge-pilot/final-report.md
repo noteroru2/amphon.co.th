@@ -25,7 +25,7 @@ F-04: OPEN — PILOT A COMPLETE / REMAINING IMPLEMENTATION PENDING
 | Implementation SHA | `1f5b88ec4f3c9ddf0ec22f4c7037d8051b3b46bd` |
 | Merge SHA | `608046c23737c5c5be9f4ff9d04daa9d69ea5d7e` |
 | Production SHA | NOT VERIFIED |
-| Report-only SHA | *(after docs commit)* |
+| Report-only SHA | `9fd56ba6ff2d81ae5d1cb16ce2cf9e5ff4b55333` |
 
 ## Counts
 

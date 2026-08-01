@@ -10,7 +10,7 @@ Audit Merge SHA: 6566f53efa85ff19dfe5dd3fa7aeb25e4900b345
 Implementation SHA: 1f5b88ec4f3c9ddf0ec22f4c7037d8051b3b46bd
 Merge SHA: 608046c23737c5c5be9f4ff9d04daa9d69ea5d7e
 Production SHA: NOT VERIFIED
-Report-only SHA: pending
+Report-only SHA: 9fd56ba6ff2d81ae5d1cb16ce2cf9e5ff4b55333
 Deployment URL: https://amphon.co.th
 Pilot sources: 10
 Target: /บริการ/รับซื้อของสะสม
