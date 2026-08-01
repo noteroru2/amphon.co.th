@@ -1,0 +1,7 @@
+url,check,status,notes
+"/","pre-merge local","PASS","e164 only in dist"
+"/contact","pre-merge local","PASS","e164 only"
+"/บริการ/รับซื้อโน๊ตบุ๊คเกมมิ่ง","pre-merge local","PASS","was mixed on production; local now e164 only"
+"/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี","pre-merge local","PASS","was mixed on production; local now e164 only"
+"/sitemap-index.xml","pre-merge local","PASS","1185 URLs"
+"F-12","unchanged","OPEN/BLOCKED","Batch 7 warning expected"

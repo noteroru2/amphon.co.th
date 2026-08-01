@@ -1,0 +1,6 @@
+url,source_file,field_or_behavior,before,after,reason,expected,production_verified,result
+"/* content pages with markdown tel */","src/content/**/*.md (884 files)","a[href^=tel:]","tel:0642579353","tel:+66642579353","F-10 NAP consistency; match site.phoneTel","single E.164 tel href form sitewide","PENDING","SOURCE_FIXED"
+"/","src/config/site.ts + layouts","chrome CTA tel","tel:+66642579353","tel:+66642579353","already correct","unchanged","YES_PRE_FIX","NO_CHANGE"
+"/contact","layouts/components","chrome CTA tel","tel:+66642579353","tel:+66642579353","already correct","unchanged","YES_PRE_FIX","NO_CHANGE"
+"/บริการ/รับซื้อโน๊ตบุ๊คเกมมิ่ง","src/content/services/รับซื้อโน๊ตบุ๊คเกมมิ่ง.md","body tel href","tel:0642579353 (×2) + chrome E.164","tel:+66642579353 only","normalize body","E.164 only","PENDING","SOURCE_FIXED"
+"/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี","src/content/serviceAreas/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี.md","body tel href","tel:0642579353 (×1) + chrome E.164","tel:+66642579353 only","normalize body","E.164 only","PENDING","SOURCE_FIXED"
