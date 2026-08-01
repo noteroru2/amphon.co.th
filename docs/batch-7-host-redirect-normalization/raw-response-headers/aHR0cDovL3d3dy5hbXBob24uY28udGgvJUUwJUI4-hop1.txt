@@ -1,0 +1,9 @@
+HTTP/1.1 301 Moved Permanently
+Cache-Control: public, max-age=0, must-revalidate
+Content-Type: text/plain
+Date: Sat, 01 Aug 2026 03:03:19 GMT
+Location: https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-gopro-%E0%B8%82%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%81%E0%B9%88%E0%B8%99
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Vercel-Id: sin1::kqb2b-1785553399498-2436574bd361
+Transfer-Encoding: chunked

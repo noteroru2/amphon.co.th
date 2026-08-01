@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 837
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="อุบลราชธานี"
+Content-Length: 157784
+Content-Type: text/html; charset=utf-8
+Date: Sat, 01 Aug 2026 03:03:08 GMT
+Etag: "36d71657291d28b1495bc048400b9e4f"
+Last-Modified: Sat, 01 Aug 2026 02:49:10 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: HIT
+X-Vercel-Id: sin1::tbwnb-1785553388064-211a2a570ce8

@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="blog"
+Content-Length: 218028
+Content-Type: text/html; charset=utf-8
+Date: Sat, 01 Aug 2026 03:02:59 GMT
+Etag: "e15a863ca5a257df9307763c6fbe196b"
+Last-Modified: Sat, 01 Aug 2026 03:02:59 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: MISS
+X-Vercel-Id: sin1::zzg4f-1785553379053-1a7059a39f48
