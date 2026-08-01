@@ -18,7 +18,7 @@ PASS
 - Branch tip (docs fill): `ae3cdc5`
 - Merge SHA: `d9cac4cdf5f9458f464f6a56a637503ee249fb18`
 - Production SHA: NOT VERIFIED
-- Report-only SHA: PENDING
+- Report-only SHA: `96a15c7591fd93bfe22d95f11a7587727fcb422a`
 - Deployment URL: https://amphon.co.th
 
 ## Scope
