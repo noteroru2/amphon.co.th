@@ -19,7 +19,7 @@ OWNER RESPONSES PENDING
 |---|---|
 | Branch | `audit/batch-12f-business-decision-matrix` |
 | Base SHA | `b533120af3a18f89e24917e0f5b2eb3d7a21a3af` |
-| Audit SHA | PENDING |
+| Audit SHA | `54968f5057fbb67a645ea5f365802b94c11ea360` |
 | PR URL | PENDING |
 | Production code changes | **0** |
 | Production changes | **0** |
