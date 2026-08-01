@@ -5,8 +5,8 @@ order: 8
 description: "รับซื้อ PS5 (PlayStation 5), PS4, Nintendo Switch และแผ่นเกมมือสอง รับเหมาเครื่องเกม ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว มีหน้าร้านจริง ตีราคาแฟร์ ทักไลน์ @webuy ใกล้ฉัน นัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวนที่ตกลง"
 mainKeyword: "รับซื้อ PS5"
 relatedKeywords: ["รับซื้อเพลย์สเตชั่น", "รับซื้อเครื่องเกม", "ขาย PS5 ", "รับซื้อ Nintendo Switch", "รับซื้อ PS4", "แผ่นเกมมือสอง"]
-heroImage: "/images/services/rub-sue-playstation-ps5-amphon.png"
-ogImage: "/images/services/rub-sue-playstation-ps5-amphon.png"
+heroImage: "/images/services/rub-sue-playstation-ps5-amphon.webp"
+ogImage: "/images/services/rub-sue-playstation-ps5-amphon.webp"
 date: "2026-06-03"
 draft: false
 icon: "gamepad"
@@ -27,7 +27,7 @@ faqs:
 
 ## รับซื้อเครื่องเกมเพลย์ (PS5, PS4) และ Nintendo Switch ประเมินตามสภาพจริง จ่ายจบไว
 
-![รับซื้อ Playstation PS5 PS4 มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-playstation-ps5-amphon.png)
+![รับซื้อ Playstation PS5 PS4 มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-playstation-ps5-amphon.webp)
 
 
 เบื่อเกมแล้ว เรียนหนักขึ้น หรือเล่นจบแล้วไม่ได้จับอีกเลย? อำพล เทรดดิ้ง ให้บริการ **รับซื้อเครื่องเล่นเกมคอนโซลมือสอง** ให้ราคาดี ตีราคายุติธรรม ไม่ว่าจะเป็น PlayStation 5 (PS5), PS4, Nintendo Switch หรือ Xbox เราเข้าใจคอเกมและตีราคาตามอุปกรณ์ที่มี แผ่นเกมที่แถม ไม่กดราคาแบบร้านรับซื้อของเก่า มีหน้าร้านชัดเจนกับเรา มั่นใจมีขั้นตอนประเมินและตรวจสอบสินค้าก่อนตกลงราคา
@@ -84,7 +84,7 @@ faqs:
 
 ## ตารางเปรียบเทียบปัจจัยการตีราคาเครื่องเกม
 
-![รับซื้อ Playstation PS5 PS4 มือสอง - อำพล เทรดดิ้ง - บริการรับซื้อครบวงจร](/images/services/rub-sue-playstation-ps5-amphon.png)
+![รับซื้อ Playstation PS5 PS4 มือสอง - อำพล เทรดดิ้ง - บริการรับซื้อครบวงจร](/images/services/rub-sue-playstation-ps5-amphon.webp)
 
 
 | รุ่นเครื่องเกม | จุดที่ร้านเน้นตรวจเช็ค | สิ่งที่ช่วยประเมินราคาตามสภาพจริงคุณ | อาการที่ต้องถูกตัดราคาลง |

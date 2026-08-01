@@ -5,8 +5,8 @@ order: 16
 description: "รับซื้อ SSD มือสอง M.2 NVMe Gen3/4, SATA SSD, Enterprise SSD, HDD SATA/SAS และ External SSD/HDD ทุกยี่ห้อ เช็ค S.M.A.R.T. health ก่อนรับซื้อ โปร่งใส ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว"
 mainKeyword: "รับซื้อ SSD"
 relatedKeywords: ["รับซื้อ SSD มือสอง", "รับซื้อ HDD มือสอง", "รับซื้อ External SSD", "รับซื้อ External HDD", "SSD M.2 NVMe", "Samsung 980 Pro", "WD Black SN850", "Kingston NV2", "ขาย SSD มือสอง", "รับซื้อฮาร์ดดิสก์", "HDD SATA", "HDD SAS Enterprise", "Enterprise SSD", "รับซื้อ SSD อุบลราชธานี", "เช็ค SMART SSD"]
-heroImage: "/images/services/rub-sue-ssd-hdd-amphon.png"
-ogImage: "/images/services/rub-sue-ssd-hdd-amphon.png"
+heroImage: "/images/services/rub-sue-ssd-hdd-amphon.webp"
+ogImage: "/images/services/rub-sue-ssd-hdd-amphon.webp"
 date: "2026-06-03"
 draft: false
 icon: "HardDrive"
@@ -34,7 +34,7 @@ faqs:
 
 ## SSD, HDD และ External Drive ที่รับซื้อ
 
-![รับซื้อ SSD M.2 NVMe และ HDD มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-ssd-hdd-amphon.png)
+![รับซื้อ SSD M.2 NVMe และ HDD มือสอง - อำพล เทรดดิ้ง อุบลราชธานี](/images/services/rub-sue-ssd-hdd-amphon.webp)
 
 เรารับซื้อ Storage ครบทุกประเภทที่ใช้กันทั้งในคอมทั่วไปและระดับ Enterprise:
 

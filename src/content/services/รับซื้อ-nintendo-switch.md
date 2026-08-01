@@ -5,8 +5,8 @@ order: 43
 description: "รับซื้อ Nintendo Switch มือสอง (นินเทนโดสวิตช์) ประเมินฟรี รับซื้อรุ่น OLED, V2, Lite ทั้งเครื่องเล่นแท้และเครื่องแปลง (สายมืด) บริการนัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวนที่ตกลง ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว"
 mainKeyword: "รับซื้อ Nintendo Switch"
 relatedKeywords: ["รับซื้อ Nintendo Switch", "รับซื้อ นินเทนโดสวิตช์", "ขาย Nintendo Switch", "รับซื้อ Switch OLED", "รับซื้อ Switch V2", "รับซื้อ Switch Lite", "รับซื้อแผ่นเกม Switch"]
-heroImage: "/images/services/rub-sue-nintendo-switch-amphon.png"
-ogImage: "/images/services/rub-sue-nintendo-switch-amphon.png"
+heroImage: "/images/services/rub-sue-nintendo-switch-amphon.webp"
+ogImage: "/images/services/rub-sue-nintendo-switch-amphon.webp"
 date: "2026-06-03"
 draft: false
 icon: "gamepad"
@@ -32,7 +32,7 @@ faqs:
 
 ## รุ่น Nintendo Switch ที่เรารับซื้อ
 
-![รับซื้อ Nintendo Switch มือสอง เครื่อง OLED V2 V1 Lite - อำพล เทรดดิ้ง](/images/services/rub-sue-nintendo-switch-amphon.png)
+![รับซื้อ Nintendo Switch มือสอง เครื่อง OLED V2 V1 Lite - อำพล เทรดดิ้ง](/images/services/rub-sue-nintendo-switch-amphon.webp)
 
 เรารับซื้อเครื่องนินเทนโดสวิตช์มือสองครบทุกโมเดล:
 

@@ -5,8 +5,8 @@ order: 15
 description: "รับซื้อ Mac mini มือสอง รับซื้อเครื่องแมค มินิ ชิป M1, M2, M2 Pro, M4, M4 Pro ประเมินราคาตามสเปค ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว มีบริการนัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวนที่ตกลงทั่วอุบลและภาคอีสาน"
 mainKeyword: "รับซื้อ Mac mini"
 relatedKeywords: ["รับซื้อ Mac mini มือสอง", "ขาย Mac mini", "รับซื้อ Mac mini M2", "รับซื้อ Mac mini M4", "รับซื้อเครื่องแมค", "ขายแมคมินิ"]
-heroImage: "/images/services/rub-sue-mac-mini-amphon.png"
-ogImage: "/images/services/rub-sue-mac-mini-amphon.png"
+heroImage: "/images/services/rub-sue-mac-mini-amphon.webp"
+ogImage: "/images/services/rub-sue-mac-mini-amphon.webp"
 date: "2026-06-03"
 draft: false
 icon: "hard-drive"

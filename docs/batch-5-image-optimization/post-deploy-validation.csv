@@ -1,0 +1,12 @@
+check,status,notes
+homepage_200,PENDING,
+sitemap_index_200,PENDING,
+sitemap_count,PENDING,Expect 1185
+target_image_200,PENDING,
+target_webp_content_type,PENDING,
+png_not_required_by_html,PENDING,
+broken_images,PENDING,
+f01_redirect,PENDING,
+f05_claims,PENDING,
+batch3_wrapper,PENDING,
+production_sha,PENDING,NOT_VERIFIED if no API
