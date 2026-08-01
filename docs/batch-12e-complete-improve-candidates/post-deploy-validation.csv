@@ -1,1 +1,14 @@
 url,check,expected,actual,result,notes
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,batch12e_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อ-server-อุบลราชธานี marker=true tel=true faq=3 bad=false,PASS,สเปกและรูปที่ควรส่งตอนประเมิน Server
+/รับซื้อ/รับซื้อ-ups-อุบลราชธานี,batch12e_live,200 self-can indexable new-sections faq>=2,status=200 can=/รับซื้อ/รับซื้อ-ups-อุบลราชธานี marker=true tel=true faq=3 bad=false,PASS,ข้อมูลที่ช่วยประเมิน UPS
+/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง,batch12e_live,200 self-can indexable new-sections,status=200 can=/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง marker=true tel=true faq=0 bad=false,PASS,ลำดับเตรียมเครื่องที่ควรทำก่อนส่งรูป
+/blog/คอมบริษัทเก่า-ขายยังไง,batch12e_live,200 self-can indexable new-sections,status=200 can=/blog/คอมบริษัทเก่า-ขายยังไง marker=true tel=true faq=0 bad=false,PASS,เตรียมข้อมูลล็อตก่อนติดต่อร้าน
+/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม,batch12e_live,200 self-can indexable new-sections,status=200 can=/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม marker=true tel=true faq=0 bad=false,PASS,อาการที่มักยังส่งประเมินได้
+/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม,batch12e_live,200 self-can indexable new-sections,status=200 can=/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม marker=true tel=true faq=0 bad=false,PASS,ลำดับที่ปลอดภัยสำหรับผู้ขาย
+/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง,batch12e_live,200 self-can indexable new-sections,status=200 can=/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง marker=true tel=true faq=0 bad=false,PASS,ปัจจัยที่มีผลต่อราคาจริง
+/blog/วิธีเตรียมเครื่องก่อนขายสินค้าไอที,batch12e_live,200 self-can indexable new-sections,status=200 can=/blog/วิธีเตรียมเครื่องก่อนขายสินค้าไอที marker=true tel=true faq=0 bad=false,PASS,เช็กลิสต์ร่วมที่ใช้ได้หลายประเภท
+/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,batch12d_regression,marker+store,marker=true,PASS,read-only
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี,batch12d_regression,marker+store,marker=true,PASS,read-only
+_SITEMAP_,count,1166,1166,PASS,missing=
+/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด,collectibles_still_redirect,308,308,PASS,
+/,homepage,200,200,PASS,

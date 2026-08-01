@@ -2,12 +2,12 @@
 
 ## Verdict
 
-PASS WITH WARNING (source/build/QA pass; production validation pending)
+PASS
 
 ## Status
 
-- Batch 12E: CLOSED — 8/8 IMPROVED (pending production confirmation)
-- IMPROVE Family: CLOSED — 14/14 IMPROVED (pending production confirmation)
+- Batch 12E: CLOSED — 8/8 IMPROVED
+- IMPROVE Family: CLOSED — 14/14 IMPROVED
 - F-04: OPEN — ALL IMPROVE CANDIDATES COMPLETE / MERGE AND BUSINESS-DECISION CANDIDATES PENDING
 
 ## SHAs
@@ -15,7 +15,8 @@ PASS WITH WARNING (source/build/QA pass; production validation pending)
 - Branch: `fix/batch-12e-complete-improve-candidates`
 - Base SHA: `3b144f8fde35f0496bb2c353e6f9d94920412101`
 - Implementation SHA: `5f6a1525931f9ff482bcf237676a151a874ea067`
-- Merge SHA: PENDING
+- Branch tip (docs fill): `ae3cdc5`
+- Merge SHA: `d9cac4cdf5f9458f464f6a56a637503ee249fb18`
 - Production SHA: NOT VERIFIED
 - Report-only SHA: PENDING
 - Deployment URL: https://amphon.co.th
@@ -23,7 +24,7 @@ PASS WITH WARNING (source/build/QA pass; production validation pending)
 ## Scope
 
 - Original IMPROVE (Batch 12A): 14
-- Batch 12D completed: 6 (not edited in 12E; regression QA PASS)
+- Batch 12D completed: 6 (not edited in 12E; regression QA PASS + production spot-check PASS)
 - Batch 12E URL count: 8
 - URL set SHA-256 prefix: `bf51c8c3ad79c988`
 - Batch 12E URLs:
@@ -48,16 +49,17 @@ PASS WITH WARNING (source/build/QA pass; production validation pending)
 - Search Intent regression: none
 - Metadata/H1 diff:
   - H1: 0 unexpected
-  - Description: 0 unexpected
-  - Title: 1 intentional fix on `/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม` — removed unsupported `รับซื้อทุกสภาพ` → `ประเมินตามสภาพจริง` (Batch 10 PASS; claim safety)
+  - Description: 1 intentional claim-safety rewrite on notebook-fault blog (removed “ขายให้ได้เงินสูงสุด”)
+  - Title: 1 intentional fix on `/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม` — removed unsupported `รับซื้อทุกสภาพ` → `ประเมินตามสภาพจริง` (Batch 10 PASS)
 - Internal links: natural hub/process links in new body only; no nav/footer/F-06 architecture change
 - Schema diff: SA pages keep layout FAQPage when FAQs present; blogs remain BlogPosting only (no new FAQ schema)
 - Image diff: 0
 - Route / Sitemap / Canonical / Noindex / Redirect diff: 0
-- Sitemap count: 1,166 (diff 0)
+- Sitemap count: 1,166 (diff 0) — production confirmed
 - Orphan before/after: all-routes 2/2; sitemap 0/0; indexable 0/0; new orphan 0
 - Known utility exceptions: `/บริการ/รับซื้อ-storage-nas`, `/บริการ/รับซื้อเลนส์`
-- Broken / redirecting links (local Batch 11): 0 / 0
+- Broken / redirecting links (prod sitemap HEAD crawl): 0 / 0
+- Collectibles sample redirect still 308: PASS
 - Astro check: 0/0; Build exit 0; Batch 1–12E QA PASS (F-12 warning unchanged)
 - Remaining MERGE: 19 (38 original MERGE − 19 Collectibles resolved)
 - Remaining REQUIRES_BUSINESS_DECISION: 134
@@ -66,4 +68,4 @@ PASS WITH WARNING (source/build/QA pass; production validation pending)
 
 ## Report files
 
-`docs/batch-12e-complete-improve-candidates/` — README, baseline, improve-reconciliation, url-map, url-set-hash, template-family-map, production-baseline, content-gap-map, content-plan, content-diff, content-similarity-diff, internal-link-diff, rendered-validation, visual-validation, orphan-validation, test-results, post-deploy-validation, final-report
+`docs/batch-12e-complete-improve-candidates/` — README, baseline, improve-reconciliation, url-map, url-set-hash, template-family-map, production-baseline, content-gap-map, content-plan, content-diff, content-similarity-diff, internal-link-diff, rendered-validation, visual-validation, orphan-validation, test-results, post-deploy-validation, production-crawl-summary.json, final-report

@@ -1,6 +1,6 @@
 # Test results — Batch 12E
 
-Local validation after `npm ci`, `npx astro check`, `npm run build`, and Batch 1–12E QA.
+Local validation after merge on `main`, plus production validation.
 
 | Check | Result |
 | --- | --- |
@@ -25,5 +25,8 @@ Local validation after `npm ci`, `npx astro check`, `npm run build`, and Batch 1
 | qa:batch-12e-improve | PASS (8/8) |
 | Rendered validation (dist) | 8/8 PASS |
 | Visual validation (dist HTML) | 8/8 PASS |
+| Production 8 URL live | 8/8 PASS |
+| Production sitemap count | 1,166 PASS |
+| Production sitemap HEAD crawl | broken 0 / redirecting 0 PASS |
 | URL set hash | `bf51c8c3ad79c988` |
-| Production validation | PENDING |
+| Production SHA | NOT VERIFIED |
