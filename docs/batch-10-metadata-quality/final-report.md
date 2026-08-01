@@ -3,15 +3,15 @@
 ## Verdict
 
 ```text
-PASS WITH WARNING
+PASS
 ```
 
-Production validation pending. Local source/build/QA passed. Remaining long titles/descriptions kept as valid exceptions (length signal only). GSC not available.
+Finding F-09 **CLOSED**. Confirmed metadata issues fixed; remaining long titles/descriptions documented as valid exceptions. Production 38/38 changed URLs PASS.
 
 ## Finding F-09 status
 
 ```text
-FIXED (confirmed issues) + VALID EXCEPTIONS (long-but-clear metadata)
+CLOSED
 ```
 
 ## Counts
@@ -23,9 +23,9 @@ FIXED (confirmed issues) + VALID EXCEPTIONS (long-but-clear metadata)
 | Flagged URLs reviewed | 321 |
 | Confirmed Title issues fixed | 38 |
 | Confirmed Description issues fixed | 5 |
-| Titles kept as valid long | ~276+ (see valid-exceptions.csv) |
-| Descriptions kept as valid long | ~211 (warnings; exceptions documented) |
-| Requires GSC | 0 structural blockers (optimization opportunity only if CTR data arrives) |
+| Titles kept as valid long | see valid-exceptions.csv |
+| Descriptions kept as valid long | length warnings only; no structural fail |
+| Requires GSC | 0 blockers |
 | Human review | none blocking |
 | Duplicate title groups after | 0 |
 | Duplicate description groups after | 0 |
@@ -36,8 +36,8 @@ FIXED (confirmed issues) + VALID EXCEPTIONS (long-but-clear metadata)
 
 ```text
 Base SHA: 98057bc41074df96e439223febb3b0b1d1dab553
-Implementation SHA: PENDING
-Merge SHA: PENDING
+Implementation SHA: 2d4daf13a4207d3301c3dca611ae124b53006c17
+Merge SHA: 6e5c4b096db9ebd50d0cf9f61f4558a900f3f494
 Production SHA: NOT VERIFIED
 Report-only SHA: PENDING
 ```

@@ -1,2 +1,5 @@
 url,check,status,notes
-"PENDING","pre-merge","PENDING","fill after deploy"
+"SUMMARY","changed metadata","PASS","checked=38;fail=0"
+"/","homepage","PASS","200"
+"/sitemap-0.xml","sitemap count","PASS","1185"
+"F-12","host","OPEN/BLOCKED","unchanged"
