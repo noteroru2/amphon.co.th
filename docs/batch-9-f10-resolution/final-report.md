@@ -27,7 +27,7 @@ Base SHA: 252ba810c6a1cad9c45860b53c5fb1ff4fa1f34e
 Implementation SHA: cd0271fe5211300c9b967b5767f0a341d87669c6
 Merge SHA: 70c745c7526a62e52dffc673912e72434e8c4bd8
 Production SHA: NOT VERIFIED
-Report-only SHA: PENDING
+Report-only SHA: aa029e86a4f66669d404ef789c6416dd4a895092
 ```
 
 ## Diff summary
