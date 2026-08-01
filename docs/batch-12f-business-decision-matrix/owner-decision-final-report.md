@@ -36,7 +36,7 @@ Owner-confirmed URLs:
 | Batch 12F.1 SHA | `98af935` |
 | Owner-decision SHA | `72e4f8907231feffa5b7f301c01782664a53220f` |
 | Merge SHA | `4b0faed409859ccc1285e3ca42d504ad70e1397c` |
-| Report-only SHA | PENDING |
+| Report-only SHA | `77518cdfd73e7466f6dc37cb74c6c1f8e62d045c` |
 | Production SHA | NOT VERIFIED |
 | Owner decision date | 2026-08-01 |
 
