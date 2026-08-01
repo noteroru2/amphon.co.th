@@ -1,0 +1,4 @@
+url_a,url_b,relationship,similarity_before,similarity_after,shared_template_ratio,identical_paragraphs_before,identical_paragraphs_after,unique_sections_before,unique_sections_after,intent_overlap,result
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา,bd01_siblings,high_boilerplate,shared_policy_only_different_pattern,reduced,many,0_non_policy,0,3+,local-commercial-appliances,IMPROVED
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,spoke_vs_hub,spoke_copied_hub_tone,spoke_handoff_focus,low,n/a,0,0,province_handoff,category_shared_policy_only,PASS
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี,outside_vs_ubon_12d,same_family_template,different_local_store_vs_remote_limits,low,high,0,0,2+,same_category_different_fulfilment,PASS
