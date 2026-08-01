@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ServiceAreaLayout from '../../layouts/ServiceAreaLayout.astro';
 import { filterIndexableServiceAreas } from '../../config/seo-policy';
+import { getRelatedServiceAreasInProvince } from '../../config/internal-link-map';
 
 export async function getStaticPaths() {
   const serviceAreas = filterIndexableServiceAreas(
@@ -19,11 +20,17 @@ export async function getStaticPaths() {
       entry,
       service: services.find((s) => s.data.slug === entry.data.serviceSlug),
       area: areas.find((a) => a.data.slug === entry.data.areaSlug),
+      relatedInProvince: getRelatedServiceAreasInProvince(entry, serviceAreas, services, 4),
     },
   }));
 }
 
-const { entry, service, area } = Astro.props;
+const { entry, service, area, relatedInProvince } = Astro.props;
 ---
 
-<ServiceAreaLayout entry={entry} service={service} area={area} />
+<ServiceAreaLayout
+  entry={entry}
+  service={service}
+  area={area}
+  relatedInProvince={relatedInProvince}
+/>
