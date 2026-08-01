@@ -22,7 +22,7 @@ F-04: OPEN — PILOT A COMPLETE / REMAINING IMPLEMENTATION PENDING
 | Branch | `fix/batch-12b-collectibles-merge-pilot` |
 | Main Base SHA | `90ed322226063d23780a1c8dfb0a7f4ceb5687c0` |
 | Audit Merge SHA | `6566f53efa85ff19dfe5dd3fa7aeb25e4900b345` |
-| Implementation SHA | *(after commit)* |
+| Implementation SHA | `1f5b88ec4f3c9ddf0ec22f4c7037d8051b3b46bd` |
 | Merge SHA | pending |
 | Production SHA | NOT VERIFIED |
 
