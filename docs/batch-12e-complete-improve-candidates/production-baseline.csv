@@ -1,0 +1,9 @@
+url,status,redirect_count,canonical,robots,sitemap,title,description,h1,visible_words,template_ratio,unique_sections,inbound_links,outbound_links,faq_count,schema_types,result
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,0,"WebPage,Service",PASS_BASELINE
+/รับซื้อ/รับซื้อ-ups-อุบลราชธานี,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,0,"WebPage,Service",PASS_BASELINE
+/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,frontmatter_unused,Article,PASS_BASELINE
+/blog/คอมบริษัทเก่า-ขายยังไง,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,frontmatter_unused,Article,PASS_BASELINE
+/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม,200,0,self,indexable,yes,will_fix_unsupported_claim,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,frontmatter_unused,Article,PASS_BASELINE
+/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,frontmatter_unused,Article,PASS_BASELINE
+/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,frontmatter_unused,Article,PASS_BASELINE
+/blog/วิธีเตรียมเครื่องก่อนขายสินค้าไอที,200,0,self,indexable,yes,unchanged_expected,mostly_unchanged,from_title,thin_before,high_before,0,n/a,hub_links,frontmatter_unused,Article,PASS_BASELINE

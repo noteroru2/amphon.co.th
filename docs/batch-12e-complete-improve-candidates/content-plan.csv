@@ -1,0 +1,17 @@
+url,section_order,section_heading,user_question,content_source,verified_facts,unique_to_page,overlap_with_hub,action,acceptance_criteria
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,1,สเปกและรูปที่ควรส่งตอนประเมิน Server,prepare_or_inspect,/บริการ/รับซื้อ-server,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,2,ตรวจที่หน้าร้านอุบลหรือนัดถอดจาก Rack,process_or_handoff,/บริการ/รับซื้อ-server,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/รับซื้อ/รับซื้อ-ups-อุบลราชธานี,1,ข้อมูลที่ช่วยประเมิน UPS ในอุบลได้ตรงขึ้น,prepare_or_inspect,/บริการ/รับซื้อ-ups,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/รับซื้อ/รับซื้อ-ups-อุบลราชธานี,2,ส่งมอบ UPS ในอุบลอย่างไร,process_or_handoff,/บริการ/รับซื้อ-ups,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง,1,ลำดับเตรียมเครื่องที่ควรทำก่อนส่งรูปหรือนัดส่งมอบ,prepare_or_inspect,/บริการ/รับซื้อ-iphone,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง,2,สิ่งที่ควรเตรียมไปด้วยเมื่อขาย,process_or_handoff,/บริการ/รับซื้อ-iphone,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/คอมบริษัทเก่า-ขายยังไง,1,เตรียมข้อมูลล็อตก่อนติดต่อร้าน,prepare_or_inspect,/บริการ/รับซื้อคอมบริษัท,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/คอมบริษัทเก่า-ขายยังไง,2,ความปลอดภัยของข้อมูลองค์กร,process_or_handoff,/บริการ/รับซื้อคอมบริษัท,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม,1,อาการที่มักยังส่งประเมินได้,prepare_or_inspect,/บริการ/รับซื้อโน๊ตบุ๊ค,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม,2,ข้อมูลและรูปที่ควรส่งก่อนนัด,process_or_handoff,/บริการ/รับซื้อโน๊ตบุ๊ค,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม,1,สัญญาณว่าร้านนัดรับน่าเชื่อถือกว่า,prepare_or_inspect,/วิธีการรับซื้อ,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม,2,ลำดับที่ปลอดภัยสำหรับผู้ขาย,process_or_handoff,/วิธีการรับซื้อ,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง,1,ปัจจัยที่มีผลต่อราคาจริง,prepare_or_inspect,/บริการ/รับซื้อโน๊ตบุ๊ค,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง,2,วิธีเช็กราคาที่ไม่พึ่งเดา,process_or_handoff,/บริการ/รับซื้อโน๊ตบุ๊ค,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/วิธีเตรียมเครื่องก่อนขายสินค้าไอที,1,เช็กลิสต์ร่วมที่ใช้ได้หลายประเภท,prepare_or_inspect,/รับซื้อสินค้าไอที,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe
+/blog/วิธีเตรียมเครื่องก่อนขายสินค้าไอที,2,จุดต่างตามประเภทเครื่อง,process_or_handoff,/รับซื้อสินค้าไอที,qualified-payment;store-or-appointment-limits,yes,shared_process_only,add,unique_checklist+claim_safe

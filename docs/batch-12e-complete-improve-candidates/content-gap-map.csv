@@ -1,0 +1,9 @@
+url,section,current_summary,template_or_unique,missing_user_question,required_new_value,verified_source,business_input_required,implementation_action
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,body,province_template,template,server-spec-checklist;secure-erase;rack-pickup,topic-specific-checklist-and-process,/บริการ/รับซื้อ-server,no,rewrite_add_unique_sections
+/รับซื้อ/รับซื้อ-ups-อุบลราชธานี,body,province_template,template,va-rating;battery-condition;heavy-unit-handoff,topic-specific-checklist-and-process,/บริการ/รับซื้อ-ups,no,rewrite_add_unique_sections
+/blog/ขาย-iphone-มือสอง-ต้องเตรียมอะไรบ้าง,body,short_thin_article,template,icloud-exit;backup-erase;photo-checklist,topic-specific-checklist-and-process,/บริการ/รับซื้อ-iphone,no,rewrite_add_unique_sections
+/blog/คอมบริษัทเก่า-ขายยังไง,body,short_thin_article,template,lot-inventory;org-data-wipe;approval-path,topic-specific-checklist-and-process,/บริการ/รับซื้อคอมบริษัท,no,rewrite_add_unique_sections
+/blog/โน๊ตบุ๊คเสีย-ขายได้ไหม,body,short_thin_article,template,fault-modes;parts-vs-working;claim-softening,topic-specific-checklist-and-process,/บริการ/รับซื้อโน๊ตบุ๊ค,no,rewrite_add_unique_sections
+/blog/รับซื้อสินค้าไอทีถึงที่-ปลอดภัยไหม,body,short_thin_article,template,trust-signals;qualified-payment;appointment-limits,topic-specific-checklist-and-process,/วิธีการรับซื้อ,no,rewrite_add_unique_sections
+/blog/วิธีเช็กราคาก่อนขายโน๊ตบุ๊คมือสอง,body,short_thin_article,template,price-factors;compare-safely;prep-for-quote,topic-specific-checklist-and-process,/บริการ/รับซื้อโน๊ตบุ๊ค,no,rewrite_add_unique_sections
+/blog/วิธีเตรียมเครื่องก่อนขายสินค้าไอที,body,short_thin_article,template,cross-device-checklist;account-exit;photo-angles,topic-specific-checklist-and-process,/รับซื้อสินค้าไอที,no,rewrite_add_unique_sections
