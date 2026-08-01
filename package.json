@@ -26,6 +26,8 @@
     "qa:batch-5-images": "node scripts/check-batch-5-images.mjs",
     "qa:batch-6-schema-geo": "node scripts/check-batch-6-schema-geo.mjs",
     "qa:batch-7-host-redirects": "node scripts/check-batch-7-host-redirects.mjs",
+    "qa:batch-8-image-dimensions": "node scripts/check-batch-8-image-dimensions.mjs",
+    "images:dimension-cache": "node scripts/build-image-dimension-cache.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
     "qa:claim-risk": "node scripts/check-claim-risk.mjs",

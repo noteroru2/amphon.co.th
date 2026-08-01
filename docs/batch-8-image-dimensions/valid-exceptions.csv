@@ -1,0 +1,4 @@
+url,element,asset,reason,layout_reserved,evidence,status
+service heroes,img width=600 height=338,service webp,Display-box ratio for object-fit:cover; CSS aspect-ratio 16/9 reserves space; not listed as F-13 missing,yes,global.css .page-header--service,VALID EXCEPTION
+*,svg,inline svg,viewBox; not raster CLS target,yes,Header/CTA,SVG VIEWBOX EXCEPTION
+sitewide,img srcset absence,various,Audit called srcset an enhancement; out of F-13 close requirement,n/a,full-seo-audit F-13,VALID EXCEPTION

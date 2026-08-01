@@ -1,0 +1,3 @@
+component,source_file,affected_route_count,affected_urls,semantic_change,dimension_change,unexpected_change,result
+rehypeLocalImageDimensions,astro.config.mjs + scripts/lib/rehype-local-image-dimensions.mjs,all markdown pages,sitewide markdown /images/*,none,adds width/height,none,PASS
+OptimizedImage cache fallback,src/components/OptimizedImage.astro,layouts using OptimizedImage,heroes/cards when dims omitted,none,fills missing from cache,explicit width/height unchanged,PASS

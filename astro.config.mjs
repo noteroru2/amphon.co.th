@@ -8,6 +8,7 @@ import {
   serializeTrustworthyLastmod,
 } from './scripts/lib/trustworthy-sitemap-lastmod.mjs';
 import { shouldIncludeInSitemap } from './scripts/lib/sitemap-inclusion.mjs';
+import { rehypeLocalImageDimensions } from './scripts/lib/rehype-local-image-dimensions.mjs';
 
 const { lastmodByPath } = buildTrustworthyLastmodMap();
 
@@ -20,6 +21,9 @@ export default defineConfig({
   build: {
     format: 'directory',
     inlineStylesheets: 'always',
+  },
+  markdown: {
+    rehypePlugins: [rehypeLocalImageDimensions],
   },
   integrations: [
     sitemap({
