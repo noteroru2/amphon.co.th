@@ -20,7 +20,7 @@ CLOSED (pending production confirmation)
 |---|---|
 | Branch | `fix/batch-11-internal-link-architecture` |
 | Base SHA | `778dfbecc67d12f3020d00d3f88cd48efe4d7095` |
-| Implementation SHA | *(filled after commit)* |
+| Implementation SHA | `5cd0fa3943c9f174e7e6adbaa0c5cc99b158edea` |
 | Merge SHA | pending |
 | Production SHA | NOT VERIFIED |
 | Report-only SHA | pending |
