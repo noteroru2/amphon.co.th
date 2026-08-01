@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ RAM และ SSD มือสอง DDR4 DDR5 NVMe | อำพล เทรดดิ้ง"
+title: "รับซื้อ RAM และ SSD มือสอง DDR4 DDR5 NVMe"
 h1: "รับซื้อ RAM SSD มือสอง DDR4 DDR5 NVMe SATA ประเมินฟรี"
 slug: "รับซื้อ-ram-ssd"
 order: 13

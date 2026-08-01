@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ MacBook M1 มือสอง Air และ Pro 13 นิ้ว ประเมินตามสภาพจริง | อำพล เทรดดิ้ง"
+title: "รับซื้อ MacBook M1 มือสอง Air และ Pro 13 นิ้ว ประเมินตามสภาพจริง"
 h1: "รับซื้อ MacBook M1 มือสอง MacBook Air และ MacBook Pro ประเมินตามสภาพจริง"
 slug: "รับซื้อ-macbook-m1"
 order: 8

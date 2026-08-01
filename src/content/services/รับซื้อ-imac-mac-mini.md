@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ iMac และ Mac mini มือสอง ทุกชิป ประเมินฟรี | อำพล เทรดดิ้ง"
+title: "รับซื้อ iMac และ Mac mini มือสอง ทุกชิป ประเมินฟรี"
 h1: "รับซื้อ iMac Mac mini มือสอง เครื่องตั้งโต๊ะ Apple ประเมินฟรี"
 slug: "รับซื้อ-imac-mac-mini"
 order: 8

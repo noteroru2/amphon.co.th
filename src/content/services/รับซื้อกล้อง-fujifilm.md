@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อกล้อง Fujifilm มือสอง รับซื้อเลนส์ Fuji X-Series | อำพล เทรดดิ้ง"
+title: "รับซื้อกล้องและเลนส์ Fujifilm X-Series มือสอง"
 h1: "รับซื้อกล้อง Fujifilm มือสอง Fuji X-Series ประเมินฟรี"
 slug: "รับซื้อกล้อง-fujifilm"
 order: 6
