@@ -34,7 +34,7 @@ Owner-confirmed URLs:
 | Base SHA | `b533120af3a18f89e24917e0f5b2eb3d7a21a3af` |
 | Batch 12F audit SHA | `54968f5057fbb67a645ea5f365802b94c11ea360` |
 | Batch 12F.1 SHA | `98af935` |
-| Owner-decision SHA | PENDING |
+| Owner-decision SHA | `72e4f8907231feffa5b7f301c01782664a53220f` |
 | Merge SHA | PENDING |
 | Report-only SHA | PENDING |
 | Production SHA | NOT VERIFIED |
