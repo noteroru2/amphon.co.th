@@ -21,7 +21,7 @@ Warning: Production SHA `NOT VERIFIED`; Lighthouse CLS `NOT VERIFIED WITH LIGHTH
 | Implementation SHA | `a797aecf40ea10c8af53b3a6b4d829f25633e1d3` |
 | Merge SHA | `98e9f6b33b517a3ac1e9b54739fb3887e2a49a2b` |
 | Production SHA | `NOT VERIFIED` |
-| Report-only SHA | *(filled after docs commit)* |
+| Report-only SHA | dbe3cdb1049669f7e156d4293806e4c3bee51fda |
 | Deployment URL | https://amphon.co.th |
 
 ## Change summary
