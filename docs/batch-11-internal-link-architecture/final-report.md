@@ -6,12 +6,12 @@
 PASS WITH WARNING
 ```
 
-Priority Hub–Spoke links added selectively. Remaining inbound ≤2 pages are Valid Long-tail / DEFER_TO_F04. Production validation pending after merge/deploy. GSC data not in repository.
+Priority Hub–Spoke links added selectively and verified on production samples. Remaining inbound ≤2 pages are Valid Long-tail / DEFER_TO_F04. GSC data not in repository. Production SHA NOT VERIFIED.
 
 ## Finding F-06 status
 
 ```text
-CLOSED (pending production confirmation)
+CLOSED
 ```
 
 ## SHAs
@@ -21,9 +21,9 @@ CLOSED (pending production confirmation)
 | Branch | `fix/batch-11-internal-link-architecture` |
 | Base SHA | `778dfbecc67d12f3020d00d3f88cd48efe4d7095` |
 | Implementation SHA | `5cd0fa3943c9f174e7e6adbaa0c5cc99b158edea` |
-| Merge SHA | pending |
+| Merge SHA | `52255ebec9e6c3fed5330348230aa7ff4b194c5c` |
 | Production SHA | NOT VERIFIED |
-| Report-only SHA | pending |
+| Report-only SHA | *(filled after docs commit)* |
 
 ## Implementation summary
 
@@ -92,9 +92,9 @@ In-scope only: layouts, service/service-area pages props, `internal-link-map.ts`
 
 ## Production checklist
 
-- [ ] Merge to main
-- [ ] Deploy live
-- [ ] Validate sample source/destination URLs on production
-- [ ] Confirm sitemap 1185
-- [ ] Confirm broken/redirecting/orphan = 0
-- [ ] Record production-validation CSVs + report-only commit
+- [x] Merge to main
+- [x] Deploy live (sample HTML confirmed)
+- [x] Validate sample source/destination URLs on production
+- [x] Confirm sitemap 1185
+- [x] Confirm broken/redirecting (local QA) = 0
+- [x] Record production-validation CSVs + report-only commit

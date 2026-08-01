@@ -1,0 +1,36 @@
+{
+  "urls_crawled": 1185,
+  "sitemap_count": 1185,
+  "status_not_200": 0,
+  "broken_internal_links": 1002,
+  "redirecting_internal_links": 0,
+  "links_to_noindex": 237,
+  "http_www_internal": 0,
+  "orphan_pages": 49,
+  "orphan_sample": [
+    "/รับซื้อ/รับซื้อ-jbl-ร้อยเอ็ด",
+    "/รับซื้อ/รับซื้อ-nintendo-switch-ชัยภูมิ",
+    "/รับซื้อ/รับซื้อ-nintendo-switch-บุรีรัมย์",
+    "/รับซื้อ/รับซื้อ-nintendo-switch-ร้อยเอ็ด",
+    "/รับซื้อ/รับซื้อ-nintendo-switch-อำนาจเจริญ"
+  ],
+  "inbound_le2": 437,
+  "noindex_pages": 13,
+  "broken_samples": [
+    "/ -> /site.webmanifest",
+    "/บริการ/รับซื้อ-acer-aspire -> /site.webmanifest",
+    "/บริการ/รับซื้อ-acer-nitro -> /site.webmanifest",
+    "/บริการ/รับซื้อ-acer-predator -> /site.webmanifest",
+    "/บริการ/รับซื้อ-airpods -> /site.webmanifest",
+    "/บริการ/รับซื้อ-apple -> /site.webmanifest",
+    "/บริการ/รับซื้อ-apple-pencil -> /site.webmanifest",
+    "/บริการ/รับซื้อ-apple-watch -> /site.webmanifest",
+    "/บริการ/รับซื้อ-asus-expertbook -> /site.webmanifest",
+    "/บริการ/รับซื้อ-asus-tuf-gaming -> /site.webmanifest",
+    "/บริการ/รับซื้อ-asus-vivobook -> /site.webmanifest",
+    "/บริการ/รับซื้อ-cpu -> /site.webmanifest",
+    "/บริการ/รับซื้อ-dell-alienware -> /site.webmanifest",
+    "/บริการ/รับซื้อ-dell-g-series -> /site.webmanifest",
+    "/บริการ/รับซื้อ-dell-inspiron -> /site.webmanifest"
+  ]
+}

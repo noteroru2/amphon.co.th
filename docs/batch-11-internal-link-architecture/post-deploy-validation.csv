@@ -1,9 +1,8 @@
 url,check,expected,result,notes
-"/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี",source_http,200,PENDING,post-deploy
-"/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี",sidebar_related_present,yes,PENDING,post-deploy
-"/รับซื้อ/รับซื้อ-macbook-ขอนแก่น",source_http,200,PENDING,post-deploy
-"/รับซื้อ/รับซื้อ-macbook-ขอนแก่น",sidebar_related_present,yes,PENDING,post-deploy
-"/บริการ/รับซื้อ-macbook",supporting_articles_present,yes,PENDING,post-deploy
-"/บริการ/รับซื้อโน๊ตบุ๊ค",supporting_articles_present,yes,PENDING,post-deploy
-"/",homepage_http,200,PENDING,post-deploy
-"/sitemap-index.xml",sitemap_http,200,PENDING,post-deploy
+"/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี","production_html","PASS","PASS","http=200;missing=0;"
+"/รับซื้อ/รับซื้อ-macbook-ขอนแก่น","production_html","PASS","PASS","http=200;missing=0;"
+"/บริการ/รับซื้อ-macbook","production_html","PASS","PASS","http=200;missing=0;"
+"/บริการ/รับซื้อโน๊ตบุ๊ค","production_html","PASS","PASS","http=200;missing=0;"
+"/บริการ/รับซื้อ-iphone","production_html","PASS","PASS","http=200;missing=0;"
+"/","production_html","PASS","PASS","http=200;missing=0;"
+"/sitemap-0.xml","production_html","PASS","PASS","http=200;missing=0;count=1185"

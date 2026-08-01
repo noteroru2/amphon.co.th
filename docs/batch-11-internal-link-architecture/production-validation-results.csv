@@ -1,0 +1,8 @@
+url,http,expected_links,missing_links,missing_sample,robots,canonical,sidebar_related,supporting_articles,result
+"/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี","200","4","0","","index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1","https://amphon.co.th/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี","yes","no","PASS"
+"/รับซื้อ/รับซื้อ-macbook-ขอนแก่น","200","4","0","","index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1","https://amphon.co.th/รับซื้อ/รับซื้อ-macbook-ขอนแก่น","yes","no","PASS"
+"/บริการ/รับซื้อ-macbook","200","3","0","","index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1","https://amphon.co.th/บริการ/รับซื้อ-macbook","no","yes","PASS"
+"/บริการ/รับซื้อโน๊ตบุ๊ค","200","3","0","","index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1","https://amphon.co.th/บริการ/รับซื้อโน๊ตบุ๊ค","no","yes","PASS"
+"/บริการ/รับซื้อ-iphone","200","3","0","","index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1","https://amphon.co.th/บริการ/รับซื้อ-iphone","no","yes","PASS"
+"/","200","0","0","","index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1","https://amphon.co.th","no","no","PASS"
+"/sitemap-0.xml","200","1185","0","count=1185","","","","","PASS"
