@@ -1,0 +1,2 @@
+existing_source,current_destination,destination_is_retired_source,new_destination,before_hops,after_hops,query_preserved,action,result
+"(none found pointing at pilot sources)",n/a,no,n/a,n/a,n/a,n/a,NO_CHANGE,PASS

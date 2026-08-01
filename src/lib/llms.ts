@@ -1,14 +1,16 @@
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { absoluteUrl } from './seo';
+import { filterIndexableServiceAreas } from '../config/seo-policy';
 
 export async function generateLlmsTxt(full = false): Promise<string> {
-  const [services, areas, serviceAreas, blog] = await Promise.all([
+  const [services, areas, serviceAreasRaw, blog] = await Promise.all([
     getCollection('services', ({ data }) => !data.draft),
     getCollection('areas', ({ data }) => !data.draft),
     getCollection('serviceAreas', ({ data }) => !data.draft),
     getCollection('blog', ({ data }) => !data.draft),
   ]);
+  const serviceAreas = filterIndexableServiceAreas(serviceAreasRaw);
 
   const lines: string[] = [
     `# ${site.title}`,

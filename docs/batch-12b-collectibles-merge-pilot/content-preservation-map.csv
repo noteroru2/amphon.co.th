@@ -1,0 +1,13 @@
+source_url,section,text_summary,unique_to_source,fact_verified,duplicate_on_target,duplicate_on_other_sources,keep,merge_location_on_target,reason
+"/รับซื้อ/รับซื้อของสะสม-กาฬสินธุ์",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-ขอนแก่น",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-ชัยภูมิ",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-นครพนม",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-นครราชสีมา",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-บึงกาฬ",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-บุรีรัมย์",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-มหาสารคาม",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-มุกดาหาร",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-ยโสธร",intro-template,province-name-swap intro,no,n/a,yes-intent-covered,yes,no,n/a,boilerplate only
+"/รับซื้อ/รับซื้อของสะสม-กาฬสินธุ์",district-blurb,generic district list mention,no,unverified-list,partial-area-coverage-on-target,yes,no,n/a,no verified unique district facts
+ALL_SOURCES,cta-to-hub,link to /บริการ/รับซื้อของสะสม,no,n/a,yes,yes,no,n/a,already on target

@@ -1,0 +1,3 @@
+source_page,old_href,new_href,anchor,link_type,action,reason,result
+"(generated relatedAreas / relatedInProvince / area cards)",/รับซื้อ/รับซื้อของสะสม-{pilot},"(removed via filterIndexableServiceAreas)",n/a,card/sidebar,FILTER_OUT,retired slugs excluded from related lists,PASS
+"(markdown body links across site)",pilot sources,n/a,n/a,contextual,NONE_FOUND,git grep found only content files themselves,PASS

@@ -31,6 +31,7 @@
     "qa:batch-10-metadata": "node scripts/check-batch-10-metadata.mjs",
     "qa:batch-11-internal-links": "node scripts/check-batch-11-internal-links.mjs",
     "audit:batch-12a-thin-content": "node scripts/audit-batch-12a-thin-content.mjs",
+    "qa:batch-12b-collectibles": "node scripts/check-batch-12b-collectibles-pilot.mjs",
     "images:dimension-cache": "node scripts/build-image-dimension-cache.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",

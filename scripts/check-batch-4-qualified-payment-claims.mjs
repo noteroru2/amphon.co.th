@@ -202,7 +202,7 @@ const sitemap0 = path.join(distDir, 'sitemap-0.xml');
 if (fs.existsSync(sitemap0)) {
   const locs = [...readText(sitemap0).matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
   notes.push(`sitemap_count=${locs.length}`);
-  if (locs.length !== 1185) issues.push(`sitemap count ${locs.length} !== 1185`);
+  if (locs.length !== 1175) issues.push(`sitemap count ${locs.length} !== 1175`);
   for (const target of TARGETS) {
     const abs = `${SITE}${encodeURI(target.pathname).replace(/%2F/gi, '/')}`;
     // Astro sitemap percent-encodes Thai path segments
