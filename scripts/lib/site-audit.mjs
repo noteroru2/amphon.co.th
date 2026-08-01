@@ -173,7 +173,9 @@ function compileRedirectRule(rule) {
 }
 
 export function resolveRedirectChain(pathname, redirects = loadRedirects(), limit = 10) {
-  const compiled = redirects.map(compileRedirectRule);
+  // Host-conditioned rules (F-12 www) apply only when Host=www; apex path QA must ignore them.
+  const pathOnly = redirects.filter((rule) => !Array.isArray(rule.has) || rule.has.length === 0);
+  const compiled = pathOnly.map(compileRedirectRule);
   const visited = new Set([pathname]);
   const chain = [];
   let current = pathname;
@@ -192,7 +194,11 @@ export function resolveRedirectChain(pathname, redirects = loadRedirects(), limi
     }
 
     const normalizedDestination = normalizePathname(destination);
-    chain.push({ source: current, destination: normalizedDestination, permanent: matched.permanent });
+    chain.push({
+      source: current,
+      destination: normalizedDestination,
+      permanent: matched.permanent !== false && matched.statusCode !== 307 && matched.statusCode !== 302,
+    });
 
     if (!normalizedDestination) {
       return { finalPath: current, chain, loop: false };

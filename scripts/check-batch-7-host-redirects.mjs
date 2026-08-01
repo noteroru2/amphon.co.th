@@ -34,10 +34,10 @@ const hostRules = redirects.filter(
     Array.isArray(r.has) &&
     r.has.some((h) => h.type === 'host' && h.value === WWW_HOST),
 );
-// Ineffective host catch-all must not be present while Domain redirect owns www→apex
-if (hostRules.length > 0) {
+// F-12 Phase A+: host-aware WWW rules are intentional (effective after Domain→Production).
+if (hostRules.length === 0) {
   warnings.push(
-    `www host rule present (${hostRules.length}) — production evidence showed platform/domain hops win first; verify Dashboard if re-added`,
+    'www host rules missing — F-12 file-based remediation expects exact WWW rules + catch-all',
   );
 }
 notes.push(`www_host_rules=${hostRules.length}`);
