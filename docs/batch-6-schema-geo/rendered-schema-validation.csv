@@ -1,0 +1,11 @@
+url,schema_types,local_business_count,organization_count,geo_count,latitude,longitude,address,telephone,canonical,json_valid,result
+/,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|OfferCatalog|ItemList,1,1,1,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th,true,PASS
+/contact,Organization|LocalBusiness|ProfessionalService|WebSite|ContactPage|BreadcrumbList,1,1,1,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/contact,true,PASS
+/about,Organization|LocalBusiness|ProfessionalService|WebSite|AboutPage|BreadcrumbList,1,1,1,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/about,true,PASS
+/บริการ/รับซื้อโน๊ตบุ๊ค,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Service|FAQPage,1,1,1,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/บริการ/รับซื้อโน๊ตบุ๊ค,true,PASS
+/พื้นที่ให้บริการ/อุบลราชธานี,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Place|FAQPage,1,1,2,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/อุบลราชธานี,true,PASS
+/พื้นที่ให้บริการ/ขอนแก่น,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Place|FAQPage,1,1,2,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/ขอนแก่น,true,PASS
+/พื้นที่ให้บริการ/นครราชสีมา,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Place|FAQPage,1,1,2,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/นครราชสีมา,true,PASS
+/พื้นที่ให้บริการ/อุดรธานี,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Place|FAQPage,1,1,2,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/อุดรธานี,true,PASS
+/พื้นที่ให้บริการ/บุรีรัมย์,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Place|FAQPage,1,1,2,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/บุรีรัมย์,true,PASS
+/พื้นที่ให้บริการ/สุรินทร์,Organization|LocalBusiness|ProfessionalService|WebSite|WebPage|BreadcrumbList|Place|FAQPage,1,1,2,15.2664215,104.844358,"740/8 ถนนชยางกูร",+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/สุรินทร์,true,PASS

@@ -1,0 +1,11 @@
+file,line,context,latitude,longitude,usage,active,affected_urls,action,reason
+src/config/site.ts,28,site.geo (store),15.2386→15.2664215,104.8477→104.844358,Primary structured data,yes,sitewide LocalBusiness + geo meta,update,F-11 single source of truth
+src/config/site.ts,19,site.hasMap,n/a,n/a,Map display / hasMap,yes,LocalBusiness.hasMap + footer/contact/home links,keep,Already points to verified listing
+src/config/site.ts,71-91,provinceGeo centroids,various,various,Location page Place schema only,yes,area Place entities,no_change,Not LocalBusiness; not F-11 store pin
+src/lib/seo.ts,126-130,createLocalBusinessSchema geo,from site.geo,from site.geo,Primary structured data,yes,all BaseLayout pages,consume_ssot,Reads site.geo
+src/lib/seo.ts,376-383,createPlaceSchema geo,from provinceGeo,from provinceGeo,Location page Place,yes,area pages,no_change,Administrative Place centroids
+src/layouts/BaseLayout.astro,94-96,geo.region / geo.position / ICBM,from site.geo,from site.geo,Contact information / geo meta,yes,all BaseLayout pages,consume_ssot,Same store coords as schema
+src/components/Footer.astro,26,footer map link,n/a,n/a,Map display,yes,all pages with footer,no_change,Uses site.hasMap
+src/pages/contact.astro,107,contact map CTA,n/a,n/a,Map display,yes,/contact,no_change,Uses site.hasMap
+src/pages/index.astro,489,homepage map CTA,n/a,n/a,Map display,yes,/,no_change,Uses site.hasMap
+docs/seo-audit-2026-07-31/*,*,audit evidence,15.2386 / 15.2664215,104.8477 / 104.844358,Report file,no,n/a,no_change,Historical audit artifacts

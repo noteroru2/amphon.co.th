@@ -1,0 +1,11 @@
+url,source_file,schema_type,field,before,after,reason,verified_source,status
+sitewide (BaseLayout graph),src/config/site.ts,LocalBusiness,geo.latitude,15.2386,15.2664215,F-11 correct store pin,Google Maps listing via hasMap,changed
+sitewide (BaseLayout graph),src/config/site.ts,LocalBusiness,geo.longitude,104.8477,104.844358,F-11 correct store pin,Google Maps listing via hasMap,changed
+sitewide meta,src/layouts/BaseLayout.astro,geo.position / ICBM,content,15.2386;104.8477,15.2664215;104.844358,same SSoT as LocalBusiness,Google Maps listing via hasMap,changed
+sitewide,src/config/site.ts,LocalBusiness,hasMap,https://maps.app.goo.gl/krv97o14jPTRrnpW8,https://maps.app.goo.gl/krv97o14jPTRrnpW8,already correct,Google Maps listing,unchanged
+sitewide,src/config/site.ts,LocalBusiness,name,อำพล เทรดดิ้ง,อำพล เทรดดิ้ง,NAP preserve,site NAP,unchanged
+sitewide,src/config/site.ts,LocalBusiness,address,740/8 ถนนชยางกูร…,740/8 ถนนชยางกูร…,NAP preserve,site NAP,unchanged
+sitewide,src/config/site.ts,LocalBusiness,telephone,+66642579353,+66642579353,NAP preserve,site NAP,unchanged
+sitewide,src/config/site.ts,LocalBusiness,url,https://amphon.co.th,https://amphon.co.th,NAP preserve,site NAP,unchanged
+sitewide,src/config/site.ts,LocalBusiness,openingHoursSpecification,(unchanged),(unchanged),out of scope,n/a,unchanged
+area pages,src/config/site.ts provinceGeo,Place,geo,(province centroids),(province centroids),not store LocalBusiness,n/a,unchanged

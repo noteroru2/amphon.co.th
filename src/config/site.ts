@@ -25,8 +25,8 @@ export const site = {
     country: 'TH',
   },
   geo: {
-    latitude: 15.2386,
-    longitude: 104.8477,
+    latitude: 15.2664215,
+    longitude: 104.844358,
     region: 'TH-34',
   },
   openingHours: ['Mo-Su 09:00-21:00'],
