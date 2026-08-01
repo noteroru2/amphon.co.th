@@ -21,7 +21,7 @@ Warning: Production SHA `NOT VERIFIED`. All target asset/page checks passed.
 | Implementation SHA | `4eb45b231ae19781d156249c5b96c5adb4dea6bd` |
 | Merge SHA | `d2c7d2b0afe70d8c0c408addf514d9ad0d230754` |
 | Production SHA | `NOT VERIFIED` |
-| Report-only SHA | _(this docs commit)_ |
+| Report-only SHA | 80718b7301a15fa243275276e066fc4bd11b78b7 |
 | Deployment URL | https://amphon.co.th |
 
 ## Change summary
