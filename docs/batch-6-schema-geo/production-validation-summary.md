@@ -19,7 +19,7 @@ Warning: Production SHA `NOT VERIFIED` (Vercel API / deploy SHA not confirmed wi
 | Implementation SHA | `4c6e6f9319cb004e53b5386399cb9ba3b3277458` |
 | Merge SHA | `3cd7004a5028d2602e0aa58398f28f4085a66b51` |
 | Production SHA | `NOT VERIFIED` |
-| Report-only SHA | `39a86a86a394ae6210ce43b6d7da5cb0bc631885` |
+| Report-only SHA | `31a1bd1636542c5dd6df769338fc6a7d81a2dec2` |
 | Deployment URL | https://amphon.co.th |
 
 ## Coordinates
