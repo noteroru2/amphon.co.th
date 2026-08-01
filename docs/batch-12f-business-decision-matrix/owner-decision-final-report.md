@@ -35,7 +35,7 @@ Owner-confirmed URLs:
 | Batch 12F audit SHA | `54968f5057fbb67a645ea5f365802b94c11ea360` |
 | Batch 12F.1 SHA | `98af935` |
 | Owner-decision SHA | `72e4f8907231feffa5b7f301c01782664a53220f` |
-| Merge SHA | PENDING |
+| Merge SHA | `4b0faed409859ccc1285e3ca42d504ad70e1397c` |
 | Report-only SHA | PENDING |
 | Production SHA | NOT VERIFIED |
 | Owner decision date | 2026-08-01 |
@@ -66,10 +66,14 @@ Each: KEEP_AND_IMPROVE · sitemap/redirect/canonical/noindex diff expected 0
 
 ## Production
 
-- Production code changes: 0
+- Production code changes: 0 (docs-only merge)
 - Content changes: 0
 - Route / Sitemap / Canonical / Noindex / Redirect diff: 0
 - Sitemap count: 1,166
+- Homepage: 200
+- Collectibles sample redirect: 308 PASS
+- Production SHA: NOT VERIFIED
+- Deployment: Docs-only (no production content change)
 
 ## Remaining Findings
 

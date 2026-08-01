@@ -1,12 +1,14 @@
-# Test results — Batch 12F (read-only baseline)
+# Test results — Batch 12F.2
 
 | Check | Result |
 | --- | --- |
-| Astro check | 0 errors / 0 warnings |
-| Build | exit 0 (pre-existing dist used for target checks) |
-| Sitemap | 1,166 |
-| qa:batch-1 … qa:batch-12e | PASS (batch-7 PASS WITH WARNING — F-12) |
-| audit:batch-12f-business-decisions | PASS — 134 RBD → 7 groups |
+| Astro check | 0/0 |
+| Build | exit 0 |
+| Sitemap (build) | 1,166 |
+| audit:batch-12f (locked) | PASS |
+| qa:batch-12f-owner-decisions | PASS |
+| Owner answers | 7/7 |
+| URLs retained | 134/134 |
 | Production code diff | 0 |
-| Merge | NOT MERGED |
-| Deploy | NOT DEPLOYED |
+| Homepage prod | 200 |
+| Docs-only merge | yes |
