@@ -35,6 +35,7 @@
     "qa:batch-12c-collectibles": "node scripts/check-batch-12c-collectibles-family.mjs",
     "qa:batch-12d-thin-content": "node scripts/check-batch-12d-thin-content-improve.mjs",
     "qa:batch-12e-improve": "node scripts/check-batch-12e-improve-candidates.mjs",
+    "audit:batch-12f-business-decisions": "node scripts/audit-batch-12f-business-decisions.mjs",
     "images:dimension-cache": "node scripts/build-image-dimension-cache.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
