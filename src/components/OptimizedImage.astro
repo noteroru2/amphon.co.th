@@ -1,5 +1,6 @@
 ---
 import { getImageAlt } from '../config/images';
+import { getCachedDimensions, loadDimensionCache } from '../../scripts/lib/local-image-dimensions-cache.mjs';
 
 interface Props {
   src: string;
@@ -25,17 +26,22 @@ const {
   style,
 } = Astro.props;
 
+loadDimensionCache();
+const cached = getCachedDimensions(src);
+const resolvedWidth = width ?? cached?.width;
+const resolvedHeight = height ?? cached?.height;
+
 const resolvedAlt = alt ?? getImageAlt(src, '');
 
 // Auto-generate sizes if not provided but width is known
-const resolvedSizes = sizes ?? (width ? `(max-width: 640px) 100vw, ${width}px` : undefined);
+const resolvedSizes = sizes ?? (resolvedWidth ? `(max-width: 640px) 100vw, ${resolvedWidth}px` : undefined);
 ---
 
 <img
   src={src}
   alt={resolvedAlt}
-  width={width}
-  height={height}
+  width={resolvedWidth}
+  height={resolvedHeight}
   loading={loading}
   decoding="async"
   class={className}
