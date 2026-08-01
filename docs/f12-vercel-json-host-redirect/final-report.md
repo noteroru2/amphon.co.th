@@ -2,13 +2,21 @@
 
 ## Verdict
 
-**PASS — READY FOR PHASE A DEPLOYMENT** (then STOP for manual domain switch)
+**PASS — READY FOR PHASE A DEPLOYMENT** → Phase A **merged & apex healthy**; **STOP for manual domain switch**
 
 ## F-12 status
 
 ```text
-OPEN — PHASE A CODE READY / WAITING FOR DOMAIN SWITCH
+OPEN — PHASE A DEPLOYED / WAITING FOR DOMAIN SWITCH
 ```
+
+## SHAs
+
+- Base: `ff6f453b0dc1a059d8c13fbf0fa365755d05315b`
+- Phase A implementation: `8bf095f3951d726e53f608ad9640873a58f2da2d`
+- Phase A merge: `84f083b57bb523310e763b986bc986d33cbb96e5`
+- Production SHA: NOT VERIFIED
+- Final 308 / Phase B: PENDING
 
 ## Counts
 
