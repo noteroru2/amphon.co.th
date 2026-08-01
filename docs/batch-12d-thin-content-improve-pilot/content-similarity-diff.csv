@@ -1,0 +1,3 @@
+url_a,url_b,relationship,similarity_before,similarity_after,shared_template_ratio,unique_sections_before,unique_sections_after,intent_overlap,result
+/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี,pilot-siblings,high_boilerplate,shared_process_facts_only,reduced,0,2,local-commercial-preserved,IMPROVED
+/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,/บริการ/รับซื้อของสะสม,pilot-to-hub,thin_pointer,complements_hub_with_local_process,n/a,0,2,yes,IMPROVED
