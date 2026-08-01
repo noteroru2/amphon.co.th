@@ -18,7 +18,7 @@
 - Merge SHA: `564ef0069389188d0b87ed9cc0e4722a9ca3f426`
 - Main tip (incl. 12F QA BD-01 allowlist): `3e4a87e0950df35a2d149c5794e2e1590ad59853`
 - Production SHA: **NOT VERIFIED**
-- Report-only SHA: PENDING (filled after commit)
+- Report-only SHA: `4f8660e651b5e5d0e58fa284dc43fbeca77266ce`
 - Deployment URL: https://amphon.co.th
 - URL set hash: `e70e14a11b79bf77`
 - Note: Visual validation was rendered from local dist; production page markers re-validated live for all 19 URLs
