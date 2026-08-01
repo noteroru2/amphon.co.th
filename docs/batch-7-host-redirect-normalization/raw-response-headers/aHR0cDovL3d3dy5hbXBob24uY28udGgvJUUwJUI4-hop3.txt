@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="รับซื้อ-gopro-action-camera"
+Content-Length: 107262
+Content-Type: text/html; charset=utf-8
+Date: Sat, 01 Aug 2026 03:03:20 GMT
+Etag: "e43a86b64483c8206c4308806966c9e7"
+Last-Modified: Sat, 01 Aug 2026 03:03:20 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: MISS
+X-Vercel-Id: sin1::h5qqm-1785553400033-4a328f14258b

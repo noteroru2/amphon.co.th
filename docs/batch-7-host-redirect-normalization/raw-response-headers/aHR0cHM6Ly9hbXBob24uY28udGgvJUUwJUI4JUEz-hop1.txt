@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="รับซื้อ-ssd-ขอนแก่น"
+Content-Length: 99148
+Content-Type: text/html; charset=utf-8
+Date: Sat, 01 Aug 2026 03:03:17 GMT
+Etag: "a32d9bc8137f6be8b23eea32d1b455bf"
+Last-Modified: Sat, 01 Aug 2026 03:03:17 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: MISS
+X-Vercel-Id: sin1::rlj8n-1785553397615-96c72517e21a

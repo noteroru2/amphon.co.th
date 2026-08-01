@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 0
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="รับซื้อสินค้าไอที"
+Content-Length: 291911
+Content-Type: text/html; charset=utf-8
+Date: Sat, 01 Aug 2026 03:03:11 GMT
+Etag: "e015458492e7a342a1bff4bebb25e705"
+Last-Modified: Sat, 01 Aug 2026 03:03:10 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: HIT
+X-Vercel-Id: sin1::kttbx-1785553391018-2c194d1e32f5

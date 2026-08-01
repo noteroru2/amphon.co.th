@@ -1,0 +1,9 @@
+HTTP/1.1 301 Moved Permanently
+Cache-Control: public, max-age=0, must-revalidate
+Content-Type: text/plain
+Date: Sat, 01 Aug 2026 03:03:04 GMT
+Location: https://amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Vercel-Id: sin1::s6vmj-1785553384216-3ee53720ac83
+Transfer-Encoding: chunked

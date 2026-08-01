@@ -1,0 +1,10 @@
+HTTP/1.1 308 Permanent Redirect
+Cache-Control: public, max-age=0, must-revalidate
+Content-Type: text/plain
+Date: Sat, 01 Aug 2026 03:03:14 GMT
+Location: /บริการ/รับซื้อ-ssd
+Refresh: 0;url=/บริการ/รับซื้อ-ssd
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Vercel-Id: sin1::g5gws-1785553394875-87832ded2500
+Transfer-Encoding: chunked

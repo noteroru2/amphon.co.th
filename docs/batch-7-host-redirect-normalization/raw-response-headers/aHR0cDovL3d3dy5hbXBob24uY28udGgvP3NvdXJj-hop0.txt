@@ -1,0 +1,5 @@
+HTTP/1.0 308 Permanent Redirect
+Content-Type: text/plain
+Location: https://www.amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A
+Refresh: 0;url=https://www.amphon.co.th/?source=%E0%B8%97%E0%B8%94%E0%B8%AA%E0%B8%AD%E0%B8%9A
+server: Vercel

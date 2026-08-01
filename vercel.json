@@ -3,6 +3,17 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.amphon.co.th"
+        }
+      ],
+      "destination": "https://amphon.co.th/:path*",
+      "permanent": true
+    },
+    {
       "source": "/บริการ/รับซื้อ-gopro",
       "destination": "/บริการ/รับซื้อ-gopro-action-camera",
       "permanent": true

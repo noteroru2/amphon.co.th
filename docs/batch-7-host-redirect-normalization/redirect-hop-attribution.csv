@@ -1,0 +1,9 @@
+request_pattern,hop,status,location,suspected_controller,evidence,confidence,action
+http://www.amphon.co.th/*,1,308,https://www.amphon.co.th/<same-path>,HTTP-to-HTTPS platform normalization,raw header server=Vercel; Location keeps www host,high,try override via vercel.json host rule to https apex
+http://www.amphon.co.th/* (after hop1),2,301,https://amphon.co.th/<same-path>,Vercel domain redirect,https://www returns 301 Location apex; X-Vercel-Id present; not in vercel.json,high,may become redundant if host rule wins
+https://www.amphon.co.th/*,1,301,https://amphon.co.th/<same-path>,Vercel domain redirect,same as above,high,keep primary apex; optional vercel.json mirror
+http://amphon.co.th/*,1,308,https://amphon.co.th/<same-path>,HTTP-to-HTTPS platform normalization,Location already apex,high,no change
+https://amphon.co.th/<legacy>,1,308,<canonical path>,vercel.json path redirect,Batch 1 rules permanent true,high,do not change destinations
+http://www.amphon.co.th/<legacy>,1,308,https://www.../<legacy>,HTTP-to-HTTPS platform normalization,baseline 3-hop chain,high,collapse if host rule applies on HTTP
+http://www.amphon.co.th/<legacy>,2,301,https://amphon.co.th/<legacy>,Vercel domain redirect,path preserved to apex,high,then path rule
+http://www.amphon.co.th/<legacy>,3,308,<canonical>,vercel.json Legacy path redirect,F-01 rules,high,keep; target total hops <=2 after host collapse

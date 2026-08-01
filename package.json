@@ -25,6 +25,7 @@
     "qa:batch-4-claims": "node scripts/check-batch-4-qualified-payment-claims.mjs",
     "qa:batch-5-images": "node scripts/check-batch-5-images.mjs",
     "qa:batch-6-schema-geo": "node scripts/check-batch-6-schema-geo.mjs",
+    "qa:batch-7-host-redirects": "node scripts/check-batch-7-host-redirects.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
     "qa:claim-risk": "node scripts/check-claim-risk.mjs",

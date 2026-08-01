@@ -1,0 +1,18 @@
+HTTP/1.1 404 Not Found
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 1015
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline; filename="404.html"
+Content-Length: 78260
+Content-Type: text/html; charset=utf-8
+Date: Sat, 01 Aug 2026 03:03:00 GMT
+Etag: "ea3b79de95fd3dd3e5ab981f5376853c"
+Last-Modified: Sat, 01 Aug 2026 02:46:05 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Vercel-Cache: HIT
+X-Vercel-Id: sin1::bth7g-1785553380482-f522a5d532e4
