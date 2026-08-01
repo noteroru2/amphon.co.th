@@ -14,6 +14,12 @@ Phase A status: 307
 
 ## Status
 
-- Phase A code: IN PROGRESS → see `final-report.md` / handoff
-- Manual domain switch: REQUIRED before Phase B
-- F-12: OPEN until post-switch validation + 308 finalize
+```text
+F-12: OPEN — ROLLED BACK TO SAFE DOMAIN REDIRECT
+Production: READY WITH KNOWN OPEN FINDING
+```
+
+- Phase A: merged (307 host rules in `vercel.json`)
+- Phase B domain cutover: **FAILED** — host `has` rules did not fire (`phase-b-failure.md`)
+- Domain rollback: **COMPLETE** — baseline restored (`post-rollback-validation.md`)
+- Do **not** re-switch domain until a new remediation plan

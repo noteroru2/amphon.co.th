@@ -1,0 +1,9 @@
+id,url,hops,first,final_status,final_url,www200,result,notes
+https-www-home,"https://www.amphon.co.th/",1,301,200,"https://amphon.co.th/",false,PASS,qp=n/a
+https-www-contact,"https://www.amphon.co.th/contact",1,301,200,"https://amphon.co.th/contact",false,PASS,qp=n/a
+http-www-home,"http://www.amphon.co.th/",2,308,200,"https://amphon.co.th/",false,PASS,qp=n/a
+https-www-legacy-hdd,"https://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",2,301,200,"https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-ssd",false,PASS,qp=n/a
+http-www-legacy-hdd,"http://www.amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",3,308,200,"https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-ssd",false,PASS,qp=n/a
+https-www-query,"https://www.amphon.co.th/contact?source=f12&utm_campaign=rollback",1,301,200,"https://amphon.co.th/contact?source=f12&utm_campaign=rollback",false,PASS,qp=yes
+https-apex-home,"https://amphon.co.th/",0,200,200,"https://amphon.co.th/",false,PASS,qp=n/a
+https-apex-legacy,"https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd",1,308,200,"https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-ssd",false,PASS,qp=n/a

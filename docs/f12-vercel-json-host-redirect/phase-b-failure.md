@@ -41,3 +41,5 @@ Vercel → Settings → Domains → www.amphon.co.th
 OPEN — ROLLED BACK TO SAFE DOMAIN REDIRECT
 Production: READY WITH KNOWN OPEN FINDING
 ```
+
+Owner confirmed `ROLLBACK COMPLETE`. Re-smoke: **PASS** — see `post-rollback-validation.md`.
