@@ -7,6 +7,7 @@ Strategy: KEEP_EXISTING_URLS_AND_IMPROVE
 URLs: 19
 Hub: /บริการ/รับซื้อเครื่องใช้ไฟฟ้า
 Merge/Redirect/Noindex: 0
+Status: CLOSED — 19/19 IMPROVED
 ```
 
 URL set hash prefix: `e70e14a11b79bf77`

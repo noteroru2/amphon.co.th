@@ -8,4 +8,8 @@
 | Batch 1–12F | PASS (batch-7 warning F-12) |
 | qa:batch-12g-1-appliances | PASS |
 | URL set hash | `e70e14a11b79bf77` |
-| Production validation | PENDING |
+| Production BD-01 19/19 | PASS |
+| Production sitemap crawl | pages=1166 broken=0 redirecting=0 |
+| Orphans | 2 / 0 / 0 / 0 |
+| Production SHA | NOT VERIFIED |
+| Verdict | PASS WITH WARNING |

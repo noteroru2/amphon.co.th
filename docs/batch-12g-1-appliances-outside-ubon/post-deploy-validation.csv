@@ -1,1 +1,29 @@
 url,check,expected,actual,result,notes
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-กาฬสินธุ์,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-กาฬสินธุ์ marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากกาฬสินธุ์อย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น marker=true faq=2 branch=false bad=false,PASS,ร้านพิจารณารับซื้อแบบรายกรณีอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ marker=true faq=2 branch=false bad=false,PASS,ก่อนติดต่อจากชัยภูมิควรตรวจอะไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครพนม,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครพนม marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากนครพนมอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา marker=true faq=3 branch=false bad=false,PASS,ร้านพิจารณารับซื้อแบบรายกรณีอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บึงกาฬ,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บึงกาฬ marker=true faq=2 branch=false bad=false,PASS,ก่อนติดต่อจากบึงกาฬควรตรวจอะไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บุรีรัมย์,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บุรีรัมย์ marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากบุรีรัมย์อย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มหาสารคาม,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มหาสารคาม marker=true faq=2 branch=false bad=false,PASS,ร้านพิจารณารับซื้อแบบรายกรณีอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มุกดาหาร,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มุกดาหาร marker=true faq=2 branch=false bad=false,PASS,ก่อนติดต่อจากมุกดาหารควรตรวจอะไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ยโสธร,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ยโสธร marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากยโสธรอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ร้อยเอ็ด,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ร้อยเอ็ด marker=true faq=2 branch=false bad=false,PASS,ร้านพิจารณารับซื้อแบบรายกรณีอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-เลย,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-เลย marker=true faq=2 branch=false bad=false,PASS,ก่อนติดต่อจากเลยควรตรวจอะไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ศรีสะเกษ,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ศรีสะเกษ marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากศรีสะเกษอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สกลนคร,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สกลนคร marker=true faq=3 branch=false bad=false,PASS,ร้านพิจารณารับซื้อแบบรายกรณีอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สุรินทร์,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สุรินทร์ marker=true faq=2 branch=false bad=false,PASS,ก่อนติดต่อจากสุรินทร์ควรตรวจอะไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองคาย,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองคาย marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากหนองคายอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองบัวลำภู,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองบัวลำภู marker=true faq=2 branch=false bad=false,PASS,ร้านพิจารณารับซื้อแบบรายกรณีอย่างไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อำนาจเจริญ,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อำนาจเจริญ marker=true faq=2 branch=false bad=false,PASS,ก่อนติดต่อจากอำนาจเจริญควรตรวจอะไร
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุดรธานี,batch12g1_live,200 self-can indexable marker store tel case hub,status=200 can=/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุดรธานี marker=true faq=2 branch=false bad=false,PASS,เริ่มประเมินจากอุดรธานีอย่างไร
+/,homepage,200,status=200 marker=true,PASS,regression
+/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,hub,200+รับซื้อเครื่องใช้ไฟฟ้า,status=200 marker=true,PASS,regression
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี,batch12d,200+เตรียมอะไรก่อนนัดขายเครื,status=200 marker=true,PASS,regression
+/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,batch12d,200+สิ่งที่ควรถ่ายรูปก่อนประ,status=200 marker=true,PASS,regression
+/รับซื้อ/รับซื้อ-server-อุบลราชธานี,batch12e,200+สเปกและรูปที่ควรส่งตอนปร,status=200 marker=true,PASS,regression
+/รับซื้อ/รับซื้อทีวี-ขอนแก่น,bd02_sample,200,status=200 marker=true,PASS,regression
+/รับซื้อ/รับซื้อ-server-ขอนแก่น,bd05_sample,200,status=200 marker=true,PASS,regression
+/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด,collectibles_redirect,301|308,308,PASS,
+_SITEMAP_,count,1166,1166,PASS,missing=
