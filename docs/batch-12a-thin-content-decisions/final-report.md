@@ -20,7 +20,7 @@ OPEN — CLASSIFIED / IMPLEMENTATION PENDING
 |---|---|
 | Branch | `audit/batch-12a-thin-content-decisions` |
 | Base SHA | `90ed322226063d23780a1c8dfb0a7f4ceb5687c0` |
-| Audit Commit SHA | *(filled after commit)* |
+| Audit Commit SHA | `4b1503efcf0f1753ef0829688444288261355f3a` |
 | Merge | **NOT DONE** |
 | Deploy | **NOT DONE** |
 | Code changes | docs + read-only audit script only |
