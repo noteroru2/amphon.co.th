@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ iPhone Face ID เสีย สแกนหน้าไม่ได้ มือสอง | อำพล เทรดดิ้ง"
+title: "รับซื้อ iPhone Face ID เสีย สแกนหน้าไม่ได้ มือสอง"
 h1: "รับซื้อ iPhone Face ID เสีย ประเมินราคาตามอาการจริง"
 slug: "รับซื้อ-iphone-face-id-เสีย"
 order: 9

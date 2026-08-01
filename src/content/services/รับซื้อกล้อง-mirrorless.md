@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อกล้อง Mirrorless มือสอง ทุกค่ายประเมินฟรี | อำพล เทรดดิ้ง"
+title: "รับซื้อกล้อง Mirrorless มือสอง ทุกค่ายประเมินฟรี"
 h1: "รับซื้อกล้อง Mirrorless มือสอง Full Frame APS-C ประเมินตามสภาพจริง"
 slug: "รับซื้อกล้อง-mirrorless"
 order: 9

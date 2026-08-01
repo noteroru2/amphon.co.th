@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ GoPro Action Camera DJI Osmo มือสอง | อำพล เทรดดิ้ง"
+title: "รับซื้อ GoPro Action Camera DJI Osmo มือสอง"
 h1: "รับซื้อ GoPro Action Camera DJI Osmo มือสอง ประเมินฟรี"
 slug: "รับซื้อ-gopro-action-camera"
 order: 11

@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ CPU (ซีพียู) มือสอง Intel Core i3, i5, i7, i9 และ AMD Ryzen | อำพล เทรดดิ้ง"
+title: "รับซื้อ CPU (ซีพียู) มือสอง Intel Core i3, i5, i7, i9 และ AMD Ryzen"
 h1: "รับซื้อ CPU Intel AMD มือสอง ประเมินตามรุ่น Gen Socket และสภาพ"
 slug: "รับซื้อ-cpu"
 order: 12

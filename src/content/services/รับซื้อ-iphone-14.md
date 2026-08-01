@@ -1,5 +1,5 @@
 ---
-title: "รับซื้อ iPhone 14 รับซื้อไอโฟน 14 Pro Max มือสอง | อำพล เทรดดิ้ง"
+title: "รับซื้อ iPhone 14 มือสอง รวม 14 Pro และ 14 Pro Max"
 h1: "รับซื้อ iPhone 14 มือสอง 14 Pro 14 Pro Max ประเมินตามสภาพจริง"
 slug: "รับซื้อ-iphone-14"
 order: 6
