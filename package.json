@@ -38,7 +38,6 @@
     "audit:batch-12f-business-decisions": "node scripts/audit-batch-12f-business-decisions.mjs",
     "qa:batch-12f-owner-decisions": "node scripts/check-batch-12f-owner-decisions.mjs",
     "qa:batch-12g-1-appliances": "node scripts/check-batch-12g-1-appliances.mjs",
-    "qa:f12-vercel-host-redirect": "node scripts/check-f12-vercel-host-redirect.mjs",
     "images:dimension-cache": "node scripts/build-image-dimension-cache.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",
