@@ -1,12 +1,12 @@
 check,status,notes
-homepage_200,PENDING,
-sitemap_index_200,PENDING,
-sitemap_count,PENDING,Expect 1185
-target_image_200,PENDING,
-target_webp_content_type,PENDING,
-png_not_required_by_html,PENDING,
-broken_images,PENDING,
-f01_redirect,PENDING,
-f05_claims,PENDING,
-batch3_wrapper,PENDING,
-production_sha,PENDING,NOT_VERIFIED if no API
+homepage_200,PASS,200
+sitemap_index_200,PASS,200
+sitemap_count,PASS,1185
+target_image_200,PASS,21/21 webp assets
+target_webp_content_type,PASS,image/webp
+png_not_required_by_html,PASS,23/23 pages use webp and omit old png path
+broken_images,PASS,0
+f01_redirect,PASS,308
+f05_claims,PASS,Batch 4 QA still green on main
+batch3_wrapper,PASS,build wrapper unchanged
+production_sha,NOT_VERIFIED,no Vercel/gh API token used
