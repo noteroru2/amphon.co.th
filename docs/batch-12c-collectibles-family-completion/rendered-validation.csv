@@ -1,0 +1,13 @@
+url,check,expected,result,notes
+/บริการ/รับซื้อของสะสม,http_status,200,PENDING_BUILD,
+/บริการ/รับซื้อของสะสม,self_canonical,yes,PENDING_BUILD,
+/บริการ/รับซื้อของสะสม,indexable,yes,PENDING_BUILD,
+/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-เลย,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-ศรีสะเกษ,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-สกลนคร,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-สุรินทร์,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-หนองคาย,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-หนองบัวลำภู,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-อำนาจเจริญ,redirect_hops,1,PENDING_BUILD,unicode+encoded
+/รับซื้อ/รับซื้อของสะสม-อุดรธานี,redirect_hops,1,PENDING_BUILD,unicode+encoded

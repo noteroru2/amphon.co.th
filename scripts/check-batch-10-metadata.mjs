@@ -16,7 +16,7 @@ import {
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIFF_CSV = path.join(ROOT, 'docs/batch-10-metadata-quality/metadata-diff.csv');
-const EXPECTED_SITEMAP = 1175;
+const EXPECTED_SITEMAP = 1166;
 
 const issues = [];
 const warnings = [];

@@ -17,7 +17,7 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const APPROVED = path.join(ROOT, 'docs/batch-11-internal-link-architecture/approved-links.json');
 const MAP_TS = path.join(ROOT, 'src/config/internal-link-map.ts');
-const EXPECTED_SITEMAP = 1175;
+const EXPECTED_SITEMAP = 1166;
 
 const issues = [];
 const notes = [];

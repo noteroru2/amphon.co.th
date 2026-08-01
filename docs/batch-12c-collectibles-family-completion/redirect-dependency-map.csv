@@ -1,0 +1,2 @@
+existing_source,current_destination,destination_is_retired_source,new_destination,before_hops,after_hops,query_preserved,action,result
+(none found pointing at 12C sources),,no,,0,0,n/a,none,PASS_NO_DEPENDENCIES

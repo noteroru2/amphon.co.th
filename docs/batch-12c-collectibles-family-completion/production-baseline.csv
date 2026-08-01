@@ -1,0 +1,11 @@
+url,role,status,redirect_count,canonical,robots,sitemap,title,h1,main_content_words,internal_inbound,internal_outbound,result
+/บริการ/รับซื้อของสะสม,target,200,0,self:/บริการ/รับซื้อของสะสม,indexable,yes,รับซื้อของสะสม (service hub),รับซื้อของสะสม,batch12b-live,n/a,n/a,PASS
+/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด,indexable,yes,template:รับซื้อของสะสม-ร้อยเอ็ด,template:รับซื้อของสะสม-ร้อยเอ็ด,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-เลย,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-เลย,indexable,yes,template:รับซื้อของสะสม-เลย,template:รับซื้อของสะสม-เลย,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-ศรีสะเกษ,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-ศรีสะเกษ,indexable,yes,template:รับซื้อของสะสม-ศรีสะเกษ,template:รับซื้อของสะสม-ศรีสะเกษ,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-สกลนคร,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-สกลนคร,indexable,yes,template:รับซื้อของสะสม-สกลนคร,template:รับซื้อของสะสม-สกลนคร,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-สุรินทร์,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-สุรินทร์,indexable,yes,template:รับซื้อของสะสม-สุรินทร์,template:รับซื้อของสะสม-สุรินทร์,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-หนองคาย,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-หนองคาย,indexable,yes,template:รับซื้อของสะสม-หนองคาย,template:รับซื้อของสะสม-หนองคาย,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-หนองบัวลำภู,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-หนองบัวลำภู,indexable,yes,template:รับซื้อของสะสม-หนองบัวลำภู,template:รับซื้อของสะสม-หนองบัวลำภู,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-อำนาจเจริญ,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-อำนาจเจริญ,indexable,yes,template:รับซื้อของสะสม-อำนาจเจริญ,template:รับซื้อของสะสม-อำนาจเจริญ,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE
+/รับซื้อ/รับซื้อของสะสม-อุดรธานี,source,200,0,self:/รับซื้อ/รับซื้อของสะสม-อุดรธานี,indexable,yes,template:รับซื้อของสะสม-อุดรธานี,template:รับซื้อของสะสม-อุดรธานี,~216-222,filtered_via_indexable_policy,2_hub_plus_area,PASS_BASELINE

@@ -101,8 +101,9 @@ for (const province of provinces) {
 
 const trailingSlash = permanent('/:path+/', '/:path+');
 
-/** Batch 12B — Collectibles merge pilot (explicit 10 sources → service hub). */
-const collectiblesPilotProvinces = [
+/** Batch 12B+12C — Collectibles family consolidation (explicit non-Ubon sources → hub). */
+const collectiblesFamilyProvinces = [
+  // 12B pilot
   'กาฬสินธุ์',
   'ขอนแก่น',
   'ชัยภูมิ',
@@ -113,17 +114,27 @@ const collectiblesPilotProvinces = [
   'มหาสารคาม',
   'มุกดาหาร',
   'ยโสธร',
+  // 12C completion
+  'ร้อยเอ็ด',
+  'เลย',
+  'ศรีสะเกษ',
+  'สกลนคร',
+  'สุรินทร์',
+  'หนองคาย',
+  'หนองบัวลำภู',
+  'อำนาจเจริญ',
+  'อุดรธานี',
 ];
-const batch12bCollectibles = [];
-for (const province of collectiblesPilotProvinces) {
+const batch12Collectibles = [];
+for (const province of collectiblesFamilyProvinces) {
   const unicode = `/รับซื้อ/รับซื้อของสะสม-${province}`;
-  batch12bCollectibles.push(
+  batch12Collectibles.push(
     permanent(unicode, '/บริการ/รับซื้อของสะสม'),
     permanent(encodePath(unicode), '/บริการ/รับซื้อของสะสม'),
   );
 }
 
-const redirects = [...keepWorking, ...f01Exact, ...f01Province, ...batch12bCollectibles, trailingSlash];
+const redirects = [...keepWorking, ...f01Exact, ...f01Province, ...batch12Collectibles, trailingSlash];
 
 const sources = redirects.map((rule) => rule.source);
 const duplicateSources = sources.filter((source, index) => sources.indexOf(source) !== index);
@@ -142,7 +153,7 @@ fs.writeFileSync(vercelPath, `${JSON.stringify(vercel, null, 2)}\n`, 'utf8');
       keepWorking: keepWorking.length,
       f01Exact: f01Exact.length,
       f01Province: f01Province.length,
-      batch12bCollectibles: batch12bCollectibles.length,
+      batch12Collectibles: batch12Collectibles.length,
       trailingSlash: 1,
     },
     null,
