@@ -1,0 +1,11 @@
+{
+  "phase": "A_PRE_SWITCH",
+  "sitemap_expected": 1166,
+  "path_rules": 222,
+  "www_exact": 222,
+  "catchall": 1,
+  "total_redirects": 445,
+  "baseline_http_www_legacy_hops": 3,
+  "domain_switch": "PENDING",
+  "f12_status": "OPEN — WAITING FOR DOMAIN SWITCH"
+}

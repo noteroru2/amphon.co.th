@@ -1,0 +1,2 @@
+rule_id,source_variant,test_url,expected_final,actual_final,redirect_count,expected_max_redirects,final_status,query_expected,query_actual,query_preserved,loop,wrong_target,result
+_PENDING_FULL_MATRIX_,_,_,_,_,_,_,_,_,_,_,_,_,PENDING
