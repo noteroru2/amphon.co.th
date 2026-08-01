@@ -1,0 +1,21 @@
+url,check,expected,result,notes
+"/บริการ/รับซื้อของสะสม",built_200_self_canonical_indexable_in_sitemap,yes,PASS,local QA
+"/รับซื้อ/รับซื้อของสะสม-กาฬสินธุ์",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-ขอนแก่น",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-ชัยภูมิ",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-นครพนม",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-นครราชสีมา",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-บึงกาฬ",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-บุรีรัมย์",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-มหาสารคาม",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-มุกดาหาร",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-ยโสธร",not_built_redirect_to_target,yes,PASS,unicode+encoded
+"/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-เลย",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-ศรีสะเกษ",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-สกลนคร",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-สุรินทร์",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-หนองคาย",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-หนองบัวลำภู",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-อำนาจเจริญ",still_200_in_sitemap,yes,PASS,family protection
+"/รับซื้อ/รับซื้อของสะสม-อุดรธานี",still_200_in_sitemap,yes,PASS,family protection

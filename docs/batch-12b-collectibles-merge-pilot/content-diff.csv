@@ -1,0 +1,3 @@
+url,source_file,section,before,after,content_origin,fact_verified,duplicate_removed,intent_preserved,reason,result
+"/บริการ/รับซื้อของสะสม",src/content/services/รับซื้อของสะสม.md,body,unchanged,unchanged,n/a,n/a,yes-sources-discarded-as-boilerplate,yes,No unique source facts to merge; hub already covers collectibles intent nationally,PASS
+ALL_PILOT_SOURCES,src/content/serviceAreas/รับซื้อของสะสม-*.md,full-page,template-live,route-retired+redirect,pilot,n/a,yes,yes,Retire thin template landings,PASS

@@ -3,10 +3,13 @@ import { getCollection } from 'astro:content';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { getRelatedServicesForEntry, getIntentChipServices, getRelatedCardServices } from '../../config/service-clusters';
 import { getSupportingArticlesForService } from '../../config/internal-link-map';
+import { filterIndexableServiceAreas } from '../../config/seo-policy';
 
 export async function getStaticPaths() {
   const services = await getCollection('services', ({ data }) => !data.draft);
-  const serviceAreas = await getCollection('serviceAreas', ({ data }) => !data.draft);
+  const serviceAreas = filterIndexableServiceAreas(
+    await getCollection('serviceAreas', ({ data }) => !data.draft),
+  );
 
   return services.map((entry) => ({
     params: { slug: entry.data.slug },

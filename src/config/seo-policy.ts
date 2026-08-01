@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import { isCollectiblesMergePilotSlug } from './collectibles-merge-pilot';
 
 export const LEGACY_SERVICE_MERGES = {
   'รับซื้อ-gopro': {
@@ -54,6 +55,7 @@ export function isLegacyMergedServiceSlug(serviceSlug: string): boolean {
 }
 
 export function isIndexableServiceArea(entry: ServiceAreaEntry): boolean {
+  if (isCollectiblesMergePilotSlug(entry.data.slug)) return false;
   return !isLegacyMergedServiceSlug(entry.data.serviceSlug);
 }
 

@@ -101,7 +101,29 @@ for (const province of provinces) {
 
 const trailingSlash = permanent('/:path+/', '/:path+');
 
-const redirects = [...keepWorking, ...f01Exact, ...f01Province, trailingSlash];
+/** Batch 12B — Collectibles merge pilot (explicit 10 sources → service hub). */
+const collectiblesPilotProvinces = [
+  'กาฬสินธุ์',
+  'ขอนแก่น',
+  'ชัยภูมิ',
+  'นครพนม',
+  'นครราชสีมา',
+  'บึงกาฬ',
+  'บุรีรัมย์',
+  'มหาสารคาม',
+  'มุกดาหาร',
+  'ยโสธร',
+];
+const batch12bCollectibles = [];
+for (const province of collectiblesPilotProvinces) {
+  const unicode = `/รับซื้อ/รับซื้อของสะสม-${province}`;
+  batch12bCollectibles.push(
+    permanent(unicode, '/บริการ/รับซื้อของสะสม'),
+    permanent(encodePath(unicode), '/บริการ/รับซื้อของสะสม'),
+  );
+}
+
+const redirects = [...keepWorking, ...f01Exact, ...f01Province, ...batch12bCollectibles, trailingSlash];
 
 const sources = redirects.map((rule) => rule.source);
 const duplicateSources = sources.filter((source, index) => sources.indexOf(source) !== index);
@@ -112,7 +134,7 @@ if (duplicateSources.length) {
 vercel.redirects = redirects;
 fs.writeFileSync(vercelPath, `${JSON.stringify(vercel, null, 2)}\n`, 'utf8');
 
-console.log(
+  console.log(
   JSON.stringify(
     {
       provinces: provinces.length,
@@ -120,6 +142,7 @@ console.log(
       keepWorking: keepWorking.length,
       f01Exact: f01Exact.length,
       f01Province: f01Province.length,
+      batch12bCollectibles: batch12bCollectibles.length,
       trailingSlash: 1,
     },
     null,

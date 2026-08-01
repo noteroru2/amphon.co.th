@@ -155,7 +155,7 @@ const sitemap0 = path.join(distDir, 'sitemap-0.xml');
 if (fs.existsSync(sitemap0)) {
   const count = [...readText(sitemap0).matchAll(/<loc>/g)].length;
   notes.push(`sitemap_count=${count}`);
-  if (count !== 1185) issues.push(`sitemap count ${count} !== 1185`);
+  if (count !== 1175) issues.push(`sitemap count ${count} !== 1175`);
 }
 
 console.log('Batch 8 image dimensions validation');

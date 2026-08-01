@@ -1,0 +1,14 @@
+url,before,after,expected,reason,lastmod_before,lastmod_after,result
+"/รับซื้อ/รับซื้อของสะสม-กาฬสินธุ์",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-ขอนแก่น",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-ชัยภูมิ",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-นครพนม",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-นครราชสีมา",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-บึงกาฬ",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-บุรีรัมย์",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-มหาสารคาม",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-มุกดาหาร",in,out,out,pilot retire,n/a,n/a,PASS
+"/รับซื้อ/รับซื้อของสะสม-ยโสธร",in,out,out,pilot retire,n/a,n/a,PASS
+"/บริการ/รับซื้อของสะสม",in,in,in,target kept,n/a,n/a,PASS
+SITEMAP_COUNT,1185,1175,1175,diff -10 only,n/a,n/a,PASS
+UNEXPECTED_DIFF,0,0,0,none,n/a,n/a,PASS
