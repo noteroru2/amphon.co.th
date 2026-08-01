@@ -1,0 +1,9 @@
+file,change_type,introduced_by_sha,present_on_main,used_at_runtime,affects_build,affects_production,safe_to_remove,reason,action
+vercel.json,F12_RUNTIME_CHANGE,8bf095f3951d726e53f608ad9640873a58f2da2d,yes,yes,yes,yes (host rules inert while Domain 301 owns www; path rules still apply),yes,Added 223 host-aware 307 rules (222 exact + 1 catch-all) on top of 222 original,RESTORE_TO_PRE_PHASE_A
+scripts/generate-f12-www-redirects.mjs,F12_RUNTIME_CHANGE,8bf095f3951d726e53f608ad9640873a58f2da2d,yes,no (manual/generator),no,no,yes,Generator for failed Phase A host rules,DELETE
+scripts/check-f12-vercel-host-redirect.mjs,F12_QA_CHANGE,8bf095f3951d726e53f608ad9640873a58f2da2d,yes,no,no,no,yes,QA expects Phase A host config which will be removed,DELETE
+package.json qa:f12-vercel-host-redirect,F12_QA_CHANGE,8bf095f3951d726e53f608ad9640873a58f2da2d,yes,no,no,no,yes,npm script for deleted QA,REMOVE_SCRIPT
+scripts/check-batch-7-host-redirects.mjs,F12_QA_CHANGE,8bf095f3951d726e53f608ad9640873a58f2da2d,yes,no,no,no,partial,Expectation inverted to require host rules,RESTORE_PRE_PHASE_A_LOGIC
+scripts/lib/site-audit.mjs,F12_RUNTIME_CHANGE,8bf095f3951d726e53f608ad9640873a58f2da2d,yes,yes (QA path resolve),yes (QA),indirect,partial,Ignores has-host rules and softens 307 permanence,RESTORE_PRE_PHASE_A
+docs/f12-vercel-json-host-redirect/*,F12_DOCUMENTATION,8bf095f..291e530,yes,no,no,no,no,Audit and rollback evidence must be retained,RETAIN
+src/middleware*,ABSENT,n/a,no,no,no,no,n/a,No middleware present,NONE

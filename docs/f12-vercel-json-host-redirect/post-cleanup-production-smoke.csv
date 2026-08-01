@@ -1,0 +1,6 @@
+id,hops,first,final,www200,result
+https-www-query,1,301,200 https://amphon.co.th/contact?source=f12&utm_campaign=cleanup,false,PASS
+https-apex-home,0,200,200 https://amphon.co.th/,false,PASS
+https-apex-legacy,1,308,200 https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-ssd,false,PASS
+http-www-legacy,3,308,200 https://amphon.co.th/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B8%A3/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-ssd,false,PASS
+https-www-home,1,301,200 https://amphon.co.th/,false,PASS

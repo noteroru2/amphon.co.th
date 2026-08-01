@@ -15,11 +15,12 @@ Phase A status: 307
 ## Status
 
 ```text
-F-12: OPEN — ROLLED BACK TO SAFE DOMAIN REDIRECT
-Production: READY WITH KNOWN OPEN FINDING
+Verdict: PASS — SAFE ROLLBACK COMPLETE
+F-12: OPEN — VERCEL HOBBY PLATFORM LIMITATION / OWNER-ACCEPTED
+Domain: www 301 → apex
+Failed Phase A runtime: REMOVED
+Production: READY
+Development cycle: CLOSED
 ```
 
-- Phase A: merged (307 host rules in `vercel.json`)
-- Phase B domain cutover: **FAILED** — host `has` rules did not fire (`phase-b-failure.md`)
-- Domain rollback: **COMPLETE** — baseline restored (`post-rollback-validation.md`)
-- Do **not** re-switch domain until a new remediation plan
+See `final-code-cleanup-report.md`.
