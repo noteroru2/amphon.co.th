@@ -14,7 +14,7 @@ Owner-facing summary, chat questionnaire, and ready response sheet prepared for 
 | Base SHA (Batch 12F) | `b533120af3a18f89e24917e0f5b2eb3d7a21a3af` |
 | Prior Audit SHA | `54968f5057fbb67a645ea5f365802b94c11ea360` |
 | Prior branch tip | `82cb8cd4157c7dd440c2de1038ef7148002089ce` |
-| New documentation SHA | PENDING |
+| New documentation SHA | `98af935d088a24ab56d7bee2d35f0cb71c6c6a6b` |
 | Decision groups | 7 |
 | Owner questions | 7 |
 | URLs covered | 134 |
