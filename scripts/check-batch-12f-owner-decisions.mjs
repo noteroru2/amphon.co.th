@@ -146,6 +146,16 @@ notes.push(`hub_count=${hubs.size}`);
 if (hubs.size !== 7) issues.push(`hub count ${hubs.size} != 7`);
 
 // Production code diff vs main for src/
+// Allow BD-01 KEEP-AND-IMPROVE content files after Batch 12G-1 implementation.
+const bd01Allowed = new Set(
+  approved
+    .filter((r) => r.decision_group_id === 'BD-01')
+    .map((r) => {
+      const m = String(r.url || '').match(/\/รับซื้อ\/รับซื้อเครื่องใช้ไฟฟ้า-(.+)$/);
+      return m ? `src/content/serviceAreas/รับซื้อเครื่องใช้ไฟฟ้า-${m[1]}.md` : '';
+    })
+    .filter(Boolean),
+);
 try {
   const diff = execSync('git diff --name-only origin/main...HEAD', {
     cwd: ROOT,
@@ -154,8 +164,10 @@ try {
   const bad = diff
     .split(/\r?\n/)
     .filter(Boolean)
-    .filter((f) => /^(src\/|public\/|astro\.config|vercel\.json)/.test(f));
+    .filter((f) => /^(src\/|public\/|astro\.config|vercel\.json)/.test(f))
+    .filter((f) => !bd01Allowed.has(f.replace(/\\/g, '/')));
   notes.push(`production_code_diff=${bad.length}`);
+  notes.push(`bd01_allowed_src=${bd01Allowed.size}`);
   if (bad.length) issues.push(`PRODUCTION SCOPE VIOLATION: ${bad.join(',')}`);
 } catch {
   notes.push('production_code_diff=unable_to_check');

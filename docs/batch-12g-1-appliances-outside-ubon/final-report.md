@@ -15,10 +15,11 @@ PASS WITH WARNING (pending production validation)
 - Branch: `fix/batch-12g-1-appliances-outside-ubon`
 - Base SHA: `17e03d39706fddabba83f89f84ba84757d4af145`
 - Implementation SHA: `4f137ce5fc5dff72157eafd876becbebcaaed77d`
-- Merge SHA: PENDING
+- Merge SHA: `564ef0069389188d0b87ed9cc0e4722a9ca3f426`
 - Production SHA: NOT VERIFIED
 - Report-only SHA: PENDING
 - Deployment URL: https://amphon.co.th
+- Note: `check-batch-12f-owner-decisions.mjs` allows BD-01 KEEP-AND-IMPROVE source diffs after Batch 12G-1
 
 ## Scope
 
