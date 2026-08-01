@@ -8,7 +8,7 @@ Base SHA: 778dfbecc67d12f3020d00d3f88cd48efe4d7095
 Implementation SHA: 5cd0fa3943c9f174e7e6adbaa0c5cc99b158edea
 Merge SHA: 52255ebec9e6c3fed5330348230aa7ff4b194c5c
 Production SHA: NOT VERIFIED
-Report-only SHA: pending
+Report-only SHA: 991fb3d26634c23ea6390bab54643ded256a3450
 Deployment URL: https://amphon.co.th
 URLs crawled (production sitemap): 1185
 Internal links inspected (local QA + prod samples): approved map 2976; prod sample sources 5
