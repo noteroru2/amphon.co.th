@@ -1,0 +1,6 @@
+url,http_status,latitude,longitude,address,telephone,canonical,json_valid,fake_province_lb,result,notes
+https://amphon.co.th/,pending,15.2664215,104.844358,740/8 ถนนชยางกูร,+66642579353,https://amphon.co.th,pending,0,PENDING,fill after production deploy
+https://amphon.co.th/contact,pending,15.2664215,104.844358,740/8 ถนนชยางกูร,+66642579353,https://amphon.co.th/contact,pending,0,PENDING,fill after production deploy
+https://amphon.co.th/about,pending,15.2664215,104.844358,740/8 ถนนชยางกูร,+66642579353,https://amphon.co.th/about,pending,0,PENDING,fill after production deploy
+https://amphon.co.th/พื้นที่ให้บริการ/อุบลราชธานี,pending,15.2664215,104.844358,740/8 ถนนชยางกูร,+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/อุบลราชธานี,pending,0,PENDING,fill after production deploy
+https://amphon.co.th/พื้นที่ให้บริการ/ขอนแก่น,pending,15.2664215,104.844358,740/8 ถนนชยางกูร,+66642579353,https://amphon.co.th/พื้นที่ให้บริการ/ขอนแก่น,pending,0,PENDING,fill after production deploy

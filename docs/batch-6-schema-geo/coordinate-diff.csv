@@ -1,0 +1,6 @@
+schema_source,latitude_before,longitude_before,latitude_after,longitude_after,distance_meters,verified_source,status
+site.geo (src/config/site.ts),15.2386,104.8477,15.2664215,104.844358,3114,maps.app.goo.gl/krv97o14jPTRrnpW8 → !3d/!4d,corrected
+LocalBusiness JSON-LD (seo.ts consumer),15.2386,104.8477,15.2664215,104.844358,3114,same via site.geo,corrected
+BaseLayout geo.position / ICBM,15.2386,104.8477,15.2664215,104.844358,3114,same via site.geo,corrected
+site.hasMap,n/a,n/a,n/a,n/a,0,already verified listing,unchanged
+provinceGeo Place centroids,various,various,various,various,0,out of F-11 LocalBusiness scope,unchanged
