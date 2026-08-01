@@ -14,7 +14,7 @@ PASS WITH WARNING (pending production validation)
 
 - Branch: `fix/batch-12g-1-appliances-outside-ubon`
 - Base SHA: `17e03d39706fddabba83f89f84ba84757d4af145`
-- Implementation SHA: PENDING
+- Implementation SHA: `4f137ce5fc5dff72157eafd876becbebcaaed77d`
 - Merge SHA: PENDING
 - Production SHA: NOT VERIFIED
 - Report-only SHA: PENDING
