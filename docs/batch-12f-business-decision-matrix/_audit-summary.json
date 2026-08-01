@@ -1,0 +1,65 @@
+{
+  "original_f04": 188,
+  "false_positives": 2,
+  "collectibles_resolved": 19,
+  "improve_resolved": 14,
+  "merge_remaining": 19,
+  "rbd": 134,
+  "decision_groups": 7,
+  "reduction_ratio_pct": 94.8,
+  "priority_a_groups": 4,
+  "priority_b_groups": 3,
+  "priority_c_groups": 0,
+  "priority_a_urls": 77,
+  "priority_b_urls": 57,
+  "priority_c_urls": 0,
+  "owner_questions": 7,
+  "valid_hub_targets": 21,
+  "targets_needing_review": 0,
+  "gsc": "GSC DATA NOT AVAILABLE IN REPOSITORY",
+  "external": "EXTERNAL LINK DATA NOT AVAILABLE",
+  "group_ids": [
+    {
+      "id": "BD-01",
+      "name": "เครื่องใช้ไฟฟ้า — จังหวัดนอกอุบล",
+      "n": 19,
+      "priority": "A"
+    },
+    {
+      "id": "BD-02",
+      "name": "ทีวี — จังหวัดนอกอุบล",
+      "n": 19,
+      "priority": "B"
+    },
+    {
+      "id": "BD-03",
+      "name": "โดรน — จังหวัดนอกอุบล",
+      "n": 19,
+      "priority": "B"
+    },
+    {
+      "id": "BD-04",
+      "name": "อุปกรณ์ Network — จังหวัดนอกอุบล",
+      "n": 19,
+      "priority": "B"
+    },
+    {
+      "id": "BD-05",
+      "name": "Server / Rack — จังหวัดนอกอุบล",
+      "n": 19,
+      "priority": "A"
+    },
+    {
+      "id": "BD-06",
+      "name": "UPS — จังหวัดนอกอุบล",
+      "n": 19,
+      "priority": "A"
+    },
+    {
+      "id": "BD-07",
+      "name": "รับเหมาประมูลอุปกรณ์ไอที — ทุกจังหวัดในชุด (รวมอุบล)",
+      "n": 20,
+      "priority": "A"
+    }
+  ]
+}

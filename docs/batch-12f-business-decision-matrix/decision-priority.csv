@@ -1,0 +1,8 @@
+decision_group_id,decision_group_name,priority,url_count,rationale,owner_question
+BD-01,เครื่องใช้ไฟฟ้า — จังหวัดนอกอุบล,A,19,trust/fulfilment/b2b/auction or large-item risk,ร้านรับซื้อเครื่องใช้ไฟฟ้าขนาดใหญ่/บ้าน (นอกอุบลราชธานี) จริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่
+BD-02,ทีวี — จังหวัดนอกอุบล,B,19,secondary category; merge candidate likely; demand unknown,ร้านรับซื้อทีวีจากจังหวัดนอกอุบลราชธานีจริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่
+BD-03,โดรน — จังหวัดนอกอุบล,B,19,secondary category; merge candidate likely; demand unknown,ร้านรับซื้อโดรนจากจังหวัดนอกอุบลราชธานีจริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่
+BD-04,อุปกรณ์ Network — จังหวัดนอกอุบล,B,19,secondary category; merge candidate likely; demand unknown,ร้านรับซื้ออุปกรณ์ Network จากจังหวัดนอกอุบลราชธานีจริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่
+BD-05,Server / Rack — จังหวัดนอกอุบล,A,19,trust/fulfilment/b2b/auction or large-item risk,ร้านรับซื้อ Server/ตู้ Rack จากจังหวัดนอกอุบลราชธานีจริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่
+BD-06,UPS — จังหวัดนอกอุบล,A,19,trust/fulfilment/b2b/auction or large-item risk,ร้านรับซื้อ UPS จากจังหวัดนอกอุบลราชธานีจริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่
+BD-07,รับเหมาประมูลอุปกรณ์ไอที — ทุกจังหวัดในชุด (รวมอุบล),A,20,trust/fulfilment/b2b/auction or large-item risk,ร้านรับงานรับเหมา/ประมูลอุปกรณ์ไอที (รวมหน้าจังหวัดในชุดนี้) จริงหรือไม่ และต้องการหน้าแยกตามจังหวัดหรือไม่

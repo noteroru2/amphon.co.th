@@ -1,0 +1,9 @@
+proposed_batch,decision_group_ids,url_count,action_type,risk,dependencies,expected_sitemap_diff,expected_redirect_count,requires_gsc,requires_owner_approval,focus
+Batch 12G-1,BD-01,19,KEEP_AND_IMPROVE,large-item-fulfilment,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,เงื่อนไขสินค้าขนาดใหญ่; นำมาหน้าร้าน; นัดรับตามงาน; ไม่จัดส่งใหญ่อัตโนมัติ; unique province ไม่สร้างสาขา
+Batch 12G-2,BD-02,19,KEEP_AND_IMPROVE,transport-risk,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,ขนาด สภาพ ระยะทาง ความเสี่ยงขนส่ง นัดรับรายกรณี
+Batch 12G-3,BD-05,19,KEEP_AND_IMPROVE,rack-fulfilment;b2b,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,แยกข้อจำกัด Server vs Rack; บริษัท/ยกล็อต; ขนาด น้ำหนัก การถอดขน
+Batch 12G-4,BD-07,20,KEEP_AND_IMPROVE,auction-bulk,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,ประเภทลูกค้า รายการ จำนวน เข้าตรวจ เงื่อนไขงาน ขนย้าย ชำระเงิน
+Batch 12H-1,BD-03,19,KEEP_AND_IMPROVE,condition-prep,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,รูป รุ่น อุปกรณ์ สภาพ ปลดเชื่อมต่อ; นัดรับ/จัดส่งตามข้อตกลง
+Batch 12H-2,BD-04,19,KEEP_AND_IMPROVE,b2b-bulk,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,บุคคล/บริษัท/ยกล็อต; สวิตช์ เราเตอร์ AP; รายการประเมิน
+Batch 12H-3,BD-06,19,KEEP_AND_IMPROVE,battery-condition,owner confirmed 2026-08-01,0,0,optional,NO — OWNER APPROVED,รุ่น กำลังไฟ อายุ/สภาพแบต จำนวน วิธีส่งมอบ; รายเครื่องและล็อต
+NOTE — Remaining MERGE furniture,G-SA-รับซื้อเฟอร์นิเจอร์,19,MERGE — OWNER DECISION NOT INCLUDED IN BD-01–BD-07,medium,REQUIRES SEPARATE OWNER REVIEW,TBD,TBD,recommended,YES — SEPARATE,อยู่นอก BD-01–BD-07; ห้ามแก้ใน 12F.2
