@@ -13,7 +13,7 @@ PASS WITH WARNING — local implementation + QA green; production validation pen
 
 - Branch: `fix/batch-12c-collectibles-family-completion`
 - Base SHA: `6baf5a34903f895abdac96692d0265f216a7dcdd`
-- Implementation SHA: PENDING_COMMIT
+- Implementation SHA: `9ae82cda0d3b11b1b62ebb7908e0566a269bbc78`
 - Merge SHA: PENDING
 - Production SHA: NOT VERIFIED
 - Report-only SHA: PENDING
