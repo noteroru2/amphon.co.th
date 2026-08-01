@@ -13,7 +13,7 @@ PASS WITH WARNING — local implementation + QA green; production validation pen
 
 - Branch: `fix/batch-12d-thin-content-improve-pilot`
 - Base SHA: `91868e177fb35e25b83cfcb80fd63156c0522fcd`
-- Implementation SHA: PENDING_COMMIT
+- Implementation SHA: `ebbb231eb23ef1f08e7253f4a48642a17d63f7ff`
 - Merge SHA: PENDING
 - Production SHA: NOT VERIFIED
 - Report-only SHA: PENDING
