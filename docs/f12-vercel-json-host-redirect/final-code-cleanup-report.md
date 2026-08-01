@@ -31,7 +31,7 @@ PASS — SAFE ROLLBACK COMPLETE
 | Branch | `revert/f12-phase-a-runtime-changes` |
 | PR URL | Not created (`gh` unavailable); compare: https://github.com/noteroru2/amphon.co.th/compare/main...revert/f12-phase-a-runtime-changes |
 | Merge SHA | `b805a796026bcc17c7cad582339122a6afb362ea` |
-| Report-only SHA | *(this docs commit)* |
+| Report-only SHA | `356e3cea2bff4cea03f91b4373dc8c6fb3276f7f` |
 | Production SHA | **NOT VERIFIED** (Hobby / no deployment API this cycle); smoke matches safe domain baseline after merge `b805a79` |
 
 ## Runtime before → after
