@@ -19,6 +19,23 @@ const DOCS = path.join(ROOT, 'docs/batch-12f-business-decision-matrix');
 const MATRIX = path.join(ROOT, 'docs/batch-12a-thin-content-decisions/decision-matrix.csv');
 const EXPECTED_RBD = 134;
 const EXPECTED_SITEMAP = 1166;
+const OWNER_LOCK = path.join(DOCS, 'owner-decision-lock.md');
+
+if (fs.existsSync(OWNER_LOCK)) {
+  console.log('Batch 12F audit: owner-decision-lock.md present — skip regenerating decision docs');
+  console.log('  note: use qa:batch-12f-owner-decisions to validate owner responses');
+  const approved = path.join(DOCS, 'owner-approved-classification.csv');
+  if (fs.existsSync(approved)) {
+    const n = fs.readFileSync(approved, 'utf8').trim().split(/\n/).length - 1;
+    console.log(`  note: owner_approved_urls=${n}`);
+    if (n !== EXPECTED_RBD) {
+      console.error(`FAIL — approved URL count ${n} != ${EXPECTED_RBD}`);
+      process.exit(1);
+    }
+  }
+  console.log('PASS batch-12f audit (locked)');
+  process.exit(0);
+}
 
 const COLLECTIBLES_RESOLVED = new Set([
   // 19 non-Ubon ของสะสม retired in 12B/12C — all ofสะสม except Ubon which was IMPROVED in 12D

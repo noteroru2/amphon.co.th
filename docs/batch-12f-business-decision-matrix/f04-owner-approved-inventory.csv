@@ -1,0 +1,8 @@
+metric,count,notes
+original_f04_candidates,188,Batch 12A
+false_positives,2,/contact /privacy-policy
+collectibles_resolved,19,12B/12C
+improve_resolved,14,12D/12E
+owner_confirmed_keep_and_improve,134,BD-01–BD-07; content pending
+merge_pending_outside_owner_groups,19,G-SA-รับซื้อเฟอร์นิเจอร์; REQUIRES SEPARATE OWNER REVIEW
+f04_implementation_pending_total,153,134 keep-improve + 19 merge
