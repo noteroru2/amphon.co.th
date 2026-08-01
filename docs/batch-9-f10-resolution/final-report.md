@@ -3,10 +3,10 @@
 ## Verdict
 
 ```text
-PASS WITH WARNING
+PASS
 ```
 
-Production validation pending after deploy. Source + build + Batch 1–9 QA passed.
+Finding F-10 **CLOSED**. Source, build, and production validated.
 
 ## Finding
 
@@ -14,7 +14,7 @@ Production validation pending after deploy. Source + build + Batch 1–9 QA pass
 - **Priority:** P3
 - **Category:** Consistency / NAP
 - **Definition:** `tel:+66642579353` ปนกับ `tel:0642579353`
-- **Status:** FIXED in source/build; production pending
+- **Status:** CLOSED
 
 ## Fix
 
@@ -24,8 +24,8 @@ Replace `tel:0642579353` → `tel:+66642579353` in 884 content files (948 occurr
 
 ```text
 Base SHA: 252ba810c6a1cad9c45860b53c5fb1ff4fa1f34e
-Implementation SHA: PENDING_COMMIT
-Merge SHA: PENDING
+Implementation SHA: cd0271fe5211300c9b967b5767f0a341d87669c6
+Merge SHA: 70c745c7526a62e52dffc673912e72434e8c4bd8
 Production SHA: NOT VERIFIED
 Report-only SHA: PENDING
 ```
