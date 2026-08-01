@@ -1,0 +1,7 @@
+url,section,current_content_summary,template_content,unique_content,missing_user_question,required_new_value,verified_source,business_input_needed,implementation_action
+/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี,body,province-name template + CTA,yes,no,how to prepare this product in Ubon,product-specific checklist + store process,/บริการ/รับซื้อของสะสม,no,rewrite_body_add_sections_add_faq
+/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี,body,province-name template + CTA,yes,no,how to prepare this product in Ubon,product-specific checklist + store process,/บริการ/รับซื้อเครื่องใช้ไฟฟ้า,no,rewrite_body_add_sections_add_faq
+/รับซื้อ/รับซื้อโดรน-อุบลราชธานี,body,province-name template + CTA,yes,no,how to prepare this product in Ubon,product-specific checklist + store process,/บริการ/รับซื้อโดรน,no,rewrite_body_add_sections_add_faq
+/รับซื้อ/รับซื้อทีวี-อุบลราชธานี,body,province-name template + CTA,yes,no,how to prepare this product in Ubon,product-specific checklist + store process,/บริการ/รับซื้อทีวี,no,rewrite_body_add_sections_add_faq
+/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อุบลราชธานี,body,province-name template + CTA,yes,no,how to prepare this product in Ubon,product-specific checklist + store process,/บริการ/รับซื้อเฟอร์นิเจอร์,no,rewrite_body_add_sections_add_faq
+/รับซื้อ/รับซื้ออุปกรณ์-network-อุบลราชธานี,body,province-name template + CTA,yes,no,how to prepare this product in Ubon,product-specific checklist + store process,/บริการ/รับซื้ออุปกรณ์-network,no,rewrite_body_add_sections_add_faq

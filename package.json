@@ -33,6 +33,7 @@
     "audit:batch-12a-thin-content": "node scripts/audit-batch-12a-thin-content.mjs",
     "qa:batch-12b-collectibles": "node scripts/check-batch-12b-collectibles-pilot.mjs",
     "qa:batch-12c-collectibles": "node scripts/check-batch-12c-collectibles-family.mjs",
+    "qa:batch-12d-thin-content": "node scripts/check-batch-12d-thin-content-improve.mjs",
     "images:dimension-cache": "node scripts/build-image-dimension-cache.mjs",
     "qa:sitemap": "node scripts/check-sitemap-indexability.mjs",
     "qa:duplicate-headings": "node scripts/check-duplicate-headings.mjs",

@@ -1,0 +1,4 @@
+pilot_count=6
+pilot_set_sha256=c7141454bf8321a8b8c8ae12c8ca03624b430cdef8da7bff3f543d74a8341ea8
+base_sha=91868e177fb35e25b83cfcb80fd63156c0522fcd
+template_family=ubon-service-area-secondary-services
