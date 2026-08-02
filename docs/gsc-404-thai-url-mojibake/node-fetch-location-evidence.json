@@ -1,0 +1,8 @@
+{
+  "request": "https://amphon.co.th/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD/%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%8B%E0%B8%B7%E0%B9%89%E0%B8%AD-hdd-%E0%B8%AA%E0%B8%81%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3",
+  "status": 308,
+  "location_as_js_string": "/à¸£à¸±à¸à¸à¸·à¹à¸­/à¸£à¸±à¸à¸à¸·à¹à¸­-ssd-à¸ªà¸à¸¥à¸à¸à¸£",
+  "looks_mojibake": true,
+  "followed_would_be": "https://amphon.co.th/%C3%A0%C2%B8%C2%A3%C3%A0%C2%B8%C2%B1%C3%A0%C2%B8%C2%9A%C3%A0%C2%B8%C2%8B%C3%A0%C2%B8%C2%B7%C3%A0%C2%B9%C2%89%C3%A0%C2%B8%C2%AD/%C3%A0%C2%B8%C2%A3%C3%A0%C2%B8%C2%B1%C3%A0%C2%B8%C2%9A%C3%A0%C2%B8%C2%8B%C3%A0%C2%B8%C2%B7%C3%A0%C2%B9%C2%89%C3%A0%C2%B8%C2%AD-ssd-%C3%A0%C2%B8%C2%AA%C3%A0%C2%B8%C2%81%C3%A0%C2%B8%C2%A5%C3%A0%C2%B8%C2%99%C3%A0%C2%B8%C2%84%C3%A0%C2%B8%C2%A3",
+  "note": "Node undici decodes raw UTF-8 Location as Latin-1 → mojibake; curl UTF-8 decode reaches 200 target"
+}
