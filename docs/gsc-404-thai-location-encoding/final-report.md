@@ -6,13 +6,14 @@
 PASS WITH WARNING
 ```
 
-(Production validation filled after deploy.)
+Warning: Production SHA NOT VERIFIED (Hobby); GSC Validate Fix still needs owner action; Blog 2 owner decision pending.
 
 ## Finding status
 
 ```text
-NF-GSC-404-THAI-LOCATION: CLOSED pending production verify → then CLOSED — VERIFIED
+NF-GSC-404-THAI-LOCATION: CLOSED — VERIFIED
 NF-GSC-404-BLOG-LEGACY: OPEN — OWNER DECISION PENDING (2 URLs)
+NF-GSC-404-THAI-URLS: PARTIALLY CLOSED (encoding + 18 redirects verified; blog open)
 F-12: OPEN — VERCEL HOBBY PLATFORM LIMITATION / OWNER-ACCEPTED
 ```
 
@@ -21,28 +22,47 @@ F-12: OPEN — VERCEL HOBBY PLATFORM LIMITATION / OWNER-ACCEPTED
 | Role | SHA |
 | --- | --- |
 | Base / Audit merge | `5979910bfbb51e8560193c8c6c92427a99e723d0` |
-| Implementation | *(filled after commit)* |
-| Merge | *(filled after merge)* |
-| Production | NOT VERIFIED |
-| Report-only | *(filled after docs commit)* |
+| Implementation | `ec8f344bb0794175e30cdf757ff8a3c84ae7c586` |
+| Merge | `ae7426577571f855d92a668f34e76a321a466360` |
+| Production | NOT VERIFIED (smoke after merge `ae74265`) |
+| Report-only | *(this docs commit)* |
+| PR | https://github.com/noteroru2/amphon.co.th/pull/new/fix/gsc-404-thai-location-encoding |
 
 ## Encoding metrics
 
 | Metric | Before | After |
 | --- | ---: | ---: |
 | Redirect rules | 222 | 222 |
-| Thai/raw Unicode destinations | 219 | **0** |
+| Raw Unicode destinations | 219 | **0** |
 | Destinations re-encoded | — | 219 |
 | Logical destination changes | — | **0** |
 | Double encoding | — | **0** |
-| Status / order changes | — | **0** |
+| Status / order / source changes | — | **0** |
+| Raw UTF-8 Location (prod, 18 GSC) | 18 | **0** |
 
-## GSC 18 FIX_ENCODING_ONLY
+## Production validation (18 GSC + strict client)
 
-Config: each has percent-encoded destination; logical targets match audit map.
+```text
+npm run qa:gsc-404-thai-location-encoding -- --runtime
+→ PASS … runtime=OK
+```
 
-Blog 2: **unchanged** → `/blog` (OWNER DECISION PENDING).
+Node fetch sample (`/รับซื้อ/รับซื้อ-hdd-สกลนคร`):
 
-## Scope compliance
+- Location: ASCII percent-encoded
+- Mojibake: false
+- Follow: **200**
 
-Only `vercel.json` destinations encoding + generator helper + QA/docs. No route/sitemap/canonical/content/middleware/F-12 changes.
+Blog 2: still 308 → `/blog` (unchanged).
+
+## Diffs
+
+Sitemap 1166 · Route/Canonical/Noindex/Content/Metadata/Schema **0** · Broken/redirecting **0** · Indexable orphan **0**
+
+## GSC next action
+
+Owner: Search Console → Validate Fix on the 404 issue (do not re-add retired URLs to sitemap).
+
+## Blog
+
+Generic `/blog` redirect may not be the best long-term target. Requires separate decision between restore article and 410.

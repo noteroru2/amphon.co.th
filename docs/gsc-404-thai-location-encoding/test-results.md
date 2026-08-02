@@ -10,4 +10,12 @@
 | Broken / redirecting links | 0 / 0 |
 | Route/content/metadata/schema diffs | 0 (not in change set) |
 
-Runtime Location ASCII checks: after production deploy (`--runtime`).
+Runtime Location ASCII checks after deploy:
+
+```text
+npm run qa:gsc-404-thai-location-encoding -- --runtime
+PASS … runtime=OK
+```
+
+Evidence: `strict-client-validation.csv`, `post-deploy-validation.csv`, `production-redirect-validation.csv`.
+Node fetch Location is ASCII percent-encoded; follow → 200.
