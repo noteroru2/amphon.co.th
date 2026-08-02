@@ -25,7 +25,7 @@ F-12: OPEN — VERCEL HOBBY PLATFORM LIMITATION / OWNER-ACCEPTED
 | Implementation | `ec8f344bb0794175e30cdf757ff8a3c84ae7c586` |
 | Merge | `ae7426577571f855d92a668f34e76a321a466360` |
 | Production | NOT VERIFIED (smoke after merge `ae74265`) |
-| Report-only | *(this docs commit)* |
+| Report-only | `134a81856187329cd6c87cb3022daa8afb8c9d8b` |
 | PR | https://github.com/noteroru2/amphon.co.th/pull/new/fix/gsc-404-thai-location-encoding |
 
 ## Encoding metrics
