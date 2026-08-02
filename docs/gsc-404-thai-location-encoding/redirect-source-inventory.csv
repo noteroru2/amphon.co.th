@@ -1,0 +1,4 @@
+file,type,source_of_truth,generated,rule_count,thai_destination_count,encoded_destination_count,used_in_build,used_in_production,action
+vercel.json,vercel_redirects,yes,no,222,219,219,yes,yes,ENCODE_DESTINATIONS
+scripts/generate-batch-1-redirects.mjs,manual_generator,helper_only,writes_vercel_when_run,n/a,n/a,n/a,no_default,no,UPDATE_TO_EMIT_ENCODED_DEST
+scripts/lib/encode-redirect-destination.mjs,utility,encoding_helper,no,n/a,n/a,n/a,qa_and_generator,indirect,ADD

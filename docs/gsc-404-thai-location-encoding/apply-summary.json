@@ -1,0 +1,10 @@
+{
+  "rules_before": 222,
+  "rules_after": 222,
+  "thai_destinations_before": 219,
+  "thai_destinations_after": 0,
+  "destinations_reencoded": 219,
+  "logical_destination_changes": 0,
+  "double_encoded_after": 0,
+  "blog_destinations_unchanged": 2
+}
