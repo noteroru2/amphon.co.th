@@ -5,6 +5,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { encodeRedirectDestination } from './lib/encode-redirect-destination.mjs';
 
 const repoRoot = process.cwd();
 const vercelPath = path.join(repoRoot, 'vercel.json');
@@ -16,7 +17,11 @@ const encodePath = (pathname) =>
     .map((segment) => (segment ? encodeURIComponent(segment) : ''))
     .join('/');
 
-const permanent = (source, destination) => ({ source, destination, permanent: true });
+const permanent = (source, destination) => ({
+  source,
+  destination: encodeRedirectDestination(destination),
+  permanent: true,
+});
 
 const provinces = fs
   .readdirSync(path.join(repoRoot, 'src/content/serviceAreas'))
