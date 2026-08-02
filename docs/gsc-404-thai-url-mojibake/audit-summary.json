@@ -1,0 +1,18 @@
+{
+  "urls": 20,
+  "final_200": 20,
+  "final_404": 0,
+  "initial_3xx": 20,
+  "raw_utf8_location": 18,
+  "mojibake_body": 0,
+  "double_encoded_in_chain": 0,
+  "unicode_encoded_mismatch": 0,
+  "with_redirect_rule": 20,
+  "prod_sitemap_hits": 0,
+  "vercel_dest_non_ascii": 219,
+  "vercel_dest_percent": 0,
+  "classifications": {
+    "FIX_ENCODING_ONLY": 18,
+    "REQUIRES_OWNER_DECISION": 2
+  }
+}
