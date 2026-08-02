@@ -24,7 +24,7 @@ Deploy: NOT DEPLOYED
 | --- | --- |
 | Branch | `audit/gsc-404-thai-url-mojibake` |
 | Base SHA | `a196dc7c6fb22ca4e5c1e2f3f37f638863d2559f` |
-| Audit SHA | *(filled after commit)* |
+| Audit SHA | `16f338e17cfc861bcdffb50c65dec491b0a81615` |
 | Production SHA | NOT VERIFIED |
 | URLs audited | **20/20** |
 
