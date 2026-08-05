@@ -1,12 +1,13 @@
 ---
-import { configuredGoogleMapsUrl } from '../lib/google-maps';
+import { staticGoogleMapsReviewsUrl } from '../lib/google-maps';
 
 interface Props {
   heading?: string;
 }
 
 const { heading = 'รีวิวบริษัท อำพล เทรดดิ้ง บน Google Maps' } = Astro.props;
-const configuredMapsUrl = configuredGoogleMapsUrl();
+/** Crawlable Maps URL baked into HTML at build time — never wait for JS/API. */
+const mapsReviewsUrl = staticGoogleMapsReviewsUrl();
 ---
 
 <section class="section section--gray google-reviews" data-google-reviews aria-labelledby="google-reviews-heading">
@@ -19,7 +20,7 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
 
     <div class="google-reviews__ready" data-reviews-ready>
       <button class="btn btn--primary" type="button" data-reviews-load>แสดงรีวิวล่าสุด</button>
-      {configuredMapsUrl && <a class="btn btn--outline" href={configuredMapsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>}
+      <a class="btn btn--outline" href={mapsReviewsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>
       <p class="google-reviews__attribution">
         ข้อมูลจาก
         <img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" width="92" height="30" alt="Google" loading="lazy" />
@@ -38,7 +39,7 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
           <span class="google-reviews__stars" data-summary-stars></span>
           <span data-review-count></span>
         </div>
-        <a data-all-reviews target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>
+        <a data-all-reviews href={mapsReviewsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>
       </header>
       <div class="google-reviews__grid" data-reviews-grid></div>
       <footer class="google-reviews__footer">
@@ -53,15 +54,15 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
 
     <div class="google-reviews__fallback" data-reviews-fallback hidden>
       <p>ขณะนี้ยังโหลดรีวิวไม่ได้ กรุณาดูข้อมูลล่าสุดบน Google Maps</p>
-      {configuredMapsUrl && <a href={configuredMapsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps →</a>}
+      <a href={mapsReviewsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps →</a>
     </div>
 
-    {configuredMapsUrl && <noscript>
+    <noscript>
       <p class="google-reviews__fallback">
         เปิดดูรีวิวล่าสุดได้ที่
-        <a href={configuredMapsUrl} target="_blank" rel="noopener noreferrer">Google Maps</a>
+        <a href={mapsReviewsUrl} target="_blank" rel="noopener noreferrer">Google Maps</a>
       </p>
-    </noscript>}
+    </noscript>
   </div>
 </section>
 
@@ -209,9 +210,9 @@ const configuredMapsUrl = configuredGoogleMapsUrl();
         if (rating) rating.textContent = data.rating === null ? 'ยังไม่มีคะแนน' : data.rating.toFixed(1);
         if (summaryStars) summaryStars.replaceChildren(stars(data.rating));
         if (count) count.textContent = data.reviewCount === null ? '' : `จาก ${data.reviewCount.toLocaleString('th-TH')} รีวิว`;
+        // Optional upgrade from API listing URL; static href already present in HTML for crawlers.
         const mapsUrl = safeUrl(data.googleMapsUrl);
         if (allReviews && mapsUrl) allReviews.href = mapsUrl;
-        else allReviews?.remove();
         if (grid) {
           grid.replaceChildren();
           const textReviews = data.reviews.filter(

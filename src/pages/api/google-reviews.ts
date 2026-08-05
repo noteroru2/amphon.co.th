@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { fetchGoogleReviews } from '../../lib/google-places.ts';
-import { configuredGoogleMapsUrl } from '../../lib/google-maps.ts';
+import { staticGoogleMapsReviewsUrl } from '../../lib/google-maps.ts';
 
 export const prerender = false;
 
@@ -53,5 +53,5 @@ export const GET = createGoogleReviewsHandler({
   fetchReviews: fetchGoogleReviews,
   apiKey: import.meta.env?.GOOGLE_PLACES_API_KEY,
   placeId: import.meta.env?.GOOGLE_PLACE_ID,
-  googleMapsUrl: configuredGoogleMapsUrl(),
+  googleMapsUrl: staticGoogleMapsReviewsUrl(),
 });

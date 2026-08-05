@@ -27,6 +27,49 @@ test('Google Maps configuration accepts only approved HTTPS listing URLs', () =>
   assert.equal(validateGoogleMapsUrl('javascript:alert(1)'), '');
 });
 
+test('static Maps reviews URL is always crawlable HTTPS without waiting for JS', async () => {
+  const { staticGoogleMapsReviewsUrl, DEFAULT_GOOGLE_MAPS_BUSINESS_NAME } = await import('./google-maps.ts');
+  const expectedQuery = 'ร้านอำพล เทรดดิ้ง อุบลราชธานี';
+  const misspelledProvince = 'อุบลราชธธานี';
+
+  assert.equal(DEFAULT_GOOGLE_MAPS_BUSINESS_NAME, expectedQuery);
+  assert.doesNotMatch(DEFAULT_GOOGLE_MAPS_BUSINESS_NAME, new RegExp(misspelledProvince));
+
+  const fallback = staticGoogleMapsReviewsUrl({ configuredUrl: '', placeId: '' });
+  assert.match(fallback, /^https:\/\/www\.google\.com\/maps\/search\/\?/);
+  assert.doesNotMatch(fallback, /query_place_id=/);
+
+  const parsed = new URL(fallback);
+  assert.equal(parsed.protocol, 'https:');
+  const decodedQuery = parsed.searchParams.get('query');
+  assert.equal(decodedQuery, expectedQuery);
+  assert.equal(decodedQuery, DEFAULT_GOOGLE_MAPS_BUSINESS_NAME);
+  assert.ok(decodedQuery && !decodedQuery.includes(misspelledProvince));
+  assert.doesNotMatch(fallback, /%E0%B8%98%E0%B8%98/); // double ธ encoded
+
+  const withPlace = staticGoogleMapsReviewsUrl({
+    configuredUrl: '',
+    placeId: 'ChIJ_test_place',
+    businessName: DEFAULT_GOOGLE_MAPS_BUSINESS_NAME,
+  });
+  const placeParsed = new URL(withPlace);
+  assert.equal(placeParsed.searchParams.get('query'), expectedQuery);
+  assert.equal(placeParsed.searchParams.get('query_place_id'), 'ChIJ_test_place');
+
+  const configured = staticGoogleMapsReviewsUrl({
+    configuredUrl: 'https://maps.app.goo.gl/example',
+    placeId: 'ChIJ_ignored',
+  });
+  assert.equal(configured, 'https://maps.app.goo.gl/example');
+});
+
+test('full reviews all-reviews link ships with static href in source', () => {
+  const source = readFileSync(new URL('../components/GoogleReviews.astro', import.meta.url), 'utf8');
+  assert.match(source, /data-all-reviews href=\{mapsReviewsUrl\}/);
+  assert.doesNotMatch(source, /allReviews\?\.remove\(\)/);
+  assert.doesNotMatch(source, /อุบลราชธธานี/);
+});
+
 test('compact card cannot call the reviews API or hard-code score totals', () => {
   const source = readFileSync(new URL('../components/GoogleReviewsLink.astro', import.meta.url), 'utf8');
   assert.doesNotMatch(source, /\/api\/google-reviews|data-rating|data-review-count/);

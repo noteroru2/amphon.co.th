@@ -1,7 +1,7 @@
 ---
-import { configuredGoogleMapsUrl } from '../lib/google-maps';
+import { staticGoogleMapsReviewsUrl } from '../lib/google-maps';
 
-const googleMapsUrl = configuredGoogleMapsUrl();
+const googleMapsUrl = staticGoogleMapsReviewsUrl();
 ---
 
 <aside class="google-reviews-link" data-google-reviews-compact aria-labelledby="google-reviews-trust-heading">
@@ -10,7 +10,7 @@ const googleMapsUrl = configuredGoogleMapsUrl();
     <p>รีวิวมาจากผู้ใช้ที่แสดงความคิดเห็นบน Google Maps หน้าร้านหลักของบริษัท อำพล เทรดดิ้ง อยู่จังหวัดอุบลราชธานี ส่วนพื้นที่อื่นให้บริการนัดรับหรือประสานจัดส่งตามเงื่อนไข</p>
   </div>
   <div class="google-reviews-link__actions">
-    {googleMapsUrl && <a class="btn btn--outline" href={googleMapsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>}
+    <a class="btn btn--outline" href={googleMapsUrl} target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมดบน Google Maps</a>
     <a class="btn btn--ghost" href="/contact">ดูข้อมูลหน้าร้าน</a>
   </div>
 </aside>
