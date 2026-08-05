@@ -23,7 +23,8 @@ Merged `seo/gsc-r2-top-opportunities` into `main`, pushed, Vercel Production **R
 | Base SHA | `3fc3496dfd4f6c6e49e649eb209a0140a6784a7e` |
 | Main SHA before merge | `3fc3496dfd4f6c6e49e649eb209a0140a6784a7e` (no newer commits on main) |
 | Merge SHA | `b0cb3c7f2cbbc98f92eae7a5a0aedfb262f9f8bd` |
-| Final main SHA | `b0cb3c7f2cbbc98f92eae7a5a0aedfb262f9f8bd` |
+| Content deploy SHA | `b0cb3c7` (Vercel Production Ready for this merge) |
+| Final main SHA | `1bb70c41cce8584b38efb527e7e7637a593ab3f3` (adds this release report) |
 | Merge message | `merge: deploy GSC-R2 content opportunities` |
 | Diff scope (`3fc3496..0446b1b`) | Only the 3 content pages + `docs/gsc-r2-implementation-qa-2026-08-05.md` |
 
