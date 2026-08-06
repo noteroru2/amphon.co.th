@@ -34,6 +34,7 @@ const mainMoneySlugs = [
   'รับซื้อแรม',
   'รับซื้อโทรศัพท์มือสอง',
   'รับซื้อ-iphone',
+  'รับซื้อแท็บเล็ต',
   'รับซื้อ-ipad',
   'รับซื้อ-macbook',
   'รับซื้อคอมบริษัท',
@@ -61,9 +62,14 @@ const clusters = [
     slugs: ['รับซื้อ-iphone', 'รับซื้อ-iphone-pro-max', 'รับซื้อ-iphone-17', 'รับซื้อ-iphone-16', 'รับซื้อ-iphone-15', 'รับซื้อ-iphone-14', 'รับซื้อ-iphone-13', 'รับซื้อ-iphone-จอแตก', 'รับซื้อ-iphone-face-id-เสีย', 'รับซื้อ-iphone-ติด-icloud', 'รับซื้อ-iphone-เครื่องนอก']
   },
   {
+    id: 'tablet',
+    name: 'แท็บเล็ต Android / Windows',
+    slugs: ['รับซื้อแท็บเล็ต', 'รับซื้อ-surface']
+  },
+  {
     id: 'ipad',
     name: 'iPad (ไอแพด)',
-    slugs: ['รับซื้อ-ipad', 'รับซื้อ-ipad-pro', 'รับซื้อ-ipad-air', 'รับซื้อ-ipad-mini', 'รับซื้อ-ipad-จอแตก', 'รับซื้อ-ipad-เสีย', 'รับซื้อ-magic-keyboard-ipad', 'รับซื้อ-apple-pencil']
+    slugs: ['รับซื้อ-ipad', 'รับซื้อ-ipad-pro', 'รับซื้อ-ipad-air', 'รับซื้อ-ipad-mini', 'รับซื้อ-ipad-gen', 'รับซื้อ-ipad-จอแตก', 'รับซื้อ-ipad-เสีย', 'รับซื้อ-magic-keyboard-ipad', 'รับซื้อ-apple-pencil']
   },
   {
     id: 'macbook',
@@ -131,6 +137,7 @@ const unclassifiedServices = services.filter(s => !classifiedSlugs.has(s.data.sl
         <a href="/บริการ/รับซื้อแรม" class="category-chip">รับซื้อแรม</a>
         <a href="/บริการ/รับซื้อโทรศัพท์มือสอง" class="category-chip">รับซื้อโทรศัพท์มือสอง</a>
         <a href="/บริการ/รับซื้อ-iphone" class="category-chip">รับซื้อ iPhone</a>
+        <a href="/บริการ/รับซื้อแท็บเล็ต" class="category-chip">รับซื้อแท็บเล็ต</a>
         <a href="/บริการ/รับซื้อ-ipad" class="category-chip">รับซื้อ iPad</a>
         <a href="/บริการ/รับซื้อ-macbook" class="category-chip">รับซื้อ MacBook</a>
         <a href="/บริการ/รับซื้อคอมบริษัท" class="category-chip">รับซื้อคอมบริษัท</a>

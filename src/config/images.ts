@@ -214,6 +214,7 @@ export const serviceThumbnails: Record<string, string> = {
   'รับซื้อ-gopro-action-camera': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อกล้องเสีย': '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
   'รับซื้อโน๊ตบุ๊ค':  '/images/services/rub-sue-notebook-laptops-acer-asus.webp',
+  'รับซื้อแท็บเล็ต': '/images/mobile/buy-tablets.webp',
   'รับซื้อ-ipad':      '/images/apple/buy-ipad.webp',
   'รับซื้อคอมพิวเตอร์': '/images/pc/buy-com.webp',
   'รับซื้อคอมบริษัท': '/images/about/amphon-trading-shop-interior-evaluation.webp',
