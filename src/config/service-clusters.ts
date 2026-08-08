@@ -326,8 +326,8 @@ const CLUSTER_FILL_HUB_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
 
 const COM_OFFICE_HUB_PRIORITY_SLUGS = [
   'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
+  'รับซื้อคอมประกอบ',
   'รับซื้อ-gaming-pc',
-  'รับซื้อคอมเกมมิ่ง',
   'รับซื้อคอมบริษัท',
   'รับซื้อคอมยกล็อต',
   'รับซื้อ-workstation',
@@ -359,11 +359,11 @@ const INTENT_CHIP_OVERRIDES: Record<string, string[]> = {
   'รับซื้อโน๊ตบุ๊ค': NOTEBOOK_HUB_PRIORITY_SLUGS,
   'รับซื้อคอมพิวเตอร์': [
     'รับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
-    'รับซื้อคอมเกมมิ่ง',
+    'รับซื้อคอมประกอบ',
+    'รับซื้อ-gaming-pc',
     'รับซื้อคอมบริษัท',
     'รับซื้อคอมยกล็อต',
     'รับซื้อ-workstation',
-    'รับซื้อคอมเสีย',
   ],
   'รับซื้อ-iphone': [
     'รับซื้อ-iphone-pro-max',
@@ -883,7 +883,7 @@ export function getIntentChipServices(
 
 const RELATED_CARD_OVERRIDES: Record<string, string[]> = {
   'รับซื้อโน๊ตบุ๊ค': ['รับซื้อโน๊ตบุ๊คเกมมิ่ง', 'รับซื้อโน๊ตบุ๊คเสีย', 'รับซื้อ-macbook'],
-  'รับซื้อคอมพิวเตอร์': ['รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมเกมมิ่ง', 'รับซื้อคอมบริษัท'],
+  'รับซื้อคอมพิวเตอร์': ['รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมประกอบ', 'รับซื้อ-gaming-pc', 'รับซื้อคอมบริษัท'],
 };
 
 export function getIntentChipHeading(slug: string, mainKeyword?: string): string {

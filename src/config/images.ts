@@ -89,7 +89,7 @@ export const imageAlt: Record<string, string> = {
   '/images/pc/buy-com.webp':
     'คอมพิวเตอร์ตั้งโต๊ะมือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์และคอมประกอบ',
   '/images/pc/buy-pc.webp':
-    'คอมพิวเตอร์ตั้งโต๊ะมือสองสำหรับหน้าบริการรับซื้อ PC มือสอง',
+    'คอมพิวเตอร์มือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์ National Computer Hub',
   '/images/pc/buy-pc-2.webp':
     'คอมพิวเตอร์ตั้งโต๊ะมือสองสำหรับหน้าบริการรับซื้อคอมพิวเตอร์ตั้งโต๊ะ',
   '/images/pc/buy-dekstop-pc.webp':
@@ -182,8 +182,8 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
     alt: imageAlt['/images/services/rub-sue-notebook-laptops-acer-asus.webp'],
   },
   '/บริการ/รับซื้อคอมพิวเตอร์': {
-    src: '/images/pc/buy-com.webp',
-    alt: imageAlt['/images/pc/buy-com.webp'],
+    src: '/images/pc/buy-pc.webp',
+    alt: imageAlt['/images/pc/buy-pc.webp'],
   },
   '/บริการ/รับซื้อคอมบริษัท': {
     src: '/images/about/amphon-trading-shop-interior-evaluation.webp',
@@ -216,7 +216,7 @@ export const serviceThumbnails: Record<string, string> = {
   'รับซื้อโน๊ตบุ๊ค':  '/images/services/rub-sue-notebook-laptops-acer-asus.webp',
   'รับซื้อแท็บเล็ต': '/images/mobile/buy-tablets.webp',
   'รับซื้อ-ipad':      '/images/apple/buy-ipad.webp',
-  'รับซื้อคอมพิวเตอร์': '/images/pc/buy-com.webp',
+  'รับซื้อคอมพิวเตอร์': '/images/pc/buy-pc.webp',
   'รับซื้อคอมบริษัท': '/images/about/amphon-trading-shop-interior-evaluation.webp',
   'รับซื้อสินค้าไอที': '/images/about/amphon-trading-shop-showroom.webp',
 };
