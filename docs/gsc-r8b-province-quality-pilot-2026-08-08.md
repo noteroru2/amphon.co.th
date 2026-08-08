@@ -16,8 +16,8 @@ Five selected pilots improved materially on local trust wording, service-specifi
 | Base | `origin/main` = `9b3301c6f3a375664e2b7030b76044100d2be8a0` |
 | Branch | `seo/gsc-r8-province-quality-pilot` |
 | Worktree | `../amphon-r8b-pilot` |
-| Commit | *(filled after commit)* |
-| Push | branch only — not merged, not deployed |
+| Commit | `2c83f2fc8b29e4fc90fde8a7bc7406e07b715964` |
+| Push | `origin/seo/gsc-r8-province-quality-pilot` — not merged, not deployed |
 
 ## Pilot Selection
 
