@@ -25,7 +25,7 @@ GA Admin DebugView UI was **not** verified from this agent (do not fabricate Adm
 |------|--------|
 | Previous blocker | `BLOCKED_PRODUCTION_GA4_ENV_MISSING` |
 | Owner action | `PUBLIC_GA_MEASUREMENT_ID` set on Vercel **Production** |
-| Live HTML boot | Measurement ID present (masked **`G-V2â€¦D9X`**) â€” same stream as validated Preview |
+| Live HTML boot | Measurement ID present (masked **`G-V2…D9X`**) — same stream as validated Preview |
 | Hardcoded gtag before consent | No |
 
 **PRODUCTION_GA4_ENV:** **CONFIGURED**
@@ -40,7 +40,7 @@ GA Admin DebugView UI was **not** verified from this agent (do not fabricate Adm
 | Validated feature tip | `368a9f278e550382854b24b7684265ed042b5125` |
 | Main before merge | `2a06cd621a1697482867621d87114a188d7a3834` |
 | Merge commit (**Content / Deploy SHA**) | `d9e7b78d9d2e034c228bb102744650aa29d81b54` |
-| Final main docs-only SHA | *(this docs commit â€” see after push)* |
+| Final main docs-only SHA | tip of `origin/main` after docs commits (see Confirmations) |
 
 Feature commits merged:
 
@@ -71,7 +71,7 @@ Main worktree left untouched (unrelated dirty files).
 
 | Step | Result |
 |------|--------|
-| Merge `--no-ff` â†’ main | DONE (`d9e7b78`) |
+| Merge `--no-ff` → main | DONE (`d9e7b78`) |
 | Push `origin/main` | DONE (`2a06cd6..d9e7b78`) |
 | Vercel Production | **Ready** |
 | Deployment ID | `dpl_2LWxoGTbuMmMrz58n5aUFWs6CBXL` |
@@ -83,9 +83,9 @@ Main worktree left untouched (unrelated dirty files).
 
 ## Live Production validation
 
-Method: Playwright + request capture + `dataLayer` against `https://amphon.co.th` (script reused from R9B.1). Local artifact under `docs/gsc-r9-local/` (gitignored â€” not committed).
+Method: Playwright + request capture + `dataLayer` against `https://amphon.co.th` (script reused from R9B.1). Local artifact under `docs/gsc-r9-local/` (gitignored — not committed).
 
-Measurement ID masked in all reports: **`G-V2â€¦D9X`**
+Measurement ID masked in all reports: **`G-V2…D9X`**
 
 ### Consent
 
@@ -94,14 +94,14 @@ Measurement ID masked in all reports: **`G-V2â€¦D9X`**
 | Initial (no choice) | Banner present; **GA requests = 0** |
 | Deny | **GA requests = 0**; sticky LINE href still present (CTA works) |
 | Grant | gtag.js loads **exactly once**; `dataLayer` has `config`; consent persisted `granted` |
-| Revisit (`à¸•à¸±à¹‰à¸‡à¸„à¹ˆà¸²à¸„à¸¸à¸à¸à¸µà¹‰` / `data-consent-revisit`) | Opens consent UI; grant path validated after deny |
+| Revisit (`ตั้งค่าคุกกี้` / `data-consent-revisit`) | Opens consent UI; grant path validated after deny |
 
 ### Pageview
 
 | Page | Result |
 |------|--------|
-| `/` | No duplicate `page_view` (`en=page_view` count â‰¤ 1); single gtag config init |
-| Notebook national | Same â€” no duplicate pageviews |
+| `/` | No duplicate `page_view` (`en=page_view` count ≤ 1); single gtag config init |
+| Notebook national | Same — no duplicate pageviews |
 
 Note: GA4 default `config` send may not always surface as a discrete `en=page_view` query in captured requests; pass criterion is **no duplicates** + single config init per MPA load.
 
@@ -109,8 +109,8 @@ Note: GA4 default `config` send may not always surface as a discrete `en=page_vi
 
 | CTA | Expected | Result |
 |-----|----------|--------|
-| LINE (sticky) | `cta_click` + `contact_intent` (`line`) | PASS â€” no LINE ID / full URL / PII |
-| Phone (sticky) | `cta_click` + `contact_intent` (`phone`) | PASS â€” no phone number in params |
+| LINE (sticky) | `cta_click` + `contact_intent` (`line`) | PASS — no LINE ID / full URL / PII |
+| Phone (sticky) | `cta_click` + `contact_intent` (`phone`) | PASS — no phone number in params |
 | Maps | `cta_click` only; **no** `contact_intent` | PASS |
 | Markdown LINE (notebook) | delegated `cta_click` + `contact_intent` | PASS |
 | Markdown tel (notebook) | delegated `cta_click` + `contact_intent` | PASS |
@@ -119,11 +119,11 @@ Note: GA4 default `config` send may not always surface as a discrete `en=page_vi
 
 | Path | page_type | province | service_category | Result |
 |------|-----------|----------|------------------|--------|
-| `/à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¹ƒà¸«à¹‰à¸šà¸£à¸´à¸à¸²à¸£/à¸«à¸²à¸”à¹ƒà¸«à¸à¹ˆ` | `city_hub` | `à¸ªà¸‡à¸‚à¸¥à¸²` | multi_service | PASS |
-| `/à¸žà¸·à¹‰à¸™à¸—à¸µà¹ˆà¹ƒà¸«à¹‰à¸šà¸£à¸´à¸à¸²à¸£/à¸ à¸¹à¹€à¸à¹‡à¸•` | `area_hub` | `à¸ à¸¹à¹€à¸à¹‡à¸•` | multi_service | PASS |
-| `/à¸šà¸£à¸´à¸à¸²à¸£/à¸£à¸±à¸šà¸‹à¸·à¹‰à¸­à¹‚à¸™à¹Šà¸•à¸šà¸¸à¹Šà¸„` | `service_national` | `national` | notebook | PASS |
-| `/à¸£à¸±à¸šà¸‹à¸·à¹‰à¸­/à¸£à¸±à¸šà¸‹à¸·à¹‰à¸­à¹‚à¸™à¹Šà¸•à¸šà¸¸à¹Šà¸„-à¸‚à¸­à¸™à¹à¸à¹ˆà¸™` | `service_local` | `à¸‚à¸­à¸™à¹à¸à¹ˆà¸™` | notebook | PASS |
-| `/à¸šà¸£à¸´à¸à¸²à¸£/à¸£à¸±à¸šà¸‹à¸·à¹‰à¸­à¸ªà¸´à¸™à¸„à¹‰à¸²à¹„à¸­à¸—à¸µà¸šà¸£à¸´à¸©à¸±à¸—` | `corporate_parent` | `national` | `corporate_it` | PASS |
+| `/พื้นที่ให้บริการ/หาดใหญ่` | `city_hub` | `สงขลา` | multi_service | PASS |
+| `/พื้นที่ให้บริการ/ภูเก็ต` | `area_hub` | `ภูเก็ต` | multi_service | PASS |
+| `/บริการ/รับซื้อโน๊ตบุ๊ค` | `service_national` | `national` | notebook | PASS |
+| `/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ขอนแก่น` | `service_local` | `ขอนแก่น` | notebook | PASS |
+| `/บริการ/รับซื้อสินค้าไอทีบริษัท` | `corporate_parent` | `national` | `corporate_it` | PASS |
 
 ### Privacy / PII
 
@@ -156,7 +156,7 @@ These do **not** block release given Production network/`dataLayer` evidence.
 
 ## R9C Boundary
 
-Unchanged â€” no `generate_lead`, deal/sale events, or CRM in this batch.
+Unchanged — no `generate_lead`, deal/sale events, or CRM in this batch.
 
 ---
 
@@ -165,7 +165,7 @@ Unchanged â€” no `generate_lead`, deal/sale events, or CRM in this batch.
 - **MERGED**
 - **PUSHED**
 - **PRODUCTION READY**
-- **GA4 MEASUREMENT ACTIVE** (masked `G-V2â€¦D9X`)
+- **GA4 MEASUREMENT ACTIVE** (masked `G-V2…D9X`)
 - **CONSENT ACTIVE**
 - **NO GENERATE_LEAD**
 - **NO CRM**
@@ -174,4 +174,4 @@ Unchanged â€” no `generate_lead`, deal/sale events, or CRM in this batch.
 - **NO GSC/OAUTH/CSV COMMITTED**
 
 Content/Deploy SHA: `d9e7b78d9d2e034c228bb102744650aa29d81b54`  
-Final main docs-only SHA: e27c2207d9e61d8817c43444a532034a2c421ae4
+Final main docs-only SHA: _(set at commit time in Confirmations below)_
