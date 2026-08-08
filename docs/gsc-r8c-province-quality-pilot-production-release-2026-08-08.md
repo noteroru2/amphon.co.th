@@ -21,7 +21,7 @@ All five R8B pilots are live on `amphon.co.th` with clean trust, Ubon-only NAP s
 | Main before merge | `9b3301c6f3a375664e2b7030b76044100d2be8a0` |
 | Merge SHA | `0c93ddf37d5bc600c48cd5cdaf5d8a42cc55d477` |
 | Content / deploy SHA | `0c93ddf37d5bc600c48cd5cdaf5d8a42cc55d477` |
-| Final main SHA | *(after docs-only commit)* |
+| Final main SHA | `0c8a8bd3a6664b676fb3f4e0e5e55930c67692e6` (docs-only) |
 
 Release performed in clean worktree `../amphon-r8c-release` because main worktree had unrelated dirty files (left untouched).
 
