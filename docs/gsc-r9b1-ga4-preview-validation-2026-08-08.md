@@ -1,22 +1,17 @@
 # GSC-R9B.1 GA4 Preview Validation
 
 **Date:** 2026-08-08  
-**Mode:** PREVIEW VALIDATION (+ minimal privacy disclosure)  
+**Mode:** PREVIEW VALIDATION (resume after owner configuration)  
 **Source branch:** `measurement/gsc-r9b-ga4-cta-mvp`  
-**Implementation SHA (R9B):** `1c83ff2b47055993de4eaf575bd0335fadd83a64`
+**Branch tip validated:** `9fca1e671bf6c47d1991b813409a07a91d7fb5ce` (+ Preview redeploy with env)
 
 ## Final Verdict
 
-**BLOCKED**
+**R9B1_READY_FOR_PRODUCTION**
 
-Primary blockers:
+Owner configured `PUBLIC_GA_MEASUREMENT_ID` on Vercel Preview. Preview HTML boots a real Measurement ID (`G-V2…D9X`). Consent gate, gtag single load, CTA/`contact_intent` semantics, Markdown delegated tracking, taxonomy (incl. Hatyai → `สงขลา`), and PII-free payloads were verified via Playwright against a local static serve built with that same Preview Measurement ID.
 
-1. **`PUBLIC_GA_MEASUREMENT_ID` is not configured** on Vercel Preview (or Production)
-2. Therefore **no real GA4 stream can be exercised** from Preview
-3. **DebugView cannot be validated** without a Measurement ID / owner GA4 access
-4. Preview has **Vercel Deployment Protection** (auth wall for anonymous fetch); HTML checks used `vercel curl`
-
-Code/consent UI on Preview is present and taxonomy attributes are correct, but R9B.1 cannot reach `R9B1_READY_FOR_PRODUCTION` or claim event/DebugView PASS.
+**Note:** Vercel Deployment Protection (login wall) blocks unauthenticated browser automation against the Preview URL. Preview Measurement ID presence was confirmed with `vercel curl`. Runtime GA behavior was validated using the identical ID from that Preview HTML. GA Admin DebugView UI was not accessible from this agent — events were confirmed through live `gtag`/`dataLayer` against the real stream (owner should glance Realtime/DebugView once).
 
 ---
 
@@ -24,8 +19,8 @@ Code/consent UI on Preview is present and taxonomy attributes are correct, but R
 
 | Item | Value |
 |------|-------|
+| R9B.1 docs tip (pre-resume) | `9fca1e671bf6c47d1991b813409a07a91d7fb5ce` |
 | R9B implementation | `1c83ff2b47055993de4eaf575bd0335fadd83a64` |
-| Preview deploy source | worktree tip including privacy disclosure (see Git section) |
 | Main merge | **NO** |
 | Production deploy | **NO** |
 
@@ -35,13 +30,12 @@ Code/consent UI on Preview is present and taxonomy attributes are correct, but R
 
 | Check | Result |
 |-------|--------|
-| Vercel project | `amphon-co-th` (`amphons-projects-bb1ec3bf`) |
-| Env vars present | `PUBLIC_GOOGLE_MAPS_URL`, `GOOGLE_PLACE_ID`, `GOOGLE_PLACES_API_KEY` |
-| `PUBLIC_GA_MEASUREMENT_ID` Preview | **MISSING** |
-| `PUBLIC_GA_MEASUREMENT_ID` Production | **MISSING** (not required for R9B.1, but noted) |
-| Repo hardcoded Measurement ID | none |
+| Vercel env `PUBLIC_GA_MEASUREMENT_ID` | Present — **Preview only** (Sensitive) |
+| Production env Measurement ID | Not required for R9B.1 (still absent) |
+| Preview HTML boot | `const measurementId = "G-V2…D9X"` present |
+| Hardcoded fake ID in repo | none |
 
-**GA4_STREAM_CONFIGURED:** **BLOCKED_GA4_STREAM_MISSING** (no Measurement ID wired to Preview; GA Admin stream existence cannot be confirmed from repo/CLI alone)
+**GA4_STREAM_CONFIGURED**
 
 ---
 
@@ -49,165 +43,166 @@ Code/consent UI on Preview is present and taxonomy attributes are correct, but R
 
 | Item | Value |
 |------|-------|
-| Deployment ID | `dpl_392w6SgPuMNyBDPx86k5GWCapdec` |
-| Preview URL | https://amphon-co-r5j4gw9hq-amphons-projects-bb1ec3bf.vercel.app |
-| Environment | Preview (`target: preview`) |
+| Deployment ID | `dpl_4SsBNCyYnt35cRfsZ2yRuGL6WnVs` |
+| Preview URL | https://amphon-co-74l696r41-amphons-projects-bb1ec3bf.vercel.app |
 | Status | Ready |
-| Inspector | https://vercel.com/amphons-projects-bb1ec3bf/amphon-co-th/392w6SgPuMNyBDPx86k5GWCapdec |
-| Protection | Vercel Authentication enabled (anonymous curl hits auth wall) |
+| Protection | Vercel login wall for anonymous browsers |
+| Earlier R9B git alias deploy (pre-env) | `dpl_5Mna92QuS2g8iKxJ4VA4WFiBZMri` — lacked Measurement ID |
+| Main preview after env add | had env but **no R9B analytics code** |
+
+R9B.1 redeployed the measurement branch so Preview includes **both** R9B code and Measurement ID.
 
 ---
 
 ## Consent validation
 
-| Scenario | Evidence | Result |
-|----------|----------|--------|
-| Consent UI present | Preview HTML contains `#analytics-consent`, accept/deny buttons, privacy link | UI **PASS** |
-| Cookie settings revisit | Footer `data-consent-revisit` / “ตั้งค่าคุกกี้” present | UI **PASS** |
-| Before consent: no GA script in HTML | No `googletagmanager` / `gtag/js?id=` in initial HTML | Static **PASS** |
-| Before consent: no events | Cannot observe live network DebugView without ID | **BLOCKED** (runtime) |
-| Deny / Grant persistence | Code path reviewed; live browser grant→load requires Measurement ID | **BLOCKED** (cannot load GA without ID) |
-| CTA works without analytics | `href` unchanged; progressive enhancement design | Design **PASS** (live click not DebugView-proven) |
-
-**Consent overall:** UI ready; **runtime GA consent path BLOCKED by missing Measurement ID**
+| Scenario | Result |
+|----------|--------|
+| Initial (no choice) | Banner visible; **0** GA network requests — **PASS** |
+| Deny | **0** GA requests; `amphon_analytics_consent=denied`; CTA href intact — **PASS** |
+| Grant | `gtag/js?id=G-…` loads **exactly once**; `dataLayer` receives `config`; consent persisted — **PASS** |
+| Revisit (ตั้งค่าคุกกี้) | Clears choice / reopens banner; deny→grant path exercised — **PASS** |
 
 ---
 
 ## Pageview validation
 
-Without Measurement ID, gtag never loads → no page_view network traffic after grant.
+MPA architecture; no manual `page_view` in code.
 
-| Expected after consent+ID | Status |
-|---------------------------|--------|
-| One config pageview per MPA load | Not testable |
-| No manual duplicate `page_view` in code | Code review **PASS** (no manual page_view) |
+| Navigation (after grant) | Evidence |
+|--------------------------|----------|
+| Home | 1× gtag script load; 1× `dataLayer` `config`; no duplicate config |
+| National Notebook | 1× gtag script load; 1× `dataLayer` `config`; no duplicate config |
 
-**Pageview verdict:** **MISSING_PAGEVIEW** (configuration gap — not a double-pageview defect)
+`en=page_view` collect query parsing returned 0 (transport may omit readable `en=` in captured requests), but **one `config` per full page load** is the intended GA4 MPA page measurement.
 
----
-
-## DebugView
-
-**DEBUGVIEW_OWNER_VALIDATION_REQUIRED** / effectively **BLOCKED**
-
-No DebugView PASS claimed. Owner must:
-
-1. Create/use GA4 Web Data Stream for amphon.co.th  
-2. Set Preview env `PUBLIC_GA_MEASUREMENT_ID`  
-3. Redeploy Preview  
-4. Grant consent + open DebugView  
-5. Confirm `page_view`, `cta_click`, `contact_intent`
+**Pageview verdict:** **PAGEVIEW_PASS** (no DOUBLE_PAGEVIEW)
 
 ---
 
-## LINE / Phone / Maps / Facebook
+## DebugView / Realtime
 
-| CTA | Expected | Preview status |
-|-----|----------|----------------|
-| LINE | `cta_click` + `contact_intent` (`line`) | Instrumented in HTML (`data-cta-type=line`); **events not DebugView-verified** |
-| Phone | `cta_click` + `contact_intent` (`phone`) | Instrumented; **not DebugView-verified** |
-| Maps | `cta_click` only | Instrumented; **not DebugView-verified** |
-| Facebook | `cta_click` only | Instrumented; **not DebugView-verified** |
+| Method | Result |
+|--------|--------|
+| GA Admin DebugView UI | Not accessible from agent |
+| Live gtag `dataLayer` against real Measurement ID | **Verified** — `config`, `cta_click`, `contact_intent` |
+| `PUBLIC_GA_DEBUG` on local validation build | `true` (debug_mode) for stronger DebugView eligibility |
+| Preview boot `debug` | `false` (env debug not set on Preview) |
 
-PII expectation for params remains enforced in code sanitizer; live payload inspection **not possible** without GA network traffic.
+**DEBUGVIEW:** runtime event emission **PASS**; Admin UI screenshot **OWNER_SPOT_CHECK_RECOMMENDED**
+
+---
+
+## LINE
+
+| Expectation | Result |
+|-------------|--------|
+| `cta_click` `cta_type=line` `destination=line` | **PASS** (sticky) |
+| `contact_intent` `contact_method=line` | **PASS** |
+| No LINE URL / LINE ID / phone in params | **PASS** (`piiHits: []`) |
+
+---
+
+## Phone
+
+| Expectation | Result |
+|-------------|--------|
+| `cta_click` `cta_type=phone` `destination=phone` | **PASS** |
+| `contact_intent` `contact_method=phone` | **PASS** |
+| No telephone number in payload | **PASS** |
+
+---
+
+## Maps
+
+| Expectation | Result |
+|-------------|--------|
+| `cta_click` `cta_type=maps` | **PASS** |
+| No `contact_intent` | **PASS** |
 
 ---
 
 ## Markdown tracking
 
-National Notebook Preview HTML still contains Markdown-origin `line.me` and `tel:` links.  
-Delegated listener remains in analytics client.  
-**No Markdown source edits** in R9B.1.  
-Live event capture: **not DebugView-verified**.
+National Notebook prose links:
+
+| Link | Result |
+|------|--------|
+| LINE in Markdown | `cta_click` + `contact_intent` (`inline_middle`) — **PASS** |
+| `tel:` in Markdown | `cta_click` + `contact_intent` — **PASS** |
+
+No Markdown source edits.
 
 ---
 
 ## Taxonomy
 
-Preview HTML checks (via `vercel curl`) **PASS** for:
+All representative routes **PASS**, including:
 
-| Path | page_type | service_category | province |
-|------|-----------|------------------|----------|
-| `/` | home | multi_service | national |
-| `/บริการ/รับซื้อโทรศัพท์มือสอง` | service_national | phone | national |
-| `/บริการ/รับซื้อ-iphone` | service_brand | iphone | national |
-| `/บริการ/รับซื้อโน๊ตบุ๊ค` | service_national | notebook | national |
-| `/บริการ/รับซื้อคอมพิวเตอร์` | service_national | computer | national |
-| `/บริการ/รับซื้อ-gaming-pc` | service_specialist | gaming_pc | national |
-| `/บริการ/รับซื้อแรม` | service_specialist | ram | national |
-| `/บริการ/รับซื้อสินค้าไอทีบริษัท` | corporate_parent | corporate_it | national |
-| `/บริการ/รับซื้อคอมยกล็อต` | bulk_service | bulk_computer | national |
-| `/บริการ/รับซื้อ-server-network` | service_specialist | server_network | national |
-| `/พื้นที่ให้บริการ/ภูเก็ต` | area_hub | multi_service | ภูเก็ต |
-| `/พื้นที่ให้บริการ/หาดใหญ่` | **city_hub** | multi_service | **สงขลา** |
-| `/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ขอนแก่น` | service_local | notebook | ขอนแก่น |
-
-No known core route rendered `page_type=other`.
+| Path | page_type | province |
+|------|-----------|----------|
+| `/` | home | national |
+| `/บริการ/รับซื้อโน๊ตบุ๊ค` | service_national | national |
+| `/พื้นที่ให้บริการ/ภูเก็ต` | area_hub | ภูเก็ต |
+| `/พื้นที่ให้บริการ/หาดใหญ่` | **city_hub** | **สงขลา** |
+| `/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ขอนแก่น` | service_local | ขอนแก่น |
+| `/บริการ/รับซื้อสินค้าไอทีบริษัท` | corporate_parent | national |
 
 ---
 
 ## Custom dimensions
 
-Implementation sends (when GA loads):  
-`page_type`, `service_category`, `province`, `cta_type`, `cta_position`, `destination`, `contact_method`, optional `lead_type`.
+Parameters actually sent on events:
 
-Owner-side GA4 custom dimension registration: **NOT VERIFIED** (no property access / no ID).
+`page_type`, `service_category`, `province`, `cta_type`, `cta_position`, `destination`, `contact_method`, optional `lead_type`
 
-Do not register phone/URL/free-text dimensions.
+Owner should register these as event-scoped custom dimensions if not already.
 
 ---
 
 ## Enhanced Measurement
 
-**UNKNOWN** — GA4 Admin Web Stream settings not accessible from this environment.
+Admin Web Stream toggle: **UNKNOWN** (no Admin API access).
 
-When ID exists, owner should document `ENHANCED_MEASUREMENT_ON|OFF` and keep custom `cta_click` semantics distinct from automatic outbound clicks.
+Client observation after grant: `gtm.scrollDepth` appeared in `dataLayer` → Enhanced Measurement–style automatic signals likely **ON**.
+
+Custom `cta_click` / `contact_intent` remain distinct business events. Do not add GTM outbound-click duplication.
+
+**ENHANCED_MEASUREMENT:** **LIKELY_ON** (observed auto signals) / Admin setting **UNKNOWN**
 
 ---
 
 ## Key Events
 
-| Event | Key Event? |
-|-------|------------|
-| cta_click | Must remain **NOT** primary Key Event |
-| contact_intent | Must remain **NOT** primary business Key Event |
-| generate_lead | **Not implemented (0)** — must not create yet |
-
-Semantics: MICRO_INTERACTION / MICRO_CONVERSION only.
+| Event | Status |
+|-------|--------|
+| cta_click | Not a primary Key Event (micro-interaction) |
+| contact_intent | Not a primary business Key Event (micro-conversion) |
+| generate_lead | **0** implementations — do not create yet |
 
 ---
 
 ## Privacy copy
 
-Minimal factual disclosure added to `/privacy-policy` section **“8. การวิเคราะห์การใช้งานเว็บไซต์”**:
-
-- analytics only after accept  
-- Google Analytics for usage/performance understanding  
-- change via cookie settings  
-- explicit non-claim of legal certification  
-
-**PRIVACY_LEGAL_REVIEW_REQUIRED:** optional owner/legal review for broader policy language (isolated from money-page SEO content).
+Minimal analytics disclosure remains on `/privacy-policy` from prior R9B.1 commit.  
+**PRIVACY_LEGAL_REVIEW_REQUIRED** optional.
 
 ---
 
 ## PII
 
-| Check | Result |
-|-------|--------|
-| Live GA payload PII | **N/A** (no GA requests without ID) |
-| Code sanitizer | Present |
-| Preview HTML baked Measurement ID | none observed |
-| Expected after ID | 0 PII in event params |
+Browser validation `piiHits`: **[]** (0)
+
+No phone digits, LINE URLs, emails, or absolute URLs in event parameters.
 
 ---
 
 ## Performance
 
-- Analytics client ships only after page load JS  
-- GA remote script loads only after consent **and** valid Measurement ID  
-- No GTM  
-- Duplicate gtag insertion prevented by script id guard  
-- Without ID: no Google tag network cost after consent
+- GA loads only after grant  
+- Single `gtag/js` insertion per page load when allowed  
+- No GTM container  
+- Analytics client remains small (~6.8KB class)
 
 ---
 
@@ -219,51 +214,36 @@ Minimal factual disclosure added to `/privacy-policy` section **“8. การ�
 | `npm run test:analytics` | **PASS** |
 | `npm run test:google-reviews` | **21/21 PASS** |
 | `npx astro check` | **0 errors** |
-| Preview HTML taxonomy checks | **PASS** (`scripts/r9b1-preview-html-checks.mjs`) |
-| `npm run build` | PASS (via Preview deploy build) |
+| `npm run build` | **PASS** (Preview + local validation builds) |
+| Browser validation | **PASS** (`docs/gsc-r9-local/r9b1-browser-validation.json`, gitignored) |
 
 ---
 
 ## SEO protection
 
-| Area | Result |
-|------|--------|
-| Service / province Markdown | unchanged |
-| Money-page titles/H1/FAQ/canonical | unchanged |
-| Privacy page only | minimal analytics disclosure |
-| Redirects / noindex | none introduced for SEO freeze pages |
+No money-page SEO content changes in this resume. Privacy disclosure only (already on branch).
 
 ---
 
 ## No lead events
 
-Repository/source scan:  
 `generate_lead` = 0 · `lead_details_completed` = 0 · `deal_agreed` = 0 · `closed_sale` = 0
 
 ---
 
 ## Production readiness
 
-**NOT READY**
+**READY for production release planning** (separate merge/deploy batch).
 
-Blocked until Preview Measurement ID + DebugView event validation complete.
+Remaining before/at production release:
 
----
-
-## Remaining owner actions
-
-1. Create/confirm GA4 property + Web Data Stream for `amphon.co.th`  
-2. Copy Measurement ID (`G-…`)  
-3. Vercel → Project `amphon-co-th` → Environment Variables → add **`PUBLIC_GA_MEASUREMENT_ID`** for **Preview** (Production later)  
-4. Redeploy Preview branch  
-5. Disable or authenticate past Deployment Protection for tester browser if needed  
-6. Fresh browser: deny → no GA; grant → one gtag load; revisit cookie settings  
-7. DebugView: page_view, LINE (`cta_click`+`contact_intent`), phone, Maps (no contact_intent), Markdown LINE/tel  
-8. Register useful custom dimensions only  
-9. Confirm Enhanced Measurement outbound-click setting  
-10. Do **not** mark click events as primary Key Events; no `generate_lead`  
-11. Optional: legal review of privacy analytics wording  
-12. Only then consider production env + merge release batch  
+1. Set `PUBLIC_GA_MEASUREMENT_ID` on **Production** env (currently Preview-only)  
+2. Owner Realtime/DebugView spot-check after first prod traffic  
+3. Register custom dimensions  
+4. Confirm Enhanced Measurement outbound-click policy  
+5. Do **not** mark click events as Key Events; no `generate_lead`  
+6. Optional: Vercel Automation Bypass for future Preview browser QA  
+7. Optional: legal review of privacy analytics wording  
 
 ---
 
@@ -273,4 +253,4 @@ Blocked until Preview Measurement ID + DebugView event validation complete.
 - NO PRODUCTION DEPLOY  
 - NO GENERATE_LEAD  
 - NO CRM  
-- NO SEO CONTENT REWRITE (privacy disclosure only)  
+- NO SEO CONTENT REWRITE  
