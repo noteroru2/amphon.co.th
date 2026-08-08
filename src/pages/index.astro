@@ -281,11 +281,11 @@ const trustItems = [
           ส่งรูป รุ่น และอาการเพื่อเช็กราคาเบื้องต้นได้ก่อน · มีหน้าร้านจริงที่อุบลราชธานี ตรวจสอบได้
         </p>
         <div class="hero__actions">
-          <a href={site.line} class="btn btn--line btn--lg" target="_blank" rel="noopener noreferrer">
+          <a href={site.line} class="btn btn--line btn--lg" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="hero" data-destination="line">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 5.92 2 10.72c0 3.46 2.19 6.49 5.49 8.14-.19.68-.72 2.47-.83 2.86-.12.44.16.43.34.31.14-.09 2.26-1.52 3.17-2.14.59.09 1.2.13 1.83.13 5.52 0 10-3.92 10-8.72S17.52 2 12 2z"/></svg>
             ส่งรูปประเมินราคา LINE @webuy
           </a>
-          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost">
+          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost" data-track-cta data-cta-type="phone" data-cta-position="hero" data-destination="phone">
             📞 โทร {site.phone}
           </a>
           <a href="/รับซื้อสินค้าไอที" class="btn btn--ghost">
@@ -479,14 +479,14 @@ const trustItems = [
           <p class="company-trust__tagline">รับซื้อสินค้าไอทีมือสองทั่วประเทศ · มีหน้าร้านจริงที่อุบลราชธานี</p>
           <ul class="company-trust__list">
             <li><strong>ที่อยู่:</strong> {fullAddress}</li>
-            <li><strong>โทร:</strong> <a href={`tel:${site.phoneTel}`}>{site.phone}</a></li>
-            <li><strong>LINE:</strong> <a href={site.line} target="_blank" rel="noopener noreferrer">{site.lineId}</a></li>
+            <li><strong>โทร:</strong> <a href={`tel:${site.phoneTel}`} data-track-cta data-cta-type="phone" data-cta-position="inline_bottom" data-destination="phone">{site.phone}</a></li>
+            <li><strong>LINE:</strong> <a href={site.line} target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="inline_bottom" data-destination="line">{site.lineId}</a></li>
             <li><strong>เวลาเปิด:</strong> 09:00–21:00 น. ทุกวัน</li>
           </ul>
           <div class="company-trust__actions">
-            <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">แชท Line ประเมินราคา</a>
-            <a href={`tel:${site.phoneTel}`} class="btn btn--outline">โทร {site.phone}</a>
-            <a href={site.hasMap} class="btn btn--ghost" target="_blank" rel="noopener noreferrer">ดูแผนที่ร้าน</a>
+            <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="inline_bottom" data-destination="line">แชท Line ประเมินราคา</a>
+            <a href={`tel:${site.phoneTel}`} class="btn btn--outline" data-track-cta data-cta-type="phone" data-cta-position="inline_bottom" data-destination="phone">โทร {site.phone}</a>
+            <a href={site.hasMap} class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="maps" data-cta-position="inline_bottom" data-destination="maps">ดูแผนที่ร้าน</a>
           </div>
         </div>
         <div class="company-trust__photos">

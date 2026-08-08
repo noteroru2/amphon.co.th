@@ -23,7 +23,16 @@ import { site } from '../config/site';
         {site.address.locality}<br/>
         {site.address.region} {site.address.postalCode}
       </p>
-      <a href={site.hasMap} class="footer__map-link" target="_blank" rel="noopener noreferrer">
+      <a
+        href={site.hasMap}
+        class="footer__map-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-track-cta
+        data-cta-type="maps"
+        data-cta-position="footer"
+        data-destination="maps"
+      >
         📍 ดูแผนที่ Google Maps
       </a>
     </div>
@@ -68,25 +77,57 @@ import { site } from '../config/site';
       <p class="footer__heading">ติดต่อเรา</p>
       <ul class="footer__contact">
         <li>
-          <a href={`tel:${site.phoneTel}`} class="footer__contact-link">
+          <a
+            href={`tel:${site.phoneTel}`}
+            class="footer__contact-link"
+            data-track-cta
+            data-cta-type="phone"
+            data-cta-position="footer"
+            data-destination="phone"
+          >
             <span class="footer__contact-icon">📞</span>
             <span>{site.phone}</span>
           </a>
         </li>
         <li>
-          <a href={site.line} class="footer__contact-link footer__contact-link--line" target="_blank" rel="noopener noreferrer">
+          <a
+            href={site.line}
+            class="footer__contact-link footer__contact-link--line"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-track-cta
+            data-cta-type="line"
+            data-cta-position="footer"
+            data-destination="line"
+          >
             <span class="footer__contact-icon">💬</span>
             <span>Line {site.lineId}</span>
           </a>
         </li>
         <li>
-          <a href={site.facebook} class="footer__contact-link footer__contact-link--fb" target="_blank" rel="noopener noreferrer">
+          <a
+            href={site.facebook}
+            class="footer__contact-link footer__contact-link--fb"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-track-cta
+            data-cta-type="facebook"
+            data-cta-position="footer"
+            data-destination="facebook"
+          >
             <span class="footer__contact-icon">📘</span>
             <span>Facebook</span>
           </a>
         </li>
         <li>
-          <a href={`mailto:${site.email}`} class="footer__contact-link">
+          <a
+            href={`mailto:${site.email}`}
+            class="footer__contact-link"
+            data-track-cta
+            data-cta-type="email"
+            data-cta-position="footer"
+            data-destination="email"
+          >
             <span class="footer__contact-icon">✉️</span>
             <span>{site.email}</span>
           </a>
@@ -107,7 +148,17 @@ import { site } from '../config/site';
           />
           <p class="footer__qr-label">สแกนเพิ่มเพื่อน</p>
         </div>
-        <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer" aria-label="แชท Line @webuy (ส่วนท้ายหน้า)">แชท Line {site.lineId}</a>
+        <a
+          href={site.line}
+          class="btn btn--line btn--sm"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="แชท Line @webuy (ส่วนท้ายหน้า)"
+          data-track-cta
+          data-cta-type="line"
+          data-cta-position="footer"
+          data-destination="line"
+        >แชท Line {site.lineId}</a>
       </div>
     </div>
   </div>
@@ -123,6 +174,7 @@ import { site } from '../config/site';
           <a href="/contact">ติดต่อ</a>
           <a href="/blog">บทความ</a>
           <a href="/privacy-policy">นโยบายความเป็นส่วนตัว</a>
+          <a href="#analytics-consent" data-consent-revisit>ตั้งค่าคุกกี้</a>
         </div>
       </details>
     </div>

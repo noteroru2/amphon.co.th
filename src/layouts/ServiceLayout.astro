@@ -197,10 +197,10 @@ const steps = [
         <h1 class="page-header__title">{h1 || title}</h1>
         <p class="page-header__desc page-header__desc--clamp">{description}</p>
         <div class="page-header__cta page-header__cta--service">
-          <a href={site.line} class="btn btn--line btn--lg page-header__cta-line" target="_blank" rel="noopener noreferrer">
+          <a href={site.line} class="btn btn--line btn--lg page-header__cta-line" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="hero" data-destination="line">
             ส่งรูปประเมิน LINE
           </a>
-          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost btn--lg page-header__cta-phone">
+          <a href={`tel:${site.phoneTel}`} class="btn btn--ghost btn--lg page-header__cta-phone" data-track-cta data-cta-type="phone" data-cta-position="hero" data-destination="phone">
             โทร {site.phone}
           </a>
         </div>
@@ -247,10 +247,10 @@ const steps = [
       <div class="sidebar__box">
         <p class="sidebar__title">ติดต่อประเมินราคา</p>
         <div style="display:flex;flex-direction:column;gap:.625rem;">
-          <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer">
+          <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="card" data-destination="line">
             แชท Line @webuy
           </a>
-          <a href={`tel:${site.phoneTel}`} class="btn btn--phone btn--sm">
+          <a href={`tel:${site.phoneTel}`} class="btn btn--phone btn--sm" data-track-cta data-cta-type="phone" data-cta-position="card" data-destination="phone">
             โทร {site.phone}
           </a>
         </div>
