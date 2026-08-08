@@ -40,7 +40,7 @@ GA Admin DebugView UI was **not** verified from this agent (do not fabricate Adm
 | Validated feature tip | `368a9f278e550382854b24b7684265ed042b5125` |
 | Main before merge | `2a06cd621a1697482867621d87114a188d7a3834` |
 | Merge commit (**Content / Deploy SHA**) | `d9e7b78d9d2e034c228bb102744650aa29d81b54` |
-| Final main docs-only SHA | tip of `origin/main` after docs commits (see Confirmations) |
+| Final main docs-only SHA | `bf0a93bef19bbcf6e3cc00175e6bda42b723ec1d` |
 
 Feature commits merged:
 
@@ -174,4 +174,4 @@ Unchanged — no `generate_lead`, deal/sale events, or CRM in this batch.
 - **NO GSC/OAUTH/CSV COMMITTED**
 
 Content/Deploy SHA: `d9e7b78d9d2e034c228bb102744650aa29d81b54`  
-Final main docs-only SHA: _(set at commit time in Confirmations below)_
+Final main docs-only SHA: `bf0a93bef19bbcf6e3cc00175e6bda42b723ec1d`
