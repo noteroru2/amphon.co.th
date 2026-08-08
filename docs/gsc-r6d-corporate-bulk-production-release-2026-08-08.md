@@ -21,7 +21,7 @@ No Production blockers. No redirects / noindex / canonical merges / slug changes
 | Main before merge | `a2c388705a6352696d21248b0e8c363e3ea655a7` |
 | Merge SHA | `632a82194594ba40bb8222d6929b72c9a163a6c4` |
 | Content / deploy SHA | `632a82194594ba40bb8222d6929b72c9a163a6c4` |
-| Final main SHA | `ddd2aa19c10640a758c8c52f6d8bb533005c4d6a` (docs-only) |
+| Final main SHA | tip after docs commits (Content/deploy remains `632a82194594ba40bb8222d6929b72c9a163a6c4`) |
 
 Merge message: `merge: release GSC-R6 corporate bulk IT architecture`
 
@@ -53,7 +53,7 @@ Verified local + `origin/seo/gsc-r6-corporate-bulk-it-architecture` = `a8faebfâ€
 
 ## Final Main SHA
 
-`ddd2aa19c10640a758c8c52f6d8bb533005c4d6a` (docs-only; Content/deploy SHA remains `632a82194594ba40bb8222d6929b72c9a163a6c4`).
+Docs commits on `main` after Ready; Content/deploy SHA remains `632a82194594ba40bb8222d6929b72c9a163a6c4`.
 
 ## R6 Architecture
 
