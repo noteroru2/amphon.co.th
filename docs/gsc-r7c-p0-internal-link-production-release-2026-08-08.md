@@ -16,7 +16,7 @@ Services Index typo is live on production. Twenty R7A iPad “broken” candidat
 | Main before merge | `2611920f8405f76ec366865f99d55aaf0113bcfd` |
 | Merge SHA | `a3fcba7c86609074c413b2ca097a8b259880ce83` |
 | Content / deploy SHA | `a3fcba7c86609074c413b2ca097a8b259880ce83` |
-| Final main SHA | *(docs-only commit advances after this report)* |
+| Final main SHA | tip after docs commits (Content/deploy remains `a3fcba7c86609074c413b2ca097a8b259880ce83`) |
 
 Merge message: `merge: release R7 P0 internal link repair`
 
@@ -53,7 +53,7 @@ Diff vs base (exact 2 files):
 
 ## Final Main SHA
 
-Docs commit tip after this report is pushed (≠ Content/deploy SHA).
+Docs commits on `main` after Ready; Content/deploy SHA remains `a3fcba7c86609074c413b2ca097a8b259880ce83`.
 
 ## R7A Candidate Correction
 
