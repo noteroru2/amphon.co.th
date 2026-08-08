@@ -185,9 +185,13 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
     src: '/images/pc/buy-pc.webp',
     alt: imageAlt['/images/pc/buy-pc.webp'],
   },
+  '/บริการ/รับซื้อสินค้าไอทีบริษัท': {
+    src: '/images/b2b/buy-company-it-assets.webp',
+    alt: imageAlt['/images/b2b/buy-company-it-assets.webp'],
+  },
   '/บริการ/รับซื้อคอมบริษัท': {
-    src: '/images/about/amphon-trading-shop-interior-evaluation.webp',
-    alt: imageAlt['/images/about/amphon-trading-shop-interior-evaluation.webp'],
+    src: '/images/b2b/buy-company-computers.webp',
+    alt: imageAlt['/images/b2b/buy-company-computers.webp'],
   },
   '/บริการ/รับซื้อกล้อง': {
     src: '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',
@@ -217,6 +221,13 @@ export const serviceThumbnails: Record<string, string> = {
   'รับซื้อแท็บเล็ต': '/images/mobile/buy-tablets.webp',
   'รับซื้อ-ipad':      '/images/apple/buy-ipad.webp',
   'รับซื้อคอมพิวเตอร์': '/images/pc/buy-pc.webp',
-  'รับซื้อคอมบริษัท': '/images/about/amphon-trading-shop-interior-evaluation.webp',
+  'รับซื้อสินค้าไอทีบริษัท': '/images/b2b/buy-company-it-assets.webp',
+  'รับซื้อคอมบริษัท': '/images/b2b/buy-company-computers.webp',
+  'รับซื้อคอมสำนักงาน': '/images/b2b/buy-office-pc-lot.webp',
+  'รับซื้อคอมยกล็อต': '/images/b2b/buy-office-pc-lot.webp',
+  'รับซื้อโน๊ตบุ๊คบริษัท': '/images/notebook/buy-notebook-company2.webp',
+  'รับซื้อโน๊ตบุ๊คยกล็อต': '/images/notebook/buy-notebook-all.webp',
+  'รับซื้ออุปกรณ์ไอทีบริษัท': '/images/b2b/buy-company-it-equipment.webp',
+  'รับซื้อ-server-network': '/images/b2b/buy-server-network.webp',
   'รับซื้อสินค้าไอที': '/images/about/amphon-trading-shop-showroom.webp',
 };

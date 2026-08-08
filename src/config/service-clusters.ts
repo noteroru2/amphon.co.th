@@ -22,7 +22,10 @@ type ServiceEntry = CollectionEntry<'services'>;
 
 const SLUG_CLUSTER_OVERRIDES: Record<string, ServiceCluster> = {
   'รับซื้อคอมพิวเตอร์': SERVICE_CLUSTERS.COM_OFFICE,
+  'รับซื้อสินค้าไอทีบริษัท': SERVICE_CLUSTERS.COM_OFFICE,
   'รับซื้อคอมบริษัท': SERVICE_CLUSTERS.COM_OFFICE,
+  'รับซื้ออุปกรณ์ไอทีบริษัท': SERVICE_CLUSTERS.COM_OFFICE,
+  'รับซื้อโน๊ตบุ๊คยกล็อต': SERVICE_CLUSTERS.NOTEBOOK,
   'รับซื้อแท็บเล็ต': SERVICE_CLUSTERS.TABLET,
   'รับซื้อ-ipad': SERVICE_CLUSTERS.IPAD,
   'รับซื้อโทรศัพท์มือสอง': SERVICE_CLUSTERS.PHONE,
@@ -91,20 +94,21 @@ const SLUG_CLUSTER_OVERRIDES: Record<string, ServiceCluster> = {
 const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
   [SERVICE_CLUSTERS.COM_OFFICE]: [
     'รับซื้อคอมพิวเตอร์',
-    'รับซื้อคอมสำนักงาน',
+    'รับซื้อสินค้าไอทีบริษัท',
     'รับซื้อคอมบริษัท',
+    'รับซื้อคอมสำนักงาน',
     'รับซื้อคอมยกล็อต',
+    'รับซื้อโน๊ตบุ๊คบริษัท',
+    'รับซื้อโน๊ตบุ๊คยกล็อต',
+    'รับซื้ออุปกรณ์ไอทีบริษัท',
+    'รับซื้อ-server-network',
     'รับซื้อคอมประกอบ',
     'รับซื้อคอมบริษัทปิดกิจการ',
     'รับซื้อคอมเสีย',
     'รับซื้อคอมร้านเกม',
-    'รับซื้อโน๊ตบุ๊คบริษัท',
-    'รับซื้อสินค้าไอทีบริษัท',
     'รับซื้ออุปกรณ์สำนักงานมือสอง',
     'รับซื้อจอคอม',
     'รับเคลียร์อุปกรณ์ไอทีสำนักงาน',
-    'รับเหมาประมูลอุปกรณ์ไอที',
-    'รับประมูลคอมพิวเตอร์มือสอง',
     'รับซื้ออุปกรณ์คอมพิวเตอร์',
   ],
   [SERVICE_CLUSTERS.NOTEBOOK]: [
@@ -884,6 +888,12 @@ export function getIntentChipServices(
 const RELATED_CARD_OVERRIDES: Record<string, string[]> = {
   'รับซื้อโน๊ตบุ๊ค': ['รับซื้อโน๊ตบุ๊คเกมมิ่ง', 'รับซื้อโน๊ตบุ๊คเสีย', 'รับซื้อ-macbook'],
   'รับซื้อคอมพิวเตอร์': ['รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมประกอบ', 'รับซื้อ-gaming-pc', 'รับซื้อคอมบริษัท'],
+  'รับซื้อสินค้าไอทีบริษัท': [
+    'รับซื้อคอมบริษัท',
+    'รับซื้อโน๊ตบุ๊คบริษัท',
+    'รับซื้ออุปกรณ์ไอทีบริษัท',
+    'รับซื้อ-server-network',
+  ],
 };
 
 export function getIntentChipHeading(slug: string, mainKeyword?: string): string {
