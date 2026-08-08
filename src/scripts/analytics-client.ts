@@ -295,20 +295,10 @@ function bindConsentUi(): void {
   });
 }
 
-export function initAnalytics(config: AnalyticsClientConfig): void {
-  if (initialized) return;
-  initialized = true;
-  currentConfig = config;
-
-  bindConsentUi();
-  bindClickTracker();
-
-  const consent = readConsent();
-  updateConsentUi(consent);
-
-  if (consent === 'granted' && isValidMeasurementId(config.measurementId.trim())) {
-    loadGoogleTag(config.measurementId.trim());
-  }
+export function initAnalytics(_config: AnalyticsClientConfig): void {
+  // EMERGENCY 2026-08-08: GA4 Production rollout paused by owner.
+  // Do not load gtag / consent UI / CTA analytics transmission.
+  return;
 }
 
 export function __testables() {

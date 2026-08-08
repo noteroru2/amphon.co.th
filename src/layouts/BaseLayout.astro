@@ -6,10 +6,7 @@ import StickyCTA from '../components/StickyCTA.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import GoogleReviewsLink from '../components/GoogleReviewsLink.astro';
-import AnalyticsConsent from '../components/AnalyticsConsent.astro';
-import Analytics from '../components/Analytics.astro';
 import { reviewTrustForPath } from '../lib/review-trust';
-import { resolveAnalyticsContext } from '../lib/analytics-context';
 import { site } from '../config/site';
 import { absoluteUrl, seoTitle, buildPageGraph, resolveOgImage } from '../lib/seo';
 import type { BreadcrumbItem } from '../config/site';
@@ -50,7 +47,6 @@ const {
   containedBreadcrumbs = false,
 } = Astro.props;
 const reviewTrust = reviewTrustForPath(Astro.url.pathname);
-const analyticsContext = resolveAnalyticsContext(Astro.url.pathname);
 
 const pageTitle = seoTitle(title);
 const canonicalUrl = canonical ?? absoluteUrl(Astro.url.pathname);
@@ -71,13 +67,7 @@ const schemaGraph = buildPageGraph({
 ---
 
 <!doctype html>
-<html
-  lang="th"
-  data-page-type={analyticsContext.page_type}
-  data-service-category={analyticsContext.service_category}
-  data-province={analyticsContext.province}
-  {...(analyticsContext.lead_type ? { 'data-lead-type': analyticsContext.lead_type } : {})}
->
+<html lang="th">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -149,8 +139,6 @@ const schemaGraph = buildPageGraph({
 
     <Footer />
     <StickyCTA />
-    <AnalyticsConsent />
-    <Analytics />
   </body>
 </html>
 
