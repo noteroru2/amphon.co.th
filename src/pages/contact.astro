@@ -50,7 +50,7 @@ const pageUrl = absoluteUrl('/contact');
       <div class="contact-card card">
         <h2 class="card__title">โทรศัพท์</h2>
         <p class="card__desc">โทรสอบถามหรือนัดหมายได้ทุกวัน 09:00–21:00</p>
-        <a href={`tel:${site.phoneTel}`} class="btn btn--phone">โทร {site.phone}</a>
+        <a href={`tel:${site.phoneTel}`} class="btn btn--phone" data-track-cta data-cta-type="phone" data-cta-position="contact_section" data-destination="phone">โทร {site.phone}</a>
       </div>
 
       <div class="contact-card card">
@@ -67,7 +67,7 @@ const pageUrl = absoluteUrl('/contact');
           />
           <p class="contact-card__qr-label">สแกน QR เพิ่มเพื่อน</p>
         </div>
-        <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer">
+        <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="contact_section" data-destination="line">
           แชท Line {site.lineId}
         </a>
       </div>
@@ -75,7 +75,7 @@ const pageUrl = absoluteUrl('/contact');
       <div class="contact-card card">
         <h2 class="card__title">Facebook</h2>
         <p class="card__desc">ติดตามข่าวสารและโปรโมชั่นได้ที่ Facebook</p>
-        <a href={site.facebook} class="btn btn--facebook" target="_blank" rel="noopener noreferrer">
+        <a href={site.facebook} class="btn btn--facebook" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="facebook" data-cta-position="contact_section" data-destination="facebook">
           Facebook
         </a>
       </div>
@@ -83,7 +83,7 @@ const pageUrl = absoluteUrl('/contact');
       <div class="contact-card card">
         <h2 class="card__title">อีเมล</h2>
         <p class="card__desc">สำหรับองค์กรและบริษัทที่ต้องการใบเสนอราคา</p>
-        <a href={`mailto:${site.email}`} class="btn btn--outline">{site.email}</a>
+        <a href={`mailto:${site.email}`} class="btn btn--outline" data-track-cta data-cta-type="email" data-cta-position="contact_section" data-destination="email">{site.email}</a>
       </div>
     </div>
 
@@ -104,7 +104,7 @@ const pageUrl = absoluteUrl('/contact');
         {site.address.region} {site.address.postalCode}
       </p>
       <p class="meta">ให้บริการนัดรับหรือประสานขนส่งตามพื้นที่และประเภทสินค้าทั่วภาคอีสาน</p>
-      <a href={site.hasMap} class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+      <a href={site.hasMap} class="btn btn--outline" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="maps" data-cta-position="contact_section" data-destination="maps">
         ดูแผนที่ Google Maps
       </a>
     </div>

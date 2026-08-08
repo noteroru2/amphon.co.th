@@ -1,0 +1,41 @@
+---
+import { resolveAnalyticsContext } from '../lib/analytics-context';
+
+/**
+ * Boots consent-aware GA4 + delegated CTA tracker once per page.
+ * No-op when PUBLIC_GA_MEASUREMENT_ID is missing or consent is not granted.
+ */
+const pageContext = resolveAnalyticsContext(Astro.url.pathname);
+const measurementId = String(import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? '').trim();
+const debug = String(import.meta.env.PUBLIC_GA_DEBUG ?? '') === 'true';
+---
+
+<script
+  is:inline
+  define:vars={{
+    measurementId,
+    debug,
+    pageContext,
+  }}
+>
+  window.__AMPHON_ANALYTICS_BOOT__ = { measurementId, debug, pageContext };
+</script>
+<script>
+  import { initAnalytics } from '../scripts/analytics-client';
+
+  const boot = window.__AMPHON_ANALYTICS_BOOT__ || {
+    measurementId: '',
+    debug: false,
+    pageContext: {
+      page_type: 'other',
+      service_category: 'other',
+      province: 'national',
+    },
+  };
+
+  initAnalytics({
+    measurementId: boot.measurementId || '',
+    debug: Boolean(boot.debug),
+    pageContext: boot.pageContext,
+  });
+</script>

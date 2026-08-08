@@ -49,7 +49,8 @@
     "build:images": "node scripts/process-production-images.mjs && node scripts/generate-og-default.mjs && node scripts/generate-production-og.mjs && node scripts/generate-og-images.mjs",
     "images:optimize": "node scripts/optimize-images.mjs",
     "find:google-place": "node scripts/find-google-place-id.mjs",
-    "test:google-reviews": "node --test src/lib/*.test.ts"
+    "test:google-reviews": "node --test src/lib/google-places.test.ts src/lib/google-reviews-endpoint.test.ts src/lib/review-trust.test.ts",
+    "test:analytics": "node --test src/lib/analytics-context.test.ts && node scripts/test-analytics-taxonomy.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
