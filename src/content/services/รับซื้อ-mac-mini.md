@@ -1,14 +1,15 @@
 ---
-title: "Mac mini มือสองขายได้เท่าไหร่ รับซื้อ M1 M2 M4 และ Intel"
+title: "รับซื้อ Mac mini มือสอง M2 และ M4 ประเมินตามสภาพจริง"
+h1: "รับซื้อ Mac mini มือสอง M1 M2 M4 และ Intel ประเมินตามสเปกและสภาพจริง"
 slug: "รับซื้อ-mac-mini"
 order: 15
-description: "มี Mac mini มือสอง M1 M2 M4 M4 Pro หรือ Intel ต้องการขาย ส่งชิป RAM SSD รูปสภาพ และอุปกรณ์เพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่อง"
+description: "รับซื้อ Mac mini มือสอง ทั้ง M1 M2 M2 Pro M4 M4 Pro และ Intel ส่ง About This Mac, Memory, SSD รูปสภาพ และอุปกรณ์เพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่อง"
 mainKeyword: "รับซื้อ Mac mini"
-relatedKeywords: ["Mac mini มือสอง", "Mac mini M4 มือสอง", "Mac mini M2 มือสอง", "รับซื้อ Mac mini มือสอง", "ขาย Mac mini", "ขาย Mac mini มือสอง", "รับซื้อ Mac mini M4", "รับซื้อ Mac mini M2", "ขายแมคมินิ"]
+relatedKeywords: ["รับซื้อ Mac mini", "รับซื้อ Mac mini มือสอง", "รับซื้อ Mac mini M4", "รับซื้อ Mac mini M2", "ขาย Mac mini", "ขาย Mac mini มือสอง", "Mac mini มือสอง", "Mac mini M4 มือสอง", "Mac mini M2 มือสอง", "ขายแมคมินิ"]
 heroImage: "/images/services/rub-sue-mac-mini-amphon.webp"
 ogImage: "/images/services/rub-sue-mac-mini-amphon.webp"
 date: "2026-06-03"
-updated: "2026-08-05"
+updated: "2026-08-16"
 draft: false
 icon: "hard-drive"
 faqs:
@@ -28,9 +29,9 @@ faqs:
     answer: "รับพิจารณาเป็นล็อต ควรส่ง Inventory List ระบุรุ่น ชิป Memory SSD Serial Number สภาพ อุปกรณ์ และสถานที่เก็บสินค้า เพื่อประเมินและวางแผนตรวจรับ"
 ---
 
-## Mac mini มือสองขายได้เท่าไหร่ เริ่มจากเช็กชิป Memory และ SSD
+## รับซื้อ Mac mini มือสอง M1 M2 M4 และ Intel ประเมินตามสเปกและสภาพจริง
 
-มี **Mac mini มือสอง** ที่ไม่ได้ใช้งาน เปลี่ยนไปใช้ MacBook หรืออัปเกรดเป็นรุ่นใหม่ สามารถส่งข้อมูลให้ **อำพล เทรดดิ้ง** พิจารณา **รับซื้อ Mac mini** ได้ทั้งรุ่น Intel, M1, M2, M2 Pro, M4 และ M4 Pro โดยประเมินจากรุ่นจริง ชิป หน่วยความจำ SSD สภาพเครื่อง พอร์ต อุปกรณ์ ประกัน และความต้องการตลาดในวันที่ส่งประเมิน
+อำพล เทรดดิ้ง **รับซื้อ Mac mini มือสอง** สำหรับผู้ที่ต้องการขายเครื่อง Intel, M1, M2, M2 Pro, M4 และ M4 Pro โดยประเมินจากรุ่นจริง ชิป Unified Memory หรือ RAM, SSD, สภาพเครื่อง พอร์ต อุปกรณ์ ประกัน และความต้องการตลาดในวันที่ส่งประเมิน สามารถส่งรูปหน้า About This Mac พร้อมรูปสภาพเพื่อเช็กราคาเบื้องต้นก่อนตัดสินใจขายได้
 
 สิ่งที่ทำให้ Mac mini สองเครื่องราคาแตกต่างกันมากไม่ใช่แค่คำว่า M2 หรือ M4 แต่รวมถึงสเปกย่อย เช่น M4 16GB/256GB, M4 24GB/512GB หรือ M4 Pro 48GB/1TB รวมถึงสภาพพอร์ต สายไฟ กล่อง ประวัติซ่อม และสถานะ Find My ดังนั้นการส่งเพียงรูปด้านบนของเครื่องยังไม่พอสำหรับประเมินให้ตรงรุ่น
 
