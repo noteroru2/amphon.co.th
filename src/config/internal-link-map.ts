@@ -130,12 +130,15 @@ export const PROVINCE_RELATED_HUB_PRIORITY = [
  * Same-province related service×area links (horizontal spoke links).
  * Prefers core commercial hubs, then same cluster; never targets deferred thin templates.
  */
+export const ENABLE_PROVINCE_HORIZONTAL_LINKS = false;
 export function getRelatedServiceAreasInProvince(
   current: ServiceAreaEntry,
   allServiceAreas: ServiceAreaEntry[],
   allServices: ServiceEntry[],
   limit = 4,
 ): ServiceAreaEntry[] {
+  if (!ENABLE_PROVINCE_HORIZONTAL_LINKS) return [];
+
   const areaSlug = current.data.areaSlug;
   const currentServiceSlug = current.data.serviceSlug;
   const serviceBySlug = new Map(allServices.map((s) => [s.data.slug, s]));
