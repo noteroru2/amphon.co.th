@@ -15,7 +15,7 @@ relatedKeywords:
 heroImage: "/images/pc/buy-pc-gaming.webp"
 ogImage: "/images/pc/buy-pc-gaming.webp"
 date: "2026-06-24"
-updated: "2026-08-08"
+updated: "2026-08-20"
 draft: false
 icon: "desktop"
 quickSummary:

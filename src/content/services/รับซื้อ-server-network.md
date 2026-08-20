@@ -15,7 +15,7 @@ relatedKeywords:
 heroImage: "/images/b2b/buy-server-network.webp"
 ogImage: "/images/b2b/buy-server-network.webp"
 date: "2026-06-14"
-updated: "2026-08-08"
+updated: "2026-08-20"
 draft: false
 icon: "server"
 faqs:

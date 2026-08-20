@@ -16,7 +16,7 @@ relatedKeywords:
 heroImage: "/images/apple/buy-ipad.webp"
 ogImage: "/images/apple/buy-ipad.webp"
 date: "2026-06-24"
-updated: "2026-08-06"
+updated: "2026-08-20"
 draft: false
 icon: "tablet"
 quickSummary:

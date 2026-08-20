@@ -15,6 +15,7 @@ relatedKeywords:
 heroImage: "/images/pc/buy-workstation.webp"
 ogImage: "/images/pc/buy-workstation.webp"
 date: "2026-06-24"
+updated: "2026-08-20"
 draft: false
 icon: "desktop"
 faqs:
