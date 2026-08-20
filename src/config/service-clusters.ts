@@ -94,10 +94,10 @@ const SLUG_CLUSTER_OVERRIDES: Record<string, ServiceCluster> = {
 const CLUSTER_PRIORITY_SLUGS: Record<ServiceCluster, string[]> = {
   [SERVICE_CLUSTERS.COM_OFFICE]: [
     'รับซื้อคอมพิวเตอร์',
-    'รับซื้อสินค้าไอทีบริษัท',
     'รับซื้อคอมบริษัท',
     'รับซื้อคอมสำนักงาน',
     'รับซื้อคอมยกล็อต',
+    'รับซื้อสินค้าไอทีบริษัท',
     'รับซื้อโน๊ตบุ๊คบริษัท',
     'รับซื้อโน๊ตบุ๊คยกล็อต',
     'รับซื้ออุปกรณ์ไอทีบริษัท',

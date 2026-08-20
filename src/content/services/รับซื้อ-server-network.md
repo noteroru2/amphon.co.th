@@ -1,9 +1,9 @@
 ---
-title: "รับซื้อ Server Network NAS UPS มือสอง ส่ง Part Number ประเมินก่อนขาย"
-h1: "รับซื้อ Server Network NAS UPS และอุปกรณ์ห้อง IT ประเมินตามรุ่นและสภาพ"
+title: "รับซื้อ Server Network และอุปกรณ์โครงสร้างพื้นฐานไอทีบริษัท"
+h1: "รับซื้อ Server Network NAS UPS และอุปกรณ์โครงสร้างพื้นฐานไอที"
 slug: "รับซื้อ-server-network"
 order: 6
-description: "รับซื้อ Server Network NAS UPS และอุปกรณ์ Infrastructure มือสอง ส่งรุ่น Part Number สเปก จำนวน Drive Module Rail สภาพ และพื้นที่เพื่อประเมินเบื้องต้น"
+description: "รับซื้ออุปกรณ์โครงสร้างพื้นฐานไอทีบริษัท เช่น Server, NAS, UPS, Router, Switch และ Firewall ส่งรายการ รุ่น จำนวน สภาพ และสถานที่ตั้ง เพื่อประเมินราคาเบื้องต้นได้"
 mainKeyword: "รับซื้อ Server และ Network"
 relatedKeywords:
   - "รับซื้อ Server มือสอง"
@@ -37,7 +37,7 @@ faqs:
 
 Server และอุปกรณ์ Network ไม่ควรประเมินจากรูปภายนอกหรือชื่อแบรนด์เพียงอย่างเดียว เพราะมูลค่าขึ้นกับ **Configuration, Part Number, Drive, RAM, Controller, Module, PSU, Rail, License/Subscription และอุปกรณ์ที่รวมอยู่จริง**
 
-หน้านี้เป็น Infrastructure Hub สำหรับ Server, NAS, Storage, UPS, Switch, Router, Firewall, Access Point และอุปกรณ์ห้อง IT ที่มีรายละเอียดเฉพาะด้าน
+บริการนี้ครอบคลุม Server, NAS, Storage, UPS, Switch, Router, Firewall, Access Point และอุปกรณ์ห้อง IT ที่ต้องตรวจรายละเอียดเฉพาะด้าน
 
 หากบริษัทมีคอมพนักงาน จอ Printer มือถือและสินค้าอื่นรวมด้วย ให้เริ่มจาก [รับซื้อสินค้าไอทีบริษัท](/บริการ/รับซื้อสินค้าไอทีบริษัท)
 
