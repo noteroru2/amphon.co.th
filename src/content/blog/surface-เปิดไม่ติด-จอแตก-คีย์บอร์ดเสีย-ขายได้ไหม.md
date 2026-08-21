@@ -4,8 +4,8 @@ slug: "surface-เปิดไม่ติด-จอแตก-คีย์บอ
 description: "Surface เปิดไม่ติด จอแตก หรือคีย์บอร์ดเสีย ยังขายได้ไหม อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "Surface เสียขายได้ไหม"
 relatedKeywords: ["Surface เสียขายได้ไหม", "ขายMicrosoft Surfaceมือสอง", "Microsoft Surfaceเสียขายได้ไหม", "ประเมินราคาMicrosoft Surface", "รับซื้อMicrosoft Surface"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
+heroImage: "/images/notebook/buy-surface.webp"
+ogImage: "/images/notebook/buy-surface.webp"
 faqs:
   - question: "Microsoft Surfaceมีตำหนิยังขายได้ไหม"
     answer: "ขายได้ในหลายกรณี ขึ้นอยู่กับรุ่น สภาพ อาการ และอะไหล่ที่ยังมีมูลค่า แนะนำส่งรูปผ่าน Line @webuy เพื่อประเมินเบื้องต้น"

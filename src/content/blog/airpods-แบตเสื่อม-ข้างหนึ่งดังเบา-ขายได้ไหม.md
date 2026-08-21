@@ -4,8 +4,8 @@ slug: "airpods-แบตเสื่อม-ข้างหนึ่งดัง�
 description: "AirPods แบตเสื่อม ข้างหนึ่งดังเบา หรือเคสชาร์จไม่เข้า ขายได้ไหม อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "AirPods แบตเสื่อมขายได้ไหม"
 relatedKeywords: ["AirPods แบตเสื่อมขายได้ไหม", "ขายAirPodsมือสอง", "AirPodsเสียขายได้ไหม", "ประเมินราคาAirPods", "รับซื้อAirPods"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
+heroImage: "/images/apple/buy-airpods.webp"
+ogImage: "/images/apple/buy-airpods.webp"
 faqs:
   - question: "AirPodsมีตำหนิยังขายได้ไหม"
     answer: "ขายได้ในหลายกรณี ขึ้นอยู่กับรุ่น สภาพ อาการ และอะไหล่ที่ยังมีมูลค่า แนะนำส่งรูปผ่าน Line @webuy เพื่อประเมินเบื้องต้น"

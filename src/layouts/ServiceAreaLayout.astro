@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
-import { getImageAlt } from '../config/images';
+import { getImageAlt, serviceThumbnails } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import FAQ from '../components/FAQ.astro';
 import MacbookServiceAreaContent from '../components/MacbookServiceAreaContent.astro';
@@ -52,7 +52,13 @@ const pageUrl = absoluteUrl(`/รับซื้อ/${slug}`);
 const resolvedOgImage = (ogImage && ogImage !== '/images/og/og-service-it.webp')
   ? ogImage
   : (service?.data.ogImage ?? ogImage);
-const pageImage = resolveOgImage(resolvedOgImage, heroImage ?? service?.data.heroImage);
+// Keep location pages visually aligned with their canonical service page.
+// Older generated entries often carry a generic OG graphic (or a mismatched
+// legacy image) as heroImage, so prefer the service-specific asset when known.
+const resolvedHeroImage = service?.data.heroImage
+  ?? serviceThumbnails[entry.data.serviceSlug]
+  ?? heroImage;
+const pageImage = resolveOgImage(resolvedOgImage, resolvedHeroImage);
 const datePublished = date.toISOString();
 const dateModified = contentDateModified(date, updated);
 
@@ -80,7 +86,7 @@ const steps = [
   description={description}
   canonical={pageUrl}
   ogImage={resolvedOgImage}
-  heroImage={heroImage ?? service?.data.heroImage}
+  heroImage={resolvedHeroImage}
   breadcrumbs={breadcrumbs}
   pageType="WebPage"
   mainEntityId={schemaIds.service(pageUrl)}
@@ -107,11 +113,11 @@ const steps = [
           </a>
         </div>
       </div>
-      {heroImage && (
+      {resolvedHeroImage && (
         <figure class="page-header__figure">
           <OptimizedImage
-            src={heroImage}
-            alt={getImageAlt(heroImage, `${title} — อำพล เทรดดิ้ง`)}
+            src={resolvedHeroImage}
+            alt={getImageAlt(resolvedHeroImage, `${service?.data.mainKeyword ?? mainKeyword} มือสองสำหรับประเมินราคา`)}
             loading="eager"
             width={600}
             height={338}

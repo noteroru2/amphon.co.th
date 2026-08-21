@@ -4,8 +4,8 @@ slug: "ลำโพง-jbl-ของแท้ของปลอม-เช็ก�
 description: "ลำโพง JBL ของแท้ของปลอมเช็กอย่างไรก่อนขาย อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "JBL ของแท้เช็กยังไง"
 relatedKeywords: ["JBL ของแท้เช็กยังไง", "ขายJBLมือสอง", "JBLเสียขายได้ไหม", "ประเมินราคาJBL", "รับซื้อJBL"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
+heroImage: "/images/services/rub-sue-bluetooth-speaker-amphon.webp"
+ogImage: "/images/services/rub-sue-bluetooth-speaker-amphon.webp"
 faqs:
   - question: "JBLมีตำหนิยังขายได้ไหม"
     answer: "ขายได้ในหลายกรณี ขึ้นอยู่กับรุ่น สภาพ อาการ และอะไหล่ที่ยังมีมูลค่า แนะนำส่งรูปผ่าน Line @webuy เพื่อประเมินเบื้องต้น"

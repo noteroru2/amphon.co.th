@@ -4,8 +4,8 @@ slug: "apple-watch-ก่อนขาย-ต้องล้างข้อมู
 description: "Apple Watch ก่อนขายต้องล้างข้อมูลและปลดล็อกอะไรบ้าง อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "ขาย Apple Watch ต้องทำอะไรบ้าง"
 relatedKeywords: ["ขาย Apple Watch ต้องทำอะไรบ้าง", "ขายApple Watchมือสอง", "Apple Watchเสียขายได้ไหม", "ประเมินราคาApple Watch", "รับซื้อApple Watch"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
+heroImage: "/images/apple/buy-apple-watch.webp"
+ogImage: "/images/apple/buy-apple-watch.webp"
 faqs:
   - question: "Apple Watchมีตำหนิยังขายได้ไหม"
     answer: "ขายได้ในหลายกรณี ขึ้นอยู่กับรุ่น สภาพ อาการ และอะไหล่ที่ยังมีมูลค่า แนะนำส่งรูปผ่าน Line @webuy เพื่อประเมินเบื้องต้น"

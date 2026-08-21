@@ -6,8 +6,6 @@ areaSlug: "เลย"
 description: "รับซื้อ Nintendo Switch ในเลย ประเมินราคาฟรี ส่งรูปเช็กราคาได้ ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "รับซื้อ Nintendo Switch เลย"
 relatedKeywords: ["ขาย Nintendo Switch มือสอง เลย", "รับซื้อ Nintendo Switch มือสอง", "ประเมินราคา Nintendo Switch เลย", "ขายของไอที เลย", "อำพล เทรดดิ้ง"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
 faqs:
   - question: "รับซื้อ Nintendo Switch ในเลย พื้นที่ไหนบ้าง"
     answer: "รับประเมินในเมืองเลยและอำเภอใกล้เคียง เช่น เมืองเลย, วังสะพุง, เชียงคาน, ภูกระดึง, ภูเรือ สามารถส่งรูปประเมินออนไลน์ก่อนได้ การนัดรับขึ้นอยู่กับประเภทสินค้า จำนวนสินค้า ระยะทาง และราคาประเมิน"

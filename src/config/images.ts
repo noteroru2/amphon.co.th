@@ -132,6 +132,86 @@ export const imageAlt: Record<string, string> = {
     'Gaming Notebook มือสองสำหรับหน้าบริการรับซื้อโน๊ตบุ๊คเกมมิ่ง',
   '/images/gaming-notebook/buy-asus-rog.webp':
     'ASUS ROG Gaming Notebook มือสองสำหรับหน้าบริการรับซื้อ ROG',
+  '/images/gaming-notebook/buy-acer-nitro.webp':
+    'Acer Nitro Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-acer-predator.webp':
+    'Acer Predator Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-asus-tuf.webp':
+    'ASUS TUF Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-asus-zephyrus.webp':
+    'ASUS ROG Zephyrus Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-dell-gaming.webp':
+    'Dell Gaming Notebook มือสองสำหรับตรวจรุ่น สเปก และสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-gigabyte-aorus-gaming-notebook.webp':
+    'Gigabyte AORUS Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-hp-gaming.webp':
+    'HP Gaming Notebook มือสองสำหรับตรวจรุ่น สเปก และสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-lenovo-gaming.webp':
+    'Lenovo Gaming Notebook มือสองสำหรับตรวจรุ่น สเปก และสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-msi-sword-gaming-notebook.webp':
+    'MSI Sword Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/gaming-notebook/buy-msi-titan-gaming-notebook.webp':
+    'MSI Titan Gaming Notebook มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/notebook/buy-notebook-all.webp':
+    'โน๊ตบุ๊คมือสองหลายเครื่องสำหรับประเมินแบบยกล็อต',
+  '/images/notebook/buy-notebook-broken-2.webp':
+    'โน๊ตบุ๊คมือสองมีอาการเสียสำหรับตรวจสภาพก่อนประเมิน',
+  '/images/notebook/buy-notebook-broken-3.webp':
+    'โน๊ตบุ๊คจอแตกหรือจอเสียสำหรับตรวจสภาพก่อนประเมิน',
+  '/images/notebook/buy-notebook-broken.webp':
+    'โน๊ตบุ๊คเสียหรือเปิดไม่ติดสำหรับตรวจอาการก่อนประเมิน',
+  '/images/notebook/buy-notebook-company2.webp':
+    'โน๊ตบุ๊คบริษัทมือสองหลายเครื่องสำหรับประเมินแบบยกล็อต',
+  '/images/notebook/buy-notebook-eng.webp':
+    'โน๊ตบุ๊คมือสองสำหรับตรวจรุ่น สเปก และสภาพก่อนประเมิน',
+  '/images/notebook/buy-notebook-hand2.webp':
+    'โน๊ตบุ๊คมือสองสำหรับตรวจสภาพและอุปกรณ์ก่อนประเมิน',
+  '/images/notebook/buy-surface.webp':
+    'Microsoft Surface มือสองสำหรับตรวจรุ่น จอ และคีย์บอร์ดก่อนประเมิน',
+
+  '/images/services/rub-sue-appliance-amphon.webp':
+    'เครื่องใช้ไฟฟ้ามือสอง เช่น แอร์ ตู้เย็น และเครื่องซักผ้าสำหรับประเมินราคา',
+  '/images/services/rub-sue-bluetooth-speaker-amphon.webp':
+    'ลำโพงบลูทูธมือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/services/rub-sue-collectibles-amphon.webp':
+    'ของสะสม โมเดล และ Art Toy มือสองสำหรับตรวจสภาพก่อนประเมิน',
+  '/images/services/rub-sue-cpu-intel-amd-amphon.webp':
+    'CPU Intel และ AMD มือสองสำหรับตรวจรุ่นก่อนประเมิน',
+  '/images/services/rub-sue-drone-dji-amphon.webp':
+    'โดรน DJI มือสองพร้อมอุปกรณ์สำหรับตรวจสภาพก่อนประเมิน',
+  '/images/services/rub-sue-e-waste-broken-it-amphon.webp':
+    'สินค้าไอทีเสียและชิ้นส่วนอิเล็กทรอนิกส์สำหรับประเมินตามสภาพ',
+  '/images/services/rub-sue-furniture-amphon.webp':
+    'เฟอร์นิเจอร์มือสองสำหรับตรวจขนาดและสภาพก่อนประเมิน',
+  '/images/services/rub-sue-game-console-amphon.webp':
+    'เครื่องเกมคอนโซลมือสองสำหรับตรวจรุ่นและอุปกรณ์ก่อนประเมิน',
+  '/images/services/rub-sue-gaming-monitor-amphon.webp':
+    'จอเกมมิ่งมือสองสำหรับตรวจขนาด รีเฟรชเรต และสภาพจอก่อนประเมิน',
+  '/images/services/rub-sue-it-auction-bidding-amphon.webp':
+    'อุปกรณ์ไอทีองค์กรหลายรายการสำหรับประเมินและประมูลยกล็อต',
+  '/images/services/rub-sue-it-gadget-accessories-amphon.webp':
+    'อุปกรณ์ไอทีและแกดเจ็ตมือสองหลายประเภทสำหรับประเมินราคา',
+  '/images/services/rub-sue-komputer-parts-amphon.webp':
+    'อุปกรณ์คอมพิวเตอร์มือสองสำหรับตรวจรุ่นและสภาพก่อนประเมิน',
+  '/images/services/rub-sue-mac-mini-amphon.webp':
+    'Mac mini มือสองสำหรับตรวจรุ่น ชิป และสภาพก่อนประเมิน',
+  '/images/services/rub-sue-mainboard-motherboard-amphon.webp':
+    'เมนบอร์ดคอมพิวเตอร์มือสองสำหรับตรวจรุ่นและชิปเซตก่อนประเมิน',
+  '/images/services/rub-sue-nintendo-switch-amphon.webp':
+    'Nintendo Switch มือสองพร้อมอุปกรณ์สำหรับตรวจสภาพก่อนประเมิน',
+  '/images/services/rub-sue-playstation-ps5-amphon.webp':
+    'เครื่องเกม PlayStation มือสองพร้อมจอยสำหรับตรวจสภาพก่อนประเมิน',
+  '/images/services/rub-sue-ram-ddr4-ddr5-amphon.webp':
+    'RAM คอมพิวเตอร์ DDR4 และ DDR5 มือสองสำหรับตรวจสเปกก่อนประเมิน',
+  '/images/services/rub-sue-ssd-hdd-amphon.webp':
+    'SSD และฮาร์ดดิสก์มือสองสำหรับตรวจรุ่น ความจุ และสุขภาพไดรฟ์',
+  '/images/services/rub-sue-tivi-amphon.webp':
+    'ทีวีจอแบนมือสองสำหรับตรวจขนาด รุ่น และสภาพจอก่อนประเมิน',
+
+  '/images/og/og-service-it.webp':
+    'กราฟิกรับซื้อสินค้าไอทีในภาคอีสาน พร้อมแผนที่ โน๊ตบุ๊ค โทรศัพท์ และกล้อง',
+  '/images/og/og-blog-default.webp':
+    'กราฟิกอำพล เทรดดิ้งและหน้าร้านรับซื้อสินค้าไอทีในภาคอีสาน',
 
   '/images/blog/khai-macbook-musong-rap-raka-dee-amphon.webp':
     'เช็กลิสต์เตรียม MacBook มือสองก่อนตัดสินใจขาย',
@@ -205,6 +285,11 @@ export const categoryImages: Record<string, { src: string; alt: string }> = {
 
 /** Service slug → card thumbnail */
 export const serviceThumbnails: Record<string, string> = {
+  // Legacy service-area aliases that resolve to the current canonical assets.
+  'รับซื้อ-gopro': '/images/camera/buy-gopro-action-camera.webp',
+  'รับซื้อ-hdd': '/images/services/rub-sue-ssd-hdd-amphon.webp',
+  'รับซื้อ-storage-nas': '/images/b2b/buy-nas-storage.webp',
+  'รับซื้อเลนส์': '/images/services/rub-sue-camera-lens-amphon.webp',
   'รับซื้อ-iphone':    '/images/services/rub-sue-iphone-amphon-trading-banner.webp',
   'รับซื้อ-macbook':   '/images/services/rub-sue-macbook-amphon-trading-banner.webp',
   'รับซื้อกล้อง':     '/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp',

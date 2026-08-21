@@ -4,7 +4,7 @@ slug: "iphone-ติด-icloud-ลืม-apple-id-ก่อนขาย"
 description: "iPhone ที่ยังติด iCloud หรือ Activation Lock ต้องให้เจ้าของเดิมปิด Find My และนำเครื่องออกจากบัญชี Apple ก่อนขาย พร้อมแนวทางกู้คืนบัญชีอย่างถูกต้อง"
 mainKeyword: "iPhone ติด iCloud ขายได้ไหม"
 relatedKeywords: ["iPhone ติด iCloud ขายได้ไหม", "Apple Account", "Apple ID", "Activation Lock", "ปิด Find My iPhone"]
-heroImage: "/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 ogImage: "/images/og/og-service-it.webp"
 faqs:
   - question: "iPhone ยังขึ้น Activation Lock ขายได้ไหม"

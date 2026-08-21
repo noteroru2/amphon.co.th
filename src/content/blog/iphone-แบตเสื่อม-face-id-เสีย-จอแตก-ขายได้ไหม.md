@@ -4,7 +4,7 @@ slug: "iphone-แบตเสื่อม-face-id-เสีย-จอแตก-�
 description: "iPhone แบตเสื่อม Face ID เสีย จอแตก ยังขายได้ไหม อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "iPhone แบตเสื่อมขายได้ไหม"
 relatedKeywords: ["iPhone แบตเสื่อมขายได้ไหม", "ขายiPhoneมือสอง", "iPhoneเสียขายได้ไหม", "ประเมินราคาiPhone", "รับซื้อiPhone"]
-heroImage: "/images/services/rub-sue-iphone-tur-ruen-rap-raka-sung.webp"
+heroImage: "/images/services/rub-sue-iphone-amphon-trading-banner.webp"
 ogImage: "/images/og/og-service-it.webp"
 faqs:
   - question: "iPhoneมีตำหนิยังขายได้ไหม"

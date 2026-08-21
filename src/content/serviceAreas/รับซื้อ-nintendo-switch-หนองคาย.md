@@ -6,8 +6,6 @@ areaSlug: "หนองคาย"
 description: "รับซื้อ Nintendo Switch ในหนองคาย ประเมินราคาฟรี ส่งรูปเช็กราคาได้ ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "รับซื้อ Nintendo Switch หนองคาย"
 relatedKeywords: ["ขาย Nintendo Switch มือสอง หนองคาย", "รับซื้อ Nintendo Switch มือสอง", "ประเมินราคา Nintendo Switch หนองคาย", "ขายของไอที หนองคาย", "อำพล เทรดดิ้ง"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
 faqs:
   - question: "รับซื้อ Nintendo Switch ในหนองคาย พื้นที่ไหนบ้าง"
     answer: "รับประเมินในเมืองหนองคายและอำเภอใกล้เคียง เช่น เมืองหนองคาย, ท่าบ่อ, โพนพิสัย, ศรีเชียงใหม่, สังคม สามารถส่งรูปประเมินออนไลน์ก่อนได้ การนัดรับขึ้นอยู่กับประเภทสินค้า จำนวนสินค้า ระยะทาง และราคาประเมิน"

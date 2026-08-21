@@ -4,8 +4,8 @@ slug: "ssd-สุขภาพเหลือน้อย-เขียนข้�
 description: "SSD สุขภาพเหลือน้อยหรือเขียนข้อมูลเยอะ ยังขายได้ไหม อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "SSD สุขภาพเหลือน้อยขายได้ไหม"
 relatedKeywords: ["SSD สุขภาพเหลือน้อยขายได้ไหม", "ขายSSDมือสอง", "SSDเสียขายได้ไหม", "ประเมินราคาSSD", "รับซื้อSSD"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
+heroImage: "/images/services/rub-sue-ssd-hdd-amphon.webp"
+ogImage: "/images/services/rub-sue-ssd-hdd-amphon.webp"
 faqs:
   - question: "SSDมีตำหนิยังขายได้ไหม"
     answer: "ขายได้ในหลายกรณี ขึ้นอยู่กับรุ่น สภาพ อาการ และอะไหล่ที่ยังมีมูลค่า แนะนำส่งรูปผ่าน Line @webuy เพื่อประเมินเบื้องต้น"

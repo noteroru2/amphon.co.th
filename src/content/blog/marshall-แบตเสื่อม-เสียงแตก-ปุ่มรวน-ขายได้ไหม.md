@@ -4,8 +4,8 @@ slug: "marshall-แบตเสื่อม-เสียงแตก-ปุ่�
 description: "Marshall แบตเสื่อม เสียงแตก ปุ่มรวน ยังขายได้ไหม อ่านง่ายสำหรับคนที่ต้องการขายสินค้าไอที ประเมินฟรี ติดต่อ Line @webuy โทร 0642579353"
 mainKeyword: "Marshall แบตเสื่อมขายได้ไหม"
 relatedKeywords: ["Marshall แบตเสื่อมขายได้ไหม", "ขายMarshallมือสอง", "Marshallเสียขายได้ไหม", "ประเมินราคาMarshall", "รับซื้อMarshall"]
-heroImage: "/images/og/og-service-it.webp"
-ogImage: "/images/og/og-service-it.webp"
+heroImage: "/images/services/rub-sue-bluetooth-speaker-amphon.webp"
+ogImage: "/images/services/rub-sue-bluetooth-speaker-amphon.webp"
 faqs:
   - question: "Marshallมีตำหนิยังขายได้ไหม"
     answer: "ขายได้ในหลายกรณี ขึ้นอยู่กับรุ่น สภาพ อาการ และอะไหล่ที่ยังมีมูลค่า แนะนำส่งรูปผ่าน Line @webuy เพื่อประเมินเบื้องต้น"
