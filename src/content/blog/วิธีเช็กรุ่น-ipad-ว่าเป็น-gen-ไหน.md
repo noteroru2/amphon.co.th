@@ -1,7 +1,7 @@
 ---
-title: "วิธีดูรุ่น iPad ว่าเป็น Gen ไหน เช็กเลขโมเดล Axxxx พร้อมตาราง"
+title: "วิธีดูรุ่น iPad จากเลข Axxxx เช็กว่าเป็น Gen ไหน [ตารางเทียบ]"
 slug: "วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน"
-description: "วิธีดูรุ่น iPad ว่าเป็น Gen ไหนจาก Settings ฝาหลัง และเลขโมเดล Axxxx พร้อมตาราง iPad, Air, mini และ Pro แยกปี ขนาดจอ ความจุ และ Wi-Fi หรือ Cellular"
+description: "เช็กว่า iPad เป็นรุ่นหรือ Gen ไหนจาก Settings, Model Number และเลข Axxxx พร้อมตารางเทียบ iPad, Air, mini และ Pro แบบดูได้ทันที"
 mainKeyword: "วิธีดูรุ่น iPad ว่าเป็น Gen ไหน"
 relatedKeywords: ["วิธีเช็กรุ่น iPad", "เช็กรุ่น iPad", "iPad Gen ไหน", "ดูรุ่น iPad", "เลขโมเดล iPad Axxxx", "iPad Model Number", "ขาย iPad มือสอง", "ประเมินราคา iPad", "รับซื้อ iPad"]
 heroImage: "/images/apple/buy-ipad.webp"
