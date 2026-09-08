@@ -46,6 +46,11 @@ const featuredServices = relatedServices
   .sort((a, b) => prioritySlugs.indexOf(a.data.serviceSlug) - prioritySlugs.indexOf(b.data.serviceSlug))
   .slice(0, 7);
 
+const computerRecoveryAreas = new Set(['อุดรธานี', 'บุรีรัมย์', 'มหาสารคาม', 'นครพนม']);
+const localComputerService = computerRecoveryAreas.has(slug)
+  ? relatedServices.find((sa) => sa.data.serviceSlug === 'รับซื้อคอมพิวเตอร์')
+  : undefined;
+
 const schemaExtras = [
   createPlaceSchema({ pageUrl, name: title, description, province }),
   ...faqSchemaIfVisible(pageUrl, faqs),
@@ -142,6 +147,28 @@ const schemaExtras = [
       )}
     </aside>
   </div>
+
+  {localComputerService && (
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <span class="eyebrow">คอมพิวเตอร์มือสองใน{province}</span>
+          <h2>รับซื้อคอมพิวเตอร์และคอมมือสองใน{province}</h2>
+          <p>
+            มี PC คอมตั้งโต๊ะ คอมประกอบ Gaming PC Workstation หรือคอมสำนักงานใน{province}
+            สามารถส่งรูปตัวเครื่องพร้อมสเปก CPU, GPU, RAM และ SSD/HDD เพื่อประเมินเบื้องต้นก่อนตัดสินใจขายได้
+            หากมีหลายเครื่องจากบริษัทหรือสำนักงาน ให้ส่งรายการรุ่น สเปก จำนวน และสภาพมาพร้อมกันเพื่อช่วยตรวจข้อมูลได้เร็วขึ้น
+          </p>
+          <p>
+            <a href={`/รับซื้อ/${localComputerService.data.slug}`}>
+              ดูรายละเอียดรับซื้อคอมใน{province}
+            </a>
+            {' '}หรือส่งรูปและสเปกทาง LINE @webuy เพื่อเช็กข้อมูลก่อนนัดหมายหรือจัดส่ง
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
 
   <FAQ items={faqs} />
 
