@@ -18,6 +18,10 @@ export default defineConfig({
   site: 'https://amphon.co.th',
   trailingSlash: 'never',
   compressHTML: true,
+  redirects: {
+    '/บริการ/รัปซื้อคอมบริษัฟ': '/บริการ/รับซื้อคอมบริษัท',
+    '/บริการ/รัปีงอกคอมบริษัท': '/บริการ/รับซื้อคอมบริษัท',
+  },
   build: {
     format: 'directory',
     inlineStylesheets: 'always',
