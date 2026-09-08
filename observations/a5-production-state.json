@@ -1,0 +1,21 @@
+{
+  "batch": "A5",
+  "deploymentStatus": "PASS",
+  "productionPassDate": "2026-09-09",
+  "deployedCommit": "ee8e6bdebfb5b224733f90cf1ae522d6f885ee6d",
+  "baselineFinalizedGscDate": "2026-09-06",
+  "observationClockActive": true,
+  "minimumNewFinalizedDays": 7,
+  "primaryDecisionWindowDays": 14,
+  "firstReviewFinalizedDate": "2026-09-16",
+  "primaryDecisionFinalizedDate": "2026-09-23",
+  "evidence": {
+    "vercelCommitStatus": "success",
+    "liveRuntimeGate": "PARTIAL_TOOLING_LIMITATION"
+  },
+  "notes": [
+    "Observation days are counted only after the production pass date; finalized GSC data from 2026-09-07 and 2026-09-08 is pre-deploy and must not count toward A5.",
+    "The Vercel deployment for the deployed commit succeeded. Direct runtime fetch from this execution environment is limited by DNS/web-cache behavior, so page-level runtime checks remain independently re-runnable with scripts/a5-production-gate.mjs.",
+    "Freeze A1-A4 ranking/content changes until the 7-day review unless a production-critical defect is confirmed."
+  ]
+}
