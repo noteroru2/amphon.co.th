@@ -1,0 +1,79 @@
+{
+  "batch": "AMPHON_A0",
+  "site": "https://amphon.co.th",
+  "gscProperty": "sc-domain:amphon.co.th",
+  "capturedDate": "2026-09-09",
+  "latestFinalizedGscDate": "2026-09-06",
+  "sourceSha": "e779c2fc8fd143a57c5d18d8ad04dc11ee0e0f4d",
+  "currentWindow": {
+    "dateFrom": "2026-08-10",
+    "dateTo": "2026-09-06",
+    "clicks": 1000,
+    "impressions": 17076,
+    "ctr": 0.0586,
+    "position": 9.4536
+  },
+  "previousWindow": {
+    "dateFrom": "2026-07-13",
+    "dateTo": "2026-08-09",
+    "clicks": 821,
+    "impressions": 16071,
+    "ctr": 0.0511,
+    "position": 8.4184
+  },
+  "releaseObservation": {
+    "releaseDate": "2026-09-05",
+    "releaseSha": "e779c2fc8fd143a57c5d18d8ad04dc11ee0e0f4d",
+    "firstCompletePostReleaseDate": "2026-09-06",
+    "requiredCompleteFinalizedDays": 14,
+    "evaluateWhenFinalizedThrough": "2026-09-19",
+    "status": "HOLD_OBSERVE",
+    "targetFamilies": ["apple-hub", "macbook", "ipad-pro", "ipad-model-check"]
+  },
+  "priorities": {
+    "protect": [
+      "/",
+      "/ขายฟิล์ม-ถ่ายรูป-ได้-ที่ไหน",
+      "/blog/วิธีเช็ครุ่น-model-ipad-ทุกรุ่น",
+      "/บริการ/รับซื้อคอมขอนแก่น",
+      "/บริการ/รับซื้อโน๊ตบุ๊ค-อุบล",
+      "/จอ-ipad-แตก-เปิดไม่ติด-ขายได้ไหม",
+      "/บริการ/รับซื้อคอมโคราช",
+      "/บริการ/รับซื้อกล้อง-fujifilm",
+      "/บริการ/รับซื้อ-airpods",
+      "/บริการ/รับซื้อคอมภูเก็ต"
+    ],
+    "push": [
+      "/บริการ/รับซื้อคอมพิวเตอร์",
+      "/บริการ/รับซื้อ-tablet",
+      "/บริการ/รับซื้อคอมภูเก็ต"
+    ],
+    "recover": [
+      "/บริการ/รับซื้อ-ram",
+      "/บริการ/รับซื้อคอมอุดรธานี",
+      "/บริการ/รับซื้อคอมบุรีรัมย์",
+      "/บริการ/รับซื้อคอมมหาสารคาม",
+      "/บริการ/รับซื้อคอมนครพนม",
+      "/บริการ/รับซื้อคอมศรีสะเกษ",
+      "/บริการ/รับซื้อคอมกาฬสินธุ์",
+      "/บริการ/รับซื้อคอมยโสธร",
+      "/บริการ/รับซื้อคอมสกลนคร"
+    ],
+    "holdObserve": [
+      "/บริการ/รับซื้อ-apple",
+      "/บริการ/รับซื้อ-macbook",
+      "/บริการ/รับซื้อ-ipad",
+      "/บริการ/รับซื้อ-iphone",
+      "/blog/วิธีเช็ครุ่น-model-ipad-ทุกรุ่น"
+    ],
+    "consolidateVerify": [
+      {
+        "suspect": "/บริการ/รับปซื้องคอมบริษัท",
+        "candidateOwner": "/บริการ/รับซื้อคอมบริษัท",
+        "action": "VERIFY_BEFORE_ACTION"
+      }
+    ]
+  },
+  "nextBatch": "AMPHON A1 — RAM Ranking Recovery (Winner-Safe)",
+  "status": "AUDIT_PASS / BASELINE_FROZEN / PRODUCTION_UNCHANGED"
+}
