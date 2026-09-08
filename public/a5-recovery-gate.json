@@ -1,0 +1,9 @@
+{
+  "batch": "A5",
+  "includesThrough": "A4",
+  "sourceCommit": "00ee115c7ea54246463db0b814b9fc6b80f97841",
+  "baselineFinalizedGscDate": "2026-09-06",
+  "minimumNewFinalizedDays": 7,
+  "primaryDecisionWindowDays": 14,
+  "purpose": "Production deployment fingerprint for AMPHON A1-A4 recovery verification"
+}
