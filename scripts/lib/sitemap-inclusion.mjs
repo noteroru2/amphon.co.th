@@ -13,6 +13,8 @@ export const SITEMAP_EXACT_EXCLUSIONS = new Set([
   '/บริการ/รับซื้อ-hdd',
   '/บริการ/รับซื้อเลนส์',
   '/บริการ/รับซื้อ-storage-nas',
+  // P1 phone ownership consolidation → /บริการ/รับซื้อโทรศัพท์มือสอง
+  '/บริการ/รับซื้อมือถือ',
   // Batch 12B collectibles merge pilot (explicit 10 only)
   '/รับซื้อ/รับซื้อของสะสม-กาฬสินธุ์',
   '/รับซื้อ/รับซื้อของสะสม-ขอนแก่น',
