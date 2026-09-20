@@ -1727,6 +1727,11 @@ p  { margin-top: 0; }
     align-items: stretch;
   }
 
+  .inline-service-cta__text {
+    width: 100%;
+    min-width: 0;
+  }
+
   .inline-service-cta__btn {
     align-self: stretch;
     width: 100%;
@@ -2071,7 +2076,7 @@ p  { margin-top: 0; }
   min-height: 44px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .inline-service-cta {
     flex-direction: row;
     align-items: center;
@@ -2080,6 +2085,13 @@ p  { margin-top: 0; }
   }
 
   .inline-service-cta__text {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .inline-service-cta__btn {
+    width: auto;
+    flex: 0 0 auto;
+    align-self: center;
   }
 }
