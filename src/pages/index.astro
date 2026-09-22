@@ -9,6 +9,7 @@ import { categoryImages, serviceThumbnails, imageAlt } from '../config/images';
 import { getCollection } from 'astro:content';
 import { site } from '../config/site';
 import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema } from '../lib/seo';
+import { SHOP_URL } from '../config/ecosystem';
 
 const allServices = (await getCollection('services', ({ data }) => !data.draft))
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
@@ -423,6 +424,24 @@ const trustItems = [
       <p class="text-center mt-6">
         <a href="/รับซื้อสินค้าไอที" class="btn btn--primary">ดูบริการทั้งหมด →</a>
       </p>
+    </div>
+  </section>
+
+  <!-- ====== AMPHON ECOSYSTEM: SECONDARY BUY JOURNEY ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="card b2b-card">
+        <span class="eyebrow">เลือกซื้อสินค้าไอทีมือสอง</span>
+        <h2>ต้องการซื้อแทนที่จะขาย?</h2>
+        <p>
+          หน้า amphon.co.th ยังเน้นการขายสินค้าให้ร้านและประเมินราคาเป็นหลัก
+          หากกำลังมองหาโน้ตบุ๊ก คอม iPhone กล้อง หรือสินค้าไอทีมือสองที่พร้อมจำหน่าย
+          สามารถเลือกดูสินค้าจริงใน AMPHON SHOP ได้
+        </p>
+        <div>
+          <a href={SHOP_URL} class="btn btn--outline">ดูสินค้ามือสองที่พร้อมจำหน่าย →</a>
+        </div>
+      </div>
     </div>
   </section>
 

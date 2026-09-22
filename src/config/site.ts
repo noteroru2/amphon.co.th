@@ -1,5 +1,6 @@
 export const site = {
   name: 'อำพล เทรดดิ้ง',
+  legalName: 'บริษัท อำพล เทรดดิ้ง จำกัด',
   alternateName: ['Amphon.co.th', 'AMPHON TRADING', 'อำพล เทรดดิ้ง', 'ร้านอำพล เทรดดิ้ง'],
   title: 'Amphon.co.th',
   description:
