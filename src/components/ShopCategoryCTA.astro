@@ -1,0 +1,74 @@
+---
+import { getShopCategoryForService } from '../config/ecosystem';
+
+interface Props {
+  serviceSlug: string;
+}
+
+const { serviceSlug } = Astro.props;
+const target = getShopCategoryForService(serviceSlug);
+---
+
+{target && (
+  <aside class="shop-category-bridge" aria-label="สินค้าไอทีมือสองที่เกี่ยวข้อง">
+    <div>
+      <span class="shop-category-bridge__eyebrow">กำลังมองหาสินค้ามือสอง?</span>
+      <p class="shop-category-bridge__title">
+        ดู{target.categoryName}มือสองที่พร้อมจำหน่ายจาก AMPHON TRADING
+      </p>
+      <p class="shop-category-bridge__copy">
+        หน้านี้ใช้สำหรับขายเครื่องให้เรา หากต้องการเลือกซื้อสินค้า ให้ไปยัง AMPHON SHOP ซึ่งแสดงราคา รูป สเปก และสถานะของสินค้าที่ลงขายจริง
+      </p>
+    </div>
+    <a class="btn btn--outline btn--sm" href={target.href}>
+      {target.label} →
+    </a>
+  </aside>
+)}
+
+<style>
+  .shop-category-bridge {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem 1.5rem;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid rgba(249 115 22 / 0.22);
+    border-radius: 1rem;
+    background: rgba(249 115 22 / 0.04);
+  }
+
+  .shop-category-bridge__eyebrow {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--color-primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .shop-category-bridge__title {
+    margin: 0 0 0.35rem;
+    color: var(--color-dark);
+    font-weight: 800;
+  }
+
+  .shop-category-bridge__copy {
+    margin: 0;
+    color: var(--color-gray-600);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 767px) {
+    .shop-category-bridge {
+      grid-template-columns: 1fr;
+      margin: 1.5rem 0;
+      padding: 1rem;
+    }
+
+    .shop-category-bridge .btn {
+      width: 100%;
+    }
+  }
+</style>
