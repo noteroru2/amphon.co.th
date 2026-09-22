@@ -407,7 +407,9 @@ const CLUSTER_INTENT_CHIP_SLUGS: Partial<Record<ServiceCluster, string[]>> = {
   [SERVICE_CLUSTERS.NOTEBOOK]: NOTEBOOK_HUB_PRIORITY_SLUGS,
   [SERVICE_CLUSTERS.COM_OFFICE]: COM_OFFICE_HUB_PRIORITY_SLUGS.slice(0, 6),
   [SERVICE_CLUSTERS.TABLET]: [
+    'รับซื้อ-surface',
     'รับซื้อ-ipad',
+    'รับซื้ออุปกรณ์ไอที',
   ],
   [SERVICE_CLUSTERS.IPAD]: [
     'รับซื้อ-ipad-pro',
@@ -888,6 +890,7 @@ export function getIntentChipServices(
 const RELATED_CARD_OVERRIDES: Record<string, string[]> = {
   'รับซื้อโน๊ตบุ๊ค': ['รับซื้อโน๊ตบุ๊คเกมมิ่ง', 'รับซื้อโน๊ตบุ๊คเสีย', 'รับซื้อ-macbook'],
   'รับซื้อคอมพิวเตอร์': ['รับซื้อคอมพิวเตอร์ตั้งโต๊ะ', 'รับซื้อคอมประกอบ', 'รับซื้อ-gaming-pc', 'รับซื้อคอมบริษัท'],
+  'รับซื้อแท็บเล็ต': ['รับซื้อ-surface', 'รับซื้อ-ipad', 'รับซื้ออุปกรณ์ไอที'],
   'รับซื้อสินค้าไอทีบริษัท': [
     'รับซื้อคอมบริษัท',
     'รับซื้อโน๊ตบุ๊คบริษัท',

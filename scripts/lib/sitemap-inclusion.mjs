@@ -6,6 +6,20 @@
 
 /** Exact pathnames that must never appear in the sitemap. */
 export const SITEMAP_EXACT_EXCLUSIONS = new Set([
+  // A7 GSC typo/legacy URL pollution — redirect-only, never sitemap candidates
+  '/ปริการ/รับซื้อแรม',
+  '/บริการ/รับีการ/รับซื้อแรม',
+  '/บริการ/รัปซื้อแรม',
+  '/บริการ/รัปซื้อกล้อง',
+  '/ปรุกร/รัปซื้อกล้อง',
+  '/บริการ/รัปซื้อกล้องฟิล์ล',
+  '/บริการ/รัปซื้อกล้องฟิลัม',
+  '/บริการ/รัปซื้อกล้องฟิล์ม',
+  '/บราการ/รัปซื้อกล้องฟิล์ม',
+  '/ปริการ/รัปซื้อกล้องฟิล์ม',
+  '/ปริาร/รัปซื้อกล้องฟิมูอง',
+  '/บริการ/รัปซื้อ-airpods',
+  '/blog/วิธีเช็กรุ่น-ipad-ว่ิำเป็น-gen-ไหน',
   // Legacy hub path → redirects to /รับซื้อสินค้าไอที (Batch 1)
   '/บริการ/รับซื้อสินค้าไอที',
   // Redirect / noindex fallback service slugs
