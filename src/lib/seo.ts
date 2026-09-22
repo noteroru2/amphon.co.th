@@ -90,7 +90,7 @@ export function createOrganizationSchema() {
     '@id': schemaIds.organization,
     name: site.name,
     alternateName: site.alternateName,
-    legalName: site.title,
+    legalName: site.legalName,
     url: site.url,
     description: site.description,
     logo: imageObjectNode(site.logo),
