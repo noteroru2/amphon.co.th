@@ -8,6 +8,7 @@ import ServiceCard from '../components/ServiceCard.astro';
 import ServiceQuickSummary from '../components/ServiceQuickSummary.astro';
 import RelatedIntentChips from '../components/RelatedIntentChips.astro';
 import InlineServiceCTA from '../components/InlineServiceCTA.astro';
+import ShopCategoryCTA from '../components/ShopCategoryCTA.astro';
 import {
   absoluteUrl,
   schemaIds,
@@ -238,6 +239,7 @@ const steps = [
   <div class="container content-layout content-layout--service">
     <article class="prose prose--service">
       <Content />
+      <ShopCategoryCTA serviceSlug={slug} />
       <div id="inline-service-cta-anchor" class="inline-service-cta-anchor" hidden>
         <InlineServiceCTA />
       </div>
