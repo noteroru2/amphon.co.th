@@ -123,6 +123,30 @@ export const SERVICE_SUPPORTING_ARTICLES: Record<string, SupportingArticleLink[]
       anchor: 'แนวโน้มราคา iPad มือสอง',
     },
   ],
+  'รับซื้อ-ipad-pro': [
+    {
+      path: '/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน',
+      anchor: 'เช็กรุ่น iPad Pro จากเลข Axxxx',
+    },
+  ],
+  'รับซื้อ-ipad-air': [
+    {
+      path: '/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน',
+      anchor: 'วิธีดูรุ่น iPad Air ก่อนขาย',
+    },
+  ],
+  'รับซื้อ-ipad-gen': [
+    {
+      path: '/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน',
+      anchor: 'เช็กว่า iPad เป็น Gen ไหน',
+    },
+  ],
+  'รับซื้อ-ipad-mini': [
+    {
+      path: '/blog/วิธีเช็กรุ่น-ipad-ว่าเป็น-gen-ไหน',
+      anchor: 'ดูเลขโมเดล iPad mini',
+    },
+  ],
   'รับซื้อกล้อง': [
     {
       path: '/blog/กล้อง-shutter-count-สูง-ขายได้ไหม',
