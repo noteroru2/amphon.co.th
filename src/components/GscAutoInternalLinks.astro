@@ -1,0 +1,53 @@
+---
+import type { GscAutoInternalLink } from '../config/gsc-auto-internal-links'
+
+interface Props {
+  links?: GscAutoInternalLink[]
+}
+
+const { links = [] } = Astro.props
+---
+
+{links.length > 0 && (
+  <aside class="gsc-auto-links" aria-label="อ่านข้อมูลที่เกี่ยวข้อง">
+    <strong>ข้อมูลที่เกี่ยวข้อง</strong>
+    <div class="gsc-auto-links__items">
+      {links.map((link) => (
+        <p>
+          {link.context} <a href={link.targetPath}>{link.anchor}</a>
+        </p>
+      ))}
+    </div>
+  </aside>
+)}
+
+<style>
+  .gsc-auto-links {
+    margin: 2rem 0 1rem;
+    padding: 1rem 1.125rem;
+    border: 1px solid rgba(15 23 42 / 0.10);
+    border-left: 3px solid var(--color-primary);
+    border-radius: .875rem;
+    background: rgba(248 250 252 / .8);
+  }
+  .gsc-auto-links > strong {
+    display: block;
+    margin-bottom: .5rem;
+    font-size: .9rem;
+    color: var(--color-dark);
+  }
+  .gsc-auto-links__items {
+    display: grid;
+    gap: .45rem;
+  }
+  .gsc-auto-links p {
+    margin: 0;
+    color: var(--color-gray-600);
+    font-size: .9rem;
+    line-height: 1.65;
+  }
+  .gsc-auto-links a {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+</style>
