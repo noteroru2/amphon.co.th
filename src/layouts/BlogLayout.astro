@@ -5,6 +5,8 @@ import { getImageAlt } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import ShopAuthorityBridge from '../components/ShopAuthorityBridge.astro';
+import GscAutoInternalLinks from '../components/GscAutoInternalLinks.astro';
+import { getGscAutoInternalLinks } from '../config/gsc-auto-internal-links';
 import { getShopAuthorityTargets } from '../config/shop-authority-map';
 import {
   absoluteUrl,
@@ -25,6 +27,7 @@ const { entry, relatedPosts = [] } = Astro.props;
 const { title, description, slug, date, updated, author, ogImage, heroImage } = entry.data;
 const { Content } = await render(entry);
 const shopAuthorityTargets = getShopAuthorityTargets(slug);
+const gscAutoLinks = getGscAutoInternalLinks('blog', slug);
 
 const breadcrumbs: BreadcrumbItem[] = [
   { label: 'หน้าแรก', href: '/' },
@@ -101,6 +104,7 @@ const schemaExtras = [
   <div class="container blog-content">
     <article class="prose">
       <Content />
+      <GscAutoInternalLinks links={gscAutoLinks} />
       <ShopAuthorityBridge targets={shopAuthorityTargets} />
     </article>
   </div>
