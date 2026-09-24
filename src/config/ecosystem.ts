@@ -27,6 +27,26 @@ export const SHOP_CATEGORY_BY_SERVICE: Record<string, ShopCategoryTarget> = {
     label: 'ดูหมวด Gaming PC มือสองใน AMPHON SHOP',
     categoryName: 'Gaming PC',
   },
+  'รับซื้อ-gaming-notebook': {
+    href: `${SHOP_URL}/gaming-laptops/`,
+    label: 'ดู Gaming Laptop มือสองใน AMPHON SHOP',
+    categoryName: 'Gaming Laptop',
+  },
+  'รับซื้อการ์ดจอ': {
+    href: `${SHOP_URL}/specs/`,
+    label: 'เลือกสินค้าไอทีมือสองตาม GPU ใน AMPHON SHOP',
+    categoryName: 'สินค้าตาม GPU',
+  },
+  'รับซื้อแรม': {
+    href: `${SHOP_URL}/specs/`,
+    label: 'เลือกสินค้าไอทีมือสองตาม RAM ใน AMPHON SHOP',
+    categoryName: 'สินค้าตาม RAM',
+  },
+  'รับซื้อซีพียู': {
+    href: `${SHOP_URL}/specs/`,
+    label: 'เลือกสินค้าไอทีมือสองตาม CPU ใน AMPHON SHOP',
+    categoryName: 'สินค้าตาม CPU',
+  },
   'รับซื้อ-iphone': {
     href: `${SHOP_URL}/iphones/`,
     label: 'ดูหมวด iPhone มือสองใน AMPHON SHOP',
