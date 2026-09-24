@@ -9,6 +9,8 @@ import ServiceQuickSummary from '../components/ServiceQuickSummary.astro';
 import RelatedIntentChips from '../components/RelatedIntentChips.astro';
 import InlineServiceCTA from '../components/InlineServiceCTA.astro';
 import ShopCategoryCTA from '../components/ShopCategoryCTA.astro';
+import GscAutoInternalLinks from '../components/GscAutoInternalLinks.astro';
+import { getGscAutoInternalLinks } from '../config/gsc-auto-internal-links';
 import {
   absoluteUrl,
   schemaIds,
@@ -45,6 +47,7 @@ const {
 const { title, h1, description, slug, faqs, mainKeyword, relatedKeywords, ogImage, heroImage, date, updated, quickSummary } =
   entry.data;
 const { Content } = await render(entry);
+const gscAutoLinks = getGscAutoInternalLinks('service', slug);
 
 const breadcrumbs: BreadcrumbItem[] = [
   { label: 'หน้าแรก', href: '/' },
@@ -239,6 +242,7 @@ const steps = [
   <div class="container content-layout content-layout--service">
     <article class="prose prose--service">
       <Content />
+      <GscAutoInternalLinks links={gscAutoLinks} />
       <ShopCategoryCTA serviceSlug={slug} />
       <div id="inline-service-cta-anchor" class="inline-service-cta-anchor" hidden>
         <InlineServiceCTA />

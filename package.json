@@ -31,6 +31,7 @@
     "qa:batch-10-metadata": "node scripts/check-batch-10-metadata.mjs",
     "qa:batch-11-internal-links": "node scripts/check-batch-11-internal-links.mjs",
     "qa:shop-authority": "node scripts/check-shop-authority-engine.mjs",
+    "qa:gsc-auto-links": "node scripts/check-gsc-auto-internal-links.mjs",
     "audit:batch-12a-thin-content": "node scripts/audit-batch-12a-thin-content.mjs",
     "qa:batch-12b-collectibles": "node scripts/check-batch-12b-collectibles-pilot.mjs",
     "qa:batch-12c-collectibles": "node scripts/check-batch-12c-collectibles-family.mjs",
