@@ -4,6 +4,8 @@ import OptimizedImage from '../components/OptimizedImage.astro';
 import { getImageAlt } from '../config/images';
 import CTAContact from '../components/CTAContact.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import ShopAuthorityBridge from '../components/ShopAuthorityBridge.astro';
+import { getShopAuthorityTargets } from '../config/shop-authority-map';
 import {
   absoluteUrl,
   schemaIds,
@@ -22,6 +24,7 @@ interface Props {
 const { entry, relatedPosts = [] } = Astro.props;
 const { title, description, slug, date, updated, author, ogImage, heroImage } = entry.data;
 const { Content } = await render(entry);
+const shopAuthorityTargets = getShopAuthorityTargets(slug);
 
 const breadcrumbs: BreadcrumbItem[] = [
   { label: 'หน้าแรก', href: '/' },
@@ -98,6 +101,7 @@ const schemaExtras = [
   <div class="container blog-content">
     <article class="prose">
       <Content />
+      <ShopAuthorityBridge targets={shopAuthorityTargets} />
     </article>
   </div>
 
