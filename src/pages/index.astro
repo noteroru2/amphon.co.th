@@ -11,6 +11,8 @@ import { site } from '../config/site';
 import { absoluteUrl, schemaIds, createItemListSchema, createOfferCatalogSchema } from '../lib/seo';
 import { SHOP_URL } from '../config/ecosystem';
 
+const BUYHUB_URL = 'https://buyhubthai.com/';
+
 const allServices = (await getCollection('services', ({ data }) => !data.draft))
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
 const popularServiceConfig = [
@@ -445,6 +447,17 @@ const trustItems = [
         </p>
         <div>
           <a href={SHOP_URL} class="btn btn--outline">เลือกดูสินค้าไอทีมือสองใน AMPHON SHOP →</a>
+        </div>
+      </div>
+      <div class="card b2b-card" style="margin-top:1rem;">
+        <span class="eyebrow">บริการในเครือ · ภาคอีสาน</span>
+        <h2>BuyHub สำหรับการประเมินและประสานงานในภาคอีสาน</h2>
+        <p>
+          BuyHub เป็นช่องทางบริการในเครืออำพล เทรดดิ้งสำหรับผู้ขายสินค้าไอทีในภาคอีสาน
+          ใช้สำหรับส่งรูปเช็กราคาและดูข้อมูลพื้นที่บริการ โดยหน้าร้านหลักของบริษัทอยู่ที่อุบลราชธานี
+        </p>
+        <div>
+          <a href={BUYHUB_URL} class="btn btn--outline">ไปที่ BuyHub →</a>
         </div>
       </div>
     </div>
