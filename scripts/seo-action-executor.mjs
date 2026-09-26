@@ -159,7 +159,7 @@ function parseRegistry(content) {
   const match = content.match(/(export const GSC_AUTO_INTERNAL_LINKS:[^\n]*=\s*\[)([\s\S]*?)(\]\n\nexport function getGscAutoInternalLinks)/)
   if (!match) throw new Error('Unable to locate GSC_AUTO_INTERNAL_LINKS registry')
   const entries = []
-  const objectPattern = /\{\s*actionId:\s*'([^']+)',\s*sourceKind:\s*'([^']+)',\s*sourceSlug:\s*'([^']+)',\s*targetPath:\s*'([^']+)',\s*anchor:\s*'([^']+)',\s*context:\s*'([^']+)',\s*approvedAt:\s*'([^']+)'\s*\}/g
+  const objectPattern = /\{\s*actionId:\s*'([^']+)',\s*sourceKind:\s*'([^']+)',\s*sourceSlug:\s*'([^']+)',\s*targetPath:\s*'([^']+)',\s*anchor:\s*'([^']+)',\s*context:\s*'([^']+)',\s*approvedAt:\s*'([^']+)'\s*,?\s*\}/g
   for (const item of match[2].matchAll(objectPattern)) {
     entries.push({
       actionId: item[1],
@@ -170,6 +170,9 @@ function parseRegistry(content) {
       context: item[6],
       approvedAt: item[7],
     })
+  }
+  if (match[2].trim() && entries.length === 0) {
+    throw new Error('GSC_AUTO_INTERNAL_LINKS contains entries that the executor cannot parse safely')
   }
   return { match, entries }
 }
