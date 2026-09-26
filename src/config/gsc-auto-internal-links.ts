@@ -18,7 +18,26 @@ export type GscAutoInternalLink = {
  * - Never use this file to change H1, title, canonical, robots, redirects or URL ownership.
  * - The automation must run CI and live verification before marking an action APPLIED.
  */
-export const GSC_AUTO_INTERNAL_LINKS: GscAutoInternalLink[] = []
+export const GSC_AUTO_INTERNAL_LINKS: GscAutoInternalLink[] = [
+  {
+    actionId: '1ad0ef64-d635-411e-be68-8f669694dd90',
+    sourceKind: 'service',
+    sourceSlug: 'รับซื้อ-gaming-pc',
+    targetPath: '/บริการ/รับซื้อคอมพิวเตอร์',
+    anchor: 'รับซื้อคอมพิวเตอร์',
+    context: 'สำหรับรายละเอียดการประเมินสินค้าที่เกี่ยวข้อง ดู',
+    approvedAt: '2026-09-26T06:30:00.172477+00:00',
+  },
+  {
+    actionId: '1ad0ef64-d635-411e-be68-8f669694dd90',
+    sourceKind: 'service',
+    sourceSlug: 'รับซื้อคอมประกอบ',
+    targetPath: '/บริการ/รับซื้อคอมพิวเตอร์',
+    anchor: 'ประเมินคอม PC มือสอง',
+    context: 'สำหรับรายละเอียดการประเมินสินค้าที่เกี่ยวข้อง ดู',
+    approvedAt: '2026-09-26T06:30:00.172477+00:00',
+  },
+]
 
 export function getGscAutoInternalLinks(kind: GscAutoLinkSourceKind, slug: string) {
   return GSC_AUTO_INTERNAL_LINKS
