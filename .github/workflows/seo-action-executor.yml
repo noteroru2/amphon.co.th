@@ -6,9 +6,6 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - 'scripts/seo-action-executor.mjs'
-      - '.github/workflows/seo-action-executor.yml'
   pull_request:
     paths:
       - 'scripts/seo-action-executor.mjs'

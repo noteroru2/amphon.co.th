@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises'
 
 const runner = await readFile(new URL('./seo-action-executor.mjs', import.meta.url), 'utf8')
+const workflow = await readFile(new URL('../.github/workflows/seo-action-executor.yml', import.meta.url), 'utf8')
 
 const checks = [
   ['runner claims rollback jobs before new SEO work', runner.includes("edge('rollback_claim'") && runner.indexOf('await processRollbackJobs()') < runner.indexOf('await processClaimedJobs()')],
@@ -14,6 +15,9 @@ const checks = [
   ['rollback verifies live internal-link removal', runner.includes('waitForLinkRollback') && runner.includes('exactVariants')],
   ['rollback verifies live meta restoration', runner.includes('waitForMetaRollback') && runner.includes('previousTitle') && runner.includes('previousDescription')],
   ['meta apply stores previous values for rollback verification', runner.includes("previousTitle: yamlScalarText(fieldValue(beforeFm, 'title'))")],
+  ['runner reports git history before rollback or new work', runner.includes("edge('site_change_report'") && runner.indexOf('await reportSiteChanges()') < runner.indexOf('await processRollbackJobs()')],
+  ['causal audit reports bounded recent commit history', runner.includes('collectRecentCommits(100)') && runner.includes('changedFiles')],
+  ['every main push triggers the audit workflow', workflow.includes('push:\n    branches: [main]') && !workflow.includes("push:\n    branches: [main]\n    paths:")],
 ]
 
 const failed = checks.filter(([, ok]) => !ok)
@@ -22,4 +26,4 @@ if (failed.length) {
   console.error(`SEO AUTO ROLLBACK verification failed: ${failed.map(([label]) => label).join(', ')}`)
   process.exit(1)
 }
-console.log('SEO AUTO ROLLBACK PASS — exact revert, conflict guard, idempotency and live verification protected')
+console.log('SEO EXECUTOR PASS — rollback, causal git audit and live verification protected')
