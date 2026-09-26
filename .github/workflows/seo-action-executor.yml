@@ -1,0 +1,45 @@
+name: SEO Action Executor
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/seo-action-executor.mjs'
+      - '.github/workflows/seo-action-executor.yml'
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: seo-action-executor
+  cancel-in-progress: false
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SEO_EXECUTOR_URL: https://mfpdtlxwdbxitgfzdape.supabase.co/functions/v1/seo-action-executor
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Run guarded SEO executor
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/seo-action-executor.mjs
