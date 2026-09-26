@@ -32,6 +32,34 @@ function git(args, options = {}) {
   return run('git', args, options)
 }
 
+function collectRecentCommits(limit = 100) {
+  const lines = git(['log', `-n${Math.max(1, Math.min(limit, 100))}`, '--format=%H%x1f%P%x1f%cI%x1f%s'])
+    .split('\n')
+    .filter(Boolean)
+
+  return lines.map((line) => {
+    const [sha, parents, committedAt, message] = line.split('\x1f')
+    const changedFiles = git(['show', '--pretty=', '--name-only', sha])
+      .split('\n')
+      .map((value) => value.trim())
+      .filter(Boolean)
+    return {
+      sha,
+      parentSha: String(parents || '').split(' ')[0] || null,
+      committedAt,
+      message: message || '',
+      eventName: process.env.GITHUB_EVENT_NAME || '',
+      changedFiles,
+    }
+  })
+}
+
+async function reportSiteChanges() {
+  const commits = collectRecentCommits(100)
+  const response = await edge('site_change_report', { commits })
+  console.log(`Reported ${response.audit?.reported ?? commits.length} commit(s) to causal attribution audit`)
+}
+
 function resetMain() {
   git(['fetch', 'origin', 'main'])
   git(['checkout', '-B', 'main', 'origin/main'])
@@ -858,6 +886,8 @@ async function processClaimedJobs() {
   }
 }
 
+resetMain()
+await reportSiteChanges()
 await processRollbackJobs()
 await reconcilePullRequests()
 await processClaimedJobs()
