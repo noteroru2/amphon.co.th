@@ -370,11 +370,13 @@ function prepareMetaPatch(job) {
 }
 
 function ensureOnlyChanged(expectedFiles) {
-  const changed = git(['status', '--short'])
-    .split('\n')
-    .filter(Boolean)
-    .map((line) => line.slice(3).trim())
-  const unexpected = changed.filter((file) => !expectedFiles.includes(file))
+  const changed = [
+    ...git(['diff', '--name-only']).split('\n').filter(Boolean),
+    ...git(['diff', '--cached', '--name-only']).split('\n').filter(Boolean),
+    ...git(['ls-files', '--others', '--exclude-standard']).split('\n').filter(Boolean),
+  ]
+  const unique = [...new Set(changed)]
+  const unexpected = unique.filter((file) => !expectedFiles.includes(file))
   if (unexpected.length) throw new Error(`Unexpected tracked/generated changes: ${unexpected.join(', ')}`)
 }
 
