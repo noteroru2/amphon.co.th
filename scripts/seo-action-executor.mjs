@@ -156,7 +156,7 @@ function extractAnchors(notes, fallback) {
 }
 
 function parseRegistry(content) {
-  const match = content.match(/(export const GSC_AUTO_INTERNAL_LINKS:[^\n]*=\s*\[\n)([\s\S]*?)(\n\]\n\nexport function getGscAutoInternalLinks)/)
+  const match = content.match(/(export const GSC_AUTO_INTERNAL_LINKS:[^\n]*=\s*\[)([\s\S]*?)(\]\n\nexport function getGscAutoInternalLinks)/)
   if (!match) throw new Error('Unable to locate GSC_AUTO_INTERNAL_LINKS registry')
   const entries = []
   const objectPattern = /\{\s*actionId:\s*'([^']+)',\s*sourceKind:\s*'([^']+)',\s*sourceSlug:\s*'([^']+)',\s*targetPath:\s*'([^']+)',\s*anchor:\s*'([^']+)',\s*context:\s*'([^']+)',\s*approvedAt:\s*'([^']+)'\s*\}/g
@@ -239,8 +239,8 @@ function addAutoLinks(job) {
 
   if (!additions.length) throw new Error('All explicit source pages reached the guarded link cap')
 
-  const separator = parsed.match[2].trim() ? '\n' : ''
-  const nextBody = `${parsed.match[2]}${separator}${additions.map(serializeRegistryEntry).join('\n')}`
+  const allEntries = [...parsed.entries, ...additions]
+  const nextBody = allEntries.length ? `\n${allEntries.map(serializeRegistryEntry).join('\n')}\n` : ''
   const next = original.replace(parsed.match[0], `${parsed.match[1]}${nextBody}${parsed.match[3]}`)
   writeFileSync(REGISTRY, next)
 
