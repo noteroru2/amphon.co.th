@@ -1,0 +1,67 @@
+name: SEO Action Executor
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/seo-action-executor.mjs'
+      - '.github/workflows/seo-action-executor.yml'
+  pull_request:
+    paths:
+      - 'scripts/seo-action-executor.mjs'
+      - '.github/workflows/seo-action-executor.yml'
+
+concurrency:
+  group: seo-action-executor-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check executor syntax and guarded registry contract
+        run: |
+          node --check scripts/seo-action-executor.mjs
+          npm run qa:gsc-auto-links
+
+  execute:
+    if: github.event_name != 'pull_request'
+    needs: syntax
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    env:
+      SEO_EXECUTOR_URL: https://mfpdtlxwdbxitgfzdape.supabase.co/functions/v1/seo-action-executor
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Run guarded SEO executor
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/seo-action-executor.mjs
