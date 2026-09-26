@@ -85,6 +85,10 @@ async function finish(job, outcome, payload = {}) {
   return edge('finish', { jobId: job.jobId, outcome, payload })
 }
 
+async function finishRollback(job, outcome, payload = {}) {
+  return edge('rollback_finish', { jobId: job.jobId, outcome, payload })
+}
+
 async function githubApi(apiPath, init = {}) {
   const response = await fetch(`https://api.github.com/repos/${REPOSITORY}${apiPath}`, {
     ...init,
@@ -330,9 +334,21 @@ function frontmatter(content) {
   return match[1]
 }
 
+
 function fieldValue(fm, field) {
   const match = fm.match(new RegExp(`^${field}:\\s*(.*)$`, 'm'))
   return match ? match[1] : null
+}
+
+function yamlScalarText(raw) {
+  if (raw === null || raw === undefined) return null
+  const value = String(raw).trim()
+  if (!value) return ''
+  if (value.startsWith('"') && value.endsWith('"')) {
+    try { return JSON.parse(value) } catch { return value.slice(1, -1) }
+  }
+  if (value.startsWith("'") && value.endsWith("'")) return value.slice(1, -1).replaceAll("''", "'")
+  return value
 }
 
 function replaceField(content, field, value) {
@@ -369,6 +385,8 @@ function prepareMetaPatch(job) {
     targetPath: decodePath(action.page),
     candidateTitle: action.candidateTitle || null,
     candidateDescription: action.candidateDescription || null,
+    previousTitle: yamlScalarText(fieldValue(beforeFm, 'title')),
+    previousDescription: yamlScalarText(fieldValue(beforeFm, 'description')),
   }
 }
 
@@ -403,6 +421,217 @@ async function waitForMeta(patchPayload, attempts = 12) {
     await new Promise((resolve) => setTimeout(resolve, 10_000))
   }
   return false
+}
+
+
+function findPriorRollbackCommit(executionId) {
+  const sha = git(['log', '--all', `--grep=seo-rollback:${executionId}`, '--format=%H', '-n', '1'])
+  return sha || null
+}
+
+function exactCommitFiles(commitSha) {
+  return git(['show', '--format=', '--name-only', commitSha])
+    .split('\n')
+    .map((value) => value.trim())
+    .filter(Boolean)
+}
+
+function sameFiles(left, right) {
+  const a = [...new Set(left)].sort()
+  const b = [...new Set(right)].sort()
+  return JSON.stringify(a) === JSON.stringify(b)
+}
+
+async function waitForLinkRollback(patchPayload, attempts = 18) {
+  const targetPath = patchPayload.targetPath
+  const encodedTarget = encodeURI(targetPath)
+  const sourcePaths = patchPayload.sourcePaths || []
+  const anchors = patchPayload.anchors || []
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    let allGood = true
+    for (let index = 0; index < sourcePaths.length; index += 1) {
+      const sourcePath = sourcePaths[index]
+      const anchor = anchors[index] || ''
+      try {
+        const response = await fetch(new URL(sourcePath, SITE_ORIGIN), {
+          headers: { 'user-agent': 'Amphon-SEO-Executor/1.0' },
+        })
+        const html = await response.text()
+        const exactVariants = [
+          `href="${targetPath}">${anchor}</a>`,
+          `href='${targetPath}'>${anchor}</a>`,
+          `href="${encodedTarget}">${anchor}</a>`,
+          `href='${encodedTarget}'>${anchor}</a>`,
+        ]
+        if (!response.ok || (anchor && exactVariants.some((value) => html.includes(value)))) allGood = false
+      } catch {
+        allGood = false
+      }
+    }
+    if (allGood) return true
+    console.log(`Rollback live link verification attempt ${attempt}/${attempts} is not ready yet`)
+    await new Promise((resolve) => setTimeout(resolve, 10_000))
+  }
+  return false
+}
+
+async function waitForMetaRollback(patchPayload, attempts = 18) {
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetch(new URL(patchPayload.targetPath, SITE_ORIGIN), {
+        headers: { 'user-agent': 'Amphon-SEO-Executor/1.0' },
+      })
+      const html = await response.text()
+      const titleRestored = patchPayload.previousTitle
+        ? html.includes(`<title>${patchPayload.previousTitle}</title>`) || html.includes(patchPayload.previousTitle)
+        : !patchPayload.candidateTitle || !html.includes(patchPayload.candidateTitle)
+      const descriptionProbe = patchPayload.previousDescription
+        ? patchPayload.previousDescription.slice(0, Math.min(70, patchPayload.previousDescription.length))
+        : ''
+      const descriptionRestored = descriptionProbe
+        ? html.includes(descriptionProbe) || html.includes(descriptionProbe.replaceAll('&', '&amp;'))
+        : !patchPayload.candidateDescription || !html.includes(patchPayload.candidateDescription.slice(0, 70))
+      if (response.ok && titleRestored && descriptionRestored) return true
+    } catch {
+      // Deployment can still be propagating.
+    }
+    console.log(`Rollback live meta verification attempt ${attempt}/${attempts} is not ready yet`)
+    await new Promise((resolve) => setTimeout(resolve, 10_000))
+  }
+  return false
+}
+
+async function verifyRollbackLive(job, attempts = 18) {
+  if (job.execution?.executionKind === 'INTERNAL_LINK') return waitForLinkRollback(job.patchPayload || {}, attempts)
+  if (job.execution?.executionKind === 'META') return waitForMetaRollback(job.patchPayload || {}, attempts)
+  return false
+}
+
+function revertCommitEvidence(commitSha, changedFiles) {
+  const diffText = git(['show', '--format=', '--no-ext-diff', '--unified=3', commitSha, '--', ...changedFiles])
+  if (!diffText) throw new Error('Rollback commit has no diff evidence')
+  return {
+    revertCommitSha: commitSha,
+    revertDiffText: diffText,
+    revertDiffSha256: sha256(diffText),
+  }
+}
+
+async function processRollbackJob(job) {
+  resetMain()
+
+  const existingRollback = job.revertCommitSha || findPriorRollbackCommit(job.executionId)
+  if (existingRollback) {
+    const actualFiles = exactCommitFiles(existingRollback)
+    if (!sameFiles(actualFiles, job.changedFiles || [])) {
+      await finishRollback(job, 'BLOCKED', {
+        error: `Existing rollback commit changed unexpected files: ${actualFiles.join(', ')}`,
+      })
+      return
+    }
+    const evidence = revertCommitEvidence(existingRollback, job.changedFiles)
+    const live = await verifyRollbackLive(job, 8)
+    await finishRollback(job, live ? 'ROLLED_BACK' : 'VERIFYING', {
+      ...evidence,
+      ...(live ? { liveVerifiedAt: new Date().toISOString() } : {}),
+    })
+    console.log(`${live ? 'ROLLED_BACK' : 'VERIFYING'} existing rollback for ${job.action.primaryQuery}`)
+    return
+  }
+
+  if (!job.originalCommitSha || !job.rollbackPointSha || !(job.changedFiles || []).length) {
+    await finishRollback(job, 'BLOCKED', { error: 'Rollback Git evidence is incomplete' })
+    return
+  }
+
+  try {
+    git(['cat-file', '-e', `${job.originalCommitSha}^{commit}`])
+    git(['merge-base', '--is-ancestor', job.originalCommitSha, 'HEAD'])
+  } catch {
+    await finishRollback(job, 'BLOCKED', {
+      error: 'Original deployed commit is not an ancestor of current main; automatic revert stopped',
+    })
+    return
+  }
+
+  const originalFiles = exactCommitFiles(job.originalCommitSha)
+  if (!sameFiles(originalFiles, job.changedFiles)) {
+    await finishRollback(job, 'BLOCKED', {
+      error: `Original commit file set differs from recorded evidence: ${originalFiles.join(', ')}`,
+    })
+    return
+  }
+
+  git(['config', 'user.name', 'Amphon SEO Executor'])
+  git(['config', 'user.email', 'seo-executor@users.noreply.github.com'])
+
+  try {
+    const parentLine = git(['rev-list', '--parents', '-n', '1', job.originalCommitSha]).split(/\s+/)
+    if (parentLine.length > 2) {
+      git(['revert', '-m', '1', '--no-edit', job.originalCommitSha])
+    } else {
+      git(['revert', '--no-edit', job.originalCommitSha])
+    }
+  } catch (error) {
+    try { git(['revert', '--abort']) } catch {}
+    await finishRollback(job, 'BLOCKED', {
+      error: `Git revert conflict or unsafe history: ${error instanceof Error ? error.message : String(error)}`,
+    })
+    resetMain()
+    return
+  }
+
+  const revertedFiles = exactCommitFiles('HEAD')
+  if (!sameFiles(revertedFiles, job.changedFiles)) {
+    resetMain()
+    await finishRollback(job, 'BLOCKED', {
+      error: `Revert touched unexpected files: ${revertedFiles.join(', ')}`,
+    })
+    return
+  }
+
+  if (job.execution?.executionKind === 'INTERNAL_LINK') {
+    run('npm', ['run', 'qa:gsc-auto-links'], { capture: false })
+  }
+  run('npm', ['run', 'build'], { capture: false })
+  if (job.execution?.executionKind === 'META') {
+    run('npm', ['run', 'validate:seo'], { capture: false })
+  }
+
+  git([
+    'commit', '--amend',
+    '-m', `seo(auto-rollback): ${job.action.primaryQuery} [seo-rollback:${job.executionId}]`,
+  ])
+  const revertCommitSha = git(['rev-parse', 'HEAD'])
+  const evidence = revertCommitEvidence(revertCommitSha, job.changedFiles)
+  git(['push', 'origin', 'HEAD:main'])
+
+  const live = await verifyRollbackLive(job)
+  await finishRollback(job, live ? 'ROLLED_BACK' : 'VERIFYING', {
+    ...evidence,
+    ...(live ? { liveVerifiedAt: new Date().toISOString() } : {}),
+  })
+  console.log(`${live ? 'ROLLED_BACK' : 'VERIFYING'} regression rollback: ${job.action.primaryQuery} ${revertCommitSha}`)
+}
+
+async function processRollbackJobs() {
+  const response = await edge('rollback_claim', { limit: 3 })
+  for (const job of response.jobs || []) {
+    try {
+      await processRollbackJob(job)
+    } catch (error) {
+      console.error(`Rollback job ${job.jobId} failed:`, error)
+      try {
+        await finishRollback(job, 'FAILED', {
+          error: error instanceof Error ? error.message : String(error),
+        })
+      } catch (finishError) {
+        console.error('Unable to record rollback failure:', finishError)
+      }
+      try { resetMain() } catch {}
+    }
+  }
 }
 
 async function createOrFindPullRequest(branch, title, body) {
@@ -629,6 +858,7 @@ async function processClaimedJobs() {
   }
 }
 
+await processRollbackJobs()
 await reconcilePullRequests()
 await processClaimedJobs()
 console.log('SEO Action Executor run complete')

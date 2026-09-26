@@ -34,6 +34,7 @@ jobs:
       - name: Check executor syntax and guarded registry contract
         run: |
           node --check scripts/seo-action-executor.mjs
+          node scripts/check-seo-auto-rollback.mjs
           npm run qa:gsc-auto-links
 
   execute:
