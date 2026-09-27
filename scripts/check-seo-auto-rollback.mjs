@@ -15,6 +15,7 @@ const checks = [
   ['rollback verifies live internal-link removal', runner.includes('waitForLinkRollback') && runner.includes('exactVariants')],
   ['rollback verifies live meta restoration', runner.includes('waitForMetaRollback') && runner.includes('previousTitle') && runner.includes('previousDescription')],
   ['meta apply stores previous values for rollback verification', runner.includes("previousTitle: yamlScalarText(fieldValue(beforeFm, 'title'))")],
+  ['protected money pages block automated meta edits', runner.includes('PROTECTED_META_PATHS') && runner.includes("'/บริการ/รับซื้อแรม'") && runner.includes("'/บริการ/รับซื้อคอมบริษัท'") && runner.includes('PROTECT_PAGE blocks META_REVIEW')],
   ['runner reports git history before rollback or new work', runner.includes("edge('site_change_report'") && runner.indexOf('await reportSiteChanges()') < runner.indexOf('await processRollbackJobs()')],
   ['causal audit reports bounded recent commit history', runner.includes('collectRecentCommits(100)') && runner.includes('changedFiles')],
   ['every main push triggers the audit workflow', workflow.includes('push:\n    branches: [main]') && !workflow.includes("push:\n    branches: [main]\n    paths:")],
