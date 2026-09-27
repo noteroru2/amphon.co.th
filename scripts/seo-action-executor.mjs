@@ -13,6 +13,10 @@ const SITE_ORIGIN = 'https://amphon.co.th'
 const REGISTRY = 'src/config/gsc-auto-internal-links.ts'
 const MAX_SOURCE_PAGES = 4
 const MAX_LINKS_PER_SOURCE = 2
+const PROTECTED_META_PATHS = new Set([
+  '/บริการ/รับซื้อแรม',
+  '/บริการ/รับซื้อคอมบริษัท',
+])
 
 if (REPOSITORY !== 'noteroru2/amphon.co.th') throw new Error(`Unexpected repository: ${REPOSITORY}`)
 if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN is required')
@@ -388,6 +392,10 @@ function replaceField(content, field, value) {
 function prepareMetaPatch(job) {
   const action = job.action
   if (action.actionType !== 'META_REVIEW') throw new Error('PR_ONLY accepts META_REVIEW only')
+  const targetPath = decodePath(action.page)
+  if (PROTECTED_META_PATHS.has(targetPath)) {
+    throw new Error(`PROTECT_PAGE blocks META_REVIEW for ${targetPath}`)
+  }
   if (!action.candidateTitle && !action.candidateDescription) throw new Error('META_REVIEW has no title/description candidate')
 
   const file = targetContentFile(action.page)
