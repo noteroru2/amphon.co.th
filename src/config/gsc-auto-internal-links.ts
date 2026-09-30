@@ -64,6 +64,15 @@ export const GSC_AUTO_INTERNAL_LINKS: GscAutoInternalLink[] = [
     context: 'สำหรับรายละเอียดการประเมินสินค้าที่เกี่ยวข้อง ดู',
     approvedAt: '2026-09-26T06:40:52.958381+00:00',
   },
+  {
+    actionId: '2e096430-31dc-4a46-b4da-f5a3f726f70e',
+    sourceKind: 'service',
+    sourceSlug: 'รับซื้อโทรศัพท์มือสอง',
+    targetPath: '/blog/ขายโทรศัพท์มือสองใกล้ฉัน',
+    anchor: 'ร้านโทรศัพท์มือสอง ใกล้ฉัน',
+    context: 'สำหรับรายละเอียดการประเมินสินค้าที่เกี่ยวข้อง ดู',
+    approvedAt: '2026-09-30T01:19:11.791682+00:00',
+  },
 ]
 
 export function getGscAutoInternalLinks(kind: GscAutoLinkSourceKind, slug: string) {
