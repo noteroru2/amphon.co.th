@@ -17,8 +17,9 @@ export const SHOP_AUTHORITY_BY_BLOG: Record<string, ShopAuthorityTarget[]> = {
     { href: `${SHOP_URL}/specs/`, label: 'เลือกตาม GPU / CPU', title: 'Spec Finder', summary: 'เริ่มจากสเปกที่ต้องการแทนการไล่ดูทุกเครื่อง' },
   ],
   'วิธีเช็กสเปกคอมก่อนขาย': [
+    { href: `${SHOP_URL}/guides/used-pc-for-office/`, label: 'อ่านคู่มือเลือกคอมมือสอง', title: 'เลือกคอมสำหรับงานออฟฟิศ', summary: 'ดูวิธีเทียบสเปก อุปกรณ์ ผลตรวจและงบรวมก่อนซื้อ' },
     { href: `${SHOP_URL}/specs/`, label: 'เลือกสินค้าตามสเปก', title: 'นำสเปกไปเทียบกับสินค้ามือสอง', summary: 'ดูหน้า Spec Finder ที่เปิดเฉพาะกลุ่มที่มีสต๊อกจริง' },
-    { href: `${SHOP_URL}/notebooks/`, label: 'ดูโน้ตบุ๊กมือสอง', title: 'Notebook มือสอง', summary: 'ดู CPU RAM SSD สภาพและ Product Evidence รายเครื่อง' },
+    { href: `${SHOP_URL}/notebooks/`, label: 'ดูโน้ตบุ๊กมือสอง', title: 'Notebook มือสอง', summary: 'ดู CPU RAM SSD สภาพและหลักฐานตรวจรายเครื่อง' },
   ],
   'แรมมือสองขายได้เท่าไหร่': [
     { href: `${SHOP_URL}/specs/`, label: 'ดูสินค้าไอทีตาม RAM', title: 'เลือกเครื่องตาม RAM', summary: 'Spec page จะเปิดเมื่อมีสต๊อก ประวัติและ demand มากพอ' },
@@ -27,7 +28,8 @@ export const SHOP_AUTHORITY_BY_BLOG: Record<string, ShopAuthorityTarget[]> = {
     { href: `${SHOP_URL}/macbooks/`, label: 'ดู MacBook มือสองพร้อมขาย', title: 'MacBook มือสองใน AMPHON SHOP', summary: 'ราคา สภาพ แบตเตอรี่ รูปและข้อมูลของเครื่องจริง' },
   ],
   'macbook-battery-cycle-มีผลต่อราคาขายแค่ไหน': [
-    { href: `${SHOP_URL}/macbooks/`, label: 'เทียบ MacBook มือสอง', title: 'ดู Battery และสภาพของ MacBook จริง', summary: 'เปิดดู Product Evidence ของแต่ละเครื่องก่อนตัดสินใจซื้อ' },
+    { href: `${SHOP_URL}/guides/used-notebook-checklist/`, label: 'เช็กโน้ตบุ๊กก่อนซื้อ', title: 'แบต จอ พอร์ต และประกันต้องดูอะไรบ้าง?', summary: 'คู่มือเลือกซื้อและลิงก์เครื่องจริงในร้าน' },
+    { href: `${SHOP_URL}/macbooks/`, label: 'เทียบ MacBook มือสอง', title: 'ดู Battery และสภาพของ MacBook จริง', summary: 'เปิดดูหลักฐานตรวจของแต่ละเครื่องก่อนตัดสินใจซื้อ' },
   ],
   'ราคา-ipad-มือสอง-2026': [
     { href: `${SHOP_URL}/tablets/`, label: 'ดู iPad / Tablet มือสอง', title: 'iPad และ Tablet พร้อมขาย', summary: 'เทียบรุ่น ความจุ สภาพและราคาเครื่องจริง' },
