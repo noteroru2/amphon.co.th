@@ -109,6 +109,7 @@ export const site = {
     'https://www.facebook.com/Amphontrading',
     'https://line.me/ti/p/~@webuy',
     'https://amphontd.com',
+    'https://webuy.in.th',
   ],
   reviews: [] as const,
 } as const;
