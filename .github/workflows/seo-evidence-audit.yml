@@ -11,6 +11,9 @@ on:
       - 'src/lib/llms.ts'
       - 'src/pages/about.astro'
       - 'src/content/serviceAreas/**'
+      - 'src/config/site.ts'
+      - 'src/components/Footer.astro'
+      - 'src/pages/contact.astro'
       - '.github/workflows/seo-evidence-audit.yml'
   workflow_dispatch:
 
