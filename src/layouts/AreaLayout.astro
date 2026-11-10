@@ -13,6 +13,7 @@ import {
   faqSchemaIfVisible,
 } from '../lib/seo';
 import { site } from '../config/site';
+import { getAreaRegionName } from '../config/area-regions';
 import type { BreadcrumbItem } from '../config/site';
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -24,6 +25,8 @@ interface Props {
 }
 
 const { entry, relatedServices = [], otherAreas = [] } = Astro.props;
+const regionName = getAreaRegionName(entry.data.slug);
+const nearbyAreas = otherAreas.filter((area) => getAreaRegionName(area.data.slug) === regionName).slice(0, 8);
 const { title, description, slug, province, faqs, ogImage, heroImage, date, updated } = entry.data;
 const { Content } = await render(entry);
 
@@ -80,7 +83,7 @@ const schemaExtras = [
         <p class="page-header__desc">{description}</p>
         <div class="page-header__cta">
           <a href={site.line} class="btn btn--line" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="hero" data-destination="line">
-            นัดรับสินค้าผ่าน Line
+            ส่งรูปประเมินผ่าน LINE
           </a>
           <a href={`tel:${site.phoneTel}`} class="btn btn--ghost" data-track-cta data-cta-type="phone" data-cta-position="hero" data-destination="phone">
             โทร {site.phone}
@@ -109,7 +112,7 @@ const schemaExtras = [
 
     <aside class="sidebar">
       <div class="sidebar__box">
-        <p class="sidebar__title">นัดรับใน{province}</p>
+        <p class="sidebar__title">ประเมินราคาใน{province}</p>
         <div style="display:flex;flex-direction:column;gap:.625rem;">
           <a href={site.line} class="btn btn--line btn--sm" target="_blank" rel="noopener noreferrer" data-track-cta data-cta-type="line" data-cta-position="card" data-destination="line">
             แชท Line @webuy
@@ -133,11 +136,11 @@ const schemaExtras = [
         </div>
       )}
 
-      {otherAreas.length > 0 && (
+      {nearbyAreas.length > 0 && (
         <div class="sidebar__box">
-          <p class="sidebar__title">จังหวัดอื่นๆ</p>
+          <p class="sidebar__title">พื้นที่อื่นในภูมิภาคเดียวกัน</p>
           <ul class="sidebar__links">
-            {otherAreas.slice(0, 6).map((area) => (
+            {nearbyAreas.map((area) => (
               <li>
                 <a href={`/พื้นที่ให้บริการ/${area.data.slug}`}>{area.data.title}</a>
               </li>
@@ -195,5 +198,5 @@ const schemaExtras = [
     </section>
   )}
 
-  <CTAContact title={`รับซื้อสินค้าใน${province} — ติดต่อประเมินราคาฟรี`} />
+  <CTAContact title={`ส่งรูปสินค้าไอทีจาก${province} เพื่อประเมินก่อนส่งมอบ`} />
 </BaseLayout>
