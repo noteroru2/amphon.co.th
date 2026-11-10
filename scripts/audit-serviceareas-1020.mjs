@@ -22,7 +22,7 @@ function shingles(s){
 }
 function similarity(a,b){let k=0;for(const x of a)if(b.has(x))k++;return a.size+b.size?2*k/(a.size+b.size):0;}
 const rows=files.map(file=>{
- const contents=fs.readFileSync(path.join(srcDir,file),'utf8');
+ const contents=fs.readFileSync(path.join(srcDir,file),'utf8').replace(/^\uFEFF/, ''); // 20 iPad Markdown sources contain a UTF-8 BOM
  const m=contents.match(/^---\r?\n([\s\S]*?)\r?\n---/),fm=m?.[1]||'',body=m?contents.slice(m[0].length):contents;
  const slug=fmField(fm,'slug')||file.slice(0,-3),service=fmField(fm,'serviceSlug'),area=fmField(fm,'areaSlug'),url='/รับซื้อ/'+slug;
  const builtFile=built.get(url),html=builtFile?readText(builtFile):'';
