@@ -6,8 +6,8 @@ order: 4
 description: "รับซื้อกล้อง Canon EOS R, DSLR, PowerShot และเลนส์ RF, RF-S, EF, EF-S มือสอง ส่งรุ่น ชัตเตอร์ สภาพเซ็นเซอร์ เลนส์และอุปกรณ์ประเมินเบื้องต้น"
 mainKeyword: "รับซื้อกล้อง Canon"
 relatedKeywords: ["รับซื้อเลนส์ Canon", "ขายกล้องแคนนอน", "รับซื้อ Canon EOS R", "รับซื้อเลนส์ RF"]
-heroImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
-ogImage: "/images/services/rub-sue-khong-fujifilm-x-a2-amphon.webp"
+heroImage: "/images/services/rub-sue-camera-canon-amphon.png"
+ogImage: "/images/services/rub-sue-camera-canon-amphon.png"
 date: "2026-06-14"
 draft: false
 icon: "camera"
