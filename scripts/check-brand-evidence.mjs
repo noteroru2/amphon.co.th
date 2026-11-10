@@ -49,5 +49,38 @@ for(const [name,doc] of [['contact',contact],['ubon-notebook',ubon],['home',html
 check(contact.includes('24 ชั่วโมง') && contact.includes('@webuy'), '24h LINE contact must be distinct from 09-19 store');
 check(contact.includes('เจ้าหน้าที่ตอบตามคิว'), '24h intake must not assert 24h staffed response');
 check(about.includes('บริษัท อำพล เทรดดิ้ง จำกัด'), 'About must disclose confirmed legal entity');
+
+/** Stronger gate: validate the *rendered* JSON-LD rather than source config alone. */
+function jsonLdObjects(html,route){
+ const nodes=[];
+ for(const match of html.matchAll(/<script\b[^>]*\btype=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)){
+  try{
+   const json=JSON.parse(match[1]);
+   for(const node of Array.isArray(json)?json:[json]){
+    if(Array.isArray(node['@graph']))nodes.push(...node['@graph']);
+    else nodes.push(node);
+   }
+  }catch(e){check(false,route+': invalid JSON-LD '+String(e));}
+ }
+ check(nodes.length>0,route+': no rendered JSON-LD nodes');
+ return nodes;
+}
+for(const route of ['/','/contact','/about','/บริการ/รับซื้อโน๊ตบุ๊ค','/บริการ/รับซื้อคอมพิวเตอร์','/บริการ/รับซื้อ-macbook']){
+ const nodes=jsonLdObjects(html(route),route);
+ const local=nodes.find(n=>Array.isArray(n['@type'])?n['@type'].includes('LocalBusiness'):n['@type']==='LocalBusiness');
+ const org=nodes.find(n=>n['@type']==='Organization');
+ check(Boolean(local),route+': missing LocalBusiness JSON-LD entity');
+ check(Boolean(org),route+': missing Organization JSON-LD entity');
+ if(org)check(org.legalName==='บริษัท อำพล เทรดดิ้ง จำกัด',route+': legalName not owner-confirmed');
+ if(local){
+  check(local.address?.streetAddress==='740/8 ถนนชยางกูร',route+': wrong storefront address');
+  check(local.address?.addressRegion==='อุบลราชธานี',route+': storefront is not in Ubon');
+  check(local.address?.postalCode==='34000',route+': invalid postal code');
+  check(Boolean(local.hasMap),route+': hasMap missing');
+  check((local.openingHoursSpecification||[]).some(x=>x.opens==='09:00'&&x.closes==='19:00'),route+': wrong store opening hours in rendered schema');
+  check(!JSON.stringify(local).includes('"opens":"00:00"'),route+': 24h store claim');
+  check(local.parentOrganization?.['@id']===org?.['@id'],route+': business is not linked to legal organization');
+ }
+}
 console.log('BRAND_EVIDENCE_QA '+JSON.stringify({pass:!fail.length,errors:fail,guideRoutes:guide.map(x=>x[0])}));
 if(fail.length)process.exitCode=1;
