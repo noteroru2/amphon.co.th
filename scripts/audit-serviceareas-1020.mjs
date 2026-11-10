@@ -62,6 +62,18 @@ fs.writeFileSync(path.join(outDir,'manual-review.csv'),csv(active.filter(r=>r.fl
 fs.writeFileSync(path.join(outDir,'summary.json'),JSON.stringify(summary,null,2));
 console.log('AUDIT_SUMMARY '+JSON.stringify(summary));
 console.log('MANUAL_REVIEW_SAMPLE '+JSON.stringify(active.filter(r=>r.flags.length).sort((a,b)=>b.flags.length-a.flags.length).slice(0,12).map(x=>({url:x.url,flags:x.flags,similarity:x.similarity}))));
+
+const families=[...groups.entries()].map(([service,items])=>({
+ service,
+ pages:items.length,
+ strong_similarity:items.filter(r=>r.similarity>=0.87).length,
+ short_content:items.filter(r=>r.flags.includes('SHORT_CONTENT')).length,
+ missing_store_in_source:items.filter(r=>r.flags.includes('NO_STORE_LOCATION_DISCLOSURE')).length,
+ average_source_chars:Math.round(items.reduce((n,r)=>n+r.source_chars,0)/items.length)
+})).sort((a,b)=>b.strong_similarity-a.strong_similarity);
+console.log('TOP_DUPLICATE_FAMILIES '+JSON.stringify(families.slice(0,18)));
+console.log('FRONTMATTER_REVIEW_SAMPLE '+JSON.stringify(active.filter(r=>r.flags.includes('BAD_FRONTMATTER')).slice(0,25).map(r=>r.source_file)));
+console.log('EDITORIAL_HEURISTIC_NOTICE Source-only location mention does not prove absent store details in shared layout; similarity ignores province terms and is not evidence of a search penalty.');
 if(summary.source_pages!==1020||summary.rendered_pages!==921||summary.sitemap_pages!==921){
  console.error('FAIL baseline 1020 source / 921 built/indexable differs; do not alter routes');
  process.exitCode=1;
