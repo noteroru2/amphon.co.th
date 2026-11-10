@@ -6,8 +6,8 @@ order: 12
 description: "รับซื้อ CPU มือสอง Intel Core และ AMD Ryzen ส่งชื่อรุ่น Socket รูปหน้าสัมผัส สภาพและประกัน เพื่อประเมินเบื้องต้นก่อนทดสอบจริง"
 mainKeyword: "รับซื้อ CPU"
 relatedKeywords: ["รับซื้อซีพียู", "รับซื้อชิ้นส่วนคอม", "รับซื้อ Intel", "รับซื้อ AMD", "รับซื้อคอมประกอบ"]
-heroImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"
-ogImage: "/images/services/rub-sue-komputer-gaming-pc-amphon.webp"
+heroImage: "/images/services/rub-sue-cpu-intel-amd-amphon.webp"
+ogImage: "/images/services/rub-sue-cpu-intel-amd-amphon.webp"
 date: "2026-06-14"
 draft: false
 icon: "cpu"
