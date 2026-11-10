@@ -16,10 +16,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: nationwide-area-\${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
-
 jobs:
   source-and-build:
     name: Static guards and production Astro build
