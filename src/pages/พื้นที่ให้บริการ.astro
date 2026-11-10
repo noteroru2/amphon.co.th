@@ -4,8 +4,20 @@ import CTAContact from '../components/CTAContact.astro';
 import ProvinceGrid from '../components/ProvinceGrid.astro';
 import { getCollection } from 'astro:content';
 import { absoluteUrl, schemaIds, createItemListSchema } from '../lib/seo';
+import { AREA_REGION_GROUPS } from '../config/area-regions';
 
 const areas = await getCollection('areas', ({ data }) => !data.draft);
+const areaSlugs = new Set(areas.map((a) => a.data.slug));
+const regions = AREA_REGION_GROUPS.map((group) => ({
+  id: group.id,
+  label: group.label,
+  description: group.description,
+  entries: group.slugs
+    .filter((slug) => areaSlugs.has(slug))
+    .map((slug) => areas.find((a) => a.data.slug === slug)!)
+})).filter((group) => group.entries.length > 0);
+const classifiedSlugs = new Set(regions.flatMap((group) => group.entries.map((a) => a.data.slug)));
+const otherEntries = areas.filter((entry) => !classifiedSlugs.has(entry.data.slug));
 
 const breadcrumbs = [
   { label: 'หน้าแรก', href: '/' },
@@ -13,24 +25,23 @@ const breadcrumbs = [
 ];
 
 const pageUrl = absoluteUrl('/พื้นที่ให้บริการ');
-const areaItems = areas.map((a) => ({
-  name: a.data.title,
-  url: absoluteUrl(`/พื้นที่ให้บริการ/${a.data.slug}`),
-  description: a.data.description,
+const areaItems = areas.map((area) => ({
+  name: `พื้นที่รับประเมินสินค้าไอที ${area.data.province}`,
+  url: absoluteUrl(`/พื้นที่ให้บริการ/${area.data.slug}`),
+  description: area.data.description,
 }));
-
 const schemaExtras = [
   createItemListSchema({
     pageUrl,
-    name: 'พื้นที่ให้บริการภาคอีสาน',
+    name: 'จังหวัดและเมืองที่ส่งรูปประเมินสินค้าไอทีกับ AMPHON ได้',
     items: areaItems,
   }),
 ];
 ---
 
 <BaseLayout
-  title="พื้นที่ให้บริการ ภาคอีสาน"
-  description="Amphon ให้บริการรับซื้อสินค้าไอทีหลายประเภททั่วภาคอีสาน 20 จังหวัด นัดรับหรือประสานขนส่งตามข้อตกลง ประเมินราคาฟรี"
+  title="พื้นที่รับประเมินสินค้าไอทีทั่วประเทศไทย แยกตามภาค"
+  description="ค้นหาหน้ารับซื้อโน๊ตบุ๊ค คอม MacBook iPhone iPad และกล้องตามจังหวัดทุกภาค ส่งรูปประเมินทาง LINE ได้ หน้าร้านจริงอยู่ที่อุบลราชธานี"
   canonical={pageUrl}
   breadcrumbs={breadcrumbs}
   pageType="CollectionPage"
@@ -39,43 +50,99 @@ const schemaExtras = [
 >
   <header class="page-header">
     <div class="container">
-      <span class="tag tag--orange" style="margin-bottom:.875rem;">พื้นที่ให้บริการ</span>
-      <h1>พื้นที่ให้บริการรับซื้อสินค้าไอที</h1>
+      <span class="tag tag--orange" style="margin-bottom:.875rem;">พื้นที่รับประเมินสินค้าไอที</span>
+      <h1>เลือกจังหวัดหรือเมืองของคุณ เพื่อส่งรูปเช็กราคาสินค้าไอที</h1>
       <p class="page-header__desc">
-        ให้บริการรับซื้อสินค้าไอทีครอบคลุม 20 จังหวัดภาคอีสาน นัดรับหรือประสานขนส่งตามพื้นที่ ประเภทสินค้า และจำนวน
+        อำพล เทรดดิ้งมีหน้าร้านจริงที่อุบลราชธานี ผู้ขายจังหวัดอื่นส่งชื่อรุ่น สเปก รูปและอาการให้ประเมินเบื้องต้นผ่าน LINE ก่อนตกลงวิธีตรวจรับ นัดหมายหรือจัดส่งเป็นรายกรณี
       </p>
     </div>
   </header>
 
   <section class="section">
     <div class="container">
-      <div class="section-header section-header--left">
-        <span class="eyebrow">20 จังหวัด ภาคอีสาน</span>
-        <h2>เลือกจังหวัดของคุณ</h2>
-        <p>รับซื้อสินค้าไอทีทั่วภาคอีสาน ส่งรูปประเมินราคาฟรีได้ทุกจังหวัด</p>
-      </div>
-      <ProvinceGrid
-        provinces={areas.map((area) => ({
-          title: area.data.title,
-          slug: area.data.slug,
-          description: area.data.description,
-        }))}
-      />
-
-      <div class="prose" style="max-width:800px; margin: 3rem auto 0; text-align: left;">
-        <h3 style="font-size: 1.25rem;">การรับซื้อสินค้าไอทีครอบคลุมทั้ง 20 จังหวัดในภาคอีสาน</h3>
+      <div class="prose" style="max-width:850px;margin:0 auto 2.25rem;">
+        <h2>รับซื้อโน๊ตบุ๊ค คอม และอุปกรณ์ไอทีจากทุกภูมิภาค</h2>
         <p>
-          AMPHON TRADING เป็นศูนย์กลางการ<strong>รับซื้ออุปกรณ์ไอทีมือสอง</strong>ที่ใหญ่ที่สุดในระดับภูมิภาคอีสาน (ตะวันออกเฉียงเหนือ) 
-          เรารองรับการประเมินราคาผ่านระบบออนไลน์ (Line) ที่สะดวก รวดเร็ว และแม่นยำที่สุด โดยลูกค้าจากทั้ง 20 จังหวัด ได้แก่ 
-          <strong>อุบลราชธานี, ขอนแก่น, นครราชสีมา (โคราช), อุดรธานี, บุรีรัมย์, สุรินทร์, ศรีสะเกษ, ร้อยเอ็ด, มหาสารคาม, ชัยภูมิ, กาฬสินธุ์, สกลนคร, นครพนม, มุกดาหาร, เลย, หนองคาย, หนองบัวลำภู, อำนาจเจริญ, ยโสธร และบึงกาฬ</strong>
-          สามารถส่งสเปกและรูปถ่ายเครื่องมาให้เราตีราคาได้ฟรี 100%
+          เลือกจังหวัดเพื่อดูวิธีส่งข้อมูลที่เหมาะสมกับสินค้าและสถานที่ของคุณ ไม่มีการรับประกันว่าร้านมีพนักงานหรือสาขาประจำทุกจังหวัด
+          ราคาจากรูปเป็นการประเมินเบื้องต้น ต้องตรวจสภาพและผู้ขายตกลงราคาสุดท้ายก่อนชำระเงิน
         </p>
         <p>
-          <strong>นัดรับตามพื้นที่และเงื่อนไขที่ตกลง (On-site Pickup):</strong> สำหรับลูกค้าในจังหวัดที่มีระยะทางไม่ไกล หรือมีสินค้ามูลค่าสูง / จำนวนหลายเครื่อง (เช่น โละคอมพิวเตอร์สำนักงาน) ทางเรามีทีมงานขับรถไปนัดรับตามพื้นที่และเงื่อนไขที่ตกลง พร้อมตรวจเช็คสภาพและชำระเงินหลังตรวจสอบสินค้าและตกลงราคา ส่วนลูกค้าจังหวัดอื่นๆ สามารถจัดส่งพัสดุมาที่เรา เมื่อของถึงและตรวจสอบผ่าน เราโอนชำระเงินเข้าบัญชีให้คุณตามตกลง
+          <strong>หมายเหตุ:</strong> หาดใหญ่เป็นอำเภอในจังหวัดสงขลา จึงมีหน้าข้อมูลเฉพาะเมือง
+          <a href="/พื้นที่ให้บริการ/หาดใหญ่">หาดใหญ่</a> และหน้า
+          <a href="/พื้นที่ให้บริการ/สงขลา">สงขลาทั้งจังหวัด</a> แยกตามความต้องการค้นหา
+          โดยไม่อ้างว่ามีหน้าร้าน AMPHON อยู่ในทั้งสองพื้นที่
+        </p>
+      </div>
+      <nav aria-label="เลือกภูมิภาค" class="province-regions">
+        {regions.map((region) => (
+          <a class="tag" href={`#${region.id}`}>{region.label} ({region.entries.length})</a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  {regions.map((region, index) => (
+    <section class={index % 2 === 1 ? 'section section--soft' : 'section'} id={region.id}>
+      <div class="container">
+        <div class="section-header section-header--left">
+          <span class="eyebrow">เลือกพื้นที่เพื่อส่งข้อมูลประเมิน</span>
+          <h2>{region.label}</h2>
+          <p>{region.description}</p>
+        </div>
+        <ProvinceGrid provinces={region.entries.map((area) => ({
+          title: area.data.province === 'หาดใหญ่' ? 'อำเภอหาดใหญ่ (สงขลา)' : area.data.province,
+          slug: area.data.slug,
+          description: area.data.description,
+        }))} />
+      </div>
+    </section>
+  ))}
+
+  {otherEntries.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--left">
+          <h2>พื้นที่เพิ่มเติม</h2>
+          <p>ส่งรูปและสเปกประเมินเบื้องต้นก่อนตกลงรับซื้อเช่นเดียวกับพื้นที่อื่น</p>
+        </div>
+        <ProvinceGrid provinces={otherEntries.map((area) => ({
+          title: area.data.province,
+          slug: area.data.slug,
+          description: area.data.description,
+        }))} />
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:850px;margin:0 auto;">
+        <h2>ก่อนส่งเครื่องจากต่างจังหวัด</h2>
+        <p>
+          ควรถ่ายชื่อรุ่นเต็ม สเปก CPU/GPU/RAM/SSD รูปจอ ตำหนิ ที่ชาร์จ และแจ้งจำนวนกับจังหวัด
+          สำหรับล็อตองค์กรให้แยก Asset List และตรวจสิทธิ์จำหน่ายพร้อมการลบข้อมูลตามขั้นตอนที่เหมาะสม
+          หากแบตเตอรี่บวมหรือร้อนผิดปกติให้หยุดชาร์จ และตรวจเงื่อนไขขนส่งก่อนส่งมอบ
+        </p>
+        <p>ดูวิธีการที่ <a href="/บริการ/รับซื้อโน๊ตบุ๊ค">รับซื้อโน๊ตบุ๊คมือสอง</a>
+          หรือ <a href="/บริการ/รับซื้อคอมพิวเตอร์">รับซื้อคอมพิวเตอร์มือสอง</a>
+          และแจ้งรูปทาง <a href="https://line.me/ti/p/~@webuy">LINE @webuy</a>
         </p>
       </div>
     </div>
   </section>
 
-  <CTAContact title="อยู่ในภาคอีสาน? นัดรับหรือประสานขนส่งตามข้อตกลง" />
+  <CTAContact title="ส่งรูปสินค้าไอทีเช็กราคาก่อนตกลงวิธีส่งมอบ" />
 </BaseLayout>
+
+<style>
+  .province-regions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .625rem;
+    padding-bottom: 1rem;
+  }
+  .province-regions a { text-decoration: none; }
+  .province-regions a:hover, .province-regions a:focus-visible { text-decoration: underline; }
+  section[id] { scroll-margin-top: 5.5rem; }
+</style>
