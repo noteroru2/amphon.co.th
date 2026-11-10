@@ -20,6 +20,7 @@ export const site = {
   hasMap: 'https://maps.app.goo.gl/krv97o14jPTRrnpW8',
   address: {
     street: '740/8 ถนนชยางกูร',
+    landmark: 'ติดปากซอยชยางกูร 32',
     locality: 'ตำบลในเมือง อำเภอเมืองอุบลราชธานี',
     region: 'อุบลราชธานี',
     postalCode: '34000',
@@ -30,7 +31,7 @@ export const site = {
     longitude: 104.844358,
     region: 'TH-34',
   },
-  openingHours: ['Mo-Su 09:00-21:00'],
+  openingHours: ['Mo-Su 09:00-19:00'],
   priceRange: '฿฿',
   currenciesAccepted: 'THB',
   paymentAccepted: ['Cash', 'Bank Transfer', 'PromptPay'],
