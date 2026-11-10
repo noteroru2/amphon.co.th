@@ -1,6 +1,6 @@
 # AMPHON network identity audit — 10 Nov 2026
 
-**Status: fact-control register, NOT a license to invent opening hours, company credentials or local branches.**
+**Status: ยืนยัน NAP และ LINE @webuy จากเจ้าของกิจการเมื่อ 10 พฤศจิกายน 2569; รักษาข้อจำกัดเรื่องบริการต่างจังหวัดและแหล่งหลักฐาน**
 
 ## Canonical public entity, evidenced from the AMPHON source and linked About pages
 
@@ -35,13 +35,15 @@
 - Use `Organization` / `LocalBusiness` schema only for **confirmed premises**. Linked brands can use `parentOrganization` / `brand` and actual operator relationships; do not place the physical Ubon location in unrelated cities.
 - AI support files `llms.txt` have **no special Google indexing privilege**. Maintain a small accurate navigation entrypoint and full export separately.
 
-## Owner verification required before modifying NAP / GBP
+## ยืนยันจากเจ้าของกิจการ — 10 พฤศจิกายน 2569
 
-1. Is the correct legal entity precisely `บริษัท อำพล เทรดดิ้ง จำกัด`? Is another `หจก.` entity involved?
-2. Confirm the storefront number and **Soi 32 vs Soi 42** (do not guess).
-3. What are **actual storefront open days/hours**, staffed LINE response hours, and automated message intake hours? They may legitimately differ.
-4. Confirm which branch/pickup statements across provinces are supported by operations and partners.
+1. ชื่อนิติบุคคลตามเอกสารจดทะเบียน: **บริษัท อำพล เทรดดิ้ง จำกัด** (ไม่ใช้คำนำหน้าว่า หจก.)
+2. หน้าร้านจริง: **740/8 ถนนชยางกูร ตำบลในเมือง อำเภอเมืองอุบลราชธานี จังหวัดอุบลราชธานี 34000**; จุดสังเกต **ติดปากซอยชยางกูร 32** (ไม่ใช้ซอย 42)
+3. **เวลาเปิดหน้าร้าน: 09:00–19:00 น.** ช่องทางเสนอขาย LINE **@webuy รับข้อความได้ตลอด 24 ชั่วโมง** เจ้าหน้าที่ตอบกลับตามคิวงาน (ไม่มีการยืนยันว่าเจ้าหน้าที่ให้บริการสดตลอด 24 ชั่วโมง)
+4. เว็บไซต์เครือที่มี LINE @buyhub ใช้ช่องทางนั้นตามจริง ไม่อนุมานว่าเป็นแอดมิน @webuy
+5. ลูกค้าต่างจังหวัดส่งข้อมูลประเมินเบื้องต้นออนไลน์ได้ โดยการตรวจรับ/ขนส่ง/ชำระเงินเป็นไปตามข้อตกลงเฉพาะกรณี
 
+**การดำเนินการที่เกี่ยวข้อง:** PR #42 สำหรับเว็บหลัก, PR #5 ของ webuy, PR #4 ของ amphontd, PR #2 ของ webuy-thai และ PR #5 ของ buyhubthai. สถานะ Deployment ต้องยืนยันแยกจากสถานะ GitHub Merge.
 ## Release rules
 
 - **DO NOT** change `openingHours`, `openingHoursSpecification`, Google Business Profile, Maps address, or legal form in all domains merely to make them appear consistent.
