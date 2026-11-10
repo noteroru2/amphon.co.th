@@ -382,7 +382,16 @@ export function createPlaceSchema(params: {
           },
         }
       : {}),
-    containedInPlace: { '@type': 'AdministrativeArea', name: 'ภาคอีสาน' },
+    // Do not place every service-area URL in Isan: AMPHON appraises remotely
+    // from many regions, while its only physical storefront is in Ubon.
+    containedInPlace:
+      params.province === 'หาดใหญ่'
+        ? {
+            '@type': 'AdministrativeArea',
+            name: 'จังหวัดสงขลา',
+            containedInPlace: { '@type': 'Country', name: 'ประเทศไทย' },
+          }
+        : { '@type': 'Country', name: 'ประเทศไทย' },
   };
 }
 
