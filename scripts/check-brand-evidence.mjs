@@ -34,5 +34,20 @@ if(fs.existsSync(llmsPath)){
  check(!content.includes('20 จังหวัดภาคอีสาน'),'Old 20-province fact must be removed');
  check(content.includes('WEBUY HUB'),'Sister-channel identity missing');
 }
+
+const config=readText(path.join(process.cwd(),'src/config/site.ts'));
+check(config.includes("legalName: 'บริษัท อำพล เทรดดิ้ง จำกัด'"), 'Canonical legal entity not correct');
+check(config.includes("openingHours: ['Mo-Su 09:00-19:00']"), 'OpeningHours schema config must use 09-19');
+check(config.includes("landmark: 'ติดปากซอยชยางกูร 32'"), 'Missing owner-verified Soi 32 landmark');
+const contact=html('/contact');
+const ubon=html('/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี');
+for(const [name,doc] of [['contact',contact],['ubon-notebook',ubon],['home',html('/')]]){
+ check(doc.includes('09:00–19:00'),name+': must visibly disclose correct store hours');
+ check(doc.includes('ชยางกูร 32'),name+': must disclose exact Soi 32 landmark');
+ check(!doc.includes('ชยางกูร 42'),name+': wrong Soi 42 landmark remains');
+}
+check(contact.includes('24 ชั่วโมง') && contact.includes('@webuy'), '24h LINE contact must be distinct from 09-19 store');
+check(contact.includes('เจ้าหน้าที่ตอบตามคิว'), '24h intake must not assert 24h staffed response');
+check(about.includes('บริษัท อำพล เทรดดิ้ง จำกัด'), 'About must disclose confirmed legal entity');
 console.log('BRAND_EVIDENCE_QA '+JSON.stringify({pass:!fail.length,errors:fail,guideRoutes:guide.map(x=>x[0])}));
 if(fail.length)process.exitCode=1;
