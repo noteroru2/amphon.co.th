@@ -1,0 +1,54 @@
+name: Evidence-first SEO service-area census
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/audit-serviceareas-1020.mjs'
+      - 'scripts/check-brand-evidence.mjs'
+      - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
+      - 'src/content/services/รับซื้อคอมพิวเตอร์.md'
+      - 'src/content/services/รับซื้อ-macbook.md'
+      - 'src/lib/llms.ts'
+      - 'src/pages/about.astro'
+      - 'src/content/serviceAreas/**'
+      - 'src/config/site.ts'
+      - 'src/components/Footer.astro'
+      - 'src/pages/contact.astro'
+      - '.github/workflows/seo-evidence-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Existing SEO checks
+        run: npm run validate:seo
+      - name: Verify brand identity and public evidence in built pages
+        run: node scripts/check-brand-evidence.mjs
+      - name: Generate 1020-source / 921-indexed audit
+        run: node scripts/audit-serviceareas-1020.mjs
+      - name: Upload per-page CSV reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: service-area-audit-921
+          path: artifacts/service-area-audit/
+          retention-days: 30
+          if-no-files-found: error
