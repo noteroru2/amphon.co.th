@@ -6,7 +6,7 @@ mainKeyword: "รับซื้อ อุปกรณ์ Network และ Swit
 relatedKeywords: ["รับซื้อ อุปกรณ์ Network และ Switch สุรินทร์", "ขาย อุปกรณ์ Network และ Switch สุรินทร์"]
 heroImage: "/images/hero/hero-amphon-trading-map-isan.webp"
 date: "2025-06-01"
-updated: "2026-11-11"
+updated: "2026-11-10"
 draft: false
 serviceSlug: "รับซื้ออุปกรณ์-network"
 areaSlug: "สุรินทร์"

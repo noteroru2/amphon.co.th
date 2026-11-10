@@ -6,7 +6,7 @@ mainKeyword: "รับซื้อ UPS และเครื่องสำร�
 relatedKeywords: ["รับซื้อ UPS และเครื่องสำรองไฟ นครราชสีมา", "ขาย UPS และเครื่องสำรองไฟ นครราชสีมา"]
 heroImage: "/images/hero/hero-amphon-trading-map-isan.webp"
 date: "2025-06-01"
-updated: "2026-11-11"
+updated: "2026-11-10"
 draft: false
 serviceSlug: "รับซื้อ-ups"
 areaSlug: "นครราชสีมา"

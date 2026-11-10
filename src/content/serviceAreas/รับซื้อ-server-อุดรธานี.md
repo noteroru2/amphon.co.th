@@ -6,7 +6,7 @@ mainKeyword: "รับซื้อ Server และตู้ Rack อุดร�
 relatedKeywords: ["รับซื้อ Server และตู้ Rack อุดรธานี", "ขาย Server และตู้ Rack อุดรธานี"]
 heroImage: "/images/hero/hero-amphon-trading-map-isan.webp"
 date: "2025-06-01"
-updated: "2026-11-11"
+updated: "2026-11-10"
 draft: false
 serviceSlug: "รับซื้อ-server"
 areaSlug: "อุดรธานี"

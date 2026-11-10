@@ -6,7 +6,7 @@ mainKeyword: "รับซื้อ Server และตู้ Rack มหาส�
 relatedKeywords: ["รับซื้อ Server และตู้ Rack มหาสารคาม", "ขาย Server และตู้ Rack มหาสารคาม"]
 heroImage: "/images/hero/hero-amphon-trading-map-isan.webp"
 date: "2025-06-01"
-updated: "2026-11-11"
+updated: "2026-11-10"
 draft: false
 serviceSlug: "รับซื้อ-server"
 areaSlug: "มหาสารคาม"
