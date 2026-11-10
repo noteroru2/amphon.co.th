@@ -34,7 +34,7 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
       - name: Check provinces, regional grouping and internal links
-        run: node scripts/check-nationwide-area-hubs.mjs
+        run: node scripts/check-nationwide-pilot.mjs
       - name: Build Astro pages
         run: npm run build
       - name: Validate generated SEO output
