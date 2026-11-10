@@ -156,10 +156,10 @@ for(const f of fixtures){
  check(field(fm,'slug')==='"'+f.slug+'"',route+' slug changed');
  check(text.length>=f.baselineLength+1350,route+' did not receive meaningful editorial addition');
  check(body.includes('## แนวทางตรวจเพิ่มเติมสำหรับ'),route+' missing unique buyer guide');
- check(body.includes('ไม่ได้') && body.includes('ไม่ใช่หลักฐานการรับซื้อจริง'),route+' risk/evidence disclosure missing');
+ check(body.includes('หมายเหตุ: เนื้อหานี้เป็นแนวทางช่วยเตรียมข้อมูล') && body.includes('ไม่ใช่หลักฐานการรับซื้อจริง'),route+' risk/evidence disclosure missing');
  check(body.includes('เจ้าหน้าที่ตอบตามคิว') && body.includes('24 ชั่วโมง'),route+' honest LINE availability missing');
  check(body.includes('ชยางกูร 32') && body.includes('09:00–19:00'),route+' owner verified NAP missing');
- check(!/รับถึงบ้านทุกจังหวัด|มีสาขาประจำจังหวัด(?!ไม่มี)|จ่ายเงินทันทีทุกกรณี/.test(body),route+' unsupported geography or payment promise');
+ check(!/รับถึงบ้านทุกจังหวัด|มีสาขาประจำจังหวัด|จ่ายเงินทันทีทุกกรณี/.test(body.replaceAll('ไม่มีสาขาประจำจังหวัด', '')),route+' unsupported geography or payment promise');
  check(!!rendered && locs.has(route),route+' not built or sitemap missing');
  if(html){
   check(normalizePathname(extractCanonical(html))===route,route+' canonical changed');
