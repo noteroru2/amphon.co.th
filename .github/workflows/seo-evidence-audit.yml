@@ -4,6 +4,12 @@ on:
   pull_request:
     paths:
       - 'scripts/audit-serviceareas-1020.mjs'
+      - 'scripts/check-brand-evidence.mjs'
+      - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
+      - 'src/content/services/รับซื้อคอมพิวเตอร์.md'
+      - 'src/content/services/รับซื้อ-macbook.md'
+      - 'src/lib/llms.ts'
+      - 'src/pages/about.astro'
       - 'src/content/serviceAreas/**'
       - '.github/workflows/seo-evidence-audit.yml'
   workflow_dispatch:
@@ -31,6 +37,8 @@ jobs:
         run: npm run build
       - name: Existing SEO checks
         run: npm run validate:seo
+      - name: Verify brand identity and public evidence in built pages
+        run: node scripts/check-brand-evidence.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
