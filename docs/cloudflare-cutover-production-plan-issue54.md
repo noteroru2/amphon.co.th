@@ -17,6 +17,7 @@
 **Actual custom-domain Staging succeeded**, without changes to real apex/www:
 - https://github.com/noteroru2/amphon.co.th/actions/runs/43010084967 — 1,195/1,195 live URLs 200/canonical/staging noindex, 1,189/1,189 sitemap parity, 260/260 legacy redirects, 308 slash routes, 404, SSL valid on **cf-test.amphon.co.th**, Google Places HTTP 200 / no-store with rating 5.0 and 76 public reviews; zero errors.
 - Staging uses independent **amphon-co-th-staging** Worker. Must remain global noindex. This only verifies TLS for cf-test, not that Cloudflare is already serving TLS on apex/www.
+- **CURRENT API REGRESSION (P0 release gate):** Later live read-only RC preflight on 2026-11-11 around 11:41 and 11:43 UTC observed **HTTP 503 on cf-test Google Reviews API twice** while cf-test HTML and SSL still passed. The earlier 200 is historical successful evidence, NOT proof of ongoing runtime-secret reliability. Do not cut over until a fresh multi-run HTTP 200 series has been confirmed, with stable Secrets and Worker version. No attempt to change Cloudflare runtime variables was made during this audit.
 
 **New inert Production RC QA**:
 - https://github.com/noteroru2/amphon.co.th/actions/runs/43012505899 — source freeze (180 pages excluded), exact npm ci lock/Node 22.23.4, production Astro build and 1,191 SEO/JSON-LD checks, all routing/production safety unit tests, removes 14 duplicate generated redirect paths while retaining 260 Vercel legacy redirects and 2 unique Astro rules + 308 slash (263 final rules), Wrangler DRY RUN, local HTTP smoke **20/20** (11 indexable main pages), and Vercel fallback build. All completed successfully; **nothing was deployed**.
@@ -61,6 +62,12 @@ Vercel Domain Config also reports apex **configuredBy=A** and www **configuredBy
 | Host-only RC **NOT DEPLOYED** | infra/cloudflare-cutover-rc → planned amphon-co-th-prod | no routes, no custom domain, workers.dev disabled, production HTML indexable when authorized to go live |
 
 No deployment of this host-only RC is authorized. Existing Worker Builds on preview branches may report failures on other Workers; do not confuse that with staging/production rollout checks. Production must be separately bound to secrets **GOOGLE_PLACES_API_KEY**, **GOOGLE_PLACE_ID** and its own SESSION KV. Do not paste values into GitHub/ChatGPT, and test no secret loss after deploy. Keep **Bot Preference Sync/managed robots** from accidentally rewriting site rules and prevent WAF challenges to verified Googlebot.
+
+
+### Runtime Secret persistence investigation (not finished)
+- Earlier staging API 200 was independently verified on 2026-11-11 11:13 UTC (run #43010084967), while RC DNS preflight later returned 503 on repeat. Possible explanations include missing/stale Worker Runtime Secrets after Workers Builds, platform configuration changes, or upstream failure; **HTTP 503 alone cannot establish which**.
+- Inspect newest **amphon-co-th-staging** → Settings → Variables and Secrets, verify both secret *names and types* are present on the active deployed version. **Never paste secret values into Issue, CI or chat.** Verify log of the last successful staging deploy and whether secrets persist after it.
+- The RC read-only preflight logs only a whitelisted **public API error code** on failures, not review text or keys. If `not_configured`, check Worker bindings; if upstream/quota, diagnose Google Places. After correction, run the full custom-domain QA twice (not just one 200 response), and require post-deploy secret persistence checks on the new Production Worker.
 
 ## 5. www → apex 301: two-stage cutover recommended
 
@@ -117,7 +124,8 @@ Actual GSC Final data, hostname-filtered to amphon.co.th (Hub, Google Pacific re
 
 ## 9. Release GO / NO-GO gates (checklist, NOT an approval)
 
-- [x] Real cf-test SSL, SEO 1195/1195, sitemap 1189/1189, API 200, redirects 260/260.
+- [x] cf-test TLS, SEO 1195/1195, sitemap 1189/1189, redirects 260/260 passed in the completed live acceptance run (historical snapshot).
+- [ ] **CURRENT Google Reviews API stable 200 on repeated tests** — 503 occurred twice after the earlier successful 200, must diagnose/rebind secrets/confirm runtime and retest.
 - [x] Host-only source branch based on Vercel deployed SHA, 180 pages frozen.
 - [x] Actual public DNS / Vercel 301 / TLS baseline captured on 2026-11-11.
 - [x] Production bundle is indexable, adapter duplicate rules removed, Worker name isolated, workers.dev disabled, no domain routes.

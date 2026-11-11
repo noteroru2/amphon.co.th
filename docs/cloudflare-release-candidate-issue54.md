@@ -1,4 +1,7 @@
 # AMPHON amphon.co.th — Release Candidate & dependency lock audit (Issue #54 / PR #55)
+
+> **SUPERSEDED for current cutover/DNS state:** [Cloudflare Production Cutover Plan](cloudflare-cutover-production-plan-issue54.md), updated 2026-11-11. Historical details below include obsolete staging Build status and previously unsolved release SHA/SEO-180 gates. Do not execute rollback from old observations; use a fresh Cloudflare DNS dashboard snapshot and the new plan. No production/DNS changes authorized.
+
 **Recorded 2026-11-11. STATUS: PREPARED / NOT AUTHORIZED FOR DOMAIN CUTOVER.**
 Do not merge PR #55 or change DNS/custom domains on the strength of this document.
 

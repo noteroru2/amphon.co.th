@@ -1,5 +1,7 @@
 # AMPHON amphon.co.th — Cloudflare cutover / rollback runbook (Issue #54)
 
+> **SUPERSEDED for current cutover/DNS state:** [Cloudflare Production Cutover Plan](cloudflare-cutover-production-plan-issue54.md), updated 2026-11-11. Historical details below include obsolete apex DNS CNAME and earlier API/pre-lock status. Do not execute rollback from old observations; use a fresh Cloudflare DNS dashboard snapshot and the new plan. No production/DNS changes authorized.
+
 **Status:** PREPARED, **NOT EXECUTED**. No changes to Production or DNS are authorized by this document. Make all actual changes only after SEO parity evidence and Owner approval.
 
 ## Verified reference points (as of 2026-11-11)
