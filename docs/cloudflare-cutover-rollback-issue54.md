@@ -10,7 +10,7 @@
 - Last verified **production** Vercel deployment ID: `dpl_DmtdiCXTsy6zBMKNVEehFyMoUBwr`, GitHub commit `1d235196f45e29af4c425fa4505111596db8e4c6` (may change; re-read immediately before cutover).
 - Vercel has `amphon.co.th` and `www.amphon.co.th` verified; `www` redirects to apex with 301.
 - Production live HTTP baseline: GitHub Actions Run 42969091845. All 12 priority pages 200, 257/260 expected exact redirects match, three film-camera typo URLs returned 404 (existing Production drift). Six trailing slash URLs returned **308**.
-- No live Cloudflare preview has yet been deployed or HTTP-tested; Cloudflare zone has been verified read-only. Cloudflare GitHub import is blocked by missing GitHub browser authentication; no live preview Worker has been created.
+- Cloudflare Preview Worker **is live** at `https://amphon-co-th.noteroru2.workers.dev/`; Cloudflare dashboard project `amphon-co-th` is wired to branch `infra/cloudflare-workers-preview`. It has **NO custom domain**. Cloudflare build/deploy succeeded at commit `0dc5021b1905a5a33ef0fecbb645abbf0af51673` and later committed the three film-camera percent-encoded redirect fixes. Live HTTP QA (GitHub Actions run 42977796857, re-run) passed **260/260 exact redirects**, four trailing slash 308 checks, nine priority routes and preview `noindex`. The Google Reviews API still returns expected 503/no-store because its secrets are not yet migrated. This is **preview-only**; Production DNS stays on Vercel.
 
 ## Read-only Cloudflare DNS verification (2026-11-11, no change)
 
@@ -24,6 +24,13 @@ Verified in the user's authenticated Cloudflare dashboard for zone `amphon.co.th
 - Caution: Worker custom-domain mapping and zone-level route inventory should be checked again immediately before cutover. Preview Worker must not be mapped to either hostname.
 - **Rollback reference:** restore both DNS-only CNAME records to the exact Vercel DNS target above, preserve the Vercel domain associations and www→apex 301. Depending on cutover mechanism, remove only the new Worker route/custom domain first and confirm resulting HTTP from outside the Cloudflare dashboard. Do not indiscriminately purge cache or delete unrelated Workers.
 - *This confirms rollback configuration is documented, not a successful rollback rehearsal or production cutover.*
+
+## Post-preview SEO regression (new tests)
+
+- GitHub Actions workflow `Cloudflare Live Preview SEO Regression` runs `scripts/cloudflare-seo-regression.mjs`, checks canonical URL sets in sitemap-index and child sitemaps, all sitemap pages' HTTP/SEO metadata, preview-only X-Robots-Tag noindex, two 404 URLs, ten trailing slash 308 cases, 150 internal links and 100 image/CSS/JS samples from the rendered pages. Artifacts are retained 30 days.
+- Any mismatch in indexable URLs, unexpected 404/5xx, broken internal links, or missing media assets is a **NO-GO**. If Vercel Production reflects an older commit, evaluate SEO title/content drift against the *approved* release SHA; no claim of 100% parity solely from common URL counts.
+- Preview `noindex,nofollow` comes from `_headers`; before production cutover, replace preview-only noindex with production-safe header policy and add a production guard that actively tests **absence** of noindex.
+- Keep `main` and PR #55 unmerged until approval. Do not change the source `vercel.json` three film-camera source strings: the Cloudflare migration generator performs the percent-encoding workaround.
 
 ## Mandatory rollback prerequisites / preflight sign-off
 
