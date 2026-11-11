@@ -76,6 +76,18 @@ jobs:
           npm run test:google-reviews
           npx astro build --config astro.config.cloudflare.production.mjs
           npm run validate:seo
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs'; import assert from 'node:assert/strict';
+          const root='dist/client';
+          const xmls=fs.readdirSync(root).filter(f=>/^sitemap-\d+\.xml$/.test(f));
+          assert.ok(xmls.length>0,'Missing generated sitemap pages');
+          const urls=xmls.flatMap(f=>[...fs.readFileSync(root+'/'+f,'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]));
+          console.log('PROTECTED_SITEMAP_URL_COUNT',urls.length,'sitemap files',xmls.length);
+          assert.equal(urls.length,1189,'Sitemap count changed from current live Vercel baseline');
+          assert.equal(new Set(urls).size,1189,'Duplicate sitemap URLs');
+          assert.ok(urls.every(u=>u.startsWith('https://amphon.co.th/')),'Wrong sitemap hostname');
+          assert.ok(!urls.some(u=>u.includes('cf-test.amphon.co.th')),'Staging leaked into sitemap');
+          NODE
           node scripts/cloudflare-release-finalize.mjs
       - name: Dry-run only and local Cloudflare HTTP regression
         run: |
@@ -216,6 +228,18 @@ jobs:
           npm run test:google-reviews
           npx astro build --config astro.config.cloudflare.production.mjs
           npm run validate:seo
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs'; import assert from 'node:assert/strict';
+          const root='dist/client';
+          const xmls=fs.readdirSync(root).filter(f=>/^sitemap-\d+\.xml$/.test(f));
+          assert.ok(xmls.length>0,'Missing generated sitemap pages');
+          const urls=xmls.flatMap(f=>[...fs.readFileSync(root+'/'+f,'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]));
+          console.log('PROTECTED_SITEMAP_URL_COUNT',urls.length,'sitemap files',xmls.length);
+          assert.equal(urls.length,1189,'Sitemap count changed from current live Vercel baseline');
+          assert.equal(new Set(urls).size,1189,'Duplicate sitemap URLs');
+          assert.ok(urls.every(u=>u.startsWith('https://amphon.co.th/')),'Wrong sitemap hostname');
+          assert.ok(!urls.some(u=>u.includes('cf-test.amphon.co.th')),'Staging leaked into sitemap');
+          NODE
           node scripts/cloudflare-release-finalize.mjs
           npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-rc-locked-dryrun
           node scripts/cloudflare-production-local-smoke.mjs
