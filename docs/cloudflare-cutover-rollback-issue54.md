@@ -10,7 +10,20 @@
 - Last verified **production** Vercel deployment ID: `dpl_DmtdiCXTsy6zBMKNVEehFyMoUBwr`, GitHub commit `1d235196f45e29af4c425fa4505111596db8e4c6` (may change; re-read immediately before cutover).
 - Vercel has `amphon.co.th` and `www.amphon.co.th` verified; `www` redirects to apex with 301.
 - Production live HTTP baseline: GitHub Actions Run 42969091845. All 12 priority pages 200, 257/260 expected exact redirects match, three film-camera typo URLs returned 404 (existing Production drift). Six trailing slash URLs returned **308**.
-- No live Cloudflare preview has yet been deployed or HTTP-tested; cloud credentials and Worker account/zone are not yet verified.
+- No live Cloudflare preview has yet been deployed or HTTP-tested; Cloudflare zone has been verified read-only. Cloudflare GitHub import is blocked by missing GitHub browser authentication; no live preview Worker has been created.
+
+## Read-only Cloudflare DNS verification (2026-11-11, no change)
+
+Verified in the user's authenticated Cloudflare dashboard for zone `amphon.co.th`:
+- Zone plan: Free.
+- `amphon.co.th` (apex): CNAME to `b9c77eda4c080f5f.vercel-dns-017.com`; **DNS only** (gray cloud), TTL **10 minutes**.
+- `www.amphon.co.th`: CNAME to the **same** Vercel target; **DNS only**, TTL **10 minutes**.
+- There are **no Worker routes configured for this zone** in the zone's Workers Routes view.
+- Existing Vercel domain verification TXT records are present; keep them unchanged.
+- Existing MX/SPF/DKIM and other mail-related DNS records must stay unchanged; do not migrate mail.
+- Caution: Worker custom-domain mapping and zone-level route inventory should be checked again immediately before cutover. Preview Worker must not be mapped to either hostname.
+- **Rollback reference:** restore both DNS-only CNAME records to the exact Vercel DNS target above, preserve the Vercel domain associations and www→apex 301. Depending on cutover mechanism, remove only the new Worker route/custom domain first and confirm resulting HTTP from outside the Cloudflare dashboard. Do not indiscriminately purge cache or delete unrelated Workers.
+- *This confirms rollback configuration is documented, not a successful rollback rehearsal or production cutover.*
 
 ## Mandatory rollback prerequisites / preflight sign-off
 
