@@ -34,3 +34,9 @@ This preview deliberately installs adapter tools without altering the production
 7. Save DNS/origin state, review approved commit, get explicit Owner approval before production switch. Keep Vercel as rollback.
 
 Reference: https://developers.cloudflare.com/workers/static-assets/migration-guides/vercel-to-workers/astro/
+
+## Production HTTP baseline
+
+`scripts/cloudflare-production-baseline.mjs` performs read-only HTTP checks from a GitHub Actions runner: all 260 exact Vercel redirects, 12 high-priority pages/files, 6 slash variants, and the `www` 301. It writes `artifacts/cloudflare-migration/production-http-baseline.json` and uploads it to GitHub Actions. Mismatches are evidence, not automatically proof of a Cloudflare regression: Production is currently behind `main`. The script can be rerun against an authenticated, available Cloudflare Preview URL after the Cloudflare profile is connected; compare both JSON reports at identical code versions before cutover.
+
+**Do not use this audit to hit the live Google Places API:** `/api/google-reviews` is intentionally excluded so audits cannot consume the Google quota.

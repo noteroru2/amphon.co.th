@@ -7,6 +7,7 @@ on:
       - 'public/.assetsignore'
       - 'scripts/cloudflare-routing.mjs'
       - 'scripts/cloudflare-routing.test.mjs'
+      - 'scripts/cloudflare-production-baseline.mjs'
       - 'src/pages/api/google-reviews.ts'
       - '.github/workflows/cloudflare-preview-qa.yml'
   workflow_dispatch:
@@ -54,6 +55,16 @@ jobs:
           [ "$count" -le 20000 ] || { echo 'Cloudflare Free asset-count limit exceeded'; exit 1; }
           oversized=$(find dist/client -type f -size +25600k -print -quit)
           [ -z "$oversized" ] || { echo "Cloudflare asset 25MiB limit exceeded: $oversized"; exit 1; }
+      - name: Record production HTTP redirect and SEO baseline (read-only)
+        run: node scripts/cloudflare-production-baseline.mjs https://amphon.co.th
+      - name: Upload baseline report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-production-http-baseline
+          path: artifacts/cloudflare-migration/production-http-baseline.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Upload routing artifacts (not site content)
         if: always()
         uses: actions/upload-artifact@v4
