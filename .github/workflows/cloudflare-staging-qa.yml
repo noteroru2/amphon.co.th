@@ -1,0 +1,80 @@
+name: Cloudflare Production Staging QA (NO DEPLOY)
+on:
+  push:
+    branches: [infra/cloudflare-production-staging]
+    paths:
+      - 'scripts/cloudflare-staging-prepare.mjs'
+      - 'scripts/cloudflare-staging-prepare.test.mjs'
+      - 'scripts/cloudflare-staging-local-smoke.mjs'
+      - '.github/workflows/cloudflare-staging-qa.yml'
+      - 'astro.config.cloudflare.production.mjs'
+      - 'wrangler.jsonc'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guarded-production-build-with-staging-only-noindex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout staging-only candidate branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Use pinned Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Reinstall from locked dependencies (no network drift)
+        run: npm ci
+      - name: Verify exact Cloudflare dependencies
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Test all staging and production safety barriers
+        run: |
+          node --test scripts/cloudflare-staging-prepare.test.mjs
+          node --test scripts/cloudflare-routing.test.mjs
+      - name: Build INDEXABLE production candidate, isolated to staging CI only
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: Ensure clean Production headers BEFORE staging protection
+        run: |
+          if grep -Ei '^[[:space:]]*X-Robots-Tag:[[:space:]].*noindex' dist/client/_headers; then
+            echo 'ERROR: Production source already noindex'; exit 1
+          fi
+      - name: Validate production SEO build before adding staging-only headers
+        run: npm run validate:seo
+      - name: Add REQUIRED noindex and independent worker identity ONLY to staging artifact
+        run: node scripts/cloudflare-staging-prepare.mjs
+      - name: Verify local staging config cannot bind apex/www
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const c=JSON.parse(fs.readFileSync('dist/server/wrangler.staging.json','utf8'));
+          const h=fs.readFileSync('dist/client/_headers','utf8');
+          assert.equal(c.name,'amphon-co-th-staging');
+          assert.equal(c.workers_dev,true);
+          assert.ok(!c.routes && !c.route);
+          assert.match(h,/X-Robots-Tag: noindex, nofollow/);
+          console.log('PASS: isolated staging worker, no apex/www routes, staging noindex');
+          NODE
+      - name: Validate Wrangler staging bundle — DRY RUN ONLY
+        run: npx wrangler deploy --config dist/server/wrangler.staging.json --dry-run --outdir .cloudflare-staging-dryrun
+      - name: Test disposable LOCAL Staging Worker HTTP/SEO/260 redirects/API fallback
+        run: node scripts/cloudflare-staging-local-smoke.mjs
+      - name: Publish read-only QA evidence, NO actual Cloudflare deploy
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-staging-qa-issue54
+          path: |
+            dist/client/_headers
+            dist/client/_redirects
+            dist/server/wrangler.staging.json
+            artifacts/cloudflare-migration/local-staging-http-qa.json
+          if-no-files-found: warn
+          retention-days: 30
