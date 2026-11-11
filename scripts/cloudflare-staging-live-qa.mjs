@@ -8,7 +8,12 @@ import path from 'node:path';
 import tls from 'node:tls';
 import assert from 'node:assert/strict';
 
-const HOST='cf-test.amphon.co.th';
+// Default to the final staging custom domain. Allow only the isolated
+// Workers.dev staging hostname for pre-domain smoke tests.
+const HOST=process.env.STAGING_HOST||'cf-test.amphon.co.th';
+const ALLOWED_HOSTS=new Set(['cf-test.amphon.co.th','amphon-co-th-staging.noteroru2.workers.dev']);
+if(!ALLOWED_HOSTS.has(HOST))throw Error('Refusing to inspect non-staging host: '+HOST);
+const API_MUST_BE_CONFIGURED=process.env.STAGING_API_EXPECT_CONFIGURED!=='false';
 const BASE='https://'+HOST;
 const CANON='https://amphon.co.th';
 const OUT='artifacts/cloudflare-migration/live-staging-acceptance.json';
@@ -130,10 +135,21 @@ try{
     }catch{}
   }
   // NEVER log the API body, review text, API key or Place ID.
+  // Before runtime Secrets are configured on the NEW staging Worker, its
+  // fail-closed 503 not_configured response is expected. This is NOT a GO
+  // signal for custom-domain or production cutover. The cf-test gate still
+  // requires real Google Places HTTP 200 valid public data.
+  let unconfigured=false;
+  if(api.status===503){
+    try{unconfigured=JSON.parse(api.body).error==='not_configured';}catch{}
+  }
   report.api={status:api.status,valid,noindex:/noindex/i.test(api.robots||''),
-    noStore:/no-store/i.test(api.cache||''),publicData};
-  if(api.status!==200||!valid||!report.api.noindex||!report.api.noStore)
-    report.errors.push('Staging Google Reviews API is not HTTP 200 valid JSON/no-store/noindex');
+    noStore:/no-store/i.test(api.cache||''),publicData,unconfigured,
+    configuredRequired:API_MUST_BE_CONFIGURED};
+  const apiPass=API_MUST_BE_CONFIGURED ? api.status===200&&valid :
+    (api.status===200&&valid)||(api.status===503&&unconfigured);
+  if(!apiPass||!report.api.noindex||!report.api.noStore)
+    report.errors.push('Staging Google Reviews API contract failed: status/no-store/noindex');
 
   const www=await request('https://www.amphon.co.th','/about?utm_source=cf-staging-qa');
   let location=null,ok=false;
