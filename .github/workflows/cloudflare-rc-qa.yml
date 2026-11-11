@@ -50,7 +50,14 @@ jobs:
               .map(([name,v])=>({name,severity:v.severity,isDirect:v.isDirect}));
             console.log('PRODUCTION_DEPENDENCY_AUDIT '+JSON.stringify({total:tally.total??null,critical:tally.critical??null,
               high:tally.high??null,moderate:tally.moderate??null,low:tally.low??null,packages},null,2));
-          } catch(e) {console.log('PRODUCTION_DEPENDENCY_AUDIT unavailable '+String(e.message));}
+            if ((tally.critical??0)>0) {
+              console.error('NO-GO SECURITY: Critical production dependency advisory requires verified mitigation or isolated patched release. Build parity alone is not security approval.');
+              process.exitCode=1;
+            }
+          } catch(e) {
+            console.error('NO-GO SECURITY: production audit unavailable '+String(e.message));
+            process.exitCode=1;
+          }
           NODE
       - name: Check Cloudflare adapter and Wrangler versions
         run: node scripts/cloudflare-lock-verify.mjs
