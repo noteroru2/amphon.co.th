@@ -1,0 +1,1 @@
+NOT RUN YET. Change this file only after cf-test.amphon.co.th has SSL, staged noindex and Google Places runtime secrets configured.

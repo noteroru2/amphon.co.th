@@ -1,5 +1,12 @@
 name: Cloudflare Staging Live HTTPS/SEO/API Acceptance (READ ONLY)
 on:
+  # Workflow_dispatch on a non-default branch may be unavailable in GitHub UI.
+  # Owner can ask us to push a one-line change to this dedicated trigger file
+  # AFTER the staging Custom Domain and runtime secrets have been configured.
+  push:
+    branches: [infra/cloudflare-production-staging]
+    paths:
+      - 'docs/cloudflare-staging-live-qa-request.txt'
   workflow_dispatch:
 
 permissions:
