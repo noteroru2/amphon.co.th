@@ -27,7 +27,19 @@ export function generateCloudflareRouting(outputDir = path.join(root, 'dist', 'c
     for (const value of [rule.source, rule.destination]) {
       if (/\s/u.test(value)) throw new Error('Whitespace in redirect URL: ' + value);
     }
-    redirectLines.push(rule.source + ' ' + rule.destination + ' ' + status);
+    // Cloudflare's static asset redirect matcher receives normalized percent-encoded
+    // request paths for three film-camera typo slugs. Their raw Thai source rules
+    // returned 404 on the live Workers.dev preview. Scope the workaround tightly
+    // to these three proven failing rules; preserve all other Vercel mappings.
+    const encodedFilmCameraTypos = new Set([
+      '/บริการ/รับซื้อกล้องฟิลัม',
+      '/บริการ/รับซื้อกล้องฟีล์ม',
+      '/บริการ/รับซื้อกล้องฟิล์ล',
+    ]);
+    const source = encodedFilmCameraTypos.has(rule.source)
+      ? encodeURI(rule.source)
+      : rule.source;
+    redirectLines.push(source + ' ' + rule.destination + ' ' + status);
   }
   // Cloudflare supports one greedy :splat dynamic redirect; append after all exact rules.
   // This attempts to match Vercel's permanent /:path+/ -> /:path+ semantics.
