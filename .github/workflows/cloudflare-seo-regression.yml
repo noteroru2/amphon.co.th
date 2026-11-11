@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
-      - name: Compare all sitemap URLs and sample 404s, images, links and slash redirects
+      - name: Recheck live sitemap URLs, 404s, images, links and slash redirects after build-command update
         run: node scripts/cloudflare-seo-regression.mjs
       - name: Upload public SEO audit report
         if: always()

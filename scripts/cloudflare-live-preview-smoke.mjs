@@ -69,8 +69,22 @@ const validGoogleReviews200 = (() => {
       && Array.isArray(data.reviews);
   } catch { return false; }
 })();
+// A public error code is safe to report; NEVER copy Google Reviews JSON,
+// user content, API keys or Place IDs into CI artifacts/logs.
+let errorCode = '';
+if (api.status !== 200) {
+  try {
+    const body = JSON.parse(api.body);
+    const allowed = new Set([
+      'not_configured', 'access_denied', 'quota_exceeded',
+      'upstream_error', 'upstream_timeout', 'network_error',
+      'malformed_response', 'invalid_place',
+    ]);
+    errorCode = allowed.has(body.error) ? body.error : 'unknown_http_error';
+  } catch { errorCode = api.status ? 'non_json_http_error' : 'network_error'; }
+}
 out.api = { status: api.status, robots: api.robots, cache: api.cache, type: api.type,
-  validGoogleReviews200, error: api.error || null };
+  validGoogleReviews200, errorCode, error: api.error || null };
 if(!validGoogleReviews200||!api.cache.includes('no-store')||!api.robots.includes('noindex')) {
   out.errors.push('Google Reviews live API not HTTP 200/valid Google data/no-store/noindex');
 }

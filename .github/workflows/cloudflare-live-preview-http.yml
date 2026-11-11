@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
-      - name: Check Live Workers.dev preview status, indexability, redirects and Google Reviews fallback
+      - name: Check current live Workers.dev Preview, all 260 redirects and Google Reviews API contract
         run: node scripts/cloudflare-live-preview-smoke.mjs
       - name: Upload public HTTP result (no credentials)
         if: always()
