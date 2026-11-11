@@ -5,7 +5,7 @@ const RULES={"รับซื้อกล้อง":["Shutter เซนเซอ
  for(const [service,focus]of Object.entries(RULES))for(const [i,area]of areas.entries()){
   const slug=service+"-"+area,file=path.join(root,slug+".md");
   if(!fs.existsSync(file))throw Error("Missing "+file);
-  const raw=fs.readFileSync(file,"utf8");if(raw.includes("ISSUE50_PAIR_PROOF_V1"))continue;
+  const raw=fs.readFileSync(file,"utf8").replace(/^\uFEFF/,"");if(raw.includes("ISSUE50_PAIR_PROOF_V1"))continue;
   const fm=raw.match(/^---\r?\n[\s\S]*?\r?\n---/);if(!fm)throw Error("No FM "+slug);
   const main=service.replace(/^รับซื้อ-?/,"");
   const lead=i===0?`ผู้ขายจากนครราชสีมาควรเริ่มจากอาการเครื่องและรุ่นจริง โดยเน้น **${focus[0]}** อย่าเหมารวมเครื่องที่เปิดติดกับเครื่องที่ทดสอบครบทุกระบบ และหากไม่มีข้อมูลอาการให้แจ้งตามตรงว่าไม่ได้ทดสอบ`:`ผู้ขายจากอุดรธานีควรเริ่มจากความครบชุดและสิทธิ์ในสินค้า โดยเน้น **${focus[1]}** ก่อนส่งมอบต้องระบุอุปกรณ์ที่ขาดและบัญชีที่เจ้าของยังต้องปลด ไม่ใช้คำว่าครบกล่องกับรายการที่ตรวจไม่ครบ`;
