@@ -32,8 +32,25 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
 
   const redirects = fs.readFileSync(redirectsFile, 'utf8');
   const rules = redirects.split(/\r?\n/).filter(s => s.trim() && !s.trim().startsWith('#'));
-  assert.equal(rules.length, 261, 'Expected 260 exact legacy redirects + 1 slash wildcard');
+  // Astro itself also emits 16 legacy redirect files in this repo. Preserve
+  // those adapter redirects; require every one of the 260 Vercel mappings.
+  const vercel = JSON.parse(fs.readFileSync(path.join(rootDir, 'vercel.json'), 'utf8'));
+  const legacy = vercel.redirects.filter(rule => rule.source !== '/:path+/');
+  assert.equal(legacy.length, 260, 'Expected exactly 260 Vercel legacy redirect definitions');
+  assert.ok(rules.length >= legacy.length + 1,
+    'Missing 260 Vercel rules and trailing slash wildcard');
   assert.ok(rules.includes('/*/ /:splat 308'), 'Missing trailing slash 308 redirect');
+  const encodedFilmTypos = new Set([
+    '/บริการ/รับซื้อกล้องฟิลัม',
+    '/บริการ/รับซื้อกล้องฟีล์ม',
+    '/บริการ/รับซื้อกล้องฟิล์ล',
+  ]);
+  for (const item of legacy) {
+    const source = encodedFilmTypos.has(item.source) ? encodeURI(item.source) : item.source;
+    const status = item.statusCode ?? (item.permanent ? 308 : 307);
+    assert.ok(rules.includes(source + ' ' + item.destination + ' ' + status),
+      'Staging redirect missing: ' + item.source);
+  }
 
   const original = JSON.parse(fs.readFileSync(inputConfig, 'utf8'));
   assert.equal(original.name, SOURCE_WORKER,
@@ -72,7 +89,8 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
     routesAttachedByScript: 0,
     staticNoindex: true,
     productionCleanHeadersRequired: true,
-    exactRedirects: 260,
+    exactRedirects: legacy.length,
+    adapterExtraRedirects: rules.length - legacy.length - 1,
     slashRedirects: 1,
     deploymentConfig: 'dist/server/wrangler.staging.json',
   };

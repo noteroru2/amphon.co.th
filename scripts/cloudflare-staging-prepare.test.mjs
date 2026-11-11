@@ -21,6 +21,11 @@ function mockBuild(override = {}) {
   fs.writeFileSync(path.join(dir, 'dist/client/_redirects'),
     Array.from({length:260},(_,i) => '/old-'+i+' /new-'+i+' 308')
       .concat(['/*/ /:splat 308']).join('\n'));
+  fs.writeFileSync(path.join(dir, 'vercel.json'), JSON.stringify({
+    redirects: Array.from({length:260},(_,i) => ({
+      source:'/old-'+i, destination:'/new-'+i, statusCode:308,
+    })).concat([{source:'/:path+/',destination:'/:path+',statusCode:308}]),
+  }));
   fs.writeFileSync(path.join(dir,'dist/server/wrangler.json'),
     JSON.stringify(override.config ?? { name:'amphon-co-th', main:'./entry.mjs',
       assets:{directory:'../client',binding:'ASSETS'}}));
