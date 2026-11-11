@@ -1,0 +1,62 @@
+name: Cloudflare dependency lock bootstrap (branch only)
+on:
+  push:
+    branches: [infra/cloudflare-workers-preview]
+    paths: ['.github/workflows/cloudflare-lock-bootstrap.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  create-reproducible-lock:
+    if: github.ref == 'refs/heads/infra/cloudflare-workers-preview'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout isolated migration branch (write permission restricted to this job)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: infra/cloudflare-workers-preview
+          persist-credentials: true
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install current locked baseline
+        run: npm ci
+      - name: Add exact Cloudflare tool versions and transitive lockfile integrity
+        run: npm install --save-dev --save-exact --package-lock=true --ignore-scripts @astrojs/cloudflare@13.7.0 wrangler@4.100.0
+      - name: Verify exact direct versions, full lockfile, and resolved npm tree
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const pkg = JSON.parse(fs.readFileSync('package.json','utf8'));
+          const lock = JSON.parse(fs.readFileSync('package-lock.json','utf8'));
+          for (const [name, version] of Object.entries({'@astrojs/cloudflare':'13.7.0', 'wrangler':'4.100.0'})) {
+            assert.equal(pkg.devDependencies[name], version, name);
+            assert.equal(lock.packages[''].devDependencies[name], version, 'root lock ' + name);
+            assert.equal(lock.packages['node_modules/'+name].version, version, 'resolved ' + name);
+            assert.ok(lock.packages['node_modules/'+name].integrity?.startsWith('sha512-'), 'missing sha512 integrity');
+          }
+          assert.equal(lock.lockfileVersion, 3);
+          console.log('Cloudflare exact dependency and transitive lock verified');
+          NODE
+          npm ci
+          npm ls @astrojs/cloudflare wrangler --depth=0
+      - name: Ensure only package manifests have changed
+        run: |
+          test -z "$(git ls-files --others --exclude-standard)"
+          git add -- package.json package-lock.json
+          test -n "$(git diff --cached --name-only)"
+          count=$(git diff --cached --name-only | wc -l)
+          [ "$count" -eq 2 ]
+          git diff --cached --name-only | grep -Fx package.json
+          git diff --cached --name-only | grep -Fx package-lock.json
+      - name: Commit exact lock on isolated migration branch (no Production, no DNS)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "build(issue54): lock Cloudflare adapter and Wrangler with npm integrity tree"
+          git push origin HEAD:refs/heads/infra/cloudflare-workers-preview
