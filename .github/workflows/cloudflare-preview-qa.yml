@@ -2,6 +2,9 @@ name: Cloudflare migration preview QA
 on:
   pull_request:
     paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/cloudflare-lock-verify.mjs'
       - 'astro.config.cloudflare.mjs'
       - 'wrangler.jsonc'
       - 'public/.assetsignore'
@@ -28,13 +31,12 @@ jobs:
       - name: Use Node 22
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22
+          node-version: '22.23.4'
           cache: npm
-      - name: Install existing locked dependencies
+      - name: Install all dependencies strictly from committed lockfile
         run: npm ci
-      - name: Install isolated Cloudflare preview tools
-        # POC only: do not change package-lock without confirming build/test parity.
-        run: npm install --no-save --package-lock=false @astrojs/cloudflare@13.7.0 wrangler@4.100.0
+      - name: Verify Cloudflare dependencies are exact and installed
+        run: node scripts/cloudflare-lock-verify.mjs
       - name: Test redirect/header translation
         run: node --test scripts/cloudflare-routing.test.mjs
       - name: Astro 6 Cloudflare build

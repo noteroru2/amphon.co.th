@@ -3,6 +3,9 @@ on:
   push:
     branches: [infra/cloudflare-workers-preview]
     paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/cloudflare-lock-verify.mjs'
       - 'astro.config.cloudflare.production.mjs'
       - 'scripts/cloudflare-routing.mjs'
       - 'scripts/cloudflare-routing.test.mjs'
@@ -25,12 +28,12 @@ jobs:
       - name: Use Node 22
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22
+          node-version: '22.23.4'
           cache: npm
-      - name: Install Vercel dependencies and isolated pinned Cloudflare candidate tooling
-        run: |
-          npm ci
-          npm install --no-save --package-lock=false @astrojs/cloudflare@13.7.0 wrangler@4.100.0
+      - name: Install all dependencies strictly from committed lockfile
+        run: npm ci
+      - name: Verify Cloudflare dependencies are exact and installed
+        run: node scripts/cloudflare-lock-verify.mjs
       - name: Check preview and production routing guard unit tests
         run: node --test scripts/cloudflare-routing.test.mjs
       - name: Build production candidate locally only
