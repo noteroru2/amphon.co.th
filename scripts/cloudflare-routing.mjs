@@ -29,6 +29,10 @@ export function generateCloudflareRouting(outputDir = path.join(root, 'dist', 'c
     }
     redirectLines.push(rule.source + ' ' + rule.destination + ' ' + status);
   }
+  // Cloudflare supports one greedy :splat dynamic redirect; append after all exact rules.
+  // This attempts to match Vercel's permanent /:path+/ -> /:path+ semantics.
+  // The local runtime smoke must verify that "/" never redirects to itself.
+  redirectLines.push('/*/ /:splat 308');
 
   // Cloudflare _headers accepts globs, not Vercel's regex-like (.*) rules.
   const headerBlocks = ['# GENERATED FROM vercel.json — PREVIEW ONLY. Issue #54.'];
@@ -63,7 +67,8 @@ export function generateCloudflareRouting(outputDir = path.join(root, 'dist', 'c
   fs.writeFileSync(headerFile,
     (keptHeaders ? keptHeaders + '\n\n' : '') + headerBlocks.join('\n') + '\n', 'utf8');
   return {
-    staticRedirectCount: redirectLines.length - 2,
+    staticRedirectCount: redirectLines.length - 3,
+    dynamicRedirectCount: 1,
     excludedDynamic,
     headerRuleCount: headers.length,
     previewNoindex: headerBlocks.some((line) => line.includes('X-Robots-Tag: noindex')),

@@ -14,10 +14,12 @@ test('Preview routing preserves exact redirect rules and blocks indexing', () =>
     const data = generateCloudflareRouting(dir);
     assert.equal(data.staticRedirectCount, 260);
     assert.equal(data.excludedDynamic, 1);
+    assert.equal(data.dynamicRedirectCount, 1);
     assert.equal(data.headerRuleCount, 8);
     assert.equal(data.previewNoindex, true);
     const lines = fs.readFileSync(path.join(dir, '_redirects'), 'utf8').split('\n');
-    assert.equal(lines.filter((line) => line.startsWith('/')).length, 261);
+    assert.equal(lines.filter((line) => line.startsWith('/')).length, 262);
+    assert.ok(lines.includes('/*/ /:splat 308'));
     assert.ok(lines.includes('/astro-legacy /astro-new 301'));
     assert.ok(lines.indexOf('/astro-legacy /astro-new 301') > lines.findIndex((line) => line.startsWith('/บริการ/รับซื้อ-gopro ')));
 

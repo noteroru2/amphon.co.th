@@ -51,3 +51,7 @@ Reference: https://developers.cloudflare.com/workers/static-assets/migration-gui
 Cloudflare's default `drop-trailing-slash` asset handling returns **307** where Vercel currently returns **308**. To preserve the permanent redirect, `wrangler.jsonc` selectively routes `/*/` through the Worker (with an exception for `/`) and `src/middleware.ts` returns a direct relative `Location` with 308. Non-slash SEO pages remain served from Static Assets. This must be tested on Live Preview in addition to the local Wrangler smoke suite.
 
 The local smoke suite also tests **all 260 exact redirects** over HTTP; it explicitly fails if any status or destination diverges.
+
+## Routing experiment (PR only)
+
+The middleware + `run_worker_first: ["/*/"]` attempt returned 200 for slash URLs and blocked one exact redirect in local test, so this approach was **removed**. A scoped `/*/ /:splat 308` rule in Cloudflare `_redirects` is being tested instead. **Do not cut over until all 260 exact rules, all critical slash variants, and root `/` return the expected status without loops.** If Cloudflare's pattern matching cannot guarantee root safety, remove this wildcard and implement a zone-level 308 rule after Cloudflare dashboard authentication.
