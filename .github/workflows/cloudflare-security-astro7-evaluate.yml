@@ -85,7 +85,9 @@ jobs:
           console.log('PROTECTED_SITEMAP_URL_COUNT',urls.length,'sitemap files',xmls.length);
           assert.equal(urls.length,1189,'Sitemap count changed from current live Vercel baseline');
           assert.equal(new Set(urls).size,1189,'Duplicate sitemap URLs');
-          assert.ok(urls.every(u=>u.startsWith('https://amphon.co.th/')),'Wrong sitemap hostname');
+          const foreign=urls.filter(u=>u!=='https://amphon.co.th'&&!u.startsWith('https://amphon.co.th/'));
+          if(foreign.length)console.error('Foreign sitemap hosts:',foreign.slice(0,5));
+          assert.equal(foreign.length,0,'Wrong sitemap hostname');
           assert.ok(!urls.some(u=>u.includes('cf-test.amphon.co.th')),'Staging leaked into sitemap');
           NODE
           node scripts/cloudflare-release-finalize.mjs
@@ -237,7 +239,9 @@ jobs:
           console.log('PROTECTED_SITEMAP_URL_COUNT',urls.length,'sitemap files',xmls.length);
           assert.equal(urls.length,1189,'Sitemap count changed from current live Vercel baseline');
           assert.equal(new Set(urls).size,1189,'Duplicate sitemap URLs');
-          assert.ok(urls.every(u=>u.startsWith('https://amphon.co.th/')),'Wrong sitemap hostname');
+          const foreign=urls.filter(u=>u!=='https://amphon.co.th'&&!u.startsWith('https://amphon.co.th/'));
+          if(foreign.length)console.error('Foreign sitemap hosts:',foreign.slice(0,5));
+          assert.equal(foreign.length,0,'Wrong sitemap hostname');
           assert.ok(!urls.some(u=>u.includes('cf-test.amphon.co.th')),'Staging leaked into sitemap');
           NODE
           node scripts/cloudflare-release-finalize.mjs
