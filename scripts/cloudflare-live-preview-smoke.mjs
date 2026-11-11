@@ -59,7 +59,21 @@ out.redirects={tested:exact.length,passed:items.filter(x=>x.match).length,mismat
 if(out.redirects.mismatches.length)out.errors.push(out.redirects.mismatches.length+' legacy redirect mismatches');
 const api=await request('/api/google-reviews',true);
 out.api={status:api.status,robots:api.robots,cache:api.cache,type:api.type,unconfigured:api.body.includes('not_configured'),error:api.error||null};
-if(api.status!==503||!api.cache.includes('no-store')||!api.robots.includes('noindex')||!out.api.unconfigured)out.errors.push('API unconfigured fallback mismatch');
+const validGoogleReviews200 = (() => {
+  if (api.status !== 200) return false;
+  try {
+    const data = JSON.parse(api.body);
+    return typeof data.businessName === 'string' && data.businessName.trim().length > 0
+      && typeof data.rating === 'number' && data.rating >= 0 && data.rating <= 5
+      && Number.isInteger(data.reviewCount) && data.reviewCount >= 0
+      && Array.isArray(data.reviews);
+  } catch { return false; }
+})();
+out.api = { status: api.status, robots: api.robots, cache: api.cache, type: api.type,
+  validGoogleReviews200, error: api.error || null };
+if(!validGoogleReviews200||!api.cache.includes('no-store')||!api.robots.includes('noindex')) {
+  out.errors.push('Google Reviews live API not HTTP 200/valid Google data/no-store/noindex');
+}
 fs.mkdirSync('artifacts/cloudflare-migration',{recursive:true});
 fs.writeFileSync('artifacts/cloudflare-migration/live-preview-http-qa.json',JSON.stringify(out,null,2)+'\n');
 console.log(JSON.stringify({origin,pass:out.errors.length===0,pages:out.pages,slash:out.slash,redirects:{tested:out.redirects.tested,passed:out.redirects.passed,mismatches:out.redirects.mismatches.slice(0,20)},api:out.api,errors:out.errors},null,2));

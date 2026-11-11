@@ -51,3 +51,49 @@ test('Preview routing preserves exact redirect rules and blocks indexing', () =>
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+
+test('Production mode has no noindex while preserving Vercel redirects and preview isolation', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'amphon-cf-production-'));
+  try {
+    fs.writeFileSync(path.join(dir, '_headers'),
+      '/_astro/*\n  Cache-Control: public, max-age=31536000, immutable\n');
+    const preview = generateCloudflareRouting(dir);
+    assert.equal(preview.mode, 'preview');
+    assert.equal(preview.previewNoindex, true);
+    assert.match(fs.readFileSync(path.join(dir, '_headers'), 'utf8'),
+      /X-Robots-Tag: noindex, nofollow/);
+
+    // Reusing the same build output directory must not leak the Preview policy.
+    const production = generateCloudflareRouting(dir, { mode: 'production' });
+    assert.equal(production.mode, 'production');
+    assert.equal(production.previewNoindex, false);
+    assert.equal(production.staticRedirectCount, 260);
+    assert.equal(production.dynamicRedirectCount, 1);
+    const productionHeaders = fs.readFileSync(path.join(dir, '_headers'), 'utf8');
+    assert.doesNotMatch(productionHeaders, /X-Robots-Tag:\s*[^\n]*noindex/i);
+    assert.match(productionHeaders, /X-Content-Type-Options: nosniff/);
+    assert.match(productionHeaders, /max-age=31536000, immutable/);
+    const redirects = fs.readFileSync(path.join(dir, '_redirects'), 'utf8');
+    assert.match(redirects, /\/\*\/ \/:splat 308/);
+    assert.equal(redirects.split('\n').filter(x => x.startsWith('/')).length, 261);
+
+    // A later Preview build must still get its mandatory noindex back.
+    assert.equal(generateCloudflareRouting(dir).previewNoindex, true);
+    assert.match(fs.readFileSync(path.join(dir, '_headers'), 'utf8'),
+      /X-Robots-Tag: noindex, nofollow/);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('Production fails closed if any inherited header attempts to noindex it', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'amphon-cf-unsafe-'));
+  try {
+    fs.writeFileSync(path.join(dir, '_headers'), '/*\n  X-Robots-Tag: noindex\n');
+    assert.throws(() => generateCloudflareRouting(dir, { mode: 'production' }), /Refusing Cloudflare Production/);
+    assert.throws(() => generateCloudflareRouting(dir, { mode: 'unknown' }), /Unknown Cloudflare routing mode/);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
