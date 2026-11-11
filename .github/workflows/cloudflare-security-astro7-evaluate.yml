@@ -41,7 +41,8 @@ jobs:
           import fs from 'node:fs';
           const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
           pkg.dependencies.astro='7.4.9';
-          pkg.dependencies['@astrojs/vercel']='11.0.21';
+          delete pkg.dependencies['@astrojs/vercel'];
+          pkg.devDependencies['@astrojs/vercel']='11.0.21';
           pkg.dependencies['@astrojs/markdown-remark']='7.3.6';
           pkg.devDependencies['@astrojs/cloudflare']='14.4.7';
           pkg.devDependencies.sharp='0.35.5';
@@ -68,7 +69,7 @@ jobs:
           const v=x.metadata?.vulnerabilities;
           if(!v || typeof v.critical!=='number')throw new Error('npm audit was not valid; NO-GO');
           console.log('Security findings for upgraded dependency graph:',JSON.stringify(v));
-          if(v.critical>0)throw new Error('Critical vulnerability remains; NO-GO');
+          if(v.critical>0 || v.high>0)throw new Error('High/Critical production dependency vulnerability remains; NO-GO');
           NODE
       - name: Verify Google Reviews functionality and build protected SEO release
         run: |
