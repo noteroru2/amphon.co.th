@@ -117,7 +117,7 @@ jobs:
 
   persist-reviewed-upgrade:
     name: Persist tested Astro7 dependency files on isolated branch (no deployment)
-    needs: [security-upgrade-experiment]
+    needs: [security-upgrade-experiment, frozen-lock-verification]
     if: github.event_name == 'push' && github.ref == 'refs/heads/infra/cloudflare-security-astro7-eval'
     runs-on: ubuntu-latest
     permissions:
@@ -162,3 +162,72 @@ jobs:
           fi
           gh auth setup-git
           git push origin HEAD:refs/heads/infra/cloudflare-security-astro7-eval
+
+  frozen-lock-verification:
+    name: Verify committed lockfile and exact SHA from scratch (NO DEPLOY)
+    needs: [security-upgrade-experiment]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact committed release SHA
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Use Node 22.23.4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Require reproducible pinned and separated release dependencies
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs'; import assert from 'node:assert/strict';
+          const p=JSON.parse(fs.readFileSync('package.json','utf8'));
+          const l=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
+          assert.equal(p.dependencies.astro,'7.4.9');
+          assert.equal(p.dependencies['@astrojs/markdown-remark'],'7.3.6');
+          assert.ok(!p.dependencies['@astrojs/vercel']);
+          assert.equal(p.devDependencies['@astrojs/vercel'],'11.0.21');
+          assert.equal(p.devDependencies['@astrojs/cloudflare'],'14.4.7');
+          assert.equal(p.devDependencies.wrangler,'4.125.0');
+          assert.equal(p.devDependencies.sharp,'0.35.5');
+          assert.equal(l.packages[''].dependencies.astro,p.dependencies.astro);
+          assert.equal(l.packages[''].devDependencies['@astrojs/cloudflare'],p.devDependencies['@astrojs/cloudflare']);
+          console.log('PASS: exact pinned release versions at SHA',process.env.GITHUB_SHA);
+          NODE
+          npm ci --no-fund
+          node scripts/cloudflare-lock-verify.mjs
+      - name: Audit committed production lockfile with zero High and Critical
+        run: |
+          npm audit --omit=dev --json > /tmp/amphon-production-audit.json || true
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs'; import assert from 'node:assert/strict';
+          const a=JSON.parse(fs.readFileSync('/tmp/amphon-production-audit.json','utf8'));
+          const v=a.metadata?.vulnerabilities;
+          assert.ok(v&&Number.isInteger(v.critical)&&Number.isInteger(v.high));
+          assert.equal(v.critical,0);assert.equal(v.high,0);
+          console.log('PASS: committed production audit',JSON.stringify(v));
+          NODE
+      - name: Build and test actual committed release only
+        run: |
+          npm run test:google-reviews
+          npx astro build --config astro.config.cloudflare.production.mjs
+          npm run validate:seo
+          node scripts/cloudflare-release-finalize.mjs
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-rc-locked-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
+      - name: Assert release doesn't accidentally ship Vercel routing
+        run: |
+          if grep -r -E -q --include='*.js' 'path-to-regexp|@vercel/routing-utils' dist/server; then exit 1; fi
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import assert from 'node:assert/strict';
+          const x=JSON.parse(fs.readFileSync('dist/server/wrangler.rc-audit.json','utf8'));
+          assert.equal(x.name,'amphon-co-th-rc-audit');
+          assert.ok(!x.routes&&!x.route);
+          const h=fs.readFileSync('dist/client/_headers','utf8');
+          assert.doesNotMatch(h,/^\s*X-Robots-Tag:[^\n]*noindex/im);
+          console.log('PASS: committed SHA has no live domain route, global noindex or Vercel runtime dependency');
+          NODE
