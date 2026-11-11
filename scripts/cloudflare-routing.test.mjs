@@ -15,7 +15,11 @@ test('Preview routing preserves exact redirect rules and blocks indexing', () =>
     assert.equal(data.previewNoindex, true);
     const lines = fs.readFileSync(path.join(dir, '_redirects'), 'utf8').split('\n');
     assert.equal(lines.filter((line) => line.startsWith('/')).length, 260);
-    assert.ok(lines.some((line) => line.startsWith('/บริการ/รับซื้อ-gopro /บริการ/รับซื้อ-gopro-action-camera 308')));
+    // Keep the percent-encoded Location byte-for-byte as specified in Vercel.
+    const vercel = JSON.parse(fs.readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+    const gopro = vercel.redirects.find((entry) => entry.source === '/บริการ/รับซื้อ-gopro');
+    assert.ok(gopro, 'GoPro redirect fixture missing in vercel.json');
+    assert.ok(lines.includes(gopro.source + ' ' + gopro.destination + ' 308'));
     assert.ok(lines.some((line) => line.startsWith('/%E0%B8') && line.endsWith(' 308')));
     assert.ok(!lines.some((line) => line.includes('/:path+/')));
     const headers = fs.readFileSync(path.join(dir, '_headers'), 'utf8');
