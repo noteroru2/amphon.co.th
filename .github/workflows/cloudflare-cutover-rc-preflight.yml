@@ -1,0 +1,119 @@
+name: Cloudflare Host-only Cutover RC — Build + DNS Preflight (NO DEPLOY)
+on:
+  push:
+    branches: [infra/cloudflare-cutover-rc]
+    paths:
+      - '.github/workflows/cloudflare-cutover-rc-preflight.yml'
+      - 'scripts/cloudflare-production-prepare.mjs'
+      - 'scripts/cloudflare-production-prepare.test.mjs'
+      - 'scripts/cloudflare-dns-readonly-preflight.mjs'
+      - 'docs/cloudflare-cutover-production-plan-issue54.md'
+      - 'astro.config.cloudflare.production.mjs'
+      - 'wrangler.jsonc'
+      - 'package*.json'
+      - '.node-version'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  host-only-production-build-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out PRODUCTION CANDIDATE only, no write token
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify old Vercel site content frozen and 180 files quarantined
+        run: |
+          set -euo pipefail
+          VERCEL_SHA='1d235196f45e29af4c425fa4505111596db8e4c6'
+          CURRENT_MAIN_SHA='f3f91b804432c9b56542db38d70547f657cd54de'
+          test "$(git rev-parse "$VERCEL_SHA")" = "$VERCEL_SHA"
+          git fetch origin main:refs/remotes/origin/main
+          test "$(git rev-parse refs/remotes/origin/main)" = "$CURRENT_MAIN_SHA"
+          git merge-base --is-ancestor "$VERCEL_SHA" HEAD
+          test "$(git diff --name-only "$VERCEL_SHA" HEAD -- src/content | wc -l | tr -d ' ')" -eq 0
+          test "$(git diff --name-only "$VERCEL_SHA" "$CURRENT_MAIN_SHA" -- src/content/serviceAreas | wc -l | tr -d ' ')" -eq 180
+          test "$(git diff --name-only "$VERCEL_SHA" HEAD -- src/pages | tr -d '\r')" = 'src/pages/api/google-reviews.ts'
+          echo 'PASS: no SEO 180-page edits in cutover RC; only Cloudflare API adaptation differs'
+      - name: Use locked Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install exactly from approved transitive lock
+        run: npm ci
+      - name: Verify exact Cloudflare adapter and Wrangler
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Verify generator and fail-closed candidate guards
+        run: |
+          node --test scripts/cloudflare-routing.test.mjs
+          node --test scripts/cloudflare-production-prepare.test.mjs
+      - name: Build production pages without preview noindex (NO DEPLOY)
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: Confirm 1191 SEO and structured data
+        run: npm run validate:seo
+      - name: Prepare INERT production artifact (no workers.dev, no domains, no deploy)
+        run: node scripts/cloudflare-production-prepare.mjs --ci-only
+      - name: Static review — no routes, noindex, release KV, or workers.dev
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const c=JSON.parse(fs.readFileSync('dist/server/wrangler.production.candidate.json','utf8'));
+          const h=fs.readFileSync('dist/client/_headers','utf8');
+          const redirects=fs.readFileSync('dist/client/_redirects','utf8').split(/\r?\n/)
+            .filter(x=>x.trim()&&!x.startsWith('#'));
+          assert.equal(c.name,'amphon-co-th-prod');
+          assert.equal(c.workers_dev,false);
+          assert.equal(c.preview_urls,false);
+          assert.ok(!c.routes&&!c.route&&!c.custom_domain);
+          assert.ok(!c.kv_namespaces.some(x=>x.id));
+          assert.doesNotMatch(h,/^\s*X-Robots-Tag:.*noindex/im);
+          assert.equal(redirects.length,263);
+          console.log('PASS: Production RC inert, content frozen, noindex absent, 263 nonduplicate redirects');
+          NODE
+      - name: Wrangler config and assets compile — DRY-RUN ONLY
+        run: npx wrangler deploy --config dist/server/wrangler.production.candidate.json --dry-run --outdir .cloudflare-rc-dry-run
+      - name: Local HTTP — indexable main pages, slash redirects, 404 and API safety
+        run: node scripts/cloudflare-production-local-smoke.mjs
+      - name: Verify existing Vercel fallback still builds (NO DEPLOY)
+        run: npm run build
+      - name: Upload nonsecret local QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue54-host-only-rc-build-qa
+          path: |
+            artifacts/cloudflare-migration/local-production-candidate-smoke.json
+            dist/client/_headers
+            dist/client/_redirects
+          if-no-files-found: warn
+          retention-days: 30
+
+  read-only-live-dns-ssl-traffic-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read-only checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+      - name: Capture live authoritative/public DNS + HTTPS + Vercel www 301 + staging secret API
+        run: node scripts/cloudflare-dns-readonly-preflight.mjs
+      - name: Archive DNS snapshot (no secrets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: issue54-cutover-public-dns-baseline
+          path: artifacts/cloudflare-migration/precutover-readonly-dns.json
+          if-no-files-found: warn
+          retention-days: 30
