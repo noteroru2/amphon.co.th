@@ -6,8 +6,15 @@ import { setTimeout as sleep } from 'node:timers/promises';
 
 const host = 'http://127.0.0.1:8790';
 const out = 'artifacts/cloudflare-migration/local-worker-http-smoke.json';
+// Pinned Wrangler 4.100 dev emulator supports 2026-06-18; production dry-run
+// uses the actual 2026-11-10 config. Change only a disposable LOCAL TEST copy.
+const localConfig = 'dist/server/wrangler.local-test.json';
+const originalConfig = JSON.parse(fs.readFileSync('dist/server/wrangler.json', 'utf8'));
+fs.writeFileSync(localConfig, JSON.stringify({
+  ...originalConfig, compatibility_date: '2026-06-18',
+}, null, 2) + '\n', 'utf8');
 const child = spawn('npx', [
-  'wrangler', 'dev', '--config', 'dist/server/wrangler.json',
+  'wrangler', 'dev', '--config', localConfig,
   '--local', '--ip', '127.0.0.1', '--port', '8790',
 ], { env: { ...process.env, WRANGLER_SEND_METRICS: 'false' }, stdio: ['ignore', 'pipe', 'pipe'] });
 let logs = '';
