@@ -1,0 +1,41 @@
+name: Vercel Fallback Compatibility QA (NO DEPLOY)
+on:
+  push:
+    branches: [infra/cloudflare-workers-preview]
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/cloudflare-lock-verify.mjs'
+      - '.github/workflows/cloudflare-vercel-fallback-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  vercel-adapter-build-no-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout candidate branch only
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Use pinned Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install from Cloudflare + Vercel shared integrity lock
+        run: npm ci
+      - name: Check pinned Cloudflare versions do not invalidate Vercel dependency resolution
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Build unchanged Vercel adapter from shared lock (NEVER DEPLOY)
+        run: npm run build
+      - name: Verify base site and SEO without releasing
+        run: npm run validate:seo
+      - name: Confirm build emitted content
+        run: |
+          test -f .amphon-build-complete
+          test -f dist/client/index.html || test -f dist/index.html
+          echo 'Vercel adapter successfully built from pinned migration lock.'

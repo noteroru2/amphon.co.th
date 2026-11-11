@@ -1,0 +1,68 @@
+name: Cloudflare Production Candidate Safety QA (NO DEPLOY)
+on:
+  push:
+    branches: [infra/cloudflare-workers-preview]
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/cloudflare-lock-verify.mjs'
+      - 'astro.config.cloudflare.production.mjs'
+      - 'scripts/cloudflare-routing.mjs'
+      - 'scripts/cloudflare-routing.test.mjs'
+      - 'scripts/cloudflare-production-local-smoke.mjs'
+      - '.github/workflows/cloudflare-production-config-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-candidate-without-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolated migration branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install all dependencies strictly from committed lockfile
+        run: npm ci
+      - name: Verify Cloudflare dependencies are exact and installed
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Check preview and production routing guard unit tests
+        run: node --test scripts/cloudflare-routing.test.mjs
+      - name: Build production candidate locally only
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: Check explicit Production routing mode (must not add noindex)
+        run: node scripts/cloudflare-routing.mjs dist/client production
+      - name: Verify generated Production static _headers cannot noindex
+        run: |
+          if grep -Ei '^[[:space:]]*X-Robots-Tag:[[:space:]].*noindex' dist/client/_headers; then
+            echo 'FAIL: Production static headers contain noindex'; exit 1
+          fi
+          grep -q '^/\*/ /:splat 308' dist/client/_redirects
+          echo 'Production static headers have no noindex; trailing slash redirect is present.'
+      - name: Validate SEO build output
+        run: npm run validate:seo
+      - name: Validate generated Wrangler bundle WITHOUT DEPLOYMENT
+        run: |
+          test -f dist/server/wrangler.json
+          npx wrangler deploy --config dist/server/wrangler.json --dry-run --outdir .cloudflare-production-dryrun
+      - name: Verify disposable local Cloudflare HTTP parity and indexability
+        run: node scripts/cloudflare-production-local-smoke.mjs
+      - name: Upload safe preview vs production policy evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-production-candidate-local-qa
+          path: |
+            dist/client/_headers
+            dist/client/_redirects
+            artifacts/cloudflare-migration/local-production-candidate-smoke.json
+          retention-days: 30
+          if-no-files-found: warn
