@@ -5,6 +5,11 @@ import { fileURLToPath } from 'node:url';
 
 export const STAGING_WORKER = 'amphon-co-th-staging';
 export const STAGING_HOST = 'cf-test.amphon.co.th';
+// Existing isolated KV was created by the first 2026-11-11 Cloudflare staging deploy
+// BEFORE the _redirects validation failed. Wrangler id-less SESSION bindings
+// can re-provision and collide on retry (10014). This is a public resource ID,
+// not an API secret. Never use the Preview/Production KV namespace here.
+export const STAGING_SESSION_KV_ID = '6563771299d44a43844dcb4e8e9093ec';
 const SOURCE_WORKER = 'amphon-co-th-staging';
 const NOINDEX = '  X-Robots-Tag: noindex, nofollow';
 
@@ -85,6 +90,12 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
   }
 
   const original = JSON.parse(fs.readFileSync(inputConfig, 'utf8'));
+  const kvs = original.kv_namespaces;
+  assert.ok(Array.isArray(kvs), 'Generated Astro Wrangler config must define SESSION KV');
+  const sessionBindings = kvs.filter(item => item.binding === 'SESSION');
+  assert.equal(sessionBindings.length, 1, 'Exactly one SESSION KV binding is required');
+  assert.ok(!sessionBindings[0].id || sessionBindings[0].id === STAGING_SESSION_KV_ID,
+    'Unexpected SESSION KV namespace: refuse to bind production or Preview data');
   assert.equal(original.name, SOURCE_WORKER,
     'Refusing to transform a worker other than the known isolated AMPHON candidate');
   for (const field of ['routes', 'route']) {
@@ -101,6 +112,11 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
   const stagingConfig = {
     ...original,
     name: STAGING_WORKER,
+    // Point at the ALREADY-created isolated namespace. Avoid id-less auto-
+    // provisioning on every Workers Builds deploy after the first failed run.
+    kv_namespaces: kvs.map(item => item.binding === 'SESSION'
+      ? { ...item, id: STAGING_SESSION_KV_ID }
+      : item),
     workers_dev: true,
     preview_urls: false,
     keep_vars: true,
@@ -129,6 +145,8 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
     plannedStagingHost: STAGING_HOST,
     customDomainConfigured: false,
     routesAttachedByScript: 0,
+    sessionKvPinned: true,
+    sessionKvNamespaceId: STAGING_SESSION_KV_ID,
     staticNoindex: true,
     productionCleanHeadersRequired: true,
     exactRedirects: legacy.length,

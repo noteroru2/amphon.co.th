@@ -57,6 +57,8 @@ jobs:
           const c=JSON.parse(fs.readFileSync('dist/server/wrangler.staging.json','utf8'));
           const h=fs.readFileSync('dist/client/_headers','utf8');
           assert.equal(c.name,'amphon-co-th-staging');
+          assert.deepEqual(c.kv_namespaces,[{binding:'SESSION',id:'6563771299d44a43844dcb4e8e9093ec'}]);
+          console.log('PASS: staging SESSION uses existing isolated namespace, no auto provisioning');
           assert.equal(c.workers_dev,true);
           assert.ok(!c.routes && !c.route);
           assert.match(h,/X-Robots-Tag: noindex, nofollow/);

@@ -34,6 +34,8 @@
      npx wrangler deploy --config dist/server/wrangler.staging.json
      \`\`\`
    - Build variable \`NODE_VERSION\` = \`22.23.4\` (also in \`.node-version\`). Optional \`SKIP_DEPENDENCY_INSTALL\` = \`1\` to avoid platform auto-install followed by npm ci. Never put Google Places API keys into Build Variables.
+**Existing SESSION namespace ID from first staging Cloudflare Deploy Log:** `6563771299d44a43844dcb4e8e9093ec` (isolated namespace `amphon-co-th-staging-session`). The staging preparation script now pins this binding instead of using Wrangler's id-less KV auto-provisioning; **do not delete or re-create the namespace**. This ID is nonsecret metadata, not a Google Places credential.
+
 4. Deploy this separate Worker to its **own** \`amphon-co-th-staging.noteroru2.workers.dev\`; verify \`X-Robots-Tag: noindex, nofollow\` on static HTML and that Preview worker \`amphon-co-th\` remains untouched.
 5. Under staging Worker's **Settings → Variables and secrets → Runtime variables and secrets**, add \`GOOGLE_PLACES_API_KEY\` and \`GOOGLE_PLACE_ID\` as **Secret**. Copy from Owner-held secure source (never paste secret values into GitHub/ChatGPT). Click Deploy. Secrets are **per Worker** and do not automatically copy from existing Preview Worker.
 6. If application sessions are used, give the staging Worker an isolated \`SESSION\` KV binding with a **separate staging KV namespace** (do not share live sessions). Verify binding persistence after deploy.

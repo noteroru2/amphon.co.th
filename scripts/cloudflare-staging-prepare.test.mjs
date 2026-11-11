@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
-import { prepareCloudflareStaging, STAGING_WORKER, STAGING_HOST } from './cloudflare-staging-prepare.mjs';
+import { prepareCloudflareStaging, STAGING_WORKER, STAGING_HOST, STAGING_SESSION_KV_ID } from './cloudflare-staging-prepare.mjs';
 
 function mockBuild(override = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'amphon-stage-54-'));
@@ -28,7 +28,8 @@ function mockBuild(override = {}) {
   }));
   fs.writeFileSync(path.join(dir,'dist/server/wrangler.json'),
     JSON.stringify(override.config ?? { name:'amphon-co-th-staging', main:'./entry.mjs',
-      assets:{directory:'../client',binding:'ASSETS'}}));
+      assets:{directory:'../client',binding:'ASSETS'},
+      kv_namespaces:[{binding:'SESSION'}] }));
   return dir;
 }
 
@@ -46,6 +47,7 @@ test('staging converts guarded production artifact and only staging gets noindex
     assert.equal(config.name,'amphon-co-th-staging');
     assert.equal(config.workers_dev,true);
     assert.equal(config.keep_vars,true);
+    assert.deepEqual(config.kv_namespaces,[{binding:'SESSION',id:STAGING_SESSION_KV_ID}]);
     assert.ok(!config.routes && !config.route);
     assert.equal(config.assets.binding,'ASSETS');
   } finally {fs.rmSync(d,{recursive:true,force:true});}
@@ -105,6 +107,19 @@ test('never collapses encoded and raw-Thai source spellings; keeps both Vercel m
   } finally { fs.rmSync(d,{recursive:true,force:true}); }
 });
 
+test('reuses the already-provisioned isolated staging SESSION KV and refuses a foreign KV ID',()=>{
+  const d=mockBuild({config:{name:'amphon-co-th-staging',
+    kv_namespaces:[{binding:'SESSION',id:'ffffffffffffffffffffffffffffffff'}]}});
+  try{assert.throws(()=>prepareCloudflareStaging(d),/Unexpected SESSION KV namespace/);}
+  finally{fs.rmSync(d,{recursive:true,force:true});}
+});
+
+test('rejects missing session binding instead of accidental auto-provisioning',()=>{
+  const d=mockBuild({config:{name:'amphon-co-th-staging',kv_namespaces:[]}});
+  try{assert.throws(()=>prepareCloudflareStaging(d),/Exactly one SESSION KV binding/);}
+  finally{fs.rmSync(d,{recursive:true,force:true});}
+});
+
 test('rejects Preview/noindex input so Production remains separately guarded',()=>{
   const d=mockBuild({headers:'/*\n  X-Robots-Tag: noindex\n# GENERATED FROM vercel.json — PRODUCTION. Issue #54.\n'});
   try{assert.throws(()=>prepareCloudflareStaging(d),/CLEAN Production candidate/);}
@@ -112,13 +127,13 @@ test('rejects Preview/noindex input so Production remains separately guarded',()
 });
 
 test('rejects worker identity/host-bound routes that might touch live DNS',()=>{
-  const d=mockBuild({config:{name:'amphon-co-th-staging',routes:[{pattern:'amphon.co.th/*'}]}});
+  const d=mockBuild({config:{name:'amphon-co-th-staging',routes:[{pattern:'amphon.co.th/*'}],kv_namespaces:[{binding:'SESSION'}]}});
   try{assert.throws(()=>prepareCloudflareStaging(d),/routes must be absent/);}
   finally{fs.rmSync(d,{recursive:true,force:true});}
 });
 
 test('rejects accidental reuse of another existing worker',()=>{
-  const d=mockBuild({config:{name:'other-website'}});
+  const d=mockBuild({config:{name:'other-website',kv_namespaces:[{binding:'SESSION'}]}});
   try{assert.throws(()=>prepareCloudflareStaging(d),/Refusing to transform/);}
   finally{fs.rmSync(d,{recursive:true,force:true});}
 });
