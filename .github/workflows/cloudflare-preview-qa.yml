@@ -45,15 +45,19 @@ jobs:
         run: npx wrangler deploy --config wrangler.preview.jsonc --dry-run --outdir .cloudflare-preview-dryrun
       - name: Summarize static assets
         run: |
-          echo "Static files: $(find dist -type f | wc -l)"
-          echo "Redirect rules: $(grep -c '^/' dist/_redirects)"
-          echo "Preview noindex: $(grep -c 'X-Robots-Tag: noindex' dist/_headers)"
+          echo "Static files: $(find dist/client -type f | wc -l)"
+          echo "Redirect rules: $(grep -c '^/' dist/client/_redirects)"
+          echo "Preview noindex: $(grep -c 'X-Robots-Tag: noindex' dist/client/_headers)"
+          count=$(find dist/client -type f | wc -l)
+          [ "$count" -le 20000 ] || { echo 'Cloudflare Free asset-count limit exceeded'; exit 1; }
+          oversized=$(find dist/client -type f -size +25600k -print -quit)
+          [ -z "$oversized" ] || { echo "Cloudflare asset 25MiB limit exceeded: $oversized"; exit 1; }
       - name: Upload routing artifacts (not site content)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: cloudflare-preview-routing
           path: |
-            dist/_redirects
-            dist/_headers
+            dist/client/_redirects
+            dist/client/_headers
           if-no-files-found: ignore

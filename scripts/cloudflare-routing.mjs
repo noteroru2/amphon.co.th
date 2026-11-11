@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const baseline = path.join(root, 'vercel.json');
 
 /** A preview-only copy of Vercel routing. Keep the source of truth in vercel.json. */
-export function generateCloudflareRouting(outputDir = path.join(root, 'dist')) {
+export function generateCloudflareRouting(outputDir = path.join(root, 'dist', 'client')) {
   const { redirects = [], headers = [] } = JSON.parse(fs.readFileSync(baseline, 'utf8'));
   const redirectLines = [
     '# GENERATED FROM vercel.json — DO NOT EDIT. Issue #54.',

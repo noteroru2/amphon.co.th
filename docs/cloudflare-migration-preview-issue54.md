@@ -5,8 +5,8 @@ This branch is a **preview-only technical proof of concept**. Do not merge, atta
 ## Files
 
 - `astro.config.cloudflare.mjs` preserves the standard Vercel `astro.config.mjs` and replaces only the adapter for a separate Cloudflare build.
-- `wrangler.preview.jsonc` uses Cloudflare Static Assets, routing Worker only for `/api/*`. The preview name is intentionally not the production domain.
-- `scripts/cloudflare-routing.mjs` generates `dist/_redirects` and `dist/_headers` from `vercel.json`. It **does not port** the one Vercel `/:path+/` trailing slash rule: Cloudflare `html_handling=drop-trailing-slash` must be tested for status parity.
+- `wrangler.preview.jsonc` uses Cloudflare Static Assets in \`dist/client\`, routing Worker only for `/api/*`. The preview name is intentionally not the production domain.
+- `scripts/cloudflare-routing.mjs` generates `dist/client/_redirects` and `dist/client/_headers` from `vercel.json`. It **does not port** the one Vercel `/:path+/` trailing slash rule: Cloudflare `html_handling=drop-trailing-slash` must be tested for status parity.
 - `src/pages/api/google-reviews.ts` reads `process.env` runtime bindings in Cloudflare (Node compatibility) and falls back to the existing Vercel `import.meta.env` behavior.
 
 ## Run on a Node 22 runner
