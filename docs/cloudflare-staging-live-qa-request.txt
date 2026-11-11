@@ -1,0 +1,1 @@
+Owner reported https://cf-test.amphon.co.th/ custom domain configured on 2026-11-11. Start READ-ONLY TLS, HTTP, SEO, noindex, redirects, and Google Reviews verification. Do NOT modify apex/www DNS or attach routes. Original staging branch code unchanged.

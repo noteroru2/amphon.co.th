@@ -1,0 +1,43 @@
+name: Cloudflare Staging Live HTTPS/SEO/API Acceptance (READ ONLY)
+on:
+  # Workflow_dispatch on a non-default branch may be unavailable in GitHub UI.
+  # Owner can ask us to push a one-line change to this dedicated trigger file
+  # AFTER the staging Custom Domain and runtime secrets have been configured.
+  push:
+    branches: [infra/cloudflare-production-staging]
+    paths:
+      - 'docs/cloudflare-staging-live-qa-request.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-cf-test-subdomain-only:
+    # Do not run live DNS/TLS probes merely because this workflow file or
+    # readiness marker is added. Owner must explicitly request the run.
+    if: >-
+      github.ref == 'refs/heads/infra/cloudflare-production-staging' &&
+      (github.event_name == 'workflow_dispatch' ||
+       contains(github.event.head_commit.message, '[live-staging-qa]'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolated staging branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+      - name: Verify TLS SSL for cf-test + 1189 SEO URLs + 260 redirects + Google Places
+        run: node scripts/cloudflare-staging-live-qa.mjs
+      - name: Upload public verification report (secrets and review texts excluded)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-staging-live-acceptance
+          path: artifacts/cloudflare-migration/live-staging-acceptance.json
+          if-no-files-found: warn
+          retention-days: 30
