@@ -52,7 +52,7 @@ Workflow \`Cloudflare Staging Live HTTPS/SEO/API Acceptance (READ ONLY)\` calls 
 - Google Reviews runtime returns HTTP 200 valid public data, \`no-store\`, API-only \`noindex\`. No credentials or review text logged.
 - **Existing Vercel** \`www.amphon.co.th\` → apex HTTP 301 preserves path/query. This does **NOT** confirm future Cloudflare www routing; that remains a final cutover gate and requires separate Owner approval.
 
-The Live QA workflow has \`workflow_dispatch\`, but GitHub may not expose manual runs until a workflow is present on the default branch. To trigger safely without merging anything, edit or commit the dedicated \`docs/cloudflare-staging-live-qa-request.txt\` trigger file on the staging branch after domain/SSL/secrets are configured; pushing this file runs the read-only Live QA on staging branch.
+The Live QA workflow has \`workflow_dispatch\`, but GitHub may not expose manual runs until a workflow is present on the default branch. To trigger safely without merging anything, edit or commit the dedicated \`docs/cloudflare-staging-live-qa-request.txt\` trigger file on the staging branch after domain/SSL/secrets are configured; pushing this file in a commit whose message includes `[live-staging-qa]` runs the read-only Live QA on staging branch. Other changes to the file will be skipped by the workflow safety gate.
 
 ## Mandatory STOP / NO-GO conditions
 

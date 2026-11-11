@@ -7,6 +7,13 @@ import {setTimeout as sleep} from 'node:timers/promises';
 const host='http://127.0.0.1:8792';
 const output='artifacts/cloudflare-migration/local-staging-http-qa.json';
 const config=JSON.parse(fs.readFileSync('dist/server/wrangler.staging.json','utf8'));
+const localConfigPath='dist/server/wrangler.staging.local-test.json';
+// Wrangler 4.100.0 ships an older local workerd; use its supported date
+// ONLY for disposable localhost testing. Never change the actual staging
+// deployment's compatibility_date (2026-11-10).
+fs.writeFileSync(localConfigPath,JSON.stringify({
+  ...config,compatibility_date:'2026-06-18',
+},null,2)+'\n');
 const cfg=JSON.parse(fs.readFileSync('vercel.json','utf8'));
 assert.equal(config.name,'amphon-co-th-staging');
 assert.ok(!config.routes && !config.route);
@@ -15,7 +22,7 @@ assert.equal(exact.length,260);
 
 const child=spawn(process.execPath,[
   'node_modules/wrangler/bin/wrangler.js',
-  'dev','--config','dist/server/wrangler.staging.json',
+  'dev','--config',localConfigPath,
   '--local','--ip','127.0.0.1','--port','8792',
 ],{env:{...process.env,WRANGLER_SEND_METRICS:'false'},stdio:['ignore','pipe','pipe']});
 let outputLog='';

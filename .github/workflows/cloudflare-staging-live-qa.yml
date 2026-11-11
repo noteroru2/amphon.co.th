@@ -14,7 +14,12 @@ permissions:
 
 jobs:
   verify-cf-test-subdomain-only:
-    if: github.ref == 'refs/heads/infra/cloudflare-production-staging'
+    # Do not run live DNS/TLS probes merely because this workflow file or
+    # readiness marker is added. Owner must explicitly request the run.
+    if: >-
+      github.ref == 'refs/heads/infra/cloudflare-production-staging' &&
+      (github.event_name == 'workflow_dispatch' ||
+       contains(github.event.head_commit.message, '[live-staging-qa]'))
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
