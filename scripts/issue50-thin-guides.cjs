@@ -17,7 +17,7 @@ const PROVINCES=["กาฬสินธุ์","ขอนแก่น","ชั�
    ["มีทีมรับสินค้าประจำจังหวัด"+area+"หรือไม่?","ไม่มีการยืนยันสาขาหรือทีมรับสินค้าประจำจังหวัดนี้ หน้าร้านจริงอยู่ที่อุบลราชธานีและวิธีส่งมอบต้องตกลงรายกรณี"]
   ];
   const fmNew=fm[0].replace(/^updated:.+$/m,'updated: "2026-11-11"');
-  const fmWithFaq=fmNew.replace(/\r?\n---$/,"\nfaqs:\n"+faqs.map(z=>"  - question: "+JSON.stringify(z[0])+"\n    answer: "+JSON.stringify(z[1])).join("\n")+"\n---");
+  const fmWithFaq=/^faqs:\s*$/m.test(fmNew)?fmNew:fmNew.replace(/\r?\n---$/,"\nfaqs:\n"+faqs.map(z=>"  - question: "+JSON.stringify(z[0])+"\n    answer: "+JSON.stringify(z[1])).join("\n")+"\n---");
   let guide=`<!-- ISSUE50_THIN_REVIEW_V1 -->\n## แนวทางคัดกรอง${profile.label}จาก${area}ก่อนเสนอราคา\n\n${profile.caution} ผู้ขายจาก${area}สามารถส่งข้อมูลมาเพื่อขอพิจารณาออนไลน์ได้ก่อน ไม่ควรนำของไปส่งหรือจ่ายค่าขนส่งจนกว่าจะยืนยันประเภทและวิธีตรวจรับตามจริง การรับพิจารณาไม่ใช่คำยืนยันว่าจะซื้อสินค้าทุกรุ่นหรือชนะประมูลใด\n\n## สามจุดตรวจที่ช่วยแยกสภาพและความครบชุด\n\n`;
   for(let i=0;i<focus.length;i++){
    const full=focus[i],at=full.indexOf(":");if(at<0)throw Error("topic syntax "+full);
