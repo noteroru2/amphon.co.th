@@ -13,8 +13,8 @@ const originalConfig = JSON.parse(fs.readFileSync('dist/server/wrangler.json', '
 fs.writeFileSync(localConfig, JSON.stringify({
   ...originalConfig, compatibility_date: '2026-06-18',
 }, null, 2) + '\n', 'utf8');
-const child = spawn('npx', [
-  'wrangler', 'dev', '--config', localConfig,
+const child = spawn(process.execPath, [
+  'node_modules/wrangler/bin/wrangler.js', 'dev', '--config', localConfig,
   '--local', '--ip', '127.0.0.1', '--port', '8790',
 ], { env: { ...process.env, WRANGLER_SEND_METRICS: 'false' }, stdio: ['ignore', 'pipe', 'pipe'] });
 let logs = '';
@@ -32,11 +32,14 @@ async function fetchRoute(route) {
 const report = { inspectedAt: new Date().toISOString(), host, evidence: [], errors: [], warnings: [] };
 try {
   let ready = false;
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 15; i++) {
     if (child.exitCode !== null) throw new Error('Wrangler exited before preview started: ' + logs.slice(-1200));
-    const probe = await fetchRoute('/robots.txt');
+    const probe = await (async () => {
+      try {const r = await fetch(host + '/robots.txt', {redirect:'manual', signal:AbortSignal.timeout(1500)}); return {status:r.status};}
+      catch {return {status:null};}
+    })();
     if (probe.status === 200) { ready = true; break; }
-    await sleep(500);
+    await sleep(400);
   }
   assert.ok(ready, 'Local Wrangler preview did not become ready: ' + logs.slice(-1500));
   for (const route of [
@@ -71,6 +74,8 @@ try {
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(report, null, 2) + '\n', 'utf8');
   child.kill('SIGTERM');
-  await sleep(600);
+  await sleep(400);
   if (child.exitCode === null) child.kill('SIGKILL');
+  child.stdout.destroy();
+  child.stderr.destroy();
 }
