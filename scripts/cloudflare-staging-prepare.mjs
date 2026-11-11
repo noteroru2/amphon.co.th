@@ -31,9 +31,41 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
   assert.match(stagedHeaders, /^\s*X-Robots-Tag:\s*noindex, nofollow/im);
 
   const redirects = fs.readFileSync(redirectsFile, 'utf8');
-  const rules = redirects.split(/\r?\n/).filter(s => s.trim() && !s.trim().startsWith('#'));
-  // Astro itself also emits 16 legacy redirect files in this repo. Preserve
-  // those adapter redirects; require every one of the 260 Vercel mappings.
+  const rawLines = redirects.split(/\r?\n/);
+  // The Astro adapter adds redirects AFTER the 260 mappings generated from
+  // vercel.json. Fourteen of those extra rules have exactly the same source
+  // paths as the authoritative Vercel rules. Cloudflare rejects _redirects
+  // at deployment with code 100324 even though a local Wrangler dry run passes.
+  // Keep the FIRST occurrence (Vercel takes precedence) and preserve the
+  // other unique Astro redirects. Compare exact source BYTES: Vercel has
+  // intentionally separate raw-Thai and percent-encoded source URLs, which
+  // are both needed for parity and MUST NOT be collapsed by decoding.
+  const seen = new Map();
+  const keptLines = [];
+  let duplicateRedirectsRemoved = 0;
+  let conflictingAdapterRulesRemoved = 0;
+  for (const line of rawLines) {
+    if (!line.trim() || line.trimStart().startsWith('#')) {
+      keptLines.push(line);
+      continue;
+    }
+    const fields = line.trim().split(/\s+/);
+    assert.ok(fields.length >= 3 && /^\d{3}$/.test(fields[2]),
+      'Invalid _redirects rule (not a valid source/destination/HTTP status)');
+    const source = fields[0];
+    if (seen.has(source)) {
+      duplicateRedirectsRemoved++;
+      if (seen.get(source) !== line.trim()) conflictingAdapterRulesRemoved++;
+      continue;
+    }
+    seen.set(source, line.trim());
+    keptLines.push(line);
+  }
+  const cleanRedirects = keptLines.join('\n').replace(/\n*$/u, '\n');
+  const rules = keptLines.filter(s => s.trim() && !s.trimStart().startsWith('#'));
+  assert.equal(new Set(rules.map(s => s.trim().split(/\s+/)[0])).size, rules.length,
+    'Cloudflare _redirects contains duplicate exact-source rules');
+  // Keep all 260 Vercel rules and the unique additional adapter redirects.
   const vercel = JSON.parse(fs.readFileSync(path.join(rootDir, 'vercel.json'), 'utf8'));
   const legacy = vercel.redirects.filter(rule => rule.source !== '/:path+/');
   assert.equal(legacy.length, 260, 'Expected exactly 260 Vercel legacy redirect definitions');
@@ -84,6 +116,9 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
   assert.notEqual(stagingConfig.name, 'amphon-co-th',
     'Staging must not replace the existing Preview Worker');
 
+  // Write only AFTER every safety check passes, so a failed attempt cannot
+  // leave a partially fixed bundle that could be deployed by accident.
+  fs.writeFileSync(redirectsFile, cleanRedirects, 'utf8');
   fs.writeFileSync(headerFile, stagedHeaders, 'utf8');
   fs.writeFileSync(outputConfig, JSON.stringify(stagingConfig, null, 2) + '\n', 'utf8');
 
@@ -98,6 +133,9 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
     productionCleanHeadersRequired: true,
     exactRedirects: legacy.length,
     adapterExtraRedirects: rules.length - legacy.length - 1,
+    duplicateRedirectsRemoved,
+    conflictingAdapterRulesRemoved,
+    redirectRulesAfterDeduplication: rules.length,
     slashRedirects: 1,
     deploymentConfig: 'dist/server/wrangler.staging.json',
   };
