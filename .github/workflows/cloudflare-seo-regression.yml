@@ -1,0 +1,35 @@
+name: Cloudflare Live Preview SEO Regression
+on:
+  push:
+    branches: [infra/cloudflare-workers-preview]
+    paths:
+      - 'scripts/cloudflare-seo-regression.mjs'
+      - '.github/workflows/cloudflare-seo-regression.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  seo-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Recheck live sitemap URLs, 404s, images, links and slash redirects after build-command update
+        run: node scripts/cloudflare-seo-regression.mjs
+      - name: Upload public SEO audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-live-preview-seo-regression
+          path: artifacts/cloudflare-migration/seo-regression.json
+          retention-days: 30
+          if-no-files-found: error

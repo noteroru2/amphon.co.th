@@ -1,0 +1,89 @@
+name: Cloudflare migration preview QA
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/cloudflare-lock-verify.mjs'
+      - 'astro.config.cloudflare.mjs'
+      - 'wrangler.jsonc'
+      - 'public/.assetsignore'
+      - 'scripts/cloudflare-routing.mjs'
+      - 'scripts/cloudflare-routing.test.mjs'
+      - 'scripts/cloudflare-production-baseline.mjs'
+      - 'scripts/cloudflare-local-smoke.mjs'
+      - 'src/pages/api/google-reviews.ts'
+      - '.github/workflows/cloudflare-preview-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cloudflare-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout PR commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install all dependencies strictly from committed lockfile
+        run: npm ci
+      - name: Verify Cloudflare dependencies are exact and installed
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Test redirect/header translation
+        run: node --test scripts/cloudflare-routing.test.mjs
+      - name: Astro 6 Cloudflare build
+        run: npx astro build --config astro.config.cloudflare.mjs
+      - name: Generate Preview routing assets
+        run: node scripts/cloudflare-routing.mjs
+      - name: Existing SEO validation
+        run: npm run validate:seo
+      - name: Validate Wrangler bundle without deploying
+        run: |
+          test -f dist/server/wrangler.json
+          npx wrangler deploy --config dist/server/wrangler.json --dry-run --outdir .cloudflare-preview-dryrun
+      - name: Summarize static assets
+        run: |
+          echo "Static files: $(find dist/client -type f | wc -l)"
+          echo "Redirect rules: $(grep -c '^/' dist/client/_redirects)"
+          echo "Preview noindex: $(grep -c 'X-Robots-Tag: noindex' dist/client/_headers)"
+          count=$(find dist/client -type f | wc -l)
+          [ "$count" -le 20000 ] || { echo 'Cloudflare Free asset-count limit exceeded'; exit 1; }
+          oversized=$(find dist/client -type f -size +25600k -print -quit)
+          [ -z "$oversized" ] || { echo "Cloudflare asset 25MiB limit exceeded: $oversized"; exit 1; }
+      - name: Local Wrangler API, redirect, static noindex HTTP smoke
+        run: node scripts/cloudflare-local-smoke.mjs
+      - name: Record production HTTP redirect and SEO baseline (read-only)
+        run: node scripts/cloudflare-production-baseline.mjs https://amphon.co.th
+      - name: Upload local Worker smoke report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-local-worker-smoke
+          path: artifacts/cloudflare-migration/local-worker-http-smoke.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Upload baseline report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-production-http-baseline
+          path: artifacts/cloudflare-migration/production-http-baseline.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Upload routing artifacts (not site content)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-preview-routing
+          path: |
+            dist/client/_redirects
+            dist/client/_headers
+          if-no-files-found: ignore

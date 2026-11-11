@@ -1,0 +1,117 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const baseline = path.join(root, 'vercel.json');
+
+/** A guarded Cloudflare copy of Vercel routing. Source of truth is vercel.json.
+ * Preview is the default. Production must be explicitly requested and tested.
+ */
+export function generateCloudflareRouting(
+  outputDir = path.join(root, 'dist', 'client'),
+  { mode = 'preview' } = {},
+) {
+  if (mode !== 'preview' && mode !== 'production') {
+    throw new Error('Unknown Cloudflare routing mode: ' + mode);
+  }
+  const { redirects = [], headers = [] } = JSON.parse(fs.readFileSync(baseline, 'utf8'));
+  const redirectLines = [
+    '# GENERATED FROM vercel.json — DO NOT EDIT. Issue #54.',
+    '# Migration parity: trailing slash wildcard validated on Workers.dev; re-verify at custom domain before cutover.',
+  ];
+  let excludedDynamic = 0;
+  for (const rule of redirects) {
+    if (typeof rule.source !== 'string' || typeof rule.destination !== 'string') {
+      throw new Error('Invalid Vercel redirect rule');
+    }
+    if (/:([A-Za-z][A-Za-z0-9_]*)(\+)?/u.test(rule.source) || rule.source.includes('*')) {
+      if (rule.source !== '/:path+/') throw new Error('Unmapped dynamic redirect: ' + rule.source);
+      excludedDynamic += 1;
+      continue;
+    }
+    const status = rule.statusCode ?? (rule.permanent ? 308 : 307);
+    if (![301, 302, 303, 307, 308].includes(status)) throw new Error('Unsupported redirect code: ' + status);
+    for (const value of [rule.source, rule.destination]) {
+      if (/\s/u.test(value)) throw new Error('Whitespace in redirect URL: ' + value);
+    }
+    // Cloudflare's static asset redirect matcher receives normalized percent-encoded
+    // request paths for three film-camera typo slugs. Their raw Thai source rules
+    // returned 404 on the live Workers.dev preview. Scope the workaround tightly
+    // to these three proven failing rules; preserve all other Vercel mappings.
+    const encodedFilmCameraTypos = new Set([
+      '/บริการ/รับซื้อกล้องฟิลัม',
+      '/บริการ/รับซื้อกล้องฟีล์ม',
+      '/บริการ/รับซื้อกล้องฟิล์ล',
+    ]);
+    const source = encodedFilmCameraTypos.has(rule.source)
+      ? encodeURI(rule.source)
+      : rule.source;
+    redirectLines.push(source + ' ' + rule.destination + ' ' + status);
+  }
+  // Cloudflare supports one greedy :splat dynamic redirect; append after all exact rules.
+  // This attempts to match Vercel's permanent /:path+/ -> /:path+ semantics.
+  // The local runtime smoke must verify that "/" never redirects to itself.
+  redirectLines.push('/*/ /:splat 308');
+
+  // Cloudflare _headers accepts globs, not Vercel's regex-like (.*) rules.
+  const headerBlocks = ['# GENERATED FROM vercel.json — ' +
+    (mode === 'preview' ? 'PREVIEW ONLY' : 'PRODUCTION') + '. Issue #54.'];
+  for (const rule of headers) {
+    if (!rule.source || !Array.isArray(rule.headers)) throw new Error('Invalid Vercel header rule');
+    const matcher = rule.source.replaceAll('(.*)', '*');
+    if (/[()]/u.test(matcher)) throw new Error('Unmapped header expression: ' + rule.source);
+    headerBlocks.push(matcher);
+    for (const header of rule.headers) {
+      if (!header.key || typeof header.value !== 'string') throw new Error('Invalid header value');
+      headerBlocks.push('  ' + header.key + ': ' + header.value);
+    }
+    // An accidental preview exposure must never be indexable.
+    if (mode === 'preview' && matcher === '/*') {
+      headerBlocks.push('  X-Robots-Tag: noindex, nofollow');
+    }
+    headerBlocks.push('');
+  }
+
+  fs.mkdirSync(outputDir, { recursive: true });
+  const redirectFile = path.join(outputDir, '_redirects');
+  const headerFile = path.join(outputDir, '_headers');
+  const oldRedirects = fs.existsSync(redirectFile) ? fs.readFileSync(redirectFile, 'utf8') : '';
+  const oldHeaders = fs.existsSync(headerFile) ? fs.readFileSync(headerFile, 'utf8') : '';
+  const redirectMarker = '# GENERATED FROM vercel.json — DO NOT EDIT. Issue #54.';
+  const oldHeaderMarker = /# GENERATED FROM vercel\.json — (?:PREVIEW ONLY|PRODUCTION)\. Issue #54\./u;
+  // Preserve the adapter's existing redirects and immutable hashed-asset cache headers.
+  // Strip the previous environment's generated headers before switching modes.
+  const keptRedirects = oldRedirects.includes(redirectMarker) ? '' : oldRedirects.trim();
+  const previousHeaderIndex = oldHeaders.search(oldHeaderMarker);
+  const keptHeaders = previousHeaderIndex >= 0
+    ? oldHeaders.slice(0, previousHeaderIndex).trim()
+    : oldHeaders.trim();
+  fs.writeFileSync(redirectFile,
+    redirectLines.join('\n') + '\n' + (keptRedirects ? keptRedirects + '\n' : ''), 'utf8');
+  const generatedHeaders = (keptHeaders ? keptHeaders + '\n\n' : '') + headerBlocks.join('\n') + '\n';
+  const hasNoindexHeader = /^\s*X-Robots-Tag:\s*[^\n]*\bnoindex\b/im.test(generatedHeaders);
+  // Prevent an accidental Preview header from making Production invisible to Google.
+  // Fail before writing anything when the production policy is unsafe.
+  if (mode === 'production' && hasNoindexHeader) {
+    throw new Error('Refusing Cloudflare Production build: _headers contains X-Robots-Tag noindex');
+  }
+  if (mode === 'preview' && !hasNoindexHeader) {
+    throw new Error('Refusing Cloudflare Preview build: missing mandatory noindex');
+  }
+  fs.writeFileSync(headerFile, generatedHeaders, 'utf8');
+  return {
+    staticRedirectCount: redirectLines.length - 3,
+    dynamicRedirectCount: 1,
+    excludedDynamic,
+    headerRuleCount: headers.length,
+    mode,
+    previewNoindex: hasNoindexHeader,
+  };
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const outputDir = process.argv[2] ? path.resolve(process.argv[2]) : undefined;
+  const mode = process.argv[3] || 'preview';
+  console.log(JSON.stringify(generateCloudflareRouting(outputDir, { mode }), null, 2));
+}
