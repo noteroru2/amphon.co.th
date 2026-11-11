@@ -50,7 +50,7 @@ jobs:
           fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
           const lockGuard='scripts/cloudflare-lock-verify.mjs';
           let script=fs.readFileSync(lockGuard,'utf8');
-          if(!script.includes("'@astrojs/cloudflare': '13.7.0'"))throw new Error('Pin guard changed; review manually');
+          if(!script.includes("'@astrojs/cloudflare': '13.7.0'") && !script.includes("'@astrojs/cloudflare': '14.4.7'"))throw new Error('Unexpected pinned adapter version; manual review required');
           script=script.replace("'@astrojs/cloudflare': '13.7.0'","'@astrojs/cloudflare': '14.4.7'");
           script=script.replace("wrangler: '4.100.0'","wrangler: '4.125.0'");
           fs.writeFileSync(lockGuard,script);
