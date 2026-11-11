@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 export const STAGING_WORKER = 'amphon-co-th-staging';
 export const STAGING_HOST = 'cf-test.amphon.co.th';
-const SOURCE_WORKER = 'amphon-co-th';
+const SOURCE_WORKER = 'amphon-co-th-staging';
 const NOINDEX = '  X-Robots-Tag: noindex, nofollow';
 
 export function prepareCloudflareStaging(rootDir = process.cwd()) {

@@ -27,7 +27,7 @@ function mockBuild(override = {}) {
     })).concat([{source:'/:path+/',destination:'/:path+',statusCode:308}]),
   }));
   fs.writeFileSync(path.join(dir,'dist/server/wrangler.json'),
-    JSON.stringify(override.config ?? { name:'amphon-co-th', main:'./entry.mjs',
+    JSON.stringify(override.config ?? { name:'amphon-co-th-staging', main:'./entry.mjs',
       assets:{directory:'../client',binding:'ASSETS'}}));
   return dir;
 }
@@ -58,7 +58,7 @@ test('rejects Preview/noindex input so Production remains separately guarded',()
 });
 
 test('rejects worker identity/host-bound routes that might touch live DNS',()=>{
-  const d=mockBuild({config:{name:'amphon-co-th',routes:[{pattern:'amphon.co.th/*'}]}});
+  const d=mockBuild({config:{name:'amphon-co-th-staging',routes:[{pattern:'amphon.co.th/*'}]}});
   try{assert.throws(()=>prepareCloudflareStaging(d),/routes must be absent/);}
   finally{fs.rmSync(d,{recursive:true,force:true});}
 });
