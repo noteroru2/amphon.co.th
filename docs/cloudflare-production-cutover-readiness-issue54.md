@@ -60,6 +60,12 @@ Read-only public DNS from CI (11 Nov 2026 20:34 Thai time):
 - Vercel fallback certificate inventory: apex cert expires **2026-12-30 14:00:06 UTC**, www cert expires **2026-12-29 04:07:55 UTC**; both auto-renew. The Cloudflare \`cf-test\` certificate SAN does NOT by itself establish active TLS on a migrated apex/www.
 - Keep old Vercel deployment, project, domain configuration and certificates intact throughout cutover and rollback window.
 
+### Security audit follow-up (no automatic dependency upgrade)
+
+CI run [#43030837278](https://github.com/noteroru2/amphon.co.th/actions/runs/43030837278) collected a read-only `npm audit --omit=dev --json` result from the exact pinned RC lockfile: **22 flagged production dependency packages** (Critical 1 / High 17 / Moderate 3 / Low 1). The direct `astro` package is marked **Critical**; `@astrojs/vercel` and `sharp` are among the direct High. The globally installed dependency tree had 27 findings before dev-only packages were omitted.
+
+Relevant published advisory: [GHSA-26w7-cxv4-gfx2](https://github.com/advisories/GHSA-26w7-cxv4-gfx2) describes potential RCE from optimizing an attacker-supplied AVIF image with Sharp/libheif; advisory lists Astro versions before 7.2.8 as affected. This site's Cloudflare adapter config requests `imageService:'compile'`; **whether the vulnerable image-optimization path is reachable by an untrusted remote caller is NOT established by npm audit**. Explicitly inspect generated Cloudflare Worker code, image routes, any uploaded media path, and dependency resolution before concluding exposure. Do not treat a passed SEO/HTTP QA as a security clearance; do not blindly upgrade Astro/Sharp major versions on the cutover release. Prepare a separate pinned patch PR, build/SSR/SEO/redirect/security regressions, and get Owner release approval.
+
 ## Target Cloudflare architecture — must be reviewed but NOT provisioned yet
 
 1. New independently named **production** Worker, NOT \`amphon-co-th\` Preview, NOT \`amphon-co-th-staging\` (Staging has global noindex). Suggested \`amphon-co-th-production\`; git release from the **Owner-approved exact SHA**, production-only Astro build, redirect finalizer.
@@ -76,7 +82,7 @@ Read-only public DNS from CI (11 Nov 2026 20:34 Thai time):
 | --- | --- |
 | Staging custom-domain TLS, SEO, API, 260 redirects | **PASS** |
 | Baseline-content-preserving, indexable RC local Build and dry-run | **PASS** |
-| Security vulnerability report | **REVIEW**: \`npm ci\` reports 27 total (1 critical / 22 high / 3 moderate / 1 low) across full installed tree; classify actual runtime dependencies separately before approval. Do NOT assume all are Production-exploitable; do not auto-upgrade with content release. |
+| Security vulnerability report | **P0 REVIEW REQUIRED**: full \`npm ci\` reports 27; \`npm audit --omit=dev\` on exact RC lock still reports **22** (1 critical / 17 high / 3 moderate / 1 low). The Critical is **direct \`astro\` dependency** and High includes \`@astrojs/vercel\`, \`sharp\` and other packages. Audit presence does not establish exploitability in generated Cloudflare bundle; triage exploit preconditions/loaded code and plan an isolated security patch before GO. |
 | Exact final RC SHA frozen / approved by Owner | **NO-GO**, not yet approved |
 | Production Worker with separate KV, runtime Secrets, no public noindex | **NOT CREATED / NOT DEPLOYED** |
 | Live Cloudflare HTTPS for apex and www after switch | **NOT YET TESTABLE** without authorized hostname binding |
