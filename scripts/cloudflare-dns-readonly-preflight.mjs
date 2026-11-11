@@ -59,9 +59,17 @@ try{
   let reviews;
   try{
     const j=JSON.parse(api.body||'');
-    reviews={valid:typeof j.businessName==='string'&&Number.isInteger(j.reviewCount)&&Array.isArray(j.reviews),
-      rating:j.rating,reviewCount:j.reviewCount};
-  }catch{reviews={valid:false};}
+    if(api.status===200){
+      reviews={valid:typeof j.businessName==='string'&&Number.isInteger(j.reviewCount)&&Array.isArray(j.reviews),
+        rating:j.rating,reviewCount:j.reviewCount};
+    }else{
+      // ONLY a whitelisted PUBLIC error identifier, NEVER body, place_id,
+      // key, review author/text or arbitrary upstream response.
+      const allowed=new Set(['not_configured','upstream_error','upstream_timeout',
+        'quota_exceeded','access_denied','network_error','invalid_place']);
+      reviews={valid:false,publicErrorCode:allowed.has(j.error)?j.error:'unknown_failure'};
+    }
+  }catch{reviews={valid:false,publicErrorCode:api.status===0?'network_error':'non_json_failure'};}
   report.http.stagingApi={status:api.status,robots:api.robots,cacheControl:api.cacheControl,...reviews};
 
   if(root.status!==200||/noindex/i.test(root.robots)||!String(report.http.apex.canonical).startsWith('https://amphon.co.th'))
