@@ -10,6 +10,7 @@ on:
       - 'scripts/check-issue50-b2b.mjs'
       - 'scripts/check-issue50-gsc-regional.mjs'
       - 'scripts/check-issue50-rendered-truth.mjs'
+      - 'scripts/issue50-pair-guides.cjs'
       - 'src/layouts/ServiceAreaLayout.astro'
       - 'src/content/services/**'
       - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
@@ -43,6 +44,8 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Create protected-province-pair editorial proposal
+        run: node scripts/issue50-pair-guides.cjs --export
       - name: Build
         run: npm run build
       - name: Existing SEO checks
