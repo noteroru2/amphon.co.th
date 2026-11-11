@@ -32,6 +32,46 @@ Verified in the user's authenticated Cloudflare dashboard for zone `amphon.co.th
 - Preview `noindex,nofollow` comes from `_headers`; before production cutover, replace preview-only noindex with production-safe header policy and add a production guard that actively tests **absence** of noindex.
 - Keep `main` and PR #55 unmerged until approval. Do not change the source `vercel.json` three film-camera source strings: the Cloudflare migration generator performs the percent-encoding workaround.
 
+## Validated P0 evidence — 11 November 2026 (read-only, preview-only)
+
+- **Live Cloudflare redirect parity:** 260/260 Vercel exact rules return expected status/target on `https://amphon-co-th.noteroru2.workers.dev`. The three film-camera typo slug sources were percent-encoded only in Cloudflare's generated `_redirects`; `vercel.json` was left unchanged. Source commit `833f40df634aab0ececc95d9823da225682f41ac`. Evidence: [GitHub Actions Live HTTP QA #42977796857](https://github.com/noteroru2/amphon.co.th/actions/runs/42977796857), latest successful re-run.
+- **Full live SEO regression:** [GitHub Actions #42980686433](https://github.com/noteroru2/amphon.co.th/actions/runs/42980686433), tested the real workers.dev hostname vs live Vercel Production:
+  - `sitemap-index.xml` and `sitemap-0.xml`: each origin lists **1,189 URLs**, missing/extra **0**.
+  - **1,193/1,193** sitemap + protected URLs passed HTTP/preview noindex/canonical; **0** title, description, JSON-LD schema differences reported in that comparison.
+  - **2/2** non-existent URLs returned 404 on both origins; Preview adds noindex.
+  - **10/10** trailing slash routes return 308 on both origins with matching destinations.
+  - **150/150** tested internal links resolve; **46/46** sampled image/CSS/JS/other static assets resolve.
+- **Source quality/CI:** [GitHub Actions #42980692618](https://github.com/noteroru2/amphon.co.th/actions/runs/42980692618) covers build/SEO/checks for candidate commit `cb52ff7226547032adc2cf81c0c5b0ec2e0bfea9`; read the final result before cutover.
+- **Preview Google Reviews API:** `/api/google-reviews` is correctly isolated: 503 `not_configured`, `Cache-Control: no-store`, `X-Robots-Tag: noindex` while secrets are absent. **Success path remains UNTESTED** until runtime secrets are entered securely.
+- **Preview noindex is live** (HTTP response header) and is mandatory for preview; it is a **production cutover blocker** unless removed from the production build and verified absent in a separate production-specific test.
+- **www to apex** Cloudflare-specific 301 parity is not testable on workers.dev and must be verified at the approved hostname cutover.
+- **Production Vercel source drift:** most recent checked Vercel deployment remains `dpl_DmtdiCXTsy6zBMKNVEehFyMoUBwr` on SHA `1d235196f45e29af4c425fa4505111596db8e4c6`; GitHub `main` was `f3f91b804432c9b56542db38d70547f657cd54de` before migration. Though live SEO content comparison passed, explicitly reconcile the intended production release SHA rather than assuming `main` is already live on Vercel.
+
+### Google Search Console pre-cutover reference
+
+Actual Google Search Console **final** data for **amphon.co.th hostname**, not the entire domain property including subdomains, captured on 11 November 2026. Date scope uses GSC Pacific reporting days, excluding preliminary recent data:
+
+| Window | Period | Clicks | Impressions | CTR | Average position |
+|---|---|---:|---:|---:|---:|
+| 28-day | 2026-10-10 to 2026-11-06 | 1,991 | 84,314 | 2.3614% | 6.7179 |
+| 7-day | 2026-10-31 to 2026-11-06 | 580 | 23,522 | 2.4658% | 6.0366 |
+
+GSC source: AMPHON SEO Hub, `seo_gsc_query(site_id='amphon', dimensions=[])`, `dataState=final`, host-filtered; do not sum sampled query rows for property totals. Actual GSC data can lag by several days; record the cutover date in Pacific time as well as Thailand time.
+
+**Post-cutover monitoring plan (not scheduled until cutover has actually occurred):**
+- T+0: Live HTTP (home/Notebook/PC/MacBook/B2B/auction/province), canonical/indexability, `www` 301, robots, sitemap, all 260 redirects, 404, CSS/images, Google Reviews API success+fallback, LINE CTA. Roll back immediately on critical failure.
+- T+24h: verify production HTTP response statuses, 404/5xx and SEO headers; retain Vercel as rollback and check indexing/crawl errors if reports are available.
+- T+7/14/28 **final-data windows**: Google Search Console hostname totals, per-query/page clicks, impressions, CTR, position, pages indexed/not indexed, crawl spikes, branded-vs-buy-intent key queries. Compare to equivalent **previous** 7/14/28-day windows and annotate any simultaneous content changes; do not confuse data lag with traffic loss.
+- If major sitemap/indexability errors or sustained SEO lead/traffic anomalies are detected, immediately investigate DNS/crawl/headers and restore Vercel if caused by the migration.
+
+### Remaining P1 before Owner-authorized production cutover
+
+1. **Never deploy the current Preview config to amphon.co.th:** its `X-Robots-Tag: noindex, nofollow` intentionally blocks indexing. Prepare a reviewed production-safe Cloudflare config in a separate approval-gated release and validate no `noindex`, preserving canonical/sitemap/redirects.
+2. Set `GOOGLE_PLACES_API_KEY` and `GOOGLE_PLACE_ID` through Cloudflare Secret UI, never GitHub or chat. Verify Google Reviews API successful click-to-load behavior and quota/fallback. Do not disclose secret values in logs. Keep existing Vercel setup untouched.
+3. Freeze an exact GitHub release SHA after reconciling Vercel's Production SHA vs main. Lock Cloudflare adapter/Wrangler dependencies for repeatable deploys; preview currently installs pinned direct versions without a migrated lockfile.
+4. Choose Worker custom-domain routing mechanism, ensure apex SSL and `www` 301, preserve mail DNS, snapshot DNS and Vercel rollback candidate. Reconfirm DNS values on the actual cutover day.
+5. Obtain explicit Owner approval for the specific SHA and DNS/route modifications **after** production-safe noindex and API gates pass. Only then perform cutover and post-cutover verification.
+
 ## Mandatory rollback prerequisites / preflight sign-off
 
 1. On Cloudflare Dashboard identify the exact zone/account, nameserver status and worker route/custom-domain attach method. **Record before changing anything**: proxied flag, A/AAAA/CNAME targets for apex/www, Worker routes, redirect rules, WAF, security headers, DNS TTL, TLS status and screenshots or exports. Public DNS alone may show Cloudflare proxy, not the Vercel origin target.
