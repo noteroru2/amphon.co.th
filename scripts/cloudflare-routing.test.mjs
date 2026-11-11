@@ -1,0 +1,99 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { test } from 'node:test';
+import { generateCloudflareRouting } from './cloudflare-routing.mjs';
+
+test('Preview routing preserves exact redirect rules and blocks indexing', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'amphon-cf-routing-'));
+  try {
+    // Astro can produce its own redirect and cache header rules before conversion.
+    fs.writeFileSync(path.join(dir, '_redirects'), '/astro-legacy /astro-new 301\n');
+    fs.writeFileSync(path.join(dir, '_headers'), '/_astro/*\n  Cache-Control: public, max-age=31536000, immutable\n');
+    const data = generateCloudflareRouting(dir);
+    assert.equal(data.staticRedirectCount, 260);
+    assert.equal(data.excludedDynamic, 1);
+    assert.equal(data.dynamicRedirectCount, 1);
+    assert.equal(data.headerRuleCount, 8);
+    assert.equal(data.previewNoindex, true);
+    const lines = fs.readFileSync(path.join(dir, '_redirects'), 'utf8').split('\n');
+    assert.equal(lines.filter((line) => line.startsWith('/')).length, 262);
+    assert.ok(lines.includes('/*/ /:splat 308'));
+    assert.ok(lines.includes('/astro-legacy /astro-new 301'));
+    assert.ok(lines.indexOf('/astro-legacy /astro-new 301') > lines.findIndex((line) => line.startsWith('/บริการ/รับซื้อ-gopro ')));
+
+    // Keep the percent-encoded Location byte-for-byte as specified in Vercel.
+    const vercel = JSON.parse(fs.readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+    const gopro = vercel.redirects.find((entry) => entry.source === '/บริการ/รับซื้อ-gopro');
+    assert.ok(gopro, 'GoPro redirect fixture missing in vercel.json');
+    assert.ok(lines.includes(gopro.source + ' ' + gopro.destination + ' 308'));
+    assert.ok(lines.some((line) => line.startsWith('/%E0%B8') && line.endsWith(' 308')));
+    // Three film-camera typo redirects must be emitted as percent-encoded paths,
+    // matching the Cloudflare incoming URL form. Vercel's source stays unchanged.
+    for (const source of [
+      '/บริการ/รับซื้อกล้องฟิลัม',
+      '/บริการ/รับซื้อกล้องฟีล์ม',
+      '/บริการ/รับซื้อกล้องฟิล์ล',
+    ]) {
+      const rule = vercel.redirects.find((item) => item.source === source);
+      assert.ok(rule, 'Missing film-camera redirect in Vercel baseline: ' + source);
+      assert.ok(lines.includes(encodeURI(source) + ' ' + rule.destination + ' 308'));
+      assert.ok(!lines.includes(source + ' ' + rule.destination + ' 308'));
+    }
+    assert.ok(!lines.some((line) => line.includes('/:path+/')));
+    const headers = fs.readFileSync(path.join(dir, '_headers'), 'utf8');
+    assert.ok(headers.includes('/_astro/*\n  Cache-Control: public, max-age=31536000, immutable'));
+    assert.ok(headers.includes('/images/*\n'));
+    assert.ok(headers.includes('X-Content-Type-Options: nosniff'));
+    assert.ok(headers.includes('X-Robots-Tag: noindex, nofollow'));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+
+test('Production mode has no noindex while preserving Vercel redirects and preview isolation', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'amphon-cf-production-'));
+  try {
+    fs.writeFileSync(path.join(dir, '_headers'),
+      '/_astro/*\n  Cache-Control: public, max-age=31536000, immutable\n');
+    const preview = generateCloudflareRouting(dir);
+    assert.equal(preview.mode, 'preview');
+    assert.equal(preview.previewNoindex, true);
+    assert.match(fs.readFileSync(path.join(dir, '_headers'), 'utf8'),
+      /X-Robots-Tag: noindex, nofollow/);
+
+    // Reusing the same build output directory must not leak the Preview policy.
+    const production = generateCloudflareRouting(dir, { mode: 'production' });
+    assert.equal(production.mode, 'production');
+    assert.equal(production.previewNoindex, false);
+    assert.equal(production.staticRedirectCount, 260);
+    assert.equal(production.dynamicRedirectCount, 1);
+    const productionHeaders = fs.readFileSync(path.join(dir, '_headers'), 'utf8');
+    assert.doesNotMatch(productionHeaders, /X-Robots-Tag:\s*[^\n]*noindex/i);
+    assert.match(productionHeaders, /X-Content-Type-Options: nosniff/);
+    assert.match(productionHeaders, /max-age=31536000, immutable/);
+    const redirects = fs.readFileSync(path.join(dir, '_redirects'), 'utf8');
+    assert.match(redirects, /\/\*\/ \/:splat 308/);
+    assert.equal(redirects.split('\n').filter(x => x.startsWith('/')).length, 261);
+
+    // A later Preview build must still get its mandatory noindex back.
+    assert.equal(generateCloudflareRouting(dir).previewNoindex, true);
+    assert.match(fs.readFileSync(path.join(dir, '_headers'), 'utf8'),
+      /X-Robots-Tag: noindex, nofollow/);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('Production fails closed if any inherited header attempts to noindex it', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'amphon-cf-unsafe-'));
+  try {
+    fs.writeFileSync(path.join(dir, '_headers'), '/*\n  X-Robots-Tag: noindex\n');
+    assert.throws(() => generateCloudflareRouting(dir, { mode: 'production' }), /Refusing Cloudflare Production/);
+    assert.throws(() => generateCloudflareRouting(dir, { mode: 'unknown' }), /Unknown Cloudflare routing mode/);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
