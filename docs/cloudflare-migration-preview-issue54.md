@@ -1,6 +1,6 @@
 # Cloudflare Workers migration — Preview build (Issue #54)
 
-This branch is a **preview-only technical proof of concept**. Do not merge, attach custom domains, set production secrets, or deploy to production until the SEO parity gates pass.
+This branch is a **preview-only technical proof of concept**. Cloudflare's workerd binary shipped with the pinned preview tools supports compatibility_date 2026-11-10 (not 2026-11-11); use the tested date. The adapter uses build-time image compilation to avoid automatic runtime Cloudflare Images usage. Do not merge, attach custom domains, set production secrets, or deploy to production until the SEO parity gates pass.
 
 ## Files
 

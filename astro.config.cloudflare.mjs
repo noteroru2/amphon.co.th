@@ -6,5 +6,5 @@ import vercelConfig from './astro.config.mjs';
 // Astro 6 defaults to static output; only routes with prerender=false use Workers.
 export default defineConfig({
   ...vercelConfig,
-  adapter: cloudflare({ prerenderEnvironment: 'node' }),
+  adapter: cloudflare({ prerenderEnvironment: 'node', imageService: 'compile' }),
 });
