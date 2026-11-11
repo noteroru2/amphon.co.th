@@ -45,3 +45,9 @@ Reference: https://developers.cloudflare.com/workers/static-assets/migration-gui
 
 - `docs/cloudflare-cutover-rollback-issue54.md` records the last verified Vercel Production deployment and the cutover/restore checklist; actual DNS and Worker bindings must still be captured from Cloudflare after sign-in.
 - `scripts/cloudflare-local-smoke.mjs` starts a temporary local Wrangler Worker and verifies key static URLs, Preview `noindex`, legacy redirects, slash status and the **unconfigured** Google Reviews API fallback contract. It never calls the Google Places upstream API.
+
+## Trailing-slash 308 parity
+
+Cloudflare's default `drop-trailing-slash` asset handling returns **307** where Vercel currently returns **308**. To preserve the permanent redirect, `wrangler.jsonc` selectively routes `/*/` through the Worker (with an exception for `/`) and `src/middleware.ts` returns a direct relative `Location` with 308. Non-slash SEO pages remain served from Static Assets. This must be tested on Live Preview in addition to the local Wrangler smoke suite.
+
+The local smoke suite also tests **all 260 exact redirects** over HTTP; it explicitly fails if any status or destination diverges.

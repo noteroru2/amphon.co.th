@@ -65,9 +65,50 @@ try {
       if (!item.xRobots.includes('noindex')) report.errors.push('Google Reviews API response must be noindex');
       if (!item.text.includes('not_configured')) report.errors.push('Google Reviews fallback error contract changed');
     }
-    if (route.endsWith('/') && route !== '/' && item.status !== 308) report.warnings.push(route + ' slash status ' + item.status + ' versus Production 308');
+    if (route.endsWith('/') && route !== '/' && item.status !== 308) report.errors.push(route + ' slash status ' + item.status + ' versus Production 308');
     if (route === '/บริการ/รับซื้อ-gopro' && item.status !== 308) report.warnings.push('GoPro legacy redirect returned ' + item.status + ', expected 308');
   }
+  // Exercise EVERY exact redirect on the local Worker. This is not just a
+  // syntactic _redirects test; it verifies the actual HTTP response behavior.
+  const rules = JSON.parse(fs.readFileSync('vercel.json', 'utf8')).redirects
+    .filter((rule) => rule.source !== '/:path+/');
+  const normalization = (source) => {
+    try { return decodeURIComponent(new URL(source, host).pathname).replace(/\/+$/u, '') || '/'; }
+    catch { return 'INVALID'; }
+  };
+  let cursor = 0;
+  const redirectResults = Array(rules.length);
+  async function redirectWorker() {
+    while (cursor < rules.length) {
+      const index = cursor++;
+      const rule = rules[index];
+      const result = await fetchRoute(rule.source);
+      const expectedStatus = rule.statusCode ?? (rule.permanent ? 308 : 307);
+      const statusMatch = result.status === expectedStatus;
+      const locationMatch = !!result.location
+        && normalization(result.location) === normalization(rule.destination);
+      redirectResults[index] = {
+        source: rule.source, status: result.status ?? null,
+        expectedStatus, location: result.location || '',
+        expectedLocation: rule.destination, statusMatch, locationMatch,
+        error: result.error || null,
+      };
+    }
+  }
+  await Promise.all(Array.from({ length: 5 }, redirectWorker));
+  report.redirectParity = {
+    tested: rules.length,
+    passed: redirectResults.filter((result) => result.statusMatch && result.locationMatch).length,
+    mismatches: redirectResults.filter((result) => !(result.statusMatch && result.locationMatch)),
+  };
+  for (const result of report.redirectParity.mismatches) {
+    report.errors.push('Local redirect mismatch: ' + JSON.stringify(result));
+  }
+  console.log('Local exact redirect parity:', JSON.stringify({
+    tested: report.redirectParity.tested,
+    passed: report.redirectParity.passed,
+    mismatches: report.redirectParity.mismatches.slice(0, 12),
+  }, null, 2));
   console.log('Local Wrangler HTTP smoke:', JSON.stringify({ passed: report.errors.length === 0, warnings: report.warnings, sample: report.evidence.map(({route,status,location,xRobots})=>({route,status,location,noindex:xRobots.includes('noindex')})) }, null, 2));
   assert.equal(report.errors.length, 0, report.errors.join('\n'));
 } finally {
