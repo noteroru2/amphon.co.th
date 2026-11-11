@@ -76,7 +76,7 @@ const schemaExtras = [
 const steps = [
   { n: 1, title: 'ส่งรูปผ่าน Line',    desc: 'ส่งรูปสินค้า ระบุรุ่น สภาพ'    },
   { n: 2, title: 'รับราคาเบื้องต้น',   desc: 'แจ้งราคาเบื้องต้นหลังได้รับข้อมูลครบในช่วงเวลาทำการ'    },
-  { n: 3, title: 'นัดรับสินค้า',        desc: 'นัดวันเวลารับสินค้าที่สะดวก'   },
+  { n: 3, title: 'ยืนยันวิธีตรวจรับ',     desc: 'นัดตรวจหรือหารือการขนส่งตามพื้นที่และชนิดสินค้า ไม่ใช่การรับถึงบ้านทุกจังหวัด' },
   { n: 4, title: 'ชำระเงินหลังตกลงราคา',       desc: 'ชำระเงินหลังตรวจสอบสินค้าและตกลงราคาเรียบร้อยแล้ว'   },
 ];
 ---
@@ -130,6 +130,11 @@ const steps = [
   <!-- Content + sidebar -->
   <div class="container content-layout">
     <article class="prose">
+      <div role="note" class="regional-intake-disclosure">
+        <strong>ข้อมูลการติดต่อและการส่งมอบจริง:</strong>
+        <span>ดำเนินการโดย บริษัท อำพล เทรดดิ้ง จำกัด มีหน้าร้านจริงที่ 740/8 ถนนชยางกูร อำเภอเมืองอุบลราชธานี จุดสังเกตปากซอยชยางกูร 32 เปิดหน้าร้าน 09:00–19:00 น.</span>
+        <span>เสนอขายสินค้าผ่าน <a href={site.line} target="_blank" rel="noopener noreferrer">LINE @webuy</a> ได้ 24 ชั่วโมง (รับข้อความ ไม่ใช่เจ้าหน้าที่ตอบตลอด 24 ชั่วโมง) การตรวจรับ นัดหมาย หรือขนส่งต้องตกลงตามชนิดสินค้า มูลค่า และพื้นที่จริง {area && area.data.slug !== 'อุบลราชธานี' ? `ไม่มีสาขาหรือทีมรับสินค้าประจำจังหวัด${area.data.province}` : 'สินค้าขนาดใหญ่ควรนัดหมายก่อนเดินทางมาหน้าร้าน'}</span>
+      </div>
       {macbookProfile ? <MacbookServiceAreaContent profile={macbookProfile} /> : <Content />}
     </article>
 
@@ -212,3 +217,18 @@ const steps = [
   <FAQ items={faqs} />
   <CTAContact title={`${title} — นัดประเมินราคาฟรีวันนี้`} />
 </BaseLayout>
+
+<style>
+  .regional-intake-disclosure {
+    display: grid;
+    gap: .35rem;
+    margin-bottom: 1.35rem;
+    padding: .95rem 1.1rem;
+    border: 1px solid var(--color-border, #d9dfdf);
+    border-radius: .75rem;
+    font-size: .93rem;
+    line-height: 1.65;
+  }
+  .regional-intake-disclosure strong { display: block; }
+  .regional-intake-disclosure span { display: block; }
+</style>

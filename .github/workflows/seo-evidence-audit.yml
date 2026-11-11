@@ -9,6 +9,10 @@ on:
       - 'scripts/check-high-traffic-local-batch.mjs'
       - 'scripts/check-issue50-b2b.mjs'
       - 'scripts/check-issue50-gsc-regional.mjs'
+      - 'scripts/check-issue50-rendered-truth.mjs'
+      - 'scripts/issue50-pair-guides.cjs'
+      - 'scripts/issue50-thin-guides.cjs'
+      - 'src/layouts/ServiceAreaLayout.astro'
       - 'src/content/services/**'
       - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
       - 'src/content/services/รับซื้อคอมพิวเตอร์.md'
@@ -41,6 +45,10 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      - name: Create protected-province-pair editorial proposal
+        run: node scripts/issue50-pair-guides.cjs --export
+      - name: Propose tailored product-intake guides for 104 thin URL candidates
+        run: node scripts/issue50-thin-guides.cjs --export
       - name: Build
         run: npm run build
       - name: Existing SEO checks
@@ -55,6 +63,8 @@ jobs:
         run: node scripts/check-issue50-b2b.mjs
       - name: Check 12 GSC-visible UPS Server Network and corporate region URLs
         run: node scripts/check-issue50-gsc-regional.mjs
+      - name: Verify truthful Ubon storefront and 24h message intake on all 921 rendered URLs
+        run: node scripts/check-issue50-rendered-truth.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
