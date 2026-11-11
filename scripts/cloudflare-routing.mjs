@@ -47,8 +47,21 @@ export function generateCloudflareRouting(outputDir = path.join(root, 'dist', 'c
   }
 
   fs.mkdirSync(outputDir, { recursive: true });
-  fs.writeFileSync(path.join(outputDir, '_redirects'), redirectLines.join('\n') + '\n', 'utf8');
-  fs.writeFileSync(path.join(outputDir, '_headers'), headerBlocks.join('\n') + '\n', 'utf8');
+  const redirectFile = path.join(outputDir, '_redirects');
+  const headerFile = path.join(outputDir, '_headers');
+  const oldRedirects = fs.existsSync(redirectFile) ? fs.readFileSync(redirectFile, 'utf8') : '';
+  const oldHeaders = fs.existsSync(headerFile) ? fs.readFileSync(headerFile, 'utf8') : '';
+  const redirectMarker = '# GENERATED FROM vercel.json — DO NOT EDIT. Issue #54.';
+  const headerMarker = '# GENERATED FROM vercel.json — PREVIEW ONLY. Issue #54.';
+  // Preserve the adapter's existing redirects and immutable hashed-asset cache headers.
+  const keptRedirects = oldRedirects.includes(redirectMarker) ? '' : oldRedirects.trim();
+  const keptHeaders = oldHeaders.includes(headerMarker)
+    ? oldHeaders.slice(0, oldHeaders.indexOf(headerMarker)).trim()
+    : oldHeaders.trim();
+  fs.writeFileSync(redirectFile,
+    redirectLines.join('\n') + '\n' + (keptRedirects ? keptRedirects + '\n' : ''), 'utf8');
+  fs.writeFileSync(headerFile,
+    (keptHeaders ? keptHeaders + '\n\n' : '') + headerBlocks.join('\n') + '\n', 'utf8');
   return {
     staticRedirectCount: redirectLines.length - 2,
     excludedDynamic,

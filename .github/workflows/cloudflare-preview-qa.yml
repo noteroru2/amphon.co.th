@@ -3,7 +3,7 @@ on:
   pull_request:
     paths:
       - 'astro.config.cloudflare.mjs'
-      - 'wrangler.preview.jsonc'
+      - 'wrangler.jsonc'
       - 'public/.assetsignore'
       - 'scripts/cloudflare-routing.mjs'
       - 'scripts/cloudflare-routing.test.mjs'
@@ -42,7 +42,9 @@ jobs:
       - name: Existing SEO validation
         run: npm run validate:seo
       - name: Validate Wrangler bundle without deploying
-        run: npx wrangler deploy --config wrangler.preview.jsonc --dry-run --outdir .cloudflare-preview-dryrun
+        run: |
+          test -f dist/server/wrangler.json
+          npx wrangler deploy --config dist/server/wrangler.json --dry-run --outdir .cloudflare-preview-dryrun
       - name: Summarize static assets
         run: |
           echo "Static files: $(find dist/client -type f | wc -l)"
