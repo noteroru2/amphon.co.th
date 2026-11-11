@@ -1,0 +1,104 @@
+name: Cloudflare Astro 7 Security Migration Evaluation (NO DEPLOY)
+on:
+  push:
+    branches: [infra/cloudflare-security-astro7-eval]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  security-upgrade-experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout isolated infrastructure-only branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Use controlled Node runtime
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Ensure no user-facing SEO changes versus actual Vercel baseline
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {execFileSync} from 'node:child_process';
+          const base='1d235196f45e29af4c425fa4505111596db8e4c6';
+          const changed=execFileSync('git',['diff','--name-only',base,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+          const allow=p=>p==='package.json'||p==='package-lock.json'||p==='wrangler.jsonc'
+            ||p==='.node-version'||p==='public/.assetsignore'
+            ||p==='astro.config.cloudflare.production.mjs'||p==='src/pages/api/google-reviews.ts'
+            ||p.startsWith('scripts/cloudflare-')||p.startsWith('.github/workflows/cloudflare-')
+            ||p.startsWith('docs/cloudflare-');
+          assert.deepEqual(changed.filter(x=>!allow(x)),[],'Unexpected SEO/content drift!');
+          console.log('PASS no SEO page modifications; changed infrastructure files:',changed.length);
+          NODE
+      - name: Prepare patched dependency lock in runner only
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
+          pkg.dependencies.astro='7.4.9';
+          pkg.dependencies['@astrojs/vercel']='11.0.21';
+          pkg.devDependencies['@astrojs/cloudflare']='14.4.7';
+          pkg.devDependencies.sharp='0.35.5';
+          fs.writeFileSync('package.json',JSON.stringify(pkg,null,2)+'\n');
+          const lockGuard='scripts/cloudflare-lock-verify.mjs';
+          let script=fs.readFileSync(lockGuard,'utf8');
+          if(!script.includes("'@astrojs/cloudflare': '13.7.0'"))throw new Error('Pin guard changed; review manually');
+          script=script.replace("'@astrojs/cloudflare': '13.7.0'","'@astrojs/cloudflare': '14.4.7'");
+          fs.writeFileSync(lockGuard,script);
+          NODE
+          npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+          npm ci --no-fund
+          npm ls astro @astrojs/cloudflare @astrojs/vercel sharp
+          node scripts/cloudflare-lock-verify.mjs
+      - name: Produce machine-readable security audit (fail if Critical remains)
+        run: |
+          mkdir -p artifacts/cloudflare-migration
+          npm audit --omit=dev --json > artifacts/cloudflare-migration/security-audit.json || true
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const x=JSON.parse(fs.readFileSync('artifacts/cloudflare-migration/security-audit.json','utf8'));
+          const v=x.metadata?.vulnerabilities;
+          if(!v || typeof v.critical!=='number')throw new Error('npm audit was not valid; NO-GO');
+          console.log('Security findings for upgraded dependency graph:',JSON.stringify(v));
+          if(v.critical>0)throw new Error('Critical vulnerability remains; NO-GO');
+          NODE
+      - name: Verify Google Reviews functionality and build protected SEO release
+        run: |
+          npm run test:google-reviews
+          npx astro build --config astro.config.cloudflare.production.mjs
+          npm run validate:seo
+          node scripts/cloudflare-release-finalize.mjs
+      - name: Dry-run only and local Cloudflare HTTP regression
+        run: |
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-rc-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
+      - name: Verify production-only routing and indexability
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs'; import assert from 'node:assert/strict';
+          const headers=fs.readFileSync('dist/client/_headers','utf8');
+          assert.doesNotMatch(headers,/^\s*X-Robots-Tag:[^\n]*noindex/im);
+          const redirects=fs.readFileSync('dist/client/_redirects','utf8').split(/\r?\n/).filter(x=>x.startsWith('/'));
+          assert.ok(redirects.length>=261);
+          assert.equal(new Set(redirects.map(x=>x.split(/\s+/)[0])).size,redirects.length);
+          const s=fs.readFileSync('dist/client/sitemap-index.xml','utf8');
+          assert.match(s,/<sitemapindex/);
+          console.log('Release route check passed:',redirects.length,'unique redirect rules; indexable HTML');
+          NODE
+      - name: Capture isolated upgrade evidence (not deployed; do not publish secrets)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: astro7-cloudflare-upgrade-eval-no-deploy
+          path: |
+            package.json
+            package-lock.json
+            artifacts/cloudflare-migration/security-audit.json
+            artifacts/cloudflare-migration/local-production-candidate-smoke.json
+          if-no-files-found: warn
+          retention-days: 14
