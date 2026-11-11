@@ -81,9 +81,7 @@ jobs:
         run: npx wrangler deploy --config dist/server/wrangler.production.candidate.json --dry-run --outdir .cloudflare-rc-dry-run
       - name: Local HTTP — indexable main pages, slash redirects, 404 and API safety
         run: node scripts/cloudflare-production-local-smoke.mjs
-      - name: Verify existing Vercel fallback still builds (NO DEPLOY)
-        run: npm run build
-      - name: Upload nonsecret local QA evidence
+      - name: Upload nonsecret CLOUDFLARE build QA evidence before Vercel rebuild can replace dist/
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -94,6 +92,8 @@ jobs:
             dist/client/_redirects
           if-no-files-found: warn
           retention-days: 30
+      - name: Verify existing Vercel fallback still builds (NO DEPLOY)
+        run: npm run build
 
   read-only-live-dns-ssl-traffic-check:
     runs-on: ubuntu-latest
