@@ -59,7 +59,8 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
     assert.ok(!original[field], field + ' must be absent; never attach staging to apex/www');
   }
   assert.ok(STAGING_HOST !== 'amphon.co.th' && STAGING_HOST !== 'www.amphon.co.th');
-  assert.ok(STAGING_WORKER !== SOURCE_WORKER);
+  assert.notEqual(STAGING_WORKER, 'amphon-co-th',
+    'Staging build must never target the original Preview Worker');
 
   // This new independent Worker first deploys only to its own workers.dev URL.
   // The Owner must separately check that the staging hostname is unused,
