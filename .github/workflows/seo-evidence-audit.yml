@@ -7,6 +7,8 @@ on:
       - 'scripts/check-brand-evidence.mjs'
       - 'scripts/check-server-ups-network-batch.mjs'
       - 'scripts/check-high-traffic-local-batch.mjs'
+      - 'scripts/check-issue50-b2b.mjs'
+      - 'src/content/services/**'
       - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
       - 'src/content/services/รับซื้อคอมพิวเตอร์.md'
       - 'src/content/services/รับซื้อ-macbook.md'
@@ -48,6 +50,8 @@ jobs:
         run: node scripts/check-server-ups-network-batch.mjs
       - name: Validate protected 12 high-traffic appliance, TV and furniture pages
         run: node scripts/check-high-traffic-local-batch.mjs
+      - name: Validate B2B procurement safety and 8 parent/regional routes
+        run: node scripts/check-issue50-b2b.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
