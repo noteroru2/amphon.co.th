@@ -6,7 +6,7 @@ import fs from 'node:fs';
 // override package-lock.json with a runtime install.
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 const lock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'));
-const pinned = { '@astrojs/cloudflare': '13.7.0', wrangler: '4.100.0' };
+const pinned = { '@astrojs/cloudflare': '14.4.7', wrangler: '4.125.0' };
 assert.equal(lock.lockfileVersion, 3);
 for (const [name, version] of Object.entries(pinned)) {
   assert.equal(pkg.devDependencies?.[name], version, 'package.json must exact-pin '+name);
