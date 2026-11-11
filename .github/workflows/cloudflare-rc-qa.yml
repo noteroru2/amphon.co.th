@@ -1,0 +1,86 @@
+name: Cloudflare Vercel-Content-Parity Production RC (NO DEPLOY)
+on:
+  push:
+    branches: [infra/cloudflare-production-rc-baseline]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  indexable-production-release-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact Vercel-content-baseline RC (no credentials)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Use Node 22.23.4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Enforce zero SEO content/source changes from LIVE Vercel deployment
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {execFileSync} from 'node:child_process';
+          const base='1d235196f45e29af4c425fa4505111596db8e4c6';
+          const changed=execFileSync('git',['diff','--name-only',base,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+          const allow=p=>p==='package.json'||p==='package-lock.json'||p==='wrangler.jsonc'
+            ||p==='.node-version'||p==='public/.assetsignore'
+            ||p==='astro.config.cloudflare.production.mjs'||p==='src/pages/api/google-reviews.ts'
+            ||p.startsWith('scripts/cloudflare-')||p.startsWith('.github/workflows/cloudflare-')
+            ||p.startsWith('docs/cloudflare-');
+          assert.deepEqual(changed.filter(x=>!allow(x)),[],'Changed SEO content outside approved infrastructure allowlist!');
+          assert.ok(changed.length>0);
+          console.log('PASS: '+changed.length+' infrastructure/compatibility files; ZERO SEO content files modified from live Vercel source '+base);
+          NODE
+      - name: Install exact committed lock
+        run: npm ci
+      - name: Check Cloudflare adapter and Wrangler versions
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Unit tests for redirect parity and release guard
+        run: |
+          node --test scripts/cloudflare-routing.test.mjs
+          node --test scripts/cloudflare-release-finalize.test.mjs
+      - name: Build indexable production-compatible Cloudflare artifact LOCALLY
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: Validate original live Vercel SEO/content build
+        run: npm run validate:seo
+      - name: Deduplicate Cloudflare adapter redirects and assert zero global noindex
+        run: node scripts/cloudflare-release-finalize.mjs
+      - name: Confirm production headers and 260 original redirects; no domain bind
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const headers=fs.readFileSync('dist/client/_headers','utf8');
+          assert.doesNotMatch(headers,/^\s*X-Robots-Tag:.*noindex/im);
+          const lines=fs.readFileSync('dist/client/_redirects','utf8').split(/\r?\n/).filter(x=>x.startsWith('/'));
+          const sources=lines.map(x=>x.split(/\s+/)[0]);
+          assert.equal(new Set(sources).size,sources.length);
+          assert.ok(lines.length>=261);
+          const config=JSON.parse(fs.readFileSync('dist/server/wrangler.rc-audit.json','utf8'));
+          assert.equal(config.name,'amphon-co-th-rc-audit');
+          assert.ok(!config.routes&&!config.route);
+          console.log('PASS: indexable Cloudflare RC, '+lines.length+' unique redirects, no custom domains');
+          NODE
+      - name: Wrangler validation DRY RUN ONLY
+        run: npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-rc-dryrun
+      - name: Disposable local HTTP tests for indexability and routes
+        run: node scripts/cloudflare-production-local-smoke.mjs
+      - name: Public read-only DNS snapshot; record mail DNS counts
+        run: node scripts/cloudflare-rc-dns-audit.mjs
+      - name: Upload evidence, NOT a deployable release
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-production-rc-no-deploy-issue54
+          path: |
+            dist/client/_headers
+            dist/client/_redirects
+            artifacts/cloudflare-migration/local-production-candidate-smoke.json
+            artifacts/cloudflare-migration/rc-public-dns.json
+          if-no-files-found: warn
+          retention-days: 30
