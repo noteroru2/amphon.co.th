@@ -74,8 +74,14 @@ export function prepareCloudflareStaging(rootDir = process.cwd()) {
   };
   delete stagingConfig.route;
   delete stagingConfig.routes;
-  assert.ok(!JSON.stringify(stagingConfig).includes('amphon.co.th'),
-    'Deployment config must not automatically bind any amphon.co.th hostname');
+  // The generated bundle can legitimately contain canonical URLs and
+  // other strings naming amphon.co.th. Only routing keys attach a Worker to a
+  // hostname. Reject those keys explicitly instead of string-scanning content.
+  assert.ok(!Object.hasOwn(stagingConfig, 'route') &&
+    !Object.hasOwn(stagingConfig, 'routes'),
+  'Staging deployment cannot automatically bind any hostname');
+  assert.notEqual(stagingConfig.name, 'amphon-co-th',
+    'Staging must not replace the existing Preview Worker');
 
   fs.writeFileSync(headerFile, stagedHeaders, 'utf8');
   fs.writeFileSync(outputConfig, JSON.stringify(stagingConfig, null, 2) + '\n', 'utf8');
