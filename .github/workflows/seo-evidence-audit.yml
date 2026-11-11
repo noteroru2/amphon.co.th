@@ -8,6 +8,7 @@ on:
       - 'scripts/check-server-ups-network-batch.mjs'
       - 'scripts/check-high-traffic-local-batch.mjs'
       - 'scripts/check-issue50-b2b.mjs'
+      - 'scripts/check-issue50-gsc-regional.mjs'
       - 'src/content/services/**'
       - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
       - 'src/content/services/รับซื้อคอมพิวเตอร์.md'
@@ -52,6 +53,8 @@ jobs:
         run: node scripts/check-high-traffic-local-batch.mjs
       - name: Validate B2B procurement safety and 8 parent/regional routes
         run: node scripts/check-issue50-b2b.mjs
+      - name: Check 12 GSC-visible UPS Server Network and corporate region URLs
+        run: node scripts/check-issue50-gsc-regional.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
