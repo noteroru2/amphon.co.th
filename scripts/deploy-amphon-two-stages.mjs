@@ -23,10 +23,13 @@ const deployPath=scriptPath+'/deployments';
 const releaseLog=[];
 
 function run(exe,args,cwd,{silent=false}={}) {
-  const cmd=process.platform==='win32'&&['npm','npx'].includes(exe)?exe+'.cmd':exe;
+  // Windows cannot reliably execFile() a .cmd shim without cmd.exe.
+  const cmdShim=process.platform==='win32'&&['npm','npx'].includes(exe);
+  const cmd=cmdShim?'cmd.exe':exe;
+  const cmdArgs=cmdShim?['/d','/s','/c',[exe,...args.map(a=>'"'+String(a).replaceAll('"','')+'"')].join(' ')]:args;
   if(!silent) console.log('EXEC',exe,args.join(' '));
   try {
-    return execFileSync(cmd,args,{cwd,encoding:'utf8',stdio:['ignore','pipe','pipe'],maxBuffer:48*1024*1024,windowsHide:true}).trim();
+    return execFileSync(cmd,cmdArgs,{cwd,encoding:'utf8',stdio:['ignore','pipe','pipe'],maxBuffer:48*1024*1024,windowsHide:true}).trim();
   } catch(e) {
     const tail=String(e.stderr||e.message||'').slice(-1300);
     throw new Error(exe+' failed: '+tail);
