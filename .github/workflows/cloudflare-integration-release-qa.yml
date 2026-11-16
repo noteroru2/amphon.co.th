@@ -1,0 +1,87 @@
+name: AMPHON Cloudflare SEO Release QA (NO DEPLOY)
+on:
+  push:
+    branches:
+      - integration/cloudflare-issue50-180-20261116
+  pull_request:
+    branches:
+      - infra/cloudflare-security-astro7-eval
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'astro.config.cloudflare.production.mjs'
+      - 'package*.json'
+      - '.github/workflows/cloudflare-integration-release-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cloudflare-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Exact checkout, including frozen release for diff
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Node pinned to CI-tested Astro7 runtime
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Frozen release dependency verification
+        run: |
+          npm ci --no-fund
+          node scripts/cloudflare-lock-verify.mjs
+      - name: Production dependency security check
+        run: |
+          npm audit --omit=dev --json > /tmp/amphon-production-audit.json || true
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const v=JSON.parse(fs.readFileSync('/tmp/amphon-production-audit.json','utf8')).metadata?.vulnerabilities;
+          assert.ok(v&&Number.isInteger(v.high)&&Number.isInteger(v.critical),'npm production audit unavailable');
+          assert.equal(v.high,0,'High severity production dependency');
+          assert.equal(v.critical,0,'Critical severity production dependency');
+          console.log('PASS production dependency audit:',v);
+          NODE
+      - name: Google Reviews and legacy redirect unit tests
+        run: |
+          npm run test:google-reviews
+          node --test scripts/cloudflare-routing.test.mjs
+          node --test scripts/cloudflare-release-finalize.test.mjs
+      - name: Build real Cloudflare production candidate, NOT a Vercel build
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: SEO metadata / structured-data validation
+        run: npm run validate:seo
+      - name: Generate validated Cloudflare redirect & header artifacts
+        run: node scripts/cloudflare-release-finalize.mjs
+      - name: Verify 921 service-area pages and real shop disclosure
+        run: |
+          node scripts/check-issue50-rendered-truth.mjs
+          node scripts/audit-serviceareas-1020.mjs
+      - name: Collect SHA, changed URLs and publishable release QA evidence
+        run: node scripts/collect-cloudflare-release-evidence.mjs
+      - name: Test Worker bundle generation without deploying anywhere
+        run: |
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-integration-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
+      - name: Prevent shipping Vercel runtime code or staging noindex
+        run: |
+          if grep -r -E -q --include='*.js' 'path-to-regexp|@vercel/routing-utils' dist/server; then
+            echo "NO-GO: Vercel-only runtime bundled into Cloudflare"
+            exit 1
+          fi
+          if grep -E -q '^X-Robots-Tag:.*noindex' dist/client/_headers; then
+            echo "NO-GO: global noindex found"
+            exit 1
+          fi
+      - name: Save CI release evidence (never store secrets)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: amphon-cloudflare-candidate-release-evidence
+          path: artifacts/cloudflare-release/
+          retention-days: 30
+          if-no-files-found: warn
