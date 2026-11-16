@@ -1,0 +1,74 @@
+name: AMPHON Cloudflare hours-only hotfix QA (NO DEPLOY)
+on:
+  push:
+    branches: [ci/cloudflare-hours-hotfix-validation-20261116]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hours-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout protected frozen release plus hours hotfix
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require ONLY the approved homepage copy diff
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const ref='885113107dc0627f62f599cde9a43a197733a29f';
+          const files=execFileSync('git',['diff','--name-only',ref,'HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+          assert.deepEqual(files.sort(),['.github/workflows/cloudflare-hours-only-qa.yml','src/pages/index.astro'].sort());
+          const body=fs.readFileSync('src/pages/index.astro','utf8');
+          assert.match(body,/<li><strong>เวลาเปิดหน้าร้าน:<\/strong> 09:00–19:00 น.<\/li>/);
+          assert.doesNotMatch(body,/09:00–21:00/);
+          console.log('PASS source diff: one homepage copy edit, CI workflow only');
+          NODE
+      - name: Use Node 22.23.4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install exact locked packages
+        run: |
+          npm ci --no-fund
+          node scripts/cloudflare-lock-verify.mjs
+      - name: Google Reviews and Cloudflare redirect tests
+        run: |
+          npm run test:google-reviews
+          node --test scripts/cloudflare-routing.test.mjs
+          node --test scripts/cloudflare-release-finalize.test.mjs
+      - name: Build production-compatible indexable Cloudflare Worker
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: SEO and structured-data regression
+        run: npm run validate:seo
+      - name: Freeze original Cloudflare redirect parity
+        run: node scripts/cloudflare-release-finalize.mjs
+      - name: Assert homepage hours and 1189 page + redirect guardrails
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const root='dist/client';
+          const home=fs.readFileSync(root+'/index.html','utf8');
+          assert.match(home,/09:00–19:00/);
+          assert.doesNotMatch(home,/09:00–21:00/);
+          const s=fs.readFileSync(root+'/sitemap-0.xml','utf8');
+          const urls=[...s.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>x[1]);
+          assert.equal(urls.length,1189);
+          assert.equal(new Set(urls).size,1189);
+          const lines=fs.readFileSync(root+'/_redirects','utf8').split(/\r?\n/).filter(x=>x.startsWith('/'));
+          assert.ok(lines.length>=260);
+          assert.equal(new Set(lines.map(x=>x.split(/\s+/)[0])).size,lines.length);
+          assert.doesNotMatch(fs.readFileSync(root+'/_headers','utf8'),/^X-Robots-Tag:.*noindex/im);
+          console.log('PASS hours hotfix: 1189 sitemap URLs, '+lines.length+' redirects, no noindex');
+          NODE
+      - name: Worker package dry-run — no Production binding
+        run: |
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-hours-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
