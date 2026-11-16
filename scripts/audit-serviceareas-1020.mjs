@@ -72,6 +72,7 @@ const families=[...groups.entries()].map(([service,items])=>({
  average_source_chars:Math.round(items.reduce((n,r)=>n+r.source_chars,0)/items.length)
 })).sort((a,b)=>b.strong_similarity-a.strong_similarity);
 console.log('TOP_DUPLICATE_FAMILIES '+JSON.stringify(families.slice(0,18)));
+console.log('ISSUE50_FULL_SIMILARITY_QUEUE '+JSON.stringify(active.filter(r=>r.flags.includes('SIBLING_SIMILARITY_HEURISTIC')).map(r=>({slug:r.url.slice('/รับซื้อ/'.length),service:r.service,area:r.area,score:r.similarity,chars:r.source_chars,faq:r.faq,h2:r.h2})).sort((a,b)=>a.service.localeCompare(b.service,'th')||a.area.localeCompare(b.area,'th'))));
 console.log('FRONTMATTER_REVIEW_SAMPLE '+JSON.stringify(active.filter(r=>r.flags.includes('BAD_FRONTMATTER')).slice(0,25).map(r=>r.source_file)));
 console.log('EDITORIAL_HEURISTIC_NOTICE Source-only location mention does not prove absent store details in shared layout; similarity ignores province terms and is not evidence of a search penalty.');
 if(summary.source_pages!==1020||summary.rendered_pages!==921||summary.sitemap_pages!==921){
