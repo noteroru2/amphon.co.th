@@ -77,6 +77,8 @@ jobs:
             echo "NO-GO: global noindex found"
             exit 1
           fi
+      - name: Ensure post-deploy attestation script parses without credentials
+        run: node --check scripts/verify-cloudflare-production-release.mjs
       - name: Save CI release evidence (never store secrets)
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
