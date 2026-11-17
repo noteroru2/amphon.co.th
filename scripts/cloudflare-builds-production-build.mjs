@@ -38,7 +38,7 @@ assert.equal(generated.name,'amphon-co-th-rc-audit','Astro generated an unexpect
 assert.ok(generated.main,'Cloudflare generated Worker entrypoint missing');
 assert.ok(generated.assets?.directory,'Cloudflare static asset directory missing');
 assert.equal(generated.assets.binding,'ASSETS','Cloudflare ASSETS binding changed');
-assert.ok(!(generated.kv_namespaces||[]).some(x=>x.binding==='SESSION'),'Expected no SESSION KV in protected audit config');
+assert.ok(!(generated.kv_namespaces||[]).some(x=>x.binding==='SESSION'&&x.id),'Audit build cannot bind to an existing SESSION KV');
 assert.ok(!generated.routes&&!generated.route,'Generated artifact must not change custom routes');
 const codeFile=path.resolve(path.dirname(BUILD_CONFIG),generated.main);
 assert.ok(fs.existsSync(codeFile),'Worker entry module missing: '+codeFile);
@@ -54,7 +54,7 @@ const prod={
   ...generated,
   name:WORKER,
   account_id:ACCOUNT,
-  kv_namespaces:[...(generated.kv_namespaces||[]),{binding:'SESSION',id:SESSION_KV}],
+  kv_namespaces:[...(generated.kv_namespaces||[]).filter(x=>x.binding!=='SESSION'),{binding:'SESSION',id:SESSION_KV}],
   keep_vars:true,
   workers_dev:false,
   preview_urls:false,
