@@ -32,6 +32,7 @@ run('npm',['run','validate:seo']);
 run('node',['scripts/cloudflare-release-finalize.mjs']);
 run('node',['scripts/check-issue50-rendered-truth.mjs']);
 run('node',['scripts/audit-serviceareas-1020.mjs']);
+run('node',['scripts/check-no-self-serving-business-rating.mjs']);
 
 const generated=JSON.parse(fs.readFileSync(BUILD_CONFIG,'utf8'));
 assert.equal(generated.name,'amphon-co-th-rc-audit','Astro generated an unexpected Worker name');
