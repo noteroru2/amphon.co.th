@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - seo/gsc-evidence-quality-20261117
+      - seo/service-area-editorial-batch-20261117
   pull_request:
     branches:
       - release/cloudflare-production
@@ -29,17 +30,21 @@ jobs:
       - name: Check custom audit scripts parse correctly
         run: |
           node --check scripts/seo-gsc-quality-921.mjs
+          node --check scripts/seo-audit-editorial-targets.mjs
+          node --check scripts/qa-safe-regional-editorial.mjs
           node --check scripts/check-no-self-serving-business-rating.mjs
       - name: Validate production runtime, Google Reviews, SEO, 1189 sitemap and 260 redirects
         run: node scripts/cloudflare-builds-production-build.mjs
       - name: Group 921 regional pages and prioritize with actual GSC Final snapshots
         run: node scripts/seo-gsc-quality-921.mjs
+      - name: Print exact 16 thin / 57 short-similar URLs and freeze target manifest
+        run: node scripts/seo-audit-editorial-targets.mjs
       - name: Forbid self-serving business review star JSON-LD
         run: node scripts/check-no-self-serving-business-rating.mjs
       - name: Ensure this SEO release preserves protected Cloudflare runtime and all 921 source URLs
         run: |
           git -c core.quotePath=false diff --name-only origin/release/cloudflare-production...HEAD > /tmp/amphon-seo-changed.txt
-          if grep -E '^(src/content/serviceAreas/|src/config/seo-policy\.ts|astro\.config|package(-lock)?\.json|wrangler|src/pages/robots)' /tmp/amphon-seo-changed.txt; then
+          if grep -E '^(src/config/seo-policy\.ts|astro\.config|package(-lock)?\.json|wrangler|src/pages/robots)' /tmp/amphon-seo-changed.txt; then
             echo "NO-GO: forbidden structural or runtime files in evidence/content-only SEO candidate"
             exit 1
           fi
@@ -52,10 +57,16 @@ jobs:
             ||p.startsWith('scripts/seo-gsc-quality-')
             ||p==='scripts/check-no-self-serving-business-rating.mjs'
             ||p==='scripts/cloudflare-builds-production-build.mjs'
+            ||p==='scripts/seo-audit-editorial-targets.mjs'
+            ||p==='scripts/qa-safe-regional-editorial.mjs'
+            ||p==='docs/seo-evidence/editorial-cohort-16-and-57-2026-11-17.json'
+            ||p.startsWith('src/content/serviceAreas/')
             ||p==='.github/workflows/amphon-gsc-quality-20261117.yml';
           assert.ok(changed.every(allowed),'Unexpected release file: '+changed.filter(x=>!allowed(x)).join(', '));
           console.log('PASS isolated source diff:',changed.join(', '));
           NODE
+      - name: Enforce 71-page editorial source and canonical frontmatter safety
+        run: node scripts/qa-safe-regional-editorial.mjs
       - name: Cloudflare Worker artifact dry-run only, NEVER upload production
         run: node node_modules/wrangler/bin/wrangler.js deploy --config dist/server/wrangler.production.json --dry-run --outdir .cf-evidence-qa
       - name: Save full editorial review queue and GSC source links
@@ -69,5 +80,6 @@ jobs:
             artifacts/service-area-audit/gsc-prioritized-families.json
             artifacts/service-area-audit/gsc-prioritized-921.json
             artifacts/service-area-audit/gsc-prioritized-human-review.md
+            artifacts/service-area-audit/editorial-targets-16-and-57.json
           retention-days: 30
           if-no-files-found: warn
