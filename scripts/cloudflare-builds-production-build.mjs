@@ -27,12 +27,11 @@ function run(exe,args){
 run('node',['scripts/cloudflare-lock-verify.mjs']);
 run('npm',['run','test:google-reviews']);
 run('node',['--test','scripts/cloudflare-routing.test.mjs','scripts/cloudflare-release-finalize.test.mjs']);
-run('node',['node_modules/astro/astro.js','build','--config','astro.config.cloudflare.production.mjs']);
+run('npm',['exec','--','astro','build','--config','astro.config.cloudflare.production.mjs']);
 run('npm',['run','validate:seo']);
 run('node',['scripts/cloudflare-release-finalize.mjs']);
 run('node',['scripts/check-issue50-rendered-truth.mjs']);
 run('node',['scripts/audit-serviceareas-1020.mjs']);
-run('node',['scripts/collect-cloudflare-release-evidence.mjs']);
 
 const generated=JSON.parse(fs.readFileSync(BUILD_CONFIG,'utf8'));
 assert.equal(generated.name,'amphon-co-th-rc-audit','Astro generated an unexpected Worker name');
