@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - seo/gsc-evidence-quality-20261117
+      - seo/service-area-editorial-batch-20261117
   pull_request:
     branches:
       - release/cloudflare-production
@@ -29,11 +30,14 @@ jobs:
       - name: Check custom audit scripts parse correctly
         run: |
           node --check scripts/seo-gsc-quality-921.mjs
+          node --check scripts/seo-audit-editorial-targets.mjs
           node --check scripts/check-no-self-serving-business-rating.mjs
       - name: Validate production runtime, Google Reviews, SEO, 1189 sitemap and 260 redirects
         run: node scripts/cloudflare-builds-production-build.mjs
       - name: Group 921 regional pages and prioritize with actual GSC Final snapshots
         run: node scripts/seo-gsc-quality-921.mjs
+      - name: Print exact 16 thin / 57 short-similar URLs and freeze target manifest
+        run: node scripts/seo-audit-editorial-targets.mjs
       - name: Forbid self-serving business review star JSON-LD
         run: node scripts/check-no-self-serving-business-rating.mjs
       - name: Ensure this SEO release preserves protected Cloudflare runtime and all 921 source URLs
@@ -52,6 +56,7 @@ jobs:
             ||p.startsWith('scripts/seo-gsc-quality-')
             ||p==='scripts/check-no-self-serving-business-rating.mjs'
             ||p==='scripts/cloudflare-builds-production-build.mjs'
+            ||p==='scripts/seo-audit-editorial-targets.mjs'
             ||p==='.github/workflows/amphon-gsc-quality-20261117.yml';
           assert.ok(changed.every(allowed),'Unexpected release file: '+changed.filter(x=>!allowed(x)).join(', '));
           console.log('PASS isolated source diff:',changed.join(', '));
@@ -69,5 +74,6 @@ jobs:
             artifacts/service-area-audit/gsc-prioritized-families.json
             artifacts/service-area-audit/gsc-prioritized-921.json
             artifacts/service-area-audit/gsc-prioritized-human-review.md
+            artifacts/service-area-audit/editorial-targets-16-and-57.json
           retention-days: 30
           if-no-files-found: warn
