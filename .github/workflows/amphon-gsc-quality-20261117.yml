@@ -51,6 +51,7 @@ jobs:
             ||p.startsWith('docs/seo-evidence/')
             ||p.startsWith('scripts/seo-gsc-quality-')
             ||p==='scripts/check-no-self-serving-business-rating.mjs'
+            ||p==='scripts/cloudflare-builds-production-build.mjs'
             ||p==='.github/workflows/amphon-gsc-quality-20261117.yml';
           assert.ok(changed.every(allowed),'Unexpected release file: '+changed.filter(x=>!allowed(x)).join(', '));
           console.log('PASS isolated source diff:',changed.join(', '));
