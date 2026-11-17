@@ -1,40 +1,48 @@
 /**
- * Prints the exact audit targets for editorial review, using *rendered* indexable
- * pages and actual GSC FINAL evidence. It makes no website changes.
- *
- * Run after:
- *  node scripts/cloudflare-builds-production-build.mjs
- *  node scripts/seo-gsc-quality-921.mjs
+ * Compare immutable 71-page EDITORIAL BASELINE against rendered current content.
+ * A former 16/57 flag disappearing is the intended result, not a QA failure.
+ * GSC-missing means UNKNOWN (never automatically discard a page).
  */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const root='artifacts/service-area-audit';
-const rows=JSON.parse(fs.readFileSync(root+'/gsc-prioritized-921.json','utf8'));
-const short=rows.filter(x=>x.source_chars<1700);
-const shortSimilar=rows.filter(x=>x.source_flags.includes('SHORT_AND_SIMILAR'));
-const both=rows.filter(x=>x.source_chars<1700 && x.source_flags.includes('SHORT_AND_SIMILAR'));
-const union=new Map([...short,...shortSimilar].map(x=>[x.url,x]));
-const family=new Map();
-for(const x of union.values()){
- const group=family.get(x.service)||[];
- group.push(x);
- family.set(x.service,group);
-}
-const report={
- baselines:{indexable:rows.length,short_under_1700:short.length,short_and_similar:shortSimilar.length,intersection:both.length,distinct_targets:union.size},
- family_priority:[...family.entries()].map(([service,items])=>({service,total:items.length,traffic:items.filter(x=>x.gsc_clicks>0).length,short:items.filter(x=>x.source_chars<1700).length,short_similar:items.filter(x=>x.source_flags.includes('SHORT_AND_SIMILAR')).length,impressions:items.reduce((s,x)=>s+(x.gsc_impressions||0),0)})).sort((a,b)=>b.traffic-a.traffic||b.impressions-a.impressions||b.total-a.total),
- targets:[...union.values()].map(x=>({
-   source:x.source_file,url:x.url,service:x.service,area:x.area,chars:x.source_chars,
-   flags:x.source_flags,similarity:x.similarity,nearest:x.nearest,
-   gsc_clicks:x.gsc_clicks,gsc_impressions:x.gsc_impressions,
-   gsc_unknown:x.gsc_clicks===null,priority:x.review_action
- })).sort((a,b)=>(b.gsc_clicks||0)-(a.gsc_clicks||0)||(b.gsc_impressions||0)-(a.gsc_impressions||0)||a.chars-b.chars)
-};
-assert.equal(rows.length,921,'Cannot act on changed sitemap or rendered page count');
-assert.equal(short.length,16,'Expected 16 short pages; re-audit before editing');
-assert.equal(shortSimilar.length,57,'Expected 57 short/similar pages; re-audit before editing');
-fs.writeFileSync(root+'/editorial-targets-16-and-57.json',JSON.stringify(report,null,2)+'\n');
-console.log('AMPHON_EDITORIAL_TARGET_SUMMARY '+JSON.stringify(report.baselines));
-console.log('AMPHON_EDITORIAL_TARGET_FAMILIES '+JSON.stringify(report.family_priority));
-for(const x of report.targets)console.log('AMPHON_EDITORIAL_TARGET_ROW '+JSON.stringify(x));
-console.log('AMPHON_EDITORIAL_REVIEW_ONLY No URLs changed, removed, redirected or noindexed');
+const current=JSON.parse(fs.readFileSync(root+'/gsc-prioritized-921.json','utf8'));
+const baseline=JSON.parse(fs.readFileSync('docs/seo-evidence/editorial-cohort-16-and-57-2026-11-17.json','utf8'));
+assert.equal(current.length,921,'Broken rendered/indexable site baseline');
+assert.equal(baseline.targets.length,71,'Editorial cohort changed');
+const map=new Map(current.map(x=>[x.source_file,x]));
+const observed=baseline.targets.map(b=>{
+ const now=map.get(b.path);
+ assert.ok(now,'Reviewed regional page is missing from rendered indexable sitemap: '+b.path);
+ return {path:b.path,url:b.url,service:b.service,area:b.area,
+ original_flags:b.flags,original_chars:b.source_chars,original_similarity:b.similarity,
+ now_chars:now.source_chars,now_flags:now.source_flags,now_similarity:now.similarity,
+ gsc_clicks:now.gsc_clicks,gsc_impressions:now.gsc_impressions,gsc_unknown:now.gsc_clicks===null,
+ short_fixed:b.flags.includes('SHORT_CONTENT')&&now.source_chars>=1700,
+ short_similar_fixed:b.flags.includes('SHORT_AND_SIMILAR')&&!now.source_flags.includes('SHORT_AND_SIMILAR')
+ };
+});
+const fam=new Map();
+for(const r of observed){const arr=fam.get(r.service)||[];arr.push(r);fam.set(r.service,arr);}
+const summarize=(rows)=>({
+ source_pages:1020,indexable_pages:921,original_targets:71,
+ original_short:baseline.baseline.short,original_short_and_similar:baseline.baseline.short_similar,
+ original_overlap:baseline.baseline.overlap,
+ current_short_all:current.filter(x=>x.source_chars<1700).length,
+ current_short_similar_all:current.filter(x=>x.source_flags.includes('SHORT_AND_SIMILAR')).length,
+ current_strong_similarity_all:current.filter(x=>x.similarity>=0.87).length,
+ current_short_in_original:rows.filter(x=>x.now_chars<1700).length,
+ current_short_similar_in_original:rows.filter(x=>x.now_flags.includes('SHORT_AND_SIMILAR')).length,
+ current_strong_similarity_in_original:rows.filter(x=>x.now_similarity>=.87).length,
+ original_clicked_pages:rows.filter(x=>x.gsc_clicks>0).length,
+ clicked_pages_preserved:rows.filter(x=>x.gsc_clicks>0&&map.has(x.path)).length,
+ notes:'Source-only heuristic, not Google ranking/penalty. A GSC-absent URL is UNKNOWN. URL/indexing/count preserved.'
+});
+const summary=summarize(observed);
+const families=[...fam].map(([service,arr])=>({service,total:arr.length,clicked:arr.filter(x=>x.gsc_clicks>0).length,before_short:arr.filter(x=>x.original_flags.includes('SHORT_CONTENT')).length,after_short:arr.filter(x=>x.now_chars<1700).length,before_short_similar:arr.filter(x=>x.original_flags.includes('SHORT_AND_SIMILAR')).length,after_short_similar:arr.filter(x=>x.now_flags.includes('SHORT_AND_SIMILAR')).length,after_strong:arr.filter(x=>x.now_similarity>=0.87).length})).sort((a,b)=>b.after_strong-a.after_strong||b.after_short_similar-a.after_short_similar);
+const out={summary,families,targets:observed};
+fs.writeFileSync(root+'/editorial-targets-16-and-57.json',JSON.stringify(out,null,2)+'\n');
+console.log('AMPHON_EDITORIAL_BEFORE_AFTER '+JSON.stringify(summary));
+console.log('AMPHON_EDITORIAL_FAMILIES '+JSON.stringify(families));
+for(const r of observed.filter(x=>x.now_chars<1700||x.now_similarity>=0.75))console.log('AMPHON_EDITORIAL_REMAINING '+JSON.stringify({file:r.path,similarity:r.now_similarity,flags:r.now_flags,old:r.original_similarity,gsc:[r.gsc_clicks,r.gsc_impressions]}));
+console.log('AMPHON_EDITORIAL_SAFETY No URL/indexability changes; GSC missing is UNKNOWN');
