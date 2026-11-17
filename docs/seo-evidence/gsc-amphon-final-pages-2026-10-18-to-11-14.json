@@ -1,0 +1,15 @@
+{
+  "source": "AMPHON SEO Hub / Google Search Console FINAL site-host scoped, page dimension",
+  "site_id": "amphon",
+  "property": "sc-domain:amphon.co.th",
+  "start_date": "2026-10-18",
+  "end_date": "2026-11-14",
+  "receipts": [
+    "b67fa6c5-4afa-4bb2-8934-2d0b03de8798"
+  ],
+  "query_observed": "2026-11-17",
+  "coverage_note": "Only Google-reported pages; absent pages must be treated as UNKNOWN, not zero. Traffic after 2026-11-15 Cloudflare cutover is not represented in these final dates.",
+  "sampled_pages_total": 0,
+  "filtered_pages": 0,
+  "pages": []
+}
