@@ -37,11 +37,26 @@ Drone 13, Auction/asset disposal 13, Furniture 10, TV 7, Server 5, UPS 5, Networ
 These four examples were chosen to cover problem families, **not** because they are the complete set of 52 `FEW_FAQ` pages; the original report actually flags auction-Khon Kaen, furniture-Korat and TV-Khon Kaen as `SHORT_AND_SIMILAR`, while drone-Maha Sarakham is not flagged by that threshold but contained repeated template paragraphs.
 
 ### GSC evidence checked on 2026-11-18 (FINAL 2026-10-18 to 2026-11-14)
-All four exact filtered URLs returned 0 reported clicks and 0 reported impressions. **This is not proof of no demand** and is not a license to delete/noindex.
-- Auction Khon Kaen receipt: `6a4f2063-f5cd-47dd-b0b4-b84938e4925e`.
-- Drone Maha Sarakham receipt: `cdd08959-4d0d-4b60-804b-d5b3ac97fbea`.
-- Furniture Korat receipt: `f7987a55-5af8-48b4-b080-71308915835a`.
-- TV Khon Kaen receipt: `35ed2055-1760-46f4-995f-d24764e88175`.
+**Important page-filter normalization:** GSC rows store Thai URL paths percent-encoded. The first requests passed unencoded Thai URLs as exact page filters and incorrectly showed zeros; re-querying the encoded exact canonical URLs produced the corrected figures below. Always use the actual percent-encoded `keys[0]` from `dimensions:["page"]` or normalize both sides before joining.
+
+| Candidate URL suffix | Clicks | Impressions | Avg position | Corrected receipt |
+| --- | ---: | ---: | ---: | --- |
+| `รับเหมาประมูลอุปกรณ์ไอที-ขอนแก่น` | 0 | 0 reported | — | `5fad825e-51af-4127-adf0-7ee51a76ac06` |
+| `รับซื้อโดรน-มหาสารคาม` | 0 | **4** | 6.5 | `91de4e9c-4b30-417d-90fc-36b202be4116` |
+| `รับซื้อเฟอร์นิเจอร์-นครราชสีมา` | 0 | **1** | 19.0 | `7c06beb8-3b01-4813-8fe3-18c0bdfeb9e4` |
+| `รับซื้อทีวี-ขอนแก่น` | 0 | 0 reported | — | `57d1ac30-236e-4374-aa85-f2358db5a2f0` |
+
+Neither zero reported impressions nor omitted GSC rows prove no demand. No URL should be deleted/noindexed based on these samples.
+
+### Traffic to protect before next batch
+Final site-scoped GSC `dimensions:["page"]`, 663 returned URL rows for the same 28-day window; receipt `bfbce03a-1b09-4b8e-8e43-b342f0e1e9ab`. Selected `FEW_FAQ` URLs with **real clicks**:
+- `รับซื้อเครื่องใช้ไฟฟ้า-อุดรธานี`: **43 clicks / 474 impressions**
+- `รับซื้อเครื่องใช้ไฟฟ้า-ร้อยเอ็ด`: **37 / 339**
+- `รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น`: **34 / 554**
+- `รับซื้อทีวี-อุดรธานี`: **17 / 152**
+- `รับซื้อเฟอร์นิเจอร์-อุดรธานี`: **13 / 153**
+- `รับซื้อทีวี-ศรีสะเกษ`: **8 / 78**
+These must receive conservative, human-reviewed corrections first, with before/after screenshots, unchanged query intent, and complete rollback. **Do not add filler FAQs to high-performing pages.**
 
 ## Editorial rules (required for all following batches)
 1. Never fabricate purchased items, company contracts, official auction participation, province branches, warranties, local pickup coverage, customer quotes, receipts or fixed cash offers.
