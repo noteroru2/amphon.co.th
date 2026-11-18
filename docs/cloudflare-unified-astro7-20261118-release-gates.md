@@ -25,3 +25,10 @@
 
 ## Safety and release decision
 This unified candidate deliberately contains both infrastructure migration and editorial changes: this increases attribution and regression risk compared with the earlier infra-only plan in Issue #54. User specifically requested combined candidate testing, NOT a cutover. Keep full baseline and previous Vercel artifacts available for rollback. Do not deploy, merge main, change DNS, modify secrets or billing without a separate final Production GO on the exact SHA.
+
+## Main ancestry conflict reconciliation (2026-11-18)
+The last `main` commit `f3f91b804432c9b56542db38d70547f657cd54de` changed **186 paths** compared with the previous live Vercel SHA `1d235196f45e29af4c425fa4505111596db8e4c6`. Comparing exact Git tree-object blob SHAs to the unified candidate:
+- **181/186 files are byte-identical**, including the overwhelming majority of the 180 Issue #50 service-area pages.
+- Four Markdown pages intentionally differ from `main`: `รับซื้อทีวี-ขอนแก่น.md`, `รับซื้อเฟอร์นิเจอร์-นครราชสีมา.md`, `รับซื้อโดรน-มหาสารคาม.md`, `รับเหมาประมูลอุปกรณ์ไอที-ขอนแก่น.md`. Candidate versions have later dated (18 Nov) issue-specific editorial detail, qualified no-provincial-office/service promises and no claimed transaction proof. Preserve reviewed candidate versions, not the older 11-Nov main versions.
+- `.github/workflows/seo-evidence-audit.yml` is deliberately newer in the candidate: keeps 921-URL truth QA and adds specific parent-service and 60-CTA checks. Preserve newer QA.
+This decision does **not** remove any unrelated newer `main` changes: all 186 changed paths have been inventoried; 181 exactly preserved and the five reviewed later versions retained. A true two-parent Git merge commit records both `main` and candidate ancestry while retaining the validated candidate tree. The integration is **not a Production merge**.
