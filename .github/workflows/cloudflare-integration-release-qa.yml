@@ -3,10 +3,12 @@ on:
   push:
     branches:
       - integration/cloudflare-issue50-180-20261116
+      - security/cloudflare-astro7-audit-20261118
   pull_request:
     branches:
       - infra/cloudflare-security-astro7-eval
       - integration/cloudflare-issue50-180-20261116
+      - integration/cloudflare-seo-editorial-25-20261118
     paths:
       - 'src/**'
       - 'scripts/**'
