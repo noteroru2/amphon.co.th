@@ -8,7 +8,7 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 const lock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'));
 const pinned = {
   '@astrojs/cloudflare': { version: '14.4.7', type: 'devDependencies' },
-  'wrangler': { version: '4.125.0', type: 'devDependencies' },
+  'wrangler': { version: '4.164.0', type: 'devDependencies' },
   // Pin checked-compatible Astro 7 security patch release: never silently
   // downgrade to Astro 5 via npm audit fix --force.
   'astro': { version: '7.4.12', type: 'devDependencies' },
