@@ -5,55 +5,32 @@ import { absoluteUrl } from '../lib/seo';
 export const prerender = true;
 
 export const GET: APIRoute = () => {
+  // Cloudflare Bot Preference Sync prepends AI-training directives; origin
+  // must not contradict its current Disallow rules for training crawlers.
   const body = `# robots.txt — ${site.url}
-# SEO + AEO + GEO
+# SEO and authorized search/AI-search crawling
 
 User-agent: *
 Allow: /
 Disallow: /404
 
-# Google
 User-agent: Googlebot
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
-# Bing
 User-agent: Bingbot
-Allow: /
-
-# OpenAI
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-# Anthropic
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-# Meta
-User-agent: Meta-ExternalAgent
+User-agent: ChatGPT-User
 Allow: /
 
-# Common Crawl (used by many AI systems)
-User-agent: CCBot
-Allow: /
+# No explicit Allow for GPTBot, ClaudeBot, CCBot or Google-Extended;
+# the Cloudflare-managed training policy is authoritative.
 
 # LLM content guide
 # See ${absoluteUrl('/llms.txt')}
