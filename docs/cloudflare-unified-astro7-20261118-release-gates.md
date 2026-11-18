@@ -32,3 +32,14 @@ The last `main` commit `f3f91b804432c9b56542db38d70547f657cd54de` changed **186 
 - Four Markdown pages intentionally differ from `main`: `รับซื้อทีวี-ขอนแก่น.md`, `รับซื้อเฟอร์นิเจอร์-นครราชสีมา.md`, `รับซื้อโดรน-มหาสารคาม.md`, `รับเหมาประมูลอุปกรณ์ไอที-ขอนแก่น.md`. Candidate versions have later dated (18 Nov) issue-specific editorial detail, qualified no-provincial-office/service promises and no claimed transaction proof. Preserve reviewed candidate versions, not the older 11-Nov main versions.
 - `.github/workflows/seo-evidence-audit.yml` is deliberately newer in the candidate: keeps 921-URL truth QA and adds specific parent-service and 60-CTA checks. Preserve newer QA.
 This decision does **not** remove any unrelated newer `main` changes: all 186 changed paths have been inventoried; 181 exactly preserved and the five reviewed later versions retained. A true two-parent Git merge commit records both `main` and candidate ancestry while retaining the validated candidate tree. The integration is **not a Production merge**.
+
+## Correction: ACTUAL Cloudflare Production observed via authenticated API (2026-11-18)
+Earlier Vercel deployment lists only establish that the **Vercel rollback deployment is READY**; they do not prove it is serving live apex traffic. Fresh Cloudflare API **read-only** shows:
+- `amphon.co.th` attached to Worker `amphon-co-th-production` and enabled; `cf-test.amphon.co.th` attached separately to `amphon-co-th-staging`.
+- Current Production Worker 100% active version **`2ae005c0-a712-4088-aa0f-46b800084df1`**, deployment `11ccb0a3-6435-464d-b4c4-1bbda1f0190e`, uploaded at **2026-11-17 16:25:39 UTC**. Source Git SHA is **NOT attested** by public deployment metadata and must not be guessed.
+- DNS `amphon.co.th` proxied AAAA; `www.amphon.co.th` proxied CNAME. Edge phase `http_request_dynamic_redirect` has enabled www→apex **301**, `preserve_query_string=true`.
+- Certificate packs for apex and wildcard, QA and cf-test are **active** according to Cloudflare.
+- Prior Vercel READY `dpl_DmtdiCXTsy6zBMKNVEehFyMoUBwr` / Git SHA `1d235196...` is an **available deployment reference, not a proven instant rollback procedure**. Before cutover, verify site/domain reconnection and DNS rollback path while leaving current Cloudflare Worker untouched.
+- `qa.amphon.co.th` is also bound to the Production Worker; do not confuse it with cf-test or promote by changing routes.
+
+**Revised plan:** Treat this as a **new code release to an ALREADY LIVE Cloudflare Worker**, not a fresh migration of apex DNS from Vercel. Record current Worker version and DNS/ruleset values as rollback snapshot; test new release as a separate Worker version; never assume `main` SHA identifies deployed code. No Production deploy or binding mutations in this PR.
