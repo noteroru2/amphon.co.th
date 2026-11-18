@@ -84,6 +84,61 @@ try {
     if(r.status!==404) report.failed.push(route+' expected 404 got '+r.status);
   }
 
+  // Runtime regression: exercise every Vercel exact redirect in the generated
+  // LOCAL Cloudflare Worker rather than trusting only static _redirects parity.
+  // No production request, DNS or worker deployment is performed.
+  const originalRules = JSON.parse(fs.readFileSync('vercel.json', 'utf8')).redirects;
+  const exactRules = originalRules.filter(rule => rule.source !== '/:path+/');
+  const dynamicRules = originalRules.filter(rule => rule.source === '/:path+/');
+  assert.equal(exactRules.length, 260, 'Expected 260 Vercel exact redirect sources');
+  assert.equal(dynamicRules.length, 1, 'Expected one dynamic legacy redirect rule');
+  let exactChecked = 0;
+  const exactRedirectFailures = [];
+  function targetPath(value) {
+    if (!value) return '';
+    const url = new URL(value, host);
+    // Normalize percent-encoded UTF-8 without losing a deliberately escaped slash.
+    return decodeURI(url.pathname);
+  }
+  for (let start = 0; start < exactRules.length; start += 8) {
+    const batch = exactRules.slice(start, start + 8);
+    const results = await Promise.all(batch.map(async rule => {
+      const r = await request(rule.source);
+      const expectedStatus = rule.statusCode ?? (rule.permanent ? 308 : 307);
+      const actualTarget = targetPath(r.location);
+      const expectedTarget = targetPath(rule.destination);
+      return { source: rule.source, status: r.status, expectedStatus,
+        target: actualTarget, expectedTarget, ok: r.status === expectedStatus &&
+          actualTarget === expectedTarget };
+    }));
+    for (const result of results) {
+      exactChecked++;
+      if (!result.ok) {
+        exactRedirectFailures.push(result);
+        report.failed.push('legacy redirect mismatch ' + result.source +
+          ' ' + result.status + '/' + result.expectedStatus +
+          ' ' + result.target + '/' + result.expectedTarget);
+      }
+    }
+  }
+  const dynamicRuleResponse = await request('/about/');
+  const dynamicPassed = dynamicRuleResponse.status === 308 &&
+    targetPath(dynamicRuleResponse.location) === '/about';
+  if (!dynamicPassed) {
+    report.failed.push('dynamic catch-all trailing-slash redirect mismatch: ' +
+      dynamicRuleResponse.status + ' ' + (dynamicRuleResponse.location || ''));
+  }
+  report.legacyRedirectParity = {
+    totalSourceRules: originalRules.length, exactChecked,
+    exactFailed: exactRedirectFailures.length,
+    dynamicRules: dynamicRules.length, dynamicPassed,
+    failures: exactRedirectFailures,
+  };
+  console.log('AMPHON_261_RUNTIME_REDIRECT_QA ' + JSON.stringify({
+    total: originalRules.length, exactChecked, exactFailed: exactRedirectFailures.length,
+    dynamicChecked: 1, dynamicPassed, failedSample: exactRedirectFailures.slice(0, 8),
+  }));
+
   const api=await request('/api/google-reviews');
   report.routes.push({route:api.route,status:api.status,robots:api.robots});
   // API-only noindex is intentionally allowed for Google Reviews JSON, not HTML pages.
