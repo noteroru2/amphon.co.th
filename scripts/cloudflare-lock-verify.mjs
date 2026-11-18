@@ -6,11 +6,18 @@ import fs from 'node:fs';
 // override package-lock.json with a runtime install.
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 const lock = JSON.parse(fs.readFileSync('package-lock.json', 'utf8'));
-const pinned = { '@astrojs/cloudflare': '14.4.7', wrangler: '4.125.0' };
+const pinned = {
+  '@astrojs/cloudflare': { version: '14.4.7', type: 'devDependencies' },
+  'wrangler': { version: '4.125.0', type: 'devDependencies' },
+  // Pin checked-compatible Astro 7 security patch release: never silently
+  // downgrade to Astro 5 via npm audit fix --force.
+  'astro': { version: '7.4.12', type: 'dependencies' },
+  '@astrojs/markdown-remark': { version: '7.3.9', type: 'dependencies' },
+};
 assert.equal(lock.lockfileVersion, 3);
-for (const [name, version] of Object.entries(pinned)) {
-  assert.equal(pkg.devDependencies?.[name], version, 'package.json must exact-pin '+name);
-  assert.equal(lock.packages?.['']?.devDependencies?.[name], version, 'package-lock root must exact-pin '+name);
+for (const [name, { version, type }] of Object.entries(pinned)) {
+  assert.equal(pkg[type]?.[name], version, 'package.json must exact-pin '+name);
+  assert.equal(lock.packages?.['']?.[type]?.[name], version, 'package-lock root must exact-pin '+name);
   const locked = lock.packages?.['node_modules/'+name];
   assert.equal(locked?.version, version, 'package-lock resolution must exact-pin '+name);
   assert.ok(locked?.integrity?.startsWith('sha512-'), name+' lacks lockfile integrity');
