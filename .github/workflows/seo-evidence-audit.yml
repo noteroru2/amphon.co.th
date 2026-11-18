@@ -45,12 +45,14 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
-      - name: Create protected-province-pair editorial proposal
-        run: node scripts/issue50-pair-guides.cjs --export
-      - name: Propose tailored product-intake guides for 104 thin URL candidates
-        run: node scripts/issue50-thin-guides.cjs --export
+      # Historical ISSUE50 scripts write to tracked Markdown even in --export mode.
+      # Do NOT run source-mutating generators before testing the exact PR candidate.
+      - name: Assert committed content is unchanged before build
+        run: git diff --exit-code -- src/content/serviceAreas
       - name: Build
         run: npm run build
+      - name: Assert build did not mutate tracked editorial sources
+        run: git diff --exit-code -- src/content/serviceAreas
       - name: Existing SEO checks
         run: npm run validate:seo
       - name: Verify brand identity and public evidence in built pages
