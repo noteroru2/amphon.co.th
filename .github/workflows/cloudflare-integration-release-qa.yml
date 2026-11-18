@@ -7,8 +7,10 @@ on:
       - security/cloudflare-picomatch-runtime-exposure-20261118
       - security/picomatch-redos-local-hardening-20261118
       - security/cloudflare-build-prod-deps-separation-20261118
+      - release/cloudflare-unified-astro7-20261118
   pull_request:
     branches:
+      - main
       - infra/cloudflare-security-astro7-eval
       - integration/cloudflare-issue50-180-20261116
       - integration/cloudflare-seo-editorial-25-20261118
