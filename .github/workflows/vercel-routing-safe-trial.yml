@@ -1,0 +1,104 @@
+name: Isolated Vercel routing ReDoS patch trial (NO DEPLOY)
+on:
+  push:
+    branches:
+      - security/vercel-routing-path-safe-trial-20261119
+permissions:
+  contents: write
+jobs:
+  trial:
+    if: github.repository == 'noteroru2/amphon.co.th' && github.ref == 'refs/heads/security/vercel-routing-path-safe-trial-20261119' && !contains(github.event.head_commit.message, '[routing-lock-regenerated]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout isolated non-production branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: true
+      - name: Pin Node 22.23.4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Generate authentic npm lockfile with patched routing-utils transitive
+        run: |
+          npm install --package-lock-only --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org/
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict'; import fs from 'node:fs';
+          const p=JSON.parse(fs.readFileSync('package.json','utf8'));
+          const l=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
+          assert.equal(p.overrides?.['@vercel/routing-utils']?.['path-to-regexp'],'6.3.0');
+          assert.equal(l.packages['node_modules/wrangler'].version,'4.164.0');
+          const paths=Object.entries(l.packages).filter(([k])=>k.endsWith('/path-to-regexp'));
+          assert.ok(paths.length>=1,'Must resolve path-to-regexp from real npm lockfile');
+          assert.ok(paths.every(([,v])=>v.version==='6.3.0'),'Unpatched path-to-regexp still present');
+          console.log('PATCHED_VERCEL_ROUTING_LOCK '+JSON.stringify({paths:paths.map(([p,v])=>({path:p,version:v.version})),entries:Object.keys(l.packages).length}));
+          NODE
+      - name: Verify installed packages and local parser mitigation
+        run: |
+          npm ci --no-fund --registry=https://registry.npmjs.org/
+          node scripts/cloudflare-lock-verify.mjs
+          npm run qa:picomatch-hardening
+      - name: Verify path-to-regexp compatibility and fail-closed advisories
+        run: |
+          mkdir -p artifacts/security
+          npm audit --omit=dev --json > artifacts/security/prod-audit.json || true
+          npm audit --json > artifacts/security/full-audit.json || true
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict'; import fs from 'node:fs';
+          import {createRequire} from 'node:module';
+          const require=createRequire(import.meta.url);
+          const l=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
+          const pkg=require('path-to-regexp/package.json');
+          assert.equal(pkg.version,'6.3.0');
+          const {pathToRegexp}=require('path-to-regexp');
+          const re=pathToRegexp('/:path+');
+          assert.ok(re.test('/blog/test'));
+          assert.ok(re.test('/บริการ/รับซื้อโน๊ตบุ๊ค'));
+          const prod=JSON.parse(fs.readFileSync('artifacts/security/prod-audit.json','utf8'));
+          const all=JSON.parse(fs.readFileSync('artifacts/security/full-audit.json','utf8'));
+          for(const result of [prod,all]){
+            const v=result.metadata?.vulnerabilities;
+            assert.ok(v && Number.isInteger(v.high) && Number.isInteger(v.critical),'npm audit unavailable');
+            assert.equal(v.high,0,'HIGH npm security advisory unresolved');
+            assert.equal(v.critical,0,'CRITICAL npm security advisory unresolved');
+          }
+          console.log('ZERO_HIGH_BOTH_AUDITS '+JSON.stringify({production:prod.metadata.vulnerabilities,full:all.metadata.vulnerabilities,fullPackages:Object.keys(all.vulnerabilities||{}),paths:Object.entries(l.packages).filter(([k])=>k.endsWith('/path-to-regexp')).map(([k,v])=>({k,version:v.version}))}));
+          NODE
+      - name: Retest old Vercel adapter build for rollback compatibility
+        run: |
+          npx astro build --config astro.config.mjs
+      - name: Retest Astro7 Cloudflare production candidate and 921 SEO pages
+        run: |
+          npm run test:google-reviews
+          node --test scripts/cloudflare-routing.test.mjs scripts/cloudflare-release-finalize.test.mjs
+          npx astro build --config astro.config.cloudflare.production.mjs
+          npm run validate:seo
+          node scripts/cloudflare-release-finalize.mjs
+          node scripts/check-issue50-rendered-truth.mjs
+          node scripts/audit-serviceareas-1020.mjs
+          node scripts/check-issue50-gsc-regional.mjs
+          node scripts/check-p0-parent-service-truth.mjs
+          node scripts/check-local-parent-price-table-links.mjs
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-integration-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
+          node scripts/check-cloudflare-runtime-picomatch-exposure.mjs
+      - name: Archive audit reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: patched-vercel-routing-audit
+          path: artifacts/security/*-audit.json
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Commit only real generated lockfile on isolated branch
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = 'refs/heads/security/vercel-routing-path-safe-trial-20261119'
+          git diff --exit-code -- package.json scripts src .github/workflows
+          git add -- package-lock.json
+          test "$(git diff --cached --name-only)" = "package-lock.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "fix(security): lock Vercel routing to patched path-to-regexp 6.3.0 [routing-lock-regenerated]"
+          git push origin HEAD:refs/heads/security/vercel-routing-path-safe-trial-20261119
