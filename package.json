@@ -57,8 +57,8 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/sarabun": "^5.2.8",
-    "astro": "7.4.9",
-    "@astrojs/markdown-remark": "7.3.6"
+    "astro": "7.4.12",
+    "@astrojs/markdown-remark": "7.3.9"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
