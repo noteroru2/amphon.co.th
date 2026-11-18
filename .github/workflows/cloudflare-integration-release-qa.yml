@@ -5,6 +5,7 @@ on:
       - integration/cloudflare-issue50-180-20261116
       - security/cloudflare-astro7-audit-20261118
       - security/cloudflare-picomatch-runtime-exposure-20261118
+      - security/picomatch-redos-local-hardening-20261118
   pull_request:
     branches:
       - infra/cloudflare-security-astro7-eval
@@ -39,6 +40,8 @@ jobs:
         run: |
           npm ci --no-fund
           node scripts/cloudflare-lock-verify.mjs
+      - name: Confirm real parser patch and CVE regression tests
+        run: npm run qa:picomatch-hardening
       - name: Production dependency security check
         run: |
           npm audit --omit=dev --json > /tmp/amphon-production-audit.json || true
@@ -122,6 +125,8 @@ jobs:
         run: npm ci --no-fund
       - name: Verify exact Astro, Markdown, Cloudflare and Wrangler lock pins
         run: node scripts/cloudflare-lock-verify.mjs
+      - name: Confirm real parser patch and CVE regression tests
+        run: npm run qa:picomatch-hardening
       - name: Exercise all Google Reviews and release routing unit tests
         run: |
           npm run test:google-reviews
