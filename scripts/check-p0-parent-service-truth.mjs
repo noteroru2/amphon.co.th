@@ -9,8 +9,8 @@ const fixtures=[
  {slug:'รับซื้อเครื่องใช้ไฟฟ้า',category:['สารทำความเย็น','ช่าง','ไม่รับประกัน','LINE @webuy']}
 ];
 const errors=[],pages=collectBuiltPages(),sitemap=new Set();
-for(const file of walkFiles(distDir).filter(x=>/sitemap[^/]*\\.xml$/.test(x)))
- for(const m of readText(file).matchAll(/<loc>([^<]+)<\\/loc>/g)){
+for(const file of walkFiles(distDir).filter(x=>/sitemap[^/]*\.xml$/.test(x)))
+ for(const m of readText(file).matchAll(/<loc>([^<]+)<\/loc>/g)){
   const p=normalizePathname(m[1]);if(p)sitemap.add(p);
  }
 const serviceAreaCount=[...sitemap].filter(x=>x.startsWith('/รับซื้อ/')).length;
@@ -18,7 +18,7 @@ if(serviceAreaCount!==921)errors.push('Service-area sitemap changed from 921: '+
 const results=[];
 for(const {slug,category} of fixtures){
  const raw=fs.readFileSync(path.join(process.cwd(),'src/content/services',slug+'.md'),'utf8');
- const front=raw.match(/^---\\r?\\n([\\s\\S]*?)\\r?\\n---/);
+ const front=raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
  const route='/บริการ/'+slug,renderedPath=pages.get(route),html=renderedPath?readText(renderedPath):'';
  const chk=(yes,msg)=>{if(!yes)errors.push(slug+': '+msg)};
  chk(Boolean(front),'missing frontmatter');
@@ -34,7 +34,7 @@ for(const {slug,category} of fixtures){
  chk(Boolean(renderedPath)&&sitemap.has(route),'rendered route missing from sitemap');
  if(html){
   chk(normalizePathname(extractCanonical(html))===route,'canonical changed');
-  chk((html.match(/<h1\\b/gi)||[]).length===1,'H1 count not 1');
+  chk((html.match(/<h1\b/gi)||[]).length===1,'H1 count not 1');
   chk(Boolean(extractTitle(html))&&Boolean(extractFirstH1(html)),'title/H1 absent');
   chk(!/name=["']robots["'][^>]*noindex/i.test(html),'noindex introduced');
   chk(html.includes('line.me/ti/p/~@webuy'),'rendered LINE CTA missing');
