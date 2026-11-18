@@ -120,6 +120,13 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-fund
+      - name: Verify exact Astro, Markdown, Cloudflare and Wrangler lock pins
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Exercise all Google Reviews and release routing unit tests
+        run: |
+          npm run test:google-reviews
+          node --test scripts/cloudflare-routing.test.mjs scripts/cloudflare-release-finalize.test.mjs
+          node --check scripts/verify-cloudflare-production-release.mjs
       - name: Assert clean checked-in editorial source
         run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Build Cloudflare production config without deployment
