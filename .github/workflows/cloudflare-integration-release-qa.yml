@@ -140,6 +140,14 @@ jobs:
             echo "NO-GO: staging noindex leaked into production artifact"
             exit 1
           fi
+      - name: Smoke-test Cloudflare Worker bundle without deploying anywhere
+        run: |
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-integration-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
+          if grep -r -E -q --include='*.js' 'path-to-regexp|@vercel/routing-utils' dist/server; then
+            echo "NO-GO: Vercel-only runtime bundled in Cloudflare"
+            exit 1
+          fi
       - name: Upload content QA audit (not release approval)
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
