@@ -43,3 +43,12 @@ Earlier Vercel deployment lists only establish that the **Vercel rollback deploy
 - `qa.amphon.co.th` is also bound to the Production Worker; do not confuse it with cf-test or promote by changing routes.
 
 **Revised plan:** Treat this as a **new code release to an ALREADY LIVE Cloudflare Worker**, not a fresh migration of apex DNS from Vercel. Record current Worker version and DNS/ruleset values as rollback snapshot; test new release as a separate Worker version; never assume `main` SHA identifies deployed code. No Production deploy or binding mutations in this PR.
+
+## Security regression resolved in a tested isolated build (2026-11-18 17:54 UTC)
+- Earlier 24 HIGH + 2 MODERATE in the full build graph were observed BEFORE newer lockfiles; that is not the current audited count.
+- Isolated semver-safe npm fix (real lockfile, Astro7 CI) reduced **24H/2M → 23H/0M**.
+- Exact Wrangler upgrade **4.125.0 → 4.164.0** (real npm lock, unchanged Astro 7.4.12 and Cloudflare 14.4.7) reduced **23H/0M → 3H/0M** while preserving Google Reviews, 921-page truth QA, Worker dry-run and local smoke.
+- Isolated `@vercel/routing-utils`-scoped npm override of **`path-to-regexp@6.3.0`** (security-patched in its 6.x line), plus real npm lockfile, then both existing Vercel adapter build and Cloudflare Worker build passed. [Trial GitHub Actions #44363748913](https://github.com/noteroru2/amphon.co.th/actions/runs/44363748913) passed **full npm audit 0H / 0M / 0C and production-only npm audit 0H / 0M / 0C**. See GHSA-9wv6-86v2-598j.
+- Do not copy temporary write-capable trial workflows to Release. This integrated Release candidate uses the **exact tested manifest, npm lockfile and lock verifier only**, and permanently strengthens the strict full-tree audit check.
+- `picomatch@4.0.7` and nested `2.3.2` remain locally protected by the fail-closed postinstall guard and 8 adversarial tests; a current zero-count audit does not certify independent comprehensive source remediation or a published upstream fix.
+- The exact release SHA must be re-tested after this integration. **NO PRODUCTION DEPLOY.**

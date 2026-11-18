@@ -74,7 +74,10 @@ jobs:
           assert.ok(v&&Number.isInteger(v.high)&&Number.isInteger(v.critical),'Full npm advisory feed unavailable');
           const remaining=Object.entries(d.vulnerabilities??{}).filter(([,x])=>x.severity==='high'||x.severity==='critical').map(([name,x])=>({name,severity:x.severity,via:(x.via??[]).filter(y=>typeof y==='object').map(y=>({title:y.title,url:y.url}))}));
           console.log('FULL_BUILD_GRAPH_AUDIT_OPEN_FINDINGS '+JSON.stringify({totals:v,packages:remaining}));
-          assert.equal(v.critical,0,'Critical build-tool vulnerability requires separate stop and review');
+          assert.equal(v.critical,0,'Full-tree CRITICAL vulnerability');
+          assert.equal(v.high,0,'Full-tree HIGH vulnerability');
+          assert.equal(v.moderate,0,'Full-tree MODERATE vulnerability');
+          console.log('FULL_DEPENDENCY_SECURITY_CLEARED '+JSON.stringify(v));
           NODE
       - name: Preserve complete audit evidence (never count full audit as cleared)
         if: always()

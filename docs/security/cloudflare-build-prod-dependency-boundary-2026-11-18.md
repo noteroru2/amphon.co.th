@@ -30,3 +30,8 @@ Require `npm ci` (build scripts ON), `scripts/cloudflare-lock-verify.mjs`, `npm 
 - [Real Cloudflare QA on lock-verified SHA 4b1907c](https://github.com/noteroru2/amphon.co.th/actions/runs/44312635140): both the strict `cloudflare-candidate` security/release job and `content-only-qa` PASS including build, 921 service-area SEO URLs, redirect parity, runtime source proof and Worker dry-run.
 - Temporary privileged `cloudflare-production-deps-lock-regen.yml` was removed after committing the authenticated npm-generated lockfile. Permanent QA uses only read-only `contents: read` permissions.
 - User-facing claims should say **"Production npm audit passed; the full build-tool audit still contains unresolved published advisories"**, never "all dependencies are patched".
+
+## Final read-only full-graph status — audited after safe upgrades
+- Genuine npm regenerated lockfile and `wrangler@4.164.0` plus `@vercel/routing-utils → path-to-regexp@6.3.0` override tested on isolated SHA `d7c8abb5aad630cc55a5690c0552efaacbadc59b`, [GitHub Actions #44363748913](https://github.com/noteroru2/amphon.co.th/actions/runs/44363748913).
+- npm full audit `0 HIGH, 0 MODERATE, 0 CRITICAL, total 0` **at that test time**; production audit also zero. Vercel backup build + Cloudflare Astro7 build, 921-page SEO checks, 260 redirects and Wrangler dry-run passed.
+- Keep permanent strict full audit HIGH=0 CRITICAL=0 (and MODERATE=0 in this candidate), plus the local picomatch parser hardening while waiting for an upstream fixed release. Re-evaluate if npm advisories change.
