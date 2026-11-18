@@ -49,9 +49,10 @@ jobs:
           import {createRequire} from 'node:module';
           const require=createRequire(import.meta.url);
           const l=JSON.parse(fs.readFileSync('package-lock.json','utf8'));
-          const pkg=require('path-to-regexp/package.json');
+          const routingRequire=createRequire(require.resolve('@vercel/routing-utils'));
+          const pkg=routingRequire('path-to-regexp/package.json');
           assert.equal(pkg.version,'6.3.0');
-          const {pathToRegexp}=require('path-to-regexp');
+          const {pathToRegexp}=routingRequire('path-to-regexp');
           const re=pathToRegexp('/:path+');
           assert.ok(re.test('/blog/test'));
           assert.ok(re.test('/บริการ/รับซื้อโน๊ตบุ๊ค'));
