@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - infra/cloudflare-security-astro7-eval
+      - integration/cloudflare-issue50-180-20261116
     paths:
       - 'src/**'
       - 'scripts/**'
