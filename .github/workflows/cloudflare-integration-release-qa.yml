@@ -51,8 +51,12 @@ jobs:
           npm run test:google-reviews
           node --test scripts/cloudflare-routing.test.mjs
           node --test scripts/cloudflare-release-finalize.test.mjs
+      - name: Assert exact editorial source before building Cloudflare candidate
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Build real Cloudflare production candidate, NOT a Vercel build
         run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: Assert Cloudflare build did not rewrite editorial files
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: SEO metadata / structured-data validation
         run: npm run validate:seo
       - name: Generate validated Cloudflare redirect & header artifacts
@@ -61,6 +65,9 @@ jobs:
         run: |
           node scripts/check-issue50-rendered-truth.mjs
           node scripts/audit-serviceareas-1020.mjs
+          node scripts/check-issue50-gsc-regional.mjs
+          node scripts/check-p0-parent-service-truth.mjs
+          node scripts/check-local-parent-price-table-links.mjs
       - name: Collect SHA, changed URLs and publishable release QA evidence
         run: node scripts/collect-cloudflare-release-evidence.mjs
       - name: Test Worker bundle generation without deploying anywhere
