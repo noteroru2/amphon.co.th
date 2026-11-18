@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/audit-serviceareas-1020.mjs'
       - 'scripts/check-p0-parent-service-truth.mjs'
+      - 'scripts/check-local-parent-price-table-links.mjs'
       - 'scripts/check-brand-evidence.mjs'
       - 'scripts/check-server-ups-network-batch.mjs'
       - 'scripts/check-high-traffic-local-batch.mjs'
@@ -70,6 +71,8 @@ jobs:
         run: node scripts/check-issue50-rendered-truth.mjs
       - name: Verify three parent pages have truthful pickup, scope, and no unverified prices
         run: node scripts/check-p0-parent-service-truth.mjs
+      - name: Verify 60 provincial category CTAs match price-free parent guidance
+        run: node scripts/check-local-parent-price-table-links.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
