@@ -66,6 +66,11 @@ These must receive conservative, human-reviewed corrections first, with before/a
 5. No keyword stuffing, province-name substitution, arbitrary FAQ quotas, duplicated generic inspection sentences, synthetic photos, or JSON-LD review/rating claims.
 6. QA with `npm ci`, source/SEO validation, build, sample rendered title/H1/canonical/robots/sitemap/CTA, and the 921-page truth check. Deploy only a reviewed exact SHA, measure GSC FINAL 7/14/28 days after confirmed release, plus qualified buy-in leads.
 
+## CI reproducibility finding (2026-11-18)
+- The earlier workflow run [#44270795513](https://github.com/noteroru2/amphon.co.th/actions/runs/44270795513) passed, **but was not a clean exact-commit check**: the old `issue50-pair-guides.cjs --export` and `issue50-thin-guides.cjs --export` commands write tracked Markdown before `npm run build`. Consequently its uploaded CSV counts were based on regenerated files, not only this branch's committed edits. **Do not use that run as final release evidence.**
+- This PR now removes those two *write-producing generator invocations from the PR audit workflow only* and adds `git diff --exit-code -- src/content/serviceAreas` guards before and after build. The unchanged generator scripts remain in the repository; no production workflow or Worker is modified until this PR is reviewed.
+- Run the corrected workflow again on the final tested SHA and use only its artifact for before/after findings; no production deploy/merge implied.
+
 ## Next evidence requirements / blockers
 - Original service parent pages `รับซื้อเฟอร์นิเจอร์.md` and `รับซื้อทีวี.md` contain broad pickup promises that may conflict with the conditional provincial guidance. **Review and correct these parent claims in a separately scoped P0 PR before treating the cluster as verified.**
 - Inspect operational coverage and actual past lots before making first-hand experience claims. Ownership/transport verification from staff or the AMPHON System should remain private.
