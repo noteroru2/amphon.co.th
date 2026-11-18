@@ -42,6 +42,9 @@ jobs:
           import assert from 'node:assert/strict';
           import fs from 'node:fs';
           const v=JSON.parse(fs.readFileSync('/tmp/amphon-production-audit.json','utf8')).metadata?.vulnerabilities;
+          const report=JSON.parse(fs.readFileSync('/tmp/amphon-production-audit.json','utf8'));
+          const high=Object.entries(report.vulnerabilities??{}).filter(([,v])=>v.severity==='high'||v.severity==='critical').map(([name,v])=>({name,severity:v.severity,fixAvailable:Boolean(v.fixAvailable)}));
+          console.log('PRODUCTION_DEPENDENCY_SECURITY_FINDINGS '+JSON.stringify({high:high.slice(0,40),count:high.length,totals:v}));
           assert.ok(v&&Number.isInteger(v.high)&&Number.isInteger(v.critical),'npm production audit unavailable');
           assert.equal(v.high,0,'High severity production dependency');
           assert.equal(v.critical,0,'Critical severity production dependency');
@@ -93,5 +96,53 @@ jobs:
         with:
           name: amphon-cloudflare-candidate-release-evidence
           path: artifacts/cloudflare-release/
+          retention-days: 30
+          if-no-files-found: warn
+
+  # Independent QA so security failures cannot be mistaken for build defects.
+  # This job is NOT an approval gate bypass: cloudflare-candidate must also PASS.
+  content-only-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact content release candidate
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Pinned Node for Astro7 Cloudflare
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-fund
+      - name: Assert clean checked-in editorial source
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
+      - name: Build Cloudflare production config without deployment
+        run: npx astro build --config astro.config.cloudflare.production.mjs
+      - name: Assert content was not generated or overwritten
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
+      - name: Run SEO and original 921-page checks
+        run: |
+          npm run validate:seo
+          node scripts/check-issue50-rendered-truth.mjs
+          node scripts/audit-serviceareas-1020.mjs
+          node scripts/check-issue50-gsc-regional.mjs
+          node scripts/check-p0-parent-service-truth.mjs
+          node scripts/check-local-parent-price-table-links.mjs
+      - name: Verify original Cloudflare redirect parity and safe indexability
+        run: |
+          node scripts/cloudflare-release-finalize.mjs
+          node --test scripts/cloudflare-routing.test.mjs
+          if grep -E -q '^X-Robots-Tag:.*noindex' dist/client/_headers; then
+            echo "NO-GO: staging noindex leaked into production artifact"
+            exit 1
+          fi
+      - name: Upload content QA audit (not release approval)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: seo-editorial-content-only-audit
+          path: artifacts/service-area-audit/
           retention-days: 30
           if-no-files-found: warn
