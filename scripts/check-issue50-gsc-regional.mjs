@@ -139,7 +139,7 @@ check(serviceCount===921,'Existing 921 service pages changed: '+serviceCount);
 // losing the 12 protected-URL regression checks. Verify concrete buyer decisions,
 // real storefront, consent/ownership, and a truthful local handoff for the new cohort.
 const reviewedGuideProof={
- 'รับซื้อ-ups-ชัยภูมิ':['## ขาย UPS จากชัยภูมิ','VA','Line-interactive','แบตเตอรี่','ชาร์จ'],
+ 'รับซื้อ-ups-ชัยภูมิ':['## ขาย UPS จากชัยภูมิ','VA','Line-interactive','แบตเตอรี่','Runtime'],
  'รับซื้อ-server-ร้อยเอ็ด':['## Server ปลดระวางจากร้อยเอ็ด','RAID','Drive Tray','iDRAC','ข้อมูล'],
  'รับซื้ออุปกรณ์-network-ยโสธร':['## ประเมิน Switch และ Network จากยโสธร','PoE Budget','SFP','Cloud','บัญชี']
 };
