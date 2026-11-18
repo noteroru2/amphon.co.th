@@ -4,11 +4,13 @@ on:
     branches:
       - integration/cloudflare-issue50-180-20261116
       - security/cloudflare-astro7-audit-20261118
+      - security/cloudflare-picomatch-runtime-exposure-20261118
   pull_request:
     branches:
       - infra/cloudflare-security-astro7-eval
       - integration/cloudflare-issue50-180-20261116
       - integration/cloudflare-seo-editorial-25-20261118
+      - security/cloudflare-astro7-audit-20261118
     paths:
       - 'src/**'
       - 'scripts/**'
@@ -148,6 +150,18 @@ jobs:
             echo "NO-GO: Vercel-only runtime bundled in Cloudflare"
             exit 1
           fi
+      - name: Test vulnerable glob parser runtime-exposure scanner
+        run: node --test scripts/check-cloudflare-runtime-picomatch-exposure.test.mjs
+      - name: Scan emitted Cloudflare Worker source and Wrangler dry-run bundle
+        run: node scripts/check-cloudflare-runtime-picomatch-exposure.mjs
+      - name: Upload runtime vulnerability exposure evidence (not audit clearance)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: cloudflare-picomatch-runtime-exposure
+          path: artifacts/security/picomatch-runtime-exposure.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Upload content QA audit (not release approval)
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
