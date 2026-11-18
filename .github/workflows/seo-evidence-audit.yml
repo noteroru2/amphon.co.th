@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/audit-serviceareas-1020.mjs'
+      - 'scripts/check-p0-parent-service-truth.mjs'
       - 'scripts/check-brand-evidence.mjs'
       - 'scripts/check-server-ups-network-batch.mjs'
       - 'scripts/check-high-traffic-local-batch.mjs'
@@ -45,12 +46,14 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
-      - name: Create protected-province-pair editorial proposal
-        run: node scripts/issue50-pair-guides.cjs --export
-      - name: Propose tailored product-intake guides for 104 thin URL candidates
-        run: node scripts/issue50-thin-guides.cjs --export
+      # Old ISSUE50 --export scripts write tracked Markdown and would contaminate
+      # the tested source. Build/validate the exact PR content only.
+      - name: Assert tracked editorial sources clean before build
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Build
         run: npm run build
+      - name: Assert tracked editorial sources unchanged after build
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Existing SEO checks
         run: npm run validate:seo
       - name: Verify brand identity and public evidence in built pages
@@ -65,6 +68,8 @@ jobs:
         run: node scripts/check-issue50-gsc-regional.mjs
       - name: Verify truthful Ubon storefront and 24h message intake on all 921 rendered URLs
         run: node scripts/check-issue50-rendered-truth.mjs
+      - name: Verify three parent pages have truthful pickup, scope, and no unverified prices
+        run: node scripts/check-p0-parent-service-truth.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
