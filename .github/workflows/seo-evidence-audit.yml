@@ -9,6 +9,9 @@ on:
       - 'scripts/check-high-traffic-local-batch.mjs'
       - 'scripts/check-issue50-b2b.mjs'
       - 'scripts/check-issue50-gsc-regional.mjs'
+      - 'scripts/check-issue50-rendered-truth.mjs'
+      - 'scripts/check-p0-parent-service-truth.mjs'
+      - 'scripts/check-local-parent-price-table-links.mjs'
       - 'src/content/services/**'
       - 'src/content/services/รับซื้อโน๊ตบุ๊ค.md'
       - 'src/content/services/รับซื้อคอมพิวเตอร์.md'
@@ -41,8 +44,14 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
+      # The historic Issue 50 '--export' proposals write tracked Markdown; they
+      # are intentionally absent from this workflow. Test the exact checked-in content.
+      - name: Assert checked-out editorial files are clean
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Build
         run: npm run build
+      - name: Assert no tracked editorial changes from build
+        run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Existing SEO checks
         run: npm run validate:seo
       - name: Verify brand identity and public evidence in built pages
@@ -55,6 +64,12 @@ jobs:
         run: node scripts/check-issue50-b2b.mjs
       - name: Check 12 GSC-visible UPS Server Network and corporate region URLs
         run: node scripts/check-issue50-gsc-regional.mjs
+      - name: Validate real Ubon storefront and LINE intake on 921 rendered pages
+        run: node scripts/check-issue50-rendered-truth.mjs
+      - name: Validate three parent service promises and product-specific evidence
+        run: node scripts/check-p0-parent-service-truth.mjs
+      - name: Validate 60 provincial category CTAs and referenced parent content
+        run: node scripts/check-local-parent-price-table-links.mjs
       - name: Generate 1020-source / 921-indexed audit
         run: node scripts/audit-serviceareas-1020.mjs
       - name: Upload per-page CSV reports
