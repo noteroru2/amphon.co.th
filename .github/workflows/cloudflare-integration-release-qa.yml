@@ -6,6 +6,7 @@ on:
       - security/cloudflare-astro7-audit-20261118
       - security/cloudflare-picomatch-runtime-exposure-20261118
       - security/picomatch-redos-local-hardening-20261118
+      - security/cloudflare-build-prod-deps-separation-20261118
   pull_request:
     branches:
       - infra/cloudflare-security-astro7-eval
@@ -42,6 +43,8 @@ jobs:
           node scripts/cloudflare-lock-verify.mjs
       - name: Confirm real parser patch and CVE regression tests
         run: npm run qa:picomatch-hardening
+      - name: Prove Worker dependency boundary and pinned dev-only glob tree
+        run: node scripts/cloudflare-lock-verify.mjs
       - name: Production dependency security check
         run: |
           npm audit --omit=dev --json > /tmp/amphon-production-audit.json || true
@@ -127,6 +130,8 @@ jobs:
         run: node scripts/cloudflare-lock-verify.mjs
       - name: Confirm real parser patch and CVE regression tests
         run: npm run qa:picomatch-hardening
+      - name: Prove Worker dependency boundary and pinned dev-only glob tree
+        run: node scripts/cloudflare-lock-verify.mjs
       - name: Exercise all Google Reviews and release routing unit tests
         run: |
           npm run test:google-reviews

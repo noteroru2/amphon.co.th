@@ -7,6 +7,24 @@ const marker = 'AMPHON_CVE_2026_112366_FAIL_CLOSED_GUARD';
 const anchor = "const parse = (input, options) => {\n  if (typeof input !== 'string') {\n    throw new TypeError('Expected a string');\n  }\n";
 const allowedVersions = new Set(['4.0.7', '2.3.2']);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+// A production-only dependency installation has no npm runtime modules;
+// Astro, Markdown, fonts and plugins are build tools. Don't request a
+// build-time security patch for packages deliberately not installed.
+const omitDev = (process.env.npm_config_omit || '').split(/[\s,]+/).includes('dev');
+if (omitDev) {
+  const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
+  assert.equal(Object.keys(pkg.dependencies ?? {}).length, 0,
+    'Unexpected runtime dependency in production-only installation');
+  for (const relative of ['node_modules/picomatch',
+    'node_modules/anymatch/node_modules/picomatch']) {
+    assert.equal(fs.existsSync(path.join(root, relative)), false,
+      'Unexpected vulnerable glob parser in production-only node_modules: ' + relative);
+  }
+  console.log('PICOMATCH_PRODUCTION_RUNTIME_INSTALL {"status":"PASS","installedPicomatch":0}');
+  process.exit(0);
+}
+
 const guard = fs.readFileSync(path.join(root, 'scripts/picomatch-redos-guard-snippet.cjs'), 'utf8');
 assert.equal(guard.split(marker).length, 2, 'Security snippet marker must appear exactly once');
 const invocation = "\n  if (__amphonUnsafeRepeatedExtglob(input)) {\n    throw new SyntaxError('AMPHON_PICOMATCH_REDOS_PATTERN_REJECTED');\n  }\n";
