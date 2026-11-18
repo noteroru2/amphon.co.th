@@ -3,10 +3,16 @@ on:
   push:
     branches:
       - integration/cloudflare-issue50-180-20261116
+      - security/cloudflare-astro7-audit-20261118
+      - security/cloudflare-picomatch-runtime-exposure-20261118
+      - security/picomatch-redos-local-hardening-20261118
+      - security/cloudflare-build-prod-deps-separation-20261118
   pull_request:
     branches:
       - infra/cloudflare-security-astro7-eval
       - integration/cloudflare-issue50-180-20261116
+      - integration/cloudflare-seo-editorial-25-20261118
+      - security/cloudflare-astro7-audit-20261118
     paths:
       - 'src/**'
       - 'scripts/**'
@@ -35,6 +41,10 @@ jobs:
         run: |
           npm ci --no-fund
           node scripts/cloudflare-lock-verify.mjs
+      - name: Confirm real parser patch and CVE regression tests
+        run: npm run qa:picomatch-hardening
+      - name: Prove Worker dependency boundary and pinned dev-only glob tree
+        run: node scripts/cloudflare-lock-verify.mjs
       - name: Production dependency security check
         run: |
           npm audit --omit=dev --json > /tmp/amphon-production-audit.json || true
@@ -50,6 +60,28 @@ jobs:
           assert.equal(v.critical,0,'Critical severity production dependency');
           console.log('PASS production dependency audit:',v);
           NODE
+      - name: Record full dependency audit separately (build tools are NOT cleared)
+        run: |
+          mkdir -p artifacts/security
+          npm audit --json > artifacts/security/npm-full-audit.json || true
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const d=JSON.parse(fs.readFileSync('artifacts/security/npm-full-audit.json','utf8'));
+          const v=d.metadata?.vulnerabilities;
+          assert.ok(v&&Number.isInteger(v.high)&&Number.isInteger(v.critical),'Full npm advisory feed unavailable');
+          const remaining=Object.entries(d.vulnerabilities??{}).filter(([,x])=>x.severity==='high'||x.severity==='critical').map(([name,x])=>({name,severity:x.severity,via:(x.via??[]).filter(y=>typeof y==='object').map(y=>({title:y.title,url:y.url}))}));
+          console.log('FULL_BUILD_GRAPH_AUDIT_OPEN_FINDINGS '+JSON.stringify({totals:v,packages:remaining}));
+          assert.equal(v.critical,0,'Critical build-tool vulnerability requires separate stop and review');
+          NODE
+      - name: Preserve complete audit evidence (never count full audit as cleared)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: amphon-full-npm-graph-open-findings
+          path: artifacts/security/npm-full-audit.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Google Reviews and legacy redirect unit tests
         run: |
           npm run test:google-reviews
@@ -78,6 +110,7 @@ jobs:
         run: |
           npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-integration-dryrun
           node scripts/cloudflare-production-local-smoke.mjs
+          node scripts/check-cloudflare-runtime-picomatch-exposure.mjs
       - name: Prevent shipping Vercel runtime code or staging noindex
         run: |
           if grep -r -E -q --include='*.js' 'path-to-regexp|@vercel/routing-utils' dist/server; then
@@ -116,6 +149,17 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci --no-fund
+      - name: Verify exact Astro, Markdown, Cloudflare and Wrangler lock pins
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Confirm real parser patch and CVE regression tests
+        run: npm run qa:picomatch-hardening
+      - name: Prove Worker dependency boundary and pinned dev-only glob tree
+        run: node scripts/cloudflare-lock-verify.mjs
+      - name: Exercise all Google Reviews and release routing unit tests
+        run: |
+          npm run test:google-reviews
+          node --test scripts/cloudflare-routing.test.mjs scripts/cloudflare-release-finalize.test.mjs
+          node --check scripts/verify-cloudflare-production-release.mjs
       - name: Assert clean checked-in editorial source
         run: git diff --exit-code -- src/content/serviceAreas src/content/services
       - name: Build Cloudflare production config without deployment
@@ -138,6 +182,26 @@ jobs:
             echo "NO-GO: staging noindex leaked into production artifact"
             exit 1
           fi
+      - name: Smoke-test Cloudflare Worker bundle without deploying anywhere
+        run: |
+          npx wrangler deploy --config dist/server/wrangler.rc-audit.json --dry-run --outdir .cf-integration-dryrun
+          node scripts/cloudflare-production-local-smoke.mjs
+          if grep -r -E -q --include='*.js' 'path-to-regexp|@vercel/routing-utils' dist/server; then
+            echo "NO-GO: Vercel-only runtime bundled in Cloudflare"
+            exit 1
+          fi
+      - name: Test vulnerable glob parser runtime-exposure scanner
+        run: node --test scripts/check-cloudflare-runtime-picomatch-exposure.test.mjs
+      - name: Scan emitted Cloudflare Worker source and Wrangler dry-run bundle
+        run: node scripts/check-cloudflare-runtime-picomatch-exposure.mjs
+      - name: Upload runtime vulnerability exposure evidence (not audit clearance)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: cloudflare-picomatch-runtime-exposure
+          path: artifacts/security/picomatch-runtime-exposure.json
+          retention-days: 30
+          if-no-files-found: warn
       - name: Upload content QA audit (not release approval)
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
