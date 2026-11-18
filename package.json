@@ -52,7 +52,9 @@
     "images:optimize": "node scripts/optimize-images.mjs",
     "find:google-place": "node scripts/find-google-place-id.mjs",
     "test:google-reviews": "node --test src/lib/google-places.test.ts src/lib/google-reviews-endpoint.test.ts src/lib/review-trust.test.ts",
-    "test:analytics": "node --test src/lib/analytics-context.test.ts && node scripts/test-analytics-taxonomy.mjs"
+    "test:analytics": "node --test src/lib/analytics-context.test.ts && node scripts/test-analytics-taxonomy.mjs",
+    "postinstall": "node scripts/apply-picomatch-redos-guard.mjs",
+    "qa:picomatch-hardening": "node scripts/apply-picomatch-redos-guard.mjs --verify && node --test scripts/test-picomatch-redos-guard.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
