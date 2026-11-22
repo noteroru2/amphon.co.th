@@ -40,7 +40,7 @@ export function prepareProductionUpload(root = process.cwd()) {
     .split(/\r?\n/).filter(x => x.startsWith('/'));
   assert.ok(redirects.length >= 261 && redirects.length <= 280,
     'Release must retain 260 exact + 1 dynamic redirect (plus existing safe supplemental rules)');
-  assert.equal(new Set(redirects.map(x => x.split(/\s+/)[0])).size, 261, 'Duplicate redirects');
+  assert.equal(new Set(redirects.map(x => x.split(/\s+/)[0])).size, redirects.length, 'Duplicate redirects');
   assert.ok(redirects.includes('/*/ /:splat 308'), 'Missing trailing-slash rule');
 
   const result = {
