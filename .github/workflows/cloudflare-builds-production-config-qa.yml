@@ -1,0 +1,47 @@
+name: AMPHON Workers Builds production-config QA (NO DEPLOY)
+on:
+  push:
+    branches:
+      - ci/cloudflare-builds-production-setup-20261117
+      - release/cloudflare-production
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-without-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout exact release source without token persistence
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Use pinned Astro7/Node version
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install pinned lockfile
+        run: npm ci --no-fund
+      - name: Run exact Cloudflare Workers Builds build/SEO/redirect/security gates
+        run: node scripts/cloudflare-builds-production-build.mjs
+      - name: Confirm deployment script syntax, worker config and bindings
+        run: |
+          node --check scripts/cloudflare-builds-production-deploy.mjs
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          const x=JSON.parse(fs.readFileSync('dist/server/wrangler.production.json','utf8'));
+          assert.equal(x.name,'amphon-co-th-production');
+          assert.equal(x.account_id,'2382f4589cd2452e9e3b7b83c25d4fc0');
+          assert.equal(x.kv_namespaces?.find(v=>v.binding==='SESSION')?.id,'2e5195ef3f3b4557bd50776e1d492154');
+          assert.equal(x.assets?.binding,'ASSETS');
+          assert.equal(x.keep_vars,true);
+          assert.equal(x.workers_dev,false);
+          assert.equal(x.preview_urls,false);
+          assert.ok(!x.routes&&!x.route);
+          console.log('PASS Cloudflare Workers Builds production config and no DNS mutation');
+          NODE
+      - name: Wrangler bundle dry-run only (does not upload)
+        run: node node_modules/wrangler/bin/wrangler.js deploy --config dist/server/wrangler.production.json --dry-run --outdir .cf-builds-production-dryrun

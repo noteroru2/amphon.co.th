@@ -1,0 +1,3351 @@
+{
+  "source": "AMPHON SEO Hub / Google Search Console FINAL site-host scoped, page dimension",
+  "site_id": "amphon",
+  "property": "sc-domain:amphon.co.th",
+  "start_date": "2026-10-18",
+  "end_date": "2026-11-14",
+  "receipt_id": "f4586cb2-b7ea-4960-8c49-b94201f1bda8",
+  "observed_at": "2026-11-17T14:18:35.555Z",
+  "coverage_note": "Only Google-reported pages; absent pages UNKNOWN not ZERO. Final dates predate Cloudflare cutover 2026-11-15.",
+  "reported_pages": 663,
+  "filtered_pages": 556,
+  "service_area_reported": 380,
+  "pages": [
+    {
+      "path": "/บริการ/รับซื้อกล้องฟิล์ม",
+      "clicks": 163,
+      "impressions": 1180,
+      "position": 5.48
+    },
+    {
+      "path": "/บริการ/รับซื้อทีวี",
+      "clicks": 128,
+      "impressions": 2718,
+      "position": 7.34
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ขอนแก่น",
+      "clicks": 76,
+      "impressions": 1170,
+      "position": 6.4
+    },
+    {
+      "path": "/บริการ/รับซื้อแรม",
+      "clicks": 71,
+      "impressions": 1793,
+      "position": 6.03
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมพิวเตอร์",
+      "clicks": 63,
+      "impressions": 2492,
+      "position": 7.58
+    },
+    {
+      "path": "/บริการ/รับซื้อ-airpods",
+      "clicks": 45,
+      "impressions": 681,
+      "position": 6.77
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุดรธานี",
+      "clicks": 43,
+      "impressions": 474,
+      "position": 6.35
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา",
+      "clicks": 39,
+      "impressions": 1061,
+      "position": 6.88
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad-จอแตก",
+      "clicks": 38,
+      "impressions": 703,
+      "position": 5.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ร้อยเอ็ด",
+      "clicks": 37,
+      "impressions": 339,
+      "position": 6.81
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ขอนแก่น",
+      "clicks": 34,
+      "impressions": 554,
+      "position": 6.29
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุบลราชธานี",
+      "clicks": 29,
+      "impressions": 477,
+      "position": 6.12
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อุบลราชธานี",
+      "clicks": 24,
+      "impressions": 199,
+      "position": 5.87
+    },
+    {
+      "path": "/บริการ/รับซื้อแท็บเล็ต",
+      "clicks": 22,
+      "impressions": 619,
+      "position": 11.73
+    },
+    {
+      "path": "/บริการ/รับซื้อ-gopro-action-camera",
+      "clicks": 20,
+      "impressions": 241,
+      "position": 5.63
+    },
+    {
+      "path": "/บริการ/รับซื้อของไอทีเสีย",
+      "clicks": 19,
+      "impressions": 452,
+      "position": 6.22
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-มหาสารคาม",
+      "clicks": 19,
+      "impressions": 243,
+      "position": 6.17
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อุบลราชธานี",
+      "clicks": 19,
+      "impressions": 100,
+      "position": 5.52
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-อุดรธานี",
+      "clicks": 17,
+      "impressions": 152,
+      "position": 4.8
+    },
+    {
+      "path": "/บริการ/รับซื้อลำโพงบลูทูธ",
+      "clicks": 16,
+      "impressions": 222,
+      "position": 6.68
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี",
+      "clicks": 15,
+      "impressions": 569,
+      "position": 8.41
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาฬสินธุ์",
+      "clicks": 15,
+      "impressions": 261,
+      "position": 7.24
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ชัยภูมิ",
+      "clicks": 15,
+      "impressions": 219,
+      "position": 7.52
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-บุรีรัมย์",
+      "clicks": 15,
+      "impressions": 154,
+      "position": 6.01
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad",
+      "clicks": 14,
+      "impressions": 780,
+      "position": 14.74
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บุรีรัมย์",
+      "clicks": 13,
+      "impressions": 274,
+      "position": 6.76
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อุดรธานี",
+      "clicks": 13,
+      "impressions": 153,
+      "position": 4.9
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊ค",
+      "clicks": 12,
+      "impressions": 417,
+      "position": 13
+    },
+    {
+      "path": "/บริการ/รับซื้อกล้อง",
+      "clicks": 12,
+      "impressions": 375,
+      "position": 7.77
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สุรินทร์",
+      "clicks": 12,
+      "impressions": 119,
+      "position": 5.55
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองคาย",
+      "clicks": 12,
+      "impressions": 106,
+      "position": 5.97
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/จันทบุรี",
+      "clicks": 12,
+      "impressions": 104,
+      "position": 6.04
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ยโสธร",
+      "clicks": 11,
+      "impressions": 286,
+      "position": 7.75
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/สกลนคร",
+      "clicks": 11,
+      "impressions": 273,
+      "position": 8.06
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook-จอแตก",
+      "clicks": 11,
+      "impressions": 115,
+      "position": 4.32
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-นครพนม",
+      "clicks": 11,
+      "impressions": 111,
+      "position": 6.23
+    },
+    {
+      "path": "/บริการ/รับซื้อโทรศัพท์มือสอง",
+      "clicks": 10,
+      "impressions": 395,
+      "position": 8.44
+    },
+    {
+      "path": "/บริการ/รับซื้อ-nintendo-switch",
+      "clicks": 10,
+      "impressions": 294,
+      "position": 7.34
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ศรีสะเกษ",
+      "clicks": 10,
+      "impressions": 227,
+      "position": 8.88
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บึงกาฬ",
+      "clicks": 10,
+      "impressions": 173,
+      "position": 7.97
+    },
+    {
+      "path": "/บริการ/รับซื้อ-magic-keyboard-ipad",
+      "clicks": 9,
+      "impressions": 125,
+      "position": 9.58
+    },
+    {
+      "path": "/บริการ/รับซื้อกล้อง-fujifilm",
+      "clicks": 8,
+      "impressions": 301,
+      "position": 7.01
+    },
+    {
+      "path": "/บริการ/รับซื้อ-notebook-asus",
+      "clicks": 8,
+      "impressions": 244,
+      "position": 6.54
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-ศรีสะเกษ",
+      "clicks": 8,
+      "impressions": 78,
+      "position": 4.83
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-มุกดาหาร",
+      "clicks": 8,
+      "impressions": 65,
+      "position": 6.63
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-บุรีรัมย์",
+      "clicks": 7,
+      "impressions": 35,
+      "position": 3.86
+    },
+    {
+      "path": "/บริการ/รับซื้อ-mac-mini",
+      "clicks": 6,
+      "impressions": 376,
+      "position": 8.32
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-ร้อยเอ็ด",
+      "clicks": 6,
+      "impressions": 137,
+      "position": 5.4
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ตราด",
+      "clicks": 6,
+      "impressions": 106,
+      "position": 6.56
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-บุรีรัมย์",
+      "clicks": 6,
+      "impressions": 40,
+      "position": 4.03
+    },
+    {
+      "path": "/บริการ/รับซื้อ-notebook-dell",
+      "clicks": 5,
+      "impressions": 133,
+      "position": 6.6
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊คเสีย",
+      "clicks": 5,
+      "impressions": 98,
+      "position": 6.21
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-อุดรธานี",
+      "clicks": 5,
+      "impressions": 96,
+      "position": 7.14
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-อุดรธานี",
+      "clicks": 5,
+      "impressions": 94,
+      "position": 6.24
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครพนม",
+      "clicks": 5,
+      "impressions": 87,
+      "position": 7.85
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ขอนแก่น",
+      "clicks": 5,
+      "impressions": 50,
+      "position": 3.6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-อุบลราชธานี",
+      "clicks": 5,
+      "impressions": 49,
+      "position": 7.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-กาฬสินธุ์",
+      "clicks": 5,
+      "impressions": 48,
+      "position": 5.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-สุรินทร์",
+      "clicks": 5,
+      "impressions": 28,
+      "position": 5.89
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-มหาสารคาม",
+      "clicks": 5,
+      "impressions": 24,
+      "position": 4.63
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-สุรินทร์",
+      "clicks": 5,
+      "impressions": 12,
+      "position": 3.42
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook",
+      "clicks": 4,
+      "impressions": 436,
+      "position": 23.53
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ร้อยเอ็ด",
+      "clicks": 4,
+      "impressions": 150,
+      "position": 9.44
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมบริษัท",
+      "clicks": 4,
+      "impressions": 110,
+      "position": 4.31
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/มหาสารคาม",
+      "clicks": 4,
+      "impressions": 102,
+      "position": 9.36
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-ศรีสะเกษ",
+      "clicks": 4,
+      "impressions": 81,
+      "position": 6.89
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-หนองคาย",
+      "clicks": 4,
+      "impressions": 77,
+      "position": 6.45
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-บุรีรัมย์",
+      "clicks": 4,
+      "impressions": 75,
+      "position": 7.85
+    },
+    {
+      "path": "/บริการ/รับซื้อ-marshall",
+      "clicks": 4,
+      "impressions": 74,
+      "position": 5.58
+    },
+    {
+      "path": "/บริการ/รับประมูลคอมพิวเตอร์มือสอง",
+      "clicks": 4,
+      "impressions": 70,
+      "position": 6.61
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-อุดรธานี",
+      "clicks": 4,
+      "impressions": 59,
+      "position": 6.05
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมพิวเตอร์ตั้งโต๊ะ",
+      "clicks": 4,
+      "impressions": 52,
+      "position": 12.81
+    },
+    {
+      "path": "/บริการ/รับซื้อ-server-network",
+      "clicks": 4,
+      "impressions": 49,
+      "position": 8.73
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมสำนักงาน",
+      "clicks": 4,
+      "impressions": 48,
+      "position": 7.1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-ขอนแก่น",
+      "clicks": 4,
+      "impressions": 46,
+      "position": 5.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-ยโสธร",
+      "clicks": 4,
+      "impressions": 42,
+      "position": 6.57
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-สกลนคร",
+      "clicks": 4,
+      "impressions": 27,
+      "position": 5.59
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-สกลนคร",
+      "clicks": 4,
+      "impressions": 25,
+      "position": 3.04
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ศรีสะเกษ",
+      "clicks": 4,
+      "impressions": 16,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-สุรินทร์",
+      "clicks": 4,
+      "impressions": 12,
+      "position": 3.67
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-15",
+      "clicks": 3,
+      "impressions": 360,
+      "position": 9.3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-อำนาจเจริญ",
+      "clicks": 3,
+      "impressions": 91,
+      "position": 6.24
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-อุบลราชธานี",
+      "clicks": 3,
+      "impressions": 88,
+      "position": 6.16
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-face-id-เสีย",
+      "clicks": 3,
+      "impressions": 69,
+      "position": 6.64
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-ร้อยเอ็ด",
+      "clicks": 3,
+      "impressions": 66,
+      "position": 6.26
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-มุกดาหาร",
+      "clicks": 3,
+      "impressions": 44,
+      "position": 6.2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-กาฬสินธุ์",
+      "clicks": 3,
+      "impressions": 41,
+      "position": 7.41
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad-เสีย",
+      "clicks": 3,
+      "impressions": 40,
+      "position": 7.23
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-หนองบัวลำภู",
+      "clicks": 3,
+      "impressions": 40,
+      "position": 5.6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-สุรินทร์",
+      "clicks": 3,
+      "impressions": 37,
+      "position": 6.65
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-watch-ขอนแก่น",
+      "clicks": 3,
+      "impressions": 33,
+      "position": 5.79
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-บึงกาฬ",
+      "clicks": 3,
+      "impressions": 26,
+      "position": 10.42
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-หนองบัวลำภู",
+      "clicks": 3,
+      "impressions": 25,
+      "position": 4.72
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ร้อยเอ็ด",
+      "clicks": 3,
+      "impressions": 17,
+      "position": 4.88
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ศรีสะเกษ",
+      "clicks": 3,
+      "impressions": 17,
+      "position": 4.65
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-ยโสธร",
+      "clicks": 3,
+      "impressions": 9,
+      "position": 1.78
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-นครราชสีมา",
+      "clicks": 3,
+      "impressions": 7,
+      "position": 3.43
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-กาฬสินธุ์",
+      "clicks": 3,
+      "impressions": 5,
+      "position": 2.2
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครพนม",
+      "clicks": 2,
+      "impressions": 132,
+      "position": 8.39
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บุรีรัมย์#products",
+      "clicks": 2,
+      "impressions": 126,
+      "position": 6.07
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ภูเก็ต",
+      "clicks": 2,
+      "impressions": 122,
+      "position": 9.49
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุบลราชธานี",
+      "clicks": 2,
+      "impressions": 97,
+      "position": 9.97
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-สกลนคร",
+      "clicks": 2,
+      "impressions": 93,
+      "position": 6.25
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-กาฬสินธุ์",
+      "clicks": 2,
+      "impressions": 75,
+      "position": 7.39
+    },
+    {
+      "path": "/บริการ/รับซื้อกล้อง-canon",
+      "clicks": 2,
+      "impressions": 69,
+      "position": 7.55
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-สกลนคร",
+      "clicks": 2,
+      "impressions": 62,
+      "position": 6.21
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-อุบลราชธานี",
+      "clicks": 2,
+      "impressions": 53,
+      "position": 8.45
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-ขอนแก่น",
+      "clicks": 2,
+      "impressions": 51,
+      "position": 7.1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-nintendo-switch-อุบลราชธานี",
+      "clicks": 2,
+      "impressions": 46,
+      "position": 5.46
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-สกลนคร",
+      "clicks": 2,
+      "impressions": 41,
+      "position": 9.34
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-watch-อุดรธานี",
+      "clicks": 2,
+      "impressions": 35,
+      "position": 7.37
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-อำนาจเจริญ",
+      "clicks": 2,
+      "impressions": 30,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-นครพนม",
+      "clicks": 2,
+      "impressions": 27,
+      "position": 7.22
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาญจนบุรี",
+      "clicks": 2,
+      "impressions": 26,
+      "position": 6.04
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแรม-อุดรธานี",
+      "clicks": 2,
+      "impressions": 26,
+      "position": 9.35
+    },
+    {
+      "path": "/บริการ/รับซื้อ-apple-pencil",
+      "clicks": 2,
+      "impressions": 25,
+      "position": 6.24
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมบริษัทปิดกิจการ",
+      "clicks": 2,
+      "impressions": 24,
+      "position": 6.92
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-กาฬสินธุ์",
+      "clicks": 2,
+      "impressions": 24,
+      "position": 6.17
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ร้อยเอ็ด",
+      "clicks": 2,
+      "impressions": 23,
+      "position": 6.78
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/เลย",
+      "clicks": 2,
+      "impressions": 22,
+      "position": 5.95
+    },
+    {
+      "path": "/บริการ/รับซื้อคอม-ai-deep-learning",
+      "clicks": 2,
+      "impressions": 21,
+      "position": 7.19
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-บุรีรัมย์",
+      "clicks": 2,
+      "impressions": 21,
+      "position": 8.43
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-กาฬสินธุ์",
+      "clicks": 2,
+      "impressions": 20,
+      "position": 3.95
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมยกล็อต",
+      "clicks": 2,
+      "impressions": 19,
+      "position": 13.47
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-สุรินทร์",
+      "clicks": 2,
+      "impressions": 19,
+      "position": 4.42
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-นครพนม",
+      "clicks": 2,
+      "impressions": 14,
+      "position": 6.14
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-ศรีสะเกษ",
+      "clicks": 2,
+      "impressions": 14,
+      "position": 3.86
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-หนองบัวลำภู",
+      "clicks": 2,
+      "impressions": 10,
+      "position": 5.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-อุดรธานี",
+      "clicks": 2,
+      "impressions": 10,
+      "position": 3.1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-อุดรธานี",
+      "clicks": 2,
+      "impressions": 9,
+      "position": 6
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ups",
+      "clicks": 2,
+      "impressions": 8,
+      "position": 8.25
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-กาฬสินธุ์",
+      "clicks": 2,
+      "impressions": 8,
+      "position": 2.75
+    },
+    {
+      "path": "/บริการ/รับซื้อ-lenovo-legion",
+      "clicks": 2,
+      "impressions": 7,
+      "position": 8.86
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-ศรีสะเกษ",
+      "clicks": 2,
+      "impressions": 6,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-ขอนแก่น",
+      "clicks": 2,
+      "impressions": 5,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-อุบลราชธานี",
+      "clicks": 2,
+      "impressions": 5,
+      "position": 4.4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-ศรีสะเกษ",
+      "clicks": 2,
+      "impressions": 5,
+      "position": 4.8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-สกลนคร",
+      "clicks": 2,
+      "impressions": 4,
+      "position": 6.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-อุดรธานี",
+      "clicks": 2,
+      "impressions": 2,
+      "position": 1
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา#areas",
+      "clicks": 1,
+      "impressions": 420,
+      "position": 5.74
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone",
+      "clicks": 1,
+      "impressions": 264,
+      "position": 40.28
+    },
+    {
+      "path": "/บริการ/รับซื้อ-gaming-pc",
+      "clicks": 1,
+      "impressions": 110,
+      "position": 17.3
+    },
+    {
+      "path": "/บริการ/รับซื้อ-acer-nitro",
+      "clicks": 1,
+      "impressions": 83,
+      "position": 6.69
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 64,
+      "position": 7.64
+    },
+    {
+      "path": "/บริการ/รับซื้อกล้อง-sony",
+      "clicks": 1,
+      "impressions": 61,
+      "position": 6.9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-กาฬสินธุ์",
+      "clicks": 1,
+      "impressions": 53,
+      "position": 7.83
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad-pro",
+      "clicks": 1,
+      "impressions": 46,
+      "position": 21.76
+    },
+    {
+      "path": "/บริการ/รับซื้อ-surface",
+      "clicks": 1,
+      "impressions": 45,
+      "position": 14.6
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/ชลบุรี",
+      "clicks": 1,
+      "impressions": 44,
+      "position": 8.43
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ชัยภูมิ",
+      "clicks": 1,
+      "impressions": 44,
+      "position": 4.57
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-อำนาจเจริญ",
+      "clicks": 1,
+      "impressions": 43,
+      "position": 7.58
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-สุรินทร์",
+      "clicks": 1,
+      "impressions": 36,
+      "position": 6.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-hp-omen",
+      "clicks": 1,
+      "impressions": 35,
+      "position": 8.43
+    },
+    {
+      "path": "/บริการ/รับซื้อ-hp-victus",
+      "clicks": 1,
+      "impressions": 35,
+      "position": 5.94
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-14",
+      "clicks": 1,
+      "impressions": 34,
+      "position": 8.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ssd",
+      "clicks": 1,
+      "impressions": 34,
+      "position": 5.68
+    },
+    {
+      "path": "/บริการ/รับซื้อ-printer",
+      "clicks": 1,
+      "impressions": 32,
+      "position": 9.88
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมเสีย",
+      "clicks": 1,
+      "impressions": 31,
+      "position": 6.32
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-ชัยภูมิ",
+      "clicks": 1,
+      "impressions": 26,
+      "position": 9.54
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-สุรินทร์",
+      "clicks": 1,
+      "impressions": 24,
+      "position": 4.88
+    },
+    {
+      "path": "/บริการ/รับซื้อสินค้าไอทีบริษัท",
+      "clicks": 1,
+      "impressions": 22,
+      "position": 8.32
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-ร้อยเอ็ด",
+      "clicks": 1,
+      "impressions": 22,
+      "position": 9.41
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-ร้อยเอ็ด",
+      "clicks": 1,
+      "impressions": 22,
+      "position": 10.55
+    },
+    {
+      "path": "/บริการ/รับซื้อ-apple-watch",
+      "clicks": 1,
+      "impressions": 21,
+      "position": 8.57
+    },
+    {
+      "path": "/บริการ/รับซื้อ-rog-strix",
+      "clicks": 1,
+      "impressions": 20,
+      "position": 8.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-กาฬสินธุ์",
+      "clicks": 1,
+      "impressions": 20,
+      "position": 5.65
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-มหาสารคาม",
+      "clicks": 1,
+      "impressions": 18,
+      "position": 6.56
+    },
+    {
+      "path": "/บริการ/รับซื้อ-notebook-lenovo",
+      "clicks": 1,
+      "impressions": 16,
+      "position": 5.06
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-17",
+      "clicks": 1,
+      "impressions": 15,
+      "position": 6.13
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-หนองบัวลำภู",
+      "clicks": 1,
+      "impressions": 15,
+      "position": 3.93
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 14,
+      "position": 3.86
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-ยโสธร",
+      "clicks": 1,
+      "impressions": 14,
+      "position": 8.29
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-มหาสารคาม",
+      "clicks": 1,
+      "impressions": 13,
+      "position": 2.62
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-มุกดาหาร",
+      "clicks": 1,
+      "impressions": 13,
+      "position": 4.62
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-หนองบัวลำภู",
+      "clicks": 1,
+      "impressions": 13,
+      "position": 5.15
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-ชัยภูมิ",
+      "clicks": 1,
+      "impressions": 13,
+      "position": 8.08
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-อุดรธานี",
+      "clicks": 1,
+      "impressions": 12,
+      "position": 7.58
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-บึงกาฬ",
+      "clicks": 1,
+      "impressions": 12,
+      "position": 6.92
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-เลย",
+      "clicks": 1,
+      "impressions": 11,
+      "position": 5.55
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-กาฬสินธุ์",
+      "clicks": 1,
+      "impressions": 11,
+      "position": 5.55
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad-air",
+      "clicks": 1,
+      "impressions": 10,
+      "position": 8.9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-นครพนม",
+      "clicks": 1,
+      "impressions": 10,
+      "position": 4.9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สกลนคร",
+      "clicks": 1,
+      "impressions": 10,
+      "position": 3.9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-ยโสธร",
+      "clicks": 1,
+      "impressions": 10,
+      "position": 4.1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-สุรินทร์",
+      "clicks": 1,
+      "impressions": 10,
+      "position": 8.4
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊คจอแตก",
+      "clicks": 1,
+      "impressions": 9,
+      "position": 4.22
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-อุบลราชธานี",
+      "clicks": 1,
+      "impressions": 9,
+      "position": 6.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-สกลนคร",
+      "clicks": 1,
+      "impressions": 9,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 9,
+      "position": 8
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊คไม่มี-adapter",
+      "clicks": 1,
+      "impressions": 8,
+      "position": 4.25
+    },
+    {
+      "path": "/บริการ/รับซื้อ-lenovo-thinkpad",
+      "clicks": 1,
+      "impressions": 8,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-กาฬสินธุ์",
+      "clicks": 1,
+      "impressions": 8,
+      "position": 7.38
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-สกลนคร",
+      "clicks": 1,
+      "impressions": 8,
+      "position": 7.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-บึงกาฬ",
+      "clicks": 1,
+      "impressions": 8,
+      "position": 6.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook-เสีย",
+      "clicks": 1,
+      "impressions": 7,
+      "position": 2.86
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-มุกดาหาร",
+      "clicks": 1,
+      "impressions": 7,
+      "position": 3.29
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-สุรินทร์",
+      "clicks": 1,
+      "impressions": 7,
+      "position": 3.14
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-หนองบัวลำภู",
+      "clicks": 1,
+      "impressions": 7,
+      "position": 3.86
+    },
+    {
+      "path": "/บริการ/รับซื้อกล้องเสีย",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 3.83
+    },
+    {
+      "path": "/บริการ/รับซื้อ-dell-g-series",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 15.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-workstation",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 9.17
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-มหาสารคาม",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-อุดรธานี",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 4.83
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-บุรีรัมย์",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 3.17
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-เลย",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 3.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 6,
+      "position": 4.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-acer-aspire",
+      "clicks": 1,
+      "impressions": 5,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 5,
+      "position": 7.6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-สุรินทร์",
+      "clicks": 1,
+      "impressions": 5,
+      "position": 5.8
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad-mini",
+      "clicks": 1,
+      "impressions": 4,
+      "position": 5.75
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-airpods-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 4,
+      "position": 4.75
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-มุกดาหาร",
+      "clicks": 1,
+      "impressions": 4,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-watch-มหาสารคาม",
+      "clicks": 1,
+      "impressions": 4,
+      "position": 2.75
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-บึงกาฬ",
+      "clicks": 1,
+      "impressions": 4,
+      "position": 4.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-imac-mac-mini",
+      "clicks": 1,
+      "impressions": 3,
+      "position": 3
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-stealth",
+      "clicks": 1,
+      "impressions": 3,
+      "position": 4
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/มุกดาหาร",
+      "clicks": 1,
+      "impressions": 3,
+      "position": 8.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-มุกดาหาร",
+      "clicks": 1,
+      "impressions": 3,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-บุรีรัมย์",
+      "clicks": 1,
+      "impressions": 3,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-มหาสารคาม",
+      "clicks": 1,
+      "impressions": 3,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-บุรีรัมย์",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-บุรีรัมย์",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-นครพนม",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-สุรินทร์",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-อุบลราชธานี",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-หนองบัวลำภู",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-นครราชสีมา",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแรม-ชัยภูมิ",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-airpods-มหาสารคาม",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-นครพนม",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-บุรีรัมย์",
+      "clicks": 1,
+      "impressions": 2,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของสะสม-บึงกาฬ",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-ขอนกแก่น",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อซีพียู-บุรีรัมย์",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อซีพียู-อุดรธานี",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-ชัยภูมิ",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-ศรีสะเกษ",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแรม-อุบลราชธานี",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-mac-mini-เลย",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-ขอนแก่น",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-นครราชสีมา",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-นครพนม",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-อุบลราชธานี",
+      "clicks": 1,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา#products",
+      "clicks": 0,
+      "impressions": 420,
+      "position": 5.74
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา#timing",
+      "clicks": 0,
+      "impressions": 406,
+      "position": 5.73
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา#packing",
+      "clicks": 0,
+      "impressions": 381,
+      "position": 5.78
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา#large-items",
+      "clicks": 0,
+      "impressions": 372,
+      "position": 5.76
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครราชสีมา#pickup",
+      "clicks": 0,
+      "impressions": 371,
+      "position": 5.76
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี#bulk",
+      "clicks": 0,
+      "impressions": 138,
+      "position": 7.89
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี#products",
+      "clicks": 0,
+      "impressions": 138,
+      "position": 7.89
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี#areas",
+      "clicks": 0,
+      "impressions": 136,
+      "position": 7.86
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บุรีรัมย์#areas",
+      "clicks": 0,
+      "impressions": 126,
+      "position": 6.07
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บุรีรัมย์#pickup",
+      "clicks": 0,
+      "impressions": 121,
+      "position": 6.03
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บุรีรัมย์#packing",
+      "clicks": 0,
+      "impressions": 120,
+      "position": 6.03
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/บุรีรัมย์#timing",
+      "clicks": 0,
+      "impressions": 120,
+      "position": 6.04
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี#timing",
+      "clicks": 0,
+      "impressions": 116,
+      "position": 8.1
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี#packing",
+      "clicks": 0,
+      "impressions": 114,
+      "position": 8.07
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/อุดรธานี#pickup",
+      "clicks": 0,
+      "impressions": 114,
+      "position": 8.07
+    },
+    {
+      "path": "/บริการ/รับซื้อ-server",
+      "clicks": 0,
+      "impressions": 49,
+      "position": 29.31
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 39,
+      "position": 5.72
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 37,
+      "position": 8.35
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาฬสินธุ์#areas",
+      "clicks": 0,
+      "impressions": 36,
+      "position": 6.58
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาฬสินธุ์#packing",
+      "clicks": 0,
+      "impressions": 36,
+      "position": 6.58
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาฬสินธุ์#products",
+      "clicks": 0,
+      "impressions": 36,
+      "position": 6.58
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาฬสินธุ์#timing",
+      "clicks": 0,
+      "impressions": 36,
+      "position": 6.58
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/กาฬสินธุ์#pickup",
+      "clicks": 0,
+      "impressions": 34,
+      "position": 6.47
+    },
+    {
+      "path": "/บริการ/รับซื้อ-notebook-hp",
+      "clicks": 0,
+      "impressions": 33,
+      "position": 5.61
+    },
+    {
+      "path": "/บริการ/รับซื้อโดรน",
+      "clicks": 0,
+      "impressions": 24,
+      "position": 5.58
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook-m1",
+      "clicks": 0,
+      "impressions": 23,
+      "position": 5.65
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 4.77
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-อำนาจเจริญ",
+      "clicks": 0,
+      "impressions": 21,
+      "position": 5.62
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-สุรินทร์",
+      "clicks": 0,
+      "impressions": 21,
+      "position": 5.67
+    },
+    {
+      "path": "/บริการ/รับซื้อ-lenovo-loq",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 6.7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 20,
+      "position": 6.45
+    },
+    {
+      "path": "/บริการ/รับซื้อ-dell-alienware",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 7.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 18,
+      "position": 9.56
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 17,
+      "position": 9.53
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 15,
+      "position": 5.53
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊คเปิดไม่ติด",
+      "clicks": 0,
+      "impressions": 14,
+      "position": 3.07
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 13,
+      "position": 7.69
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 13,
+      "position": 2.62
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-หนองคาย",
+      "clicks": 0,
+      "impressions": 12,
+      "position": 7.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-notebook-acer",
+      "clicks": 0,
+      "impressions": 11,
+      "position": 5.64
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 11,
+      "position": 4.82
+    },
+    {
+      "path": "/บริการ/รับซื้ออุปกรณ์ไอทีบริษัท",
+      "clicks": 0,
+      "impressions": 10,
+      "position": 8.8
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊คเกมมิ่ง",
+      "clicks": 0,
+      "impressions": 10,
+      "position": 7.3
+    },
+    {
+      "path": "/บริการ/รับซื้อเมนบอร์ด",
+      "clicks": 0,
+      "impressions": 9,
+      "position": 6.11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-อุดรธานี",
+      "clicks": 0,
+      "impressions": 9,
+      "position": 8
+    },
+    {
+      "path": "/บริการ/รับซื้อ-apple",
+      "clicks": 0,
+      "impressions": 8,
+      "position": 19.88
+    },
+    {
+      "path": "/บริการ/รับซื้อ-asus-vivobook",
+      "clicks": 0,
+      "impressions": 8,
+      "position": 5.25
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-raider",
+      "clicks": 0,
+      "impressions": 8,
+      "position": 4.75
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-ยโสธร",
+      "clicks": 0,
+      "impressions": 8,
+      "position": 5.88
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 8,
+      "position": 4.25
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-ติด-icloud",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 6.43
+    },
+    {
+      "path": "/บริการ/รับซื้อ-nas",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 8.71
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 5.86
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 5.57
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 4.14
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 8.43
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-watch-สุรินทร์",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 4.86
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-watch-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 7,
+      "position": 4.29
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมประกอบ",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 6
+    },
+    {
+      "path": "/บริการ/รับซื้อเครื่องใช้ไฟฟ้า",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 5
+    },
+    {
+      "path": "/บริการ/รับซื้อเลนส์กล้อง",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 8.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-asus-tuf-gaming",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 4.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-dell-latitude",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 3.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 7.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อซีพียู-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 6.17
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 8.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-สุรินทร์",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 5.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 4.17
+    },
+    {
+      "path": "/บริการ/รับซื้อการ์ดจอ",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-pro-max",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 9.6
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook-m2",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 5.8
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/หาดใหญ่",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 3.8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 4.2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 4.8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-สกลนคร",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 3.6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-ยโสธร",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 6.2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-สกลนคร",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 3.4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-นครพนม",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 4.2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-nintendo-switch-เลย",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 7.4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-สกลนคร",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 1.8
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมสเปกสูง",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 16.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-cpu",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 5
+    },
+    {
+      "path": "/บริการ/รับเคลียร์อุปกรณ์ไอทีสำนักงาน",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 8.75
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-ยโสธร",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-สกลนคร",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 3.25
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ยโสธร",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 1.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 6.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-สกลนคร",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 8.25
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 8.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-server-อุดรธานี",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 6.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-gigabyte-gaming-notebook",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 6
+    },
+    {
+      "path": "/บริการ/รับซื้อ-ipad-gen",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 7.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-16",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 8.67
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-katana",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 5.33
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-thin",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 7.67
+    },
+    {
+      "path": "/บริการ/รับซื้อ-rog-gaming-notebook",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 7.67
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/รับซื้อกล้อง-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 4.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-ยโสธร",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 8.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 5.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมบริษัท-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-นครพนม",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 5.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-ยโสธร",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-เลย",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 5.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-เลย",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-เลย",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-สกลนคร",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-สกลนคร",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 5.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊ค-เลย",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 1.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 2.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-หนองคาย",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 6.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-สกลนคร",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 2.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-อุดรธานี",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 4.33
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 7.67
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 3,
+      "position": 4
+    },
+    {
+      "path": "/บริการ/รับซื้อกล้อง-nikon",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/บริการ/รับซื้ออุปกรณ์ไอที",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 8.5
+    },
+    {
+      "path": "/บริการ/รับซื้อเครื่องเกม",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 8.5
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-cyborg",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 9
+    },
+    {
+      "path": "/บริการ/รับซื้อ-rog-zephyrus",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 13.5
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/สุพรรณบุรี",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 13.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-หนองคาย",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-สุรินทร์",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-อุดรธานี",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมเกมมิ่ง-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอเกมมิ่ง-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อซีพียู-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-ยโสธร",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 9.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-สุรินทร์",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 2.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-สุรินทร์",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 8.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-สุรินทร์",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 10.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-อำนาจเจริญ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 1.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแรม-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 2.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-หนองคาย",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-อุดรธานี",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-อำนาจเจริญ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-อำนาจเจริญ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 5.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 12
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-ยโสธร",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-เลย",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 3.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-nintendo-switch-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 16
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-server-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 1.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-server-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 22
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-อุดรธานี",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 7.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4.5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-ยโสธร",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 4
+    },
+    {
+      "path": "/บริการ/รับซื้อของสะสม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/บริการ/รับซื้อคอมเล่นเกมสเปกแรง",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/บริการ/รับซื้อคอม-3d-render",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/บริการ/รับซื้อจอคอม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/บริการ/รับซื้อจอเกมมิ่ง",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รับซื้อโน๊ตบุ๊คบริษัท",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/บริการ/รับซื้อ-acer-predator",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/บริการ/รับซื้อ-asus-expertbook",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รับซื้อ-hp-elitebook",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/บริการ/รับซื้อ-hp-pavilion",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รับซื้อ-iphone-จอแตก",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รับซื้อ-jbl",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/บริการ/รับซื้อ-lenovo-ideapad",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook-air",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/บริการ/รับซื้อ-macbook-m3-m4",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-notebook",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/บริการ/รับซื้อ-msi-vector",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รัปซื้อทีวี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รัปซื้อลำโพงบลูทูธ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รัปซื้อโน๊ตบุ๊คเสีย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รัปซื้อ-magic-keyboard-ipad",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รัปซื้อ-nintendo-switch",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/บริการ/รัปซื้อ-notebook-asus",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/พื้นที่ให้บริการ/นครสวรรค์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-นครพนม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-เลย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-หนองคาย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-canon-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-fujifilm-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-fujifilm-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อกล้อง-sony-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อการ์ดจอ-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของสะสม-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของสะสม-นครพนม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของสะสม-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของสะสม-หนองคาย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อของไอทีเสีย-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมบริษัท-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-ยโสธร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมพิวเตอร์-สุรินทร์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมเกมมิ่ง-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อคอมเกมมิ่ง-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-สุรินทร์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอคอม-อุดรธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอเกมมิ่ง-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อจอเกมมิ่ง-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อซีพียู-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อซีพียู-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-นครพนม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-หนองคาย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อทีวี-อำนาจเจริญ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 22
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-นครพนม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อลำโพงบลูทูธ-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อสินค้าไอที-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อหูฟัง-ยโสธร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์คอมพิวเตอร์-เลย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 20
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์ไอที-อุดรธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้ออุปกรณ์-network-อุดรธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-ขอนแก่น",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องเกม-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 19
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-หนองคาย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 12
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อเมนบอร์ด-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแท็บเล็ต-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแท็บเล็ต-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อแรม-สุรินทร์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 2
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-ร้อยเอ็ด",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโดรน-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-กาฬสินธุ์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเกมมิ่ง-สุรินทร์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อโน๊ตบุ๊คเสีย-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-airpods-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-airpods-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-นครพนม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-apple-เลย",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-หนองบัวลำภู",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ipad-อำนาจเจริญ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-iphone-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 19
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-นครราชสีมา",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 5
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-jbl-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-macbook-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-marshall-อุบลราชธานี",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-nintendo-switch-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 11
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-บึงกาฬ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 10
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-playstation-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 6
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-server-บุรีรัมย์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-server-มหาสารคาม",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 4
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-server-ศรีสะเกษ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 8
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-ยโสธร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 1
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-สกลนคร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 14
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ssd-สุรินทร์",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 3
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-storage-nas-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 7
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-ชัยภูมิ",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "path": "/รับซื้อ/รับซื้อ-ups-มุกดาหาร",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 12
+    }
+  ]
+}

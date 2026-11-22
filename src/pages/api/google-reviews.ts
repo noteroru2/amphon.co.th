@@ -49,9 +49,12 @@ export function createGoogleReviewsHandler(dependencies: Dependencies): APIRoute
   };
 }
 
-export const GET = createGoogleReviewsHandler({
+// Read secrets at request time: Cloudflare Workers exposes bindings through
+// process.env with nodejs_compat; Vercel retains the previous import.meta.env path.
+// Never place these keys in PUBLIC_ variables or HTML.
+export const GET: APIRoute = async (context) => createGoogleReviewsHandler({
   fetchReviews: fetchGoogleReviews,
-  apiKey: import.meta.env?.GOOGLE_PLACES_API_KEY,
-  placeId: import.meta.env?.GOOGLE_PLACE_ID,
+  apiKey: process.env.GOOGLE_PLACES_API_KEY || import.meta.env?.GOOGLE_PLACES_API_KEY,
+  placeId: process.env.GOOGLE_PLACE_ID || import.meta.env?.GOOGLE_PLACE_ID,
   googleMapsUrl: staticGoogleMapsReviewsUrl(),
-});
+})(context);

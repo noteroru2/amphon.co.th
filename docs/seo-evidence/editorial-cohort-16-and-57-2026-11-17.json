@@ -1,0 +1,1101 @@
+{
+  "title": "AMPHON 16 short + 57 short/similar service-area editorial cohort",
+  "basis": "GSC Final 2026-10-18 .. 2026-11-14; source audit 2026-11-17 921 rendered URLs",
+  "qa_run": "https://github.com/noteroru2/amphon.co.th/actions/runs/44118734750",
+  "baseline": {
+    "short": 16,
+    "short_similar": 57,
+    "overlap": 2,
+    "unique_targets": 71
+  },
+  "policy": "Preserve exact URL, indexability and frontmatter; GSC absence unknown; do not fabricate orders, branches, prices or pickup promises; 5 clicked pages require traffic protection.",
+  "targets": [
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-ศรีสะเกษ.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ศรีสะเกษ",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "ศรีสะเกษ",
+      "source_chars": 2730,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.842,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อำนาจเจริญ",
+      "gsc_clicks": 4,
+      "gsc_impressions": 16,
+      "review_action": "PROTECT_EXISTING_ORGANIC_TRAFFIC"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-อุบลราชธานี.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-อุบลราชธานี",
+      "service": "รับซื้อโดรน",
+      "area": "อุบลราชธานี",
+      "source_chars": 1087,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS"
+      ],
+      "similarity": 0.02,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-กาฬสินธุ์",
+      "gsc_clicks": 2,
+      "gsc_impressions": 5,
+      "review_action": "PROTECT_EXISTING_ORGANIC_TRAFFIC"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-ขอนแก่น.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-ขอนแก่น",
+      "service": "รับซื้อโดรน",
+      "area": "ขอนแก่น",
+      "source_chars": 2790,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.847,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-อุดรธานี",
+      "gsc_clicks": 2,
+      "gsc_impressions": 5,
+      "review_action": "PROTECT_EXISTING_ORGANIC_TRAFFIC"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-มหาสารคาม.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-มหาสารคาม",
+      "service": "รับซื้อ-ups",
+      "area": "มหาสารคาม",
+      "source_chars": 1351,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.129,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-ชัยภูมิ",
+      "gsc_clicks": 1,
+      "gsc_impressions": 3,
+      "review_action": "PROTECT_EXISTING_ORGANIC_TRAFFIC"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อของสะสม-อุบลราชธานี.md",
+      "url": "/รับซื้อ/รับซื้อของสะสม-อุบลราชธานี",
+      "service": "รับซื้อของสะสม",
+      "area": "อุบลราชธานี",
+      "source_chars": 1322,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS"
+      ],
+      "similarity": 0,
+      "nearest": "",
+      "gsc_clicks": 1,
+      "gsc_impressions": 1,
+      "review_action": "PROTECT_EXISTING_ORGANIC_TRAFFIC"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-สกลนคร.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-สกลนคร",
+      "service": "รับซื้อ-ups",
+      "area": "สกลนคร",
+      "source_chars": 1325,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.216,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-ชัยภูมิ",
+      "gsc_clicks": 0,
+      "gsc_impressions": 5,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-เลย.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-เลย",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "เลย",
+      "source_chars": 2689,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.799,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-สกลนคร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 3,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-สกลนคร.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-สกลนคร",
+      "service": "รับซื้อโดรน",
+      "area": "สกลนคร",
+      "source_chars": 2765,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.753,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-นครพนม",
+      "gsc_clicks": 0,
+      "gsc_impressions": 3,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-ยโสธร.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-ยโสธร",
+      "service": "รับซื้อ-ups",
+      "area": "ยโสธร",
+      "source_chars": 1272,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.257,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-บุรีรัมย์",
+      "gsc_clicks": 0,
+      "gsc_impressions": 2,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-บุรีรัมย์.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-บุรีรัมย์",
+      "service": "รับซื้อ-ups",
+      "area": "บุรีรัมย์",
+      "source_chars": 1341,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.257,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-ยโสธร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 2,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-ร้อยเอ็ด.md",
+      "url": "/รับซื้อ/รับซื้อ-server-ร้อยเอ็ด",
+      "service": "รับซื้อ-server",
+      "area": "ร้อยเอ็ด",
+      "source_chars": 1446,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.028,
+      "nearest": "/รับซื้อ/รับซื้อ-server-อุดรธานี",
+      "gsc_clicks": 0,
+      "gsc_impressions": 2,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-ขอนแก่น.md",
+      "url": "/รับซื้อ/รับซื้อ-server-ขอนแก่น",
+      "service": "รับซื้อ-server",
+      "area": "ขอนแก่น",
+      "source_chars": 2747,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.828,
+      "nearest": "/รับซื้อ/รับซื้อ-server-เลย",
+      "gsc_clicks": 0,
+      "gsc_impressions": 2,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-อุดรธานี.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-อุดรธานี",
+      "service": "รับซื้อโดรน",
+      "area": "อุดรธานี",
+      "source_chars": 2772,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.847,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-ขอนแก่น",
+      "gsc_clicks": 0,
+      "gsc_impressions": 2,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-หนองคาย.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-หนองคาย",
+      "service": "รับซื้อโดรน",
+      "area": "หนองคาย",
+      "source_chars": 2779,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.845,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-ร้อยเอ็ด",
+      "gsc_clicks": 0,
+      "gsc_impressions": 2,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-มุกดาหาร.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-มุกดาหาร",
+      "service": "รับซื้อ-ups",
+      "area": "มุกดาหาร",
+      "source_chars": 1324,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.044,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-ยโสธร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-ชัยภูมิ.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-ชัยภูมิ",
+      "service": "รับซื้อ-ups",
+      "area": "ชัยภูมิ",
+      "source_chars": 1359,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.216,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-สกลนคร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเครื่องใช้ไฟฟ้า-หนองบัวลำภู.md",
+      "url": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-หนองบัวลำภู",
+      "service": "รับซื้อเครื่องใช้ไฟฟ้า",
+      "area": "หนองบัวลำภู",
+      "source_chars": 1694,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.332,
+      "nearest": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-สกลนคร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-หนองคาย.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-หนองคาย",
+      "service": "รับซื้อทีวี",
+      "area": "หนองคาย",
+      "source_chars": 2653,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.849,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-หนองบัวลำภู",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-อำนาจเจริญ.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-อำนาจเจริญ",
+      "service": "รับซื้อทีวี",
+      "area": "อำนาจเจริญ",
+      "source_chars": 2688,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.777,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-เลย",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-มุกดาหาร.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-มุกดาหาร",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "มุกดาหาร",
+      "source_chars": 2729,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.779,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-นครราชสีมา",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-นครราชสีมา.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-นครราชสีมา",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "นครราชสีมา",
+      "source_chars": 2732,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.779,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-มุกดาหาร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-สกลนคร.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-สกลนคร",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "สกลนคร",
+      "source_chars": 2736,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.799,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-เลย",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-หนองบัวลำภู.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-หนองบัวลำภู",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "หนองบัวลำภู",
+      "source_chars": 2747,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.85,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ยโสธร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-ร้อยเอ็ด.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-ร้อยเอ็ด",
+      "service": "รับซื้อโดรน",
+      "area": "ร้อยเอ็ด",
+      "source_chars": 2770,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.845,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-หนองคาย",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-บุรีรัมย์.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-บุรีรัมย์",
+      "service": "รับซื้อโดรน",
+      "area": "บุรีรัมย์",
+      "source_chars": 2775,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.804,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-มุกดาหาร",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-หนองบัวลำภู.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-หนองบัวลำภู",
+      "service": "รับซื้อโดรน",
+      "area": "หนองบัวลำภู",
+      "source_chars": 2783,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.777,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-เลย",
+      "gsc_clicks": 0,
+      "gsc_impressions": 1,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้ออุปกรณ์-network-อุบลราชธานี.md",
+      "url": "/รับซื้อ/รับซื้ออุปกรณ์-network-อุบลราชธานี",
+      "service": "รับซื้ออุปกรณ์-network",
+      "area": "อุบลราชธานี",
+      "source_chars": 1243,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS"
+      ],
+      "similarity": 0.024,
+      "nearest": "/รับซื้อ/รับซื้ออุปกรณ์-network-อำนาจเจริญ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-อุบลราชธานี.md",
+      "url": "/รับซื้อ/รับซื้อ-server-อุบลราชธานี",
+      "service": "รับซื้อ-server",
+      "area": "อุบลราชธานี",
+      "source_chars": 1272,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS"
+      ],
+      "similarity": 0.019,
+      "nearest": "/รับซื้อ/รับซื้อ-server-บุรีรัมย์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้ออุปกรณ์-network-ยโสธร.md",
+      "url": "/รับซื้อ/รับซื้ออุปกรณ์-network-ยโสธร",
+      "service": "รับซื้ออุปกรณ์-network",
+      "area": "ยโสธร",
+      "source_chars": 1435,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.028,
+      "nearest": "/รับซื้อ/รับซื้ออุปกรณ์-network-หนองคาย",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ.md",
+      "url": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-ชัยภูมิ",
+      "service": "รับซื้อเครื่องใช้ไฟฟ้า",
+      "area": "ชัยภูมิ",
+      "source_chars": 1608,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS",
+        "FEW_FAQ"
+      ],
+      "similarity": 0.379,
+      "nearest": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มุกดาหาร",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเครื่องใช้ไฟฟ้า-มุกดาหาร.md",
+      "url": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มุกดาหาร",
+      "service": "รับซื้อเครื่องใช้ไฟฟ้า",
+      "area": "มุกดาหาร",
+      "source_chars": 1613,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS",
+        "FEW_FAQ",
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.779,
+      "nearest": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อำนาจเจริญ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเครื่องใช้ไฟฟ้า-อำนาจเจริญ.md",
+      "url": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-อำนาจเจริญ",
+      "service": "รับซื้อเครื่องใช้ไฟฟ้า",
+      "area": "อำนาจเจริญ",
+      "source_chars": 1656,
+      "flags": [
+        "SHORT_CONTENT",
+        "FEW_SECTIONS",
+        "FEW_FAQ",
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.779,
+      "nearest": "/รับซื้อ/รับซื้อเครื่องใช้ไฟฟ้า-มุกดาหาร",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-นครพนม.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-นครพนม",
+      "service": "รับซื้อ-ups",
+      "area": "นครพนม",
+      "source_chars": 2648,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.845,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-สุรินทร์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-บึงกาฬ.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-บึงกาฬ",
+      "service": "รับซื้อ-ups",
+      "area": "บึงกาฬ",
+      "source_chars": 2648,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.772,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-นครพนม",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-เลย.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-เลย",
+      "service": "รับซื้อทีวี",
+      "area": "เลย",
+      "source_chars": 2657,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.777,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-อำนาจเจริญ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-ศรีสะเกษ.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-ศรีสะเกษ",
+      "service": "รับซื้อ-ups",
+      "area": "ศรีสะเกษ",
+      "source_chars": 2658,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.847,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-หนองบัวลำภู",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-มุกดาหาร.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-มุกดาหาร",
+      "service": "รับซื้อทีวี",
+      "area": "มุกดาหาร",
+      "source_chars": 2664,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.832,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-ขอนแก่น",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-ขอนแก่น.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-ขอนแก่น",
+      "service": "รับซื้อทีวี",
+      "area": "ขอนแก่น",
+      "source_chars": 2669,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.832,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-มุกดาหาร",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-สุรินทร์.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-สุรินทร์",
+      "service": "รับซื้อ-ups",
+      "area": "สุรินทร์",
+      "source_chars": 2670,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.845,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-นครพนม",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-ups-หนองบัวลำภู.md",
+      "url": "/รับซื้อ/รับซื้อ-ups-หนองบัวลำภู",
+      "service": "รับซื้อ-ups",
+      "area": "หนองบัวลำภู",
+      "source_chars": 2679,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.847,
+      "nearest": "/รับซื้อ/รับซื้อ-ups-ศรีสะเกษ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้ออุปกรณ์-network-เลย.md",
+      "url": "/รับซื้อ/รับซื้ออุปกรณ์-network-เลย",
+      "service": "รับซื้ออุปกรณ์-network",
+      "area": "เลย",
+      "source_chars": 2679,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.804,
+      "nearest": "/รับซื้อ/รับซื้ออุปกรณ์-network-สกลนคร",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-ยโสธร.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ยโสธร",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "ยโสธร",
+      "source_chars": 2685,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.85,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-หนองบัวลำภู",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-หนองบัวลำภู.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-หนองบัวลำภู",
+      "service": "รับซื้อทีวี",
+      "area": "หนองบัวลำภู",
+      "source_chars": 2694,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.849,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-หนองคาย",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อทีวี-มหาสารคาม.md",
+      "url": "/รับซื้อ/รับซื้อทีวี-มหาสารคาม",
+      "service": "รับซื้อทีวี",
+      "area": "มหาสารคาม",
+      "source_chars": 2698,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.773,
+      "nearest": "/รับซื้อ/รับซื้อทีวี-หนองคาย",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-บึงกาฬ.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-บึงกาฬ",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "บึงกาฬ",
+      "source_chars": 2704,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.851,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-นครพนม",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้ออุปกรณ์-network-สกลนคร.md",
+      "url": "/รับซื้อ/รับซื้ออุปกรณ์-network-สกลนคร",
+      "service": "รับซื้ออุปกรณ์-network",
+      "area": "สกลนคร",
+      "source_chars": 2708,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.804,
+      "nearest": "/รับซื้อ/รับซื้ออุปกรณ์-network-เลย",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-นครพนม.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-นครพนม",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "นครพนม",
+      "source_chars": 2712,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.851,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-บึงกาฬ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-เลย.md",
+      "url": "/รับซื้อ/รับซื้อ-server-เลย",
+      "service": "รับซื้อ-server",
+      "area": "เลย",
+      "source_chars": 2713,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.833,
+      "nearest": "/รับซื้อ/รับซื้อ-server-บึงกาฬ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-บึงกาฬ.md",
+      "url": "/รับซื้อ/รับซื้อ-server-บึงกาฬ",
+      "service": "รับซื้อ-server",
+      "area": "บึงกาฬ",
+      "source_chars": 2729,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.833,
+      "nearest": "/รับซื้อ/รับซื้อ-server-เลย",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-นครพนม.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-นครพนม",
+      "service": "รับซื้อโดรน",
+      "area": "นครพนม",
+      "source_chars": 2736,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.753,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-สกลนคร",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-กาฬสินธุ์.md",
+      "url": "/รับซื้อ/รับซื้อ-server-กาฬสินธุ์",
+      "service": "รับซื้อ-server",
+      "area": "กาฬสินธุ์",
+      "source_chars": 2737,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.786,
+      "nearest": "/รับซื้อ/รับซื้อ-server-สุรินทร์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อเฟอร์นิเจอร์-อำนาจเจริญ.md",
+      "url": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-อำนาจเจริญ",
+      "service": "รับซื้อเฟอร์นิเจอร์",
+      "area": "อำนาจเจริญ",
+      "source_chars": 2740,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.842,
+      "nearest": "/รับซื้อ/รับซื้อเฟอร์นิเจอร์-ศรีสะเกษ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-เลย.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-เลย",
+      "service": "รับซื้อโดรน",
+      "area": "เลย",
+      "source_chars": 2742,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.777,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-หนองบัวลำภู",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อ-server-สุรินทร์.md",
+      "url": "/รับซื้อ/รับซื้อ-server-สุรินทร์",
+      "service": "รับซื้อ-server",
+      "area": "สุรินทร์",
+      "source_chars": 2756,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.786,
+      "nearest": "/รับซื้อ/รับซื้อ-server-กาฬสินธุ์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-ศรีสะเกษ.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-ศรีสะเกษ",
+      "service": "รับซื้อโดรน",
+      "area": "ศรีสะเกษ",
+      "source_chars": 2762,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.777,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-นครราชสีมา",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-นครพนม.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-นครพนม",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "นครพนม",
+      "source_chars": 2774,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.768,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-นครราชสีมา",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-บึงกาฬ.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-บึงกาฬ",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "บึงกาฬ",
+      "source_chars": 2775,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.851,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-สุรินทร์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-ขอนแก่น.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ขอนแก่น",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "ขอนแก่น",
+      "source_chars": 2776,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.805,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ร้อยเอ็ด",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-ชัยภูมิ.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-ชัยภูมิ",
+      "service": "รับซื้อโดรน",
+      "area": "ชัยภูมิ",
+      "source_chars": 2778,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.841,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-ขอนแก่น",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-ร้อยเอ็ด.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ร้อยเอ็ด",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "ร้อยเอ็ด",
+      "source_chars": 2786,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.805,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ขอนแก่น",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-สุรินทร์.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-สุรินทร์",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "สุรินทร์",
+      "source_chars": 2788,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.851,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-บึงกาฬ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-มหาสารคาม.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-มหาสารคาม",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "มหาสารคาม",
+      "source_chars": 2795,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.769,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ยโสธร",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-มุกดาหาร.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-มุกดาหาร",
+      "service": "รับซื้อโดรน",
+      "area": "มุกดาหาร",
+      "source_chars": 2796,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.804,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-บุรีรัมย์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับซื้อโดรน-นครราชสีมา.md",
+      "url": "/รับซื้อ/รับซื้อโดรน-นครราชสีมา",
+      "service": "รับซื้อโดรน",
+      "area": "นครราชสีมา",
+      "source_chars": 2797,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.777,
+      "nearest": "/รับซื้อ/รับซื้อโดรน-ศรีสะเกษ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-ศรีสะเกษ.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ศรีสะเกษ",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "ศรีสะเกษ",
+      "source_chars": 2799,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.845,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-กาฬสินธุ์",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-ยโสธร.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ยโสธร",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "ยโสธร",
+      "source_chars": 2805,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.769,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-มหาสารคาม",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-หนองคาย.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-หนองคาย",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "หนองคาย",
+      "source_chars": 2809,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.765,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-นครราชสีมา",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-กาฬสินธุ์.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-กาฬสินธุ์",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "กาฬสินธุ์",
+      "source_chars": 2815,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.845,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ศรีสะเกษ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-หนองบัวลำภู.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-หนองบัวลำภู",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "หนองบัวลำภู",
+      "source_chars": 2823,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.814,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-ศรีสะเกษ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-อำนาจเจริญ.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-อำนาจเจริญ",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "อำนาจเจริญ",
+      "source_chars": 2830,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.772,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-บึงกาฬ",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    },
+    {
+      "path": "src/content/serviceAreas/รับเหมาประมูลอุปกรณ์ไอที-นครราชสีมา.md",
+      "url": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-นครราชสีมา",
+      "service": "รับเหมาประมูลอุปกรณ์ไอที",
+      "area": "นครราชสีมา",
+      "source_chars": 2836,
+      "flags": [
+        "SHORT_AND_SIMILAR"
+      ],
+      "similarity": 0.768,
+      "nearest": "/รับซื้อ/รับเหมาประมูลอุปกรณ์ไอที-นครพนม",
+      "gsc_clicks": null,
+      "gsc_impressions": null,
+      "review_action": "EDITORIAL_DUPLICATE_REVIEW"
+    }
+  ]
+}

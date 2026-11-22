@@ -135,6 +135,14 @@ for(const file of walkFiles(distDir).filter(p=>/sitemap[^/]*\.xml$/.test(p)))
  for(const m of readText(file).matchAll(/<loc>([^<]+)<\/loc>/g)){const u=normalizePathname(m[1]);if(u)sitemap.add(u);}
 const serviceCount=[...sitemap].filter(x=>x.startsWith('/รับซื้อ/')).length;
 check(serviceCount===921,'Existing 921 service pages changed: '+serviceCount);
+// New category-specific editorial pages replace Issue #50's template headings without
+// losing the 12 protected-URL regression checks. Verify concrete buyer decisions,
+// real storefront, consent/ownership, and a truthful local handoff for the new cohort.
+const reviewedGuideProof={
+ 'รับซื้อ-ups-ชัยภูมิ':['## ขาย UPS จากชัยภูมิ','VA','Line-interactive','แบตเตอรี่','Runtime'],
+ 'รับซื้อ-server-ร้อยเอ็ด':['## Server ปลดระวางจากร้อยเอ็ด','RAID','Drive Tray','iDRAC','ข้อมูล'],
+ 'รับซื้ออุปกรณ์-network-ยโสธร':['## ประเมิน Switch และ Network จากยโสธร','PoE Budget','SFP','Cloud','บัญชี']
+};
 const provinces=['กาฬสินธุ์','ขอนแก่น','ชัยภูมิ','นครพนม','นครราชสีมา','บึงกาฬ','บุรีรัมย์','มหาสารคาม','มุกดาหาร','ยโสธร','ร้อยเอ็ด','ศรีสะเกษ','สกลนคร','สุรินทร์','หนองคาย','หนองบัวลำภู','อำนาจเจริญ','อุดรธานี','อุบลราชธานี','เลย'];
 function tokens(body){
  for(const p of provinces)body=body.replaceAll(p,'_พื้นที่_');
@@ -151,10 +159,23 @@ for(const f of fixtures){
   check(fmField(front,k)===v,route+': protected '+k+' changed');
  check(fmField(front,'slug')==='"'+f.slug+'"',route+': protected slug changed');
  check(src.length>f.before+(f.slug.startsWith('รับซื้อคอมบริษัท')?900:340),route+': insufficient original editorial detail');
- check(body.includes('## วิธีประเมิน'),route+': unique product guide missing');
- check(body.includes('ชยางกูร 32')&&body.includes('09:00–19:00'),route+': verified storefront not disclosed');
- check(body.includes('เจ้าหน้าที่ตอบตามคิวงาน')&&body.includes('24 ชั่วโมง'),route+': 24-hour LINE message intake not distinguished');
- check(body.includes('ไม่ใช่ประวัติการรับซื้อจริง'),route+': unsupported real-case claims not disclaimed');
+ const reviewed=Object.hasOwn(reviewedGuideProof,f.slug);
+ if(reviewed){
+  const proof=reviewedGuideProof[f.slug];
+  check(body.includes('<!-- EVIDENCE_FIRST_THIN_REVIEW_20261118 -->')&&
+   proof.every(term=>body.includes(term)),route+': reviewed product-specific intake missing');
+  check(body.includes('740/8')&&body.includes('ถนนชยางกูร')&&body.includes('ซอย 32')&&
+   body.includes('อุบลราชธานี')&&body.includes('09:00–19:00'),route+': verified storefront not disclosed');
+  check(body.includes('LINE')&&body.includes('24 ชั่วโมง')&&
+   /เจ้าหน้าที่ตอบตามคิว/.test(body),route+': message intake hours not distinguished from staff reply');
+  check(body.includes('ไม่ใช่หลักฐาน')&&/ไม่ยืนยัน|ไม่รับประกัน/.test(body),
+   route+': real-case limitation or non-guarantee missing');
+ }else{
+  check(body.includes('## วิธีประเมิน'),route+': unique product guide missing');
+  check(body.includes('ชยางกูร 32')&&body.includes('09:00–19:00'),route+': verified storefront not disclosed');
+  check(body.includes('เจ้าหน้าที่ตอบตามคิวงาน')&&body.includes('24 ชั่วโมง'),route+': 24-hour LINE message intake not distinguished');
+  check(body.includes('ไม่ใช่ประวัติการรับซื้อจริง'),route+': unsupported real-case claims not disclaimed');
+ }
  check(!body.includes('ชยางกูร 42')&&!/รับถึงบ้านทุกจังหวัด|รับประกันราคาสูงสุด/.test(body),route+': unsupported guarantee');
  check(Boolean(fp)&&sitemap.has(route),route+': built/indexable route missing');
  if(html){
@@ -163,7 +184,11 @@ for(const f of fixtures){
   check(Boolean(extractTitle(html))&&Boolean(extractFirstH1(html)),route+': missing title or H1');
   check(!/name=["']robots["'][^>]*noindex/i.test(html),route+': noindex introduced');
   check(html.includes('line.me/ti/p/~@webuy'),route+': LINE CTA missing');
-  check(html.includes('วิธีประเมิน'),route+': new guide not visible');
+  if(reviewed){
+   check(html.includes(reviewedGuideProof[f.slug][0].replace(/^## /,''))&&
+    html.includes(reviewedGuideProof[f.slug][1])&&html.includes('@webuy'),
+    route+': reviewed category guide not rendered');
+  }else check(html.includes('วิธีประเมิน'),route+': original guide not visible');
  }
  const group=f.slug.replace(/-[^-]+$/,'');
  const others=fs.readdirSync(path.dirname(srcPath)).filter(x=>x.startsWith(group+'-')&&x.endsWith('.md')&&x!==f.slug+'.md');
