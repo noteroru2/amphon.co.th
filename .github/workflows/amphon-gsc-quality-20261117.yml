@@ -1,0 +1,85 @@
+name: AMPHON GSC Final 921-page quality & business review QA (NO DEPLOY)
+on:
+  push:
+    branches:
+      - seo/gsc-evidence-quality-20261117
+      - seo/service-area-editorial-batch-20261117
+  pull_request:
+    branches:
+      - release/cloudflare-production
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  content-and-seo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout isolated SEO candidate with full commit history
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Node 22 tested for Cloudflare Astro 7
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Lockfile install
+        run: npm ci --no-fund
+      - name: Check custom audit scripts parse correctly
+        run: |
+          node --check scripts/seo-gsc-quality-921.mjs
+          node --check scripts/seo-audit-editorial-targets.mjs
+          node --check scripts/qa-safe-regional-editorial.mjs
+          node --check scripts/check-no-self-serving-business-rating.mjs
+      - name: Validate production runtime, Google Reviews, SEO, 1189 sitemap and 260 redirects
+        run: node scripts/cloudflare-builds-production-build.mjs
+      - name: Group 921 regional pages and prioritize with actual GSC Final snapshots
+        run: node scripts/seo-gsc-quality-921.mjs
+      - name: Print exact 16 thin / 57 short-similar URLs and freeze target manifest
+        run: node scripts/seo-audit-editorial-targets.mjs
+      - name: Forbid self-serving business review star JSON-LD
+        run: node scripts/check-no-self-serving-business-rating.mjs
+      - name: Ensure this SEO release preserves protected Cloudflare runtime and all 921 source URLs
+        run: |
+          git -c core.quotePath=false diff --name-only origin/release/cloudflare-production...HEAD > /tmp/amphon-seo-changed.txt
+          if grep -E '^(src/config/seo-policy\.ts|astro\.config|package(-lock)?\.json|wrangler|src/pages/robots)' /tmp/amphon-seo-changed.txt; then
+            echo "NO-GO: forbidden structural or runtime files in evidence/content-only SEO candidate"
+            exit 1
+          fi
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {execFileSync} from 'node:child_process';
+          const changed=execFileSync('git',['-c','core.quotePath=false','diff','--name-only','origin/release/cloudflare-production...HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+          const allowed=(p)=>['src/content/services/รับซื้อโน๊ตบุ๊ค.md','src/content/services/รับซื้อคอมพิวเตอร์.md','src/content/services/รับซื้อ-macbook.md'].includes(p)
+            ||p.startsWith('docs/seo-evidence/')
+            ||p.startsWith('scripts/seo-gsc-quality-')
+            ||p==='scripts/check-no-self-serving-business-rating.mjs'
+            ||p==='scripts/cloudflare-builds-production-build.mjs'
+            ||p==='scripts/seo-audit-editorial-targets.mjs'
+            ||p==='scripts/qa-safe-regional-editorial.mjs'
+            ||p==='docs/seo-evidence/editorial-cohort-16-and-57-2026-11-17.json'
+            ||p.startsWith('src/content/serviceAreas/')
+            ||p==='.github/workflows/amphon-gsc-quality-20261117.yml';
+          assert.ok(changed.every(allowed),'Unexpected release file: '+changed.filter(x=>!allowed(x)).join(', '));
+          console.log('PASS isolated source diff:',changed.join(', '));
+          NODE
+      - name: Enforce 71-page editorial source and canonical frontmatter safety
+        run: node scripts/qa-safe-regional-editorial.mjs
+      - name: Cloudflare Worker artifact dry-run only, NEVER upload production
+        run: node node_modules/wrangler/bin/wrangler.js deploy --config dist/server/wrangler.production.json --dry-run --outdir .cf-evidence-qa
+      - name: Save full editorial review queue and GSC source links
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: amphon-921-gsc-final-editorial-review
+          path: |
+            artifacts/service-area-audit/summary.json
+            artifacts/service-area-audit/gsc-prioritized-summary.json
+            artifacts/service-area-audit/gsc-prioritized-families.json
+            artifacts/service-area-audit/gsc-prioritized-921.json
+            artifacts/service-area-audit/gsc-prioritized-human-review.md
+            artifacts/service-area-audit/editorial-targets-16-and-57.json
+          retention-days: 30
+          if-no-files-found: warn
