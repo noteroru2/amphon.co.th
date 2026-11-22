@@ -30,8 +30,9 @@ export function prepareProductionUpload(root = process.cwd()) {
       && Object.values(value).every(hasNoActiveEntries));
   assert.ok(hasNoActiveEntries(config.routes) && hasNoActiveEntries(config.route)
     && hasNoActiveEntries(config.triggers), 'No active domain/cron mutations allowed');
-  assert.ok(!(config.kv_namespaces ?? []).some(x => x.binding === 'SESSION'),
-    'Candidate must not embed an unverified SESSION KV');
+  const inheritedSession = (config.kv_namespaces ?? []).filter(x => x.binding === 'SESSION');
+  assert.ok(inheritedSession.length <= 1 && inheritedSession.every(x => !x.id),
+    'Candidate must not embed a prebound SESSION KV ID');
   const headers = fs.readFileSync(headerFile, 'utf8');
   assert.doesNotMatch(headers, /^\s*X-Robots-Tag:\s*[^\n]*\bnoindex\b/im,
     'Production content may not carry global noindex');
@@ -48,7 +49,10 @@ export function prepareProductionUpload(root = process.cwd()) {
     compatibility_flags: ['nodejs_compat', 'global_fetch_strictly_public'],
     workers_dev: false,
     preview_urls: false,
-    kv_namespaces: [{ binding: 'SESSION', id: EXPECTED_BASELINE_KV }],
+    kv_namespaces: [
+      ...(config.kv_namespaces ?? []).filter(x => x.binding !== 'SESSION'),
+      { binding: 'SESSION', id: EXPECTED_BASELINE_KV },
+    ],
     secrets: { required: EXPECTED_SECRETS },
     keep_vars: true,
   };
