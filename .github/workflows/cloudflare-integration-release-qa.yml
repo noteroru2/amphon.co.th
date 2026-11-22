@@ -102,6 +102,10 @@ jobs:
         run: npm run validate:seo
       - name: Generate validated Cloudflare redirect & header artifacts
         run: node scripts/cloudflare-release-finalize.mjs
+      - name: Validate production Worker version-only artifact and Wrangler dry-run (NEVER DEPLOY)
+        run: |
+          node scripts/prepare-cloudflare-production-upload.mjs
+          npx wrangler deploy --config dist/server/wrangler.production-upload.json --dry-run --outdir .cf-version-only-dryrun
       - name: Verify 921 service-area pages and real shop disclosure
         run: |
           node scripts/check-issue50-rendered-truth.mjs
