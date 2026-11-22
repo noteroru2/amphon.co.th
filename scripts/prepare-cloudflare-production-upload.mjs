@@ -24,7 +24,12 @@ export function prepareProductionUpload(root = process.cwd()) {
   assert.equal(config.assets?.binding, 'ASSETS', 'Missing production ASSETS binding');
   assert.ok(fs.existsSync(path.resolve(folder, config.assets.directory)), 'Missing static assets');
   assert.equal(config.compatibility_date, '2026-11-10', 'Unexpected compatibility date');
-  assert.ok(!config.routes && !config.route && !config.triggers, 'No domain/cron mutations allowed');
+  const hasNoActiveEntries = value =>
+    value == null || (Array.isArray(value) && value.length === 0)
+    || (typeof value === 'object' && !Array.isArray(value)
+      && Object.values(value).every(hasNoActiveEntries));
+  assert.ok(hasNoActiveEntries(config.routes) && hasNoActiveEntries(config.route)
+    && hasNoActiveEntries(config.triggers), 'No active domain/cron mutations allowed');
   assert.ok(!(config.kv_namespaces ?? []).some(x => x.binding === 'SESSION'),
     'Candidate must not embed an unverified SESSION KV');
   const headers = fs.readFileSync(headerFile, 'utf8');
