@@ -61,7 +61,7 @@ test('unexpected count, missing source rule, or duplicate source fails closed',(
 })
 test('CI is fixed to source SHA and cannot deploy',()=>{
  const wf=readFileSync(new URL('../.github/workflows/production-generated-redirect-parity-p11-readonly.yml',import.meta.url),'utf8')
- assert.match(wf,/cb55117d641ea76cfa0e5d1cc9e55a8deb724caa/)
+ assert.match(wf,/ee6a8d6304d4cd06674236858924bcf5825e0b26/)
  assert.match(wf,/permissions:\s*\n  contents: read/)
  assert.match(wf,/npm ci --no-fund/)
  assert.match(wf,/astro build --config astro.config.cloudflare.production.mjs/)
