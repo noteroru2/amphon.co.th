@@ -1,0 +1,42 @@
+name: AMPHON P12 Public Canary Traffic Observer (read-only)
+on:
+  pull_request:
+    branches:
+      - release/cloudflare-unified-astro7-20261118
+    paths:
+      - 'scripts/check-production-p12-canary-sample.mjs'
+      - '.github/workflows/production-p12-canary-observer-readonly.yml'
+permissions:
+  contents: read
+jobs:
+  public-observe:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout read-only observer
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node only (no dependency installation)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Static safety assertions
+        run: |
+          node --check scripts/check-production-p12-canary-sample.mjs
+          ! grep -Ein 'wrangler.*(deploy|upload)|supabase|cloudflare\.request|child_process|execSync|spawn\(' scripts/check-production-p12-canary-sample.mjs
+          test "$(git diff --name-only origin/release/cloudflare-unified-astro7-20261118...HEAD | grep -v '^scripts/check-production-' | grep -v '^\.github/workflows/production-' | wc -l)" -eq 0
+      - name: Sample two known problem routes (160 public GETs; never deploy)
+        run: |
+          mkdir -p artifacts/cloudflare-release
+          node scripts/check-production-p12-canary-sample.mjs > artifacts/cloudflare-release/p12-canary-observer.json
+          node -e 'const r=require("./artifacts/cloudflare-release/p12-canary-observer.json");if(!r.safe_first_hop_only||r.total_checked!==160||r.can_deploy!==false||r.can_write_ledger!==false||r.production_verified!==false)throw Error("P12 public HTTP safety check failed")'
+      - name: Preserve public-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: amphon-p12-public-canary-observer
+          path: artifacts/cloudflare-release/p12-canary-observer.json
+          retention-days: 7
+          if-no-files-found: warn
