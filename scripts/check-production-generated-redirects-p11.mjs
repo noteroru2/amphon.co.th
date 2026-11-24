@@ -94,7 +94,7 @@ export async function verifyGeneratedExtras({manifest,vercel,fetcher=fetch,at=ne
  return {
    schema:'amphon.seo.generated-live-redirects.p11.v1',
    origin:ORIGIN,observed_at:at.toISOString(),
-   source_build_commit:'cb55117d641ea76cfa0e5d1cc9e55a8deb724caa',
+   source_build_commit:'ee6a8d6304d4cd06674236858924bcf5825e0b26',
    generated_rules:checked.total,baseline_exact:checked.baseline_exact,
    baseline_dynamic:checked.baseline_dynamic,extras:results,
    extras_checked:results.length,extras_passed:results.filter(x=>x.pass).length,
