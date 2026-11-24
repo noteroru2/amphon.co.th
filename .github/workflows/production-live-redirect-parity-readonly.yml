@@ -1,0 +1,44 @@
+name: AMPHON P10 Live 260 Redirect Parity (read-only)
+on:
+  pull_request:
+    branches:
+      - release/cloudflare-unified-astro7-20261118
+    paths:
+      - 'scripts/check-production-live-redirects.mjs'
+      - 'scripts/check-production-live-redirects.test.mjs'
+      - '.github/workflows/production-live-redirect-parity-readonly.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: amphon-p10-live-redirect-parity
+  cancel-in-progress: false
+
+jobs:
+  verify-live-redirects:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate fail-closed first-hop HTTP and no-write contract
+        run: node --test scripts/check-production-live-redirects.test.mjs
+      - name: Capture 260 real public redirect statuses, locations and dynamic rule
+        run: |
+          mkdir -p artifacts/cloudflare-release
+          node scripts/check-production-live-redirects.mjs > artifacts/cloudflare-release/p10-live-redirects.json
+          node -e 'const r=require("./artifacts/cloudflare-release/p10-live-redirects.json");if(r.expected_exact!==260||r.checked_exact!==260||!r.dynamic_checked||!r.dynamic_passed||!r.passed||r.production_verified!==false||r.can_write_ledger!==false||r.can_deploy!==false||r.can_modify_dns!==false)throw Error("P10 strict read-only acceptance failed")'
+      - name: Upload public-only evidence (including any failures)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: amphon-p10-live-redirect-parity
+          path: artifacts/cloudflare-release/p10-live-redirects.json
+          if-no-files-found: warn
+          retention-days: 7
