@@ -97,3 +97,46 @@ test('Production fails closed if any inherited header attempts to noindex it', (
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+
+test('two real Astro-only redirect sources become UTF-8 encoded without changing status/target', () => {
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'amphon-cf-astro-only-'));
+  try {
+    fs.writeFileSync(path.join(dir,'_redirects'),[
+      '/บริการ/รัปีงอกคอมบริษัท /บริการ/รับซื้อคอมบริษัท 301',
+      '/บริการ/รับซื้อมือถือ /บริการ/รับซื้อโทรศัพท์มือสอง 301',
+      '',
+    ].join('\n'));
+    fs.writeFileSync(path.join(dir,'_headers'),'/_astro/*\n  Cache-Control: public, max-age=31536000, immutable\n');
+    const qa=generateCloudflareRouting(dir,{mode:'production'});
+    assert.equal(qa.staticRedirectCount,260);
+    assert.equal(qa.dynamicRedirectCount,1);
+    const lines=fs.readFileSync(path.join(dir,'_redirects'),'utf8').split('\n');
+    assert.equal(lines.filter(x=>x.startsWith('/')).length,263);
+    for(const [source,destination] of [
+      ['/บริการ/รัปีงอกคอมบริษัท','/บริการ/รับซื้อคอมบริษัท'],
+      ['/บริการ/รับซื้อมือถือ','/บริการ/รับซื้อโทรศัพท์มือสอง'],
+    ]) {
+      assert.ok(lines.includes(encodeURI(source)+' '+destination+' 301'));
+      assert.ok(!lines.includes(source+' '+destination+' 301'));
+    }
+    const rules=JSON.parse(fs.readFileSync(new URL('../vercel.json',import.meta.url),'utf8')).redirects;
+    for(const rule of rules.filter(r=>r.source!=='/:path+/')) {
+      const fixed=new Set(['/บริการ/รับซื้อกล้องฟิลัม','/บริการ/รับซื้อกล้องฟีล์ม','/บริการ/รับซื้อกล้องฟิล์ล']);
+      const src=fixed.has(rule.source)?encodeURI(rule.source):rule.source;
+      assert.ok(lines.includes(src+' '+rule.destination+' 308'),'lost original source '+rule.source);
+    }
+    assert.ok(lines.includes('/*/ /:splat 308'));
+  }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
+test('Astro-only redirect unexpected destination fails closed, no blanket unicode rewrite',()=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'amphon-cf-bad-adapter-'));
+ try{
+   fs.writeFileSync(path.join(dir,'_redirects'),
+     '/บริการ/รับซื้อมือถือ /external-or-unapproved 301\n');
+   assert.throws(()=>generateCloudflareRouting(dir,{mode:'production'}),/Unsafe Astro-generated redirect drift/);
+   fs.writeFileSync(path.join(dir,'_redirects'),
+     '/บริการ/รับซื้อมือถือ /บริการ/รับซื้อโทรศัพท์มือสอง 302\n');
+   assert.throws(()=>generateCloudflareRouting(dir,{mode:'production'}),/Unsafe Astro-generated redirect drift/);
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
