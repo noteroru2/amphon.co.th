@@ -83,12 +83,31 @@ export function generateCloudflareRouting(
   // Preserve the adapter's existing redirects and immutable hashed-asset cache headers.
   // Strip the previous environment's generated headers before switching modes.
   const keptRedirects = oldRedirects.includes(redirectMarker) ? '' : oldRedirects.trim();
+  // Astro emits these two *additional*, non-Vercel source rules as raw Thai.
+  // Cloudflare Static Assets matches incoming UTF-8 paths as percent-encoded
+  // bytes. P11 live HTTP QA (2026-11-24) proves both previously returned 404,
+  // while the same tightly scoped encoding fix passes for three film typos.
+  // Only correct the two known adapter-added sources. Never alter destinations,
+  // status codes, other Astro redirects, or the 260 source Vercel rules.
+  const extraAstroSources = new Map([
+    ['/บริการ/รัปีงอกคอมบริษัท', '/บริการ/รับซื้อคอมบริษัท'],
+    ['/บริการ/รับซื้อมือถือ', '/บริการ/รับซื้อโทรศัพท์มือสอง'],
+  ]);
+  const normalizedAdapterRedirects = keptRedirects.split(/\r?\n/).map(line => {
+    const [source, destination, status, ...rest] = line.trim().split(/\s+/);
+    if (!extraAstroSources.has(source)) return line;
+    if (destination !== extraAstroSources.get(source) ||
+        !['301', '308'].includes(status) || rest.length) {
+      throw new Error('Unsafe Astro-generated redirect drift: ' + source);
+    }
+    return encodeURI(source) + ' ' + destination + ' ' + status;
+  }).join('\n');
   const previousHeaderIndex = oldHeaders.search(oldHeaderMarker);
   const keptHeaders = previousHeaderIndex >= 0
     ? oldHeaders.slice(0, previousHeaderIndex).trim()
     : oldHeaders.trim();
   fs.writeFileSync(redirectFile,
-    redirectLines.join('\n') + '\n' + (keptRedirects ? keptRedirects + '\n' : ''), 'utf8');
+    redirectLines.join('\n') + '\n' + (normalizedAdapterRedirects ? normalizedAdapterRedirects + '\n' : ''), 'utf8');
   const generatedHeaders = (keptHeaders ? keptHeaders + '\n\n' : '') + headerBlocks.join('\n') + '\n';
   const hasNoindexHeader = /^\s*X-Robots-Tag:\s*[^\n]*\bnoindex\b/im.test(generatedHeaders);
   // Prevent an accidental Preview header from making Production invisible to Google.
