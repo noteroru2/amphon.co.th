@@ -22,10 +22,10 @@ jobs:
           persist-credentials: false
       - name: Check candidate changes are QA-only, not production sources
         run: |
-          git cat-file -e cb55117d641ea76cfa0e5d1cc9e55a8deb724caa^{commit}
-          git diff --name-only cb55117d641ea76cfa0e5d1cc9e55a8deb724caa HEAD > /tmp/p11-changes.txt
+          git cat-file -e ee6a8d6304d4cd06674236858924bcf5825e0b26^{commit}
+          git diff --name-only ee6a8d6304d4cd06674236858924bcf5825e0b26 HEAD > /tmp/p11-changes.txt
           cat /tmp/p11-changes.txt
-          if grep -Ev '^scripts/check-production-(generated-redirects-p11|live-redirects)(\.test)?\.mjs$|^\.github/workflows/production-(generated-redirect-parity-p11-readonly|live-redirect-parity-readonly)\.yml$' /tmp/p11-changes.txt; then
+          if grep -Ev '^scripts/check-production-(generated-redirects-p11|live-redirects|p12-canary-sample)(\.test)?\.mjs$|^\.github/workflows/production-(generated-redirect-parity-p11-readonly|live-redirect-parity-readonly|p12-canary-observer-readonly)\.yml$' /tmp/p11-changes.txt; then
             echo "FAIL: changed files beyond review-only QA"
             exit 1
           fi
