@@ -1,0 +1,62 @@
+name: AMPHON P11 Generated Redirect Inventory and Live QA (NO DEPLOY)
+on:
+  pull_request:
+    branches:
+      - release/cloudflare-unified-astro7-20261118
+    paths:
+      - 'scripts/check-production-generated-redirects-p11.mjs'
+      - 'scripts/check-production-generated-redirects-p11.test.mjs'
+      - '.github/workflows/production-generated-redirect-parity-p11-readonly.yml'
+permissions:
+  contents: read
+jobs:
+  generated-live-qa:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout candidate plus frozen approved SHA
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check candidate changes are QA-only, not production sources
+        run: |
+          git cat-file -e cb55117d641ea76cfa0e5d1cc9e55a8deb724caa^{commit}
+          git diff --name-only cb55117d641ea76cfa0e5d1cc9e55a8deb724caa HEAD > /tmp/p11-changes.txt
+          cat /tmp/p11-changes.txt
+          if grep -Ev '^scripts/check-production-(generated-redirects-p11|live-redirects)(\.test)?\.mjs$|^\.github/workflows/production-(generated-redirect-parity-p11-readonly|live-redirect-parity-readonly)\.yml$' /tmp/p11-changes.txt; then
+            echo "FAIL: changed files beyond review-only QA"
+            exit 1
+          fi
+      - name: Setup pinned Astro7 runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+          cache: npm
+      - name: Install frozen dependencies
+        run: npm ci --no-fund
+      - name: Test P11 no-write and fail-closed contract
+        run: node --test scripts/check-production-generated-redirects-p11.test.mjs
+      - name: Generate real Cloudflare Production artifact locally (never upload Worker)
+        run: |
+          node scripts/cloudflare-lock-verify.mjs
+          npx astro build --config astro.config.cloudflare.production.mjs
+          node scripts/cloudflare-release-finalize.mjs
+          if [ -n "$(git status --porcelain -- src/content/services src/content/serviceAreas)" ]; then
+            echo "FAIL: build changed content source"
+            exit 1
+          fi
+      - name: Probe additional generated redirects on live public domain
+        run: |
+          mkdir -p artifacts/cloudflare-release
+          node scripts/check-production-generated-redirects-p11.mjs > artifacts/cloudflare-release/p11-generated-live-parity.json
+          node -e 'const r=require("./artifacts/cloudflare-release/p11-generated-live-parity.json");if(r.generated_rules!==263||r.baseline_exact!==260||r.baseline_dynamic!==1||r.extras_checked!==2||r.extras_passed!==2||!r.passed||r.production_verified!==false||r.can_write_ledger!==false||r.can_deploy!==false)throw Error("P11 generated live parity acceptance failed")'
+      - name: Save redacted public-only evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: amphon-p11-generated-redirect-live-qa
+          path: artifacts/cloudflare-release/p11-generated-live-parity.json
+          if-no-files-found: warn
+          retention-days: 7
