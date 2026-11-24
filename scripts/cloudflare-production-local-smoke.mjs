@@ -78,6 +78,38 @@ try {
     report.routes.push({route,status:r.status,location:r.location});
     if(r.status!==308 || !r.location) report.failed.push(route+' expected 308 with Location');
   }
+  // P11 production regression: the two Astro-only redirects returned 404 in
+  // public live HTTP even though 260 original Vercel rules worked. Validate the
+  // rebuilt *local* Worker first; never claim this is evidence of live repair.
+  const generatedManifest=fs.readFileSync('dist/client/_redirects','utf8').split(/\r?\n/);
+  const extraResults=[];
+  for(const [source,destination] of [
+    ['/บริการ/รัปีงอกคอมบริษัท','/บริการ/รับซื้อคอมบริษัท'],
+    ['/บริการ/รับซื้อมือถือ','/บริการ/รับซื้อโทรศัพท์มือสอง'],
+  ]){
+    const line=generatedManifest.find(x=>x.startsWith(encodeURI(source)+' '));
+    assert.ok(line,'Missing encoded Astro-only redirect rule '+source);
+    const parts=line.split(/\s+/);
+    assert.equal(parts.length,3);
+    assert.equal(parts[1],destination,'Unexpected Astro-generated target');
+    const expected=Number(parts[2]);
+    assert.ok(expected===301||expected===308,'Unexpected Astro-generated status');
+    const observed=await request(source);
+    const location=observed.location?new URL(observed.location,host).pathname:'';
+    const pass=observed.status===expected&&
+      decodeURI(location)===decodeURI(new URL(destination,host).pathname);
+    extraResults.push({source,destination,expected,actual:observed.status,pass});
+    report.routes.push({route:source,status:observed.status,location:observed.location});
+    if(!pass)report.failed.push('Astro-only redirect '+source+
+      ' expected '+expected+' '+destination+' got '+observed.status+' '+observed.location);
+  }
+  report.generatedAstroRedirectParity={
+    total:2,checked:extraResults.length,passed:extraResults.filter(x=>x.pass).length,
+    failed:extraResults.filter(x=>!x.pass).length,rules:extraResults,
+    mode:'LOCAL_WORKER_NOT_LIVE_PRODUCTION',
+  };
+  console.log('AMPHON_P11_TWO_ASTRO_ONLY_LOCAL_QA '+JSON.stringify(report.generatedAstroRedirectParity));
+
   for(const route of ['/__amp_invalid_production_smoke__','/บริการ/__amp_invalid_production_smoke__']) {
     const r=await request(route);
     report.routes.push({route,status:r.status});
